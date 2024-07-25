@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Beginners on My New Hugo Site</title>
+    <link>http://10.150.94.149:1313/tags/beginners/</link>
+    <description>Recent content in Beginners on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 May 2023 22:37:22 +0100</lastBuildDate>
+    <atom:link href="http://10.150.94.149:1313/tags/beginners/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quickstart</title>
+      <link>http://10.150.94.149:1313/zh/docs/demo/quickstart/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>http://10.150.94.149:1313/zh/docs/demo/quickstart/</guid>
+      <description>Requirements git Go ≥ v1.19 Hugo ≥ v0.100.0 (Extended Version) Install Hugo Install the Hugo CLI, using the specific instructions for your operating system below:&#xA;Linux Homebrew (macOS) Windows (Chocolatey) Windows (Scoop) Your Linux distro’s package manager may include Hugo. If this is the case, install it directly using your distro’s package manager – for instance, in Ubuntu, run the following command. This will install the extended edition of Hugo:</description>
+    </item>
+    <item>
+      <title>第一篇WIKI</title>
+      <link>http://10.150.94.149:1313/zh/docs/dba/dome/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>http://10.150.94.149:1313/zh/docs/dba/dome/</guid>
+      <description>Create New Content Navigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
+    </item>
+    <item>
+      <title>第一篇WIKI</title>
+      <link>http://10.150.94.149:1313/zh/docs/dev/dome/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>http://10.150.94.149:1313/zh/docs/dev/dome/</guid>
+      <description>Create New Content Navigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
+    </item>
+    <item>
+      <title>第一篇WIKI</title>
+      <link>http://10.150.94.149:1313/zh/docs/ops/dome/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>http://10.150.94.149:1313/zh/docs/ops/dome/</guid>
+      <description>Create New Content Navigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
+    </item>
+    <item>
+      <title>Example Doc</title>
+      <link>http://10.150.94.149:1313/zh/docs/demo/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>http://10.150.94.149:1313/zh/docs/demo/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
