@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OPS on Maxbit Docs</title>
-    <link>https://example.org/zh/docs/ops/</link>
+    <link>http://10.150.94.149:1313/zh/docs/ops/</link>
     <description>Recent content in OPS on Maxbit Docs</description>
     <generator>Hugo</generator>
     <language>zh</language>
     <lastBuildDate>Wed, 03 May 2023 22:37:22 +0100</lastBuildDate>
-    <atom:link href="https://example.org/zh/docs/ops/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://10.150.94.149:1313/zh/docs/ops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇WIKI</title>
-      <link>https://example.org/zh/docs/ops/dome/</link>
+      <link>http://10.150.94.149:1313/zh/docs/ops/dome/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
-      <guid>https://example.org/zh/docs/ops/dome/</guid>
+      <guid>http://10.150.94.149:1313/zh/docs/ops/dome/</guid>
       <description>Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
     </item>
   </channel>

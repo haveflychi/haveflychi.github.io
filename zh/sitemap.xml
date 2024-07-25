@@ -2,106 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/zh/docs/dev/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/dev/</loc>
     <lastmod>2024-07-24T19:28:32+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/ops/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/ops/</loc>
     <lastmod>2024-07-24T19:28:39+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/dba/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/dba/</loc>
     <lastmod>2024-07-24T19:28:43+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/quickstart/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/quickstart/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/dba/dome/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/dba/dome/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/dev/dome/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/dev/dome/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/ops/dome/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/ops/dome/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/</loc>
     <lastmod>2023-05-22T00:34:57+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/example-content/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/example-content/</loc>
     <lastmod>2023-05-22T00:34:57+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/example-content/code/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/example-content/code/</loc>
     <lastmod>2023-05-22T00:44:31+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/example-content/mermaid/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/example-content/mermaid/</loc>
     <lastmod>2023-09-08T05:12:51+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/section-folder/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/section-folder/</loc>
     <lastmod>2023-05-22T00:34:57+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/section-folder/section-subfolder/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/section-folder/section-subfolder/</loc>
     <lastmod>2023-05-22T00:34:57+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/</loc>
     <lastmod>2023-05-22T00:34:57+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/section-folder/section-subfolder/second-section-subfolder/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/section-folder/section-subfolder/second-section-subfolder/</loc>
     <lastmod>2023-05-22T00:34:57+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/demo/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/demo/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/docs/</loc>
+    <loc>http://10.150.94.149:1313/zh/docs/</loc>
     <lastmod>2024-07-24T19:28:43+08:00</lastmod>
   </url><url>
-    <loc>https://example.org/zh/</loc>
+    <loc>http://10.150.94.149:1313/zh/</loc>
     <lastmod>2024-07-24T19:28:43+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://example.org/"
+                href="http://10.150.94.149:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://example.org/zh/"
+                href="http://10.150.94.149:1313/zh/"
                 />
   </url><url>
-    <loc>https://example.org/zh/tags/beginners/</loc>
+    <loc>http://10.150.94.149:1313/zh/tags/beginners/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://example.org/tags/beginners/"
+                href="http://10.150.94.149:1313/tags/beginners/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://example.org/zh/tags/beginners/"
+                href="http://10.150.94.149:1313/zh/tags/beginners/"
                 />
   </url><url>
-    <loc>https://example.org/zh/tags/</loc>
+    <loc>http://10.150.94.149:1313/zh/tags/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://example.org/tags/"
+                href="http://10.150.94.149:1313/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://example.org/zh/tags/"
+                href="http://10.150.94.149:1313/zh/tags/"
                 />
   </url><url>
-    <loc>https://example.org/zh/categories/</loc>
+    <loc>http://10.150.94.149:1313/zh/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://example.org/categories/"
+                href="http://10.150.94.149:1313/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="https://example.org/zh/categories/"
+                href="http://10.150.94.149:1313/zh/categories/"
                 />
   </url>
 </urlset>
