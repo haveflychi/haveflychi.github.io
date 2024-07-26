@@ -141,6 +141,21 @@
                                                                                     <li class=" "><a class="sidebar-nested-link" href="/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/">4.Go基础速通</a></li>
                                                                                 
                                                                             
+                                                                                
+                                                                                
+                                                                                    <li class="sidebar-dropdown nested  ">
+                                                                                        <button class="btn">
+                                                                                            
+                                                                                            项目案例
+                                                                                        </button>
+                                                                                        <div class="sidebar-submenu ">
+                                                                                            <ul>
+                                                                                                
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                
+                                                                            
                                                                         </ul>
                                                                     </div>
                                                                 </li>
@@ -1039,6 +1054,13 @@ a.Run()
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -1123,7 +1145,7 @@ a.Run()
                 href: "\/docs\/dev\/golang\/fyne\/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne\/",
                 title: "1.为什么要学习Fyne？",
                 description: "Fyne 是一个纯Golang 的跨平台GUI 库..",
-                content: "GUI Application 的定义 linkGUI(Graphical User Interface/图形用户界面)程序是指使用图形界面与用户进行交互的软件应用程序。图形界面通常包括窗口、图标、按钮、文本框、菜单等可视化元素, 使用户可以通过直观的操作(如点击、拖动, 输入内容)与程序进行交互, 而不需要通过如命令行进行操作。\n例子: 好比 VS Code 就是。\n使用 Fyne 开发 GUI(图形用户界面)程序有许多优势, 我们简单地和 Electron 比较一下。\n1. 轻量 link Fyne：Fyne 是一个轻量级的 GUI 框架, 应用程序的体积相对较小, 占用的系统资源也较少。 Electron：Electron 打包了整个 Chromium 和 Node.js, 导致应用程序的体积较大, 并且在运行时占用不少内存。 2. 性能 link Fyne：Fyne 应用是用 Go 语言编写的, Go 语言本身以其高效和快速的性能而闻名。Fyne 应用在启动和运行时的性能通常优于 Electron 应用。 Electron：由于 Electron 依赖于 Chromium 和 Node.js, 其性能受限于这些底层技术的性能。Electron 应用启动较慢, 运行时占用较多的内存和 CPU 资源。 3. 资源消耗 link Fyne：Fyne 应用程序消耗的系统资源较少, 特别是在内存和 CPU 使用方面。这使得 Fyne 应用在低配置的系统上也能顺畅运行。 Electron：Electron 应用通常消耗更多的内存和 CPU 资源, 特别是在打开多个窗口或运行复杂的应用时, 这在低配置系统上可能会导致性能问题。 4. 开发语言 link Fyne：Fyne 使用 Go 语言开发。Go 语言以其简洁、高效和强大的并发支持而著称, 非常适合开发高性能的服务器和桌面应用。 Electron：Electron对于 Web 开发者而言则非常熟悉。 5. 其它优势 link Fyne 提供了一套统一的、现代的用户界面, 能够在各个平台上看起来一致。其设计风格和用户体验都非常优雅。而得益于 Go 语言的编译特性，Fyne 应用在编译成二进制文件后，更难被逆向工程破解，从而在一定程度上增强了应用的安全性。 6. Fyne 也有一些问题 link Fyne 是一个相对较新的框架,虽然社区也在飞速发展, 但是肯定不能和 Electron 比, Electron 早已有了一个成熟的生态系统。 适用场景 link Fyne：适合开发轻量级、高性能、跨平台的桌面应用，尤其是在对资源消耗和性能要求较高的场景下。\nElectron：适合快速开发跨平台的桌面应用，尤其是已经有 Web 应用或有大量现成 Web 组件的场景。\n对于本教程 link本频道一直对于 Go 很重视, 有很多朋友对于 Go 的 Fyne 学习很有兴趣, 同时, Fyne 也很适合 Go 语言新手上手, 开发出一个不错的 GUI 程序。\n关于热重载(Hot Reload) link定义: Hot Reload 允许开发者在不重新启动整个应用程序的情况下立即看到代码更改的效果。\n通过热重载, 开发者可以大大提高效率。而 Fyne 框架本身不直接内置热重载功能\n快速理解例子:\n如 Vue.js 中，运行 npm run dev, 此命令启动了一个开发服务器, 监视项目中的文件变化, 并在检测到变化时自动重新编译, 而无需重新启动服务器。\n配置基本环境 link略\n"
+                content: "GUI Application 的定义 linkGUI(Graphical User Interface/图形用户界面)程序是指使用图形界面与用户进行交互的软件应用程序。图形界面通常包括窗口、图标、按钮、文本框、菜单等可视化元素, 使用户可以通过直观的操作(如点击、拖动, 输入内容)与程序进行交互, 而不需要通过如命令行进行操作。\n例子: 好比 VS Code 就是。\n使用 Fyne 开发 GUI(图形用户界面)程序有许多优势, 我们简单地和 Electron 比较一下。\n1. 轻量 link Fyne：Fyne 是一个轻量级的 GUI 框架, 应用程序的体积相对较小, 占用的系统资源也较少。 Electron：Electron 打包了整个 Chromium 和 Node.js, 导致应用程序的体积较大, 并且在运行时占用不少内存。 2. 性能 link Fyne：Fyne 应用是用 Go 语言编写的, Go 语言本身以其高效和快速的性能而闻名。Fyne 应用在启动和运行时的性能通常优于 Electron 应用。 Electron：由于 Electron 依赖于 Chromium 和 Node.js, 其性能受限于这些底层技术的性能。Electron 应用启动较慢, 运行时占用较多的内存和 CPU 资源。 3. 资源消耗 link Fyne：Fyne 应用程序消耗的系统资源较少, 特别是在内存和 CPU 使用方面。这使得 Fyne 应用在低配置的系统上也能顺畅运行。 Electron：Electron 应用通常消耗更多的内存和 CPU 资源, 特别是在打开多个窗口或运行复杂的应用时, 这在低配置系统上可能会导致性能问题。 4. 开发语言 link Fyne：Fyne 使用 Go 语言开发。Go 语言以其简洁、高效和强大的并发支持而著称, 非常适合开发高性能的服务器和桌面应用。 Electron：Electron对于 Web 开发者而言则非常熟悉。 5. 其它优势 link Fyne 提供了一套统一的、现代的用户界面, 能够在各个平台上看起来一致。其设计风格和用户体验都非常优雅。而得益于 Go 语言的编译特性，Fyne 应用在编译成二进制文件后，更难被逆向工程破解，从而在一定程度上增强了应用的安全性。 6. Fyne 也有一些问题 link Fyne 是一个相对较新的框架,虽然社区也在飞速发展, 但是肯定不能和 Electron 比, Electron 早已有了一个成熟的生态系统。 适用场景 link Fyne：适合开发轻量级、高性能、跨平台的桌面应用，尤其是在对资源消耗和性能要求较高的场景下。\nElectron：适合快速开发跨平台的桌面应用，尤其是已经有 Web 应用或有大量现成 Web 组件的场景。\n对于本教程 link本频道一直对于 Go 很重视, 有很多朋友对于 Go 的 Fyne 学习很有兴趣, 同时, Fyne 也很适合 Go 语言新手上手, 开发出一个不错的 GUI 程序。\n关于热重载(Hot Reload) link定义: Hot Reload 允许开发者在不重新启动整个应用程序的情况下立即看到代码更改的效果。\n通过热重载, 开发者可以大大提高效率。而 Fyne 框架本身不直接内置热重载功能\n快速理解例子:\n如 Vue.js 中，运行 npm run dev, 此命令启动了一个开发服务器, 监视项目中的文件变化, 并在检测到变化时自动重新编译, 而无需重新启动服务器。\n配置基本环境 link略\n项目代码: https://github.com/haveflychi/Fyne-study\n"
             }
         );
     index.add(
@@ -1141,7 +1163,7 @@ a.Run()
                 href: "\/docs\/dev\/golang\/fyne\/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3\/",
                 title: "3.处理多窗口问题",
                 description: "Fyne支持单个事件循环中管理多个窗口",
-                content: " package main import ( \"fyne.io/fyne/v2/app\" \"fyne.io/fyne/v2/container\" \"fyne.io/fyne/v2/widget\" ) func main() { a := app.New() w1 := a.NewWindow(\"Window 1\") w1.SetContent(container.NewVBox( widget.NewLabel(\"Test01\"), )) w2 := a.NewWindow(\"Window 2\") w2.SetContent(container.NewVBox( widget.NewLabel(\"Test02\"), )) w1.Show() w2.Show() a.Run() } "
+                content: "代码案例 link package main import ( \"fyne.io/fyne/v2/app\" \"fyne.io/fyne/v2/container\" \"fyne.io/fyne/v2/widget\" ) func main() { a := app.New() w1 := a.NewWindow(\"Window 1\") w1.SetContent(container.NewVBox( widget.NewLabel(\"Test01\"), )) w2 := a.NewWindow(\"Window 2\") w2.SetContent(container.NewVBox( widget.NewLabel(\"Test02\"), )) w1.Show() w2.Show() a.Run() } "
             }
         );
     index.add(
@@ -1150,7 +1172,7 @@ a.Run()
                 href: "\/docs\/dev\/golang\/fyne\/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3\/",
                 title: "4.Go基础速通",
                 description: "有Go基础的同学可以跳过",
-                content: "代码案例 01\ntype Person struct{ Name string Age int Email string } func main() { p := Person{ Name: \"Inkka\", Age: 17, Email: \"inkkaplumbilibili@example.com\", } // 访问结构体字段 fmt.Println(\"Name:\", p.Name) fmt.Println(\"Age:\", p.Age) fmt.Println(\"Email:\", p.Email) // 修改结构体字段 p.Age = 18 fmt.Println(\"Updated Age:\", p.Age) } 代码案例 02\npackage main import \"fmt\" func main() { // 初始化一个整数变量 i i := 114514 // 将 i 的值赋给 j j := i // 修改 j 的值 j = 1919810 // 打印 i 和 j 的值 fmt.Println(\"i:\", i) // 输出: i: 114514 fmt.Println(\"j:\", j) // 输出: j: 1919810 } Go 没有引用类型\nhttps://github.com/golang/go/commit/b34f0551387fcf043d65cd7d96a0214956578f94\n代码案例 03\npackage main import \"fmt\" func main(){ a := 12 b := \u0026a *b = 13 fmt.Println(a, *b) } 代码案例 04\ntype MyStruct struct { Name string age int } func NewMyStruct(name string, age int) *MyStruct { return \u0026MyStruct{ Name: name, age: age, } } 公式\nfunc (接收者变量 接收者类型) 方法名(参数列表) 返回类型 { 函数体 } 代码案例 05\npackage main import \"fmt\" type Person struct { name string age int } func main() { p := NewPerson(\"Gopher\", 17) p.Activity() } func NewPerson(name string, age int) *Person { return \u0026Person{ name: name, age: age, } } func (p Person) Activity() { fmt.Println(p.name, p.age) } 代码案例 06\npackage main import \"fmt\" type Person struct { name string } func main() { person1 := Person{name: \"Gopher\"} person1.SetName() person1.Activity() } func (p *Person) SetName() { p.name = \"Inkka\" } func (p Person) Activity() { fmt.Println(p.name + \"在写代码\") } TypeScript 参考例:\nsetName(newName: string) { this.name = newName; // 实例属性赋值 } 参考图(图源 Yandex)\n{.text-center}\n代码案例 07\npackage main import \"fmt\" // 定义一个函数，接受一个 int 类型指针参数并修改它 func incrementByReference(val *int) { fmt.Println(1, val) *val++ fmt.Println(\"Inside incrementByReference:\", *val) // 输出: 11 } func main() { num := 10 fmt.Println(2, \u0026num) incrementByReference(\u0026num) fmt.Println(\"Outside incrementByReference:\", num) // 输出: 11 } 代码案例 08\npackage main import \"fmt\" // 定义一个函数，接受一个 int 类型参数并试图修改它 func incrementByValue(val int) { val++ fmt.Println(\"Inside incrementByValue:\", val) // 输出: 11 } func main() { num := 10 incrementByValue(num) fmt.Println(\"Outside incrementByValue:\", num) // 输出: 10 } 代码案例 09\ntype Animal interface { Speak() string } type Animal interface { Speak(string) string } //补充: 这也可以 type Animal interface { Speak(s string) string } 代码案例 10\npackage main import \"fmt\" // 定义 Animal 接口 type Animal interface { Speak() string } // 定义 Dog 结构体 type Dog struct { name string } // 定义 Cat 结构体 type Cat struct { name string } // Dog 实现 Animal 接口的 Speak 方法 func (d Dog) Speak() string { return \"Woof!\" } // Cat 实现 Animal 接口的 Speak 方法 func (c Cat) Speak() string { return \"Nya!\" } // 一个函数，接受 Animal 类型的参数 func MakeAnimalSpeak(a Animal) { fmt.Println(a.Speak()) } func main() { dog := Dog{name: \"Inu\"} cat := Cat{name: \"Neko\"} // Dog 和 Cat 类型都实现了 Animal 接口 MakeAnimalSpeak(dog) // 输出: Woof! MakeAnimalSpeak(cat) // 输出: Nya! } "
+                content: "代码案例 01 link type Person struct{ Name string Age int Email string } func main() { p := Person{ Name: \"Inkka\", Age: 17, Email: \"inkkaplumbilibili@example.com\", } // 访问结构体字段 fmt.Println(\"Name:\", p.Name) fmt.Println(\"Age:\", p.Age) fmt.Println(\"Email:\", p.Email) // 修改结构体字段 p.Age = 18 fmt.Println(\"Updated Age:\", p.Age) } 代码案例 02 link package main import \"fmt\" func main() { // 初始化一个整数变量 i i := 114514 // 将 i 的值赋给 j j := i // 修改 j 的值 j = 1919810 // 打印 i 和 j 的值 fmt.Println(\"i:\", i) // 输出: i: 114514 fmt.Println(\"j:\", j) // 输出: j: 1919810 } Go 没有引用类型\nhttps://github.com/golang/go/commit/b34f0551387fcf043d65cd7d96a0214956578f94\n代码案例 03 link package main import \"fmt\" func main(){ a := 12 b := \u0026a *b = 13 fmt.Println(a, *b) } 代码案例 04 link type MyStruct struct { Name string age int } func NewMyStruct(name string, age int) *MyStruct { return \u0026MyStruct{ Name: name, age: age, } } 公式\nfunc (接收者变量 接收者类型) 方法名(参数列表) 返回类型 { 函数体 } 代码案例 05 link package main import \"fmt\" type Person struct { name string age int } func main() { p := NewPerson(\"Gopher\", 17) p.Activity() } func NewPerson(name string, age int) *Person { return \u0026Person{ name: name, age: age, } } func (p Person) Activity() { fmt.Println(p.name, p.age) } 代码案例 06 link package main import \"fmt\" type Person struct { name string } func main() { person1 := Person{name: \"Gopher\"} person1.SetName() person1.Activity() } func (p *Person) SetName() { p.name = \"Inkka\" } func (p Person) Activity() { fmt.Println(p.name + \"在写代码\") } TypeScript 参考例:\nsetName(newName: string) { this.name = newName; // 实例属性赋值 } 参考图(图源 Yandex)\n代码案例 07 link package main import \"fmt\" // 定义一个函数，接受一个 int 类型指针参数并修改它 func incrementByReference(val *int) { fmt.Println(1, val) *val++ fmt.Println(\"Inside incrementByReference:\", *val) // 输出: 11 } func main() { num := 10 fmt.Println(2, \u0026num) incrementByReference(\u0026num) fmt.Println(\"Outside incrementByReference:\", num) // 输出: 11 } 代码案例 08 link package main import \"fmt\" // 定义一个函数，接受一个 int 类型参数并试图修改它 func incrementByValue(val int) { val++ fmt.Println(\"Inside incrementByValue:\", val) // 输出: 11 } func main() { num := 10 incrementByValue(num) fmt.Println(\"Outside incrementByValue:\", num) // 输出: 10 } 代码案例 09 link type Animal interface { Speak() string } type Animal interface { Speak(string) string } //补充: 这也可以 type Animal interface { Speak(s string) string } 代码案例 10 link package main import \"fmt\" // 定义 Animal 接口 type Animal interface { Speak() string } // 定义 Dog 结构体 type Dog struct { name string } // 定义 Cat 结构体 type Cat struct { name string } // Dog 实现 Animal 接口的 Speak 方法 func (d Dog) Speak() string { return \"Woof!\" } // Cat 实现 Animal 接口的 Speak 方法 func (c Cat) Speak() string { return \"Nya!\" } // 一个函数，接受 Animal 类型的参数 func MakeAnimalSpeak(a Animal) { fmt.Println(a.Speak()) } func main() { dog := Dog{name: \"Inu\"} cat := Cat{name: \"Neko\"} // Dog 和 Cat 类型都实现了 Animal 接口 MakeAnimalSpeak(dog) // 输出: Woof! MakeAnimalSpeak(cat) // 输出: Nya! } "
             }
         );
     index.add(
@@ -1165,6 +1187,15 @@ a.Run()
     index.add(
             {
                 id:  13 ,
+                href: "\/docs\/dev\/golang\/fyne\/project\/",
+                title: "项目案例",
+                description: "使用Fyne实现几个项目",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  14 ,
                 href: "\/docs\/demo\/features\/syntax-highlighting\/",
                 title: "Syntax Highlighting",
                 description: "How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma).",
@@ -1173,7 +1204,7 @@ a.Run()
         );
     index.add(
             {
-                id:  14 ,
+                id:  15 ,
                 href: "\/docs\/demo\/features\/katex\/",
                 title: "KaTex",
                 description: "Fast Tex math rendering for your Lotus Docs site",
@@ -1182,7 +1213,7 @@ a.Run()
         );
     index.add(
             {
-                id:  15 ,
+                id:  16 ,
                 href: "\/docs\/demo\/features\/mermaid\/",
                 title: "Mermaid",
                 description: "How to use the Mermaid diagramming and chart tool with Lotus Docs",
@@ -1191,7 +1222,7 @@ a.Run()
         );
     index.add(
             {
-                id:  16 ,
+                id:  17 ,
                 href: "\/docs\/demo\/shortcodes\/",
                 title: "Shortcodes",
                 description: "Lotus Docs Custom Shortcodes.",
@@ -1200,7 +1231,7 @@ a.Run()
         );
     index.add(
             {
-                id:  17 ,
+                id:  18 ,
                 href: "\/docs\/demo\/shortcodes\/alerts\/",
                 title: "Alerts",
                 description: "How to use Alert Shortcodes to render custom page alerts in markdown.",
@@ -1209,7 +1240,7 @@ a.Run()
         );
     index.add(
             {
-                id:  18 ,
+                id:  19 ,
                 href: "\/docs\/demo\/shortcodes\/tables\/",
                 title: "Tables",
                 description: "How to use the Lotus Docs table shortcode to render great looking markdown tables",
@@ -1218,7 +1249,7 @@ a.Run()
         );
     index.add(
             {
-                id:  19 ,
+                id:  20 ,
                 href: "\/docs\/demo\/shortcodes\/tabs\/",
                 title: "Tabs",
                 description: "How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs",
@@ -1227,7 +1258,7 @@ a.Run()
         );
     index.add(
             {
-                id:  20 ,
+                id:  21 ,
                 href: "\/docs\/demo\/shortcodes\/prism\/",
                 title: "Prism",
                 description: "How to use the Prism Shortcode for syntax highlighting code blocks.",
@@ -1236,7 +1267,7 @@ a.Run()
         );
     index.add(
             {
-                id:  21 ,
+                id:  22 ,
                 href: "\/docs\/demo\/shortcodes\/markdownify\/",
                 title: "Markdownify",
                 description: "A simple shortcode to render content as Markdown.",
@@ -1245,7 +1276,7 @@ a.Run()
         );
     index.add(
             {
-                id:  22 ,
+                id:  23 ,
                 href: "\/docs\/demo\/shortcodes\/katex\/",
                 title: "KaTex",
                 description: "A Shortcode to render KaTex syntax in your Lotus Docs site",
@@ -1254,7 +1285,7 @@ a.Run()
         );
     index.add(
             {
-                id:  23 ,
+                id:  24 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",
