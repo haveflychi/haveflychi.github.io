@@ -9,24 +9,10 @@
     <lastBuildDate>Fri, 26 Jul 2024 03:53:16 +0800</lastBuildDate>
     <atom:link href="/tags/beginners/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Quickstart</title>
-      <link>/docs/demo/quickstart/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
-      <guid>/docs/demo/quickstart/</guid>
-      <description>Requirements link git Go ≥ v1.19 Hugo ≥ v0.100.0 (Extended Version) Install Hugo linkInstall the Hugo CLI, using the specific instructions for your operating system below:&#xA;Linux Homebrew (macOS) Windows (Chocolatey) Windows (Scoop) Your Linux distro’s package manager may include Hugo. If this is the case, install it directly using your distro’s package manager – for instance, in Ubuntu, run the following command. This will install the extended edition of Hugo:</description>
-    </item>
-    <item>
       <title>第一篇WIKI</title>
       <link>/docs/dba/dome/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
       <guid>/docs/dba/dome/</guid>
-      <description>Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
-    </item>
-    <item>
-      <title>第一篇WIKI</title>
-      <link>/docs/dev/dome/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
-      <guid>/docs/dev/dome/</guid>
       <description>Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
     </item>
     <item>
@@ -37,11 +23,32 @@
       <description>Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
     </item>
     <item>
-      <title>Example Doc</title>
-      <link>/docs/demo/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</link>
+      <title>1.为什么要学习Fyne？</title>
+      <link>/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
-      <guid>/docs/demo/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</guid>
-      <description></description>
+      <guid>/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/</guid>
+      <description>GUI Application 的定义 linkGUI(Graphical User Interface/图形用户界面)程序是指使用图形界面与用户进行交互的软件应用程序。图形界面通常包括窗口、图标、按钮、文本框、菜单等可视化元素, 使用户可以通过直观的操作(如点击、拖动, 输入内容)与程序进行交互, 而不需要通过如命令行进行操作。&#xA;例子: 好比 VS Code 就是。&#xA;使用 Fyne 开发 GUI(图形用户界面)程序有许多优势, 我们简单地和 Electron 比较一下。&#xA;1. 轻量 link Fyne：Fyne 是一个轻量级的 GUI 框架, 应用程序的体积相对较小, 占用的系统资源也较少。 Electron：Electron 打包了整个 Chromium 和 Node.js, 导致应用程序的体积较大, 并且在运行时占用不少内存。 2. 性能 link Fyne：Fyne 应用是用 Go 语言编写的, Go 语言本身以其高效和快速的性能而闻名。Fyne 应用在启动和运行时的性能通常优于 Electron 应用。 Electron：由于 Electron 依赖于 Chromium 和 Node.js, 其性能受限于这些底层技术的性能。Electron 应用启动较慢, 运行时占用较多的内存和 CPU 资源。 3. 资源消耗 link Fyne：Fyne 应用程序消耗的系统资源较少, 特别是在内存和 CPU 使用方面。这使得 Fyne 应用在低配置的系统上也能顺畅运行。 Electron：Electron 应用通常消耗更多的内存和 CPU 资源, 特别是在打开多个窗口或运行复杂的应用时, 这在低配置系统上可能会导致性能问题。 4.</description>
+    </item>
+    <item>
+      <title>2.第一个小项目</title>
+      <link>/docs/dev/golang/fyne/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>/docs/dev/golang/fyne/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</guid>
+      <description>基本命令&#xA;go mod init fyneTest01 fyneTest01可以随便写。&#xA;go get fyne.io/fyne/v2 GOPATH 介绍说明&#xA;$GOPATH 是一个环境变量，它指定了你的 Go 工作空间的位置。工作空间中往往包含编译后的包文件和可执行文件。&#xA;如何找到它?&#xA;go env GOPATH 即可。&#xA;成品代码&#xA;package main import ( &amp;#34;fmt&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { a:= app.New() w:= a.NewWindow(&amp;#34;Gofer gogogo&amp;#34;) w.SetContent(widget.NewLabel(&amp;#34;Gofer gogogo&amp;#34;)) w.ShowAndRun() fmt.Println(&amp;#34;close!&amp;#34;) } Go 要点: go mod tidy linkgo mod tidy 命令会清理 go.mod 文件，移除不再需要的依赖，并确保所有实际使用的依赖都在文件中声明。同时，它还会更新 go.sum 文件，确保其中的记录是最新的和完整的。&#xA;go mod tidy 运行程序&#xA;go run . 即可&#xA;Go 要点: go run . link参考文档 https://shellytw.medium.com/golang-learning-journey-from-an-ex-javascript-developer-1-go-run-and-packages-d107fdff147</description>
+    </item>
+    <item>
+      <title>3.处理多窗口问题</title>
+      <link>/docs/dev/golang/fyne/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>/docs/dev/golang/fyne/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3/</guid>
+      <description> package main import ( &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { a := app.New() w1 := a.NewWindow(&amp;#34;Window 1&amp;#34;) w1.SetContent(container.NewVBox( widget.NewLabel(&amp;#34;Test01&amp;#34;), )) w2 := a.NewWindow(&amp;#34;Window 2&amp;#34;) w2.SetContent(container.NewVBox( widget.NewLabel(&amp;#34;Test02&amp;#34;), )) w1.Show() w2.Show() a.Run() } </description>
+    </item>
+    <item>
+      <title>4.Go基础速通</title>
+      <link>/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/</guid>
+      <description>代码案例 01&#xA;type Person struct{ Name string Age int Email string } func main() { p := Person{ Name: &amp;#34;Inkka&amp;#34;, Age: 17, Email: &amp;#34;inkkaplumbilibili@example.com&amp;#34;, } // 访问结构体字段 fmt.Println(&amp;#34;Name:&amp;#34;, p.Name) fmt.Println(&amp;#34;Age:&amp;#34;, p.Age) fmt.Println(&amp;#34;Email:&amp;#34;, p.Email) // 修改结构体字段 p.Age = 18 fmt.Println(&amp;#34;Updated Age:&amp;#34;, p.Age) } 代码案例 02&#xA;package main import &amp;#34;fmt&amp;#34; func main() { // 初始化一个整数变量 i i := 114514 // 将 i 的值赋给 j j := i // 修改 j 的值 j = 1919810 // 打印 i 和 j 的值 fmt.</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+
+
+
+
+
+    
+        
+    
+
+    
+        
+    
+
+    
+
+    
+
+<html lang="zh-cmn"><head>
+    <meta charset="utf-8" />
+    <title>Tabs | Maxbit Docs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs">
+    <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
+    <meta name="author" content="Colin Wilson - Lotus Labs" />
+    <meta name="email" content="support@aigis.uk" />
+    <meta name="website" content="https://lotusdocs.dev" />
+    <meta name="Version" content="v0.1.0" />
+    
+    <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" crossorigin="use-credentials" href="/site.webmanifest">
+<meta property="og:title" content="Tabs" />
+<meta property="og:description" content="How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docs/demo/shortcodes/tabs/" /><meta property="og:image" content="/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7608183182870231382.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-04-25T03:51:15+00:00" />
+<meta property="article:modified_time" content="2024-07-26T13:46:10+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7608183182870231382.png"/>
+<meta name="twitter:title" content="Tabs"/>
+<meta name="twitter:description" content="How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs"/>
+
+    
+    <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
+    
+    
+            
+                
+                <script type="text/javascript" src="/docs/js/flexsearch.bundle.min.249548594cb6843f3060a3cdd3043799676c59ce8db83358a3fc2e4d20598d05dfa6ce4994805d2835cb33b54dc9b9e7.js" integrity="sha384-JJVIWUy2hD8wYKPN0wQ3mWdsWc6NuDNYo/wuTSBZjQXfps5JlIBdKDXLM7VNybnn" crossorigin="anonymous"></script>
+                
+        
+    
+    
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Inter:300,400,600,700|Fira+Code:500,700&display=block" rel="stylesheet">
+
+    <link rel="stylesheet" href="/docs/scss/style.min.c192029c65686157242dc1ec592017ac3aee67550ca58756b09fc7d0ead882b74a61f12253e9114c8aed414ccfcbf673.css" integrity="sha384-wZICnGVoYVckLcHsWSAXrDruZ1UMpYdWsJ/H0OrYgrdKYfEiU&#43;kRTIrtQUzPy/Zz"crossorigin="anonymous">
+    
+    
+    
+    </head><body>
+        <div class="content">
+            <div class="page-wrapper toggled">
+<nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-brand">
+        <a href='/' aria-label="HomePage" alt="HomePage">
+            
+                <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143,39.5c-18,0-18,18-18,18,0,0,0-18-18-18H22c-2.76,0-5,2.24-5,5v143c0,2.76,2.24,5,5,5h76c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h76c2.76,0,5-2.24,5-5V44.5c0-2.76-2.24-5-5-5h-85Zm63,123.5c0,1.38-1.12,2.5-2.5,2.5h-60.5c-18,0-18,18-18,18,0,0,0-18-18-18h-60.5c-1.38,0-2.5-1.12-2.5-2.5v-94c0-1.38,1.12-2.5,2.5-2.5h51.5c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h51.5c1.38,0,2.5,1.12,2.5,2.5v94Z" style="fill:#06f;"/></svg>
+            
+        </a>
+    </div>
+    <div class="sidebar-content" style="height: calc(100% - 131px);">
+        <ul class="sidebar-menu">
+            
+                
+                
+                    
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
+                                <i class="material-icons me-2">Code</i>
+                                DEV
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class="sidebar-dropdown nested  ">
+                                                <button class="btn">
+                                                    
+                                                    Golang
+                                                </button>
+                                                <div class="sidebar-submenu ">
+                                                    <ul>
+                                                        
+                                                            
+                                                            
+                                                                <li class="sidebar-dropdown nested  ">
+                                                                    <button class="btn">
+                                                                        
+                                                                        Fyne
+                                                                    </button>
+                                                                    <div class="sidebar-submenu ">
+                                                                        <ul>
+                                                                            
+                                                                                
+                                                                                
+                                                                                    <li class=" "><a class="sidebar-nested-link" href="/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/">1.为什么要学习Fyne？</a></li>
+                                                                                
+                                                                            
+                                                                                
+                                                                                
+                                                                                    <li class=" "><a class="sidebar-nested-link" href="/docs/dev/golang/fyne/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE/">2.第一个小项目</a></li>
+                                                                                
+                                                                            
+                                                                                
+                                                                                
+                                                                                    <li class=" "><a class="sidebar-nested-link" href="/docs/dev/golang/fyne/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3/">3.处理多窗口问题</a></li>
+                                                                                
+                                                                            
+                                                                                
+                                                                                
+                                                                                    <li class=" "><a class="sidebar-nested-link" href="/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/">4.Go基础速通</a></li>
+                                                                                
+                                                                            
+                                                                        </ul>
+                                                                    </div>
+                                                                </li>
+                                                            
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+                    
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
+                                <i class="material-icons me-2">cloud_done</i>
+                                OPS
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="/docs/ops/dome/">第一篇WIKI</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+                    
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
+                                <i class="material-icons me-2">database</i>
+                                DBA
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="/docs/dba/dome/">第一篇WIKI</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+                    
+                    
+                        <li class="sidebar-dropdown  current active">
+                            <button class="btn">
+                                <i class="material-icons me-2">edit</i>
+                                DEMO
+                            </button>
+                            <div class="sidebar-submenu d-block">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class="sidebar-dropdown nested  ">
+                                                <button class="btn">
+                                                    
+                                                    Features
+                                                </button>
+                                                <div class="sidebar-submenu ">
+                                                    <ul>
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="/docs/demo/features/syntax-highlighting/">Syntax Highlighting</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="/docs/demo/features/katex/">KaTex</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="/docs/demo/features/mermaid/">Mermaid</a></li>
+                                                            
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class="sidebar-dropdown nested  current active">
+                                                <button class="btn">
+                                                    
+                                                    Shortcodes
+                                                </button>
+                                                <div class="sidebar-submenu d-block">
+                                                    <ul>
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="/docs/demo/shortcodes/alerts/">Alerts</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="/docs/demo/shortcodes/tables/">Tables</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class="current "><a class="sidebar-nested-link" href="/docs/demo/shortcodes/tabs/">Tabs</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="/docs/demo/shortcodes/prism/">Prism</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="/docs/demo/shortcodes/markdownify/">Markdownify</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="/docs/demo/shortcodes/katex/">KaTex</a></li>
+                                                            
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+            
+        </ul>
+        
+    </div>
+    
+        <ul class="sidebar-footer list-unstyled mb-0">
+            
+        </ul>
+    
+</nav>
+
+                    <main class="page-content bg-transparent">
+                        
+<div id="top-header" class="top-header d-print-none">
+    <div class="header-bar d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+            <a href='/' class="logo-icon me-3" aria-label="HomePage" alt="HomePage">
+                <div class="small">
+                    
+                            <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143,39.5c-18,0-18,18-18,18,0,0,0-18-18-18H22c-2.76,0-5,2.24-5,5v143c0,2.76,2.24,5,5,5h76c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h76c2.76,0,5-2.24,5-5V44.5c0-2.76-2.24-5-5-5h-85Zm63,123.5c0,1.38-1.12,2.5-2.5,2.5h-60.5c-18,0-18,18-18,18,0,0,0-18-18-18h-60.5c-1.38,0-2.5-1.12-2.5-2.5v-94c0-1.38,1.12-2.5,2.5-2.5h51.5c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h51.5c1.38,0,2.5,1.12,2.5,2.5v94Z" style="fill:#06f;"/></svg>
+                    
+                </div>
+                <div class="big">
+                    
+                            <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"><path d="m143,39.5c-18,0-18,18-18,18,0,0,0-18-18-18H22c-2.76,0-5,2.24-5,5v143c0,2.76,2.24,5,5,5h76c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h76c2.76,0,5-2.24,5-5V44.5c0-2.76-2.24-5-5-5h-85Zm63,123.5c0,1.38-1.12,2.5-2.5,2.5h-60.5c-18,0-18,18-18,18,0,0,0-18-18-18h-60.5c-1.38,0-2.5-1.12-2.5-2.5v-94c0-1.38,1.12-2.5,2.5-2.5h51.5c7.2,0,8.64,11.52,8.93,16.13.07,1.05.95,1.87,2,1.87h32.14c1.06,0,1.94-.82,2-1.87.29-4.61,1.73-16.13,8.93-16.13h51.5c1.38,0,2.5,1.12,2.5,2.5v94Z" style="fill:#06f;"/></svg>
+                    
+                </div>
+            </a>
+            <button id="close-sidebar" class="btn btn-icon btn-soft">
+                <span class="material-icons size-20 menu-icon align-middle">menu</span>
+            </button>
+            
+            
+                    
+                    <button id="flexsearch-button" class="ms-3 btn btn-soft" data-bs-toggle="collapse" data-bs-target="#FlexSearchCollapse" aria-expanded="false" aria-controls="FlexSearchCollapse">
+                        <span class="material-icons size-20 menu-icon align-middle">search</span>
+                        <span class="flexsearch-button-placeholder ms-1 me-2 d-none d-sm-block"></span>
+                        <div class="d-none d-sm-block">
+                            <span class="flexsearch-button-keys">
+                                <kbd class="flexsearch-button-cmd-key">
+                                    <svg width="44" height="15"><path d="M2.118,11.5A1.519,1.519,0,0,1,1,11.042,1.583,1.583,0,0,1,1,8.815a1.519,1.519,0,0,1,1.113-.458h.715V6.643H2.118A1.519,1.519,0,0,1,1,6.185,1.519,1.519,0,0,1,.547,5.071,1.519,1.519,0,0,1,1,3.958,1.519,1.519,0,0,1,2.118,3.5a1.519,1.519,0,0,1,1.114.458A1.519,1.519,0,0,1,3.69,5.071v.715H5.4V5.071A1.564,1.564,0,0,1,6.976,3.5,1.564,1.564,0,0,1,8.547,5.071,1.564,1.564,0,0,1,6.976,6.643H6.261V8.357h.715a1.575,1.575,0,0,1,1.113,2.685,1.583,1.583,0,0,1-2.227,0A1.519,1.519,0,0,1,5.4,9.929V9.214H3.69v.715a1.519,1.519,0,0,1-.458,1.113A1.519,1.519,0,0,1,2.118,11.5Zm0-.857a.714.714,0,0,0,.715-.714V9.214H2.118a.715.715,0,1,0,0,1.429Zm4.858,0a.715.715,0,1,0,0-1.429H6.261v.715a.714.714,0,0,0,.715.714ZM3.69,8.357H5.4V6.643H3.69ZM2.118,5.786h.715V5.071a.714.714,0,0,0-.715-.714.715.715,0,0,0-.5,1.22A.686.686,0,0,0,2.118,5.786Zm4.143,0h.715a.715.715,0,0,0,.5-1.22.715.715,0,0,0-1.22.5Z" fill="currentColor"></path><path d="M12.4,11.475H11.344l3.879-7.95h1.056Z" fill="currentColor"></path><path d="M25.073,5.384l-.864.576a2.121,2.121,0,0,0-1.786-.923,2.207,2.207,0,0,0-2.266,2.326,2.206,2.206,0,0,0,2.266,2.325,2.1,2.1,0,0,0,1.782-.918l.84.617a3.108,3.108,0,0,1-2.622,1.293,3.217,3.217,0,0,1-3.349-3.317,3.217,3.217,0,0,1,3.349-3.317A3.046,3.046,0,0,1,25.073,5.384Z" fill="currentColor"></path><path d="M30.993,5.142h-2.07v5.419H27.891V5.142h-2.07V4.164h5.172Z" fill="currentColor"></path><path d="M34.67,4.164c1.471,0,2.266.658,2.266,1.851,0,1.087-.832,1.809-2.134,1.855l2.107,2.691h-1.28L33.591,7.87H33.07v2.691H32.038v-6.4Zm-1.6.969v1.8h1.572c.832,0,1.22-.3,1.22-.918s-.411-.882-1.22-.882Z" fill="currentColor"></path><path d="M42.883,10.561H38.31v-6.4h1.033V9.583h3.54Z" fill="currentColor"></path></svg>
+                                </kbd>
+                                <kbd class="flexsearch-button-key">
+                                    <svg width="15" height="15"><path d="M5.926,12.279H4.41L9.073,2.721H10.59Z" fill="currentColor"/></svg>
+                                </kbd>
+                            </span>
+                        </div>
+                    </button>
+                
+            </div>
+
+        <div class="d-flex align-items-center">
+            <ul class="list-unstyled mb-0">
+                
+                
+                    
+                    <li class="list-inline-item mb-0">
+                        <a href=" https://github.com/bingdang " alt="github" rel="noopener noreferrer" target="_blank">
+                            <div class="btn btn-icon btn-default border-0">
+                                
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                
+                            </div>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item mb-0">
+                        <a href=" https://twitter.com/# " alt="twitter" rel="noopener noreferrer" target="_blank">
+                            <div class="btn btn-icon btn-default border-0">
+                                
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Twitter / X</title><path d="M.088.768l9.266,12.39L.029,23.231h2.1l8.163-8.819,6.6,8.819h7.142L14.242,10.145,22.921.768h-2.1L13.3,8.891,7.229.768ZM3.174,2.314H6.455L20.942,21.685h-3.28Z" fill="currentColor"/></svg>
+                                
+                            </div>
+                        </a>
+                    </li>
+                    
+                
+            </ul>
+            <button id="mode" class="btn btn-icon btn-default ms-2" type="button" aria-label="Toggle user interface mode">
+                <span class="toggle-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 48 48" fill="currentColor">
+                        <title>Enable dark mode</title>
+                        <path d="M24 42q-7.5 0-12.75-5.25T6 24q0-7.5 5.25-12.75T24 6q.4 0 .85.025.45.025 1.15.075-1.8 1.6-2.8 3.95-1 2.35-1 4.95 0 4.5 3.15 7.65Q28.5 25.8 33 25.8q2.6 0 4.95-.925T41.9 22.3q.05.6.075.975Q42 23.65 42 24q0 7.5-5.25 12.75T24 42Zm0-3q5.45 0 9.5-3.375t5.05-7.925q-1.25.55-2.675.825Q34.45 28.8 33 28.8q-5.75 0-9.775-4.025T19.2 15q0-1.2.25-2.575.25-1.375.9-3.125-4.9 1.35-8.125 5.475Q9 18.9 9 24q0 6.25 4.375 10.625T24 39Zm-.2-14.85Z"/>
+                    </svg>
+                </span>
+                <span class="toggle-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 48 48" fill="currentColor">
+                        <title>Enable light mode</title>
+                        <path d="M24 31q2.9 0 4.95-2.05Q31 26.9 31 24q0-2.9-2.05-4.95Q26.9 17 24 17q-2.9 0-4.95 2.05Q17 21.1 17 24q0 2.9 2.05 4.95Q21.1 31 24 31Zm0 3q-4.15 0-7.075-2.925T14 24q0-4.15 2.925-7.075T24 14q4.15 0 7.075 2.925T34 24q0 4.15-2.925 7.075T24 34ZM3.5 25.5q-.65 0-1.075-.425Q2 24.65 2 24q0-.65.425-1.075Q2.85 22.5 3.5 22.5h5q.65 0 1.075.425Q10 23.35 10 24q0 .65-.425 1.075-.425.425-1.075.425Zm36 0q-.65 0-1.075-.425Q38 24.65 38 24q0-.65.425-1.075.425-.425 1.075-.425h5q.65 0 1.075.425Q46 23.35 46 24q0 .65-.425 1.075-.425.425-1.075.425ZM24 10q-.65 0-1.075-.425Q22.5 9.15 22.5 8.5v-5q0-.65.425-1.075Q23.35 2 24 2q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 10 24 10Zm0 36q-.65 0-1.075-.425-.425-.425-.425-1.075v-5q0-.65.425-1.075Q23.35 38 24 38q.65 0 1.075.425.425.425.425 1.075v5q0 .65-.425 1.075Q24.65 46 24 46ZM12 14.1l-2.85-2.8q-.45-.45-.425-1.075.025-.625.425-1.075.45-.45 1.075-.45t1.075.45L14.1 12q.4.45.4 1.05 0 .6-.4 1-.4.45-1.025.45-.625 0-1.075-.4Zm24.7 24.75L33.9 36q-.4-.45-.4-1.075t.45-1.025q.4-.45 1-.45t1.05.45l2.85 2.8q.45.45.425 1.075-.025.625-.425 1.075-.45.45-1.075.45t-1.075-.45ZM33.9 14.1q-.45-.45-.45-1.05 0-.6.45-1.05l2.8-2.85q.45-.45 1.075-.425.625.025 1.075.425.45.45.45 1.075t-.45 1.075L36 14.1q-.4.4-1.025.4-.625 0-1.075-.4ZM9.15 38.85q-.45-.45-.45-1.075t.45-1.075L12 33.9q.45-.45 1.05-.45.6 0 1.05.45.45.45.45 1.05 0 .6-.45 1.05l-2.8 2.85q-.45.45-1.075.425-.625-.025-1.075-.425ZM24 24Z"/>
+                    </svg>
+                </span>
+            </button>
+            
+        </div>
+    </div>
+    
+    
+            <div class="collapse" id="FlexSearchCollapse">
+                <div class="flexsearch-container">
+                    <div class="flexsearch-keymap">
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow down" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 3.5v8M10.5 8.5l-3 3-3-3"></path></g></svg></kbd>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Arrow up" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M7.5 11.5v-8M10.5 6.5l-3-3-3 3"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to navigate</span>
+                        </li>
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Enter key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M12 3.53088v3c0 1-1 2-2 2H4M7 11.53088l-3-3 3-3"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to select</span>
+                        </li>
+                        <li>
+                            <kbd class="flexsearch-button-cmd-key"><svg width="15" height="15" aria-label="Escape key" role="img"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956"></path></g></svg></kbd>
+                            <span class="flexsearch-key-label">to close</span>
+                        </li>
+                    </div>
+                    <form class="flexsearch position-relative flex-grow-1 ms-2 me-2">
+                        <div class="d-flex flex-row">
+                            <input id="flexsearch" class="form-control" type="search" placeholder="" aria-label="" autocomplete="off">
+                            <button id="hideFlexsearch" type="button" class="ms-2 btn btn-soft">
+                                cancel
+                            </button>
+                        </div>
+                        <div id="suggestions" class="shadow rounded-1 d-none"></div>
+                    </form>
+                </div>
+            </div>
+        
+    
+    
+</div>
+
+                            <div class="container-fluid">
+                                <div class="layout-spacing">
+                                    
+                                        <div class="d-md-flex justify-content-between align-items-center"><nav aria-label="breadcrumb" class="d-inline-block pb-2 mt-1 mt-sm-0">
+    <ul id="breadcrumbs" class="breadcrumb bg-transparent mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        
+            
+                <li class="breadcrumb-item text-capitalize active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/">
+                        <i class="material-icons size-20 align-text-bottom" itemprop="name">Home</i>
+                    </a>
+                    <meta itemprop="position" content='1' />
+                </li>
+            
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/demo/">
+                        <span itemprop="name">DEMO</span>
+                    </a>
+                    <meta itemprop="position" content='2' />
+                </li>
+            
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/demo/shortcodes/">
+                        <span itemprop="name">Shortcodes</span>
+                    </a>
+                    <meta itemprop="position" content='3' />
+                </li>
+            
+        
+            <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span itemprop="name">Tabs</span>
+                <meta itemprop="position" content='4' />
+            </li>
+        
+    </ul>
+</nav></div>
+                                    
+                                    <div class="row flex-xl-nowrap">
+                                        
+                                        <div class="docs-toc col-xl-3    d-xl-block"><toc>
+    <div class="fw-bold text-uppercase mb-2">On this page</div>
+    <nav id="toc">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#basic-tabs">Basic Tabs</a></li>
+        <li><a href="#right-aligned-tabs">Right Aligned Tabs</a></li>
+        <li><a href="#how-does-it-work">How does it work?</a>
+          <ul>
+            <li><a href="#tabshtml">tabs.html</a></li>
+            <li><a href="#tabhtml">tab.html</a></li>
+          </ul>
+        </li>
+        <li><a href="#credit">Credit</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </toc></div>
+                                        
+                                        
+                                        <div class="docs-toc-mobile    d-print-none d-xl-none">
+                                            <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
+                                                Table of Contents
+                                            </button>
+<nav id="toc-mobile">
+  <ul class="dropdown-menu">
+    <li>
+      <ul>
+        <li><a href="#basic-tabs">Basic Tabs</a></li>
+        <li><a href="#right-aligned-tabs">Right Aligned Tabs</a></li>
+        <li><a href="#how-does-it-work">How does it work?</a>
+          <ul>
+            <li><a href="#tabshtml">tabs.html</a></li>
+            <li><a href="#tabhtml">tab.html</a></li>
+          </ul>
+        </li>
+        <li><a href="#credit">Credit</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                                        <div class="docs-content col-12 col-xl-9 mt-0">
+                                            <div class="mb-0 d-flex">
+                                                
+                                                <i class="material-icons title-icon me-2">tab</i>
+                                                
+                                                <h1 class="content-title mb-0">
+                                                    Tabs
+                                                    
+                                                </h1>
+                                            </div>
+                                            
+                                                <p class="lead mb-3">How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs</p>
+                                            
+                                            <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
+                                                
+    
+    <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
+        <p>The <code>tabs</code> shortcode leverages <a href="https://getbootstrap.com/docs/5.3/components/navs-tabs/#tabs" rel="external" target="_blank">Bootstrap&rsquo;s Tabs styling<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> to easily add Tabs to your markdown content. The shortcode is actually a combination of two separate shortcodes (<code>tab</code> and <code>tabs</code>) working together.</p>
+<p>You need a minimum of one <code>tab</code> shortcode nested inside a <code>tabs</code> shortcode for the component to function:</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="9960cce" class="language-go ">
+  <code>{{&lt; tabs tabTotal=&#34;1&#34;&gt;}}
+{{% tab tabName=&#34;Tab 1&#34; %}}
+
+**Tab 1 Content**
+
+{{% /tab %}}
+{{&lt; /tabs &gt;}}</code>
+  </pre>
+  </div>
+<h2 id="basic-tabs">Basic Tabs <a href="#basic-tabs" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>The following example demonstrates how to create a basic multi tab navigation component using the <code>tabs</code> and <code>tab</code> shortcodes.</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="13f4922" class="language-go ">
+  <code>{{&lt; tabs tabTotal=&#34;3&#34;&gt;}}
+{{% tab tabName=&#34;Windows&#34; %}}
+
+**Windows Content**
+
+Example content specific to **Windows** operating systems
+
+{{% /tab %}}
+{{% tab tabName=&#34;MacOS&#34; %}}
+
+**MacOS Content**
+
+Example content specific to **Mac** operating systems
+
+{{% /tab %}}
+{{% tab tabName=&#34;Linux&#34; %}}
+
+**Linux Content**
+
+Example content specific to **Linux** operating systems
+
+{{% /tab %}}
+{{&lt; /tabs &gt;}}</code>
+  </pre>
+  </div>
+<p>Renders:</p>
+
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		<a class="nav-link  active"
+		   id="bdcfeaTab" data-bs-toggle="tab" data-bs-target="#bdcfea"
+		   type="button" role="tab" aria-controls="bdcfea" aria-selected="true">Windows</a>
+
+		
+
+		<a class="nav-link "
+		   id="caefbdTab" data-bs-toggle="tab" data-bs-target="#caefbd"
+		   type="button" role="tab" aria-controls="caefbd" aria-selected="true">MacOS</a>
+
+		
+
+		<a class="nav-link "
+		   id="debcfaTab" data-bs-toggle="tab" data-bs-target="#debcfa"
+		   type="button" role="tab" aria-controls="debcfa" aria-selected="true">Linux</a>
+
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="bdcfea" role="tabpanel" aria-labelledby="nav-1">
+
+	<p><strong>Windows Content</strong></p>
+<p>Example content specific to <strong>Windows</strong> operating systems</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="tab-pane fade" id="caefbd" role="tabpanel" aria-labelledby="nav-1">
+
+	<p><strong>MacOS Content</strong></p>
+<p>Example content specific to <strong>Mac</strong> operating systems</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="tab-pane fade" id="debcfa" role="tabpanel" aria-labelledby="nav-1">
+
+	<p><strong>Linux Content</strong></p>
+<p>Example content specific to <strong>Linux</strong> operating systems</p>
+
+
+</div>
+
+
+</div>
+<h2 id="right-aligned-tabs">Right Aligned Tabs <a href="#right-aligned-tabs" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="d3ed2cc" class="language-go ">
+  <code>{{&lt; tabs tabTotal=&#34;3&#34; tabRightAlign=&#34;2&#34;&gt;}}
+{{% tab tabName=&#34;Tab 1&#34; %}}
+
+**Tab 1 Content**
+
+{{% /tab %}}
+{{% tab tabName=&#34;Tab 2&#34; %}}
+
+**Tab 2 Content**
+
+{{% /tab %}}
+{{% tab tabName=&#34;Tab 3&#34; %}}
+
+**Tab 3 Content**
+
+{{% /tab %}}
+{{&lt; /tabs &gt;}}</code>
+  </pre>
+  </div>
+<p>Renders:</p>
+
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		
+		
+		
+		
+
+		
+
+		<a class="nav-link  active"
+		   id="cdfaebTab" data-bs-toggle="tab" data-bs-target="#cdfaeb"
+		   type="button" role="tab" aria-controls="cdfaeb" aria-selected="true">Tab 1</a>
+
+		
+
+		<a class="nav-link  ms-auto "
+		   id="dcebafTab" data-bs-toggle="tab" data-bs-target="#dcebaf"
+		   type="button" role="tab" aria-controls="dcebaf" aria-selected="true">Tab 2</a>
+
+		
+
+		<a class="nav-link "
+		   id="debcafTab" data-bs-toggle="tab" data-bs-target="#debcaf"
+		   type="button" role="tab" aria-controls="debcaf" aria-selected="true">Tab 3</a>
+
+		
+
+	</div>
+</nav>
+
+<div class="tab-content" id="nav-tab-content">
+
+	
+
+
+
+
+
+
+<div class="tab-pane fade show active" id="cdfaeb" role="tabpanel" aria-labelledby="nav-1">
+
+	<p><strong>Tab 1 Content</strong></p>
+
+
+</div>
+
+
+
+
+
+
+<div class="tab-pane fade" id="dcebaf" role="tabpanel" aria-labelledby="nav-1">
+
+	<p><strong>Tab 2 Content</strong></p>
+
+
+</div>
+
+
+
+
+
+
+<div class="tab-pane fade" id="debcaf" role="tabpanel" aria-labelledby="nav-1">
+
+	<p><strong>Tab 3 Content</strong></p>
+
+
+</div>
+
+
+</div>
+<h2 id="how-does-it-work">How does it work? <a href="#how-does-it-work" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="tabshtml">tabs.html <a href="#tabshtml" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>This is the parent shortcode that wraps around all nested tab shortcodes in the tab group and generates the tab navigation.</p>
+
+
+
+
+
+
+
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tabTotal</code></td>
+<td>This variable is used to generate the tab navigation. Simply set it to the amount of tab shortcodes you have. In the above example, since there are <strong>three</strong> nested tab shortcodes, you would set <code>tabTotal</code> to <code>3</code>.</td>
+</tr>
+<tr>
+<td><code>tabRightAlign</code></td>
+<td>This is an optional variable that if used will right align the tab number you inputted and all tabs after it. In the above example, since <code>tabRightAlign</code> is set to <strong>two</strong>, tabs 2 and 3 will be right aligned.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="tabhtml">tab.html <a href="#tabhtml" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>This is a child shortcode that is nested inside <code>tabs</code> shortcodes. Each tab shortcode equals one tab so add as many as you need. Please note, make sure <code>tabTotal</code> in the <code>tabs</code> shortcode is equal to the amount of tab shortcodes you define.</p>
+
+
+
+
+
+
+
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tabName</code></td>
+<td>This variable defines the title of the tab.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="credit">Credit <a href="#credit" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>Both <code>tab</code> and <code>tabs</code> shortcodes documented above are a modified versions of the open source <a href="https://github.com/rvanhorn/hugo-dynamic-tabs/tree/bootstrap5" rel="external" target="_blank">Hugo Dynamic Tabs<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> shortcodes. Thank you <a href="https://github.com/rvanhorn" rel="external" target="_blank">rvanhorn<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> 👍.</p>
+
+    </div>
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+<div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
+    
+    <div id="last-modified" class="mt-1">
+        <p class="mb-0 fw-semibold">Last updated <span
+            id="relativetime"
+            data-authdate="2024-07-26T13:46:10&#43;0800"
+            title="26 7月 2024, 13:46 &#43;0800">
+            26 7月 2024, 13:46 &#43;0800
+        </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
+        </p>
+    </div>
+    
+</div>
+
+    
+
+    
+                                            </div>
+                                            <div><hr class="doc-hr">
+<div id="doc-nav" class="d-print-none">
+
+	<div class="row flex-xl-nowrap ">
+	<div class="col-sm-6 pt-2 doc-next">
+		<a href="/docs/demo/shortcodes/tables/">
+			<div class="card h-100 my-1">
+				<div class="card-body py-2">
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Tables</p>
+					<p class="card-text ms-2">How to use the Lotus Docs …</p>
+					
+				</div>
+			</div>
+		</a>
+        </div>
+	<div class="col-sm-6 pt-2 doc-prev">
+		<a class="ms-auto" href="/docs/demo/shortcodes/prism/">
+			<div class="card h-100 my-1 text-end">
+				<div class="card-body py-2">
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">Prism <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2">How to use the Prism Shortcode …</p>
+					
+				</div>
+			</div>
+		</a>
+        </div>
+	</div>
+</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<footer class="shadow py-3 d-print-none">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="text-sm-start text-center mx-md-2">
+                    <p class="mb-0">
+                        
+                        © 2024 <a href="https://cakepanit.com"><strong>Maxbit</strong></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</main>
+            </div>
+        </div>
+
+        
+        
+        <button onclick="topFunction()" id="back-to-top" aria-label="Back to Top Button" class="back-to-top fs-5"><svg width="24" height="24"><path d="M12,10.224l-6.3,6.3L4.32,15.152,12,7.472l7.68,7.68L18.3,16.528Z" style="fill:#fff"/></svg></button>
+        
+        
+
+        
+        
+            <script>(()=>{var e=document.getElementById("mode");e!==null&&(window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",e=>{e.matches?(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")):(localStorage.setItem("theme","light"),document.documentElement.removeAttribute("data-dark-mode"))}),e.addEventListener("click",()=>{document.documentElement.toggleAttribute("data-dark-mode"),localStorage.setItem("theme",document.documentElement.hasAttribute("data-dark-mode")?"dark":"light")}),localStorage.getItem("theme")==="dark"?document.documentElement.setAttribute("data-dark-mode",""):document.documentElement.removeAttribute("data-dark-mode"))})()</script>
+        
+
+
+
+
+    
+        
+        
+    
+    
+
+
+
+
+
+
+    
+
+    <script src="/docs/js/bootstrap.eac7ee3f6fa791c684e7a51fc2fd50b6f724271b9e39562e4fe8c3942412df3acbfc4045f043d03399dac70091207507.js" integrity="sha384-6sfuP2&#43;nkcaE56Ufwv1QtvckJxueOVYuT&#43;jDlCQS3zrL/EBF8EPQM5naxwCRIHUH"defer></script>
+
+
+    <script type="text/javascript" src="/docs/js/bundle.min.962d07c14278e10a9983e440d02fc89e2053bcefbbc05a8393b31a2d4f17d3d2eef1e89945a77f2110542c802862d8d5.js" integrity="sha384-li0HwUJ44QqZg&#43;RA0C/IniBTvO&#43;7wFqDk7MaLU8X09Lu8eiZRad/IRBULIAoYtjV" crossorigin="anonymous" defer></script>
+        
+
+        
+        <script type="module">
+    var suggestions = document.getElementById('suggestions');
+    var search = document.getElementById('flexsearch');
+
+    const flexsearchContainer = document.getElementById('FlexSearchCollapse');
+
+    const hideFlexsearchBtn = document.getElementById('hideFlexsearch');
+
+    const configObject = { toggle: false }
+    const flexsearchContainerCollapse = new Collapse(flexsearchContainer, configObject) 
+
+    if (search !== null) {
+        document.addEventListener('keydown', inputFocus);
+        flexsearchContainer.addEventListener('shown.bs.collapse', function () {
+            search.focus();
+        });
+        
+        var topHeader = document.getElementById("top-header");
+        document.addEventListener('click', function(elem) {
+            if (!flexsearchContainer.contains(elem.target) && !topHeader.contains(elem.target))
+                flexsearchContainerCollapse.hide();
+        });
+    }
+
+    hideFlexsearchBtn.addEventListener('click', () =>{
+        flexsearchContainerCollapse.hide()
+    })
+
+    function inputFocus(e) {
+        if (e.ctrlKey && e.key === '/') {
+            e.preventDefault();
+            flexsearchContainerCollapse.toggle();
+        }
+        if (e.key === 'Escape' ) {
+            search.blur();
+            
+            flexsearchContainerCollapse.hide();
+        }
+    };
+
+    document.addEventListener('click', function(event) {
+
+    var isClickInsideElement = suggestions.contains(event.target);
+
+    if (!isClickInsideElement) {
+        suggestions.classList.add('d-none');
+    }
+
+    });
+
+    
+
+
+    document.addEventListener('keydown',suggestionFocus);
+
+    function suggestionFocus(e) {
+    const suggestionsHidden = suggestions.classList.contains('d-none');
+    if (suggestionsHidden) return;
+
+    const focusableSuggestions= [...suggestions.querySelectorAll('a')];
+    if (focusableSuggestions.length === 0) return;
+
+    const index = focusableSuggestions.indexOf(document.activeElement);
+
+    if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const nextIndex = index > 0 ? index - 1 : 0;
+        focusableSuggestions[nextIndex].focus();
+    }
+    else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const nextIndex= index + 1 < focusableSuggestions.length ? index + 1 : index;
+        focusableSuggestions[nextIndex].focus();
+    }
+
+    }
+
+    
+
+
+    (function(){
+
+    var index = new FlexSearch.Document({
+        
+        tokenize: "forward",
+        minlength:  0 ,
+        cache:  100 ,
+        optimize:  true ,
+        document: {
+        id: 'id',
+        store: [
+            "href", "title", "description"
+        ],
+        index: ["title", "description", "content"]
+        }
+    });
+
+
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+
+    
+
+    index.add(
+            {
+                id:  0 ,
+                href: "\/docs\/dev\/",
+                title: "DEV",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  1 ,
+                href: "\/docs\/ops\/",
+                title: "OPS",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  2 ,
+                href: "\/docs\/dba\/",
+                title: "DBA",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  3 ,
+                href: "\/docs\/dba\/dome\/",
+                title: "第一篇WIKI",
+                description: "A quickstart guide to creating new content in Lotus Docs",
+                content: "Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:\nhugo new docs/examplepage.md "
+            }
+        );
+    index.add(
+            {
+                id:  4 ,
+                href: "\/docs\/ops\/dome\/",
+                title: "第一篇WIKI",
+                description: "A quickstart guide to creating new content in Lotus Docs",
+                content: "Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:\nhugo new docs/examplepage.md "
+            }
+        );
+    index.add(
+            {
+                id:  5 ,
+                href: "\/docs\/demo\/",
+                title: "DEMO",
+                description: "模版",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  6 ,
+                href: "\/docs\/dev\/golang\/",
+                title: "Golang",
+                description: "Go语言相关文档",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  7 ,
+                href: "\/docs\/dev\/golang\/fyne\/",
+                title: "Fyne",
+                description: "用Golang-Fyne开发GUI程序",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  8 ,
+                href: "\/docs\/dev\/golang\/fyne\/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne\/",
+                title: "1.为什么要学习Fyne？",
+                description: "Fyne 是一个纯Golang 的跨平台GUI 库..",
+                content: "GUI Application 的定义 linkGUI(Graphical User Interface/图形用户界面)程序是指使用图形界面与用户进行交互的软件应用程序。图形界面通常包括窗口、图标、按钮、文本框、菜单等可视化元素, 使用户可以通过直观的操作(如点击、拖动, 输入内容)与程序进行交互, 而不需要通过如命令行进行操作。\n例子: 好比 VS Code 就是。\n使用 Fyne 开发 GUI(图形用户界面)程序有许多优势, 我们简单地和 Electron 比较一下。\n1. 轻量 link Fyne：Fyne 是一个轻量级的 GUI 框架, 应用程序的体积相对较小, 占用的系统资源也较少。 Electron：Electron 打包了整个 Chromium 和 Node.js, 导致应用程序的体积较大, 并且在运行时占用不少内存。 2. 性能 link Fyne：Fyne 应用是用 Go 语言编写的, Go 语言本身以其高效和快速的性能而闻名。Fyne 应用在启动和运行时的性能通常优于 Electron 应用。 Electron：由于 Electron 依赖于 Chromium 和 Node.js, 其性能受限于这些底层技术的性能。Electron 应用启动较慢, 运行时占用较多的内存和 CPU 资源。 3. 资源消耗 link Fyne：Fyne 应用程序消耗的系统资源较少, 特别是在内存和 CPU 使用方面。这使得 Fyne 应用在低配置的系统上也能顺畅运行。 Electron：Electron 应用通常消耗更多的内存和 CPU 资源, 特别是在打开多个窗口或运行复杂的应用时, 这在低配置系统上可能会导致性能问题。 4. 开发语言 link Fyne：Fyne 使用 Go 语言开发。Go 语言以其简洁、高效和强大的并发支持而著称, 非常适合开发高性能的服务器和桌面应用。 Electron：Electron对于 Web 开发者而言则非常熟悉。 5. 其它优势 link Fyne 提供了一套统一的、现代的用户界面, 能够在各个平台上看起来一致。其设计风格和用户体验都非常优雅。而得益于 Go 语言的编译特性，Fyne 应用在编译成二进制文件后，更难被逆向工程破解，从而在一定程度上增强了应用的安全性。 6. Fyne 也有一些问题 link Fyne 是一个相对较新的框架,虽然社区也在飞速发展, 但是肯定不能和 Electron 比, Electron 早已有了一个成熟的生态系统。 适用场景 link Fyne：适合开发轻量级、高性能、跨平台的桌面应用，尤其是在对资源消耗和性能要求较高的场景下。\nElectron：适合快速开发跨平台的桌面应用，尤其是已经有 Web 应用或有大量现成 Web 组件的场景。\n对于本教程 link本频道一直对于 Go 很重视, 有很多朋友对于 Go 的 Fyne 学习很有兴趣, 同时, Fyne 也很适合 Go 语言新手上手, 开发出一个不错的 GUI 程序。\n关于热重载(Hot Reload) link定义: Hot Reload 允许开发者在不重新启动整个应用程序的情况下立即看到代码更改的效果。\n通过热重载, 开发者可以大大提高效率。而 Fyne 框架本身不直接内置热重载功能\n快速理解例子:\n如 Vue.js 中，运行 npm run dev, 此命令启动了一个开发服务器, 监视项目中的文件变化, 并在检测到变化时自动重新编译, 而无需重新启动服务器。\n配置基本环境 link略\n"
+            }
+        );
+    index.add(
+            {
+                id:  9 ,
+                href: "\/docs\/dev\/golang\/fyne\/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE\/",
+                title: "2.第一个小项目",
+                description: "fyne编写第一个小项目",
+                content: "基本命令\ngo mod init fyneTest01 fyneTest01可以随便写。\ngo get fyne.io/fyne/v2 GOPATH 介绍说明\n$GOPATH 是一个环境变量，它指定了你的 Go 工作空间的位置。工作空间中往往包含编译后的包文件和可执行文件。\n如何找到它?\ngo env GOPATH 即可。\n成品代码\npackage main import ( \"fmt\" \"fyne.io/fyne/v2/app\" \"fyne.io/fyne/v2/widget\" ) func main() { a:= app.New() w:= a.NewWindow(\"Gofer gogogo\") w.SetContent(widget.NewLabel(\"Gofer gogogo\")) w.ShowAndRun() fmt.Println(\"close!\") } Go 要点: go mod tidy linkgo mod tidy 命令会清理 go.mod 文件，移除不再需要的依赖，并确保所有实际使用的依赖都在文件中声明。同时，它还会更新 go.sum 文件，确保其中的记录是最新的和完整的。\ngo mod tidy 运行程序\ngo run . 即可\nGo 要点: go run . link参考文档 https://shellytw.medium.com/golang-learning-journey-from-an-ex-javascript-developer-1-go-run-and-packages-d107fdff147\n这里的解释简单但是到位。 本教程将都使用这个命令。\nFyne 要点: w.ShowAndRun() linkSyntactic Sugar, 亦可以写成\nw.Show() a.Run() a.run将开启事件循环(Eventloop)\n测试代码\nfmt.Println(\"close!\") Fyne, 你不能同时有两个事件循环, 这是因为事件循环负责处理所有的事件(如用户输入)并协调应用程序中的所有组件和窗口。如果你尝试在同一个应用程序中运行多个事件循环,会导致不一致的状态 只能有一个事件循环。\n"
+            }
+        );
+    index.add(
+            {
+                id:  10 ,
+                href: "\/docs\/dev\/golang\/fyne\/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3\/",
+                title: "3.处理多窗口问题",
+                description: "Fyne支持单个事件循环中管理多个窗口",
+                content: " package main import ( \"fyne.io/fyne/v2/app\" \"fyne.io/fyne/v2/container\" \"fyne.io/fyne/v2/widget\" ) func main() { a := app.New() w1 := a.NewWindow(\"Window 1\") w1.SetContent(container.NewVBox( widget.NewLabel(\"Test01\"), )) w2 := a.NewWindow(\"Window 2\") w2.SetContent(container.NewVBox( widget.NewLabel(\"Test02\"), )) w1.Show() w2.Show() a.Run() } "
+            }
+        );
+    index.add(
+            {
+                id:  11 ,
+                href: "\/docs\/dev\/golang\/fyne\/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3\/",
+                title: "4.Go基础速通",
+                description: "有Go基础的同学可以跳过",
+                content: "代码案例 01\ntype Person struct{ Name string Age int Email string } func main() { p := Person{ Name: \"Inkka\", Age: 17, Email: \"inkkaplumbilibili@example.com\", } // 访问结构体字段 fmt.Println(\"Name:\", p.Name) fmt.Println(\"Age:\", p.Age) fmt.Println(\"Email:\", p.Email) // 修改结构体字段 p.Age = 18 fmt.Println(\"Updated Age:\", p.Age) } 代码案例 02\npackage main import \"fmt\" func main() { // 初始化一个整数变量 i i := 114514 // 将 i 的值赋给 j j := i // 修改 j 的值 j = 1919810 // 打印 i 和 j 的值 fmt.Println(\"i:\", i) // 输出: i: 114514 fmt.Println(\"j:\", j) // 输出: j: 1919810 } Go 没有引用类型\nhttps://github.com/golang/go/commit/b34f0551387fcf043d65cd7d96a0214956578f94\n代码案例 03\npackage main import \"fmt\" func main(){ a := 12 b := \u0026a *b = 13 fmt.Println(a, *b) } 代码案例 04\ntype MyStruct struct { Name string age int } func NewMyStruct(name string, age int) *MyStruct { return \u0026MyStruct{ Name: name, age: age, } } 公式\nfunc (接收者变量 接收者类型) 方法名(参数列表) 返回类型 { 函数体 } 代码案例 05\npackage main import \"fmt\" type Person struct { name string age int } func main() { p := NewPerson(\"Gopher\", 17) p.Activity() } func NewPerson(name string, age int) *Person { return \u0026Person{ name: name, age: age, } } func (p Person) Activity() { fmt.Println(p.name, p.age) } 代码案例 06\npackage main import \"fmt\" type Person struct { name string } func main() { person1 := Person{name: \"Gopher\"} person1.SetName() person1.Activity() } func (p *Person) SetName() { p.name = \"Inkka\" } func (p Person) Activity() { fmt.Println(p.name + \"在写代码\") } TypeScript 参考例:\nsetName(newName: string) { this.name = newName; // 实例属性赋值 } 参考图(图源 Yandex)\n{.text-center}\n代码案例 07\npackage main import \"fmt\" // 定义一个函数，接受一个 int 类型指针参数并修改它 func incrementByReference(val *int) { fmt.Println(1, val) *val++ fmt.Println(\"Inside incrementByReference:\", *val) // 输出: 11 } func main() { num := 10 fmt.Println(2, \u0026num) incrementByReference(\u0026num) fmt.Println(\"Outside incrementByReference:\", num) // 输出: 11 } 代码案例 08\npackage main import \"fmt\" // 定义一个函数，接受一个 int 类型参数并试图修改它 func incrementByValue(val int) { val++ fmt.Println(\"Inside incrementByValue:\", val) // 输出: 11 } func main() { num := 10 incrementByValue(num) fmt.Println(\"Outside incrementByValue:\", num) // 输出: 10 } 代码案例 09\ntype Animal interface { Speak() string } type Animal interface { Speak(string) string } //补充: 这也可以 type Animal interface { Speak(s string) string } 代码案例 10\npackage main import \"fmt\" // 定义 Animal 接口 type Animal interface { Speak() string } // 定义 Dog 结构体 type Dog struct { name string } // 定义 Cat 结构体 type Cat struct { name string } // Dog 实现 Animal 接口的 Speak 方法 func (d Dog) Speak() string { return \"Woof!\" } // Cat 实现 Animal 接口的 Speak 方法 func (c Cat) Speak() string { return \"Nya!\" } // 一个函数，接受 Animal 类型的参数 func MakeAnimalSpeak(a Animal) { fmt.Println(a.Speak()) } func main() { dog := Dog{name: \"Inu\"} cat := Cat{name: \"Neko\"} // Dog 和 Cat 类型都实现了 Animal 接口 MakeAnimalSpeak(dog) // 输出: Woof! MakeAnimalSpeak(cat) // 输出: Nya! } "
+            }
+        );
+    index.add(
+            {
+                id:  12 ,
+                href: "\/docs\/demo\/features\/",
+                title: "Features",
+                description: "A guide to the core features of the Lotus Docs theme.",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  13 ,
+                href: "\/docs\/demo\/features\/syntax-highlighting\/",
+                title: "Syntax Highlighting",
+                description: "How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma).",
+                content: "Code Highlighters linkLotus Docs supports syntax highlighting by Prism (enabled by default via param.docs.prism in hugo.toml) or Hugo’s built-in code highlighter Chroma.\nFenced code blocks (code enclosed by triple backticks above and below) that specify a code language (declared right of the opening fence), will automatically highlight the code content as HTML e.g. ```html:\n```html Buy cool new product Checkout ``` Result - Prism Highlighter:\nBuy cool new product Checkout Result - Chroma Highlighter (param.docs.prism = false):\nPrism Features linkThe Prism highlighter features the following:\nCopy Code Button linkAll code blocks feature a button which copies the code to the clipboard when clicked. Hover over any code block and the copy button (content_copy) will appear in the top right hand corner.\nCode Block id linkEvery code block on a page has a unique id attribute, an auto-generated value calculated from the sha1 hash of the block’s contents combined with it’s position on the page.\nFor example, the following snippet can be linked via the unique id 80c9335:\npackage main import \"fmt\" func main() { fmt.Println(\"go\" + \"lang\") fmt.Println(\"1+1 =\", 1+1) fmt.Println(\"7.0/3.0 =\", 7.0/3.0) fmt.Println(true \u0026\u0026 false) fmt.Println(true || false) fmt.Println(!true) } Line Anchors linkSpecific sections of code can be linked and highlighted by combining the code block id with the desired line numbers or ranges.\nThe URL format follows, /#{code block id}.{line no. range}.\nFor example, /#80c9335.3,5,7-13 will link to (and highlight) lines 3, 5 and 7-13 in the code block above:\nThemes linkYou can change the Prism theme via the prismTheme parameter under [params.docs] in your config file.\ninfo Additional PrismJS themes will be adapted and added to Lotus Docs periodically. Keep an eye on new releases to know when. hugo.toml hugo.yaml hugo.json [params.docs] prismTheme = \"lotusdocs\" # (optional) - Set theme for PrismJS. Options include: lotusdocs (default), solarized-light, twilight, lucario params: docs: prismTheme: lotusdocs # (optional) - Set theme for PrismJS. Options include: lotusdocs (default), solarized-light, twilight, lucario { \"params\": { \"docs\": { \"prismTheme\": \"lotusdocs\" } } } Choose from the following theme options:\nlotusdocs (default) solarized-light twilight lucario Supported Languages linkBoth Prism \u0026 Chroma support a vast array of languages. See the links below for a complete list of languages supported by each highlighter:\nPrism (≈ 290 languages) Chroma (≈ 200 languages) Code Fence Translations link info For more extensive code highlighting options with Prism, consider using the "
+            }
+        );
+    index.add(
+            {
+                id:  14 ,
+                href: "\/docs\/demo\/features\/katex\/",
+                title: "KaTex",
+                description: "Fast Tex math rendering for your Lotus Docs site",
+                content: "$$ f\\relax{x} = \\int_{-\\infty}^\\infty \\hat f(\\xi)\\ e^{2 \\pi i \\xi x} \\ d\\xi $$\nHow to use KaTex with Lotus Docs linkKaTex support is controlled by the katex parameter in your front matter (line 10 below). Add and set it to true in your front matter to enable KaTex support for that page. This means KaTex support and resources are active only for pages that require it.\n--- weight: 530 title: \"KaTex\" description: \"Fast Tex math rendering for your Lotus Docs site\" icon: \"function\" date: \"2023-08-26T20:43:23+01:00\" lastmod: \"2023-08-26T20:43:23+01:00\" draft: true toc: true katex: true --- Writing LaTex in Markdown linkEquations can be displayed either in block level or inline.\nBlock display linkType an equation using double dollar signs as the delimiter:\n$$ \\int \\frac{1}{x} dx = \\ln \\left| x \\right| + C $$ renders as:\n$$ \\int \\frac{1}{x} dx = \\ln \\left| x \\right| + C $$\nInline display linkType an equation using single dollar signs as the delimiter:\n$ \\int \\frac{1}{x} dx = \\ln \\left| x \\right| + C $ renders as:\n$ \\int \\frac{1}{x} dx = \\ln \\left| x \\right| + C $\nSyntax Rendering Issues linkAs a consequence of Hugo rendering to HTML before KaTex renders to math1, there are some instances in which the KaTex equation syntax requires heavy escaping or alterations before rendering correctly. This can be time-consuming and frustrating (especially for inexperienced users). To avoid this, a "
+            }
+        );
+    index.add(
+            {
+                id:  15 ,
+                href: "\/docs\/demo\/features\/mermaid\/",
+                title: "Mermaid",
+                description: "How to use the Mermaid diagramming and chart tool with Lotus Docs",
+                content: "What is Mermaid? linkMermaid is a JavaScript-based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. The main purpose of Mermaid is to help documentation catch up with development.\nHow to use Mermaid with Lotus Docs linkMermaid is enabled whenever content containing Mermaid diagram syntax is present in a page’s content. You can insert Mermaid diagrams by using the mermaid language identifier with triple backtick codeblocks:\n```mermaid sequenceDiagram Alice-\u003e\u003eJohn: Hello John, how are you? loop Healthcheck John-\u003e\u003eJohn: Fight against hypochondria end Note right of John: Rational thoughts! John--\u003e\u003eAlice: Great! John-\u003e\u003eBob: How about you? Bob--\u003e\u003eJohn: Jolly good! ``` Renders as:\nsequenceDiagram Alice-\u003e\u003eJohn: Hello John, how are you? loop Healthcheck John-\u003e\u003eJohn: Fight against hypochondria end Note right of John: Rational thoughts! John--\u003e\u003eAlice: Great! John-\u003e\u003eBob: How about you? Bob--\u003e\u003eJohn: Jolly good! Other diagram examples linkFlowchart linkflowchart LR A[Hard] --\u003e|Text| B(Round) B --\u003e C{Decision} C --\u003e|One| D[Result 1] C --\u003e|Two| E[Result 2] Gnatt Chart linkgantt section Section Completed :done, des1, 2014-01-06,2014-01-08 Active :active, des2, 2014-01-07, 3d Parallel 1 : des3, after des1, 1d Parallel 2 : des4, after des1, 1d Parallel 3 : des5, after des3, 1d Parallel 4 : des6, after des4, 1d Class diagram linkclassDiagram Class01 \u003c|-- AveryLongClass : Cool \u003c\u003e Class01 Class09 --\u003e C2 : Where am i? Class09 --* C3 Class09 --|\u003e Class07 Class07 : equals() Class07 : Object[] elementData Class01 : size() Class01 : int chimp Class01 : int gorilla class Class10 { \u003e\u003eservice\u003e\u003e int id size() } State diagram linkstateDiagram-v2 [*] --\u003e Still Still --\u003e [*] Still --\u003e Moving Moving --\u003e Still Moving --\u003e Crash Crash --\u003e [*] Pie Chart linkpie \"Dogs\" : 386 \"Cats\" : 85.9 \"Rats\" : 15 Git Graph link gitGraph commit commit branch develop checkout develop commit commit checkout main merge develop commit commit Bar chart (using gantt chart) linkgantt title Git Issues - days since last update dateFormat X axisFormat %s section Issue19062 71 : 0, 71 section Issue19401 36 : 0, 36 section Issue193 34 : 0, 34 section Issue7441 9 : 0, 9 section Issue1300 5 : 0, 5 User Journey diagram link journey title My working day section Go to work Make tea: 5: Me Go upstairs: 3: Me Do work: 1: Me, Cat section Go home Go downstairs: 5: Me Sit down: 3: Me C4 diagram linkC4Context title System Context diagram for Internet Banking System Person(customerA, \"Banking Customer A\", \"A customer of the bank, with personal bank accounts.\") Person(customerB, \"Banking Customer B\") Person_Ext(customerC, \"Banking Customer C\") System(SystemAA, \"Internet Banking System\", \"Allows customers to view information about their bank accounts, and make payments.\") Person(customerD, \"Banking Customer D\", \"A customer of the bank, with personal bank accounts.\") Enterprise_Boundary(b1, \"BankBoundary\") { SystemDb_Ext(SystemE, \"Mainframe Banking System\", \"Stores all of the core banking information about customers, accounts, transactions, etc.\") System_Boundary(b2, \"BankBoundary2\") { System(SystemA, \"Banking System A\") System(SystemB, \"Banking System B\", \"A system of the bank, with personal bank accounts.\") } System_Ext(SystemC, \"E-mail system\", \"The internal Microsoft Exchange e-mail system.\") SystemDb(SystemD, \"Banking System D Database\", \"A system of the bank, with personal bank accounts.\") Boundary(b3, \"BankBoundary3\", \"boundary\") { SystemQueue(SystemF, \"Banking System F Queue\", \"A system of the bank, with personal bank accounts.\") SystemQueue_Ext(SystemG, \"Banking System G Queue\", \"A system of the bank, with personal bank accounts.\") } } BiRel(customerA, SystemAA, \"Uses\") BiRel(SystemAA, SystemE, \"Uses\") Rel(SystemAA, SystemC, \"Sends e-mails\", \"SMTP\") Rel(SystemC, customerA, \"Sends e-mails to\") "
+            }
+        );
+    index.add(
+            {
+                id:  16 ,
+                href: "\/docs\/demo\/shortcodes\/",
+                title: "Shortcodes",
+                description: "Lotus Docs Custom Shortcodes.",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  17 ,
+                href: "\/docs\/demo\/shortcodes\/alerts\/",
+                title: "Alerts",
+                description: "How to use Alert Shortcodes to render custom page alerts in markdown.",
+                content: "Adding a Page Alert linkPage alerts can be added to your markdown using the following shortcode:\n{{\u003c alert text=\"This is the default alert. It consists of a default theme colour and icon.\" /\u003e}} The above code results in the following alert:\nnotifications This is the default alert. It consists of a default theme colour and icon. Alert with Context linkAdd context to an alert via the context parameter:\n{{\u003c alert context=\"info\" text=\"This is an alert with an info context. It consists of the info theme colour and icon.\" /\u003e}} Here’s what is rendered:\ninfo This is an alert with an info context. It consists of the info theme colour and icon. Additional alert contexts include success, danger, warning, primary, light and dark:\ncheck_circle This is an alert with a success context. It consists of the success theme colour and icon. report This is an alert with a danger context. It consists of the danger theme colour and icon. warning This is an alert with a warning context. It consists of the warning theme colour and icon. info This is an alert with a primary context. Its theme and icon colors match those of the current primary theme colour. This is an alert with a light context. It consists of the light theme colour. The light alert has no default icon. This is an alert with a dark context. It consists of the dark theme colour. The dark alert has no default icon. Alert with Custom Emoji Icon linkThe default icon for an alert context can be substituted with an emoji using the icon parameter:\n{{\u003c alert icon=\"🍅\" context=\"info\" text=\"This is an info context alert with a tomato emoji replacing the default icon. The info theme colour remains unchanged.\" /\u003e}} 🍅 This is an info context alert with a tomato emoji replacing the default icon. The info theme colour remains unchanged. Alert with No Icon linkSetting the icon parameter to an empty space, icon=\" \", will render an alert with no icon:\n{{\u003c alert icon=\" \" context=\"info\" text=\"This info context alert has no icon.\" /\u003e}} This info context alert has no icon. warning N.B. The icon parameter must contain a space. Setting it to icon=\"\" will render the default icon.\nRender Markdown \u0026 HTML inside an Alert link warning So % delimited alerts render correctly, ensure you have unsafe = true set under [markup.goldmark.renderer] in your hugo.toml configuration file1.\nUse a paired shortcode with the % delimiter2 to render Markdown and HTML inside an alert:\n{{% alert icon=\"🛒\" context=\"success\" %}} This ***paired shortcode*** alert contains a **markdown** list and header: #### My Shopping List: 1. Tomatoes 2. Bananas 3. Pineapples and a sentence styled using HTML tags such as \\ and \\ {{% /alert %}} 🛒\nThis paired shortcode alert contains a markdown list and header:\nMy Shopping List: link Tomatoes Bananas Pineapples and a sentence styled using HTML tags such as and Markdown alerts do not seem to display background color ↩︎\nShortcodes with Markdown - gohugo.io ↩︎\n"
+            }
+        );
+    index.add(
+            {
+                id:  18 ,
+                href: "\/docs\/demo\/shortcodes\/tables\/",
+                title: "Tables",
+                description: "How to use the Lotus Docs table shortcode to render great looking markdown tables",
+                content: "The table shortcode enables Lotus Docs to take advantage of Bootstrap’s opt-in table styling.\nRegular Tables linkBy default Lotus Docs renders regular Markdown tables with some very basic styling:\n| Tables | Are | Cool | |----------|:-------------:|------:| | col 1 is | left-aligned | $1600 | | col 2 is | centered | $12 | | col 3 is | right-aligned | $1 | Result:\nTables Are Cool col 1 is left-aligned $1600 col 2 is centered $12 col 3 is right-aligned $1 Shortcode Tables linkThe the table shortcode allows you to implement a number of Bootstrap’s table styling classes. The table shortcode without any options will render a basic bordered table with a borderless floating table head:\n{{\u003c table \u003e}} | Animal | Sounds | Legs | |---------|--------|-----| | `Cat` | Meow | 4 | | `Dog` | Woof | 4 | | `Cricket` | Chirp | 6 | {{\u003c /table \u003e}} Animal Sounds Legs Cat Meow 4 Dog Woof 4 Cricket Chirp 6 warning Since the table shortcode works by implementing Bootstrap’s opt-in table styling, not all Bootstrap’s table styles are compatible with Lotus Docs. All compatible options are documented on this page.\nStriped Rows linkUse the table-striped option to add zebra-striping to the table rows.\n{{\u003c table \"table-striped\" \u003e}} ... .. {{\u003c /table \u003e}} Parameter Default Value Description google_fonts N/A An array of Google fonts and sizes to load. e.g.\ngoogle_fonts = [[\"Poppins\", \"300, 400, 600, 700\"],[\"Source Code Pro\", \"500, 700\"]]\nThis will load the Google Poppins and Source Code Pro fonts in the specified sizes. sans_serif_font System Font Set the Sans Serif font. e.g. \"Poppins\" secondary_font System Font Set the Secondary font. e.g. \"Poppins\" Striped Columns linkUse the table-striped-columns option to add zebra-striping to the table columns.\n{{\u003c table \"table-striped-columns\" \u003e}} ... .. {{\u003c /table \u003e}} Parameter Default Value Description google_fonts N/A An array of Google fonts and sizes to load. e.g.\ngoogle_fonts = [[\"Poppins\", \"300, 400, 600, 700\"],[\"Source Code Pro\", \"500, 700\"]]\nThis will load the Google Poppins and Source Code Pro fonts in the specified sizes. sans_serif_font System Font Set the Sans Serif font. e.g. \"Poppins\" secondary_font System Font Set the Secondary font. e.g. \"Poppins\" Hoverable Rows linkUse the table-hover option to enable a hover state on the table rows.\n{{\u003c table \"table-hover\" \u003e}} ... .. {{\u003c /table \u003e}} Parameter Default Value Description google_fonts N/A An array of Google fonts and sizes to load. e.g.\ngoogle_fonts = [[\"Poppins\", \"300, 400, 600, 700\"],[\"Source Code Pro\", \"500, 700\"]]\nThis will load the Google Poppins and Source Code Pro fonts in the specified sizes. sans_serif_font System Font Set the Sans Serif font. e.g. \"Poppins\" secondary_font System Font Set the Secondary font. e.g. \"Poppins\" Tables without borders linkUse the table-borderless option a table without borders.\n{{\u003c table \"table-borderless\" \u003e}} ... .. {{\u003c /table \u003e}} Parameter Default Value Description google_fonts N/A An array of Google fonts and sizes to load. e.g.\ngoogle_fonts = [[\"Poppins\", \"300, 400, 600, 700\"],[\"Source Code Pro\", \"500, 700\"]]\nThis will load the Google Poppins and Source Code Pro fonts in the specified sizes. sans_serif_font System Font Set the Sans Serif font. e.g. \"Poppins\" secondary_font System Font Set the Secondary font. e.g. \"Poppins\" Small Tables linkAdd table-sm or table-xs to make any table more compact by reducing the cell padding.\nParameter Default Value Description google_fonts N/A An array of Google fonts and sizes to load. e.g.\ngoogle_fonts = [[\"Poppins\", \"300, 400, 600, 700\"],[\"Source Code Pro\", \"500, 700\"]]\nThis will load the Google Poppins and Source Code Pro fonts in the specified sizes. sans_serif_font System Font Set the Sans Serif font. e.g. \"Poppins\" secondary_font System Font Set the Secondary font. e.g. \"Poppins\" Parameter Default Value Description google_fonts N/A An array of Google fonts and sizes to load. e.g.\ngoogle_fonts = [[\"Poppins\", \"300, 400, 600, 700\"],[\"Source Code Pro\", \"500, 700\"]]\nThis will load the Google Poppins and Source Code Pro fonts in the specified sizes. sans_serif_font System Font Set the Sans Serif font. e.g. \"Poppins\" secondary_font System Font Set the Secondary font. e.g. \"Poppins\" Responsive Tables linkAdd the table-responsive option to make a table responsive:\nAnimal Sounds Legs Cat Meow 4 Dog Woof 4 Cricket Chirp 6 Combining Table Options linkCombine table shortcode options to create your desired effect:\n{{\u003c table \"table-striped table-sm table-borderless\" \u003e}} ... .. {{\u003c /table \u003e}} Parameter Default Value Description google_fonts N/A An array of Google fonts and sizes to load. e.g.\ngoogle_fonts = [[\"Poppins\", \"300, 400, 600, 700\"],[\"Source Code Pro\", \"500, 700\"]]\nThis will load the Google Poppins and Source Code Pro fonts in the specified sizes. sans_serif_font System Font Set the Sans Serif font. e.g. \"Poppins\" secondary_font System Font Set the Secondary font. e.g. \"Poppins\" "
+            }
+        );
+    index.add(
+            {
+                id:  19 ,
+                href: "\/docs\/demo\/shortcodes\/tabs\/",
+                title: "Tabs",
+                description: "How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs",
+                content: "The tabs shortcode leverages Bootstrap’s Tabs styling to easily add Tabs to your markdown content. The shortcode is actually a combination of two separate shortcodes (tab and tabs) working together.\nYou need a minimum of one tab shortcode nested inside a tabs shortcode for the component to function:\n{{\u003c tabs tabTotal=\"1\"\u003e}} {{% tab tabName=\"Tab 1\" %}} **Tab 1 Content** {{% /tab %}} {{\u003c /tabs \u003e}} Basic Tabs linkThe following example demonstrates how to create a basic multi tab navigation component using the tabs and tab shortcodes.\n{{\u003c tabs tabTotal=\"3\"\u003e}} {{% tab tabName=\"Windows\" %}} **Windows Content** Example content specific to **Windows** operating systems {{% /tab %}} {{% tab tabName=\"MacOS\" %}} **MacOS Content** Example content specific to **Mac** operating systems {{% /tab %}} {{% tab tabName=\"Linux\" %}} **Linux Content** Example content specific to **Linux** operating systems {{% /tab %}} {{\u003c /tabs \u003e}} Renders:\nWindows MacOS Linux Windows Content\nExample content specific to Windows operating systems\nMacOS Content\nExample content specific to Mac operating systems\nLinux Content\nExample content specific to Linux operating systems\nRight Aligned Tabs link {{\u003c tabs tabTotal=\"3\" tabRightAlign=\"2\"\u003e}} {{% tab tabName=\"Tab 1\" %}} **Tab 1 Content** {{% /tab %}} {{% tab tabName=\"Tab 2\" %}} **Tab 2 Content** {{% /tab %}} {{% tab tabName=\"Tab 3\" %}} **Tab 3 Content** {{% /tab %}} {{\u003c /tabs \u003e}} Renders:\nTab 1 Tab 2 Tab 3 Tab 1 Content\nTab 2 Content\nTab 3 Content\nHow does it work? linktabs.html linkThis is the parent shortcode that wraps around all nested tab shortcodes in the tab group and generates the tab navigation.\nVariable Description tabTotal This variable is used to generate the tab navigation. Simply set it to the amount of tab shortcodes you have. In the above example, since there are three nested tab shortcodes, you would set tabTotal to 3. tabRightAlign This is an optional variable that if used will right align the tab number you inputted and all tabs after it. In the above example, since tabRightAlign is set to two, tabs 2 and 3 will be right aligned. tab.html linkThis is a child shortcode that is nested inside tabs shortcodes. Each tab shortcode equals one tab so add as many as you need. Please note, make sure tabTotal in the tabs shortcode is equal to the amount of tab shortcodes you define.\nVariable Description tabName This variable defines the title of the tab. Credit linkBoth tab and tabs shortcodes documented above are a modified versions of the open source Hugo Dynamic Tabs shortcodes. Thank you rvanhorn 👍.\n"
+            }
+        );
+    index.add(
+            {
+                id:  20 ,
+                href: "\/docs\/demo\/shortcodes\/prism\/",
+                title: "Prism",
+                description: "How to use the Prism Shortcode for syntax highlighting code blocks.",
+                content: "Prism Shortcode linkWhen Prism is enabled in hugo.toml syntax highlighting can also be achieved using a paired Prism shortcode. The code language is declared using the lang parameter:\n{{\u003c prism lang=\"html\" \u003e}} Buy cool new product Checkout {{\u003c /prism \u003e}} All code blocks highlighted by Prism feature the Copy to Clipboard Button plugin. Hover over (or tap if on mobile) the examples above and the copy button appears in the top right hand corner of the code block. Click this button to copy the code to your clipboard.\nLine Highlighting linkThe Prism shortcode can highlight specific lines and/or line ranges in code blocks using the line parameter:\n{{\u003c prism lang=\"html\" line=\"2-4,6\" \u003e}} ... {{\u003c /prism \u003e}} See the rendered example below:\nBuy cool new product Checkout Line Numbers linkAdd line numbers to your code with the line-numbers=\"true\" parameter:\nBuy cool new product Checkout The number at which the line starts can be specified by the start parameter. e.g. start=\"48\":\nBuy cool new product Checkout Line Number Anchors linkSpecific lines in highlighted code blocks can be linked when both the line-numbers and linkable-line-numbers options are true:\n{{\u003c prism lang=\"html\" linkable-line-numbers=\"true\" line-numbers=\"true\" \u003e}} ... {{\u003c /prism \u003e}} Rendered code block:\nBuy cool new product Checkout Clicking on any of the line numbers above will update the hash of the current page to link to that specific line.\ninfo All elements of Prism code blocks have an auto-generated id attribute. This id is a combination of the unique hash of the code block content plus it’s unique position on the page. The generated hash can be overridden using a Custom id set via the id option.\nThe url format follows #{hash-id}.{lines}, where {hash-id} is the auto-generated hash value of the code block and {lines} is one or more lines or line ranges that follows the line highlighting format.\nFor example, line 8 in the code block below can be linked using the following anchor #adea9eb.8:\nBuy cool new product Checkout Combined Line Parameters linkPrism’s Line Highlighting \u0026 Line Numbers plugins are compatible with each other. So the line \u0026 line-numbers options can be combined to display both, line numbers and highlight specified lines in a code block:\n{{\u003c prism lang=\"html\" line-numbers=\"true\" line=\"2-4,6\" \u003e}} ... {{\u003c /prism \u003e}} This renders the following code block:\nBuy cool new product Checkout Combining line \u0026 start options requires the use of the line-offset option:\n{{\u003c prism lang=\"html\" line-numbers=\"true\" start=\"48\" line=\"49-51,54\" line-offset=\"48\" \u003e}} ... {{\u003c /prism \u003e}} This renders the following code block:\nBuy cool new product Checkout File Highlight linkExternal files can be fetched and highlighted using the File Highlight option. Use the src parameter to retrieve an external file, like so:\n{{\u003c prism src=\"https://raw.githubusercontent.com/colinwilson/lotusdocs/release/SECURITY.md\" /\u003e}} Result:\nUse the src-range parameter to retrieve a specific line range from an external file. src-range=\"32,46\" will fetch lines 32 to 46 of the file specified by the src parameter:\n{{\u003c prism src-range=\"32,46\" src=\"https://raw.githubusercontent.com/colinwilson/lotusdocs/release/data/landing.yaml\" line-numbers=\"true\" /\u003e}} src-range can be used with the line-numbers option to number the retrieved range. So the above shortcode produces the following code block:\ninfo See Prism’s docs for more info on the File Highlight plugin.\nDisable Prism linkPrism syntax highlighting can be disabled by setting [params.docs.prism] to false in the hugo.toml configuration file.\nCommand Line linkTBC\n"
+            }
+        );
+    index.add(
+            {
+                id:  21 ,
+                href: "\/docs\/demo\/shortcodes\/markdownify\/",
+                title: "Markdownify",
+                description: "A simple shortcode to render content as Markdown.",
+                content: "This shortcode parses its content as markdown.\nUsage linkThe following:\n{{\u003c markdownify \u003e}} **Bold Text**: Above a code block. ```html Hello World {{\u003c /markdownify \u003e}} Renders:\nBold Text: Above a code block.\nHello World Nested Shortcodes linkThe markdownify shortcode is especially useful in cases where you require portions of content nested inside another shortcode be parsed as Markdown.\nFor example, here’s a paragraph of markdown text and a prism shortcode codeblock nested within a tabs shortcode:\n{{\u003c tabs tabTotal=\"1\" \u003e}} {{\u003c tab tabName=\"Tab 1\" \u003e}} {{\u003c markdownify \u003e}} ### Markdownified Text Some `markdownified` text inside a `tabs` shortcode {{\u003c /markdownify \u003e}} {{\u003c prism lang=\"html\" line=\"3,6\" \u003e}} A code block using the Prism Shortcode This shortcode is nested inside a Tabs shortcode {{\u003c /prism \u003e}} {{\u003c /tab \u003e}} {{\u003c /tabs \u003e}} Renders:\nTab 1 Markdownified Text\nSome markdownified text inside a tabs shortcode\nA code block using the Prism Shortcode This shortcode is nested inside a Tabs shortcode "
+            }
+        );
+    index.add(
+            {
+                id:  22 ,
+                href: "\/docs\/demo\/shortcodes\/katex\/",
+                title: "KaTex",
+                description: "A Shortcode to render KaTex syntax in your Lotus Docs site",
+                content: "Lotus Docs has "
+            }
+        );
+    index.add(
+            {
+                id:  23 ,
+                href: "\/docs\/",
+                title: "Docs",
+                description: "",
+                content: ""
+            }
+        );
+    search.addEventListener('input', show_results, true);
+
+    function show_results(){
+        const maxResult =  5 ;
+        const minlength =  0 ;
+        var searchQuery = sanitizeHTML(this.value);
+        var results = index.search(searchQuery, {limit: maxResult, enrich: true});
+
+        
+        const flatResults = new Map(); 
+        for (const result of results.flatMap(r => r.result)) {
+        if (flatResults.has(result.doc.href)) continue;
+        flatResults.set(result.doc.href, result.doc);
+        }
+
+        suggestions.innerHTML = "";
+        suggestions.classList.remove('d-none');
+
+        
+        if (searchQuery.length < minlength) {
+            const minCharMessage = document.createElement('div')
+            minCharMessage.innerHTML = `Please type at least <strong>${minlength}</strong> characters`
+            minCharMessage.classList.add("suggestion__no-results");
+            suggestions.appendChild(minCharMessage);
+            return;
+        } else {
+            
+            if (flatResults.size === 0 && searchQuery) {
+                const noResultsMessage = document.createElement('div')
+                noResultsMessage.innerHTML = "No results for" + ` "<strong>${searchQuery}</strong>"`
+                noResultsMessage.classList.add("suggestion__no-results");
+                suggestions.appendChild(noResultsMessage);
+                return;
+            }
+        }
+
+        
+        for(const [href, doc] of flatResults) {
+            const entry = document.createElement('div');
+            suggestions.appendChild(entry);
+
+            const a = document.createElement('a');
+            a.href = href;
+            entry.appendChild(a);
+
+            const title = document.createElement('span');
+            title.textContent = doc.title;
+            title.classList.add("suggestion__title");
+            a.appendChild(title);
+
+            const description = document.createElement('span');
+            description.textContent = doc.description;
+            description.classList.add("suggestion__description");
+            a.appendChild(description);
+
+            suggestions.appendChild(entry);
+
+            if(suggestions.childElementCount == maxResult) break;
+        }
+    }
+    }());
+</script>
+        
+    </body>
+</html>

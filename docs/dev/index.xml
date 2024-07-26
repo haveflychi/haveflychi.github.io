@@ -6,14 +6,7 @@
     <description>Recent content in DEV on </description>
     <generator>Hugo</generator>
     <language>zh-cmn</language>
-    <lastBuildDate>Fri, 26 Jul 2024 03:53:16 +0800</lastBuildDate>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="/docs/dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>第一篇WIKI</title>
-      <link>/docs/dev/dome/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
-      <guid>/docs/dev/dome/</guid>
-      <description>Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
-    </item>
   </channel>
 </rss>
