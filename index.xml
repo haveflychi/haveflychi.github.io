@@ -16,13 +16,6 @@
       <description>Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
     </item>
     <item>
-      <title>第一篇WIKI</title>
-      <link>/docs/ops/dome/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
-      <guid>/docs/ops/dome/</guid>
-      <description>Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
-    </item>
-    <item>
       <title>1.为什么要学习Fyne？</title>
       <link>/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
@@ -70,6 +63,13 @@
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
       <guid>/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/</guid>
       <description>全部代码 link package main import ( &amp;#34;time&amp;#34; &amp;#34;fyne.io/fyne/v2&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/dialog&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { // 创建一个 Fyne 应用 a := app.New() // 创建一个窗口 customFont := fyne.NewStaticResource(&amp;#34;NotoSansHans.ttf&amp;#34;, loadFont(&amp;#34;NotoSansHans-Regular.ttf&amp;#34;)) a.Settings().SetTheme(&amp;amp;myTheme{font: customFont}) win := a.NewWindow(&amp;#34;高端检测器&amp;#34;) // 创建一个按钮 btn := widget.NewButton(&amp;#34;检测是否开机&amp;#34;, func() { // 创建一个进度条 progress := widget.NewProgressBarInfinite() progressContainer := container.NewVBox(progress) // 显示加载动画 loadingDialog := dialog.NewCustom(&amp;#34;正在检测...&amp;#34;, &amp;#34;取消&amp;#34;, progressContainer, win) loadingDialog.Show() // 模拟加载时间 go func(){ time.Sleep(10 * time.Second) // 10 秒模拟加载时间 // 关闭加载动画并弹出结果窗口 loadingDialog.</description>
+    </item>
+    <item>
+      <title>1.Nginx配置小全</title>
+      <link>/docs/ops/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <guid>/docs/ops/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8/</guid>
+      <description>安装 nginx link下载 nginx 的压缩包文件到根目录，官网下载地址：nginx.org/download/nginx-x.xx.xx.tar.gz&#xA;yum update #更新系统软件 cd / wget nginx.org/download/nginx-1.17.2.tar.gz 解压tar.gz压缩包文件，进去 nginx-1.17.2&#xA;tar -xzvf nginx-1.17.2.tar.gz cd nginx-1.17.2 进入文件夹后进行配置检查&#xA;通过安装前的配置检查，发现有报错。检查中发现一些依赖库没有找到，这时候需要先安装nginx的一些依赖库&#xA;yum -y install pcre* #安装使nginx支持rewrite yum -y install gcc-c&amp;#43;&amp;#43; yum -y install zlib* yum -y install openssl openssl-devel 再次进行检查操作 ./configure 没发现报错显示，接下来进行编译并安装的操作&#xA;// 检查模块支持 ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_v2_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_slice_module --with-http_stub_status_module --with-mail --with-mail_ssl_module --with-stream --with-stream_ssl_module --with-stream_realip_module --with-stream_ssl_preread_module --with-threads --user=www --group=www 这里得特别注意下，你以后需要用到的功能模块是否存在，不然以后添加新的包会比较麻烦。</description>
     </item>
     <item>
       <title>Syntax Highlighting</title>
