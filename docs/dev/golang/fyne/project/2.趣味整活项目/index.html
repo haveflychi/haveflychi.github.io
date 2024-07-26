@@ -18,9 +18,8 @@
 
 <html lang="zh-cmn"><head>
     <meta charset="utf-8" />
-    <title>Syntax Highlighting | Maxbit Docs</title>
+    <title>Fyne-趣味整活项目 | Maxbit Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma).">
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
     <meta name="author" content="Colin Wilson - Lotus Labs" />
     <meta name="email" content="support@aigis.uk" />
@@ -33,15 +32,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="/site.webmanifest">
-<meta property="og:title" content="Syntax Highlighting" />
-<meta property="og:description" content="How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma)." />
+<meta property="og:title" content="Fyne-趣味整活项目" />
+<meta property="og:description" content="全部代码 link package main import ( &#34;time&#34; &#34;fyne.io/fyne/v2&#34; &#34;fyne.io/fyne/v2/app&#34; &#34;fyne.io/fyne/v2/container&#34; &#34;fyne.io/fyne/v2/dialog&#34; &#34;fyne.io/fyne/v2/widget&#34; ) func main() { // 创建一个 Fyne 应用 a := app.New() // 创建一个窗口 customFont := fyne.NewStaticResource(&#34;NotoSansHans.ttf&#34;, loadFont(&#34;NotoSansHans-Regular.ttf&#34;)) a.Settings().SetTheme(&amp;myTheme{font: customFont}) win := a.NewWindow(&#34;高端检测器&#34;) // 创建一个按钮 btn := widget.NewButton(&#34;检测是否开机&#34;, func() { // 创建一个进度条 progress := widget.NewProgressBarInfinite() progressContainer := container.NewVBox(progress) // 显示加载动画 loadingDialog := dialog.NewCustom(&#34;正在检测...&#34;, &#34;取消&#34;, progressContainer, win) loadingDialog.Show() // 模拟加载时间 go func(){ time.Sleep(10 * time.Second) // 10 秒模拟加载时间 // 关闭加载动画并弹出结果窗口 loadingDialog." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/demo/features/syntax-highlighting/" /><meta property="og:image" content="/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_10900869965379611377.png"/><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2022-12-16T01:07:15+00:00" />
-<meta property="article:modified_time" content="2024-07-26T13:46:10+08:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_10900869965379611377.png"/>
-<meta name="twitter:title" content="Syntax Highlighting"/>
-<meta name="twitter:description" content="How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma)."/>
+<meta property="og:url" content="/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/" /><meta property="og:image" content="/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_5639816290558012702.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
+<meta property="article:modified_time" content="2023-05-03T22:37:22+01:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_5639816290558012702.png"/>
+<meta name="twitter:title" content="Fyne-趣味整活项目"/>
+<meta name="twitter:description" content="全部代码 link package main import ( &#34;time&#34; &#34;fyne.io/fyne/v2&#34; &#34;fyne.io/fyne/v2/app&#34; &#34;fyne.io/fyne/v2/container&#34; &#34;fyne.io/fyne/v2/dialog&#34; &#34;fyne.io/fyne/v2/widget&#34; ) func main() { // 创建一个 Fyne 应用 a := app.New() // 创建一个窗口 customFont := fyne.NewStaticResource(&#34;NotoSansHans.ttf&#34;, loadFont(&#34;NotoSansHans-Regular.ttf&#34;)) a.Settings().SetTheme(&amp;myTheme{font: customFont}) win := a.NewWindow(&#34;高端检测器&#34;) // 创建一个按钮 btn := widget.NewButton(&#34;检测是否开机&#34;, func() { // 创建一个进度条 progress := widget.NewProgressBarInfinite() progressContainer := container.NewVBox(progress) // 显示加载动画 loadingDialog := dialog.NewCustom(&#34;正在检测...&#34;, &#34;取消&#34;, progressContainer, win) loadingDialog.Show() // 模拟加载时间 go func(){ time.Sleep(10 * time.Second) // 10 秒模拟加载时间 // 关闭加载动画并弹出结果窗口 loadingDialog."/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -93,32 +92,32 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  ">
+                        <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">Code</i>
                                 DEV
                             </button>
-                            <div class="sidebar-submenu ">
+                            <div class="sidebar-submenu d-block">
                                 <ul>
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  ">
+                                            <li class="sidebar-dropdown nested  current active">
                                                 <button class="btn">
                                                     
                                                     Golang
                                                 </button>
-                                                <div class="sidebar-submenu ">
+                                                <div class="sidebar-submenu d-block">
                                                     <ul>
                                                         
                                                             
                                                             
-                                                                <li class="sidebar-dropdown nested  ">
+                                                                <li class="sidebar-dropdown nested  current active">
                                                                     <button class="btn">
                                                                         
                                                                         Fyne
                                                                     </button>
-                                                                    <div class="sidebar-submenu ">
+                                                                    <div class="sidebar-submenu d-block">
                                                                         <ul>
                                                                             
                                                                                 
@@ -148,19 +147,19 @@
                                                                             
                                                                                 
                                                                                 
-                                                                                    <li class="sidebar-dropdown nested  ">
+                                                                                    <li class="sidebar-dropdown nested  current active">
                                                                                         <button class="btn">
                                                                                             
                                                                                             项目案例
                                                                                         </button>
-                                                                                        <div class="sidebar-submenu ">
+                                                                                        <div class="sidebar-submenu d-block">
                                                                                             <ul>
                                                                                                 
                                                                                                     
                                                                                                     <li class=" "><a class="sidebar-nested-link" href="/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/">Fyne-Markdown编辑器</a></li>
                                                                                                 
                                                                                                     
-                                                                                                    <li class=" "><a class="sidebar-nested-link" href="/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/">Fyne-趣味整活项目</a></li>
+                                                                                                    <li class="current "><a class="sidebar-nested-link" href="/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/">Fyne-趣味整活项目</a></li>
                                                                                                 
                                                                                             </ul>
                                                                                         </div>
@@ -224,27 +223,27 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  current active">
+                        <li class="sidebar-dropdown  ">
                             <button class="btn">
                                 <i class="material-icons me-2">edit</i>
                                 DEMO
                             </button>
-                            <div class="sidebar-submenu d-block">
+                            <div class="sidebar-submenu ">
                                 <ul>
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  current active">
+                                            <li class="sidebar-dropdown nested  ">
                                                 <button class="btn">
                                                     
                                                     Features
                                                 </button>
-                                                <div class="sidebar-submenu d-block">
+                                                <div class="sidebar-submenu ">
                                                     <ul>
                                                         
                                                             
                                                             
-                                                                <li class="current "><a class="sidebar-nested-link" href="/docs/demo/features/syntax-highlighting/">Syntax Highlighting</a></li>
+                                                                <li class=" "><a class="sidebar-nested-link" href="/docs/demo/features/syntax-highlighting/">Syntax Highlighting</a></li>
                                                             
                                                         
                                                             
@@ -459,24 +458,40 @@
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/demo/">
-                        <span itemprop="name">DEMO</span>
+                    <a itemprop="item" href="/docs/dev/">
+                        <span itemprop="name">DEV</span>
                     </a>
                     <meta itemprop="position" content='2' />
                 </li>
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/demo/features/">
-                        <span itemprop="name">Features</span>
+                    <a itemprop="item" href="/docs/dev/golang/">
+                        <span itemprop="name">Golang</span>
                     </a>
                     <meta itemprop="position" content='3' />
                 </li>
             
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/dev/golang/fyne/">
+                        <span itemprop="name">Fyne</span>
+                    </a>
+                    <meta itemprop="position" content='4' />
+                </li>
+            
+            
+                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/docs/dev/golang/fyne/project/">
+                        <span itemprop="name">项目案例</span>
+                    </a>
+                    <meta itemprop="position" content='5' />
+                </li>
+            
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">Syntax Highlighting</span>
-                <meta itemprop="position" content='4' />
+                <span itemprop="name">Fyne-趣味整活项目</span>
+                <meta itemprop="position" content='6' />
             </li>
         
     </ul>
@@ -490,17 +505,12 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#code-highlighters">Code Highlighters</a></li>
-        <li><a href="#prism-features">Prism Features</a>
+        <li>
           <ul>
-            <li><a href="#copy-code-button">Copy Code Button</a></li>
-            <li><a href="#code-block-id">Code Block id</a></li>
-            <li><a href="#line-anchors">Line Anchors</a></li>
-            <li><a href="#themes">Themes</a></li>
+            <li><a href="#全部代码">全部代码</a></li>
+            <li><a href="#go-goroutine-简单概念">Go goroutine 简单概念</a></li>
           </ul>
         </li>
-        <li><a href="#supported-languages">Supported Languages</a></li>
-        <li><a href="#code-fence-translations">Code Fence Translations</a></li>
       </ul>
     </li>
   </ul>
@@ -516,17 +526,12 @@
   <ul class="dropdown-menu">
     <li>
       <ul>
-        <li><a href="#code-highlighters">Code Highlighters</a></li>
-        <li><a href="#prism-features">Prism Features</a>
+        <li>
           <ul>
-            <li><a href="#copy-code-button">Copy Code Button</a></li>
-            <li><a href="#code-block-id">Code Block id</a></li>
-            <li><a href="#line-anchors">Line Anchors</a></li>
-            <li><a href="#themes">Themes</a></li>
+            <li><a href="#全部代码">全部代码</a></li>
+            <li><a href="#go-goroutine-简单概念">Go goroutine 简单概念</a></li>
           </ul>
         </li>
-        <li><a href="#supported-languages">Supported Languages</a></li>
-        <li><a href="#code-fence-translations">Code Fence Translations</a></li>
       </ul>
     </li>
   </ul>
@@ -534,610 +539,210 @@
                                         <div class="docs-content col-12 col-xl-9 mt-0">
                                             <div class="mb-0 d-flex">
                                                 
-                                                <i class="material-icons title-icon me-2">highlight</i>
+                                                <i class="material-icons title-icon me-2">article</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    Syntax Highlighting
+                                                    Fyne-趣味整活项目
                                                     
                                                 </h1>
                                             </div>
                                             
-                                                <p class="lead mb-3">How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma).</p>
+                                                <p class="lead mb-3"></p>
                                             
                                             <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h2 id="code-highlighters">Code Highlighters <a href="#code-highlighters" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>Lotus Docs supports syntax highlighting by <a href="https://prismjs.com/" rel="external" target="_blank">Prism<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> (enabled by default via <code>param.docs.prism</code> in <code>hugo.toml</code>) or Hugo&rsquo;s built-in code highlighter <a href="https://github.com/alecthomas/chroma" rel="external" target="_blank">Chroma<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>.</p>
-<p>Fenced code blocks (code enclosed by triple backticks above and below) that specify a code language (declared right of the opening fence), will automatically highlight the code content as HTML e.g. <code>```html</code>:</p>
+        <h3 id="全部代码">全部代码 <a href="#%e5%85%a8%e9%83%a8%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
 
 
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="81556e2" class="language-md ">
-  <code>```html
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Buy cool new product&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;!-- Use action=&#34;/create-checkout-session.php&#34; if your server is PHP based. --&gt;
-    &lt;form action=&#34;/create-checkout-session&#34; method=&#34;POST&#34;&gt;
-      &lt;button type=&#34;submit&#34;&gt;Checkout&lt;/button&gt;
-    &lt;/form&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-```</code>
-  </pre>
-  </div>
-<p>Result - <strong>Prism Highlighter</strong>:</p>
-
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="cf0e9d0" class="language-html ">
-  <code>&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Buy cool new product&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;!-- Use action=&#34;/create-checkout-session.php&#34; if your server is PHP based. --&gt;
-    &lt;form action=&#34;/create-checkout-session&#34; method=&#34;POST&#34;&gt;
-      &lt;button type=&#34;submit&#34;&gt;Checkout&lt;/button&gt;
-    &lt;/form&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code>
-  </pre>
-  </div>
-<p>Result - <strong>Chroma Highlighter</strong> (<code>param.docs.prism = false</code>):</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/chroma-highlighter-screenshot_xqqw5v_3055845147386162642.webp" alt="chroma highlighter screenshot" width="742" height="251" loading="lazy">
-    
-  
-</p>
-<h2 id="prism-features">Prism Features <a href="#prism-features" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>The Prism highlighter features the following:</p>
-<h3 id="copy-code-button">Copy Code Button <a href="#copy-code-button" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>All code blocks feature a button which copies the code to the clipboard when clicked. Hover over any code block and the copy button (<span class="material-icons align-text-bottom">content_copy</span>) will appear in the top right hand corner.</p>
-<h3 id="code-block-id">Code Block id <a href="#code-block-id" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>Every code block on a page has a unique <code>id</code> attribute, an auto-generated value calculated from the <code>sha1</code> hash of the block&rsquo;s contents combined with it&rsquo;s position on the page.</p>
-<p>For example, the following snippet can be linked via the unique id <a href="/docs/demo/features/syntax-highlighting/#80c9335"><code>80c9335</code></a>:</p>
-
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="80c9335" class="language-go ">
-  <code>package main
-
-import &#34;fmt&#34;
-
-func main() {
-
-    fmt.Println(&#34;go&#34; &#43; &#34;lang&#34;)
-
-    fmt.Println(&#34;1&#43;1 =&#34;, 1&#43;1)
-    fmt.Println(&#34;7.0/3.0 =&#34;, 7.0/3.0)
-
-    fmt.Println(true &amp;&amp; false)
-    fmt.Println(true || false)
-    fmt.Println(!true)
-}</code>
-  </pre>
-  </div>
-<h3 id="line-anchors">Line Anchors <a href="#line-anchors" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>Specific sections of code can be linked and highlighted by combining the code block <code>id</code> with the desired line numbers or ranges.</p>
-<p>The URL format follows, <code>/#{code block id}.{line no. range}</code>.</p>
-<p>For example, <a href="/docs/demo/features/syntax-highlighting/#80c9335.3,5,7-13"><code>/#80c9335.3,5,7-13</code></a> will link to (and highlight) lines 3, 5 and 7-13 in the code block above:</p>
-<h3 id="themes">Themes <a href="#themes" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>You can change the Prism theme via the <code>prismTheme</code> parameter under <code>[params.docs]</code> in your config file.</p>
-
-<div class="alert alert-info d-flex" role="alert">
-  <div class="flex-shrink-1 alert-icon">
-  
-  <span class="material-icons size-20 me-2">
-  info
-  </span></div>
-  
-  <div class="w-100">Additional <a href="https://github.com/PrismJS/prism-themes" rel="external" target="_blank">PrismJS themes<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> will be adapted and added to Lotus Docs periodically. Keep an eye on new <a href="https://github.com/colinwilson/lotusdocs/releases" rel="external" target="_blank">releases<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> to know when.</div>
-  </div>
-
-<nav>
-	<div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-		
-		
-		
-		
-
-		
-
-		<a class="nav-link  active"
-		   id="fecadbTab" data-bs-toggle="tab" data-bs-target="#fecadb"
-		   type="button" role="tab" aria-controls="fecadb" aria-selected="true">hugo.toml</a>
-
-		
-
-		<a class="nav-link "
-		   id="abecdfTab" data-bs-toggle="tab" data-bs-target="#abecdf"
-		   type="button" role="tab" aria-controls="abecdf" aria-selected="true">hugo.yaml</a>
-
-		
-
-		<a class="nav-link "
-		   id="dfbceaTab" data-bs-toggle="tab" data-bs-target="#dfbcea"
-		   type="button" role="tab" aria-controls="dfbcea" aria-selected="true">hugo.json</a>
-
-		
-
-	</div>
-</nav>
-
-<div class="tab-content" id="nav-tab-content">
-
-	
-
-
-
-
-
-
-<div class="tab-pane fade show active" id="fecadb" role="tabpanel" aria-labelledby="nav-1">
-
-	
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="549acdf" class="language-toml ">
-  <code>[params.docs]
-    prismTheme = &#34;lotusdocs&#34; # (optional) - Set theme for PrismJS. Options include: lotusdocs (default), solarized-light, twilight, lucario</code>
-  </pre>
-  </div>
-
-
-</div>
-
-
-
-
-
-
-<div class="tab-pane fade" id="abecdf" role="tabpanel" aria-labelledby="nav-1">
-
-	
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="bc1bed3" class="language-yaml ">
-  <code>params:
-    docs:
-      prismTheme: lotusdocs # (optional) - Set theme for PrismJS. Options include: lotusdocs (default), solarized-light, twilight, lucario</code>
-  </pre>
-  </div>
-
-
-</div>
-
-
-
-
-
-
-<div class="tab-pane fade" id="dfbcea" role="tabpanel" aria-labelledby="nav-1">
-
-	
-
 
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="1dfc2eb" class="language-json ">
-  <code>{
-   &#34;params&#34;: {
-      &#34;docs&#34;: {
-          &#34;prismTheme&#34;: &#34;lotusdocs&#34;
-      }
-   }
-}</code>
-  </pre>
-  </div>
-
-
-</div>
-
-
-</div>
-<p>Choose from the following theme options:</p>
-
-<nav>
-	<div class="nav nav-tabs" id="nav-tab" role="tablist">
-
-		
-		
-		
-		
-
-		
-
-		<a class="nav-link  active"
-		   id="cdbafeTab" data-bs-toggle="tab" data-bs-target="#cdbafe"
-		   type="button" role="tab" aria-controls="cdbafe" aria-selected="true">lotusdocs (default)</a>
-
-		
-
-		<a class="nav-link "
-		   id="dcbeafTab" data-bs-toggle="tab" data-bs-target="#dcbeaf"
-		   type="button" role="tab" aria-controls="dcbeaf" aria-selected="true">solarized-light</a>
-
-		
-
-		<a class="nav-link "
-		   id="fecdbaTab" data-bs-toggle="tab" data-bs-target="#fecdba"
-		   type="button" role="tab" aria-controls="fecdba" aria-selected="true">twilight</a>
-
-		
-
-		<a class="nav-link "
-		   id="cadebfTab" data-bs-toggle="tab" data-bs-target="#cadebf"
-		   type="button" role="tab" aria-controls="cadebf" aria-selected="true">lucario</a>
-
-		
-
-	</div>
-</nav>
-
-<div class="tab-content" id="nav-tab-content">
-
-	
-
-
-
-
-
-
-<div class="tab-pane fade show active" id="cdbafe" role="tabpanel" aria-labelledby="nav-1">
-
-	<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/prismjs_theme_lotusdocs_ttvkpg_4990825982099510133.webp" alt="PrismJS Lotus Docs Theme Screenshot" width="689" height="326" loading="lazy">
-    
-  
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="tab-pane fade" id="dcbeaf" role="tabpanel" aria-labelledby="nav-1">
-
-	<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/prismjs_theme_solarized-light_vdznlf_16134827002458449626.webp" alt="PrismJS Solarized Light Theme Screenshot" width="689" height="326" loading="lazy">
-    
-  
-</p>
-
-
-</div>
-
-
-
-
-
-
-<div class="tab-pane fade" id="fecdba" role="tabpanel" aria-labelledby="nav-1">
-
-	<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/prismjs_theme_twilight_r7vdno_14044821511872106956.webp" alt="PrismJS Twilight Theme Screenshot" width="689" height="326" loading="lazy">
-    
-  
-</p>
-
-
-</div>
-
-
-
 
-
-
-<div class="tab-pane fade" id="cadebf" role="tabpanel" aria-labelledby="nav-1">
-
-	<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/prismjs_theme_lucario_qohmre_12496771368800762056.webp" alt="PrismJS Lucario Theme Screenshot" width="689" height="326" loading="lazy">
-    
-  
-</p>
-
-
-</div>
-
-
-</div>
-<h2 id="supported-languages">Supported Languages <a href="#supported-languages" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>Both Prism &amp; Chroma support a vast array of languages. See the links below for a complete list of languages supported by each highlighter:</p>
-<ul>
-<li><a href="https://prismjs.com/#supported-languages" rel="external" target="_blank">Prism<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> (≈ 290 languages)</li>
-<li><a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages" rel="external" target="_blank">Chroma<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> (≈ 200 languages)</li>
-</ul>
-<h2 id="code-fence-translations">Code Fence Translations <a href="#code-fence-translations" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><div class="alert alert-info d-flex" role="alert">
-  <div class="flex-shrink-1 alert-icon">
-  <span class="material-icons size-20 me-2">
-  info
-  </span></div>
-  <div class="w-100">
-<p>For more extensive code highlighting options with Prism, consider using the <a data-bs-delay="{&#34;hide&#34;:300,&#34;show&#34;:550}" data-bs-html="true" data-bs-title="<a href='/docs/demo/shortcodes/prism/'><p>SHORTCODES</p><strong>Prism</strong><br>How to use the Prism Shortcode for syntax highlighting code blocks.</a>" data-bs-toggle="tooltip" href="/docs/demo/shortcodes/prism/">Prism Shortcode</a> in place of the code fences syntax.</p>
-  </div>
-  </div>
-<p>If your code blocks are highlighted using the <a href="https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences" rel="external" target="_blank">code fences syntax<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>, Prism will auto translate the following Hugo Shortcode options<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>:</p>
-<ul>
-<li>
-<p><code>linenos</code>: configure line numbers. Valid values are <code>true</code>, <code>false</code>, <code>table</code>, or <code>inline</code>. <code>false</code> will turn off line numbers if it’s configured to be on in site config. All remaining options will translate to a line number at the beginning of code lines (as described by  Prism&rsquo;s <a href="https://prismjs.com/plugins/line-numbers/" rel="external" target="_blank">Line Numbers<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> plugin).</p>
-</li>
-<li>
-<p><code>hl_lines</code>: lists a set of line numbers or line number ranges to be highlighted.</p>
-</li>
-<li>
-<p><code>linenostart=199</code>: starts the line number count from 199.</p>
-</li>
-<li>
-<p><code>anchorlinenos</code>: Configure anchors on line numbers. Valid values are <code>true</code> or <code>false</code>;</p>
-</li>
-</ul>
-<p>So the following example:</p>
-
-
-
-  
-  
   
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="f98b65a" class="language-md ">
-  <code>```go {linenos=table,hl_lines=[3,&#34;5-7&#34;],linenostart=199,anchorlinenos=true}
+      <div class="prism-shortcode">
+      <pre id="abb4f8e" class="language-go line-numbers"
+        ><code class="language-go"
+        >
 package main
 
-import &#34;fmt&#34;
+import (
+ &#34;time&#34;
+
+ &#34;fyne.io/fyne/v2&#34;
+ &#34;fyne.io/fyne/v2/app&#34;
+ &#34;fyne.io/fyne/v2/container&#34;
+ &#34;fyne.io/fyne/v2/dialog&#34;
+ &#34;fyne.io/fyne/v2/widget&#34;
+)
 
 func main() {
-    fmt.Println(&#34;hello world&#34;)
+ // 创建一个 Fyne 应用
+ a := app.New()
+ // 创建一个窗口
+ customFont := fyne.NewStaticResource(&#34;NotoSansHans.ttf&#34;, loadFont(&#34;NotoSansHans-Regular.ttf&#34;))
+ a.Settings().SetTheme(&amp;myTheme{font: customFont})
+
+ win := a.NewWindow(&#34;高端检测器&#34;)
+
+ // 创建一个按钮
+ btn := widget.NewButton(&#34;检测是否开机&#34;, func() {
+  // 创建一个进度条
+  progress := widget.NewProgressBarInfinite()
+  progressContainer := container.NewVBox(progress)
+
+  // 显示加载动画
+  loadingDialog := dialog.NewCustom(&#34;正在检测...&#34;, &#34;取消&#34;, progressContainer, win)
+  loadingDialog.Show()
+
+  // 模拟加载时间
+go func(){
+
+ time.Sleep(10 * time.Second) // 10 秒模拟加载时间
+
+ // 关闭加载动画并弹出结果窗口
+ loadingDialog.Hide()
+ dialog.ShowInformation(&#34;结果&#34;, &#34;电脑是开机的&#34;, win)
+}()
+
+ })
+
+ // 设置窗口内容
+ win.SetContent(container.NewVBox(btn))
+ win.Resize(fyne.Size{Width: 400, Height: 200})
+ win.CenterOnScreen()
+ win.ShowAndRun()
 }
-```</code>
-  </pre>
-  </div>
-<p>Will render as shown below:</p>
-
-
-
-  
-  
+</code></pre>
+      </div>
   
 
-  
-  
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-  
-
-  
-    
-
-    
-      
-    
-
-    
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-    
-
-    
-    
-
-   
-  
-  
-  
-
-  <div class="prism-codeblock  anchorlinenos hl_lines lineanchors linenos linenostart">
-  <pre id="0fd7a4a" class="language-go  line-numbers linkable-line-numbers" data-line="201,203-205" data-line-offset="199" data-start="199">
-  <code>package main
-
-import &#34;fmt&#34;
-
-func main() {
-    fmt.Println(&#34;hello world&#34;)
-}</code>
-  </pre>
-  </div>
-<div class="alert alert-warning d-flex" role="alert">
-  <div class="flex-shrink-1 alert-icon">
-  <span class="material-icons size-20 me-2">
-  warning
-  </span></div>
-  <div class="w-100">
-<p>Translation of Hugo&rsquo;s <a href="https://gohugo.io/content-management/syntax-highlighting/#example-highlight-shortcode" rel="external" target="_blank">Highlight Shortcode<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a> syntax by Prism is currently not (fully) supported.</p>
-  </div>
-  </div>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p><a href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode" rel="external" target="_blank">Highlight Shortcode - Hugo<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<h3 id="go-goroutine-简单概念">Go goroutine 简单概念 <a href="#go-goroutine-%e7%ae%80%e5%8d%95%e6%a6%82%e5%bf%b5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>Goroutine 是 Go 语言中的一种轻量级线程, 由 Go 运行时管理。Goroutine 使得并发编程变得更加简单和高效，可以通过关键字 <code>go</code> 启动。</p>
+<p>当然, 每一个并发执行的活动称为goroutine。当一个程序启动时, 只有一个goroutine来调用main函数, 称之为主goroutine。</p>
+<h4 id="特点">特点 <a href="#%e7%89%b9%e7%82%b9" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ol>
+<li>
+<p><strong>轻量级</strong>：</p>
+<ul>
+<li>Goroutine 非常轻量级, 可以在同一个程序中启动成千上万个 Goroutine, 而不会造成过多的内存开销。</li>
+</ul>
+</li>
+<li>
+<p><strong>易于使用</strong>：</p>
+<ul>
+<li>只需在<strong>函数调用前加上 <code>go</code> 关键字</strong>, 即可启动一个新的 Goroutine。</li>
+</ul>
+</li>
+<li>
+<p><strong>并发执行</strong>：</p>
+<ul>
+<li>Goroutine 可以并发执行, 不同的 Goroutine 之间可以独立运行, 互不干扰。</li>
+</ul>
+</li>
+<li>
+<p><strong>调度器管理</strong>：</p>
+<ul>
+<li>Go 运行时会自动管理 Goroutine 的调度, 充分利用多核处理器的优势。</li>
+</ul>
 </li>
 </ol>
-</div>
+<h4 id="goroutine-示例">Goroutine 示例 <a href="#goroutine-%e7%a4%ba%e4%be%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p>以下是一个简单的 Goroutine 示例：</p>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="7024351" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+ &#34;fmt&#34;
+ &#34;time&#34;
+)
+
+func sayHello() {
+ for i := 0; i &lt; 5; i&#43;&#43; {
+  fmt.Println(&#34;Hello&#34;)
+  time.Sleep(1 * time.Second)
+ }
+}
+
+func main() {
+ go sayHello() // 启动一个新的 Goroutine 执行 sayHello 函数
+
+ // 主 Goroutine 继续执行其他代码
+ for i := 0; i &lt; 5; i&#43;&#43; {
+  fmt.Println(&#34;World&#34;)
+  time.Sleep(1 * time.Second)
+ }
+
+ // 等待 sayHello 函数执行完成
+ time.Sleep(6 * time.Second)
+}
+</code></pre>
+      </div>
+  
+
+<p>输出情况:</p>
+<p>由于 sayHello 函数在一个新的 goroutine 中执行, 而 main 函数继续执行, 两个函数的输出将会交错在一起。具体的输出可能会有所不同, 有可能是如下面这样</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="65e7f7f" class="language-md ">
+  <code>World
+Hello
+World
+Hello
+...</code>
+  </pre>
+  </div>
+<p>而Up主的案例是这样。</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="d1ca4f0" class="language-md ">
+  <code>World
+Hello
+Hello
+World
+World
+Hello
+Hello
+World
+World
+Hello</code>
+  </pre>
+  </div>
+<p>上文这就是 Goroutine 的一个非常好的案例</p>
 
     </div>
-
-    
-
-
-
-
-
-    
-    
-
-
-
-
-
-
-<div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
-    
-    <div id="last-modified" class="mt-1">
-        <p class="mb-0 fw-semibold">Last updated <span
-            id="relativetime"
-            data-authdate="2024-07-26T13:46:10&#43;0800"
-            title="26 7月 2024, 13:46 &#43;0800">
-            26 7月 2024, 13:46 &#43;0800
-        </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
-        </p>
-    </div>
-    
-</div>
 
     
 
@@ -1148,10 +753,10 @@ func main() {
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/">
+		<a href="/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Fyne-趣味整活项目</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Fyne-Markdown编辑器</p>
 					<p class="card-text ms-2"></p>
 					
 				</div>
@@ -1159,11 +764,11 @@ func main() {
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/demo/features/katex/">
+		<a class="ms-auto" href="/docs/demo/features/syntax-highlighting/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">KaTex <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2">Fast Tex math rendering for …</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">Syntax Highlighting <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2">How to highlight code in Lotus …</p>
 					
 				</div>
 			</div>
