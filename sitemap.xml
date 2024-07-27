@@ -23,6 +23,9 @@
     <loc>https://docs.cakepanit.com/docs/dev/golang/</loc>
     <lastmod>2024-07-26T13:46:10+08:00</lastmod>
   </url><url>
+    <loc>https://docs.cakepanit.com/docs/ops/kubernetes/</loc>
+    <lastmod>2024-07-27T21:37:15+08:00</lastmod>
+  </url><url>
     <loc>https://docs.cakepanit.com/docs/dev/23designpattern/1.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
   </url><url>
@@ -119,6 +122,12 @@
     <loc>https://docs.cakepanit.com/docs/ops/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
   </url><url>
+    <loc>https://docs.cakepanit.com/docs/ops/kubernetes/1.kubernetes-v1.30.2%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2023-05-03T22:37:22+01:00</lastmod>
+  </url><url>
+    <loc>https://docs.cakepanit.com/docs/ops/kubernetes/2.%E5%8D%87%E7%BA%A7%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2%E7%9A%84kubernetes%E9%9B%86%E7%BE%A4/</loc>
+    <lastmod>2023-05-03T22:37:22+01:00</lastmod>
+  </url><url>
     <loc>https://docs.cakepanit.com/docs/demo/features/</loc>
     <lastmod>2024-07-26T13:46:10+08:00</lastmod>
   </url><url>
@@ -156,10 +165,10 @@
     <lastmod>2024-07-26T13:46:10+08:00</lastmod>
   </url><url>
     <loc>https://docs.cakepanit.com/docs/</loc>
-    <lastmod>2024-07-27T18:19:15+08:00</lastmod>
+    <lastmod>2024-07-27T21:37:15+08:00</lastmod>
   </url><url>
     <loc>https://docs.cakepanit.com/</loc>
-    <lastmod>2024-07-27T18:19:15+08:00</lastmod>
+    <lastmod>2024-07-27T21:37:15+08:00</lastmod>
   </url><url>
     <loc>https://docs.cakepanit.com/tags/beginners/</loc>
     <lastmod>2024-07-26T03:53:16+08:00</lastmod>
