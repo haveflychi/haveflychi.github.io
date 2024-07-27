@@ -727,7 +727,6 @@
             <li><a href="#233将组件发送至其他k8s节点">2.3.3将组件发送至其他k8s节点</a></li>
           </ul>
         </li>
-        <li><a href="#23创建证书相关文件">2.3创建证书相关文件</a></li>
       </ul>
     </li>
     <li><a href="#3相关证书生成">3.相关证书生成</a>
@@ -986,7 +985,6 @@
             <li><a href="#233将组件发送至其他k8s节点">2.3.3将组件发送至其他k8s节点</a></li>
           </ul>
         </li>
-        <li><a href="#23创建证书相关文件">2.3创建证书相关文件</a></li>
       </ul>
     </li>
     <li><a href="#3相关证书生成">3.相关证书生成</a>
@@ -1259,7 +1257,6 @@
 物理主机：192.168.1.0/24
 service：10.96.0.0/12
 pod：172.16.0.0/12</p>
-<p>安装包已经整理好：https://mirrors.chenby.cn/https://github.com/cby-chen/Kubernetes/releases/download/v1.28.3/kubernetes-v1.28.3.tar</p>
 <h2 id="11k8s基础系统环境配置">1.1.k8s基础系统环境配置 <a href="#11k8s%e5%9f%ba%e7%a1%80%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="12配置ip">1.2.配置IP <a href="#12%e9%85%8d%e7%bd%aeip" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
 
@@ -1573,7 +1570,7 @@ yum update -y &amp;&amp; yum -y install wget psmisc vim net-tools nfs-utils teln
 
   
       <div class="prism-shortcode">
-      <pre id="338ac11" class="language-bash line-numbers"
+      <pre id="ad82b86" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 下载必要工具
 yum -y install createrepo yum-utils wget epel*
@@ -1600,7 +1597,7 @@ scp -r /data/centos7/ root@192.168.1.35:
 # 在内网机器上创建repo配置文件
 rm -rf /etc/yum.repos.d/*
 cat &gt; /etc/yum.repos.d/123.repo  &lt;&lt; EOF 
-[cby]
+[fly]
 name=CentOS-$releasever - Media
 baseurl=file:///root/centos7/
 gpgcheck=0
@@ -1616,7 +1613,7 @@ yum install /root/centos7/* --skip-broken -y
 # 安装完成后，可能还会出现yum无法使用那么再次执行
 rm -rf /etc/yum.repos.d/*
 cat &gt; /etc/yum.repos.d/123.repo  &lt;&lt; EOF 
-[cby]
+[fly]
 name=CentOS-$releasever - Media
 baseurl=file:///root/centos7/
 gpgcheck=0
@@ -1642,7 +1639,7 @@ yum install /root/centos7/* --skip-broken -y
 
   
       <div class="prism-shortcode">
-      <pre id="8824134" class="language-bash line-numbers"
+      <pre id="61b3325" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 下载必要工具
 yum -y install createrepo yum-utils wget epel*
@@ -1663,7 +1660,7 @@ scp -r centos8/ root@192.168.1.35:
 # 在内网机器上创建repo配置文件
 rm -rf /etc/yum.repos.d/*
 cat &gt; /etc/yum.repos.d/123.repo  &lt;&lt; EOF 
-[cby]
+[fly]
 name=CentOS-$releasever - Media
 baseurl=file:///root/centos8/
 gpgcheck=0
@@ -1679,7 +1676,7 @@ yum install /root/centos8/* --skip-broken -y
 # 安装完成后，可能还会出现yum无法使用那么再次执行
 rm -rf /etc/yum.repos.d/*
 cat &gt; /etc/yum.repos.d/123.repo  &lt;&lt; EOF 
-[cby]
+[fly]
 name=CentOS-$releasever - Media
 baseurl=file:///root/centos8/
 gpgcheck=0
@@ -2148,7 +2145,7 @@ yum  --disablerepo=&#34;*&#34;  --enablerepo=&#34;elrepo-kernel&#34;  list  avai
 
   
       <div class="prism-shortcode">
-      <pre id="0d85680" class="language-bash line-numbers"
+      <pre id="31f71d6" class="language-bash line-numbers"
         ><code class="language-bash"
         ># Ubuntu忽略，CentOS执行
 
@@ -2175,7 +2172,7 @@ yum install https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm -y ; s
 yum install https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm -y ; sed -i &#34;s@mirrorlist@#mirrorlist@g&#34; /etc/yum.repos.d/elrepo.repo ; sed -i &#34;s@elrepo.org/linux@mirrors.tuna.tsinghua.edu.cn/elrepo@g&#34; /etc/yum.repos.d/elrepo.repo ; yum  --disablerepo=&#34;*&#34;  --enablerepo=&#34;elrepo-kernel&#34;  list  available -y ; yum  --enablerepo=elrepo-kernel  install  kernel-lt -y ; grubby --set-default $(ls /boot/vmlinuz-* | grep elrepo) ; grubby --default-kernel ; reboot 
 
 # 离线版本 
-yum install -y /root/cby/kernel-lt-*-1.el7.elrepo.x86_64.rpm ; grubby --set-default $(ls /boot/vmlinuz-* | grep elrepo) ; grubby --default-kernel ; reboot 
+yum install -y /root/fly/kernel-lt-*-1.el7.elrepo.x86_64.rpm ; grubby --set-default $(ls /boot/vmlinuz-* | grep elrepo) ; grubby --default-kernel ; reboot 
 </code></pre>
       </div>
   
@@ -2423,12 +2420,12 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="6027332" class="language-bash line-numbers"
+      <pre id="8cbe2f7" class="language-bash line-numbers"
         ><code class="language-bash"
         ># https://github.com/containernetworking/plugins/releases/
-# wget https://mirrors.chenby.cn/https://github.com/containernetworking/plugins/releases/download/v1.3.0/cni-plugins-linux-amd64-v1.3.0.tgz
+# wget https://github.com/containernetworking/plugins/releases/download/v1.3.0/cni-plugins-linux-amd64-v1.3.0.tgz
 
-cd cby/
+cd fly/
 
 #创建cni插件所需目录
 mkdir -p /etc/cni/net.d /opt/cni/bin 
@@ -2436,7 +2433,7 @@ mkdir -p /etc/cni/net.d /opt/cni/bin
 tar xf cni-plugins-linux-amd64-v*.tgz -C /opt/cni/bin/
 
 # https://github.com/containerd/containerd/releases/
-# wget https://mirrors.chenby.cn/https://github.com/containerd/containerd/releases/download/v1.7.8/cri-containerd-cni-1.7.8-linux-amd64.tar.gz
+# wget https://github.com/containerd/containerd/releases/download/v1.7.8/cri-containerd-cni-1.7.8-linux-amd64.tar.gz
 
 #解压
 tar -xzf cri-containerd-cni-*-linux-amd64.tar.gz -C /
@@ -2707,10 +2704,10 @@ systemctl status containerd.service
 
   
       <div class="prism-shortcode">
-      <pre id="28a0032" class="language-bash line-numbers"
+      <pre id="3c005a3" class="language-bash line-numbers"
         ><code class="language-bash"
         ># https://github.com/kubernetes-sigs/cri-tools/releases/
-# wget https://mirrors.chenby.cn/https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.28.0/crictl-v1.28.0-linux-amd64.tar.gz
+# wget https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.28.0/crictl-v1.28.0-linux-amd64.tar.gz
 
 #解压
 tar xf crictl-v*-linux-amd64.tar.gz -C /usr/bin/
@@ -3055,12 +3052,12 @@ docker info
 
   
       <div class="prism-shortcode">
-      <pre id="fb3a48e" class="language-bash line-numbers"
+      <pre id="d34b0bf" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 由于1.24以及更高版本不支持docker所以安装cri-docker
 # 下载cri-docker 
 # https://github.com/Mirantis/cri-dockerd/releases/
-# wget  https://mirrors.chenby.cn/https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.7/cri-dockerd-0.3.7.amd64.tgz
+# wget  https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.7/cri-dockerd-0.3.7.amd64.tgz
 
 # 解压cri-docker
 tar xvf cri-dockerd-*.amd64.tgz 
@@ -3217,14 +3214,14 @@ systemctl status docker.service
 
   
       <div class="prism-shortcode">
-      <pre id="1212bed" class="language-bash line-numbers"
+      <pre id="5902bdb" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 下载安装包
-# wget https://mirrors.chenby.cn/https://github.com/etcd-io/etcd/releases/download/v3.5.10/etcd-v3.5.10-linux-amd64.tar.gz
+# wget https://github.com/etcd-io/etcd/releases/download/v3.5.10/etcd-v3.5.10-linux-amd64.tar.gz
 # wget https://dl.k8s.io/v1.28.0/kubernetes-server-linux-amd64.tar.gz
 
 # 解压k8s安装文件
-cd cby
+cd fly
 tar -xf kubernetes-server-linux-amd64.tar.gz  --strip-components=3 -C /usr/local/bin kubernetes/server/bin/kube{let,ctl,-apiserver,-controller-manager,-scheduler,-proxy}
 
 # 这是一个tar命令，用于解压指定的kubernetes-server-linux-amd64.tar.gz文件，并将其中的特定文件提取到/usr/local/bin目录下。
@@ -3318,24 +3315,6 @@ mkdir -p /opt/cni/bin
       </div>
   
 
-<h2 id="23创建证书相关文件">2.3创建证书相关文件 <a href="#23%e5%88%9b%e5%bb%ba%e8%af%81%e4%b9%a6%e7%9b%b8%e5%85%b3%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="7f5343c" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># 请查看Github仓库 或者进行获取已经打好的包
-https://github.com/cby-chen/Kubernetes/
-https://github.com/cby-chen/Kubernetes/tags
-https://github.com/cby-chen/Kubernetes/releases/download/v1.28.3/kubernetes-v1.28.3.tar
-</code></pre>
-      </div>
-  
-
 <h1 id="3相关证书生成">3.相关证书生成 <a href="#3%e7%9b%b8%e5%85%b3%e8%af%81%e4%b9%a6%e7%94%9f%e6%88%90" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1>
 
 
@@ -3344,15 +3323,11 @@ https://github.com/cby-chen/Kubernetes/releases/download/v1.28.3/kubernetes-v1.2
 
   
       <div class="prism-shortcode">
-      <pre id="48310d0" class="language-bash line-numbers"
+      <pre id="41fa18e" class="language-bash line-numbers"
         ><code class="language-bash"
         ># master01节点下载证书生成工具
-# wget &#34;https://mirrors.chenby.cn/https://github.com/cloudflare/cfssl/releases/download/v1.6.4/cfssl_1.6.4_linux_amd64&#34; -O /usr/local/bin/cfssl
-# wget &#34;https://mirrors.chenby.cn/https://github.com/cloudflare/cfssl/releases/download/v1.6.4/cfssljson_1.6.4_linux_amd64&#34; -O /usr/local/bin/cfssljson
-
-# 软件包内有
-cp cfssl_*_linux_amd64 /usr/local/bin/cfssl
-cp cfssljson_*_linux_amd64 /usr/local/bin/cfssljson
+# wget &#34;https://github.com/cloudflare/cfssl/releases/download/v1.6.4/cfssl_1.6.4_linux_amd64&#34; -O /usr/local/bin/cfssl
+# wget &#34;https://github.com/cloudflare/cfssl/releases/download/v1.6.4/cfssljson_1.6.4_linux_amd64&#34; -O /usr/local/bin/cfssljson
 
 # 添加执行权限
 chmod &#43;x /usr/local/bin/cfssl /usr/local/bin/cfssljson
@@ -3369,7 +3344,7 @@ chmod &#43;x /usr/local/bin/cfssl /usr/local/bin/cfssljson
 
   
       <div class="prism-shortcode">
-      <pre id="4ca18cf" class="language-bash line-numbers"
+      <pre id="5d3db16" class="language-bash line-numbers"
         ><code class="language-bash"
         >mkdir /etc/etcd/ssl -p
 </code></pre>
@@ -3384,7 +3359,7 @@ chmod &#43;x /usr/local/bin/cfssl /usr/local/bin/cfssljson
 
   
       <div class="prism-shortcode">
-      <pre id="e22f1cc" class="language-bash line-numbers"
+      <pre id="3655f81" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 写入生成证书所需的配置文件
 cat &gt; ca-config.json &lt;&lt; EOF 
@@ -3539,7 +3514,7 @@ cfssl gencert \
 
   
       <div class="prism-shortcode">
-      <pre id="8a39666" class="language-bash line-numbers"
+      <pre id="2ab79bd" class="language-bash line-numbers"
         ><code class="language-bash"
         >Master=&#39;k8s-master02 k8s-master03&#39;
 for NODE in $Master; do ssh $NODE &#34;mkdir -p /etc/etcd/ssl&#34;; for FILE in etcd-ca-key.pem  etcd-ca.pem  etcd-key.pem  etcd.pem; do scp /etc/etcd/ssl/${FILE} $NODE:/etc/etcd/ssl/${FILE}; done; done
@@ -3558,7 +3533,7 @@ for NODE in $Master; do ssh $NODE &#34;mkdir -p /etc/etcd/ssl&#34;; for FILE in 
 
   
       <div class="prism-shortcode">
-      <pre id="c6300c4" class="language-bash line-numbers"
+      <pre id="b062113" class="language-bash line-numbers"
         ><code class="language-bash"
         >mkdir -p /etc/kubernetes/pki
 </code></pre>
@@ -3573,7 +3548,7 @@ for NODE in $Master; do ssh $NODE &#34;mkdir -p /etc/etcd/ssl&#34;; for FILE in 
 
   
       <div class="prism-shortcode">
-      <pre id="e7364c6" class="language-bash line-numbers"
+      <pre id="9b18b31" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 写入生成证书所需的配置文件
 cat &gt; ca-csr.json   &lt;&lt; EOF 
@@ -3666,7 +3641,7 @@ cfssl gencert   \
 -ca=/etc/kubernetes/pki/ca.pem   \
 -ca-key=/etc/kubernetes/pki/ca-key.pem   \
 -config=ca-config.json   \
--hostname=10.96.0.1,192.168.1.36,127.0.0.1,kubernetes,kubernetes.default,kubernetes.default.svc,kubernetes.default.svc.cluster,kubernetes.default.svc.cluster.local,x.oiox.cn,k.oiox.cn,l.oiox.cn,o.oiox.cn,192.168.1.31,192.168.1.32,192.168.1.33,192.168.1.34,192.168.1.35,192.168.1.36,192.168.0.37,192.168.0.38,192.168.0.39,192.168.1.70,fc00:43f4:1eea:1::10,fc00:43f4:1eea:1::20,fc00:43f4:1eea:1::30,fc00:43f4:1eea:1::40,fc00:43f4:1eea:1::50,fc00:43f4:1eea:1::60,fc00:43f4:1eea:1::70,fc00:43f4:1eea:1::80,fc00:43f4:1eea:1::90,fc00:43f4:1eea:1::100,::1   \
+-hostname=10.96.0.1,192.168.1.36,127.0.0.1,kubernetes,kubernetes.default,kubernetes.default.svc,kubernetes.default.svc.cluster,kubernetes.default.svc.cluster.local,x.cakepanit.com,k.cakepanit.com,l.cakepanit.com,o.cakepanit.com,192.168.1.31,192.168.1.32,192.168.1.33,192.168.1.34,192.168.1.35,192.168.1.36,192.168.0.37,192.168.0.38,192.168.0.39,192.168.1.70,fc00:43f4:1eea:1::10,fc00:43f4:1eea:1::20,fc00:43f4:1eea:1::30,fc00:43f4:1eea:1::40,fc00:43f4:1eea:1::50,fc00:43f4:1eea:1::60,fc00:43f4:1eea:1::70,fc00:43f4:1eea:1::80,fc00:43f4:1eea:1::90,fc00:43f4:1eea:1::100,::1   \
 -profile=kubernetes   apiserver-csr.json | cfssljson -bare /etc/kubernetes/pki/apiserver
 
 # 这个命令是使用cfssl工具生成Kubernetes API Server的证书。
@@ -3694,7 +3669,7 @@ cfssl gencert   \
 
   
       <div class="prism-shortcode">
-      <pre id="a8b0e83" class="language-bash line-numbers"
+      <pre id="37ddd05" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; front-proxy-ca-csr.json  &lt;&lt; EOF 
 {
@@ -3783,7 +3758,7 @@ cfssl gencert  \
 
   
       <div class="prism-shortcode">
-      <pre id="aab3685" class="language-bash line-numbers"
+      <pre id="351a54e" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; manager-csr.json &lt;&lt; EOF 
 {
@@ -3910,7 +3885,7 @@ kubectl config use-context system:kube-controller-manager@kubernetes \
 
   
       <div class="prism-shortcode">
-      <pre id="483527a" class="language-bash line-numbers"
+      <pre id="7a5917e" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; scheduler-csr.json &lt;&lt; EOF 
 {
@@ -4042,7 +4017,7 @@ kubectl config use-context system:kube-scheduler@kubernetes \
 
   
       <div class="prism-shortcode">
-      <pre id="8c8c4dd" class="language-bash line-numbers"
+      <pre id="b0f009c" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; admin-csr.json &lt;&lt; EOF 
 {
@@ -4174,7 +4149,7 @@ kubectl config use-context kubernetes-admin@kubernetes  --kubeconfig=/etc/kubern
 
   
       <div class="prism-shortcode">
-      <pre id="66510e1" class="language-bash line-numbers"
+      <pre id="0490866" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; kube-proxy-csr.json  &lt;&lt; EOF 
 {
@@ -4302,7 +4277,7 @@ kubectl config use-context kube-proxy@kubernetes  --kubeconfig=/etc/kubernetes/k
 
   
       <div class="prism-shortcode">
-      <pre id="e7c8c2d" class="language-bash line-numbers"
+      <pre id="2f60d9a" class="language-bash line-numbers"
         ><code class="language-bash"
         >openssl genrsa -out /etc/kubernetes/pki/sa.key 2048
 openssl rsa -in /etc/kubernetes/pki/sa.key -pubout -out /etc/kubernetes/pki/sa.pub
@@ -4337,7 +4312,7 @@ openssl rsa -in /etc/kubernetes/pki/sa.key -pubout -out /etc/kubernetes/pki/sa.p
 
   
       <div class="prism-shortcode">
-      <pre id="597f880" class="language-bash line-numbers"
+      <pre id="4a7f503" class="language-bash line-numbers"
         ><code class="language-bash"
         >#其他节点创建目录
 # mkdir  /etc/kubernetes/pki/ -p
@@ -4355,7 +4330,7 @@ for NODE in k8s-master02 k8s-master03; do  for FILE in $(ls /etc/kubernetes/pki 
 
   
       <div class="prism-shortcode">
-      <pre id="fb77224" class="language-bash line-numbers"
+      <pre id="cb2a7b9" class="language-bash line-numbers"
         ><code class="language-bash"
         >ls /etc/kubernetes/pki/
 admin.csr          controller-manager.csr      kube-proxy.csr
@@ -4383,7 +4358,7 @@ ls /etc/kubernetes/pki/ |wc -l
 
   
       <div class="prism-shortcode">
-      <pre id="8c739ea" class="language-bash line-numbers"
+      <pre id="924f30d" class="language-bash line-numbers"
         ><code class="language-bash"
         >这个配置文件是用于 etcd 集群的配置，其中包含了一些重要的参数和选项：
 
@@ -4428,7 +4403,7 @@ ls /etc/kubernetes/pki/ |wc -l
 
   
       <div class="prism-shortcode">
-      <pre id="8323e4c" class="language-bash line-numbers"
+      <pre id="9aa903e" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 如果要用IPv6那么把IPv4地址修改为IPv6即可
 cat &gt; /etc/etcd/etcd.config.yml &lt;&lt; EOF 
@@ -4491,7 +4466,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="88e3a34" class="language-bash line-numbers"
+      <pre id="9e472a4" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 如果要用IPv6那么把IPv4地址修改为IPv6即可
 cat &gt; /etc/etcd/etcd.config.yml &lt;&lt; EOF 
@@ -4554,7 +4529,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="d469811" class="language-bash line-numbers"
+      <pre id="f26d203" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 如果要用IPv6那么把IPv4地址修改为IPv6即可
 cat &gt; /etc/etcd/etcd.config.yml &lt;&lt; EOF 
@@ -4617,7 +4592,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="38c53f2" class="language-bash line-numbers"
+      <pre id="46fa52e" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; /usr/lib/systemd/system/etcd.service &lt;&lt; EOF
 
@@ -4659,7 +4634,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="0170e98" class="language-bash line-numbers"
+      <pre id="4148fe7" class="language-bash line-numbers"
         ><code class="language-bash"
         >mkdir /etc/kubernetes/pki/etcd
 ln -s /etc/etcd/ssl/* /etc/kubernetes/pki/etcd/
@@ -4687,7 +4662,7 @@ systemctl status etcd.service
 
   
       <div class="prism-shortcode">
-      <pre id="c6177ca" class="language-bash line-numbers"
+      <pre id="40582f3" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 如果要用IPv6那么把IPv4地址修改为IPv6即可
 export ETCDCTL_API=3
@@ -4729,7 +4704,7 @@ etcdctl --endpoints=&#34;192.168.1.33:2379,192.168.1.32:2379,192.168.1.31:2379&#
 
   
       <div class="prism-shortcode">
-      <pre id="ca35425" class="language-bash line-numbers"
+      <pre id="99b79d5" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 安装编译环境
 yum install gcc -y
@@ -4772,7 +4747,7 @@ for NODE in $node; do scp -r /usr/local/nginx/ $NODE:/usr/local/nginx/; done
 
   
       <div class="prism-shortcode">
-      <pre id="d910651" class="language-bash line-numbers"
+      <pre id="37406d9" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 写入nginx配置文件
 cat &gt; /usr/local/nginx/conf/kube-nginx.conf &lt;&lt;EOF
@@ -4867,7 +4842,7 @@ systemctl status kube-nginx.service
 
   
       <div class="prism-shortcode">
-      <pre id="74c5e45" class="language-bash line-numbers"
+      <pre id="d824f40" class="language-bash line-numbers"
         ><code class="language-bash"
         >systemctl disable --now firewalld
 setenforce 0
@@ -4885,7 +4860,7 @@ yum -y install keepalived haproxy
 
   
       <div class="prism-shortcode">
-      <pre id="df24f33" class="language-bash line-numbers"
+      <pre id="893170a" class="language-bash line-numbers"
         ><code class="language-bash"
         ># cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
 
@@ -4945,7 +4920,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="15957c7" class="language-bash line-numbers"
+      <pre id="15e91cd" class="language-bash line-numbers"
         ><code class="language-bash"
         >这段配置代码是指定了一个HAProxy负载均衡器的配置。下面对各部分进行详细解释：
 1. global:
@@ -5001,7 +4976,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="32ed25e" class="language-bash line-numbers"
+      <pre id="c0f4976" class="language-bash line-numbers"
         ><code class="language-bash"
         >#cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.bak
 
@@ -5051,7 +5026,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="988191f" class="language-bash line-numbers"
+      <pre id="442815a" class="language-bash line-numbers"
         ><code class="language-bash"
         ># cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.bak
 
@@ -5102,7 +5077,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="0b5985d" class="language-bash line-numbers"
+      <pre id="00a5a8c" class="language-bash line-numbers"
         ><code class="language-bash"
         ># cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.bak
 
@@ -5154,7 +5129,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="b17ea39" class="language-bash line-numbers"
+      <pre id="365e333" class="language-bash line-numbers"
         ><code class="language-bash"
         >这是一个用于配置keepalived的配置文件。下面是对每个部分的详细解释：
 
@@ -5192,7 +5167,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="4381d2a" class="language-bash line-numbers"
+      <pre id="3109f24" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt;  /etc/keepalived/check_apiserver.sh &lt;&lt; EOF
 #!/bin/bash
@@ -5247,7 +5222,7 @@ chmod &#43;x /etc/keepalived/check_apiserver.sh
 
   
       <div class="prism-shortcode">
-      <pre id="9e6fdcf" class="language-bash line-numbers"
+      <pre id="bda4637" class="language-bash line-numbers"
         ><code class="language-bash"
         >systemctl daemon-reload
 # 用于重新加载systemd管理的单位文件。当你新增或修改了某个单位文件（如.service文件、.socket文件等），需要运行该命令来刷新systemd对该文件的配置。
@@ -5271,7 +5246,7 @@ systemctl status keepalived.service
 
   
       <div class="prism-shortcode">
-      <pre id="3edf760" class="language-bash line-numbers"
+      <pre id="610fe84" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 能ping同
 [root@k8s-node02 ~]# ping 192.168.1.36
@@ -5293,7 +5268,7 @@ systemctl status keepalived.service
 
   
       <div class="prism-shortcode">
-      <pre id="2dc6c3a" class="language-bash line-numbers"
+      <pre id="1de0b1f" class="language-bash line-numbers"
         ><code class="language-bash"
         >mkdir -p /etc/kubernetes/manifests/ /etc/systemd/system/kubelet.service.d /var/lib/kubelet /var/log/kubernetes
 </code></pre>
@@ -5308,7 +5283,7 @@ systemctl status keepalived.service
 
   
       <div class="prism-shortcode">
-      <pre id="c5627b7" class="language-bash line-numbers"
+      <pre id="50e42e1" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; /usr/lib/systemd/system/kube-apiserver.service &lt;&lt; EOF
 
@@ -5370,7 +5345,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="4282f4d" class="language-bash line-numbers"
+      <pre id="1b2b31b" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; /usr/lib/systemd/system/kube-apiserver.service &lt;&lt; EOF
 [Unit]
@@ -5432,7 +5407,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="d50fcf3" class="language-bash line-numbers"
+      <pre id="6ac2294" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; /usr/lib/systemd/system/kube-apiserver.service  &lt;&lt; EOF
 
@@ -5496,7 +5471,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="1b08feb" class="language-bash line-numbers"
+      <pre id="e2ea0b8" class="language-bash line-numbers"
         ><code class="language-bash"
         >该配置文件是用于定义Kubernetes API Server的systemd服务的配置。systemd是一个用于启动和管理Linux系统服务的守护进程。
 
@@ -5559,7 +5534,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="14f7f53" class="language-bash line-numbers"
+      <pre id="674cef9" class="language-bash line-numbers"
         ><code class="language-bash"
         >systemctl daemon-reload
 # 用于重新加载systemd管理的单位文件。当你新增或修改了某个单位文件（如.service文件、.socket文件等），需要运行该命令来刷新systemd对该文件的配置。
@@ -5584,7 +5559,7 @@ systemctl status kube-apiserver.service
 
   
       <div class="prism-shortcode">
-      <pre id="9012ed8" class="language-bash line-numbers"
+      <pre id="8e16f7d" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 所有master节点配置，且配置相同
 # 172.16.0.0/12为pod网段，按需求设置你自己的网段
@@ -5637,7 +5612,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="d78c14c" class="language-bash line-numbers"
+      <pre id="a91e0a5" class="language-bash line-numbers"
         ><code class="language-bash"
         >这是一个用于启动 Kubernetes 控制器管理器的 systemd 服务单元文件。下面是对每个部分的详细解释：
 
@@ -5687,7 +5662,7 @@ WantedBy：指定了服务单元所属的 target，这里是 multi-user.target�
 
   
       <div class="prism-shortcode">
-      <pre id="a280a26" class="language-bash line-numbers"
+      <pre id="80268f9" class="language-bash line-numbers"
         ><code class="language-bash"
         >systemctl daemon-reload
 # 用于重新加载systemd管理的单位文件。当你新增或修改了某个单位文件（如.service文件、.socket文件等），需要运行该命令来刷新systemd对该文件的配置。
@@ -5712,7 +5687,7 @@ systemctl status kube-controller-manager.service
 
   
       <div class="prism-shortcode">
-      <pre id="3c0121c" class="language-bash line-numbers"
+      <pre id="d003f9d" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; /usr/lib/systemd/system/kube-scheduler.service &lt;&lt; EOF
 
@@ -5748,7 +5723,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="0f36c32" class="language-bash line-numbers"
+      <pre id="700f748" class="language-bash line-numbers"
         ><code class="language-bash"
         >这是一个用于启动 Kubernetes 调度器的 systemd 服务单元文件。下面是对每个部分的详细解释：
 
@@ -5785,7 +5760,7 @@ WantedBy：指定了服务单元所属的 target，这里是 multi-user.target�
 
   
       <div class="prism-shortcode">
-      <pre id="e8e0bde" class="language-bash line-numbers"
+      <pre id="31a3969" class="language-bash line-numbers"
         ><code class="language-bash"
         >systemctl daemon-reload
 # 用于重新加载systemd管理的单位文件。当你新增或修改了某个单位文件（如.service文件、.socket文件等），需要运行该命令来刷新systemd对该文件的配置。
@@ -5810,7 +5785,7 @@ systemctl status kube-scheduler.service
 
   
       <div class="prism-shortcode">
-      <pre id="b5cb21c" class="language-bash line-numbers"
+      <pre id="9b141e3" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 在《5.高可用配置》选择使用那种高可用方案
 # 若使用 haproxy、keepalived 那么为 `--server=https://192.168.1.36:9443`
@@ -5876,7 +5851,7 @@ mkdir -p /root/.kube ; cp /etc/kubernetes/admin.kubeconfig /root/.kube/config
 
   
       <div class="prism-shortcode">
-      <pre id="ffac862" class="language-bash line-numbers"
+      <pre id="703b2ed" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 1.28 版本只能查看到一个etcd 属于正常现象
 # export ETCDCTL_API=3
@@ -5903,7 +5878,7 @@ kubectl create -f bootstrap.secret.yaml
 
   
       <div class="prism-shortcode">
-      <pre id="4caa5ed" class="language-bash line-numbers"
+      <pre id="7c728c5" class="language-bash line-numbers"
         ><code class="language-bash"
         >cd /etc/kubernetes/
  
@@ -5921,7 +5896,7 @@ for NODE in k8s-master02 k8s-master03 k8s-node01 k8s-node02; do ssh $NODE mkdir 
 
   
       <div class="prism-shortcode">
-      <pre id="4fe67bb" class="language-bash line-numbers"
+      <pre id="44977dc" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; /usr/lib/systemd/system/kubelet.service &lt;&lt; EOF
 
@@ -6002,7 +5977,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="186626d" class="language-bash line-numbers"
+      <pre id="3fe3200" class="language-bash line-numbers"
         ><code class="language-bash"
         >mkdir -p /var/lib/kubelet /var/log/kubernetes /etc/systemd/system/kubelet.service.d /etc/kubernetes/manifests/
 
@@ -6083,7 +6058,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="bf5245b" class="language-bash line-numbers"
+      <pre id="e224171" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; /etc/kubernetes/kubelet-conf.yml &lt;&lt;EOF
 apiVersion: kubelet.config.k8s.io/v1beta1
@@ -6237,7 +6212,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="6a03ddd" class="language-bash line-numbers"
+      <pre id="dcf08c5" class="language-bash line-numbers"
         ><code class="language-bash"
         >systemctl daemon-reload
 # 用于重新加载systemd管理的单位文件。当你新增或修改了某个单位文件（如.service文件、.socket文件等），需要运行该命令来刷新systemd对该文件的配置。
@@ -6262,7 +6237,7 @@ systemctl status kubelet.service
 
   
       <div class="prism-shortcode">
-      <pre id="6a3548c" class="language-bash line-numbers"
+      <pre id="1e3518c" class="language-bash line-numbers"
         ><code class="language-bash"
         >[root@k8s-master01 ~]# kubectl  get node
 NAME           STATUS     ROLES    AGE   VERSION
@@ -6284,7 +6259,7 @@ k8s-node02     Ready    &lt;none&gt;   14s   v1.28.3
 
   
       <div class="prism-shortcode">
-      <pre id="79259e0" class="language-bash line-numbers"
+      <pre id="ced24c6" class="language-bash line-numbers"
         ><code class="language-bash"
         >[root@k8s-master01 ~]# kubectl describe node | grep Runtime
   Container Runtime Version:  containerd://1.7.8
@@ -6311,7 +6286,7 @@ k8s-node02     Ready    &lt;none&gt;   14s   v1.28.3
 
   
       <div class="prism-shortcode">
-      <pre id="76aceeb" class="language-bash line-numbers"
+      <pre id="4dedc5c" class="language-bash line-numbers"
         ><code class="language-bash"
         ># master-1执行
 for NODE in k8s-master02 k8s-master03 k8s-node01 k8s-node02; do scp /etc/kubernetes/kube-proxy.kubeconfig $NODE:/etc/kubernetes/kube-proxy.kubeconfig; done
@@ -6327,7 +6302,7 @@ for NODE in k8s-master02 k8s-master03 k8s-node01 k8s-node02; do scp /etc/kuberne
 
   
       <div class="prism-shortcode">
-      <pre id="b6afb18" class="language-bash line-numbers"
+      <pre id="69ebc48" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt;  /usr/lib/systemd/system/kube-proxy.service &lt;&lt; EOF
 [Unit]
@@ -6376,7 +6351,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="70e847e" class="language-bash line-numbers"
+      <pre id="772d658" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; /etc/kubernetes/kube-proxy.yaml &lt;&lt; EOF
 apiVersion: kubeproxy.config.k8s.io/v1alpha1
@@ -6538,7 +6513,7 @@ EOF
 
   
       <div class="prism-shortcode">
-      <pre id="6b819aa" class="language-bash line-numbers"
+      <pre id="694013b" class="language-bash line-numbers"
         ><code class="language-bash"
         > systemctl daemon-reload
 # 用于重新加载systemd管理的单位文件。当你新增或修改了某个单位文件（如.service文件、.socket文件等），需要运行该命令来刷新systemd对该文件的配置。
@@ -6565,11 +6540,11 @@ systemctl status kube-proxy.service
 
   
       <div class="prism-shortcode">
-      <pre id="0451552" class="language-bash line-numbers"
+      <pre id="6e6ef56" class="language-bash line-numbers"
         ><code class="language-bash"
         ># https://github.com/opencontainers/runc/releases
 # 升级runc
-# wget https://mirrors.chenby.cn/https://github.com/opencontainers/runc/releases/download/v1.1.10/runc.amd64
+# wget https://github.com/opencontainers/runc/releases/download/v1.1.10/runc.amd64
 
 install -m 755 runc.amd64 /usr/local/sbin/runc
 cp -p /usr/local/sbin/runc  /usr/local/bin/runc
@@ -6595,9 +6570,9 @@ libseccomp-2.5.1-1.el8.x86_64
 
   
       <div class="prism-shortcode">
-      <pre id="20f4dde" class="language-bash line-numbers"
+      <pre id="bdc9dd7" class="language-bash line-numbers"
         ><code class="language-bash"
-        >wget https://mirrors.chenby.cn/https://github.com/projectcalico/calico/blob/master/manifests/calico-typha.yaml
+        >wget https://github.com/projectcalico/calico/blob/master/manifests/calico-typha.yaml
 
 cp calico-typha.yaml calico.yaml
 cp calico-typha.yaml calico-ipv6.yaml
@@ -6643,8 +6618,6 @@ sed -i &#34;s#docker.io/calico/#m.daocloud.io/docker.io/calico/#g&#34; calico-ip
 sed -i &#34;s#m.daocloud.io/docker.io/calico/#docker.io/calico/#g&#34; calico.yaml 
 sed -i &#34;s#m.daocloud.io/docker.io/calico/#docker.io/calico/#g&#34; calico-ipv6.yaml
 
-sed -i &#34;s#docker.io/#docker.oiox.cn/#g&#34; cby.yaml 
-
 
 # 本地没有公网 IPv6 使用 calico.yaml
 kubectl apply -f calico.yaml
@@ -6664,7 +6637,7 @@ kubectl apply -f calico.yaml
 
   
       <div class="prism-shortcode">
-      <pre id="d6f5328" class="language-bash line-numbers"
+      <pre id="1bfd538" class="language-bash line-numbers"
         ><code class="language-bash"
         ># calico 初始化会很慢 需要耐心等待一下，大约十分钟左右
 [root@k8s-master01 ~]# kubectl  get pod -A
@@ -6688,7 +6661,7 @@ kube-system   calico-typha-6cdc4b4fbc-57snb              1/1     Running   0    
 
   
       <div class="prism-shortcode">
-      <pre id="324c491" class="language-bash line-numbers"
+      <pre id="3037d11" class="language-bash line-numbers"
         ><code class="language-bash"
         ># [root@k8s-master01 ~]# curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 # [root@k8s-master01 ~]# chmod 700 get_helm.sh
@@ -6709,7 +6682,7 @@ cp linux-amd64/helm /usr/local/bin/
 
   
       <div class="prism-shortcode">
-      <pre id="1a95fa6" class="language-bash line-numbers"
+      <pre id="430e317" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 添加源
 helm repo add cilium https://helm.cilium.io
@@ -6741,7 +6714,7 @@ helm install  cilium ./cilium/ -n kube-system
 
   
       <div class="prism-shortcode">
-      <pre id="af1e634" class="language-bash line-numbers"
+      <pre id="cadc1c6" class="language-bash line-numbers"
         ><code class="language-bash"
         >[root@k8s-master01 ~]# kubectl  get pod -A | grep cil
 kube-system   cilium-gmr6c                       1/1     Running       0             5m3s
@@ -6765,9 +6738,9 @@ kube-system   cilium-tdjq4                       1/1     Running       0        
 
   
       <div class="prism-shortcode">
-      <pre id="5727b43" class="language-bash line-numbers"
+      <pre id="679f094" class="language-bash line-numbers"
         ><code class="language-bash"
-        >[root@k8s-master01 yaml]# wget https://mirrors.chenby.cn/https://raw.githubusercontent.com/cilium/cilium/1.12.1/examples/kubernetes/addons/prometheus/monitoring-example.yaml
+        >[root@k8s-master01 yaml]# wget https://raw.githubusercontent.com/cilium/cilium/1.12.1/examples/kubernetes/addons/prometheus/monitoring-example.yaml
 
 [root@k8s-master01 yaml]# sed -i &#34;s#docker.io/#m.daocloud.io/docker.io/#g&#34; monitoring-example.yaml
 
@@ -6799,9 +6772,9 @@ deployment.apps/prometheus created
 
   
       <div class="prism-shortcode">
-      <pre id="f1f5d18" class="language-bash line-numbers"
+      <pre id="9ba021a" class="language-bash line-numbers"
         ><code class="language-bash"
-        >wget https://mirrors.chenby.cn/https://raw.githubusercontent.com/cilium/cilium/master/examples/kubernetes/connectivity-check/connectivity-check.yaml
+        >wget https://raw.githubusercontent.com/cilium/cilium/master/examples/kubernetes/connectivity-check/connectivity-check.yaml
 
 sed -i &#34;s#google.com#baidu.cn#g&#34; connectivity-check.yaml
 sed -i &#34;s#quay.io/#m.daocloud.io/quay.io/#g&#34; connectivity-check.yaml
@@ -6819,15 +6792,15 @@ kubectl  apply -f connectivity-check.yaml
 
   
       <div class="prism-shortcode">
-      <pre id="e694ff2" class="language-bash line-numbers"
+      <pre id="edcfc9d" class="language-bash line-numbers"
         ><code class="language-bash"
         >[root@k8s-master01 yaml]# kubectl  get pod -A
 NAMESPACE           NAME                                                     READY   STATUS    RESTARTS      AGE
 cilium-monitoring   grafana-59957b9549-6zzqh                                 1/1     Running   0             10m
 cilium-monitoring   prometheus-7c8c9684bb-4v9cl                              1/1     Running   0             10m
-default             chenby-75b5d7fbfb-7zjsr                                  1/1     Running   0             27h
-default             chenby-75b5d7fbfb-hbvr8                                  1/1     Running   0             27h
-default             chenby-75b5d7fbfb-ppbzg                                  1/1     Running   0             27h
+default             cakepanit-75b5d7fbfb-7zjsr                                  1/1     Running   0             27h
+default             cakepanit-75b5d7fbfb-hbvr8                                  1/1     Running   0             27h
+default             cakepanit-75b5d7fbfb-ppbzg                                  1/1     Running   0             27h
 default             echo-a-6799dff547-pnx6w                                  1/1     Running   0             10m
 default             echo-b-fc47b659c-4bdg9                                   1/1     Running   0             10m
 default             echo-b-host-67fcfd59b7-28r9s                             1/1     Running   0             10m
@@ -6867,7 +6840,7 @@ kube-system         metrics-server-776f58c94b-c6zgs                          1/1
 
   
       <div class="prism-shortcode">
-      <pre id="839df09" class="language-bash line-numbers"
+      <pre id="bc6b334" class="language-bash line-numbers"
         ><code class="language-bash"
         >[root@k8s-master01 yaml]# kubectl  edit svc  -n kube-system hubble-ui
 service/hubble-ui edited
@@ -6893,7 +6866,7 @@ type: NodePort
 
   
       <div class="prism-shortcode">
-      <pre id="d7d2b67" class="language-bash line-numbers"
+      <pre id="e15b629" class="language-bash line-numbers"
         ><code class="language-bash"
         >[root@k8s-master01 yaml]# kubectl get svc -A | grep monit
 cilium-monitoring   grafana                NodePort    10.100.250.17    &lt;none&gt;        3000:30707/TCP           15m
@@ -6918,7 +6891,7 @@ kube-system         hubble-ui              NodePort    10.102.253.59    &lt;none
 
   
       <div class="prism-shortcode">
-      <pre id="2e8d094" class="language-bash line-numbers"
+      <pre id="4ac781e" class="language-bash line-numbers"
         ><code class="language-bash"
         >http://192.168.1.31:30707
 http://192.168.1.31:31155
@@ -6935,7 +6908,7 @@ http://192.168.1.31:31219
 
   
       <div class="prism-shortcode">
-      <pre id="ccfd3a9" class="language-bash line-numbers"
+      <pre id="d47b6a5" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 下载tgz包
 helm repo add coredns https://coredns.github.io/helm
@@ -6983,10 +6956,10 @@ helm install  coredns ./coredns/ -n kube-system
 
   
       <div class="prism-shortcode">
-      <pre id="c86f17d" class="language-bash line-numbers"
+      <pre id="824830e" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 下载 
-wget https://mirrors.chenby.cn/https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+wget https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 
 # 修改配置
 vim components.yaml
@@ -7038,7 +7011,7 @@ kubectl apply -f components.yaml
 
   
       <div class="prism-shortcode">
-      <pre id="c708bdd" class="language-bash line-numbers"
+      <pre id="6156685" class="language-bash line-numbers"
         ><code class="language-bash"
         >kubectl  top node
 NAME           CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
@@ -7059,7 +7032,7 @@ k8s-node02     71m          1%     682Mi           17%
 
   
       <div class="prism-shortcode">
-      <pre id="9b0ab7a" class="language-bash line-numbers"
+      <pre id="41a37c9" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat&lt;&lt;EOF | kubectl apply -f -
 apiVersion: v1
@@ -7094,7 +7067,7 @@ busybox   1/1     Running   0          17s
 
   
       <div class="prism-shortcode">
-      <pre id="29351f3" class="language-bash line-numbers"
+      <pre id="aa15b02" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 查看name
 kubectl get svc
@@ -7120,7 +7093,7 @@ Address 1: 10.96.0.1 kubernetes.default.svc.cluster.local
 
   
       <div class="prism-shortcode">
-      <pre id="dcd93bc" class="language-bash line-numbers"
+      <pre id="7212a59" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 查看有那些name
 kubectl  get svc -A
@@ -7150,7 +7123,7 @@ Address 1: 10.96.0.10 coredns-coredns.kube-system.svc.cluster.local
 
   
       <div class="prism-shortcode">
-      <pre id="257f4f4" class="language-bash line-numbers"
+      <pre id="4eab4c9" class="language-bash line-numbers"
         ><code class="language-bash"
         >telnet 10.96.0.1 443
 Trying 10.96.0.1...
@@ -7176,7 +7149,7 @@ curl: (52) Empty reply from server
 
   
       <div class="prism-shortcode">
-      <pre id="2c20d0a" class="language-bash line-numbers"
+      <pre id="c2692c7" class="language-bash line-numbers"
         ><code class="language-bash"
         >kubectl get po -owide
 NAME      READY   STATUS    RESTARTS   AGE   IP              NODE         NOMINATED NODE   READINESS GATES
@@ -7218,7 +7191,7 @@ PING 192.168.1.34 (192.168.1.34): 56 data bytes
 
   
       <div class="prism-shortcode">
-      <pre id="020af96" class="language-bash line-numbers"
+      <pre id="997e3dd" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat&lt;&lt;EOF | kubectl apply -f -
 apiVersion: apps/v1
@@ -7265,7 +7238,7 @@ nginx-deployment-9456bbbf9-dqv8s   1/1     Running   0          8s
 
   
       <div class="prism-shortcode">
-      <pre id="a1f3318" class="language-bash line-numbers"
+      <pre id="aeb599b" class="language-bash line-numbers"
         ><code class="language-bash"
         >helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
 helm install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --namespace kube-system
@@ -7281,7 +7254,7 @@ helm install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --na
 
   
       <div class="prism-shortcode">
-      <pre id="c6dd79d" class="language-bash line-numbers"
+      <pre id="a604266" class="language-bash line-numbers"
         ><code class="language-bash"
         >kubectl edit svc kubernetes-dashboard -n kube-system
   type: NodePort
@@ -7297,7 +7270,7 @@ helm install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --na
 
   
       <div class="prism-shortcode">
-      <pre id="3c79e62" class="language-bash line-numbers"
+      <pre id="fe72200" class="language-bash line-numbers"
         ><code class="language-bash"
         >kubectl get svc kubernetes-dashboard -n kube-system
 NAME                   TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
@@ -7314,7 +7287,7 @@ kubernetes-dashboard   NodePort   10.108.120.110   &lt;none&gt;        443:30034
 
   
       <div class="prism-shortcode">
-      <pre id="09aa31b" class="language-bash line-numbers"
+      <pre id="c8bff7a" class="language-bash line-numbers"
         ><code class="language-bash"
         >cat &gt; dashboard-user.yaml &lt;&lt; EOF
 apiVersion: v1
@@ -7355,9 +7328,9 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6InN2LWdkMV9lZExCVVNrSTJTT2daQm1sczY5ajVZLWI2ZW5BeGIt
 
   
       <div class="prism-shortcode">
-      <pre id="c69f55b" class="language-bash line-numbers"
+      <pre id="0435068" class="language-bash line-numbers"
         ><code class="language-bash"
-        >wget https://mirrors.chenby.cn/https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+        >wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
 
 # 修改为国内源 docker源可选
 sed -i &#34;s#registry.k8s.io/#m.daocloud.io/registry.k8s.io/#g&#34; *.yaml
@@ -7383,7 +7356,7 @@ spec:
       terminationGracePeriodSeconds: 60
       containers:
       - name: default-http-backend
-        image: registry.cn-hangzhou.aliyuncs.com/chenby/defaultbackend-amd64:1.5 
+        image: k8s.gcr.io/defaultbackend-amd64:1.5 
         livenessProbe:
           httpGet:
             path: /healthz
@@ -7496,7 +7469,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: &#34;hello.chenby.cn&#34;
+  - host: &#34;hello.cakepanit.com&#34;
     http:
       paths:
       - pathType: Prefix
@@ -7506,7 +7479,7 @@ spec:
             name: hello-server
             port:
               number: 8000
-  - host: &#34;demo.chenby.cn&#34;
+  - host: &#34;demo.cakepanit.com&#34;
     http:
       paths:
       - pathType: Prefix
@@ -7523,7 +7496,7 @@ kubectl  apply -f ingress-demo-app.yaml
 
 kubectl  get ingress
 NAME               CLASS   HOSTS                            ADDRESS     PORTS   AGE
-ingress-host-bar   nginx   hello.chenby.cn,demo.chenby.cn   192.168.1.32   80      7s
+ingress-host-bar   nginx   hello.cakepanit.com,demo.cakepanit.com   192.168.1.32   80      7s
 
 </code></pre>
       </div>
@@ -7537,7 +7510,7 @@ ingress-host-bar   nginx   hello.chenby.cn,demo.chenby.cn   192.168.1.32   80   
 
   
       <div class="prism-shortcode">
-      <pre id="9b89d73" class="language-bash line-numbers"
+      <pre id="f7c05dc" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 修改为nodeport
 kubectl edit svc -n ingress-nginx   ingress-nginx-controller
@@ -7559,7 +7532,7 @@ ingress-nginx          ingress-nginx-controller-admission   ClusterIP   10.101.8
 
   
       <div class="prism-shortcode">
-      <pre id="6fe0f70" class="language-bash line-numbers"
+      <pre id="eaaac6e" class="language-bash line-numbers"
         ><code class="language-bash"
         >#部署应用
 
@@ -7567,20 +7540,20 @@ cat&lt;&lt;EOF | kubectl apply -f -
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chenby
+  name: cakepanit
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: chenby
+      app: cakepanit
   template:
     metadata:
       labels:
-        app: chenby
+        app: cakepanit
     spec:
       hostNetwork: true
       containers:
-      - name: chenby
+      - name: cakepanit
         image: docker.io/library/nginx
         resources:
           limits:
@@ -7592,7 +7565,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: chenby
+  name: cakepanit
 spec:
   ipFamilyPolicy: PreferDualStack
   ipFamilies:
@@ -7600,7 +7573,7 @@ spec:
   - IPv4
   type: NodePort
   selector:
-    app: chenby
+    app: cakepanit
   ports:
   - port: 80
     targetPort: 80
@@ -7610,7 +7583,7 @@ EOF
 #查看端口
 [root@k8s-master01 ~]# kubectl  get svc
 NAME           TYPE        CLUSTER-IP            EXTERNAL-IP   PORT(S)        AGE
-chenby         NodePort    fd00:1111::bc86       &lt;none&gt;        80:31540/TCP   5s
+cakepanit         NodePort    fd00:1111::bc86       &lt;none&gt;        80:31540/TCP   5s
 [root@k8s-master01 ~]# 
 
 [root@localhost yaml]# curl -I http://192.168.1.31:31540
@@ -7648,7 +7621,7 @@ Accept-Ranges: bytes
 
   
       <div class="prism-shortcode">
-      <pre id="9a3826a" class="language-bash line-numbers"
+      <pre id="998767f" class="language-bash line-numbers"
         ><code class="language-bash"
         >yum install bash-completion -y
 source /usr/share/bash-completion/bash_completion
@@ -7666,7 +7639,7 @@ echo &#34;source &lt;(kubectl completion bash)&#34; &gt;&gt; ~/.bashrc
 
   
       <div class="prism-shortcode">
-      <pre id="6128d8e" class="language-bash line-numbers"
+      <pre id="0bf0572" class="language-bash line-numbers"
         ><code class="language-bash"
         ># 镜像加速器可以使用DaoCloud仓库，替换规则如下
 cr.l5d.io/  ===&gt; m.daocloud.io/cr.l5d.io/
@@ -7690,7 +7663,8 @@ rocks.canonical.com/  ===&gt; m.daocloud.io/rocks.canonical.com/
 
 # docker pull 镜像
 
-docker pull registry.cn-hangzhou.aliyuncs.com/chenby/cni:master 
+
+docker pull registry.cn-hangzhou.aliyuncs.com/chenby/cni:master
 docker pull registry.cn-hangzhou.aliyuncs.com/chenby/node:master
 docker pull registry.cn-hangzhou.aliyuncs.com/chenby/kube-controllers:master
 docker pull registry.cn-hangzhou.aliyuncs.com/chenby/typha:master
@@ -7711,13 +7685,13 @@ docker pull quay.io/coreos/etcd:v3.5.4
 docker pull quay.io/cilium/startup-script:d69851597ea019af980891a4628fb36b7880ec26
 
 # docker 保存镜像
-docker save registry.cn-hangzhou.aliyuncs.com/chenby/cni:master -o cni.tar 
-docker save registry.cn-hangzhou.aliyuncs.com/chenby/node:master -o node.tar 
-docker save registry.cn-hangzhou.aliyuncs.com/chenby/typha:master -o typha.tar 
-docker save registry.cn-hangzhou.aliyuncs.com/chenby/kube-controllers:master -o kube-controllers.tar 
-docker save registry.cn-hangzhou.aliyuncs.com/chenby/coredns:v1.10.0 -o coredns.tar 
-docker save registry.cn-hangzhou.aliyuncs.com/chenby/pause:3.6 -o pause.tar 
-docker save registry.cn-hangzhou.aliyuncs.com/chenby/metrics-server:v0.5.2 -o metrics-server.tar 
+docker save registry.cn-hangzhou.aliyuncs.com/chenby/cni:master -o cni.tar
+docker save registry.cn-hangzhou.aliyuncs.com/chenby/node:master -o node.tar
+docker save registry.cn-hangzhou.aliyuncs.com/chenby/typha:master -o typha.tar
+docker save registry.cn-hangzhou.aliyuncs.com/chenby/kube-controllers:master -o kube-controllers.tar
+docker save registry.cn-hangzhou.aliyuncs.com/chenby/coredns:v1.10.0 -o coredns.tar
+docker save registry.cn-hangzhou.aliyuncs.com/chenby/pause:3.6 -o pause.tar
+docker save registry.cn-hangzhou.aliyuncs.com/chenby/metrics-server:v0.5.2 -o metrics-server.tar
 docker save kubernetesui/dashboard:v2.7.0 -o dashboard.tar 
 docker save kubernetesui/metrics-scraper:v1.0.8 -o metrics-scraper.tar 
 docker save quay.io/cilium/cilium:v1.12.6 -o cilium.tar 
@@ -8780,7 +8754,7 @@ root@hello:~/cilium# cat values.yaml| grep tag: -C1
                 href: "\/docs\/ops\/kubernetes\/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
-                content: "介绍 link kubernetes（k8s）二进制高可用安装部署，支持IPv4+IPv6双栈。 我使用IPV6的目的是在公网进行访问，所以我配置了IPV6静态地址。 若您没有IPV6环境，或者不想使用IPv6，不对主机进行配置IPv6地址即可。 不配置IPV6，不影响后续，不过集群依旧是支持IPv6的。为后期留有扩展可能性。 若不要IPv6 ，不给网卡配置IPv6即可，不要对IPv6相关配置删除或操作，否则会出问题。 1.环境 link 主机名称 IP地址 说明 软件 192.168.1.60 外网节点 下载各种所需安装包 Master01 192.168.1.31 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Master02 192.168.1.32 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Master03 192.168.1.33 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Node01 192.168.1.34 node节点 kubelet、kube-proxy、nfs-client、nginx Node02 192.168.1.35 node节点 kubelet、kube-proxy、nfs-client、nginx 192.168.1.36 VIP 网段 物理主机：192.168.1.0/24 service：10.96.0.0/12 pod：172.16.0.0/12\n安装包已经整理好：https://mirrors.chenby.cn/https://github.com/cby-chen/Kubernetes/releases/download/v1.28.3/kubernetes-v1.28.3.tar\n1.1.k8s基础系统环境配置 link1.2.配置IP link # 注意！ # 若虚拟机是进行克隆的那么网卡的UUID会重复 # 若UUID重复需要重新生成新的UUID # UUID重复无法获取到IPV6地址 # # 查看当前的网卡列表和 UUID： # nmcli con show # 删除要更改 UUID 的网络连接： # nmcli con delete uuid \u003c原 UUID\u003e # 重新生成 UUID： # nmcli con add type ethernet ifname \u003c接口名称\u003e con-name \u003c新名称\u003e # 重新启用网络连接： # nmcli con up \u003c新名称\u003e # 更改网卡的UUID ssh root@192.168.1.31 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" ssh root@192.168.1.32 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" ssh root@192.168.1.33 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" ssh root@192.168.1.34 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" ssh root@192.168.1.35 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" # 参数解释 # # ssh ssh root@192.168.1.31 # 使用SSH登录到IP为192.168.1.31的主机，使用root用户身份。 # # nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44 # 删除 UUID 为 708a1497-2192-43a5-9f03-2ab936fb3c44 的网络连接，这是 NetworkManager 中一种特定网络配置的唯一标识符。 # # nmcli con add type ethernet ifname eth0 con-name eth0 # 添加一种以太网连接类型，并指定接口名为 eth0，连接名称也为 eth0。 # # nmcli con up eth0 # 开启 eth0 这个网络连接。 # # 简单来说，这个命令的作用是删除一个特定的网络连接配置，并添加一个名为 eth0 的以太网连接，然后启用这个新的连接。 # 修改静态的IPv4地址 ssh root@192.168.1.104 \"nmcli con mod eth0 ipv4.addresses 192.168.1.31/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" ssh root@192.168.1.106 \"nmcli con mod eth0 ipv4.addresses 192.168.1.32/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" ssh root@192.168.1.107 \"nmcli con mod eth0 ipv4.addresses 192.168.1.33/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" ssh root@192.168.1.109 \"nmcli con mod eth0 ipv4.addresses 192.168.1.34/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" ssh root@192.168.1.110 \"nmcli con mod eth0 ipv4.addresses 192.168.1.35/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" nmcli con mod eth0 ipv4.gateway 192.168.1.200; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"223.5.5.5\"; nmcli con up eth0 # 参数解释 # # ssh root@192.168.1.154 # 使用SSH登录到IP为192.168.1.154的主机，使用root用户身份。 # # \"nmcli con mod eth0 ipv4.addresses 192.168.1.31/24\" # 修改eth0网络连接的IPv4地址为192.168.1.31，子网掩码为 24。 # # \"nmcli con mod eth0 ipv4.gateway 192.168.1.1\" # 修改eth0网络连接的IPv4网关为192.168.1.1。 # # \"nmcli con mod eth0 ipv4.method manual\" # 将eth0网络连接的IPv4配置方法设置为手动。 # # \"nmcli con mod eth0 ipv4.dns \"8.8.8.8\" # 将eth0网络连接的IPv4 DNS服务器设置为 8.8.8.8。 # # \"nmcli con up eth0\" # 启动eth0网络连接。 # # 总体来说，这条命令是通过SSH远程登录到指定的主机，并使用网络管理命令 (nmcli) 修改eth0网络连接的配置，包括IP地址、网关、配置方法和DNS服务器，并启动该网络连接。 # 没有IPv6选择不配置即可 ssh root@192.168.1.31 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::10; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" ssh root@192.168.1.32 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::20; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" ssh root@192.168.1.33 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::30; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" ssh root@192.168.1.34 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::40; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" ssh root@192.168.1.35 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::50; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" # 参数解释 # # ssh root@192.168.1.31 # 通过SSH连接到IP地址为192.168.1.31的远程主机，使用root用户进行登录。 # # \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::10\" # 使用nmcli命令修改eth0接口的IPv6地址为fc00:43f4:1eea:1::10。 # # \"nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1\" # 使用nmcli命令修改eth0接口的IPv6网关为fc00:43f4:1eea:1::1。 # # \"nmcli con mod eth0 ipv6.method manual\" # 使用nmcli命令将eth0接口的IPv6配置方法修改为手动配置。 # # \"nmcli con mod eth0 ipv6.dns \"2400:3200::1\" # 使用nmcli命令设置eth0接口的IPv6 DNS服务器为2400:3200::1。 # # \"nmcli con up eth0\" # 使用nmcli命令启动eth0接口。 # # 这个命令的目的是在远程主机上配置eth0接口的IPv6地址、网关、配置方法和DNS服务器，并启动eth0接口。 # 查看网卡配置 # nmcli device show eth0 # nmcli con show eth0 [root@localhost ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0 TYPE=Ethernet PROXY_METHOD=none BROWSER_ONLY=no BOOTPROTO=none DEFROUTE=yes IPV4_FAILURE_FATAL=no IPV6INIT=yes IPV6_AUTOCONF=yes IPV6_DEFROUTE=yes IPV6_FAILURE_FATAL=no IPV6_ADDR_GEN_MODE=stable-privacy NAME=eth0 UUID=2aaddf95-3f36-4a48-8626-b55ebf7f53e7 DEVICE=eth0 ONBOOT=yes IPADDR=192.168.1.31 PREFIX=24 GATEWAY=192.168.1.1 DNS1=8.8.8.8 [root@localhost ~]# # 参数解释 # # TYPE=Ethernet # 指定连接类型为以太网。 # # PROXY_METHOD=none # 指定不使用代理方法。 # # BROWSER_ONLY=no # 指定不仅仅在浏览器中使用代理。 # # BOOTPROTO=none # 指定自动分配地址的方式为无（即手动配置IP地址）。 # # DEFROUTE=yes # 指定默认路由开启。 # # IPV4_FAILURE_FATAL=no # 指定IPv4连接失败时不宣告严重错误。 # # IPV6INIT=yes # 指定启用IPv6。 # # IPV6_AUTOCONF=no # 指定不自动配置IPv6地址。 # # IPV6_DEFROUTE=yes # 指定默认IPv6路由开启。 # # IPV6_FAILURE_FATAL=no # 指定IPv6连接失败时不宣告严重错误。 # # IPV6_ADDR_GEN_MODE=stable-privacy # 指定IPv6地址生成模式为稳定隐私模式。 # # NAME=eth0 # 指定设备名称为eth0。 # # UUID=424fd260-c480-4899-97e6-6fc9722031e8 # 指定设备的唯一标识符。 # # DEVICE=eth0 # 指定设备名称为eth0。 # # ONBOOT=yes # 指定开机自动启用这个连接。 # # IPADDR=192.168.1.31 # 指定IPv4地址为192.168.1.31。 # # PREFIX=24 # 指定IPv4地址的子网掩码为24。 # # GATEWAY=192.168.8.1 # 指定IPv4的网关地址为192.168.8.1。 # # DNS1=8.8.8.8 # 指定首选DNS服务器为8.8.8.8。 # # IPV6ADDR=fc00:43f4:1eea:1::10/128 # 指定IPv6地址为fc00:43f4:1eea:1::10，子网掩码为128。 # # IPV6_DEFAULTGW=fc00:43f4:1eea:1::1 # 指定IPv6的默认网关地址为fc00:43f4:1eea:1::1。 # # DNS2=2400:3200::1 # 指定备用DNS服务器为2400:3200::1。 1.3.设置主机名 link hostnamectl set-hostname k8s-master01 hostnamectl set-hostname k8s-master02 hostnamectl set-hostname k8s-master03 hostnamectl set-hostname k8s-node01 hostnamectl set-hostname k8s-node02 # 参数解释 # # 参数: set-hostname # 解释: 这是hostnamectl命令的一个参数，用于设置系统的主机名。 # # 参数: k8s-master01 # 解释: 这是要设置的主机名，将系统的主机名设置为\"k8s-master01\"。 1.4.配置yum源 link # 其他系统的源地址 # https://mirrors.tuna.tsinghua.edu.cn/help/ # 对于 Ubuntu sed -i 's/cn.archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list # 对于 CentOS 7 sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \\ -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \\ -i.bak \\ /etc/yum.repos.d/CentOS-*.repo # 对于 CentOS 8 sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \\ -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \\ -i.bak \\ /etc/yum.repos.d/CentOS-*.repo # 对于私有仓库 sed -e 's|^mirrorlist=|#mirrorlist=|g' -e 's|^#baseurl=http://mirror.centos.org/\\$contentdir|baseurl=http://192.168.1.123/centos|g' -i.bak /etc/yum.repos.d/CentOS-*.repo # 参数解释 # # 以上命令是用于更改系统软件源的配置，以便从国内镜像站点下载软件包和更新。 # # 对于 Ubuntu 系统，将 /etc/apt/sources.list 文件中的软件源地址 cn.archive.ubuntu.com 替换为 mirrors.ustc.edu.cn。 # # 对于 CentOS 7 系统，将 /etc/yum.repos.d/CentOS-*.repo 文件中的 mirrorlist 注释掉，并将 baseurl 的值替换为 https://mirrors.tuna.tsinghua.edu.cn/centos。 # # 对于 CentOS 8 系统，同样将 /etc/yum.repos.d/CentOS-*.repo 文件中的 mirrorlist 注释掉，并将 baseurl 的值替换为 https://mirrors.tuna.tsinghua.edu.cn/centos。 # # 对于私有仓库，将 /etc/yum.repos.d/CentOS-*.repo 文件中的 mirrorlist 注释掉，并将 baseurl 的值替换为私有仓库地址 http://192.168.1.123/centos。 # # 这些命令通过使用 sed 工具和正则表达式，对相应的配置文件进行批量的替换操作，从而更改系统软件源配置。 1.5.安装一些必备工具 link # 对于 Ubuntu apt update \u0026\u0026 apt upgrade -y \u0026\u0026 apt install -y wget psmisc vim net-tools nfs-kernel-server telnet lvm2 git tar curl # 对于 CentOS 7 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl # 对于 CentOS 8 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git network-scripts tar curl 1.5.1 下载离线所需文件(可选) link在互联网服务器上安装一个一模一样的系统进行下载所需包\nCentOS7 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack createrepo wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 删除libseccomp rm -rf libseccomp-*.rpm # 下载libseccomp wget http://rpmfind.net/linux/centos/8-stream/BaseOS/x86_64/os/Packages/libseccomp-2.5.1-1.el8.x86_64.rpm # 创建yum源信息 createrepo -u -d /data/centos7/ # 拷贝包到内网机器上 scp -r /data/centos7/ root@192.168.1.31: scp -r /data/centos7/ root@192.168.1.32: scp -r /data/centos7/ root@192.168.1.33: scp -r /data/centos7/ root@192.168.1.34: scp -r /data/centos7/ root@192.168.1.35: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [cby] name=CentOS-$releasever - Media baseurl=file:///root/centos7/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos7/* --skip-broken -y #### 备注 ##### # 安装完成后，可能还会出现yum无法使用那么再次执行 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [cby] name=CentOS-$releasever - Media baseurl=file:///root/centos7/ gpgcheck=0 enabled=1 EOF yum clean all yum makecache yum install /root/centos7/* --skip-broken -y #### 备注 ##### # 安装 chrony 和 libseccomp # yum install /root/centos7/libseccomp-2.5.1*.rpm -y # yum install /root/centos7/chrony-*.rpm -y CentOS8 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git network-scripts tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 创建yum源信息 createrepo -u -d /data/centos8/ # 拷贝包到内网机器上 scp -r centos8/ root@192.168.1.31: scp -r centos8/ root@192.168.1.32: scp -r centos8/ root@192.168.1.33: scp -r centos8/ root@192.168.1.34: scp -r centos8/ root@192.168.1.35: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [cby] name=CentOS-$releasever - Media baseurl=file:///root/centos8/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos8/* --skip-broken -y #### 备注 ##### # 安装完成后，可能还会出现yum无法使用那么再次执行 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [cby] name=CentOS-$releasever - Media baseurl=file:///root/centos8/ gpgcheck=0 enabled=1 EOF yum clean all yum makecache yum install /root/centos8/* --skip-broken -y Ubuntu 下载包和依赖 link #!/bin/bash logfile=123.log ret=\"\" function getDepends() { echo \"fileName is\" $1\u003e\u003e$logfile # use tr to del \u003c \u003e ret=`apt-cache depends $1|grep Depends |cut -d: -f2 |tr -d \"\u003c\u003e\"` echo $ret|tee -a $logfile } # 需要获取其所依赖包的包 libs=\"wget psmisc vim net-tools nfs-kernel-server telnet lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp\" # download libs dependen. deep in 3 i=0 while [ $i -lt 3 ] ; do let i++ echo $i # download libs newlist=\" \" for j in $libs do added=\"$(getDepends $j)\" newlist=\"$newlist $added\" apt install $added --reinstall -d -y done libs=$newlist done # 创建源信息 apt install dpkg-dev sudo cp /var/cache/apt/archives/*.deb /data/ubuntu/ -r dpkg-scanpackages . /dev/null |gzip \u003e /data/ubuntu/Packages.gz -r # 拷贝包到内网机器上 scp -r ubuntu/ root@192.168.1.31: scp -r ubuntu/ root@192.168.1.32: scp -r ubuntu/ root@192.168.1.33: scp -r ubuntu/ root@192.168.1.34: scp -r ubuntu/ root@192.168.1.35: # 在内网机器上配置apt源 vim /etc/apt/sources.list cat /etc/apt/sources.list deb file:////root/ ubuntu/ # 安装deb包 apt install ./*.deb 1.6.选择性下载需要工具 link #!/bin/bash # 查看版本地址： # # https://github.com/containernetworking/plugins/releases/ # https://github.com/containerd/containerd/releases/ # https://github.com/kubernetes-sigs/cri-tools/releases/ # https://github.com/Mirantis/cri-dockerd/releases/ # https://github.com/etcd-io/etcd/releases/ # https://github.com/cloudflare/cfssl/releases/ # https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG # https://download.docker.com/linux/static/stable/x86_64/ # https://github.com/opencontainers/runc/releases/ # https://mirrors.tuna.tsinghua.edu.cn/elrepo/kernel/el7/x86_64/RPMS/ # https://github.com/helm/helm/tags # http://nginx.org/download/ # Version numbers cni_plugins_version='v1.3.0' cri_containerd_cni_version='1.7.8' crictl_version='v1.28.0' cri_dockerd_version='0.3.7' etcd_version='v3.5.10' cfssl_version='1.6.4' kubernetes_server_version='1.28.3' docker_version='24.0.7' runc_version='1.1.10' kernel_version='5.4.260' helm_version='3.13.2' nginx_version='1.25.3' # URLs base_url='https://github.com' kernel_url=\"http://mirrors.tuna.tsinghua.edu.cn/elrepo/kernel/el7/x86_64/RPMS/kernel-lt-${kernel_version}-1.el7.elrepo.x86_64.rpm\" runc_url=\"${base_url}/opencontainers/runc/releases/download/v${runc_version}/runc.amd64\" docker_url=\"https://mirrors.ustc.edu.cn/docker-ce/linux/static/stable/x86_64/docker-${docker_version}.tgz\" cni_plugins_url=\"${base_url}/containernetworking/plugins/releases/download/${cni_plugins_version}/cni-plugins-linux-amd64-${cni_plugins_version}.tgz\" cri_containerd_cni_url=\"${base_url}/containerd/containerd/releases/download/v${cri_containerd_cni_version}/cri-containerd-cni-${cri_containerd_cni_version}-linux-amd64.tar.gz\" crictl_url=\"${base_url}/kubernetes-sigs/cri-tools/releases/download/${crictl_version}/crictl-${crictl_version}-linux-amd64.tar.gz\" cri_dockerd_url=\"${base_url}/Mirantis/cri-dockerd/releases/download/v${cri_dockerd_version}/cri-dockerd-${cri_dockerd_version}.amd64.tgz\" etcd_url=\"${base_url}/etcd-io/etcd/releases/download/${etcd_version}/etcd-${etcd_version}-linux-amd64.tar.gz\" cfssl_url=\"${base_url}/cloudflare/cfssl/releases/download/v${cfssl_version}/cfssl_${cfssl_version}_linux_amd64\" cfssljson_url=\"${base_url}/cloudflare/cfssl/releases/download/v${cfssl_version}/cfssljson_${cfssl_version}_linux_amd64\" helm_url=\"https://mirrors.huaweicloud.com/helm/v${helm_version}/helm-v${helm_version}-linux-amd64.tar.gz\" kubernetes_server_url=\"https://storage.googleapis.com/kubernetes-release/release/v${kubernetes_server_version}/kubernetes-server-linux-amd64.tar.gz\" nginx_url=\"http://nginx.org/download/nginx-${nginx_version}.tar.gz\" # Download packages packages=( $kernel_url $runc_url $docker_url $cni_plugins_url $cri_containerd_cni_url $crictl_url $cri_dockerd_url $etcd_url $cfssl_url $cfssljson_url $helm_url $kubernetes_server_url $nginx_url ) for package_url in \"${packages[@]}\"; do filename=$(basename \"$package_url\") if curl --parallel --parallel-immediate -k -L -C - -o \"$filename\" \"$package_url\"; then echo \"Downloaded $filename\" else echo \"Failed to download $filename\" exit 1 fi done 1.7.关闭防火墙 link # Ubuntu忽略，CentOS执行 systemctl disable --now firewalld 1.8.关闭SELinux link # Ubuntu忽略，CentOS执行 setenforce 0 sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config # 参数解释 # # setenforce 0 # 此命令用于设置 SELinux 的执行模式。0 表示关闭 SELinux。 # # sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config # 该命令使用 sed 工具来编辑 /etc/selinux/config 文件。其中 '-i' 参数表示直接修改原文件，而不是输出到终端或另一个文件。's#SELINUX=enforcing#SELINUX=disabled#g' 是 sed 的替换命令，它将文件中所有的 \"SELINUX=enforcing\" 替换为 \"SELINUX=disabled\"。这里的 '#' 是分隔符，用于替代传统的 '/' 分隔符，以避免与路径中的 '/' 冲突。 1.9.关闭交换分区 link sed -ri 's/.*swap.*/#\u0026/' /etc/fstab swapoff -a \u0026\u0026 sysctl -w vm.swappiness=0 cat /etc/fstab # /dev/mapper/centos-swap swap swap defaults 0 0 # 参数解释： # # -ri: 这个参数用于在原文件中替换匹配的模式。-r表示扩展正则表达式，-i允许直接修改文件。 # 's/.*swap.*/#\u0026/': 这是一个sed命令，用于在文件/etc/fstab中找到包含swap的行，并在行首添加#来注释掉该行。 # /etc/fstab: 这是一个文件路径，即/etc/fstab文件，用于存储文件系统表。 # swapoff -a: 这个命令用于关闭所有启用的交换分区。 # sysctl -w vm.swappiness=0: 这个命令用于修改vm.swappiness参数的值为0，表示系统在物理内存充足时更倾向于使用物理内存而非交换分区。 1.10.网络配置（俩种方式二选一） link # Ubuntu忽略，CentOS执行 # 方式一 # systemctl disable --now NetworkManager # systemctl start network \u0026\u0026 systemctl enable network # 方式二 cat \u003e /etc/NetworkManager/conf.d/calico.conf \u003c\u003c EOF [keyfile] unmanaged-devices=interface-name:cali*;interface-name:tunl* EOF systemctl restart NetworkManager # 参数解释 # # 这个参数用于指定不由 NetworkManager 管理的设备。它由以下两个部分组成 # # interface-name:cali* # 表示以 \"cali\" 开头的接口名称被排除在 NetworkManager 管理之外。例如，\"cali0\", \"cali1\" 等接口不受 NetworkManager 管理。 # # interface-name:tunl* # 表示以 \"tunl\" 开头的接口名称被排除在 NetworkManager 管理之外。例如，\"tunl0\", \"tunl1\" 等接口不受 NetworkManager 管理。 # # 通过使用这个参数，可以将特定的接口排除在 NetworkManager 的管理范围之外，以便其他工具或进程可以独立地管理和配置这些接口。 1.11.进行时间同步 link # 服务端 # apt install chrony -y yum install chrony -y cat \u003e /etc/chrony.conf \u003c\u003c EOF pool ntp.aliyun.com iburst driftfile /var/lib/chrony/drift makestep 1.0 3 rtcsync allow 192.168.1.0/24 local stratum 10 keyfile /etc/chrony.keys leapsectz right/UTC logdir /var/log/chrony EOF systemctl restart chronyd ; systemctl enable chronyd # 客户端 # apt install chrony -y yum install chrony -y cat \u003e /etc/chrony.conf \u003c\u003c EOF pool 192.168.1.31 iburst driftfile /var/lib/chrony/drift makestep 1.0 3 rtcsync keyfile /etc/chrony.keys leapsectz right/UTC logdir /var/log/chrony EOF systemctl restart chronyd ; systemctl enable chronyd #使用客户端进行验证 chronyc sources -v # 参数解释 # # pool ntp.aliyun.com iburst # 指定使用ntp.aliyun.com作为时间服务器池，iburst选项表示在初始同步时会发送多个请求以加快同步速度。 # # driftfile /var/lib/chrony/drift # 指定用于保存时钟漂移信息的文件路径。 # # makestep 1.0 3 # 设置当系统时间与服务器时间偏差大于1秒时，会以1秒的步长进行调整。如果偏差超过3秒，则立即进行时间调整。 # # rtcsync # 启用硬件时钟同步功能，可以提高时钟的准确性。 # # allow 192.168.0.0/24 # 允许192.168.0.0/24网段范围内的主机与chrony进行时间同步。 # # local stratum 10 # 将本地时钟设为stratum 10，stratum值表示时钟的准确度，值越小表示准确度越高。 # # keyfile /etc/chrony.keys # 指定使用的密钥文件路径，用于对时间同步进行身份验证。 # # leapsectz right/UTC # 指定时区为UTC。 # # logdir /var/log/chrony # 指定日志文件存放目录。 1.12.配置ulimit link ulimit -SHn 65535 cat \u003e\u003e /etc/security/limits.conf \u003c"
+                content: "介绍 link kubernetes（k8s）二进制高可用安装部署，支持IPv4+IPv6双栈。 我使用IPV6的目的是在公网进行访问，所以我配置了IPV6静态地址。 若您没有IPV6环境，或者不想使用IPv6，不对主机进行配置IPv6地址即可。 不配置IPV6，不影响后续，不过集群依旧是支持IPv6的。为后期留有扩展可能性。 若不要IPv6 ，不给网卡配置IPv6即可，不要对IPv6相关配置删除或操作，否则会出问题。 1.环境 link 主机名称 IP地址 说明 软件 192.168.1.60 外网节点 下载各种所需安装包 Master01 192.168.1.31 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Master02 192.168.1.32 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Master03 192.168.1.33 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Node01 192.168.1.34 node节点 kubelet、kube-proxy、nfs-client、nginx Node02 192.168.1.35 node节点 kubelet、kube-proxy、nfs-client、nginx 192.168.1.36 VIP 网段 物理主机：192.168.1.0/24 service：10.96.0.0/12 pod：172.16.0.0/12\n1.1.k8s基础系统环境配置 link1.2.配置IP link # 注意！ # 若虚拟机是进行克隆的那么网卡的UUID会重复 # 若UUID重复需要重新生成新的UUID # UUID重复无法获取到IPV6地址 # # 查看当前的网卡列表和 UUID： # nmcli con show # 删除要更改 UUID 的网络连接： # nmcli con delete uuid \u003c原 UUID\u003e # 重新生成 UUID： # nmcli con add type ethernet ifname \u003c接口名称\u003e con-name \u003c新名称\u003e # 重新启用网络连接： # nmcli con up \u003c新名称\u003e # 更改网卡的UUID ssh root@192.168.1.31 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" ssh root@192.168.1.32 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" ssh root@192.168.1.33 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" ssh root@192.168.1.34 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" ssh root@192.168.1.35 \"nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44;nmcli con add type ethernet ifname eth0 con-name eth0;nmcli con up eth0\" # 参数解释 # # ssh ssh root@192.168.1.31 # 使用SSH登录到IP为192.168.1.31的主机，使用root用户身份。 # # nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44 # 删除 UUID 为 708a1497-2192-43a5-9f03-2ab936fb3c44 的网络连接，这是 NetworkManager 中一种特定网络配置的唯一标识符。 # # nmcli con add type ethernet ifname eth0 con-name eth0 # 添加一种以太网连接类型，并指定接口名为 eth0，连接名称也为 eth0。 # # nmcli con up eth0 # 开启 eth0 这个网络连接。 # # 简单来说，这个命令的作用是删除一个特定的网络连接配置，并添加一个名为 eth0 的以太网连接，然后启用这个新的连接。 # 修改静态的IPv4地址 ssh root@192.168.1.104 \"nmcli con mod eth0 ipv4.addresses 192.168.1.31/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" ssh root@192.168.1.106 \"nmcli con mod eth0 ipv4.addresses 192.168.1.32/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" ssh root@192.168.1.107 \"nmcli con mod eth0 ipv4.addresses 192.168.1.33/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" ssh root@192.168.1.109 \"nmcli con mod eth0 ipv4.addresses 192.168.1.34/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" ssh root@192.168.1.110 \"nmcli con mod eth0 ipv4.addresses 192.168.1.35/24; nmcli con mod eth0 ipv4.gateway 192.168.1.1; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"8.8.8.8\"; nmcli con up eth0\" nmcli con mod eth0 ipv4.gateway 192.168.1.200; nmcli con mod eth0 ipv4.method manual; nmcli con mod eth0 ipv4.dns \"223.5.5.5\"; nmcli con up eth0 # 参数解释 # # ssh root@192.168.1.154 # 使用SSH登录到IP为192.168.1.154的主机，使用root用户身份。 # # \"nmcli con mod eth0 ipv4.addresses 192.168.1.31/24\" # 修改eth0网络连接的IPv4地址为192.168.1.31，子网掩码为 24。 # # \"nmcli con mod eth0 ipv4.gateway 192.168.1.1\" # 修改eth0网络连接的IPv4网关为192.168.1.1。 # # \"nmcli con mod eth0 ipv4.method manual\" # 将eth0网络连接的IPv4配置方法设置为手动。 # # \"nmcli con mod eth0 ipv4.dns \"8.8.8.8\" # 将eth0网络连接的IPv4 DNS服务器设置为 8.8.8.8。 # # \"nmcli con up eth0\" # 启动eth0网络连接。 # # 总体来说，这条命令是通过SSH远程登录到指定的主机，并使用网络管理命令 (nmcli) 修改eth0网络连接的配置，包括IP地址、网关、配置方法和DNS服务器，并启动该网络连接。 # 没有IPv6选择不配置即可 ssh root@192.168.1.31 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::10; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" ssh root@192.168.1.32 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::20; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" ssh root@192.168.1.33 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::30; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" ssh root@192.168.1.34 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::40; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" ssh root@192.168.1.35 \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::50; nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod eth0 ipv6.method manual; nmcli con mod eth0 ipv6.dns \"2400:3200::1\"; nmcli con up eth0\" # 参数解释 # # ssh root@192.168.1.31 # 通过SSH连接到IP地址为192.168.1.31的远程主机，使用root用户进行登录。 # # \"nmcli con mod eth0 ipv6.addresses fc00:43f4:1eea:1::10\" # 使用nmcli命令修改eth0接口的IPv6地址为fc00:43f4:1eea:1::10。 # # \"nmcli con mod eth0 ipv6.gateway fc00:43f4:1eea:1::1\" # 使用nmcli命令修改eth0接口的IPv6网关为fc00:43f4:1eea:1::1。 # # \"nmcli con mod eth0 ipv6.method manual\" # 使用nmcli命令将eth0接口的IPv6配置方法修改为手动配置。 # # \"nmcli con mod eth0 ipv6.dns \"2400:3200::1\" # 使用nmcli命令设置eth0接口的IPv6 DNS服务器为2400:3200::1。 # # \"nmcli con up eth0\" # 使用nmcli命令启动eth0接口。 # # 这个命令的目的是在远程主机上配置eth0接口的IPv6地址、网关、配置方法和DNS服务器，并启动eth0接口。 # 查看网卡配置 # nmcli device show eth0 # nmcli con show eth0 [root@localhost ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0 TYPE=Ethernet PROXY_METHOD=none BROWSER_ONLY=no BOOTPROTO=none DEFROUTE=yes IPV4_FAILURE_FATAL=no IPV6INIT=yes IPV6_AUTOCONF=yes IPV6_DEFROUTE=yes IPV6_FAILURE_FATAL=no IPV6_ADDR_GEN_MODE=stable-privacy NAME=eth0 UUID=2aaddf95-3f36-4a48-8626-b55ebf7f53e7 DEVICE=eth0 ONBOOT=yes IPADDR=192.168.1.31 PREFIX=24 GATEWAY=192.168.1.1 DNS1=8.8.8.8 [root@localhost ~]# # 参数解释 # # TYPE=Ethernet # 指定连接类型为以太网。 # # PROXY_METHOD=none # 指定不使用代理方法。 # # BROWSER_ONLY=no # 指定不仅仅在浏览器中使用代理。 # # BOOTPROTO=none # 指定自动分配地址的方式为无（即手动配置IP地址）。 # # DEFROUTE=yes # 指定默认路由开启。 # # IPV4_FAILURE_FATAL=no # 指定IPv4连接失败时不宣告严重错误。 # # IPV6INIT=yes # 指定启用IPv6。 # # IPV6_AUTOCONF=no # 指定不自动配置IPv6地址。 # # IPV6_DEFROUTE=yes # 指定默认IPv6路由开启。 # # IPV6_FAILURE_FATAL=no # 指定IPv6连接失败时不宣告严重错误。 # # IPV6_ADDR_GEN_MODE=stable-privacy # 指定IPv6地址生成模式为稳定隐私模式。 # # NAME=eth0 # 指定设备名称为eth0。 # # UUID=424fd260-c480-4899-97e6-6fc9722031e8 # 指定设备的唯一标识符。 # # DEVICE=eth0 # 指定设备名称为eth0。 # # ONBOOT=yes # 指定开机自动启用这个连接。 # # IPADDR=192.168.1.31 # 指定IPv4地址为192.168.1.31。 # # PREFIX=24 # 指定IPv4地址的子网掩码为24。 # # GATEWAY=192.168.8.1 # 指定IPv4的网关地址为192.168.8.1。 # # DNS1=8.8.8.8 # 指定首选DNS服务器为8.8.8.8。 # # IPV6ADDR=fc00:43f4:1eea:1::10/128 # 指定IPv6地址为fc00:43f4:1eea:1::10，子网掩码为128。 # # IPV6_DEFAULTGW=fc00:43f4:1eea:1::1 # 指定IPv6的默认网关地址为fc00:43f4:1eea:1::1。 # # DNS2=2400:3200::1 # 指定备用DNS服务器为2400:3200::1。 1.3.设置主机名 link hostnamectl set-hostname k8s-master01 hostnamectl set-hostname k8s-master02 hostnamectl set-hostname k8s-master03 hostnamectl set-hostname k8s-node01 hostnamectl set-hostname k8s-node02 # 参数解释 # # 参数: set-hostname # 解释: 这是hostnamectl命令的一个参数，用于设置系统的主机名。 # # 参数: k8s-master01 # 解释: 这是要设置的主机名，将系统的主机名设置为\"k8s-master01\"。 1.4.配置yum源 link # 其他系统的源地址 # https://mirrors.tuna.tsinghua.edu.cn/help/ # 对于 Ubuntu sed -i 's/cn.archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list # 对于 CentOS 7 sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \\ -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \\ -i.bak \\ /etc/yum.repos.d/CentOS-*.repo # 对于 CentOS 8 sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \\ -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos|g' \\ -i.bak \\ /etc/yum.repos.d/CentOS-*.repo # 对于私有仓库 sed -e 's|^mirrorlist=|#mirrorlist=|g' -e 's|^#baseurl=http://mirror.centos.org/\\$contentdir|baseurl=http://192.168.1.123/centos|g' -i.bak /etc/yum.repos.d/CentOS-*.repo # 参数解释 # # 以上命令是用于更改系统软件源的配置，以便从国内镜像站点下载软件包和更新。 # # 对于 Ubuntu 系统，将 /etc/apt/sources.list 文件中的软件源地址 cn.archive.ubuntu.com 替换为 mirrors.ustc.edu.cn。 # # 对于 CentOS 7 系统，将 /etc/yum.repos.d/CentOS-*.repo 文件中的 mirrorlist 注释掉，并将 baseurl 的值替换为 https://mirrors.tuna.tsinghua.edu.cn/centos。 # # 对于 CentOS 8 系统，同样将 /etc/yum.repos.d/CentOS-*.repo 文件中的 mirrorlist 注释掉，并将 baseurl 的值替换为 https://mirrors.tuna.tsinghua.edu.cn/centos。 # # 对于私有仓库，将 /etc/yum.repos.d/CentOS-*.repo 文件中的 mirrorlist 注释掉，并将 baseurl 的值替换为私有仓库地址 http://192.168.1.123/centos。 # # 这些命令通过使用 sed 工具和正则表达式，对相应的配置文件进行批量的替换操作，从而更改系统软件源配置。 1.5.安装一些必备工具 link # 对于 Ubuntu apt update \u0026\u0026 apt upgrade -y \u0026\u0026 apt install -y wget psmisc vim net-tools nfs-kernel-server telnet lvm2 git tar curl # 对于 CentOS 7 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl # 对于 CentOS 8 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git network-scripts tar curl 1.5.1 下载离线所需文件(可选) link在互联网服务器上安装一个一模一样的系统进行下载所需包\nCentOS7 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack createrepo wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 删除libseccomp rm -rf libseccomp-*.rpm # 下载libseccomp wget http://rpmfind.net/linux/centos/8-stream/BaseOS/x86_64/os/Packages/libseccomp-2.5.1-1.el8.x86_64.rpm # 创建yum源信息 createrepo -u -d /data/centos7/ # 拷贝包到内网机器上 scp -r /data/centos7/ root@192.168.1.31: scp -r /data/centos7/ root@192.168.1.32: scp -r /data/centos7/ root@192.168.1.33: scp -r /data/centos7/ root@192.168.1.34: scp -r /data/centos7/ root@192.168.1.35: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [fly] name=CentOS-$releasever - Media baseurl=file:///root/centos7/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos7/* --skip-broken -y #### 备注 ##### # 安装完成后，可能还会出现yum无法使用那么再次执行 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [fly] name=CentOS-$releasever - Media baseurl=file:///root/centos7/ gpgcheck=0 enabled=1 EOF yum clean all yum makecache yum install /root/centos7/* --skip-broken -y #### 备注 ##### # 安装 chrony 和 libseccomp # yum install /root/centos7/libseccomp-2.5.1*.rpm -y # yum install /root/centos7/chrony-*.rpm -y CentOS8 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git network-scripts tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 创建yum源信息 createrepo -u -d /data/centos8/ # 拷贝包到内网机器上 scp -r centos8/ root@192.168.1.31: scp -r centos8/ root@192.168.1.32: scp -r centos8/ root@192.168.1.33: scp -r centos8/ root@192.168.1.34: scp -r centos8/ root@192.168.1.35: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [fly] name=CentOS-$releasever - Media baseurl=file:///root/centos8/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos8/* --skip-broken -y #### 备注 ##### # 安装完成后，可能还会出现yum无法使用那么再次执行 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [fly] name=CentOS-$releasever - Media baseurl=file:///root/centos8/ gpgcheck=0 enabled=1 EOF yum clean all yum makecache yum install /root/centos8/* --skip-broken -y Ubuntu 下载包和依赖 link #!/bin/bash logfile=123.log ret=\"\" function getDepends() { echo \"fileName is\" $1\u003e\u003e$logfile # use tr to del \u003c \u003e ret=`apt-cache depends $1|grep Depends |cut -d: -f2 |tr -d \"\u003c\u003e\"` echo $ret|tee -a $logfile } # 需要获取其所依赖包的包 libs=\"wget psmisc vim net-tools nfs-kernel-server telnet lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp\" # download libs dependen. deep in 3 i=0 while [ $i -lt 3 ] ; do let i++ echo $i # download libs newlist=\" \" for j in $libs do added=\"$(getDepends $j)\" newlist=\"$newlist $added\" apt install $added --reinstall -d -y done libs=$newlist done # 创建源信息 apt install dpkg-dev sudo cp /var/cache/apt/archives/*.deb /data/ubuntu/ -r dpkg-scanpackages . /dev/null |gzip \u003e /data/ubuntu/Packages.gz -r # 拷贝包到内网机器上 scp -r ubuntu/ root@192.168.1.31: scp -r ubuntu/ root@192.168.1.32: scp -r ubuntu/ root@192.168.1.33: scp -r ubuntu/ root@192.168.1.34: scp -r ubuntu/ root@192.168.1.35: # 在内网机器上配置apt源 vim /etc/apt/sources.list cat /etc/apt/sources.list deb file:////root/ ubuntu/ # 安装deb包 apt install ./*.deb 1.6.选择性下载需要工具 link #!/bin/bash # 查看版本地址： # # https://github.com/containernetworking/plugins/releases/ # https://github.com/containerd/containerd/releases/ # https://github.com/kubernetes-sigs/cri-tools/releases/ # https://github.com/Mirantis/cri-dockerd/releases/ # https://github.com/etcd-io/etcd/releases/ # https://github.com/cloudflare/cfssl/releases/ # https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG # https://download.docker.com/linux/static/stable/x86_64/ # https://github.com/opencontainers/runc/releases/ # https://mirrors.tuna.tsinghua.edu.cn/elrepo/kernel/el7/x86_64/RPMS/ # https://github.com/helm/helm/tags # http://nginx.org/download/ # Version numbers cni_plugins_version='v1.3.0' cri_containerd_cni_version='1.7.8' crictl_version='v1.28.0' cri_dockerd_version='0.3.7' etcd_version='v3.5.10' cfssl_version='1.6.4' kubernetes_server_version='1.28.3' docker_version='24.0.7' runc_version='1.1.10' kernel_version='5.4.260' helm_version='3.13.2' nginx_version='1.25.3' # URLs base_url='https://github.com' kernel_url=\"http://mirrors.tuna.tsinghua.edu.cn/elrepo/kernel/el7/x86_64/RPMS/kernel-lt-${kernel_version}-1.el7.elrepo.x86_64.rpm\" runc_url=\"${base_url}/opencontainers/runc/releases/download/v${runc_version}/runc.amd64\" docker_url=\"https://mirrors.ustc.edu.cn/docker-ce/linux/static/stable/x86_64/docker-${docker_version}.tgz\" cni_plugins_url=\"${base_url}/containernetworking/plugins/releases/download/${cni_plugins_version}/cni-plugins-linux-amd64-${cni_plugins_version}.tgz\" cri_containerd_cni_url=\"${base_url}/containerd/containerd/releases/download/v${cri_containerd_cni_version}/cri-containerd-cni-${cri_containerd_cni_version}-linux-amd64.tar.gz\" crictl_url=\"${base_url}/kubernetes-sigs/cri-tools/releases/download/${crictl_version}/crictl-${crictl_version}-linux-amd64.tar.gz\" cri_dockerd_url=\"${base_url}/Mirantis/cri-dockerd/releases/download/v${cri_dockerd_version}/cri-dockerd-${cri_dockerd_version}.amd64.tgz\" etcd_url=\"${base_url}/etcd-io/etcd/releases/download/${etcd_version}/etcd-${etcd_version}-linux-amd64.tar.gz\" cfssl_url=\"${base_url}/cloudflare/cfssl/releases/download/v${cfssl_version}/cfssl_${cfssl_version}_linux_amd64\" cfssljson_url=\"${base_url}/cloudflare/cfssl/releases/download/v${cfssl_version}/cfssljson_${cfssl_version}_linux_amd64\" helm_url=\"https://mirrors.huaweicloud.com/helm/v${helm_version}/helm-v${helm_version}-linux-amd64.tar.gz\" kubernetes_server_url=\"https://storage.googleapis.com/kubernetes-release/release/v${kubernetes_server_version}/kubernetes-server-linux-amd64.tar.gz\" nginx_url=\"http://nginx.org/download/nginx-${nginx_version}.tar.gz\" # Download packages packages=( $kernel_url $runc_url $docker_url $cni_plugins_url $cri_containerd_cni_url $crictl_url $cri_dockerd_url $etcd_url $cfssl_url $cfssljson_url $helm_url $kubernetes_server_url $nginx_url ) for package_url in \"${packages[@]}\"; do filename=$(basename \"$package_url\") if curl --parallel --parallel-immediate -k -L -C - -o \"$filename\" \"$package_url\"; then echo \"Downloaded $filename\" else echo \"Failed to download $filename\" exit 1 fi done 1.7.关闭防火墙 link # Ubuntu忽略，CentOS执行 systemctl disable --now firewalld 1.8.关闭SELinux link # Ubuntu忽略，CentOS执行 setenforce 0 sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config # 参数解释 # # setenforce 0 # 此命令用于设置 SELinux 的执行模式。0 表示关闭 SELinux。 # # sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config # 该命令使用 sed 工具来编辑 /etc/selinux/config 文件。其中 '-i' 参数表示直接修改原文件，而不是输出到终端或另一个文件。's#SELINUX=enforcing#SELINUX=disabled#g' 是 sed 的替换命令，它将文件中所有的 \"SELINUX=enforcing\" 替换为 \"SELINUX=disabled\"。这里的 '#' 是分隔符，用于替代传统的 '/' 分隔符，以避免与路径中的 '/' 冲突。 1.9.关闭交换分区 link sed -ri 's/.*swap.*/#\u0026/' /etc/fstab swapoff -a \u0026\u0026 sysctl -w vm.swappiness=0 cat /etc/fstab # /dev/mapper/centos-swap swap swap defaults 0 0 # 参数解释： # # -ri: 这个参数用于在原文件中替换匹配的模式。-r表示扩展正则表达式，-i允许直接修改文件。 # 's/.*swap.*/#\u0026/': 这是一个sed命令，用于在文件/etc/fstab中找到包含swap的行，并在行首添加#来注释掉该行。 # /etc/fstab: 这是一个文件路径，即/etc/fstab文件，用于存储文件系统表。 # swapoff -a: 这个命令用于关闭所有启用的交换分区。 # sysctl -w vm.swappiness=0: 这个命令用于修改vm.swappiness参数的值为0，表示系统在物理内存充足时更倾向于使用物理内存而非交换分区。 1.10.网络配置（俩种方式二选一） link # Ubuntu忽略，CentOS执行 # 方式一 # systemctl disable --now NetworkManager # systemctl start network \u0026\u0026 systemctl enable network # 方式二 cat \u003e /etc/NetworkManager/conf.d/calico.conf \u003c\u003c EOF [keyfile] unmanaged-devices=interface-name:cali*;interface-name:tunl* EOF systemctl restart NetworkManager # 参数解释 # # 这个参数用于指定不由 NetworkManager 管理的设备。它由以下两个部分组成 # # interface-name:cali* # 表示以 \"cali\" 开头的接口名称被排除在 NetworkManager 管理之外。例如，\"cali0\", \"cali1\" 等接口不受 NetworkManager 管理。 # # interface-name:tunl* # 表示以 \"tunl\" 开头的接口名称被排除在 NetworkManager 管理之外。例如，\"tunl0\", \"tunl1\" 等接口不受 NetworkManager 管理。 # # 通过使用这个参数，可以将特定的接口排除在 NetworkManager 的管理范围之外，以便其他工具或进程可以独立地管理和配置这些接口。 1.11.进行时间同步 link # 服务端 # apt install chrony -y yum install chrony -y cat \u003e /etc/chrony.conf \u003c\u003c EOF pool ntp.aliyun.com iburst driftfile /var/lib/chrony/drift makestep 1.0 3 rtcsync allow 192.168.1.0/24 local stratum 10 keyfile /etc/chrony.keys leapsectz right/UTC logdir /var/log/chrony EOF systemctl restart chronyd ; systemctl enable chronyd # 客户端 # apt install chrony -y yum install chrony -y cat \u003e /etc/chrony.conf \u003c\u003c EOF pool 192.168.1.31 iburst driftfile /var/lib/chrony/drift makestep 1.0 3 rtcsync keyfile /etc/chrony.keys leapsectz right/UTC logdir /var/log/chrony EOF systemctl restart chronyd ; systemctl enable chronyd #使用客户端进行验证 chronyc sources -v # 参数解释 # # pool ntp.aliyun.com iburst # 指定使用ntp.aliyun.com作为时间服务器池，iburst选项表示在初始同步时会发送多个请求以加快同步速度。 # # driftfile /var/lib/chrony/drift # 指定用于保存时钟漂移信息的文件路径。 # # makestep 1.0 3 # 设置当系统时间与服务器时间偏差大于1秒时，会以1秒的步长进行调整。如果偏差超过3秒，则立即进行时间调整。 # # rtcsync # 启用硬件时钟同步功能，可以提高时钟的准确性。 # # allow 192.168.0.0/24 # 允许192.168.0.0/24网段范围内的主机与chrony进行时间同步。 # # local stratum 10 # 将本地时钟设为stratum 10，stratum值表示时钟的准确度，值越小表示准确度越高。 # # keyfile /etc/chrony.keys # 指定使用的密钥文件路径，用于对时间同步进行身份验证。 # # leapsectz right/UTC # 指定时区为UTC。 # # logdir /var/log/chrony # 指定日志文件存放目录。 1.12.配置ulimit link ulimit -SHn 65535 cat \u003e\u003e /etc/security/limits.conf \u003c"
             }
         );
     index.add(
@@ -8789,7 +8763,7 @@ root@hello:~/cilium# cat values.yaml| grep tag: -C1
                 href: "\/docs\/ops\/kubernetes\/2.kubernetes-v1.30.2%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "2.Kubernetes-v1.30.2高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
-                content: "介绍 link kubernetes（k8s）二进制高可用安装部署，支持IPv4+IPv6双栈。 我使用IPV6的目的是在公网进行访问，所以我配置了IPV6静态地址。 若您没有IPV6环境，或者不想使用IPv6，不对主机进行配置IPv6地址即可。 不配置IPV6，不影响后续，不过集群依旧是支持IPv6的。为后期留有扩展可能性。 若不要IPv6 ，不给网卡配置IPv6即可，不要对IPv6相关配置删除或操作，否则会出问题。 1.环境 link 主机名称 IP地址 说明 软件 192.168.1.60 外网节点 下载各种所需安装包 Master01 192.168.1.41 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Master02 192.168.1.42 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Master03 192.168.1.43 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Node01 192.168.1.44 node节点 kubelet、kube-proxy、nfs-client、nginx Node02 192.168.1.45 node节点 kubelet、kube-proxy、nfs-client、nginx 192.168.1.46 VIP 网段 物理主机：192.168.1.0/24 service：10.96.0.0/12 pod：172.16.0.0/12\n安装包已经整理好：https://mirrors.chenby.cn/https://github.com/cby-chen/Kubernetes/releases/download/v1.30.2/kubernetes-v1.30.2.tar\n1.1.k8s基础系统环境配置 link1.2.配置IP link # 注意！ # 若虚拟机是进行克隆的那么网卡的UUID和MachineID会重复 # 需要重新生成新的UUIDUUID和MachineID # UUID和MachineID重复无法DHCP获取到IPV6地址 ssh root@192.168.1.155 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" ssh root@192.168.1.158 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" ssh root@192.168.1.160 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" ssh root@192.168.1.161 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" ssh root@192.168.1.162 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" # # 查看当前的网卡列表和 UUID： # nmcli con show # 删除要更改 UUID 的网络连接： # nmcli con delete uuid \u003c原 UUID\u003e # 重新生成 UUID： # nmcli con add type ethernet ifname \u003c接口名称\u003e con-name \u003c新名称\u003e # 重新启用网络连接： # nmcli con up \u003c新名称\u003e # 更改网卡的UUID # 先配置静态IP之后使用ssh方式配置不断连 ssh root@192.168.1.41 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" ssh root@192.168.1.42 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" ssh root@192.168.1.43 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" ssh root@192.168.1.44 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" ssh root@192.168.1.45 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" # 参数解释 # # ssh ssh root@192.168.1.41 # 使用SSH登录到IP为192.168.1.41的主机，使用root用户身份。 # # nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44 # 删除 UUID 为 708a1497-2192-43a5-9f03-2ab936fb3c44 的网络连接，这是 NetworkManager 中一种特定网络配置的唯一标识符。 # # nmcli con add type ethernet ifname ens18 con-name ens18 # 添加一种以太网连接类型，并指定接口名为 ens18，连接名称也为 ens18。 # # nmcli con up ens18 # 开启 ens18 这个网络连接。 # # 简单来说，这个命令的作用是删除一个特定的网络连接配置，并添加一个名为 ens18 的以太网连接，然后启用这个新的连接。 # 修改静态的IPv4地址 ssh root@192.168.1.158 \"nmcli con mod ens18 ipv4.addresses 192.168.1.41/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" ssh root@192.168.1.151 \"nmcli con mod ens18 ipv4.addresses 192.168.1.42/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" ssh root@192.168.1.152 \"nmcli con mod ens18 ipv4.addresses 192.168.1.43/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" ssh root@192.168.1.157 \"nmcli con mod ens18 ipv4.addresses 192.168.1.44/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" ssh root@192.168.1.155 \"nmcli con mod ens18 ipv4.addresses 192.168.1.45/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" # 参数解释 # # ssh root@192.168.1.154 # 使用SSH登录到IP为192.168.1.154的主机，使用root用户身份。 # # \"nmcli con mod ens18 ipv4.addresses 192.168.1.41/24\" # 修改ens18网络连接的IPv4地址为192.168.1.41，子网掩码为 24。 # # \"nmcli con mod ens18 ipv4.gateway 192.168.1.1\" # 修改ens18网络连接的IPv4网关为192.168.1.1。 # # \"nmcli con mod ens18 ipv4.method manual\" # 将ens18网络连接的IPv4配置方法设置为手动。 # # \"nmcli con mod ens18 ipv4.dns \"8.8.8.8\" # 将ens18网络连接的IPv4 DNS服务器设置为 8.8.8.8。 # # \"nmcli con up ens18\" # 启动ens18网络连接。 # # 总体来说，这条命令是通过SSH远程登录到指定的主机，并使用网络管理命令 (nmcli) 修改ens18网络连接的配置，包括IP地址、网关、配置方法和DNS服务器，并启动该网络连接。 # 没有固定IPv6选择不配置即可 ssh root@192.168.1.41 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::10; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" ssh root@192.168.1.42 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::20; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" ssh root@192.168.1.43 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::30; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" ssh root@192.168.1.44 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::40; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" ssh root@192.168.1.45 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::50; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" # 参数解释 # # ssh root@192.168.1.41 # 通过SSH连接到IP地址为192.168.1.41的远程主机，使用root用户进行登录。 # # \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::10\" # 使用nmcli命令修改ens18接口的IPv6地址为fc00:43f4:1eea:1::10。 # # \"nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1\" # 使用nmcli命令修改ens18接口的IPv6网关为fc00:43f4:1eea:1::1。 # # \"nmcli con mod ens18 ipv6.method manual\" # 使用nmcli命令将ens18接口的IPv6配置方法修改为手动配置。 # # \"nmcli con mod ens18 ipv6.dns \"2400:3200::1\" # 使用nmcli命令设置ens18接口的IPv6 DNS服务器为2400:3200::1。 # # \"nmcli con up ens18\" # 使用nmcli命令启动ens18接口。 # # 这个命令的目的是在远程主机上配置ens18接口的IPv6地址、网关、配置方法和DNS服务器，并启动ens18接口。 # 查看网卡配置 # nmcli device show ens18 # nmcli con show ens18 [root@localhost ~]# cat /etc/NetworkManager/system-connections/ens18.nmconnection [connection] id=ens18 uuid=97445eea-70e8-47a7-8be4-a707de271f5e type=ethernet interface-name=ens18 timestamp=1716705021 [ethernet] [ipv4] address1=192.168.1.41/24,192.168.1.1 dns=8.8.8.8; method=manual [ipv6] addr-gen-mode=default method=auto [proxy] [root@localhost ~]# # 参数解释 # 1. `[connection]`: # - `id`: 连接的唯一标识符，用于内部引用。 # - `uuid`: 连接的通用唯一标识符（UUID），确保在系统中的唯一性。 # - `type`: 指定连接的类型，本例中为以太网。 # - `interface-name`: 网络接口的名称（`ens18`），表示与此连接关联的物理或逻辑网络接口。 # - `timestamp`: 时间戳，指示连接配置上次修改的时间。 # 2. `[ethernet]`: # - 通常包含以太网特定的配置设置，如MAC地址或链路速度。 # 3. `[ipv4]`: # - `address1`: 以CIDR表示法指定IPv4地址和子网掩码（`192.168.1.41/24`）。还包括网关IP（`192.168.1.1`）。 # - `dns`: 指定要使用的DNS服务器（本例中为`8.8.8.8`），提供将域名转换为IP地址的手段。 # - `method`: 指定获取IPv4地址的方法。在本例中，设置为手动，表示IP地址是静态配置的。 # 4. `[ipv6]`: # - `addr-gen-mode`: 指定IPv6地址生成模式。设置为默认，通常意味着地址是根据接口的MAC地址生成的。 # - `method`: 指定获取IPv6地址的方法。在本例中，设置为自动，表示使用DHCPv6或SLAAC等协议进行自动配置。 # 5. `[proxy]`: # - 通常用于配置代理设置，如HTTP或SOCKS代理。 1.3.设置主机名 link hostnamectl set-hostname k8s-master01 hostnamectl set-hostname k8s-master02 hostnamectl set-hostname k8s-master03 hostnamectl set-hostname k8s-node01 hostnamectl set-hostname k8s-node02 # 参数解释 # # 参数: set-hostname # 解释: 这是hostnamectl命令的一个参数，用于设置系统的主机名。 # # 参数: k8s-master01 # 解释: 这是要设置的主机名，将系统的主机名设置为\"k8s-master01\"。 1.4.配置yum源 link # 其他系统的源地址 # https://help.mirrors.cernet.edu.cn/ # 对于私有仓库 sed -e 's|^mirrorlist=|#mirrorlist=|g' -e 's|^#baseurl=http://mirror.centos.org/\\$contentdir|baseurl=http://192.168.1.123/centos|g' -i.bak /etc/yum.repos.d/CentOS-*.repo # 对于 Ubuntu sed -i 's/cn.archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list # epel扩展源 sudo yum install -y epel-release sudo sed -e 's!^metalink=!#metalink=!g' \\ -e 's!^#baseurl=!baseurl=!g' \\ -e 's!https\\?://download\\.fedoraproject\\.org/pub/epel!https://mirror.nju.edu.cn/epel!g' \\ -e 's!https\\?://download\\.example/pub/epel!https://mirror.nju.edu.cn/epel!g' \\ -i /etc/yum.repos.d/epel{,-testing}.repo # 对于 CentOS 7 sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \\ -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirror.nju.edu.cn/centos|g' \\ -i.bak \\ /etc/yum.repos.d/CentOS-*.repo # 对于 CentOS 8 sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \\ -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirror.nju.edu.cn/centos|g' \\ -i.bak \\ /etc/yum.repos.d/CentOS-*.repo # 对于CentOS 9 cat \u003c\u003c'EOF' \u003e /etc/yum.repos.d/centos.repo [baseos] name=CentOS Stream $releasever - BaseOS baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/BaseOS/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-baseos-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=1 [baseos-debuginfo] name=CentOS Stream $releasever - BaseOS - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/BaseOS/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-baseos-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [baseos-source] name=CentOS Stream $releasever - BaseOS - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/BaseOS/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-baseos-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [appstream] name=CentOS Stream $releasever - AppStream baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/AppStream/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-appstream-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=1 [appstream-debuginfo] name=CentOS Stream $releasever - AppStream - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/AppStream/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-appstream-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [appstream-source] name=CentOS Stream $releasever - AppStream - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/AppStream/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-appstream-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [crb] name=CentOS Stream $releasever - CRB baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/CRB/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-crb-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=1 [crb-debuginfo] name=CentOS Stream $releasever - CRB - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/CRB/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-crb-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [crb-source] name=CentOS Stream $releasever - CRB - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/CRB/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-crb-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 EOF cat \u003c\u003c'EOF' \u003e /etc/yum.repos.d/centos-addons.repo [highavailability] name=CentOS Stream $releasever - HighAvailability baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/HighAvailability/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-highavailability-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=0 [highavailability-debuginfo] name=CentOS Stream $releasever - HighAvailability - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/HighAvailability/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-highavailability-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [highavailability-source] name=CentOS Stream $releasever - HighAvailability - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/HighAvailability/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-highavailability-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [nfv] name=CentOS Stream $releasever - NFV baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/NFV/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-nfv-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=0 [nfv-debuginfo] name=CentOS Stream $releasever - NFV - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/NFV/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-nfv-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [nfv-source] name=CentOS Stream $releasever - NFV - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/NFV/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-nfv-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [rt] name=CentOS Stream $releasever - RT baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/RT/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-rt-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=0 [rt-debuginfo] name=CentOS Stream $releasever - RT - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/RT/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-rt-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [rt-source] name=CentOS Stream $releasever - RT - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/RT/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-rt-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [resilientstorage] name=CentOS Stream $releasever - ResilientStorage baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/ResilientStorage/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-resilientstorage-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=0 [resilientstorage-debuginfo] name=CentOS Stream $releasever - ResilientStorage - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/ResilientStorage/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-resilientstorage-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [resilientstorage-source] name=CentOS Stream $releasever - ResilientStorage - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/ResilientStorage/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-resilientstorage-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [extras-common] name=CentOS Stream $releasever - Extras packages baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/SIGs/$releasever-stream/extras/$basearch/extras-common # metalink=https://mirrors.centos.org/metalink?repo=centos-extras-sig-extras-common-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512 gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=1 [extras-common-source] name=CentOS Stream $releasever - Extras packages - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/SIGs/$releasever-stream/extras/source/extras-common # metalink=https://mirrors.centos.org/metalink?repo=centos-extras-sig-extras-common-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512 gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 EOF 1.5.安装一些必备工具 link # 对于 Ubuntu apt update \u0026\u0026 apt upgrade -y \u0026\u0026 apt install -y wget psmisc vim net-tools nfs-kernel-server telnet lvm2 git tar curl # 对于 CentOS 7 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl # 对于 CentOS 8 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git network-scripts tar curl # 对于 CentOS 9 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl 1.5.1 下载离线所需文件(可选) link在互联网服务器上安装一个一模一样的系统进行下载所需包\nCentOS7 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack createrepo wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 删除libseccomp rm -rf libseccomp-*.rpm # 下载libseccomp wget http://rpmfind.net/linux/centos/8-stream/BaseOS/x86_64/os/Packages/libseccomp-2.5.1-1.el8.x86_64.rpm # 创建yum源信息 createrepo -u -d /data/centos7/ # 拷贝包到内网机器上 scp -r /data/centos7/ root@192.168.1.41: scp -r /data/centos7/ root@192.168.1.42: scp -r /data/centos7/ root@192.168.1.43: scp -r /data/centos7/ root@192.168.1.44: scp -r /data/centos7/ root@192.168.1.45: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [cby] name=CentOS-$releasever - Media baseurl=file:///root/centos7/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos7/* --skip-broken -y #### 备注 ##### # 安装完成后，可能还会出现yum无法使用那么再次执行 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [cby] name=CentOS-$releasever - Media baseurl=file:///root/centos7/ gpgcheck=0 enabled=1 EOF yum clean all yum makecache yum install /root/centos7/*.rpm --skip-broken -y #### 备注 ##### # 安装 chrony 和 libseccomp # yum install /root/centos7/libseccomp-2.5.1*.rpm -y # yum install /root/centos7/chrony-*.rpm -y CentOS8 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git network-scripts tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 创建yum源信息 createrepo -u -d /data/centos8/ # 拷贝包到内网机器上 scp -r centos8/ root@192.168.1.41: scp -r centos8/ root@192.168.1.42: scp -r centos8/ root@192.168.1.43: scp -r centos8/ root@192.168.1.44: scp -r centos8/ root@192.168.1.45: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [cby] name=CentOS-$releasever - Media baseurl=file:///root/centos8/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos8/* --skip-broken -y #### 备注 ##### # 安装完成后，可能还会出现yum无法使用那么再次执行 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [cby] name=CentOS-$releasever - Media baseurl=file:///root/centos8/ gpgcheck=0 enabled=1 EOF yum clean all yum makecache yum install /root/centos8/*.rpm --skip-broken -y CentOS9 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 创建yum源信息 createrepo -u -d centos9/ # 拷贝包到内网机器上 scp -r centos9/ root@192.168.1.41: scp -r centos9/ root@192.168.1.42: scp -r centos9/ root@192.168.1.43: scp -r centos9/ root@192.168.1.44: scp -r centos9/ root@192.168.1.45: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [cby] name=CentOS-$releasever - Media baseurl=file:///root/centos9/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos9/*.rpm --skip-broken -y Ubuntu 下载包和依赖 link #!/bin/bash logfile=123.log ret=\"\" function getDepends() { echo \"fileName is\" $1\u003e\u003e$logfile # use tr to del \u003c \u003e ret=`apt-cache depends $1|grep Depends |cut -d: -f2 |tr -d \"\u003c\u003e\"` echo $ret|tee -a $logfile } # 需要获取其所依赖包的包 libs=\"wget psmisc vim net-tools nfs-kernel-server telnet lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp\" # download libs dependen. deep in 3 i=0 while [ $i -lt 3 ] ; do let i++ echo $i # download libs newlist=\" \" for j in $libs do added=\"$(getDepends $j)\" newlist=\"$newlist $added\" apt install $added --reinstall -d -y done libs=$newlist done # 创建源信息 apt install dpkg-dev sudo cp /var/cache/apt/archives/*.deb /data/ubuntu/ -r dpkg-scanpackages . /dev/null |gzip \u003e /data/ubuntu/Packages.gz -r # 拷贝包到内网机器上 scp -r ubuntu/ root@192.168.1.41: scp -r ubuntu/ root@192.168.1.42: scp -r ubuntu/ root@192.168.1.43: scp -r ubuntu/ root@192.168.1.44: scp -r ubuntu/ root@192.168.1.45: # 在内网机器上配置apt源 vim /etc/apt/sources.list cat /etc/apt/sources.list deb file:////root/ ubuntu/ # 安装deb包 apt install ./*.deb 1.6.选择性下载需要工具 link #!/bin/bash # 查看版本地址： # # https://github.com/containernetworking/plugins/releases/ # https://github.com/containerd/containerd/releases/ # https://github.com/kubernetes-sigs/cri-tools/releases/ # https://github.com/Mirantis/cri-dockerd/releases/ # https://github.com/etcd-io/etcd/releases/ # https://github.com/cloudflare/cfssl/releases/ # https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG # https://download.docker.com/linux/static/stable/x86_64/ # https://github.com/opencontainers/runc/releases/ # https://mirrors.tuna.tsinghua.edu.cn/elrepo/kernel/el7/x86_64/RPMS/ # https://github.com/helm/helm/tags # http://nginx.org/download/ # Version numbers cni_plugins_version='v1.5.1' cri_containerd_cni_version='1.7.18' crictl_version='v1.30.0' cri_dockerd_version='0.3.14' etcd_version='v3.5.13' cfssl_version='1.6.5' kubernetes_server_version='1.30.2' docker_version='26.1.4' runc_version='1.1.13' kernel_version='5.4.278' helm_version='3.15.2' nginx_version='1.27.0' # URLs base_url='https://github.com' kernel_url=\"http://mirrors.tuna.tsinghua.edu.cn/elrepo/kernel/el7/x86_64/RPMS/kernel-lt-${kernel_version}-1.el7.elrepo.x86_64.rpm\" runc_url=\"${base_url}/opencontainers/runc/releases/download/v${runc_version}/runc.amd64\" docker_url=\"https://mirrors.ustc.edu.cn/docker-ce/linux/static/stable/x86_64/docker-${docker_version}.tgz\" cni_plugins_url=\"${base_url}/containernetworking/plugins/releases/download/${cni_plugins_version}/cni-plugins-linux-amd64-${cni_plugins_version}.tgz\" cri_containerd_cni_url=\"${base_url}/containerd/containerd/releases/download/v${cri_containerd_cni_version}/cri-containerd-cni-${cri_containerd_cni_version}-linux-amd64.tar.gz\" crictl_url=\"${base_url}/kubernetes-sigs/cri-tools/releases/download/${crictl_version}/crictl-${crictl_version}-linux-amd64.tar.gz\" cri_dockerd_url=\"${base_url}/Mirantis/cri-dockerd/releases/download/v${cri_dockerd_version}/cri-dockerd-${cri_dockerd_version}.amd64.tgz\" etcd_url=\"${base_url}/etcd-io/etcd/releases/download/${etcd_version}/etcd-${etcd_version}-linux-amd64.tar.gz\" cfssl_url=\"${base_url}/cloudflare/cfssl/releases/download/v${cfssl_version}/cfssl_${cfssl_version}_linux_amd64\" cfssljson_url=\"${base_url}/cloudflare/cfssl/releases/download/v${cfssl_version}/cfssljson_${cfssl_version}_linux_amd64\" helm_url=\"https://mirrors.huaweicloud.com/helm/v${helm_version}/helm-v${helm_version}-linux-amd64.tar.gz\" kubernetes_server_url=\"https://storage.googleapis.com/kubernetes-release/release/v${kubernetes_server_version}/kubernetes-server-linux-amd64.tar.gz\" nginx_url=\"http://nginx.org/download/nginx-${nginx_version}.tar.gz\" # Download packages packages=( # $kernel_url $runc_url $docker_url $cni_plugins_url $cri_containerd_cni_url $crictl_url $cri_dockerd_url $etcd_url $cfssl_url $cfssljson_url $helm_url $kubernetes_server_url $nginx_url ) for package_url in \"${packages[@]}\"; do filename=$(basename \"$package_url\") if curl --parallel --parallel-immediate -k -L -C - -o \"$filename\" \"$package_url\"; then echo \"Downloaded $filename\" else echo \"Failed to download $filename\" exit 1 fi done 1.7.关闭防火墙 link # Ubuntu忽略，CentOS执行 systemctl disable --now firewalld 1.8.关闭SELinux link # Ubuntu忽略，CentOS执行 setenforce 0 sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config # 参数解释 # # setenforce 0 # 此命令用于设置 SELinux 的执行模式。0 表示关闭 SELinux。 # # sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config # 该命令使用 sed 工具来编辑 /etc/selinux/config 文件。其中 '-i' 参数表示直接修改原文件，而不是输出到终端或另一个文件。's#SELINUX=enforcing#SELINUX=disabled#g' 是 sed 的替换命令，它将文件中所有的 \"SELINUX=enforcing\" 替换为 \"SELINUX=disabled\"。这里的 '#' 是分隔符，用于替代传统的 '/' 分隔符，以避免与路径中的 '/' 冲突。 1.9.关闭交换分区 link sed -ri 's/.*swap.*/#\u0026/' /etc/fstab swapoff -a \u0026\u0026 sysctl -w vm.swappiness=0 cat /etc/fstab # /dev/mapper/centos-swap swap swap defaults 0 0 # 参数解释： # # -ri: 这个参数用于在原文件中替换匹配的模式。-r表示扩展正则表达式，-i允许直接修改文件。 # 's/.*swap.*/#\u0026/': 这是一个sed命令，用于在文件/etc/fstab中找到包含swap的行，并在行首添加#来注释掉该行。 # /etc/fstab: 这是一个文件路径，即/etc/fstab文件，用于存储文件系统表。 # swapoff -a: 这个命令用于关闭所有启用的交换分区。 # sysctl -w vm.swappiness=0: 这个命令用于修改vm.swappiness参数的值为0，表示系统在物理内存充足时更倾向于使用物理内存而非交换分区。 1.10.网络配置（俩种方式二选一） link # Ubuntu忽略，CentOS执行，CentOS9不支持方式一 # 方式一 # systemctl disable --now NetworkManager # systemctl start network \u0026\u0026 systemctl enable network # 方式二 cat \u003e /etc/NetworkManager/conf.d/calico.conf \u003c\u003c EOF [keyfile] unmanaged-devices=interface-name:cali*;interface-name:tunl* EOF systemctl restart NetworkManager # 参数解释 # # 这个参数用于指定不由 NetworkManager 管理的设备。它由以下两个部分组成 # # interface-name:cali* # 表示以 \"cali\" 开头的接口名称被排除在 NetworkManager 管理之外。例如，\"cali0\", \"cali1\" 等接口不受 NetworkManager 管理。 # # interface-name:tunl* # 表示以 \"tunl\" 开头的接口名称被排除在 NetworkManager 管理之外。例如，\"tunl0\", \"tunl1\" 等接口不受 NetworkManager 管理。 # # 通过使用这个参数，可以将特定的接口排除在 NetworkManager 的管理范围之外，以便其他工具或进程可以独立地管理和配置这些接口。 1.11.进行时间同步 link # 服务端 # apt install chrony -y yum install chrony -y cat \u003e /etc/chrony.conf \u003c\u003c EOF pool ntp.aliyun.com iburst driftfile /var/lib/chrony/drift makestep 1.0 3 rtcsync allow 192.168.1.0/24 local stratum 10 keyfile /etc/chrony.keys leapsectz right/UTC logdir /var/log/chrony EOF systemctl restart chronyd ; systemctl enable chronyd # 客户端 # apt install chrony -y yum install chrony -y cat \u003e /etc/chrony.conf \u003c\u003c EOF pool 192.168.1.41 iburst driftfile /var/lib/chrony/drift makestep 1.0 3 rtcsync keyfile /etc/chrony.keys leapsectz right/UTC logdir /var/log/chrony EOF systemctl restart chronyd ; systemctl enable chronyd #使用客户端进行验证 chronyc sources -v # 参数解释 # # pool ntp.aliyun.com iburst # 指定使用ntp.aliyun.com作为时间服务器池，iburst选项表示在初始同步时会发送多个请求以加快同步速度。 # # driftfile /var/lib/chrony/drift # 指定用于保存时钟漂移信息的文件路径。 # # makestep 1.0 3 # 设置当系统时间与服务器时间偏差大于1秒时，会以1秒的步长进行调整。如果偏差超过3秒，则立即进行时间调整。 # # rtcsync # 启用硬件时钟同步功能，可以提高时钟的准确性。 # # allow 192.168.0.0/24 # 允许192.168.0.0/24网段范围内的主机与chrony进行时间同步。 # # local stratum 10 # 将本地时钟设为stratum 10，stratum值表示时钟的准确度，值越小表示准确度越高。 # # keyfile /etc/chrony.keys # 指定使用的密钥文件路径，用于对时间同步进行身份验证。 # # leapsectz right/UTC # 指定时区为UTC。 # # logdir /var/log/chrony # 指定日志文件存放目录。 1.12.配置ulimit link ulimit -SHn 65535 cat \u003e\u003e /etc/security/limits.conf \u003c"
+                content: "介绍 link kubernetes（k8s）二进制高可用安装部署，支持IPv4+IPv6双栈。 我使用IPV6的目的是在公网进行访问，所以我配置了IPV6静态地址。 若您没有IPV6环境，或者不想使用IPv6，不对主机进行配置IPv6地址即可。 不配置IPV6，不影响后续，不过集群依旧是支持IPv6的。为后期留有扩展可能性。 若不要IPv6 ，不给网卡配置IPv6即可，不要对IPv6相关配置删除或操作，否则会出问题。 1.环境 link 主机名称 IP地址 说明 软件 192.168.1.60 外网节点 下载各种所需安装包 Master01 192.168.1.41 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Master02 192.168.1.42 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Master03 192.168.1.43 master节点 kube-apiserver、kube-controller-manager、kube-scheduler、etcd、\nkubelet、kube-proxy、nfs-client、haproxy、keepalived、nginx Node01 192.168.1.44 node节点 kubelet、kube-proxy、nfs-client、nginx Node02 192.168.1.45 node节点 kubelet、kube-proxy、nfs-client、nginx 192.168.1.46 VIP 网段 物理主机：192.168.1.0/24 service：10.96.0.0/12 pod：172.16.0.0/12\n1.1.k8s基础系统环境配置 link1.2.配置IP link # 注意！ # 若虚拟机是进行克隆的那么网卡的UUID和MachineID会重复 # 需要重新生成新的UUIDUUID和MachineID # UUID和MachineID重复无法DHCP获取到IPV6地址 ssh root@192.168.1.155 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" ssh root@192.168.1.158 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" ssh root@192.168.1.160 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" ssh root@192.168.1.161 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" ssh root@192.168.1.162 \"rm -rf /etc/machine-id; systemd-machine-id-setup;reboot\" # # 查看当前的网卡列表和 UUID： # nmcli con show # 删除要更改 UUID 的网络连接： # nmcli con delete uuid \u003c原 UUID\u003e # 重新生成 UUID： # nmcli con add type ethernet ifname \u003c接口名称\u003e con-name \u003c新名称\u003e # 重新启用网络连接： # nmcli con up \u003c新名称\u003e # 更改网卡的UUID # 先配置静态IP之后使用ssh方式配置不断连 ssh root@192.168.1.41 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" ssh root@192.168.1.42 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" ssh root@192.168.1.43 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" ssh root@192.168.1.44 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" ssh root@192.168.1.45 \"nmcli con delete uuid 8e8afb37-9cb4-362e-ba72-82568cb54312;nmcli con add type ethernet ifname ens18 con-name ens18;nmcli con up ens18\" # 参数解释 # # ssh ssh root@192.168.1.41 # 使用SSH登录到IP为192.168.1.41的主机，使用root用户身份。 # # nmcli con delete uuid 708a1497-2192-43a5-9f03-2ab936fb3c44 # 删除 UUID 为 708a1497-2192-43a5-9f03-2ab936fb3c44 的网络连接，这是 NetworkManager 中一种特定网络配置的唯一标识符。 # # nmcli con add type ethernet ifname ens18 con-name ens18 # 添加一种以太网连接类型，并指定接口名为 ens18，连接名称也为 ens18。 # # nmcli con up ens18 # 开启 ens18 这个网络连接。 # # 简单来说，这个命令的作用是删除一个特定的网络连接配置，并添加一个名为 ens18 的以太网连接，然后启用这个新的连接。 # 修改静态的IPv4地址 ssh root@192.168.1.158 \"nmcli con mod ens18 ipv4.addresses 192.168.1.41/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" ssh root@192.168.1.151 \"nmcli con mod ens18 ipv4.addresses 192.168.1.42/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" ssh root@192.168.1.152 \"nmcli con mod ens18 ipv4.addresses 192.168.1.43/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" ssh root@192.168.1.157 \"nmcli con mod ens18 ipv4.addresses 192.168.1.44/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" ssh root@192.168.1.155 \"nmcli con mod ens18 ipv4.addresses 192.168.1.45/24; nmcli con mod ens18 ipv4.gateway 192.168.1.1; nmcli con mod ens18 ipv4.method manual; nmcli con mod ens18 ipv4.dns \"8.8.8.8\"; nmcli con up ens18\" # 参数解释 # # ssh root@192.168.1.154 # 使用SSH登录到IP为192.168.1.154的主机，使用root用户身份。 # # \"nmcli con mod ens18 ipv4.addresses 192.168.1.41/24\" # 修改ens18网络连接的IPv4地址为192.168.1.41，子网掩码为 24。 # # \"nmcli con mod ens18 ipv4.gateway 192.168.1.1\" # 修改ens18网络连接的IPv4网关为192.168.1.1。 # # \"nmcli con mod ens18 ipv4.method manual\" # 将ens18网络连接的IPv4配置方法设置为手动。 # # \"nmcli con mod ens18 ipv4.dns \"8.8.8.8\" # 将ens18网络连接的IPv4 DNS服务器设置为 8.8.8.8。 # # \"nmcli con up ens18\" # 启动ens18网络连接。 # # 总体来说，这条命令是通过SSH远程登录到指定的主机，并使用网络管理命令 (nmcli) 修改ens18网络连接的配置，包括IP地址、网关、配置方法和DNS服务器，并启动该网络连接。 # 没有固定IPv6选择不配置即可 ssh root@192.168.1.41 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::10; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" ssh root@192.168.1.42 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::20; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" ssh root@192.168.1.43 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::30; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" ssh root@192.168.1.44 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::40; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" ssh root@192.168.1.45 \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::50; nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1; nmcli con mod ens18 ipv6.method manual; nmcli con mod ens18 ipv6.dns \"2400:3200::1\"; nmcli con up ens18\" # 参数解释 # # ssh root@192.168.1.41 # 通过SSH连接到IP地址为192.168.1.41的远程主机，使用root用户进行登录。 # # \"nmcli con mod ens18 ipv6.addresses fc00:43f4:1eea:1::10\" # 使用nmcli命令修改ens18接口的IPv6地址为fc00:43f4:1eea:1::10。 # # \"nmcli con mod ens18 ipv6.gateway fc00:43f4:1eea:1::1\" # 使用nmcli命令修改ens18接口的IPv6网关为fc00:43f4:1eea:1::1。 # # \"nmcli con mod ens18 ipv6.method manual\" # 使用nmcli命令将ens18接口的IPv6配置方法修改为手动配置。 # # \"nmcli con mod ens18 ipv6.dns \"2400:3200::1\" # 使用nmcli命令设置ens18接口的IPv6 DNS服务器为2400:3200::1。 # # \"nmcli con up ens18\" # 使用nmcli命令启动ens18接口。 # # 这个命令的目的是在远程主机上配置ens18接口的IPv6地址、网关、配置方法和DNS服务器，并启动ens18接口。 # 查看网卡配置 # nmcli device show ens18 # nmcli con show ens18 [root@localhost ~]# cat /etc/NetworkManager/system-connections/ens18.nmconnection [connection] id=ens18 uuid=97445eea-70e8-47a7-8be4-a707de271f5e type=ethernet interface-name=ens18 timestamp=1716705021 [ethernet] [ipv4] address1=192.168.1.41/24,192.168.1.1 dns=8.8.8.8; method=manual [ipv6] addr-gen-mode=default method=auto [proxy] [root@localhost ~]# # 参数解释 # 1. `[connection]`: # - `id`: 连接的唯一标识符，用于内部引用。 # - `uuid`: 连接的通用唯一标识符（UUID），确保在系统中的唯一性。 # - `type`: 指定连接的类型，本例中为以太网。 # - `interface-name`: 网络接口的名称（`ens18`），表示与此连接关联的物理或逻辑网络接口。 # - `timestamp`: 时间戳，指示连接配置上次修改的时间。 # 2. `[ethernet]`: # - 通常包含以太网特定的配置设置，如MAC地址或链路速度。 # 3. `[ipv4]`: # - `address1`: 以CIDR表示法指定IPv4地址和子网掩码（`192.168.1.41/24`）。还包括网关IP（`192.168.1.1`）。 # - `dns`: 指定要使用的DNS服务器（本例中为`8.8.8.8`），提供将域名转换为IP地址的手段。 # - `method`: 指定获取IPv4地址的方法。在本例中，设置为手动，表示IP地址是静态配置的。 # 4. `[ipv6]`: # - `addr-gen-mode`: 指定IPv6地址生成模式。设置为默认，通常意味着地址是根据接口的MAC地址生成的。 # - `method`: 指定获取IPv6地址的方法。在本例中，设置为自动，表示使用DHCPv6或SLAAC等协议进行自动配置。 # 5. `[proxy]`: # - 通常用于配置代理设置，如HTTP或SOCKS代理。 1.3.设置主机名 link hostnamectl set-hostname k8s-master01 hostnamectl set-hostname k8s-master02 hostnamectl set-hostname k8s-master03 hostnamectl set-hostname k8s-node01 hostnamectl set-hostname k8s-node02 # 参数解释 # # 参数: set-hostname # 解释: 这是hostnamectl命令的一个参数，用于设置系统的主机名。 # # 参数: k8s-master01 # 解释: 这是要设置的主机名，将系统的主机名设置为\"k8s-master01\"。 1.4.配置yum源 link # 其他系统的源地址 # https://help.mirrors.cernet.edu.cn/ # 对于私有仓库 sed -e 's|^mirrorlist=|#mirrorlist=|g' -e 's|^#baseurl=http://mirror.centos.org/\\$contentdir|baseurl=http://192.168.1.123/centos|g' -i.bak /etc/yum.repos.d/CentOS-*.repo # 对于 Ubuntu sed -i 's/cn.archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list # epel扩展源 sudo yum install -y epel-release sudo sed -e 's!^metalink=!#metalink=!g' \\ -e 's!^#baseurl=!baseurl=!g' \\ -e 's!https\\?://download\\.fedoraproject\\.org/pub/epel!https://mirror.nju.edu.cn/epel!g' \\ -e 's!https\\?://download\\.example/pub/epel!https://mirror.nju.edu.cn/epel!g' \\ -i /etc/yum.repos.d/epel{,-testing}.repo # 对于 CentOS 7 sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \\ -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirror.nju.edu.cn/centos|g' \\ -i.bak \\ /etc/yum.repos.d/CentOS-*.repo # 对于 CentOS 8 sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \\ -e 's|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirror.nju.edu.cn/centos|g' \\ -i.bak \\ /etc/yum.repos.d/CentOS-*.repo # 对于CentOS 9 cat \u003c\u003c'EOF' \u003e /etc/yum.repos.d/centos.repo [baseos] name=CentOS Stream $releasever - BaseOS baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/BaseOS/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-baseos-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=1 [baseos-debuginfo] name=CentOS Stream $releasever - BaseOS - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/BaseOS/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-baseos-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [baseos-source] name=CentOS Stream $releasever - BaseOS - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/BaseOS/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-baseos-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [appstream] name=CentOS Stream $releasever - AppStream baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/AppStream/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-appstream-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=1 [appstream-debuginfo] name=CentOS Stream $releasever - AppStream - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/AppStream/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-appstream-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [appstream-source] name=CentOS Stream $releasever - AppStream - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/AppStream/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-appstream-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [crb] name=CentOS Stream $releasever - CRB baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/CRB/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-crb-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=1 [crb-debuginfo] name=CentOS Stream $releasever - CRB - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/CRB/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-crb-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [crb-source] name=CentOS Stream $releasever - CRB - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/CRB/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-crb-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 EOF cat \u003c\u003c'EOF' \u003e /etc/yum.repos.d/centos-addons.repo [highavailability] name=CentOS Stream $releasever - HighAvailability baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/HighAvailability/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-highavailability-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=0 [highavailability-debuginfo] name=CentOS Stream $releasever - HighAvailability - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/HighAvailability/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-highavailability-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [highavailability-source] name=CentOS Stream $releasever - HighAvailability - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/HighAvailability/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-highavailability-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [nfv] name=CentOS Stream $releasever - NFV baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/NFV/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-nfv-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=0 [nfv-debuginfo] name=CentOS Stream $releasever - NFV - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/NFV/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-nfv-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [nfv-source] name=CentOS Stream $releasever - NFV - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/NFV/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-nfv-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [rt] name=CentOS Stream $releasever - RT baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/RT/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-rt-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=0 [rt-debuginfo] name=CentOS Stream $releasever - RT - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/RT/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-rt-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [rt-source] name=CentOS Stream $releasever - RT - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/RT/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-rt-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [resilientstorage] name=CentOS Stream $releasever - ResilientStorage baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/ResilientStorage/$basearch/os # metalink=https://mirrors.centos.org/metalink?repo=centos-resilientstorage-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=0 [resilientstorage-debuginfo] name=CentOS Stream $releasever - ResilientStorage - Debug baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/ResilientStorage/$basearch/debug/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-resilientstorage-debug-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [resilientstorage-source] name=CentOS Stream $releasever - ResilientStorage - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/$releasever-stream/ResilientStorage/source/tree/ # metalink=https://mirrors.centos.org/metalink?repo=centos-resilientstorage-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 [extras-common] name=CentOS Stream $releasever - Extras packages baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/SIGs/$releasever-stream/extras/$basearch/extras-common # metalink=https://mirrors.centos.org/metalink?repo=centos-extras-sig-extras-common-$stream\u0026arch=$basearch\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512 gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h countme=1 enabled=1 [extras-common-source] name=CentOS Stream $releasever - Extras packages - Source baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-stream/SIGs/$releasever-stream/extras/source/extras-common # metalink=https://mirrors.centos.org/metalink?repo=centos-extras-sig-extras-common-source-$stream\u0026arch=source\u0026protocol=https,http gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Extras-SHA512 gpgcheck=1 repo_gpgcheck=0 metadata_expire=6h enabled=0 EOF 1.5.安装一些必备工具 link # 对于 Ubuntu apt update \u0026\u0026 apt upgrade -y \u0026\u0026 apt install -y wget psmisc vim net-tools nfs-kernel-server telnet lvm2 git tar curl # 对于 CentOS 7 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl # 对于 CentOS 8 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git network-scripts tar curl # 对于 CentOS 9 yum update -y \u0026\u0026 yum -y install wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl 1.5.1 下载离线所需文件(可选) link在互联网服务器上安装一个一模一样的系统进行下载所需包\nCentOS7 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack createrepo wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 删除libseccomp rm -rf libseccomp-*.rpm # 下载libseccomp wget http://rpmfind.net/linux/centos/8-stream/BaseOS/x86_64/os/Packages/libseccomp-2.5.1-1.el8.x86_64.rpm # 创建yum源信息 createrepo -u -d /data/centos7/ # 拷贝包到内网机器上 scp -r /data/centos7/ root@192.168.1.41: scp -r /data/centos7/ root@192.168.1.42: scp -r /data/centos7/ root@192.168.1.43: scp -r /data/centos7/ root@192.168.1.44: scp -r /data/centos7/ root@192.168.1.45: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [fly] name=CentOS-$releasever - Media baseurl=file:///root/centos7/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos7/* --skip-broken -y #### 备注 ##### # 安装完成后，可能还会出现yum无法使用那么再次执行 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [fly] name=CentOS-$releasever - Media baseurl=file:///root/centos7/ gpgcheck=0 enabled=1 EOF yum clean all yum makecache yum install /root/centos7/*.rpm --skip-broken -y #### 备注 ##### # 安装 chrony 和 libseccomp # yum install /root/centos7/libseccomp-2.5.1*.rpm -y # yum install /root/centos7/chrony-*.rpm -y CentOS8 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git network-scripts tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 创建yum源信息 createrepo -u -d /data/centos8/ # 拷贝包到内网机器上 scp -r centos8/ root@192.168.1.41: scp -r centos8/ root@192.168.1.42: scp -r centos8/ root@192.168.1.43: scp -r centos8/ root@192.168.1.44: scp -r centos8/ root@192.168.1.45: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [fly] name=CentOS-$releasever - Media baseurl=file:///root/centos8/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos8/* --skip-broken -y #### 备注 ##### # 安装完成后，可能还会出现yum无法使用那么再次执行 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [fly] name=CentOS-$releasever - Media baseurl=file:///root/centos8/ gpgcheck=0 enabled=1 EOF yum clean all yum makecache yum install /root/centos8/*.rpm --skip-broken -y CentOS9 link # 下载必要工具 yum -y install createrepo yum-utils wget epel* # 下载全量依赖包 repotrack wget psmisc vim net-tools nfs-utils telnet yum-utils device-mapper-persistent-data lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp # 创建yum源信息 createrepo -u -d centos9/ # 拷贝包到内网机器上 scp -r centos9/ root@192.168.1.41: scp -r centos9/ root@192.168.1.42: scp -r centos9/ root@192.168.1.43: scp -r centos9/ root@192.168.1.44: scp -r centos9/ root@192.168.1.45: # 在内网机器上创建repo配置文件 rm -rf /etc/yum.repos.d/* cat \u003e /etc/yum.repos.d/123.repo \u003c\u003c EOF [fly] name=CentOS-$releasever - Media baseurl=file:///root/centos9/ gpgcheck=0 enabled=1 EOF # 安装下载好的包 yum clean all yum makecache yum install /root/centos9/*.rpm --skip-broken -y Ubuntu 下载包和依赖 link #!/bin/bash logfile=123.log ret=\"\" function getDepends() { echo \"fileName is\" $1\u003e\u003e$logfile # use tr to del \u003c \u003e ret=`apt-cache depends $1|grep Depends |cut -d: -f2 |tr -d \"\u003c\u003e\"` echo $ret|tee -a $logfile } # 需要获取其所依赖包的包 libs=\"wget psmisc vim net-tools nfs-kernel-server telnet lvm2 git tar curl gcc keepalived haproxy bash-completion chrony sshpass ipvsadm ipset sysstat conntrack libseccomp\" # download libs dependen. deep in 3 i=0 while [ $i -lt 3 ] ; do let i++ echo $i # download libs newlist=\" \" for j in $libs do added=\"$(getDepends $j)\" newlist=\"$newlist $added\" apt install $added --reinstall -d -y done libs=$newlist done # 创建源信息 apt install dpkg-dev sudo cp /var/cache/apt/archives/*.deb /data/ubuntu/ -r dpkg-scanpackages . /dev/null |gzip \u003e /data/ubuntu/Packages.gz -r # 拷贝包到内网机器上 scp -r ubuntu/ root@192.168.1.41: scp -r ubuntu/ root@192.168.1.42: scp -r ubuntu/ root@192.168.1.43: scp -r ubuntu/ root@192.168.1.44: scp -r ubuntu/ root@192.168.1.45: # 在内网机器上配置apt源 vim /etc/apt/sources.list cat /etc/apt/sources.list deb file:////root/ ubuntu/ # 安装deb包 apt install ./*.deb 1.6.选择性下载需要工具 link #!/bin/bash # 查看版本地址： # # https://github.com/containernetworking/plugins/releases/ # https://github.com/containerd/containerd/releases/ # https://github.com/kubernetes-sigs/cri-tools/releases/ # https://github.com/Mirantis/cri-dockerd/releases/ # https://github.com/etcd-io/etcd/releases/ # https://github.com/cloudflare/cfssl/releases/ # https://github.com/kubernetes/kubernetes/tree/master/CHANGELOG # https://download.docker.com/linux/static/stable/x86_64/ # https://github.com/opencontainers/runc/releases/ # https://mirrors.tuna.tsinghua.edu.cn/elrepo/kernel/el7/x86_64/RPMS/ # https://github.com/helm/helm/tags # http://nginx.org/download/ # Version numbers cni_plugins_version='v1.5.1' cri_containerd_cni_version='1.7.18' crictl_version='v1.30.0' cri_dockerd_version='0.3.14' etcd_version='v3.5.13' cfssl_version='1.6.5' kubernetes_server_version='1.30.2' docker_version='26.1.4' runc_version='1.1.13' kernel_version='5.4.278' helm_version='3.15.2' nginx_version='1.27.0' # URLs base_url='https://github.com' kernel_url=\"http://mirrors.tuna.tsinghua.edu.cn/elrepo/kernel/el7/x86_64/RPMS/kernel-lt-${kernel_version}-1.el7.elrepo.x86_64.rpm\" runc_url=\"${base_url}/opencontainers/runc/releases/download/v${runc_version}/runc.amd64\" docker_url=\"https://mirrors.ustc.edu.cn/docker-ce/linux/static/stable/x86_64/docker-${docker_version}.tgz\" cni_plugins_url=\"${base_url}/containernetworking/plugins/releases/download/${cni_plugins_version}/cni-plugins-linux-amd64-${cni_plugins_version}.tgz\" cri_containerd_cni_url=\"${base_url}/containerd/containerd/releases/download/v${cri_containerd_cni_version}/cri-containerd-cni-${cri_containerd_cni_version}-linux-amd64.tar.gz\" crictl_url=\"${base_url}/kubernetes-sigs/cri-tools/releases/download/${crictl_version}/crictl-${crictl_version}-linux-amd64.tar.gz\" cri_dockerd_url=\"${base_url}/Mirantis/cri-dockerd/releases/download/v${cri_dockerd_version}/cri-dockerd-${cri_dockerd_version}.amd64.tgz\" etcd_url=\"${base_url}/etcd-io/etcd/releases/download/${etcd_version}/etcd-${etcd_version}-linux-amd64.tar.gz\" cfssl_url=\"${base_url}/cloudflare/cfssl/releases/download/v${cfssl_version}/cfssl_${cfssl_version}_linux_amd64\" cfssljson_url=\"${base_url}/cloudflare/cfssl/releases/download/v${cfssl_version}/cfssljson_${cfssl_version}_linux_amd64\" helm_url=\"https://mirrors.huaweicloud.com/helm/v${helm_version}/helm-v${helm_version}-linux-amd64.tar.gz\" kubernetes_server_url=\"https://storage.googleapis.com/kubernetes-release/release/v${kubernetes_server_version}/kubernetes-server-linux-amd64.tar.gz\" nginx_url=\"http://nginx.org/download/nginx-${nginx_version}.tar.gz\" # Download packages packages=( # $kernel_url $runc_url $docker_url $cni_plugins_url $cri_containerd_cni_url $crictl_url $cri_dockerd_url $etcd_url $cfssl_url $cfssljson_url $helm_url $kubernetes_server_url $nginx_url ) for package_url in \"${packages[@]}\"; do filename=$(basename \"$package_url\") if curl --parallel --parallel-immediate -k -L -C - -o \"$filename\" \"$package_url\"; then echo \"Downloaded $filename\" else echo \"Failed to download $filename\" exit 1 fi done 1.7.关闭防火墙 link # Ubuntu忽略，CentOS执行 systemctl disable --now firewalld 1.8.关闭SELinux link # Ubuntu忽略，CentOS执行 setenforce 0 sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config # 参数解释 # # setenforce 0 # 此命令用于设置 SELinux 的执行模式。0 表示关闭 SELinux。 # # sed -i 's#SELINUX=enforcing#SELINUX=disabled#g' /etc/selinux/config # 该命令使用 sed 工具来编辑 /etc/selinux/config 文件。其中 '-i' 参数表示直接修改原文件，而不是输出到终端或另一个文件。's#SELINUX=enforcing#SELINUX=disabled#g' 是 sed 的替换命令，它将文件中所有的 \"SELINUX=enforcing\" 替换为 \"SELINUX=disabled\"。这里的 '#' 是分隔符，用于替代传统的 '/' 分隔符，以避免与路径中的 '/' 冲突。 1.9.关闭交换分区 link sed -ri 's/.*swap.*/#\u0026/' /etc/fstab swapoff -a \u0026\u0026 sysctl -w vm.swappiness=0 cat /etc/fstab # /dev/mapper/centos-swap swap swap defaults 0 0 # 参数解释： # # -ri: 这个参数用于在原文件中替换匹配的模式。-r表示扩展正则表达式，-i允许直接修改文件。 # 's/.*swap.*/#\u0026/': 这是一个sed命令，用于在文件/etc/fstab中找到包含swap的行，并在行首添加#来注释掉该行。 # /etc/fstab: 这是一个文件路径，即/etc/fstab文件，用于存储文件系统表。 # swapoff -a: 这个命令用于关闭所有启用的交换分区。 # sysctl -w vm.swappiness=0: 这个命令用于修改vm.swappiness参数的值为0，表示系统在物理内存充足时更倾向于使用物理内存而非交换分区。 1.10.网络配置（俩种方式二选一） link # Ubuntu忽略，CentOS执行，CentOS9不支持方式一 # 方式一 # systemctl disable --now NetworkManager # systemctl start network \u0026\u0026 systemctl enable network # 方式二 cat \u003e /etc/NetworkManager/conf.d/calico.conf \u003c\u003c EOF [keyfile] unmanaged-devices=interface-name:cali*;interface-name:tunl* EOF systemctl restart NetworkManager # 参数解释 # # 这个参数用于指定不由 NetworkManager 管理的设备。它由以下两个部分组成 # # interface-name:cali* # 表示以 \"cali\" 开头的接口名称被排除在 NetworkManager 管理之外。例如，\"cali0\", \"cali1\" 等接口不受 NetworkManager 管理。 # # interface-name:tunl* # 表示以 \"tunl\" 开头的接口名称被排除在 NetworkManager 管理之外。例如，\"tunl0\", \"tunl1\" 等接口不受 NetworkManager 管理。 # # 通过使用这个参数，可以将特定的接口排除在 NetworkManager 的管理范围之外，以便其他工具或进程可以独立地管理和配置这些接口。 1.11.进行时间同步 link # 服务端 # apt install chrony -y yum install chrony -y cat \u003e /etc/chrony.conf \u003c\u003c EOF pool ntp.aliyun.com iburst driftfile /var/lib/chrony/drift makestep 1.0 3 rtcsync allow 192.168.1.0/24 local stratum 10 keyfile /etc/chrony.keys leapsectz right/UTC logdir /var/log/chrony EOF systemctl restart chronyd ; systemctl enable chronyd # 客户端 # apt install chrony -y yum install chrony -y cat \u003e /etc/chrony.conf \u003c\u003c EOF pool 192.168.1.41 iburst driftfile /var/lib/chrony/drift makestep 1.0 3 rtcsync keyfile /etc/chrony.keys leapsectz right/UTC logdir /var/log/chrony EOF systemctl restart chronyd ; systemctl enable chronyd #使用客户端进行验证 chronyc sources -v # 参数解释 # # pool ntp.aliyun.com iburst # 指定使用ntp.aliyun.com作为时间服务器池，iburst选项表示在初始同步时会发送多个请求以加快同步速度。 # # driftfile /var/lib/chrony/drift # 指定用于保存时钟漂移信息的文件路径。 # # makestep 1.0 3 # 设置当系统时间与服务器时间偏差大于1秒时，会以1秒的步长进行调整。如果偏差超过3秒，则立即进行时间调整。 # # rtcsync # 启用硬件时钟同步功能，可以提高时钟的准确性。 # # allow 192.168.0.0/24 # 允许192.168.0.0/24网段范围内的主机与chrony进行时间同步。 # # local stratum 10 # 将本地时钟设为stratum 10，stratum值表示时钟的准确度，值越小表示准确度越高。 # # keyfile /etc/chrony.keys # 指定使用的密钥文件路径，用于对时间同步进行身份验证。 # # leapsectz right/UTC # 指定时区为UTC。 # # logdir /var/log/chrony # 指定日志文件存放目录。 1.12.配置ulimit link ulimit -SHn 65535 cat \u003e\u003e /etc/security/limits.conf \u003c"
             }
         );
     index.add(
