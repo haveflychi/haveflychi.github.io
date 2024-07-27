@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Maxbit Docs</title>
-    <link>/tags/</link>
+    <link>https://docs.cakepanit.com/tags/</link>
     <description>Recent content in Tags on Maxbit Docs</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
     <lastBuildDate>Fri, 26 Jul 2024 03:53:16 +0800</lastBuildDate>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.cakepanit.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Beginners</title>
-      <link>/tags/beginners/</link>
+      <link>https://docs.cakepanit.com/tags/beginners/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/tags/beginners/</guid>
+      <guid>https://docs.cakepanit.com/tags/beginners/</guid>
       <description></description>
     </item>
   </channel>

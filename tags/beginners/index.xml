@@ -2,236 +2,236 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Beginners on Maxbit Docs</title>
-    <link>/tags/beginners/</link>
+    <link>https://docs.cakepanit.com/tags/beginners/</link>
     <description>Recent content in Beginners on Maxbit Docs</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
     <lastBuildDate>Fri, 26 Jul 2024 03:53:16 +0800</lastBuildDate>
-    <atom:link href="/tags/beginners/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.cakepanit.com/tags/beginners/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇WIKI</title>
-      <link>/docs/dba/dome/</link>
+      <link>https://docs.cakepanit.com/docs/dba/dome/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dba/dome/</guid>
+      <guid>https://docs.cakepanit.com/docs/dba/dome/</guid>
       <description>Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
     </item>
     <item>
       <title>1.单例模式</title>
-      <link>/docs/dev/23designpattern/1.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/1.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/1.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/1.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之单例模式】1.小明的购物车&#xA;题目描述&#xA;小明去了一家大型商场，拿到了一个购物车，并开始购物。请你设计一个购物车管理器，记录商品添加到购物车的信息（商品名称和购买数量），并在购买结束后打印出商品清单。（在整个购物过程中，小明只有一个购物车实例存在）。 输入描述&#xA;输入包含若干行，每行包含两部分信息，分别是商品名称和购买数量。商品名称和购买数量之间用空格隔开。 输出描述&#xA;输出包含小明购物车中的所有商品及其购买数量。每行输出一种商品的信息，格式为 &amp;ldquo;商品名称 购买数量&amp;rdquo;。 输入示例 Apple 3 Banana 2 Orange 5 输出示例 Apple 3 Banana 2 Orange 5 提示信息 本道题目请使用单例设计模式： 使用私有静态变量来保存购物车实例。 使用私有构造函数防止外部直接实例化。 什么是单例设计模式 link单例模式是一种创建型设计模式， 它的核心思想是保证一个类只有一个实例，并提供一个全局访问点来访问这个实例。&#xA;只有一个实例的意思是，在整个应用程序中，只存在该类的一个实例对象，而不是创建多个相同类型的对象。 全局访问点的意思是，为了让其他类能够获取到这个唯一实例，该类提供了一个全局访问点（通常是一个静态方法），通过这个方法就能获得实例。 为什么要使用单例设计模式呢 link简易来说，单例设计模式有以下几个优点让我们考虑使用它：&#xA;全局控制：保证只有一个实例，这样就可以严格的控制客户怎样访问它以及何时访问它，简单的说就是对唯一实例的受控访问（引用自《大话设计模式》第21章） 节省资源：也正是因为只有一个实例存在，就避免多次创建了相同的对象，从而节省了系统资源，而且多个模块还可以通过单例实例共享数据。 懒加载：单例模式可以实现懒加载，只有在需要时才进行实例化，这无疑会提高程序的性能。 单例设计模式的基本要求 link想要实现一个单例设计模式，必须遵循以下规则：&#xA;私有的构造函数：防止外部代码直接创建类的实例 私有的静态实例变量：保存该类的唯一实例 公有的静态方法：通过公有的静态方法来获取类的实例 单例设计模式的实现 link单例模式的实现方式有多种，包括懒汉式、饿汉式等。&#xA;饿汉式指的是在类加载时就已经完成了实例的创建，不管后面创建的实例有没有使用，先创建再说，所以叫做 “饿汉”。&#xA;而懒汉式指的是只有在请求实例时才会创建，如果在首次请求时还没有创建，就创建一个新的实例，如果已经创建，就返回已有的实例，意思就是需要使用了再创建，所以称为“懒汉”。&#xA;在多线程环境下，由于饿汉式在程序启动阶段就完成了实例的初始化，因此不存在多个线程同时尝试初始化实例的问题，但是懒汉式中多个线程同时访问 getInstance() 方法，并且在同一时刻检测到实例没有被创建，就可能会同时创建实例，从而导致多个实例被创建，这种情况下我们可以采用一些同步机制，例如使用互斥锁来确保在任何时刻只有一个线程能够执行实例的创建。&#xA;举个例子，你和小明都发现家里没米了，在你们没有相互通知的情况下，都会去超市买一袋米，这样就重复购买了，违背了单例模式。&#xA;下面以Java的代码作为实例，说明单例设计模式的基本写法：&#xA;饿汉模式：实例在类加载时就被创建, 这种方式的实现相对简单，但是实例有可能没有使用而造成资源浪费。 public class Singleton { private static final Singleton instance = new Singleton(); private Singleton() { // 私有构造方法，防止外部实例化 } public static Singleton getInstance() { return instance; } } 懒汉模式：第一次使用时才创建 public class Singleton { private static Singleton instance; private Singleton() { // 私有构造方法，防止外部实例化 } // 使用了同步关键字来确保线程安全, 可能会影响性能 public static synchronized Singleton getInstance() { if (instance == null) { instance = new Singleton(); } return instance; } } 在懒汉模式的基础上，可以使用双重检查锁来提高性能。</description>
     </item>
     <item>
       <title>2.工厂方法模式</title>
-      <link>/docs/dev/23designpattern/2.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/2.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/2.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/2.%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之工厂方法模式】2.积木工厂&#xA;题目描述&#xA;小明家有两个工厂，一个用于生产圆形积木，一个用于生产方形积木，请你帮他设计一个积木工厂系统，记录积木生产的信息。 输入描述&#xA;输入的第一行是一个整数 N（1 ≤ N ≤ 100），表示生产的次数。 接下来的 N 行，每行输入一个字符串和一个整数，字符串表示积木的类型。积木类型分为 &amp;ldquo;Circle&amp;rdquo; 和 &amp;ldquo;Square&amp;rdquo; 两种。整数表示该积木生产的数量 输出描述&#xA;对于每个积木，输出一行字符串表示该积木的信息。 输入示例 3 Circle 1 Square 2 Circle 1 输出示例 Circle Block Square Block Square Block Circle Block 提示信息 在示例中，积木工厂生产了3块积木，其中有2块是圆形积木，1块是方形积木。根据输入的类型，每块积木的信息被输出到控制台。&#xA;简单工厂模式 link在了解工厂方法模式之前，有必要对“简单工厂”模式进行一定的了解，简单工厂模式是一种创建型设计模式，但并不属于23种设计模式之一，更多的是一种编程习惯。&#xA;简单工厂模式的核心思想是将产品的创建过程封装在一个工厂类中，把创建对象的流程集中在这个工厂类里面。&#xA;简单工厂模式包括三个主要角色，工厂类、抽象产品、具体产品，下面的图示则展示了工厂类的基本结构。&#xA;抽象产品，比如上图中的Shape 接口，描述产品的通用行为。 具体产品: 实现抽象产品接口或继承抽象产品类，比如上面的Circle类和Square类，具体产品通过简单工厂类的if-else逻辑来实例化。 工厂类：负责创建产品，根据传递的不同参数创建不同的产品示例。 简单工厂类简化了客户端操作，客户端可以调用工厂方法来获取具体产品，而无需直接与具体产品类交互，降低了耦合，但是有一个很大的问题就是不够灵活，如果需要添加新的产品，就需要修改工厂类的代码。&#xA;什么是工厂方法模式 link工厂方法模式也是一种创建型设计模式，简单工厂模式只有一个工厂类，负责创建所有产品，如果要添加新的产品，通常需要修改工厂类的代码。而工厂方法模式引入了抽象工厂和具体工厂的概念，每个具体工厂只负责创建一个具体产品，添加新的产品只需要添加新的工厂类而无需修改原来的代码，这样就使得产品的生产更加灵活，支持扩展，符合开闭原则。&#xA;工厂方法模式分为以下几个角色：&#xA;抽象工厂：一个接口，包含一个抽象的工厂方法（用于创建产品对象）。 具体工厂：实现抽象工厂接口，创建具体的产品。 抽象产品：定义产品的接口。 具体产品：实现抽象产品接口，是工厂创建的对象。 实际上工厂方法模式也很好理解，就拿“手机Phone”这个产品举例，手机是一个抽象产品，小米手机、华为手机、苹果手机是具体的产品实现，而不同品牌的手机在各自的生产厂家生产。&#xA;基本实现 link根据上面的类图，我们可以写出工厂方法模式的基本实现。&#xA;// 抽象产品 interface Shape { void draw(); } // 具体产品 - 圆形 class Circle implements Shape { @Override public void draw() { System.</description>
     </item>
     <item>
       <title>3.抽象工厂模式</title>
-      <link>/docs/dev/23designpattern/3.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/3.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/3.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/3.%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之抽象工厂模式】3. 家具工厂&#xA;题目描述&#xA;小明家新开了两个工厂用来生产家具，一个生产现代风格的沙发和椅子，一个生产古典风格的沙发和椅子，现在工厂收到了一笔订单，请你帮他设计一个系统，描述订单需要生产家具的信息。 输入描述&#xA;输入的第一行是一个整数 N（1 ≤ N ≤ 100），表示订单的数量。 接下来的 N 行，每行输入一个字符串，字符串表示家具的类型。家具类型分为 &amp;ldquo;modern&amp;rdquo; 和 &amp;ldquo;classical&amp;rdquo; 两种。 输出描述&#xA;对于每笔订单，输出字符串表示该订单需要生产家具的信息。 modern订单会输出下面两行字符串 modern chair modern sofa classical订单会输出下面两行字符串 classical chair classical soft 输入示例 3 modern classical modern 输出示例 modern chair modern sofa classical chair classical sofa modern chair modern sofa 提示信息 在示例中，工厂收到了3笔订单，其中有2笔要求生产modern风格，1笔要求生产classical风格。根据输入的类型，每次订单生产的家具信息被输出到控制台上。&#xA;什么是抽象工厂模式 link抽象工厂模式也是一种创建型设计模式，提供了一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类【引用自大话设计模式第15章】&#xA;这样的描述似乎理解起来很困难，我们可以把它与【工厂方法模式】联系起来看。&#xA;之前我们已经介绍了“工厂方法模式”，那为什么还有要抽象工厂模式呢？&#xA;这就涉及到创建“多类”对象了，在工厂方法模式中，每个具体工厂只负责创建单一的产品。但是如果有多类产品呢，比如说“手机”，一个品牌的手机有高端机、中低端机之分，这些具体的产品都需要建立一个单独的工厂类，但是它们都是相互关联的，都共同属于同一个品牌，这就可以使用到【抽象工厂模式】。&#xA;抽象工厂模式可以确保一系列相关的产品被一起创建，这些产品能够相互配合使用，再举个例子，有一些家具，比如沙发、茶几、椅子，都具有古典风格的和现代风格的，抽象工厂模式可以将生产现代风格的家具放在一个工厂类中，将生产古典风格的家具放在另一个工厂类中，这样每个工厂类就可以生产一系列的家具。&#xA;基本结构 link抽象工厂模式包含多个抽象产品接口，多个具体产品类，一个抽象工厂接口和多个具体工厂，每个具体工厂负责创建一组相关的产品。&#xA;抽象产品接口AbstractProduct: 定义产品的接口，可以定义多个抽象产品接口，比如说沙发、椅子、茶几都是抽象产品。 具体产品类ConcreteProduct: 实现抽象产品接口，产品的具体实现，古典风格和沙发和现代风格的沙发都是具体产品。 抽象工厂接口AbstractFactory: 声明一组用于创建产品的方法，每个方法对应一个产品。 具体工厂类ConcreteFactory： 实现抽象工厂接口，负责创建一组具体产品的对象，在本例中，生产古典风格的工厂和生产现代风格的工厂都是具体实例。 在上面的图示中：AbstractProductA/B/C 就是抽象产品，ConcreteProductA2/A2/B1/B2/C1/C2就是抽象产品的实现，AbstractFactory定义了抽象工厂接口，接口里的方法用于创建具体的产品，而ConcreteFactory就是具体工厂类，可以创建一组相关的产品。&#xA;基本实现 link想要实现抽象工厂模式，需要遵循以下步骤：</description>
     </item>
     <item>
       <title>4.建造者模式</title>
-      <link>/docs/dev/23designpattern/4.%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/4.%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/4.%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/4.%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之建造者模式】4. 自行车加工&#xA;题目描述&#xA;小明家新开了一家自行车工厂，用于使用自行车配件（车架 frame 和车轮 tires ）进行组装定制不同的自行车，包括山地车和公路车。 山地车使用的是Aluminum Frame（铝制车架）和 Knobby Tires（可抓地轮胎），公路车使用的是 Carbon Frame （碳车架）和 Slim Tries。 现在它收到了一笔订单，要求定制一批自行车，请你使用【建造者模式】告诉小明这笔订单需要使用那些自行车配置吧。 输入描述&#xA;输入的第一行是一个整数 N（1 ≤ N ≤ 100），表示订单的数量。 接下来的 N 行，每行输入一个字符串，字符串表示客户的自行车需求。 字符串可以包含关键词 &amp;ldquo;mountain&amp;rdquo; 或 &amp;ldquo;road&amp;rdquo;，表示客户需要山地自行车或公路自行车。 **输出描述 对于每笔订单，输出该订单定制的自行车配置。&#xA;输入示例 3 mountain road mountain 输出示例&#xA;Aluminum Frame Knobby Tires Carbon Frame Slim Tires Aluminum Frame Knobby Tires 提示信息 在本例中：产品为自行车，可以有两个建造者：山地车建造者和公路车建造者。&#xA;什么是建造者模式 link建造者模式（也被成为生成器模式），是一种创建型设计模式，软件开发过程中有的时候需要创建很复杂的对象，而建造者模式的主要思想是**将对象的构建过程分为多个步骤，并为每个步骤定义一个抽象的接口。具体的构建过程由实现了这些接口的具体建造者类来完成。**同时有一个指导者类负责协调建造者的工作，按照一定的顺序或逻辑来执行构建步骤，最终生成产品。&#xA;举个例子，假如我们要创建一个计算机对象，计算机由很多组件组成，例如 CPU、内存、硬盘、显卡等。每个组件可能有不同的型号、配置和制造，这个时候计算机就可以被视为一个复杂对象，构建过程相对复杂，而我们使用建造者模式将计算机的构建过程封装在一个具体的建造者类中，而指导者类则负责指导构建的步骤和顺序。每个具体的建造者类可以负责构建不同型号或配置的计算机，客户端代码可以通过选择不同的建造者来创建不同类型的计算机，这样就可以根据需要构建不同表示的复杂对象，更加灵活。&#xA;基本结构 link建造者模式有下面几个关键角色：&#xA;产品Product：被构建的复杂对象, 包含多个组成部分。 抽象建造者Builder: 定义构建产品各个部分的抽象接口和一个返回复杂产品的方法getResult 具体建造者Concrete Builder：实现抽象建造者接口，构建产品的各个组成部分，并提供一个方法返回最终的产品。 指导者Director：调用具体建造者的方法，按照一定的顺序或逻辑来构建产品。 在客户端中，通过指导者来构建产品，而并不和具体建造者进行直接的交互。&#xA;简易实现 link建造者模式的实现步骤通常包括以下几个阶段</description>
     </item>
     <item>
       <title>5.原型模式</title>
-      <link>/docs/dev/23designpattern/5.%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/5.%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/5.%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/5.%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之原型模式】5. 矩形原型&#xA;题目描述&#xA;公司正在开发一个图形设计软件，其中有一个常用的图形元素是矩形。设计师在工作时可能需要频繁地创建相似的矩形，而这些矩形的基本属性是相同的（颜色、宽度、高度），为了提高设计师的工作效率，请你使用原型模式设计一个矩形对象的原型。使用该原型可以快速克隆生成新的矩形对象。 输入描述&#xA;首先输入一个字符串，表示矩形的基本属性信息，包括颜色、长度和宽度，用空格分隔，例如 &amp;ldquo;Red 10 5&amp;rdquo;。 然后输入一个整数 N（1 ≤ N ≤ 100），表示使用原型创建的矩形数量。 输出描述&#xA;对于每个矩形，输出一行字符串表示矩形的详细信息，如 &amp;ldquo;Color: Red, Width: 10,Height: 5&amp;rdquo;。 输入示例 Red 10 5 3 输出示例 Color: Red, Width: 10, Height: 5 Color: Red, Width: 10, Height: 5 Color: Red, Width: 10, Height: 5 提示信息 使用原型模式中的克隆方法实现矩形对象的创建。&#xA;什么是原型模式 link原型模式一种创建型设计模式，该模式的核心思想是基于现有的对象创建新的对象，而不是从头开始创建。&#xA;在原型模式中，通常有一个原型对象，它被用作创建新对象的模板。新对象通过复制原型对象的属性和状态来创建，而无需知道具体的创建细节。&#xA;为什么要使用原型模式 link如果一个对象的创建过程比较复杂时（比如需要经过一系列的计算和资源消耗），那每次创建该对象都需要消耗资源，而通过原型模式就可以复制现有的一个对象来迅速创建/克隆一个新对象，不必关心具体的创建细节，可以降低对象创建的成本。&#xA;下面是一个简短的Python代码示例了模拟了上面的问题：&#xA;import copy class ComplexObject: def __init__(self, data): # 耗时的资源型操作 self.data = data def clone(self): # 复制 return copy.</description>
     </item>
     <item>
       <title>6.适配器模式</title>
-      <link>/docs/dev/23designpattern/6.%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/6.%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/6.%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/6.%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之适配器模式】6. 扩展坞&#xA;题目描述&#xA;小明购买了一台新电脑，该电脑使用 TypeC 接口，他已经有了一个USB接口的充电器和数据线，为了确保新电脑可以使用现有的USB接口充电器和数据线，他购买了一个TypeC到USB的扩展坞。 请你使用适配器模式设计并实现这个扩展坞系统，确保小明的新电脑既可以通过扩展坞使用现有的USB接口充电线和数据线，也可以使用TypeC接口充电。 输入描述&#xA;题目包含多行输入，第一行输入一个数字 N （1 &amp;lt; N &amp;lt;= 20)，表示后面有N组测试数据。 之后N行都是一个整数，1表示使用电脑本身的TypeC接口，2表示使用扩展坞的USB接口充电。 输入示例 3 1 2 1 输出示例 TypeC USB Adapter TypeC 什么是适配器 link适配器模式Adapter是一种结构型设计模式，它可以将一个类的接口转换成客户希望的另一个接口，主要目的是充当两个不同接口之间的桥梁，使得原本接口不兼容的类能够一起工作。&#xA;基本结构 link适配器模式分为以下几个基本角色：&#xA;可以把适配器模式理解成拓展坞，起到转接的作用，原有的接口是USB，但是客户端需要使用type-c， 便使用拓展坞提供一个type-c接口给客户端使用&#xA;目标接口Target: 客户端希望使用的接口 适配器类Adapter: 实现客户端使用的目标接口，持有一个需要适配的类实例。 被适配者Adaptee: 需要被适配的类 这样，客户端就可以使用目标接口，而不需要对原来的Adaptee进行修改，Adapter起到一个转接扩展的作用。&#xA;基本实现 link // 目标接口 interface Target { void request(); } // 被适配者类 class Adaptee { void specificRequest() { System.out.println(&amp;#34;Specific request&amp;#34;); } } // 适配器类 class Adapter implements Target { // 持有一个被适配者实例 private Adaptee adaptee; public Adapter(Adaptee adaptee) { this.</description>
     </item>
     <item>
       <title>7.代理模式</title>
-      <link>/docs/dev/23designpattern/7.%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/7.%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/7.%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/7.%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之代理模式】7-小明买房子&#xA;题目描述&#xA;小明想要购买一套房子，他决定寻求一家房屋中介来帮助他找到一个面积超过100平方米的房子，只有符合条件的房子才会被传递给小明查看。 输入描述&#xA;第一行是一个整数 N（1 ≤ N ≤ 100），表示可供查看的房子的数量。 接下来的 N 行，每行包含一个整数，表示对应房子的房屋面积。 输出描述&#xA;对于每个房子，输出一行，表示是否符合购房条件。如果房屋面积超过100平方米，输出 &amp;ldquo;YES&amp;rdquo;；否则输出 &amp;ldquo;NO&amp;rdquo;。 输入示例 3 120 80 110 输出示例 YES NO YES 基本概念 link代理模式Proxy Pattern是一种结构型设计模式，用于控制对其他对象的访问。&#xA;在代理模式中，允许一个对象（代理）充当另一个对象（真实对象）的接口，以控制对这个对象的访问。通常用于在访问某个对象时引入一些间接层(中介的作用)，这样可以在访问对象时添加额外的控制逻辑，比如限制访问权限，延迟加载。&#xA;比如说有一个文件加载的场景，为了避免直接访问“文件”对象，我们可以新增一个代理对象，代理对象中有一个对“文件对象”的引用，在代理对象的 load 方法中，可以在访问真实的文件对象之前进行一些操作，比如权限检查，然后调用真实文件对象的 load 方法，最后在访问真实对象后进行其他操作，比如记录访问日志。&#xA;基本结构 link代理模式的主要角色有：&#xA;Subject（抽象主题）： 抽象类，通过接口或抽象类声明真实主题和代理对象实现的业务方法。&#xA;RealSubject（真实主题）：定义了Proxy所代表的真实对象，是客户端最终要访问的对象。&#xA;Proxy（代理）：包含一个引用，该引用可以是RealSubject的实例，控制对RealSubject的访问，并可能负责创建和删除RealSubject的实例。&#xA;实现方式 link代理模式的基本实现分为以下几个步骤：&#xA;定义抽象主题, 一般是接口或者抽象类，声明真实主题和代理对象实现的业务方法。 // 1. 定义抽象主题 interface Subject { void request(); } 定义真实主题，实现抽象主题中的具体业务 // 2. 定义真实主题 class RealSubject implements Subject { @Override public void request() { System.out.println(&amp;#34;RealSubject handles the request.</description>
     </item>
     <item>
       <title>8.装饰模式</title>
-      <link>/docs/dev/23designpattern/8.%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/8.%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/8.%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/8.%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题装饰模式】8-咖啡加糖&#xA;题目描述&#xA;小明喜欢品尝不同口味的咖啡，他发现每种咖啡都可以加入不同的调料，比如牛奶、糖和巧克力。他决定使用装饰者模式制作自己喜欢的咖啡。 请设计一个简单的咖啡制作系统，使用装饰者模式为咖啡添加不同的调料。系统支持两种咖啡类型：黑咖啡（Black Coffee）和拿铁（Latte）。 输入描述&#xA;多行输入，每行包含两个数字。第一个数字表示咖啡的选择（1 表示黑咖啡，2 表示拿铁），第二个数字表示要添加的调料类型（1 表示牛奶，2 表示糖）。 输出描述&#xA;根据每行输入，输出制作咖啡的过程，包括咖啡类型和添加的调料。 输入示例 1 1 2 2 输出示例 Brewing Black Coffee Adding Milk Brewing Latte Adding Sugar 基本概念 link通常情况下，扩展类的功能可以通过继承实现，但是扩展越多，子类越多，装饰模式（Decorator Pattern, 结构型设计模式）可以在**不定义子类的情况下动态的给对象添加一些额外的功能。**具体的做法是将原始对象放入包含行为的特殊封装类(装饰类)，从而为原始对象动态添加新的行为，而无需修改其代码。&#xA;举个简单的例子，假设你有一个基础的图形类，你想要为图形类添加颜色、边框、阴影等功能，如果每个功能都实现一个子类，就会导致产生大量的类，这时就可以考虑使用装饰模式来动态地添加，而不需要修改图形类本身的代码，这样可以使得代码更加灵活、更容易维护和扩展。&#xA;基本结构： link装饰模式包含以下四个主要角色：&#xA;组件Component：通常是抽象类或者接口，是具体组件和装饰者的父类，定义了具体组件需要实现的方法，比如说我们定义Coffee为组件。 具体组件ConcreteComponent: 实现了Component接口的具体类，是被装饰的对象。 装饰类Decorator: 一个抽象类，给具体组件添加功能，但是具体的功能由其子类具体装饰者完成，持有一个指向Component对象的引用。 具体装饰类ConcreteDecorator: 扩展Decorator类，负责向Component对象添加新的行为，加牛奶的咖啡是一个具体装饰类，加糖的咖啡也是一个具体装饰类。 基本实现 link装饰模式的实现包括以下步骤：&#xA;定义Component接口 // 组件接口 public interface Component { void operation(); } 实现 ConcreteComponent // 具体组件 public class ConcreteComponent implements Component { @Override public void operation() { System.</description>
     </item>
     <item>
       <title>9.外观模式</title>
-      <link>/docs/dev/23designpattern/9.%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/9.%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/9.%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/9.%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之外观模式】9-电源开关&#xA;题目描述&#xA;小明家的电源总开关控制了家里的三个设备：空调、台灯和电视机。每个设备都有独立的开关密码，分别用数字1、2和3表示。即输入1时，空调关闭，输入2时，台灯关闭，输入3时，电视机关闭，当输入为4时，表示要关闭所有设备。请你使用外观模式编写程序来描述电源总开关的操作。 输入描述&#xA;第一行是一个整数 N（1 &amp;lt;= N &amp;lt;= 100），表示后面有 N 行输入。 接下来的 N 行，每行包含一个数字，表示对应设备的开关操作（1表示关闭空调，2表示关闭台灯，3表示关闭电视机，4表示关闭所有设备）。 输出描述&#xA;输出关闭所有设备后的状态，当输入的数字不在1-4范围内时，输出Invalid device code. 输入示例 4 1 2 3 4 输出示例 Air Conditioner is turned off. Desk Lamp is turned off. Television is turned off. All devices are off. 基本概念 link外观模式Facade Pattern, 也被称为“门面模式”，是一种结构型设计模式，外观模式定义了一个高层接口，这个接口使得子系统更容易使用，同时也隐藏了子系统的复杂性。&#xA;门面模式可以将子系统关在“门里”隐藏起来，客户端只需要通过外观接口与外观对象进行交互，而不需要直接和多个子系统交互，无论子系统多么复杂，对于外部来说是隐藏的，这样可以降低系统的耦合度。&#xA;举个例子，假设你正在编写的一个模块用来处理文件读取、解析、存储，我们可以将这个过程拆成三部分，然后创建一个外观类，将文件系统操作、数据解析和存储操作封装在外观类中，为客户端提供一个简化的接口，如果后续需要修改文件处理的流程或替换底层子系统，也只需在外观类中进行调整，不会影响客户端代码。&#xA;基本结构 link外观模式的基本结构比较简单，只包括“外观”和“子系统类”&#xA;外观类：对外提供一个统一的高层次接口，使复杂的子系统变得更易使用。 子系统类：实现子系统的功能，处理外观类指派的任务。 简易实现 link下面使用Java代码实现外观模式的通用结构&#xA;// 子系统A class SubsystemA { public void operationA() { System.out.println(&amp;#34;SubsystemA operation&amp;#34;); } } // 子系统B class SubsystemB { public void operationB() { System.</description>
     </item>
     <item>
       <title>10.桥接模式</title>
-      <link>/docs/dev/23designpattern/10.%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/10.%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/10.%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/10.%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之桥接模式】10-万能遥控器&#xA;**题目描述&#xA;小明家有一个万能遥控器，能够支持多个品牌的电视。每个电视可以执行开机、关机和切换频道的操作，请你使用桥接模式模拟这个操作。 **输入描述&#xA;第一行是一个整数 N（1 &amp;lt;= N &amp;lt;= 100），表示后面有 N 行输入。 接下来的 N 行，每行包含两个数字。第一个数字表示创建某个品牌的遥控和电视，第二个数字表示执行的操作。 其中，0 表示创建 Sony 品牌的电视，1 表示创建 TCL 品牌的遥控和电视； 2 表示开启电视、3表示关闭电视，4表示切换频道。 输入示例 6 0 2 1 2 0 4 0 3 1 4 1 3 输出示例&#xA;Sony TV is ON TCL TV is ON Switching Sony TV channel Sony TV is OFF Switching TCL TV channel TCL TV is OFF 基本概念 link桥接模式（Bridge Pattern）是一种结构型设计模式，它的UML图很像一座桥，它通过将【抽象部分】与【实现部分】分离，使它们可以独立变化，从而达到降低系统耦合度的目的。桥接模式的主要目的是通过组合建立两个类之间的联系，而不是继承的方式。&#xA;举个简单的例子，图形编辑器中，每一种图形都需要蓝色、红色、黄色不同的颜色，如果不使用桥接模式，可能需要为每一种图形类型和每一种颜色都创建一个具体的子类，而使用桥接模式可以将图形和颜色两个维度分离，两个维度都可以独立进行变化和扩展，如果要新增其他颜色，只需添加新的 Color 子类，不影响图形类；反之亦然。</description>
     </item>
     <item>
       <title>11.组合模式</title>
-      <link>/docs/dev/23designpattern/11.%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/11.%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/11.%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/11.%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之组合模式】11-公司组织架构&#xA;题目描述&#xA;小明所在的公司内部有多个部门，每个部门下可能有不同的子部门或者员工。 请你设计一个组合模式来管理这些部门和员工，实现对公司组织结构的统一操作。部门和员工都具有一个通用的接口，可以获取他们的名称以及展示公司组织结构。 输入描述&#xA;第一行是一个整数 N（1 &amp;lt;= N &amp;lt;= 100），表示后面有 N 行输入。 接下来的 N 行，每行描述一个部门或员工的信息。部门的信息格式为 D 部门名称，员工的信息格式为 E 员工名称，其中 D 或 E 表示部门或员工。 输出描述&#xA;输出公司的组织结构，展示每个部门下的子部门和员工 输入示例 MyCompany 8 D HR E HRManager D Finance E AccountantA E AccountantB D IT E DeveloperA E DeveloperB 输出示例 Company Structure: MyCompany HR HRManager Finance AccountantA AccountantB IT DeveloperA DeveloperB 基本概念 link组合模式是一种结构型设计模式，它将对象组合成树状结构来表示“部分-整体”的层次关系。组合模式使得客户端可以统一处理单个对象和对象的组合，而无需区分它们的具体类型。&#xA;基本结构 link组合模式包括下面几个角色：&#xA;理解起来比较抽象，我们用“省份-城市”举个例子，省份中包含了多个城市，如果将之比喻成一个树形结构，城市就是叶子节点，它是省份的组成部分，而“省份”就是合成节点，可以包含其他城市，形成一个整体，省份和城市都是组件，它们都有一个共同的操作，比如获取信息。&#xA;Component组件： 组合模式的“根节点”，定义组合中所有对象的通用接口，可以是抽象类或接口。该类中定义了子类的共性内容。 Leaf叶子：实现了Component接口的叶子节点，表示组合中的叶子对象，叶子节点没有子节点。 Composite合成： 作用是存储子部件，并且在Composite中实现了对子部件的相关操作，比如添加、删除、获取子组件等。 通过组合模式，整个省份的获取信息操作可以一次性地执行，而无需关心省份中的具体城市。这样就实现了对国家省份和城市的管理和操作。&#xA;简易实现 link // 组件接口 interface Component { void operation(); } // 叶子节点 class Leaf implements Component { @Override public void operation() { System.</description>
     </item>
     <item>
       <title>12.享元模式</title>
-      <link>/docs/dev/23designpattern/12.%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/12.%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/12.%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/12.%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之享元模式】12-图形编辑器&#xA;题目描述&#xA;在一个图形编辑器中，用户可以绘制不同类型的图形，包括圆形（CIRCLE）、矩形（RECTANGLE）、三角形（TRIANGLE）等。现在，请你实现一个图形绘制程序，要求能够共享相同类型的图形对象，以减少内存占用。 输入描述 输入包含多行，每行表示一个绘制命令。每个命令包括两部分：&#xA;图形类型（Circle、Rectangle 或 Triangle） 绘制的坐标位置（两个整数，分别表示 x 和 y） 输出描述&#xA;对于每个绘制命令，输出相应图形被绘制的位置信息。如果图形是首次绘制，输出 &amp;ldquo;drawn at&amp;rdquo;，否则输出 &amp;ldquo;shared at&amp;rdquo;。 输入示例 CIRCLE 10 20 RECTANGLE 30 40 CIRCLE 15 25 TRIANGLE 5 15 CIRCLE 10 20 RECTANGLE 30 40 输出示例 CIRCLE drawn at (10, 20) RECTANGLE drawn at (30, 40) CIRCLE shared at (15, 25) TRIANGLE drawn at (5, 15) CIRCLE shared at (10, 20) RECTANGLE shared at (30, 40) 基础概念 link享元模式是一种结构型设计模式，在享元模式中，对象被设计为可共享的，可以被多个上下文使用，而不必在每个上下文中都创建新的对象。</description>
     </item>
     <item>
       <title>13.观察者模式</title>
-      <link>/docs/dev/23designpattern/13.%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/13.%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/13.%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/13.%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之观察者模式】13. 时间观察者&#xA;题目描述&#xA;小明所在的学校有一个时钟（主题），每到整点时，它就会通知所有的学生（观察者）当前的时间，请你使用观察者模式实现这个时钟通知系统。 注意点：时间从 0 开始，并每隔一个小时更新一次。 输入描述&#xA;输入的第一行是一个整数 N（1 ≤ N ≤ 20），表示学生的数量。 接下来的 N 行，每行包含一个字符串，表示学生的姓名。 最后一行是一个整数，表示时钟更新的次数。 输出描述&#xA;对于每一次时钟更新，输出每个学生的姓名和当前的时间。 输入示例 2 Alice Bob 3 输出示例 Alice 1 Bob 1 Alice 2 Bob 2 Alice 3 Bob 3 提示信息&#xA;初始时钟时间为0（12:00 AM）。 第一次更新后，时钟变为1（1:00 AM），然后通知每个学生，输出学生名称和时钟点数。 第二次更新后，时钟变为2（2:00 AM），然后再次通知每个学生，输出学生名称和时钟点数 第三次更新后，时钟变为3（3:00 AM），然后再次通知每个学生，输出学生名称和时钟点数。 什么是观察者模式 link观察者模式（发布-订阅模式）属于行为型模式，定义了一种一对多的依赖关系，让多个观察者对象同时监听一个主题对象，当主题对象的状态发生变化时，所有依赖于它的观察者都得到通知并被自动更新。&#xA;观察者模式依赖两个模块：&#xA;Subject(主题)：也就是被观察的对象，它可以维护一组观察者，当主题本身发生改变时就会通知观察者。 Observer(观察者)：观察主题的对象，当“被观察”的主题发生变化时，观察者就会得到通知并执行相应的处理。 使用观察者模式有很多好处，比如说观察者模式将主题和观察者之间的关系解耦，主题只需要关注自己的状态变化，而观察者只需要关注在主题状态变化时需要执行的操作，两者互不干扰，并且由于观察者和主题是相互独立的，可以轻松的增加和删除观察者，这样实现的系统更容易扩展和维护。&#xA;观察者模式的结构 link观察者模式依赖主题和观察者，但是一般有4个组成部分：&#xA;主题Subject， 一般会定义成一个接口，提供方法用于注册、删除和通知观察者，通常也包含一个状态，当状态发生改变时，通知所有的观察者。 观察者Observer: 观察者也需要实现一个接口，包含一个更新方法，在接收主题通知时执行对应的操作。 具体主题ConcreteSubject: 主题的具体实现, 维护一个观察者列表，包含了观察者的注册、删除和通知方法。 具体观察者ConcreteObserver: 观察者接口的具体实现，每个具体观察者都注册到具体主题中，当主题状态变化并通知到具体观察者，具体观察者进行处理。 观察者模式的基本实现 link根据上面的类图，我们可以写出观察者模式的基本实现&#xA;// 主题接口 （主题） interface Subject { // 注册观察者 void registerObserver(Observer observer); // 移除观察者 void removeObserver(Observer observer); // 通知观察者 void notifyObservers(); } // 观察者接口 (观察者) interface Observer { // 更新方法 void update(String message); } // 具体主题实现 class ConcreteSubject implements Subject { // 观察者列表 private List&amp;lt;Observer&amp;gt; observers = new ArrayList&amp;lt;&amp;gt;(); // 状态 private String state; // 注册观察者 @Override public void registerObserver(Observer observer) { observers.</description>
     </item>
     <item>
       <title>14.策略模式</title>
-      <link>/docs/dev/23designpattern/14.%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/14.%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/14.%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/14.%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之策略模式】14. 超市打折&#xA;题目描述&#xA;小明家的超市推出了不同的购物优惠策略，你可以根据自己的需求选择不同的优惠方式。其中，有两种主要的优惠策略： 九折优惠策略：原价的90%。 满减优惠策略：购物满一定金额时，可以享受相应的减免优惠。 具体的满减规则如下： 满100元减5元 满150元减15元 满200元减25元 满300元减40元 请你设计一个购物优惠系统，用户输入商品的原价和选择的优惠策略编号，系统输出计算后的价格。 输入描述&#xA;输入的第一行是一个整数 N（1 ≤ N ≤ 20），表示需要计算优惠的次数。 接下来的 N 行，每行输入两个整数，第一个整数M( 0 &amp;lt; M &amp;lt; 400) 表示商品的价格, 第二个整数表示优惠策略，1表示九折优惠策略，2表示满减优惠策略 输入示例 4 100 1 200 2 300 1 300 2 输出示例 90 175 270 260 什么是策略模式 link策略模式是一种行为型设计模式，它定义了一系列算法（这些算法完成的是相同的工作，只是实现不同），并将每个算法封装起来，使它们可以相互替换，而且算法的变化不会影响使用算法的客户。&#xA;举个例子，电商网站对于商品的折扣策略有不同的算法，比如新用户满减优惠，不同等级会员的打折情况不同，这种情况下会产生大量的if-else语句, 并且如果优惠政策修改时，还需要修改原来的代码，不符合开闭原则。&#xA;这就可以将不同的优惠算法封装成独立的类来避免大量的条件语句，如果新增优惠算法，可以添加新的策略类来实现，客户端在运行时选择不同的具体策略，而不必修改客户端代码改变优惠策略。&#xA;基本结构 link策略模式包含下面几个结构：&#xA;策略类Strategy: 定义所有支持的算法的公共接口。 具体策略类ConcreteStrategy: 实现了策略接口，提供具体的算法实现。 上下文类Context: 包含一个策略实例，并在需要时调用策略对象的方法。 简单实现 link下面是一个简单的策略模式的基本实现:&#xA;// 1. 抽象策略抽象类 abstract class Strategy { // 抽象方法 public abstract void algorithmInterface(); } // 2.</description>
     </item>
     <item>
       <title>15.命令模式</title>
-      <link>/docs/dev/23designpattern/15.%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/15.%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/15.%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/15.%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之命令模式】15-自助点餐机&#xA;题目描述&#xA;小明去奶茶店买奶茶，他可以通过在自助点餐机上来点不同的饮品，请你使用命令模式设计一个程序，模拟这个自助点餐系统的功能。 输入描述&#xA;第一行是一个整数 n（1 ≤ n ≤ 100），表示点单的数量。 接下来的 n 行，每行包含一个字符串，表示点餐的饮品名称。 输出描述&#xA;输出执行完所有点单后的制作情况，每行输出一种饮品的制作情况。如果制作完成，输出 &amp;ldquo;XXX is ready!&amp;quot;，其中 XXX 表示饮品名称。 输入示例 4 MilkTea Coffee Cola MilkTea 输出示例 MilkTea is ready! Coffee is ready! Cola is ready! MilkTea is ready! 基本概念 link命令模式是一种行为型设计模式，其允许将请求封装成一个对象(命令对象，包含执行操作所需的所有信息)，并将命令对象按照一定的顺序存储在队列中，然后再逐一调用执行，这些命令也可以支持反向操作，进行撤销和重做。&#xA;这样一来，发送者只需要触发命令就可以完成操作，不需要知道接受者的具体操作，从而实现两者间的解耦。&#xA;举个现实中的应用场景，遥控器可以控制不同的设备，在命令模式中，可以假定每个按钮都是一个命令对象，包含执行特定操作的命令，不同设备对同一命令的具体操作也不同，这样就可以方便的添加设备和命令对象。&#xA;基本结构 link命令模式包含以下几个基本角色：&#xA;命令接口Command：接口或者抽象类，定义执行操作的接口。 具体命令类ConcreteCommand: 实现命令接口，执行具体操作，在调用execute方法时使“接收者对象”根据命令完成具体的任务，比如遥控器中的“开机”，“关机”命令。 接收者类Receiver: 接受并执行命令的对象，可以是任何对象，遥控器可以控制空调，也可以控制电视机，电视机和空调负责执行具体操作，是接收者。 调用者类Invoker: 发起请求的对象，有一个将命令作为参数传递的方法。它不关心命令的具体实现，只负责调用命令对象的 execute() 方法来传递请求，在本例中，控制遥控器的“人”就是调用者。 客户端：创建具体的命令对象和接收者对象，然后将它们组装起来。 简易实现 link 定义执行操作的接口：包含一个execute方法。有的时候还会包括unExecute方法，表示撤销命令。 public interface Command { void execute(); } 实现命令接口，执行具体的操作。 public class ConcreteCommand implements Command { // 接收者对象 private Receiver receiver; public ConcreteCommand(Receiver receiver) { this.</description>
     </item>
     <item>
       <title>16.中介者模式</title>
-      <link>/docs/dev/23designpattern/16.%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/16.%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/16.%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/16.%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之中介者模式】16-简易聊天室&#xA;题目描述&#xA;小明正在设计一个简单的多人聊天室系统，有多个用户和一个聊天室中介者，用户通过中介者进行聊天，请你帮他完成这个系统的设计。 输入描述&#xA;第一行包括一个整数N,表示用户的数量（1 &amp;lt;= N &amp;lt;= 100) 第二行是N个用户，比如User1 User2 User3，用空格分隔。第三行开始，每行包含两个字符串，表示消息的发出者和消息内容，用空格分隔 输出描述 对于每个用户，输出一行，包含该用户收到的所有消息内容。&#xA;输入示例 3 User1 User2 User3 User1 Hello_All! User2 Hi_User1! User3 How_is_everyone? 输出示例 User2 received: Hello_All! User3 received: Hello_All! User1 received: Hi_User1! User3 received: Hi_User1! User1 received: How_is_everyone? User2 received: How_is_everyone? 基本概念 link中介者模式（Mediator Pattern）也被称为调停者模式，是一种行为型设计模式，它通过一个中介对象来封装一组对象之间的交互，从而使这些对象不需要直接相互引用。这样可以降低对象之间的耦合度，使系统更容易维护和扩展。&#xA;当一个系统中的对象有很多且多个对象之间有复杂的相互依赖关系时，其结构图可能是下面这样的。&#xA;这种依赖关系很难理清，这时我们可以引入一个中介者对象来进行协调和交互。中介者模式可以使得系统的网状结构变成以中介者为中心的星形结构，每个具体对象不再通过直接的联系与另一个对象发生相互作用，而是通过“中介者”对象与另一个对象发生相互作用。&#xA;基本结构 link中介者模式包括以下几个重要角色：&#xA;抽象中介者（Mediator）： 定义中介者的接口，用于各个具体同事对象之间的通信。&#xA;具体中介者（Concrete Mediator）： 实现抽象中介者接口，负责协调各个具体同事对象的交互关系，它需要知道所有具体同事类，并从具体同事接收消息，向具体同事对象发出命令。&#xA;抽象同事类（Colleague）： 定义同事类的接口，维护一个对中介者对象的引用，用于通信。&#xA;具体同事类（Concrete Colleague）： 实现抽象同事类接口，每个具体同事类只知道自己的行为，而不了解其他同事类的情况，因为它们都需要与中介者通信，通过中介者协调与其他同事对象的交互。&#xA;简易实现 link // 抽象中介者 public abstract class Mediator { void register(Colleague colleague); // 定义一个抽象的发送消息方法 public abstract void send(String message, Player player); } // 具体中介者 public class ConcreteMediator extends Mediator { private List&amp;lt;Colleague&amp;gt; colleagues = new ArrayList&amp;lt;&amp;gt;(); public void register((Colleague colleague) { colleagues.</description>
     </item>
     <item>
       <title>17.备忘录模式</title>
-      <link>/docs/dev/23designpattern/17.%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/17.%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/17.%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/17.%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之备忘录模式】17-redo计数器应用&#xA;题目描述 小明正在设计一个简单的计数器应用，支持增加（Increment）和减少（Decrement）操作，以及撤销（Undo）和重做（Redo）操作，请你使用备忘录模式帮他实现。&#xA;输入描述&#xA;输入包含若干行，每行包含一个字符串，表示计数器应用的操作，操作包括 &amp;ldquo;Increment&amp;rdquo;、&amp;ldquo;Decrement&amp;rdquo;、&amp;ldquo;Undo&amp;rdquo; 和 &amp;ldquo;Redo&amp;rdquo;。 输出描述&#xA;对于每个 &amp;ldquo;Increment&amp;rdquo; 和 &amp;ldquo;Decrement&amp;rdquo; 操作，输出当前计数器的值，计数器数值从0开始 对于每个 &amp;ldquo;Undo&amp;rdquo; 操作，输出撤销后的计数器值。 对于每个 &amp;ldquo;Redo&amp;rdquo; 操作，输出重做后的计数器值。 输入示例 Increment Increment Decrement Undo Redo Increment 输出示例 1 2 1 2 1 2 基本概念 link备忘录模式（Memento Pattern）是一种行为型设计模式，它允许在不暴露对象实现的情况下捕获对象的内部状态并在对象之外保存这个状态，以便稍后可以将其还原到先前的状态。&#xA;基本结构 link备忘录模式包括以下几个重要角色：&#xA;发起人Originator： 需要还原状态的那个对象，负责创建一个【备忘录】，并使用备忘录记录当前时刻的内部状态。&#xA;备忘录Memento: 存储发起人对象的内部状态，它可以包含发起人的部分或全部状态信息，但是对外部是不可见的，只有发起人能够访问备忘录对象的状态。&#xA;备忘录有两个接口，发起人能够通过宽接口访问数据，管理者只能看到窄接口，并将备忘录传递给其他对象。&#xA;管理者Caretaker: 负责存储备忘录对象，但并不了解其内部结构，管理者可以存储多个备忘录对象。&#xA;客户端：在需要恢复状态时，客户端可以从管理者那里获取备忘录对象，并将其传递给发起人进行状态的恢复。&#xA;基本实现 link 创建发起人类：可以创建备忘录对象 class Originator { private String state; public void setState(String state) { this.state = state; } public String getState() { return state; } // 创建备忘录对象 public Memento createMemento() { return new Memento(state); } // 通过备忘录对象恢复状态 public void restoreFromMemento(Memento memento) { state = memento.</description>
     </item>
     <item>
       <title>18.模板方法模式</title>
-      <link>/docs/dev/23designpattern/18.%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/18.%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/18.%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/18.%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之模板方法模式】18-咖啡馆&#xA;题目描述&#xA;小明喜欢品尝不同类型的咖啡，她发现每种咖啡的制作过程有一些相同的步骤，他决定设计一个简单的咖啡制作系统，使用模板方法模式定义咖啡的制作过程。系统支持两种咖啡类型：美式咖啡（American Coffee）和拿铁（Latte）。&#xA;咖啡制作过程包括以下步骤：&#xA;研磨咖啡豆 Grinding coffee beans 冲泡咖啡 Brewing coffee 添加调料 Adding condiments 其中，美式咖啡和拿铁的调料添加方式略有不同, 拿铁在添加调料时需要添加牛奶Adding milk&#xA;输入描述&#xA;多行输入，每行包含一个数字，表示咖啡的选择（1 表示美式咖啡，2 表示拿铁）。 输出描述&#xA;根据每行输入，输出制作咖啡的过程，包括咖啡类型和各个制作步骤，末尾有一个空行。 输入示例 1 2 输出示例&#xA;Making American Coffee: Grinding coffee beans Brewing coffee Adding condiments Making Latte: Grinding coffee beans Brewing coffee Adding milk Adding condiments 基本概念 link模板方法模式（Template Method Pattern）是一种行为型设计模式, 它定义了一个算法的骨架，将**一些步骤的实现延迟到子类。**模板方法模式使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。【引用自大话设计第10章】&#xA;举个简单的例子，做一道菜通常都需要包含至少三步：&#xA;准备食材 亨饪过程 上菜 不同菜品的亨饪过程是不一样的，但是我们可以先定义一个”骨架”，包含这三个步骤，亨饪过程的过程放到具体的炒菜类中去实现，这样，无论炒什么菜，都可以沿用相同的炒菜算法，只需在子类中实现具体的炒菜步骤，从而提高了代码的复用性。&#xA;基本结构 link模板方法模式的基本结构包含以下两个角色：&#xA;模板类AbstractClass：由一个模板方法和若干个基本方法构成，模板方法定义了逻辑的骨架，按照顺序调用包含的基本方法，基本方法通常是一些抽象方法，这些方法由子类去实现。基本方法还包含一些具体方法，它们是算法的一部分但已经有默认实现，在具体子类中可以继承或者重写。 具体类ConcreteClass：继承自模板类，实现了在模板类中定义的抽象方法，以完成算法中特定步骤的具体实现。 简易实现 link模板方法模式的简单示例如下：&#xA;定义模板类，包含模板方法，定义了算法的骨架, 一般都加上final关键字，避免子类重写。 // 模板类 abstract class AbstractClass { // 模板方法，定义了算法的骨架 public final void templateMethod() { step1(); step2(); step3(); } // 抽象方法，由子类实现 protected abstract void step1(); protected abstract void step2(); protected abstract void step3(); } 定义具体类, 实现模板类中的抽象方法 // 具体类 class ConcreteClass extends AbstractClass { @Override protected void step1() { System.</description>
     </item>
     <item>
       <title>19.迭代器模式</title>
-      <link>/docs/dev/23designpattern/19.%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/19.%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/19.%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/19.%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之迭代器模式】19-学生名单&#xA;题目描述&#xA;小明是一位老师，在进行班级点名时，希望有一个学生名单系统，请你实现迭代器模式提供一个迭代器使得可以按顺序遍历学生列表。 输入描述&#xA;第一行是一个整数 N （1 &amp;lt;= N &amp;lt;= 100), 表示学生的数量。 接下来的 N 行，每行包含一个学生的信息，格式为 姓名 学号 输出描述&#xA;输出班级点名的结果，即按顺序遍历学生列表，输出学生的姓名和学号 输入示例 3 Alice 1001 Bob 1002 Charlie 1003 输出示例 Alice 1001 Bob 1002 Charlie 1003 基本概念 link迭代器模式是一种行为设计模式，是一种使用频率非常高的设计模式，在各个语言中都有应用，其主要目的是**提供一种统一的方式来访问一个聚合对象中的各个元素，**而不需要暴露该对象的内部表示。通过迭代器，客户端可以顺序访问聚合对象的元素，而无需了解底层数据结构。&#xA;迭代器模式应用广泛，但是大多数语言都已经内置了迭代器接口，不需要自己实现。&#xA;基本结构 link迭代器模式包括以下几个重要角色&#xA;迭代器接口Iterator：定义访问和遍历元素的接口, 通常会包括hasNext()方法用于检查是否还有下一个元素，以及next()方法用于获取下一个元素。有的还会实现获取第一个元素以及获取当前元素的方法。 具体迭代器ConcreateIterator：实现迭代器接口，实现遍历逻辑对聚合对象进行遍历。 抽象聚合类：定义了创建迭代器的接口，包括一个createIterator方法用于创建一个迭代器对象。 具体聚合类：实现在抽象聚合类中声明的createIterator() 方法，返回一个与具体聚合对应的具体迭代器 简易实现 link 定义迭代器接口：通常会有检查是否还有下一个元素以及获取下一个元素的方法。 // 迭代器接口 public interface Iterator{ // 检查是否还会有下一个元素 boolean hasNext(); // 获取下一个元素 Object next(); } 定义具体迭代器：实现迭代器接口，遍历集合。 public class ConcreteIterator implements Iterator { private int index; private List&amp;lt;Object&amp;gt; elements; // 构造函数初始化迭代器 public ConcreteIterator(List&amp;lt;Object&amp;gt; elements) { this.</description>
     </item>
     <item>
       <title>20.状态模式</title>
-      <link>/docs/dev/23designpattern/20.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/20.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/20.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/20.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之状态模式】20-开关台灯&#xA;题目描述&#xA;小明家有一个灯泡，刚开始为关闭状态（OffState）。台灯可以接收一系列的指令，包括打开（&amp;ldquo;ON&amp;rdquo;）、关闭（&amp;ldquo;OFF&amp;rdquo;）和闪烁（&amp;ldquo;blink&amp;rdquo;）。每次接收到一个指令后，台灯会执行相应的操作，并输出当前灯泡的状态。请设计一个程序模拟这个灯泡系统。 输入描述&#xA;第一行是一个整数 n（1 &amp;lt;= n &amp;lt;= 1000），表示接收的命令数量。 接下来的 n 行，每行包含一个字符串 s，表示一个命令（&amp;ldquo;ON&amp;rdquo;、&amp;ldquo;OFF&amp;quot;或&amp;quot;blink&amp;rdquo;）。 输出描述&#xA;对于每个命令，输出一行，表示执行该命令后灯泡的状态。 输入示例 5 ON OFF BLINK OFF ON 输出示例 Light is ON Light is OFF Light is Blinking Light is OFF Light is ON 基本结构 link状态模式（State Pattern）是一种行为型设计模式，它适用于一个对象在在不同的状态下有不同的行为时，比如说电灯的开、关、闪烁是不停的状态，状态不同时，对应的行为也不同，在没有状态模式的情况下，为了添加新的状态或修改现有的状态，往往需要修改已有的代码，这违背了开闭原则，而且如果对象的状态切换逻辑和各个状态的行为都在同一个类中实现，就可能导致该类的职责过重，不符合单一职责原则。&#xA;而状态模式将每个状态的行为封装在一个具体状态类中，使得每个状态类相对独立，并将对象在不同状态下的行为进行委托，从而使得对象的状态可以在运行时动态改变，每个状态的实现也不会影响其他状态。&#xA;基本结构： link状态模式包括以下几个重要角色：&#xA;State（状态）： 定义一个接口，用于封装与Context的一个特定状态相关的行为。&#xA;ConcreteState（具体状态）： 负责处理Context在状态改变时的行为, 每一个具体状态子类实现一个与Context的一个状态相关的行为。&#xA;Context（上下文）: 维护一个具体状态子类的实例，这个实例定义当前的状态。&#xA;基本使用 link 定义状态接口：创建一个状态接口，该接口声明了对象可能的各种状态对应的方法。 // 状态接口 public interface State { void handle(); } 实现具体状态类： 为对象可能的每种状态创建具体的状态类，实现状态接口中定义的方法。 // 具体状态类1 public class ConcreteState1 implements State { @Override public void handle() { // 执行在状态1下的操作 } } // 具体状态类2 public class ConcreteState2 implements State { @Override public void handle() { // 执行在状态2下的操作 } } 创建上下文类：该类包含对状态的引用，并在需要时调用当前状态的方法。 // 上下文类 public class Context { private State currentState; public void setState(State state) { this.</description>
     </item>
     <item>
       <title>21.责任链模式</title>
-      <link>/docs/dev/23designpattern/21.%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/21.%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/21.%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/21.%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之责任链模式】21-请假审批&#xA;题目描述&#xA;小明所在的公司请假需要在OA系统上发布申请，整个请求流程包括多个处理者，每个处理者负责处理不同范围的请假天数，如果一个处理者不能处理请求，就会将请求传递给下一个处理者，请你实现责任链模式，可以根据请求天数找到对应的处理者。 审批责任链由主管(Supervisor), 经理(Manager)和董事（Director)组成，他们分别能够处理3天、7天和10天的请假天数。如果超过10天，则进行否决。 输入描述&#xA;第一行是一个整数N（1 &amp;lt;= N &amp;lt;= 100), 表示请求申请的数量。 接下来的N行，每行包括一个请求申请的信息，格式为&amp;quot;姓名 请假天数&amp;quot; 输出描述&#xA;对于每个请假请求，输出一行，表示该请求是否被批准。如果被批准/否决，输出被哪一个职级的人批准/否决。 输入示例 4 Alice 2 Bob 5 Tom 10 Jerry 12 输出示例 Alice Approved by Supervisor. Bob Approved by Manager. Tom Approved by Director. Jerry Denied by Director. 基本概念 link责任链模式是一种行为型设计模式，它允许你构建一个对象链，让请求从链的一端进入，然后沿着链上的对象依次处理，直到链上的某个对象能够处理该请求为止。&#xA;职责链上的处理者就是一个对象，可以对请求进行处理或者将请求转发给下一个节点，这个场景在生活中很常见，就是一个逐层向上递交的过程，最终的请求要么被处理者所处理，要么处理不了，这也因此可能导致请求无法被处理。&#xA;组成结构 link责任链模式包括以下几个基本结构：&#xA;处理者Handler ：定义一个处理请求的接口，包含一个处理请求的抽象方法和一个指向下一个处理者的链接。 具体处理者ConcreteHandler: 实现处理请求的方法，并判断能否处理请求，如果能够处理请求则进行处理，否则将请求传递给下一个处理者。 客户端：创建并组装处理者对象链，并将请求发送到链上的第一个处理者。 简易实现 link 处理者：定义处理请求的接口 interface Handler { // 处理请求的方法 void handleRequest(double amount); // 设置下一个处理者的方法 void setNextHandler(Handler nextHandler); } 具体处理者：实现处理请求 class ConcreteHandler implements Handler { private Handler nextHandler; @Override public void handleRequest(Request request) { // 根据具体情况处理请求，如果无法处理则交给下一个处理者 if (canHandle(request)) { // 处理请求的逻辑 } else if (nextHandler !</description>
     </item>
     <item>
       <title>22.解释器模式</title>
-      <link>/docs/dev/23designpattern/22.%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/22.%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/22.%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/22.%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之解释器模式】22-数学表达式&#xA;题目描述&#xA;小明正在设计一个计算器，用于解释用户输入的简单数学表达式，每个表达式都是由整数、加法操作符+、乘法操作符组成的，表达式中的元素之间用空格分隔，请你使用解释器模式帮他实现这个系统。 输入描述&#xA;每行包含一个数学表达式，表达式中包含整数、加法操作符（+）和乘法操作符（*）。 表达式中的元素之间用空格分隔。 输出描述&#xA;对于每个输入的数学表达式，每行输出一个整数，表示对应表达式的计算结果。 输入示例 2 &amp;#43; 3 5 * 2 3 &amp;#43; 4 * 2 输出示例 5 10 11 基本概念 link解释器模式（Interpreter Pattern）是一种行为型设计模式，它定义了一个语言的文法，并且建立一个【解释器】来解释该语言中的句子。&#xA;比如说SQL语法、正则表达式，这些内容比较简短，但是表达的内容可不仅仅是字面上的那些符号，计算机想要理解这些语法，就需要解释这个语法规则，因此解释器模式常用于实现编程语言解释器、正则表达式处理等场景。&#xA;组成结构 link解释器模式主要包含以下几个角色：&#xA;抽象表达式（Abstract Expression）： 定义了解释器的接口，包含了解释器的方法 interpret。 终结符表达式（Terminal Expression）： 在语法中不能再分解为更小单元的符号。 非终结符表达式（Non-terminal Expression）： 文法中的复杂表达式，它由终结符和其他非终结符组成。 上下文（Context）： 包含解释器之外的一些全局信息，可以存储解释器中间结果，也可以用于向解释器传递信息。 举例来说，表达式 &amp;ldquo;3 + 5 * 2&amp;rdquo;，数字 &amp;ldquo;3&amp;rdquo; 和 &amp;ldquo;5&amp;rdquo;， &amp;ldquo;2&amp;rdquo; 是终结符，而运算符 &amp;ldquo;+&amp;rdquo;, &amp;ldquo;*&amp;ldquo;都需要两个操作数, 属于非终结符。&#xA;简易实现 link 创建抽象表达式接口： 定义解释器的接口，声明一个 interpret 方法，用于解释语言中的表达式。 // 抽象表达式接口 public interface Expression { int interpret(); } 创建具体的表达式类： 实现抽象表达式接口，用于表示语言中的具体表达式。 public class TerminalExpression implements Expression { private int value; public TerminalExpression(int value) { this.</description>
     </item>
     <item>
       <title>23.访问者模式</title>
-      <link>/docs/dev/23designpattern/23.%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://docs.cakepanit.com/docs/dev/23designpattern/23.%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/23designpattern/23.%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/23designpattern/23.%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
       <description>需求 link【设计模式专题之访问者模式】23-图形的面积&#xA;题目描述&#xA;小明家有一些圆形和长方形面积的土地，请你帮他实现一个访问者模式，使得可以通过访问者计算每块土地的面积。 图形的面积计算规则如下： 圆形的面积计算公式为：3.14 * 半径 * 半径 矩形的面积计算公式为：长 * 宽 输入描述&#xA;第一行是一个整数 n（1 &amp;lt;= n &amp;lt;= 1000），表示图形的数量。 接下来的 n 行，每行描述一个图形，格式为 &amp;ldquo;Circle r&amp;rdquo; 或 &amp;ldquo;Rectangle width height&amp;rdquo;，其中 r、width、height 是正整数。 输出描述&#xA;对于每个图形，输出一行，表示该图形的面积。 输入示例 3 Circle 5 Rectangle 3 4 Circle 2 输出示例 78.5 12 12.56 基本概念 link访问者模式（Visitor Pattern）是一种行为型设计模式，可以在不改变对象结构的前提下，对对象中的元素进行新的操作。&#xA;举个例子，假设有一个动物园，里面有不同种类的动物，比如狮子、大象、猴子等。每个动物都会被医生检查身体，被管理员投喂，被游客观看，医生，游客，管理员都属于访问者。&#xA;// 定义动物接口 interface Animal { void accept(Visitor visitor); } // 具体元素类：狮子 class Lion implements Element { @Override public void accept(Visitor visitor) { visitor.</description>
     </item>
     <item>
       <title>1.为什么要学习Fyne？</title>
-      <link>/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/</link>
+      <link>https://docs.cakepanit.com/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/</guid>
       <description>GUI Application 的定义 linkGUI(Graphical User Interface/图形用户界面)程序是指使用图形界面与用户进行交互的软件应用程序。图形界面通常包括窗口、图标、按钮、文本框、菜单等可视化元素, 使用户可以通过直观的操作(如点击、拖动, 输入内容)与程序进行交互, 而不需要通过如命令行进行操作。&#xA;例子: 好比 VS Code 就是。&#xA;使用 Fyne 开发 GUI(图形用户界面)程序有许多优势, 我们简单地和 Electron 比较一下。&#xA;1. 轻量 link Fyne：Fyne 是一个轻量级的 GUI 框架, 应用程序的体积相对较小, 占用的系统资源也较少。 Electron：Electron 打包了整个 Chromium 和 Node.js, 导致应用程序的体积较大, 并且在运行时占用不少内存。 2. 性能 link Fyne：Fyne 应用是用 Go 语言编写的, Go 语言本身以其高效和快速的性能而闻名。Fyne 应用在启动和运行时的性能通常优于 Electron 应用。 Electron：由于 Electron 依赖于 Chromium 和 Node.js, 其性能受限于这些底层技术的性能。Electron 应用启动较慢, 运行时占用较多的内存和 CPU 资源。 3. 资源消耗 link Fyne：Fyne 应用程序消耗的系统资源较少, 特别是在内存和 CPU 使用方面。这使得 Fyne 应用在低配置的系统上也能顺畅运行。 Electron：Electron 应用通常消耗更多的内存和 CPU 资源, 特别是在打开多个窗口或运行复杂的应用时, 这在低配置系统上可能会导致性能问题。 4.</description>
     </item>
     <item>
       <title>2.第一个小项目</title>
-      <link>/docs/dev/golang/fyne/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://docs.cakepanit.com/docs/dev/golang/fyne/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/golang/fyne/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/fyne/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</guid>
       <description>基本命令&#xA;go mod init fyneTest01 fyneTest01可以随便写。&#xA;go get fyne.io/fyne/v2 GOPATH 介绍说明&#xA;$GOPATH 是一个环境变量，它指定了你的 Go 工作空间的位置。工作空间中往往包含编译后的包文件和可执行文件。&#xA;如何找到它?&#xA;go env GOPATH 即可。&#xA;成品代码&#xA;package main import ( &amp;#34;fmt&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { a:= app.New() w:= a.NewWindow(&amp;#34;Gofer gogogo&amp;#34;) w.SetContent(widget.NewLabel(&amp;#34;Gofer gogogo&amp;#34;)) w.ShowAndRun() fmt.Println(&amp;#34;close!&amp;#34;) } Go 要点: go mod tidy linkgo mod tidy 命令会清理 go.mod 文件，移除不再需要的依赖，并确保所有实际使用的依赖都在文件中声明。同时，它还会更新 go.sum 文件，确保其中的记录是最新的和完整的。&#xA;go mod tidy 运行程序&#xA;go run . 即可&#xA;Go 要点: go run . link参考文档 https://shellytw.medium.com/golang-learning-journey-from-an-ex-javascript-developer-1-go-run-and-packages-d107fdff147</description>
     </item>
     <item>
       <title>3.处理多窗口问题</title>
-      <link>/docs/dev/golang/fyne/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3/</link>
+      <link>https://docs.cakepanit.com/docs/dev/golang/fyne/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/golang/fyne/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/fyne/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3/</guid>
       <description>代码案例 link package main import ( &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { a := app.New() w1 := a.NewWindow(&amp;#34;Window 1&amp;#34;) w1.SetContent(container.NewVBox( widget.NewLabel(&amp;#34;Test01&amp;#34;), )) w2 := a.NewWindow(&amp;#34;Window 2&amp;#34;) w2.SetContent(container.NewVBox( widget.NewLabel(&amp;#34;Test02&amp;#34;), )) w1.Show() w2.Show() a.Run() } </description>
     </item>
     <item>
       <title>4.Go基础速通</title>
-      <link>/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/</link>
+      <link>https://docs.cakepanit.com/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/</guid>
       <description>代码案例 01 link type Person struct{ Name string Age int Email string } func main() { p := Person{ Name: &amp;#34;Inkka&amp;#34;, Age: 17, Email: &amp;#34;inkkaplumbilibili@example.com&amp;#34;, } // 访问结构体字段 fmt.Println(&amp;#34;Name:&amp;#34;, p.Name) fmt.Println(&amp;#34;Age:&amp;#34;, p.Age) fmt.Println(&amp;#34;Email:&amp;#34;, p.Email) // 修改结构体字段 p.Age = 18 fmt.Println(&amp;#34;Updated Age:&amp;#34;, p.Age) } 代码案例 02 link package main import &amp;#34;fmt&amp;#34; func main() { // 初始化一个整数变量 i i := 114514 // 将 i 的值赋给 j j := i // 修改 j 的值 j = 1919810 // 打印 i 和 j 的值 fmt.</description>
     </item>
     <item>
       <title>5.更复杂的项目</title>
-      <link>/docs/dev/golang/fyne/5.%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://docs.cakepanit.com/docs/dev/golang/fyne/5.%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/golang/fyne/5.%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/fyne/5.%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E9%A1%B9%E7%9B%AE/</guid>
       <description>要求和最终效果 link参考任意一篇 Fyne 官方文档, 可以看到写法:&#xA;func makeUI() (*widget.Label, *widget.Entry) { return widget.NewLabel(&amp;#34;Hello world!&amp;#34;), widget.NewEntry() } func main() { a := app.New() w := a.NewWindow(&amp;#34;Hello Person&amp;#34;) w.SetContent(container.NewVBox(makeUI())) w.ShowAndRun() } 所以, 我们也会写makeUI()。&#xA;优势 link 逻辑清晰 便于测试 读法的小提示 link*... 可以读成Pointer to ...。&#xA;成品代码 link package main import ( &amp;#34;fmt&amp;#34; &amp;#34;fyne.io/fyne/v2&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) type App struct{ output *widget.Label } var myApp App func (app *App) makeUI()(*widget.Label, *widget.Entry, *widget.Button, *widget.Label, *widget.Button ){ output := widget.</description>
     </item>
     <item>
       <title>Fyne-Markdown编辑器</title>
-      <link>/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/</link>
+      <link>https://docs.cakepanit.com/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
       <description>Markdown 编辑器&#xA;此项目的要求和最终效果 link能够支持中文, 程序窗口左半边写 markdown, 右边则显示富文本, 也就是现在我们 Vs code 里面的 Preview(プレビュー)&#xA;解决语言问题 linkFyne 默认字体不支持中文, 我们可以复制一下下面的测试文本, 基于我们第一个案例, 会发现是乱码。&#xA;package main import ( &amp;#34;fmt&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { a:= app.New() w:= a.NewWindow(&amp;#34;让我们一起来学习Go语言吧!&amp;#34;) w.SetContent(widget.NewLabel(&amp;#34;让我们一起来学习Go语言吧!&amp;#34;)) w.ShowAndRun() fmt.Println(&amp;#34;close!&amp;#34;) } 在项目文件夹中(必要文件), 找到字体文件(NotoSansHans-Regular.ttf)或者亦可以用你喜好的字体。将项目文件夹中的theme.go和util.go复制到项目目录下。&#xA;然后, 在项目中添加如下代码:&#xA;customFont := fyne.NewStaticResource(&amp;#34;NotoSansHans.ttf&amp;#34;, loadFont(&amp;#34;NotoSansHans-Regular.ttf&amp;#34;)) a.Settings().SetTheme(&amp;amp;myTheme{font: customFont}) 只需要改loadFont内的内容即可。&#xA;实战 Struct 和 Receiver link package main import ( &amp;#34;fyne.io/fyne/v2&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) type config struct { EditWidget *widget.Entry PreviewWidget *widget.RichText CurrentFile fyne.</description>
     </item>
     <item>
       <title>Fyne-趣味整活项目</title>
-      <link>/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://docs.cakepanit.com/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/</guid>
       <description>全部代码 link package main import ( &amp;#34;time&amp;#34; &amp;#34;fyne.io/fyne/v2&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/dialog&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { // 创建一个 Fyne 应用 a := app.New() // 创建一个窗口 customFont := fyne.NewStaticResource(&amp;#34;NotoSansHans.ttf&amp;#34;, loadFont(&amp;#34;NotoSansHans-Regular.ttf&amp;#34;)) a.Settings().SetTheme(&amp;amp;myTheme{font: customFont}) win := a.NewWindow(&amp;#34;高端检测器&amp;#34;) // 创建一个按钮 btn := widget.NewButton(&amp;#34;检测是否开机&amp;#34;, func() { // 创建一个进度条 progress := widget.NewProgressBarInfinite() progressContainer := container.NewVBox(progress) // 显示加载动画 loadingDialog := dialog.NewCustom(&amp;#34;正在检测...&amp;#34;, &amp;#34;取消&amp;#34;, progressContainer, win) loadingDialog.Show() // 模拟加载时间 go func(){ time.Sleep(10 * time.Second) // 10 秒模拟加载时间 // 关闭加载动画并弹出结果窗口 loadingDialog.</description>
     </item>
     <item>
       <title>1.Nginx配置小全</title>
-      <link>/docs/ops/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8/</link>
+      <link>https://docs.cakepanit.com/docs/ops/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/ops/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8/</guid>
+      <guid>https://docs.cakepanit.com/docs/ops/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8/</guid>
       <description>安装 nginx link下载 nginx 的压缩包文件到根目录，官网下载地址：nginx.org/download/nginx-x.xx.xx.tar.gz&#xA;yum update #更新系统软件 cd / wget nginx.org/download/nginx-1.17.2.tar.gz 解压tar.gz压缩包文件，进去 nginx-1.17.2&#xA;tar -xzvf nginx-1.17.2.tar.gz cd nginx-1.17.2 进入文件夹后进行配置检查&#xA;通过安装前的配置检查，发现有报错。检查中发现一些依赖库没有找到，这时候需要先安装nginx的一些依赖库&#xA;yum -y install pcre* #安装使nginx支持rewrite yum -y install gcc-c&amp;#43;&amp;#43; yum -y install zlib* yum -y install openssl openssl-devel 再次进行检查操作 ./configure 没发现报错显示，接下来进行编译并安装的操作&#xA;// 检查模块支持 ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_v2_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_slice_module --with-http_stub_status_module --with-mail --with-mail_ssl_module --with-stream --with-stream_ssl_module --with-stream_realip_module --with-stream_ssl_preread_module --with-threads --user=www --group=www 这里得特别注意下，你以后需要用到的功能模块是否存在，不然以后添加新的包会比较麻烦。</description>
     </item>
   </channel>

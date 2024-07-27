@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Features on Maxbit Docs</title>
-    <link>/docs/demo/features/</link>
+    <link>https://docs.cakepanit.com/docs/demo/features/</link>
     <description>Recent content in Features on Maxbit Docs</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
     <lastBuildDate>Fri, 26 Jul 2024 13:46:10 +0800</lastBuildDate>
-    <atom:link href="/docs/demo/features/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.cakepanit.com/docs/demo/features/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Syntax Highlighting</title>
-      <link>/docs/demo/features/syntax-highlighting/</link>
+      <link>https://docs.cakepanit.com/docs/demo/features/syntax-highlighting/</link>
       <pubDate>Fri, 16 Dec 2022 01:07:15 +0000</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/demo/features/syntax-highlighting/</guid>
+      <guid>https://docs.cakepanit.com/docs/demo/features/syntax-highlighting/</guid>
       <description>Code Highlighters linkLotus Docs supports syntax highlighting by Prism (enabled by default via param.docs.prism in hugo.toml) or Hugo&amp;rsquo;s built-in code highlighter Chroma.&#xA;Fenced code blocks (code enclosed by triple backticks above and below) that specify a code language (declared right of the opening fence), will automatically highlight the code content as HTML e.g. ```html:&#xA;```html &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Buy cool new product&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!-- Use action=&amp;#34;/create-checkout-session.php&amp;#34; if your server is PHP based.</description>
     </item>
     <item>
       <title>KaTex</title>
-      <link>/docs/demo/features/katex/</link>
+      <link>https://docs.cakepanit.com/docs/demo/features/katex/</link>
       <pubDate>Sat, 26 Aug 2023 20:43:23 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/demo/features/katex/</guid>
+      <guid>https://docs.cakepanit.com/docs/demo/features/katex/</guid>
       <description>$$ f\relax{x} = \int_{-\infty}^\infty \hat f(\xi)\ e^{2 \pi i \xi x} \ d\xi $$&#xA;How to use KaTex with Lotus Docs linkKaTex support is controlled by the katex parameter in your front matter (line 10 below). Add and set it to true in your front matter to enable KaTex support for that page. This means KaTex support and resources are active only for pages that require it.&#xA;--- weight: 530 title: &amp;#34;KaTex&amp;#34; description: &amp;#34;Fast Tex math rendering for your Lotus Docs site&amp;#34; icon: &amp;#34;function&amp;#34; date: &amp;#34;2023-08-26T20:43:23&amp;#43;01:00&amp;#34; lastmod: &amp;#34;2023-08-26T20:43:23&amp;#43;01:00&amp;#34; draft: true toc: true katex: true --- Writing LaTex in Markdown linkEquations can be displayed either in block level or inline.</description>
     </item>
     <item>
       <title>Mermaid</title>
-      <link>/docs/demo/features/mermaid/</link>
+      <link>https://docs.cakepanit.com/docs/demo/features/mermaid/</link>
       <pubDate>Fri, 08 Sep 2023 06:05:19 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>/docs/demo/features/mermaid/</guid>
+      <guid>https://docs.cakepanit.com/docs/demo/features/mermaid/</guid>
       <description>What is Mermaid? linkMermaid is a JavaScript-based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. The main purpose of Mermaid is to help documentation catch up with development.&#xA;How to use Mermaid with Lotus Docs linkMermaid is enabled whenever content containing Mermaid diagram syntax is present in a page&amp;rsquo;s content. You can insert Mermaid diagrams by using the mermaid language identifier with triple backtick codeblocks:</description>
     </item>
   </channel>
