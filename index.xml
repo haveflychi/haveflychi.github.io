@@ -1,136 +1,138 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
+    <title>Maxbit Docs</title>
     <link>/</link>
-    <description>Recent content on </description>
+    <description>Recent content on Maxbit Docs</description>
     <generator>Hugo</generator>
-    <language>zh-cmn</language>
+    <language>zh-CN</language>
+    <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
+    <webMaster>admin@cakepanit.com (饼铛)</webMaster>
     <lastBuildDate>Fri, 26 Jul 2024 13:46:10 +0800</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇WIKI</title>
       <link>/docs/dba/dome/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/dba/dome/</guid>
       <description>Create New Content linkNavigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:&#xA;hugo new docs/examplepage.md </description>
     </item>
     <item>
       <title>1.为什么要学习Fyne？</title>
       <link>/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/</guid>
       <description>GUI Application 的定义 linkGUI(Graphical User Interface/图形用户界面)程序是指使用图形界面与用户进行交互的软件应用程序。图形界面通常包括窗口、图标、按钮、文本框、菜单等可视化元素, 使用户可以通过直观的操作(如点击、拖动, 输入内容)与程序进行交互, 而不需要通过如命令行进行操作。&#xA;例子: 好比 VS Code 就是。&#xA;使用 Fyne 开发 GUI(图形用户界面)程序有许多优势, 我们简单地和 Electron 比较一下。&#xA;1. 轻量 link Fyne：Fyne 是一个轻量级的 GUI 框架, 应用程序的体积相对较小, 占用的系统资源也较少。 Electron：Electron 打包了整个 Chromium 和 Node.js, 导致应用程序的体积较大, 并且在运行时占用不少内存。 2. 性能 link Fyne：Fyne 应用是用 Go 语言编写的, Go 语言本身以其高效和快速的性能而闻名。Fyne 应用在启动和运行时的性能通常优于 Electron 应用。 Electron：由于 Electron 依赖于 Chromium 和 Node.js, 其性能受限于这些底层技术的性能。Electron 应用启动较慢, 运行时占用较多的内存和 CPU 资源。 3. 资源消耗 link Fyne：Fyne 应用程序消耗的系统资源较少, 特别是在内存和 CPU 使用方面。这使得 Fyne 应用在低配置的系统上也能顺畅运行。 Electron：Electron 应用通常消耗更多的内存和 CPU 资源, 特别是在打开多个窗口或运行复杂的应用时, 这在低配置系统上可能会导致性能问题。 4.</description>
     </item>
     <item>
       <title>2.第一个小项目</title>
       <link>/docs/dev/golang/fyne/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/dev/golang/fyne/2.%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</guid>
       <description>基本命令&#xA;go mod init fyneTest01 fyneTest01可以随便写。&#xA;go get fyne.io/fyne/v2 GOPATH 介绍说明&#xA;$GOPATH 是一个环境变量，它指定了你的 Go 工作空间的位置。工作空间中往往包含编译后的包文件和可执行文件。&#xA;如何找到它?&#xA;go env GOPATH 即可。&#xA;成品代码&#xA;package main import ( &amp;#34;fmt&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { a:= app.New() w:= a.NewWindow(&amp;#34;Gofer gogogo&amp;#34;) w.SetContent(widget.NewLabel(&amp;#34;Gofer gogogo&amp;#34;)) w.ShowAndRun() fmt.Println(&amp;#34;close!&amp;#34;) } Go 要点: go mod tidy linkgo mod tidy 命令会清理 go.mod 文件，移除不再需要的依赖，并确保所有实际使用的依赖都在文件中声明。同时，它还会更新 go.sum 文件，确保其中的记录是最新的和完整的。&#xA;go mod tidy 运行程序&#xA;go run . 即可&#xA;Go 要点: go run . link参考文档 https://shellytw.medium.com/golang-learning-journey-from-an-ex-javascript-developer-1-go-run-and-packages-d107fdff147</description>
     </item>
     <item>
       <title>3.处理多窗口问题</title>
       <link>/docs/dev/golang/fyne/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/dev/golang/fyne/3.%E5%A4%84%E7%90%86%E5%A4%9A%E7%AA%97%E5%8F%A3/</guid>
       <description>代码案例 link package main import ( &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { a := app.New() w1 := a.NewWindow(&amp;#34;Window 1&amp;#34;) w1.SetContent(container.NewVBox( widget.NewLabel(&amp;#34;Test01&amp;#34;), )) w2 := a.NewWindow(&amp;#34;Window 2&amp;#34;) w2.SetContent(container.NewVBox( widget.NewLabel(&amp;#34;Test02&amp;#34;), )) w1.Show() w2.Show() a.Run() } </description>
     </item>
     <item>
       <title>4.Go基础速通</title>
       <link>/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/dev/golang/fyne/4.go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E9%80%9A%E5%85%B3/</guid>
       <description>代码案例 01 link type Person struct{ Name string Age int Email string } func main() { p := Person{ Name: &amp;#34;Inkka&amp;#34;, Age: 17, Email: &amp;#34;inkkaplumbilibili@example.com&amp;#34;, } // 访问结构体字段 fmt.Println(&amp;#34;Name:&amp;#34;, p.Name) fmt.Println(&amp;#34;Age:&amp;#34;, p.Age) fmt.Println(&amp;#34;Email:&amp;#34;, p.Email) // 修改结构体字段 p.Age = 18 fmt.Println(&amp;#34;Updated Age:&amp;#34;, p.Age) } 代码案例 02 link package main import &amp;#34;fmt&amp;#34; func main() { // 初始化一个整数变量 i i := 114514 // 将 i 的值赋给 j j := i // 修改 j 的值 j = 1919810 // 打印 i 和 j 的值 fmt.</description>
     </item>
     <item>
       <title>5.更复杂的项目</title>
       <link>/docs/dev/golang/fyne/5.%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E9%A1%B9%E7%9B%AE/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/dev/golang/fyne/5.%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E9%A1%B9%E7%9B%AE/</guid>
       <description>要求和最终效果 link参考任意一篇 Fyne 官方文档, 可以看到写法:&#xA;func makeUI() (*widget.Label, *widget.Entry) { return widget.NewLabel(&amp;#34;Hello world!&amp;#34;), widget.NewEntry() } func main() { a := app.New() w := a.NewWindow(&amp;#34;Hello Person&amp;#34;) w.SetContent(container.NewVBox(makeUI())) w.ShowAndRun() } 所以, 我们也会写makeUI()。&#xA;优势 link 逻辑清晰 便于测试 读法的小提示 link*... 可以读成Pointer to ...。&#xA;成品代码 link package main import ( &amp;#34;fmt&amp;#34; &amp;#34;fyne.io/fyne/v2&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) type App struct{ output *widget.Label } var myApp App func (app *App) makeUI()(*widget.Label, *widget.Entry, *widget.Button, *widget.Label, *widget.Button ){ output := widget.</description>
     </item>
     <item>
       <title>Fyne-Markdown编辑器</title>
       <link>/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
       <description>Markdown 编辑器&#xA;此项目的要求和最终效果 link能够支持中文, 程序窗口左半边写 markdown, 右边则显示富文本, 也就是现在我们 Vs code 里面的 Preview(プレビュー)&#xA;解决语言问题 linkFyne 默认字体不支持中文, 我们可以复制一下下面的测试文本, 基于我们第一个案例, 会发现是乱码。&#xA;package main import ( &amp;#34;fmt&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { a:= app.New() w:= a.NewWindow(&amp;#34;让我们一起来学习Go语言吧!&amp;#34;) w.SetContent(widget.NewLabel(&amp;#34;让我们一起来学习Go语言吧!&amp;#34;)) w.ShowAndRun() fmt.Println(&amp;#34;close!&amp;#34;) } 在项目文件夹中(必要文件), 找到字体文件(NotoSansHans-Regular.ttf)或者亦可以用你喜好的字体。将项目文件夹中的theme.go和util.go复制到项目目录下。&#xA;然后, 在项目中添加如下代码:&#xA;customFont := fyne.NewStaticResource(&amp;#34;NotoSansHans.ttf&amp;#34;, loadFont(&amp;#34;NotoSansHans-Regular.ttf&amp;#34;)) a.Settings().SetTheme(&amp;amp;myTheme{font: customFont}) 只需要改loadFont内的内容即可。&#xA;实战 Struct 和 Receiver link package main import ( &amp;#34;fyne.io/fyne/v2&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) type config struct { EditWidget *widget.Entry PreviewWidget *widget.RichText CurrentFile fyne.</description>
     </item>
     <item>
       <title>Fyne-趣味整活项目</title>
       <link>/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/</guid>
       <description>全部代码 link package main import ( &amp;#34;time&amp;#34; &amp;#34;fyne.io/fyne/v2&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/dialog&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { // 创建一个 Fyne 应用 a := app.New() // 创建一个窗口 customFont := fyne.NewStaticResource(&amp;#34;NotoSansHans.ttf&amp;#34;, loadFont(&amp;#34;NotoSansHans-Regular.ttf&amp;#34;)) a.Settings().SetTheme(&amp;amp;myTheme{font: customFont}) win := a.NewWindow(&amp;#34;高端检测器&amp;#34;) // 创建一个按钮 btn := widget.NewButton(&amp;#34;检测是否开机&amp;#34;, func() { // 创建一个进度条 progress := widget.NewProgressBarInfinite() progressContainer := container.NewVBox(progress) // 显示加载动画 loadingDialog := dialog.NewCustom(&amp;#34;正在检测...&amp;#34;, &amp;#34;取消&amp;#34;, progressContainer, win) loadingDialog.Show() // 模拟加载时间 go func(){ time.Sleep(10 * time.Second) // 10 秒模拟加载时间 // 关闭加载动画并弹出结果窗口 loadingDialog.</description>
     </item>
     <item>
       <title>1.Nginx配置小全</title>
       <link>/docs/ops/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8/</link>
-      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/ops/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8/</guid>
       <description>安装 nginx link下载 nginx 的压缩包文件到根目录，官网下载地址：nginx.org/download/nginx-x.xx.xx.tar.gz&#xA;yum update #更新系统软件 cd / wget nginx.org/download/nginx-1.17.2.tar.gz 解压tar.gz压缩包文件，进去 nginx-1.17.2&#xA;tar -xzvf nginx-1.17.2.tar.gz cd nginx-1.17.2 进入文件夹后进行配置检查&#xA;通过安装前的配置检查，发现有报错。检查中发现一些依赖库没有找到，这时候需要先安装nginx的一些依赖库&#xA;yum -y install pcre* #安装使nginx支持rewrite yum -y install gcc-c&amp;#43;&amp;#43; yum -y install zlib* yum -y install openssl openssl-devel 再次进行检查操作 ./configure 没发现报错显示，接下来进行编译并安装的操作&#xA;// 检查模块支持 ./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_v2_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_slice_module --with-http_stub_status_module --with-mail --with-mail_ssl_module --with-stream --with-stream_ssl_module --with-stream_realip_module --with-stream_ssl_preread_module --with-threads --user=www --group=www 这里得特别注意下，你以后需要用到的功能模块是否存在，不然以后添加新的包会比较麻烦。</description>
     </item>
     <item>
       <title>Syntax Highlighting</title>
       <link>/docs/demo/features/syntax-highlighting/</link>
-      <pubDate>Fri, 16 Dec 2022 01:07:15 +0000</pubDate>
+      <pubDate>Fri, 16 Dec 2022 01:07:15 +0000</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/demo/features/syntax-highlighting/</guid>
       <description>Code Highlighters linkLotus Docs supports syntax highlighting by Prism (enabled by default via param.docs.prism in hugo.toml) or Hugo&amp;rsquo;s built-in code highlighter Chroma.&#xA;Fenced code blocks (code enclosed by triple backticks above and below) that specify a code language (declared right of the opening fence), will automatically highlight the code content as HTML e.g. ```html:&#xA;```html &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Buy cool new product&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!-- Use action=&amp;#34;/create-checkout-session.php&amp;#34; if your server is PHP based.</description>
     </item>
     <item>
       <title>KaTex</title>
       <link>/docs/demo/features/katex/</link>
-      <pubDate>Sat, 26 Aug 2023 20:43:23 +0100</pubDate>
+      <pubDate>Sat, 26 Aug 2023 20:43:23 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/demo/features/katex/</guid>
       <description>$$ f\relax{x} = \int_{-\infty}^\infty \hat f(\xi)\ e^{2 \pi i \xi x} \ d\xi $$&#xA;How to use KaTex with Lotus Docs linkKaTex support is controlled by the katex parameter in your front matter (line 10 below). Add and set it to true in your front matter to enable KaTex support for that page. This means KaTex support and resources are active only for pages that require it.&#xA;--- weight: 530 title: &amp;#34;KaTex&amp;#34; description: &amp;#34;Fast Tex math rendering for your Lotus Docs site&amp;#34; icon: &amp;#34;function&amp;#34; date: &amp;#34;2023-08-26T20:43:23&amp;#43;01:00&amp;#34; lastmod: &amp;#34;2023-08-26T20:43:23&amp;#43;01:00&amp;#34; draft: true toc: true katex: true --- Writing LaTex in Markdown linkEquations can be displayed either in block level or inline.</description>
     </item>
     <item>
       <title>Mermaid</title>
       <link>/docs/demo/features/mermaid/</link>
-      <pubDate>Fri, 08 Sep 2023 06:05:19 +0100</pubDate>
+      <pubDate>Fri, 08 Sep 2023 06:05:19 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/demo/features/mermaid/</guid>
       <description>What is Mermaid? linkMermaid is a JavaScript-based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. The main purpose of Mermaid is to help documentation catch up with development.&#xA;How to use Mermaid with Lotus Docs linkMermaid is enabled whenever content containing Mermaid diagram syntax is present in a page&amp;rsquo;s content. You can insert Mermaid diagrams by using the mermaid language identifier with triple backtick codeblocks:</description>
     </item>
     <item>
       <title>Alerts</title>
       <link>/docs/demo/shortcodes/alerts/</link>
-      <pubDate>Tue, 22 Nov 2022 13:42:31 +0000</pubDate>
+      <pubDate>Tue, 22 Nov 2022 13:42:31 +0000</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/demo/shortcodes/alerts/</guid>
       <description>Adding a Page Alert linkPage alerts can be added to your markdown using the following shortcode:&#xA;{{&amp;lt; alert text=&amp;#34;This is the default alert. It consists of a default theme colour and icon.&amp;#34; /&amp;gt;}} The above code results in the following alert:&#xA;notifications This is the default alert. It consists of a default theme colour and icon. Alert with Context linkAdd context to an alert via the context parameter:&#xA;{{&amp;lt; alert context=&amp;#34;info&amp;#34; text=&amp;#34;This is an alert with an &amp;lt;strong&amp;gt;info&amp;lt;/strong&amp;gt; context.</description>
     </item>
     <item>
       <title>Tables</title>
       <link>/docs/demo/shortcodes/tables/</link>
-      <pubDate>Sat, 05 Nov 2022 04:41:15 +0000</pubDate>
+      <pubDate>Sat, 05 Nov 2022 04:41:15 +0000</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/demo/shortcodes/tables/</guid>
       <description>The table shortcode enables Lotus Docs to take advantage of Bootstrap&amp;rsquo;s opt-in table styling.&#xA;Regular Tables linkBy default Lotus Docs renders regular Markdown tables with some very basic styling:&#xA;| Tables | Are | Cool | |----------|:-------------:|------:| | col 1 is | left-aligned | $1600 | | col 2 is | centered | $12 | | col 3 is | right-aligned | $1 | Result:&#xA;Tables Are Cool col 1 is left-aligned $1600 col 2 is centered $12 col 3 is right-aligned $1 Shortcode Tables linkThe the table shortcode allows you to implement a number of Bootstrap&amp;rsquo;s table styling classes.</description>
     </item>
     <item>
       <title>Tabs</title>
       <link>/docs/demo/shortcodes/tabs/</link>
-      <pubDate>Tue, 25 Apr 2023 03:51:15 +0000</pubDate>
+      <pubDate>Tue, 25 Apr 2023 03:51:15 +0000</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/demo/shortcodes/tabs/</guid>
       <description>The tabs shortcode leverages Bootstrap&amp;rsquo;s Tabs styling to easily add Tabs to your markdown content. The shortcode is actually a combination of two separate shortcodes (tab and tabs) working together.&#xA;You need a minimum of one tab shortcode nested inside a tabs shortcode for the component to function:&#xA;{{&amp;lt; tabs tabTotal=&amp;#34;1&amp;#34;&amp;gt;}} {{% tab tabName=&amp;#34;Tab 1&amp;#34; %}} **Tab 1 Content** {{% /tab %}} {{&amp;lt; /tabs &amp;gt;}} Basic Tabs linkThe following example demonstrates how to create a basic multi tab navigation component using the tabs and tab shortcodes.</description>
     </item>
     <item>
       <title>Prism</title>
       <link>/docs/demo/shortcodes/prism/</link>
-      <pubDate>Mon, 28 Nov 2022 04:05:31 +0000</pubDate>
+      <pubDate>Mon, 28 Nov 2022 04:05:31 +0000</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/demo/shortcodes/prism/</guid>
       <description>Prism Shortcode linkWhen Prism is enabled in hugo.toml syntax highlighting can also be achieved using a paired Prism shortcode. The code language is declared using the lang parameter:&#xA;{{&amp;lt; prism lang=&amp;#34;html&amp;#34; &amp;gt;}} &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Buy cool new product&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!-- Use action=&amp;#34;/create-checkout-session.php&amp;#34; if your server is PHP based. --&amp;gt; &amp;lt;form action=&amp;#34;/create-checkout-session&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt; &amp;lt;button type=&amp;#34;submit&amp;#34;&amp;gt;Checkout&amp;lt;/button&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; {{&amp;lt; /prism &amp;gt;}} All code blocks highlighted by Prism feature the Copy to Clipboard Button plugin.</description>
     </item>
     <item>
       <title>Markdownify</title>
       <link>/docs/demo/shortcodes/markdownify/</link>
-      <pubDate>Fri, 28 Apr 2023 16:35:15 +0000</pubDate>
+      <pubDate>Fri, 28 Apr 2023 16:35:15 +0000</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/demo/shortcodes/markdownify/</guid>
       <description>This shortcode parses its content as markdown.&#xA;Usage linkThe following:&#xA;{{&amp;lt; markdownify &amp;gt;}} **Bold Text**: Above a code block. ```html &amp;lt;!-- An example HTML code block --&amp;gt; &amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt; {{&amp;lt; /markdownify &amp;gt;}} Renders:&#xA;Bold Text: Above a code block.&#xA;&amp;lt;!-- An example HTML code block --&amp;gt; &amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt; Nested Shortcodes linkThe markdownify shortcode is especially useful in cases where you require portions of content nested inside another shortcode be parsed as Markdown.</description>
     </item>
     <item>
       <title>KaTex</title>
       <link>/docs/demo/shortcodes/katex/</link>
-      <pubDate>Sun, 27 Aug 2023 04:13:11 +0100</pubDate>
+      <pubDate>Sun, 27 Aug 2023 04:13:11 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>/docs/demo/shortcodes/katex/</guid>
       <description>Lotus Docs has built-in support for KaTex. However, there are certain equation syntaxes which do not render well if at all without a lot of character escaping1 or alterations. The KaTex shortcode is suited to handle such cases.&#xA;For example:&#xA;{{&amp;lt; katex &amp;gt;}} $$ \begin{array} {lcl} L(p,w_i) &amp;amp;=&amp;amp; \dfrac{1}{N}\Sigma_{i=1}^N(\underbrace{f_r(x_2 \rightarrow x_1 \rightarrow x_0)G(x_1 \longleftrightarrow x_2)f_r(x_3 \rightarrow x_2 \rightarrow x_1)}_{sample\, radiance\, evaluation\, in\, stage2} \\\\\\ &amp;amp;=&amp;amp; \prod_{i=3}^{k-1}(\underbrace{\dfrac{f_r(x_{i&amp;#43;1} \rightarrow x_i \rightarrow x_{i-1})G(x_i \longleftrightarrow x_{i-1})}{p_a(x_{i-1})}}_{stored\,in\,vertex\, during\,light\, path\, tracing\, in\, stage1})\dfrac{G(x_k \longleftrightarrow x_{k-1})L_e(x_k \rightarrow x_{k-1})}{p_a(x_{k-1})p_a(x_k)}) \end{array} $$ {{&amp;lt; /katex &amp;gt;}} renders as:</description>
     </item>
