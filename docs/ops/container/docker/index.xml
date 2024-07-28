@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Maxbit Docs</title>
+    <link>https://docs.cakepanit.com/docs/ops/container/docker/</link>
+    <description>Recent content in Docker on Maxbit Docs</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
+    <webMaster>admin@cakepanit.com (饼铛)</webMaster>
+    <lastBuildDate>Wed, 03 May 2023 22:37:22 +0100</lastBuildDate>
+    <atom:link href="https://docs.cakepanit.com/docs/ops/container/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.Docker镜像基本操作和介绍</title>
+      <link>https://docs.cakepanit.com/docs/ops/container/docker/1.docker%E9%95%9C%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/ops/container/docker/1.docker%E9%95%9C%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BB%8B%E7%BB%8D/</guid>
+      <description>Docker容器镜像 link一、Docker容器镜像操作 link2.1 查看本地容器镜像 link2.1.1 使用docker images命令查看 link # docker images REPOSITORY TAG IMAGE ID CREATED SIZE bash latest 5557e073f11c 2 weeks ago 13MB nginx latest 605c77e624dd 3 weeks ago 141MB centos latest 5d0da3dc9764 4 months ago 231MB 2.1.2 使用docker image命令查看 link # docker image list REPOSITORY TAG IMAGE ID CREATED SIZE bash latest 5557e073f11c 2 weeks ago 13MB nginx latest 605c77e624dd 3 weeks ago 141MB centos latest 5d0da3dc9764 4 months ago 231MB 2.</description>
+    </item>
+    <item>
+      <title>2.Docker容器镜像国内加速及本地容器镜像仓库搭建</title>
+      <link>https://docs.cakepanit.com/docs/ops/container/docker/2.docker%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/ops/container/docker/2.docker%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%E6%90%AD%E5%BB%BA/</guid>
+      <description>一、容器镜像加速器 link 由于国内访问国外的容器镜像仓库速度比较慢，因此国内企业创建了容器镜像加速器，以方便国内用户使用容器镜像。&#xA;1.1 获取阿里云容器镜像加速地址 link 1.2 配置docker daemon使用加速器 link 添加daemon.json配置文件 # vim /etc/docker/daemon.json # cat /etc/docker/daemon.json { &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://s27w6kze.mirror.aliyuncs.com&amp;#34;] } 重启docker # systemctl daemon-reload # systemctl restart docker 尝试下载容器镜像 # docker pull centos 二、容器镜像仓库 link2.1 docker hub link2.1.1 注册 link 准备邮箱及用户ID&#xA;2.1.2 登录 link 2.1.3 创建容器镜像仓库 link 2.1.4 在本地登录Docker Hub link 默认可以不添加docker hub容器镜像仓库地址 # docker login Login with your Docker ID to push and pull images from Docker Hub. If you don&amp;#39;t have a Docker ID, head over to https://hub.</description>
+    </item>
+    <item>
+      <title>3.Dockerfile介绍</title>
+      <link>https://docs.cakepanit.com/docs/ops/container/docker/3.dockerfile%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/ops/container/docker/3.dockerfile%E4%BB%8B%E7%BB%8D/</guid>
+      <description>一、容器与容器镜像之间的关系 link说到Docker管理的容器不得不说容器镜像，主要因为容器镜像是容器模板，通过容器镜像我们才能快速创建容器。&#xA;如下图所示：&#xA;Docker Daemon通过容器镜像创建容器。&#xA;二、容器镜像分类 link 操作系统类 CentOS Ubuntu 在dockerhub下载或自行制作 应用类 Tomcat Nginx MySQL Redis 三、容器镜像获取的方法 link主要有以下几种：&#xA;1、在DockerHub直接下载&#xA;2、把操作系统中文件系统打包为容器镜像&#xA;3、把正在运行的容器打包为容器镜像，即docker commit&#xA;4、通过Dockerfile实现容器镜像的自定义及生成&#xA;四、容器镜像获取方法演示 link4.1 在DockerHub直接下载 link # docker pull centos:latest # docker pull nginx:latest 4.2 把操作系统中文件系统打包为容器镜像 link4.2.1 安装一个最化的操作系统 link 4.2.2 把操作系统中文件系统进行打包 link # tar --numeric-owner --exclude=/proc --exclude=/sys -cvf centos7u6.tar / 4.2.3 把打包后文件加载至本地文件系统生成本地容器镜像 link # ls centos7u6.tar # docker import centos7u6.tar centos7u6:v1 # docker images REPOSITORY TAG IMAGE ID CREATED SIZE centos7u6 v1 130cb005b2dc 7 seconds ago 1.</description>
+    </item>
+  </channel>
+</rss>
