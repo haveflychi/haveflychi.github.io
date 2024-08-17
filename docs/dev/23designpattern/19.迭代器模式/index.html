@@ -321,6 +321,16 @@
                                                                 </li>
                                                             
                                                         
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/1.go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">1.Go的面向对象</a></li>
+                                                            
+                                                        
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/2.go%E7%9A%84%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">2.Go的并发编程</a></li>
+                                                            
+                                                        
                                                     </ul>
                                                 </div>
                                             </li>
@@ -2266,6 +2276,20 @@ func main() {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -2662,6 +2686,24 @@ func main() {
     index.add(
             {
                 id:  43 ,
+                href: "\/docs\/dev\/golang\/1.go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1\/",
+                title: "1.Go的面向对象",
+                description: "简单介绍一下封装、继承、多态、空接口、类型断言",
+                content: "封装 - 工厂模式 link golang的结构体没有构造函数，通常可以使用工厂模式来解决这个问题。 如果包里面的结构体变量首字母小写，引入后，不能直接使用，可以工厂模式解决。 只关心结果，不关心实现过程，因为过程是由封闭的工厂来实现的。 package demo //定义一个结构体 type student struct{ Name string score float64 } // *student返回结构体的指针 func NewStudent(name string, score float64) *student { //外包引用不了，但本包是可以引用的 stu := student{ Name : name, score : score, } return \u0026stu } // 结构体中的score字段也是小写所以需要写一个方法返回 func (s *student) GetScore() float64 { return s.score } func (s *student) SetScore(score float64) { s.score = score } package main import ( \"fmt\" \"go-demo/demo\" ) func main() { s := demo.NewStudent(\"Tony\", 60.5) fmt.Println(s) fmt.Println(s.GetScore()) s.SetScore(80) fmt.Println(s) // \u0026{Tony 60.5} // 60.5 // \u0026{Tony 80} } 继承 - struct嵌套 link 在golang中，采用匿名结构体字段来模拟继承关系。 这个时候，可以说Student是继承自Person。 package main import ( \"fmt\" ) type Person struct { name string age int sex string } func (Person) SayHello(){ fmt.Println(\"this is from Person\") } type Student struct { Person school string } func main() { stu := Student{school:\"middle\"} stu.name = \"leo\" stu.age = 30 fmt.Println(stu.name) stu.SayHello() } 多态 - Golang接口的定义 link1. Golang中的接口 link 在Go语言中接口（interface）是一种类型，一种抽象的类型。\n接口（interface）定义了一个对象的行为规范，只定义规范不实现，由具体的对象来实现规范的细节。\n实现接口的条件：\n一个对象只要全部实现了接口中的方法，那么就实现了这个接口。 换句话说，接口就是一个需要实现的方法列表。 2. 为什么要使用接口 link 下面的代码中定义了猫和狗，然后它们都会叫，你会发现main函数中明显有重复的代码。 如果我们后续再加上猪、青蛙等动物的话，我们的代码还会一直重复下去。 那我们能不能把它们当成“能叫的动物”来处理呢？ package main import ( \"fmt\" ) type Cat struct { Name string } func (c Cat) Say() string { return c.Name + \"：喵喵喵\" } type Dog struct { Name string } func (d Dog) Say() string { return d.Name + \": 汪汪汪\" } func main() { c := Cat{Name: \"小白猫\"} fmt.Println(c.Say()) d := Dog{\"阿黄\"} fmt.Println(d.Say()) } // 小白猫：喵喵喵 // 阿黄: 汪汪汪 3. 定义一个Usber接口 link 定义一个 Usber 接口让 Phone 和 Computer 结构体实现这个接口 package main import \"fmt\" // 1.接口是一个规范 type Usber interface { getName() string } // 2.如果接口里面有方法的话，必须要通过结构体或者通过自定义类型实现这个接口 type Phone struct { Name string } type Computer struct { Brand string } func (c *Computer) getName() string { return c.Brand } // 3.手机要实现usb接口的话必须得实现usb接口中的所有方法 func (p *Phone) getName() string { return p.Name } func main() { p := \u0026Phone{ Name: \"华为手机\", } c := \u0026Computer{ Brand: \"联想电脑\", } var p1 Usber // golang中接口就是一个数据类型 p1 = p // 表示手机实现Usb接口 fmt.Println(p1.getName()) // 接口使用场景，处理相同类型的数据 newName := transData(p) newName1 := transData(c) fmt.Println(newName, newName1) } func transData(usber Usber) string { name := usber.getName() return fmt.Sprintf(\"%s%s\", name, \"处理后\") } 空接口 link1. 空接口说明 link Golang中空接口也可以直接当做类型来使用，可以表示任意类型（泛型概念）。 Golang 中的接口可以不定义任何方法，没有定义任何方法的接口就是空接口。 空接口表示没有任何约束，因此任何类型变量都可以实现空接口。 空接口在实际项目中用得非常多，用空接口可以表示任意数据类型。 2. 空接口作为函数的参数 link package main import \"fmt\" // 空接口作为函数的参数 func show(a interface{}) { fmt.Printf(\"值:%v 类型:%T\\n\", a, a) } func main() { show(20) // 值:20 类型:int show(\"你好golang\") // 值:你好golang 类型:string slice := []int{1, 2, 34, 4} show(slice) // 值:[1 2 34 4] 类型:[]int } 3. 切片实现空接口 link package main import \"fmt\" func main() { var slice = []interface{}{\"张三\", 20, true, 32.2} fmt.Println(slice) // [张三 20 true 32.2] } 4. map 的值实现空接口 link package main import \"fmt\" func main() { // 空接口作为 map 值 var studentInfo = make(map[string]interface{}) studentInfo[\"name\"] = \"张三\" studentInfo[\"age\"] = 18 studentInfo[\"married\"] = false fmt.Println(studentInfo) // map[age:18 married:false name:张三] } 类型断言 link 一个接口的值（简称接口值）是由一个具体类型和具体类型的值两部分组成的。\n这两部分分别称为接口的动态类型和动态值。\n如果我们想要判断空接口中值的类型，那么这个时候就可以使用类型断言。\n其语法格式： x.(T)\nx : 表示类型为 interface{}的变量 T : 表示断言 x 可能是的类型 package main import \"fmt\" func main() { var x interface{} x = \"Hello golang\" v, ok := x.(string) if ok { fmt.Println(v) } else { fmt.Println(\"非字符串类型\") } } 值接收者和指针接收者 link1. 值接收者 link 当方法作用于值类型接收者时，Go语言会在代码运行时将接收者的值复制一份。 在值类型接收者的方法中可以获取接收者的成员值，但修改操作只是针对副本，无法修改接收者变量本身。 package main import \"fmt\" type Usb interface { Start() Stop() } type Phone struct { Name string } func (p Phone) Start() { fmt.Println(p.Name, \"开始工作\") } func (p Phone) Stop() { fmt.Println(p.Name, \"停止工作\") } func main() { phone1 := Phone{ Name: \"小米手机\", } var p1 Usb = phone1 // phone1 实现了 Usb 接口 p1.Start() // 输出: 小米手机 开始工作 phone2 := \u0026Phone{ Name: \"苹果手机\", } var p2 Usb = phone2 // phone2 实现了 Usb 接口 p2.Start() // 输出: 苹果手机 开始工作 } 2. 指针接收者 link 指针类型的接收者由一个结构体的指针组成。 由于指针的特性，调用方法时修改接收者指针的任意成员变量，在方法结束后，修改都是有效的。 这种方式就十分接近于其他语言中面向对象中的 this 或者 self。 例如我们为 Person 添加一个 SetAge 方法，来修改实例变量的年龄。 3. 指针类型接收者 使用时机 link 并不是所有情况下都希望修改数据： 需要修改接收者中的值 接收者是拷贝代价比较大的大对象 保证一致性，如果有某个方法使用了指针接收者，那么其他的方法也应该使用指针接收者。 "
+            }
+        );
+    index.add(
+            {
+                id:  44 ,
+                href: "\/docs\/dev\/golang\/2.go%E7%9A%84%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B\/",
+                title: "2.Go的并发编程",
+                description: "简单介绍一下并发协程、管道、并发锁等",
+                content: "并发介绍 link 并发和并行 并发：本质还是串行 食堂窗口一个大妈（同一时间类只能给一个人打饭） Python 本质没有并行的线程 并行：任务分布在不同 CPU 上，同一时间点同时执行 并行就是有多个食堂大妈，同时给不同人打饭 协程和线程 协程：独立的栈空间，共享堆空间，调度由用户自己控制，本质上有点类似于用户级线程，这些用户级线程的调度也是自己实现的 线程：一个线程上可以跑多个协程，协程是轻量级的线程。 线程和协程最大的区别： 开启一个线程需要大概 2M 空间，而且需要 CPU 调度才能执行，线程会强占 CPU 开启一个协程大概只需要 2K 的空间，而且是由 Go 解释器自己实现的 GPM 调度，主动退出 可以同时启动成千上万个 goroutine 而不会过度占用内存 如果开启成千上万个线程，不仅会大量占用内存，甚至导致机器崩溃；操作系统调度线程也需要耗费大量时间 协程如果需要用 CPU 才会去使用 CPU，如果没有使用 CPU 的需求，它就会主动把 CPU 让给其他协程执行 线程在时间片内，即使不使用 CPU，比如当前正在从磁盘读数据，它也不会让出 CPU goroutine link 多线程编程缺点\n在 Java/C++ 中我们要实现并发编程时，通常需要自己维护一个线程池，并且需要自己去包装一个又一个的任务，同时需要自己去调度线程执行任务并维护上下文切换 goroutine\nGo 语言中的 goroutine 是由 Go 的运行时（runtime）调度和管理的。 Go 程序会智能地将 goroutine 中的任务合理地分配给每个 CPU。 Go 语言之所以被称为现代化的编程语言，就是因为它在语言层面已经内置了调度和上下文切换的机制。 在 Go 语言编程中，你不需要自己写进程、线程、协程，你的技能包里只有一个技能 —— goroutine 当你需要让某个任务并发执行时，只需将该任务包装成一个函数，并开启一个 goroutine 去执行该函数即可。 协程基本使用 link 启动一个协程\n主线程中每 100 毫秒打印一次，总共打印 2 次，同时开启一个协程打印 10 次 package main import ( \"fmt\" \"time\" ) func test() { for i := 0; i \u003c 10; i++ { fmt.Println(\"test() 你好golang\") time.Sleep(time.Millisecond * 100) } } func main() { go test() // 表示开启一个协程 for i := 0; i \u003c 2; i++ { fmt.Println(\"main() 你好golang\") time.Sleep(time.Millisecond * 100) } } WaitGroup\n主线程退出后所有的协程无论有没有执行完毕都会退出。所以我们在主进程中可以通过 WaitGroup 等待协程执行完毕。\nsync.WaitGroup 内部维护着一个计数器，计数器的值可以增加和减少。\n例如当我们启动了 N 个并发任务时，就将计数器值增加 N。\n每个任务完成时通过调用 Done() 方法将计数器减 1。\n通过调用 Wait() 来等待并发任务执行完，当计数器值为 0 时，表示所有并发任务已经完成。\nvar wg sync.WaitGroup // 第一步：定义一个计数器 wg.Add(1) // 第二步：开启一个协程计数器+1 wg.Done() // 第三步：协程执行完毕，计数器-1 wg.Wait() // 第四步：计数器为0时退出 package main import ( \"fmt\" \"sync\" \"time\" ) var wg sync.WaitGroup // 第一步：定义一个计数器 func test1() { for i := 0; i \u003c 10; i++ { fmt.Println(\"test1() 你好golang-\", i) time.Sleep(time.Millisecond * 100) } wg.Done() //协程计数器-1 // 第三步：协程执行完毕，计数器-1 } func test2() { for i := 0; i \u003c 2; i++ { fmt.Println(\"test2() 你好golang-\", i) time.Sleep(time.Millisecond * 100) } wg.Done() //协程计数器-1 } func main() { wg.Add(1) //协程计数器+1 第二步：开启一个协程计数器+1 go test1() // 表示开启一个协程 wg.Add(1) //协程计数器+1 go test2() // 表示开启一个协程 wg.Wait() //等待协程执行完毕 // 第四步：计数器为0时退出 fmt.Println(\"主线程退出\") } 开启多个协程\n在 Go 语言中实现并发非常简单，可以轻松启动多个 goroutine，并使用 sync.WaitGroup 等待它们执行完毕。多次执行上面的代码，会发现每次打印的数字顺序都不一致。这是因为 10 个 goroutine 是并发执行的，而 goroutine 的调度是随机的。 package main import ( \"fmt\" \"sync\" ) var wg sync.WaitGroup func hello(i int) { defer wg.Done() // goroutine结束就登记-1 fmt.Println(\"Hello Goroutine!\", i) } func main() { for i := 0; i \u003c 10; i++ { wg.Add(1) // 启动一个goroutine就登记+1 go hello(i) } wg.Wait() // 等待所有登记的goroutine都结束 } channel link Channel说明\n共享内存交互数据弊端\n单纯地将函数并发执行是没有意义的。函数与函数间需要交换数据才能体现并发执行的意义。 虽然可以使用共享内存进行数据交换，但是共享内存在不同的 goroutine 中容易发生竞态问题。 为了保证数据交换的正确性，必须使用互斥量对内存进行加锁，这种做法势必造成性能问题。 Channel好处\nGo 语言中的通道（channel）是一种特殊的类型。 通道像一个传送带或者队列，总是遵循先入先出（FIFO）的规则，保证收发数据的顺序。 每一个通道都是一个具体类型的导管，也就是声明 channel 的时候需要为其指定元素类型。 如果说 goroutine 是 Go 程序并发的执行体，channel 就是它们之间的连接。 Channel 是可以让一个 goroutine 发送特定值到另一个 goroutine 的通信机制。 Channel类型\nChannel 是一种类型，一种引用类型。声明管道类型的格式如下: var 变量 chan 元素类型 var ch1 chan int // 声明一个传递整型的管道 var ch2 chan bool // 声明一个传递布尔型的管道 var ch3 chan []int // 声明一个传递 int 切片的管道 创建channel\n声明的管道后需要使用 make 函数初始化之后才能使用。创建 channel 的格式如下： make(chan 元素类型, 容量) // 创建一个能存储 10 个 int 类型数据的管道 ch1 := make(chan int, 10) // 创建一个能存储 4 个 bool 类型数据的管道 ch2 := make(chan bool, 4) // 创建一个能存储 3 个[]int 切片类型数据的管道 ch3 := make(chan []int, 3) Channel操作 package main import \"fmt\" func main() { // 1、创建channel ch := make(chan int, 5) // 2、向channel放入数据 ch \u003c- 10 ch \u003c- 12 fmt.Println(\"发送成功\", ch) // 3、向channel取值 v1 := \u003c-ch fmt.Println(v1) v2 := \u003c-ch fmt.Println(v2) // 4、空channel取值报错 v3 := \u003c-ch fmt.Println(\"v3\", v3) } 优雅的从Channel取值\n当通过通道发送有限的数据时，可以通过 close 函数关闭通道来告知从该通道接收值的 goroutine 停止等待。当通道被关闭时，往该通道发送值会引发 panic，从该通道里接收的值一直都是类型零值。可以通过 for range 的方式判断通道是否关闭。 package main import \"fmt\" func main() { ch := make(chan int, 5) ch \u003c- 10 ch \u003c- 12 ch \u003c- 14 ch \u003c- 16 ch \u003c- 18 close(ch) for i := range ch { // 通道关闭后会退出for range循环 fmt.Println(i) } } Goroutine和Channel小案例\n请完成 goroutine 和 channel 协同工作的案例，具体要求： 开启一个 writeData 协程，向管道 intChan 中写入 50 个整数。 开启一个 readData 协程，从管道 intChan 中读取 writeData 写入的数据。 注意：writeData 和 readDate 操作的是同一个管道。 主线程需要等待 writeData 和 readData 协程都完成工作才能退出。 package main import ( \"fmt\" ) //write Data func writeData(intChan chan int) { for i := 1; i \u003c= 50; i++ { //放入数据 intChan \u003c- i fmt.Println(\"writeData \", i) } close(intChan) //关闭 } //read data func readData(intChan chan int, exitChan chan bool) { for { v, ok := \u003c-intChan if !ok { break } fmt.Printf(\"readData 读到数据=%v\\n\", v) } //readData 读取完数据后，即任务完成 exitChan \u003c- true close(exitChan) } func main() { //创建两个管道 intChan := make(chan int, 10) exitChan := make(chan bool, 1) go writeData(intChan) go readData(intChan, exitChan) for { _, ok := \u003c-exitChan if !ok { break } } } Select 多路复用 link Select说明\n传统的方法在遍历管道时，如果不关闭会阻塞而导致 deadlock，在实际开发中，可能我们不好确定什么时候关闭该管道。这种 for range 方式虽然可以实现从多个管道接收值的需求，但是运行性能会差很多。为了应对这种场景，Go 内置了 select 关键字，可以同时响应多个管道的操作。 select 的使用类似于 switch 语句，它有一系列 case 分支和一个默认的分支。每个 case 会对应一个管道的通信（接收或发送）过程。select 会一直等待，直到某个 case 的通信操作完成时，就会执行 case 分支对应的语句。 具体格式如下： select { case v := \u003c-chan1: // 如果chan1成功读到数据，则进行该case处理语句 case chan2 \u003c- 1: // 如果成功向chan2写入数据，则进行该case处理语句 default: // 如果上面都没有成功，则进入default处理流程 } Select的使用\n使用 select 语句能提高代码的可读性。可处理一个或多个 channel 的发送/接收操作。如果多个 case 同时满足，select 会随机选择一个。对于没有 case 的 select{} 会一直等待，可用于阻塞 main 函数。 package main import ( \"fmt\" ) func main() { // 在某些场景下我们需要同时从多个通道接收数据,这个时候就可以用到golang中给我们提供的select多路复用 //1.定义一个管道 10个数据int intChan := make(chan int, 10) for i := 0; i \u003c 10; i++ { intChan \u003c- i } //2.定义一个管道 5个数据string stringChan := make(chan string, 5) for i := 0; i \u003c 5; i++ { stringChan \u003c- \"hello\" + fmt.Sprintf(\"%d\", i) } // 使用select来获取channel里面的数据的时候不需要关闭channel for { select { case v := \u003c-intChan: fmt.Printf(\"从 intChan 读取的数据%d\\n\", v) case v := \u003c-stringChan: fmt.Printf(\"从 stringChan 读取的数据%v\\n\", v) default: fmt.Printf(\"数据获取完毕\") return // 注意退出 } } } 互斥锁 link 互斥锁是一种常用的控制共享资源访问的方法，它能够保证同时只有一个 goroutine 可以访问共享资源。 Go 语言中使用 sync 包的 Mutex 类型来实现互斥锁。 在多核的系统中，这 1000 个协程被分配到多个线程里面运行，那么就有可能是并行运行的。 比如当前的 num=987，后面两个线程同时执行，那么结果就是 988，但是这不是我们想要的结果，我们想要的是 999。 如何解决？其实可以通过互斥锁来保证代码在并发运行时，只有一个线程可以修改 num 的值。 package main import ( \"fmt\" \"sync\" ) var num int var mtx sync.Mutex var wg sync.WaitGroup func add() { defer wg.Done() mtx.Lock() num += 1 mtx.Unlock() } func main() { for i := 0; i \u003c 1000; i++ { wg.Add(1) go add() } wg.Wait() fmt.Println(\"num:\", num) } "
+            }
+        );
+    index.add(
+            {
+                id:  45 ,
                 href: "\/docs\/ops\/kubernetes\/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -2670,7 +2712,7 @@ func main() {
         );
     index.add(
             {
-                id:  44 ,
+                id:  46 ,
                 href: "\/docs\/ops\/kubernetes\/2.kubernetes-v1.30.2%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "2.Kubernetes-v1.30.2高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -2679,7 +2721,7 @@ func main() {
         );
     index.add(
             {
-                id:  45 ,
+                id:  47 ,
                 href: "\/docs\/ops\/kubernetes\/3.%E5%8D%87%E7%BA%A7%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2%E7%9A%84kubernetes%E9%9B%86%E7%BE%A4\/",
                 title: "3.升级二进制部署的kubernetes集群",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化应用，Kubernetes的目标是让部署容器化的应用简单并且高效，Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -2688,7 +2730,7 @@ func main() {
         );
     index.add(
             {
-                id:  46 ,
+                id:  48 ,
                 href: "\/docs\/ops\/kubernetes\/4.kubernetes%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D\/",
                 title: "4.Kubernetes核心概念介绍",
                 description: "本文介绍kubernetes中一些核心概念，如：pod、工作负载、service、kube-proxy代理模式等",
@@ -2697,7 +2739,7 @@ func main() {
         );
     index.add(
             {
-                id:  47 ,
+                id:  49 ,
                 href: "\/docs\/ops\/container\/1.%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E6%89%80%E6%B6%89%E5%8F%8A%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF\/",
                 title: "1.容器技术所涉及的Linux内核关键技术",
                 description: "容器的前世今生",
@@ -2706,7 +2748,7 @@ func main() {
         );
     index.add(
             {
-                id:  48 ,
+                id:  50 ,
                 href: "\/docs\/ops\/container\/containerd\/1.containerd%E8%BD%BB%E9%87%8F%E7%BA%A7or%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7\/",
                 title: "1.Containerd轻量级or工业级的容器管理工具",
                 description: "Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。",
@@ -2715,7 +2757,7 @@ func main() {
         );
     index.add(
             {
-                id:  49 ,
+                id:  51 ,
                 href: "\/docs\/ops\/container\/docker\/1.docker%E9%95%9C%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BB%8B%E7%BB%8D\/",
                 title: "1.Docker镜像基本操作和介绍",
                 description: "Docker镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。",
@@ -2724,7 +2766,7 @@ func main() {
         );
     index.add(
             {
-                id:  50 ,
+                id:  52 ,
                 href: "\/docs\/ops\/container\/docker\/2.docker%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%E6%90%AD%E5%BB%BA\/",
                 title: "2.Docker容器镜像国内加速及本地容器镜像仓库搭建",
                 description: "众所周知的原因和解决方案",
@@ -2733,7 +2775,7 @@ func main() {
         );
     index.add(
             {
-                id:  51 ,
+                id:  53 ,
                 href: "\/docs\/ops\/container\/docker\/3.dockerfile%E4%BB%8B%E7%BB%8D\/",
                 title: "3.Dockerfile介绍",
                 description: "学习制作docker镜像",
@@ -2742,7 +2784,7 @@ func main() {
         );
     index.add(
             {
-                id:  52 ,
+                id:  54 ,
                 href: "\/docs\/ops\/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8\/",
                 title: "1.Nginx配置小全",
                 description: "Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；",
@@ -2751,7 +2793,7 @@ func main() {
         );
     index.add(
             {
-                id:  53 ,
+                id:  55 ,
                 href: "\/docs\/demo\/features\/",
                 title: "Features",
                 description: "A guide to the core features of the Lotus Docs theme.",
@@ -2760,7 +2802,7 @@ func main() {
         );
     index.add(
             {
-                id:  54 ,
+                id:  56 ,
                 href: "\/docs\/dev\/golang\/fyne\/project\/",
                 title: "项目案例",
                 description: "使用Fyne实现几个项目",
@@ -2769,7 +2811,7 @@ func main() {
         );
     index.add(
             {
-                id:  55 ,
+                id:  57 ,
                 href: "\/docs\/demo\/features\/syntax-highlighting\/",
                 title: "Syntax Highlighting",
                 description: "How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma).",
@@ -2778,7 +2820,7 @@ func main() {
         );
     index.add(
             {
-                id:  56 ,
+                id:  58 ,
                 href: "\/docs\/demo\/features\/katex\/",
                 title: "KaTex",
                 description: "Fast Tex math rendering for your Lotus Docs site",
@@ -2787,7 +2829,7 @@ func main() {
         );
     index.add(
             {
-                id:  57 ,
+                id:  59 ,
                 href: "\/docs\/demo\/features\/mermaid\/",
                 title: "Mermaid",
                 description: "How to use the Mermaid diagramming and chart tool with Lotus Docs",
@@ -2796,7 +2838,7 @@ func main() {
         );
     index.add(
             {
-                id:  58 ,
+                id:  60 ,
                 href: "\/docs\/demo\/shortcodes\/",
                 title: "Shortcodes",
                 description: "Lotus Docs Custom Shortcodes.",
@@ -2805,7 +2847,7 @@ func main() {
         );
     index.add(
             {
-                id:  59 ,
+                id:  61 ,
                 href: "\/docs\/demo\/shortcodes\/alerts\/",
                 title: "Alerts",
                 description: "How to use Alert Shortcodes to render custom page alerts in markdown.",
@@ -2814,7 +2856,7 @@ func main() {
         );
     index.add(
             {
-                id:  60 ,
+                id:  62 ,
                 href: "\/docs\/demo\/shortcodes\/tables\/",
                 title: "Tables",
                 description: "How to use the Lotus Docs table shortcode to render great looking markdown tables",
@@ -2823,7 +2865,7 @@ func main() {
         );
     index.add(
             {
-                id:  61 ,
+                id:  63 ,
                 href: "\/docs\/demo\/shortcodes\/tabs\/",
                 title: "Tabs",
                 description: "How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs",
@@ -2832,7 +2874,7 @@ func main() {
         );
     index.add(
             {
-                id:  62 ,
+                id:  64 ,
                 href: "\/docs\/demo\/shortcodes\/prism\/",
                 title: "Prism",
                 description: "How to use the Prism Shortcode for syntax highlighting code blocks.",
@@ -2841,7 +2883,7 @@ func main() {
         );
     index.add(
             {
-                id:  63 ,
+                id:  65 ,
                 href: "\/docs\/demo\/shortcodes\/markdownify\/",
                 title: "Markdownify",
                 description: "A simple shortcode to render content as Markdown.",
@@ -2850,7 +2892,7 @@ func main() {
         );
     index.add(
             {
-                id:  64 ,
+                id:  66 ,
                 href: "\/docs\/demo\/shortcodes\/katex\/",
                 title: "KaTex",
                 description: "A Shortcode to render KaTex syntax in your Lotus Docs site",

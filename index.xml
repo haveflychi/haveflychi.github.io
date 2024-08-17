@@ -228,6 +228,20 @@
       <description>全部代码 link package main import ( &amp;#34;time&amp;#34; &amp;#34;fyne.io/fyne/v2&amp;#34; &amp;#34;fyne.io/fyne/v2/app&amp;#34; &amp;#34;fyne.io/fyne/v2/container&amp;#34; &amp;#34;fyne.io/fyne/v2/dialog&amp;#34; &amp;#34;fyne.io/fyne/v2/widget&amp;#34; ) func main() { // 创建一个 Fyne 应用 a := app.New() // 创建一个窗口 customFont := fyne.NewStaticResource(&amp;#34;NotoSansHans.ttf&amp;#34;, loadFont(&amp;#34;NotoSansHans-Regular.ttf&amp;#34;)) a.Settings().SetTheme(&amp;amp;myTheme{font: customFont}) win := a.NewWindow(&amp;#34;高端检测器&amp;#34;) // 创建一个按钮 btn := widget.NewButton(&amp;#34;检测是否开机&amp;#34;, func() { // 创建一个进度条 progress := widget.NewProgressBarInfinite() progressContainer := container.NewVBox(progress) // 显示加载动画 loadingDialog := dialog.NewCustom(&amp;#34;正在检测...&amp;#34;, &amp;#34;取消&amp;#34;, progressContainer, win) loadingDialog.Show() // 模拟加载时间 go func(){ time.Sleep(10 * time.Second) // 10 秒模拟加载时间 // 关闭加载动画并弹出结果窗口 loadingDialog.</description>
     </item>
     <item>
+      <title>1.Go的面向对象</title>
+      <link>https://docs.cakepanit.com/docs/dev/golang/1.go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/1.go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>封装 - 工厂模式 link golang的结构体没有构造函数，通常可以使用工厂模式来解决这个问题。 如果包里面的结构体变量首字母小写，引入后，不能直接使用，可以工厂模式解决。 只关心结果，不关心实现过程，因为过程是由封闭的工厂来实现的。 package demo //定义一个结构体 type student struct{ Name string score float64 } // *student返回结构体的指针 func NewStudent(name string, score float64) *student { //外包引用不了，但本包是可以引用的 stu := student{ Name : name, score : score, } return &amp;amp;stu } // 结构体中的score字段也是小写所以需要写一个方法返回 func (s *student) GetScore() float64 { return s.score } func (s *student) SetScore(score float64) { s.score = score } package main import ( &amp;#34;fmt&amp;#34; &amp;#34;go-demo/demo&amp;#34; ) func main() { s := demo.</description>
+    </item>
+    <item>
+      <title>2.Go的并发编程</title>
+      <link>https://docs.cakepanit.com/docs/dev/golang/2.go%E7%9A%84%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/2.go%E7%9A%84%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</guid>
+      <description>并发介绍 link 并发和并行 并发：本质还是串行 食堂窗口一个大妈（同一时间类只能给一个人打饭） Python 本质没有并行的线程 并行：任务分布在不同 CPU 上，同一时间点同时执行 并行就是有多个食堂大妈，同时给不同人打饭 协程和线程 协程：独立的栈空间，共享堆空间，调度由用户自己控制，本质上有点类似于用户级线程，这些用户级线程的调度也是自己实现的 线程：一个线程上可以跑多个协程，协程是轻量级的线程。 线程和协程最大的区别： 开启一个线程需要大概 2M 空间，而且需要 CPU 调度才能执行，线程会强占 CPU 开启一个协程大概只需要 2K 的空间，而且是由 Go 解释器自己实现的 GPM 调度，主动退出 可以同时启动成千上万个 goroutine 而不会过度占用内存 如果开启成千上万个线程，不仅会大量占用内存，甚至导致机器崩溃；操作系统调度线程也需要耗费大量时间 协程如果需要用 CPU 才会去使用 CPU，如果没有使用 CPU 的需求，它就会主动把 CPU 让给其他协程执行 线程在时间片内，即使不使用 CPU，比如当前正在从磁盘读数据，它也不会让出 CPU goroutine link 多线程编程缺点&#xA;在 Java/C++ 中我们要实现并发编程时，通常需要自己维护一个线程池，并且需要自己去包装一个又一个的任务，同时需要自己去调度线程执行任务并维护上下文切换 goroutine&#xA;Go 语言中的 goroutine 是由 Go 的运行时（runtime）调度和管理的。 Go 程序会智能地将 goroutine 中的任务合理地分配给每个 CPU。 Go 语言之所以被称为现代化的编程语言，就是因为它在语言层面已经内置了调度和上下文切换的机制。 在 Go 语言编程中，你不需要自己写进程、线程、协程，你的技能包里只有一个技能 —— goroutine 当你需要让某个任务并发执行时，只需将该任务包装成一个函数，并开启一个 goroutine 去执行该函数即可。 协程基本使用 link 启动一个协程</description>
+    </item>
+    <item>
       <title>1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4&#43;IPv6双栈)</title>
       <link>https://docs.cakepanit.com/docs/ops/kubernetes/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>

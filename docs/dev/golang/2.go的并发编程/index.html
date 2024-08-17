@@ -16,9 +16,9 @@
 
 <html lang="zh-CN"><head>
     <meta charset="utf-8" />
-    <title>1.容器技术所涉及的Linux内核关键技术 | Maxbit Docs</title>
+    <title>2.Go的并发编程 | Maxbit Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="容器的前世今生">
+    <meta name="description" content="简单介绍一下并发协程、管道、并发锁等">
     <meta name="keywords" content="Maxbit,上海大比特,DBA,SRE,Go,Golang,Linux,运维,系统运维,自动化运维,分布式,高可用,负载均衡,老菜鸟,Docker,k8s,虚拟化,云计算,DevOps,CI&#x2F;CD,network,system,存储" />
     <meta name="author" content="饼铛" />
     <meta name="email" content="admin@cakepanit.com" />
@@ -31,15 +31,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.cakepanit.com/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.cakepanit.com/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://docs.cakepanit.com/site.webmanifest">
-<meta property="og:title" content="1.容器技术所涉及的Linux内核关键技术" />
-<meta property="og:description" content="容器的前世今生" />
+<meta property="og:title" content="2.Go的并发编程" />
+<meta property="og:description" content="简单介绍一下并发协程、管道、并发锁等" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://docs.cakepanit.com/docs/ops/container/1.%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E6%89%80%E6%B6%89%E5%8F%8A%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_151332850901868719.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/golang/2.go%E7%9A%84%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_18081897852420908807.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
 <meta property="article:modified_time" content="2023-05-03T22:37:22+01:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_151332850901868719.png"/>
-<meta name="twitter:title" content="1.容器技术所涉及的Linux内核关键技术"/>
-<meta name="twitter:description" content="容器的前世今生"/>
+<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_18081897852420908807.png"/>
+<meta name="twitter:title" content="2.Go的并发编程"/>
+<meta name="twitter:description" content="简单介绍一下并发协程、管道、并发锁等"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -112,12 +112,12 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  ">
+                        <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">Code</i>
                                 DEV
                             </button>
-                            <div class="sidebar-submenu ">
+                            <div class="sidebar-submenu d-block">
                                 <ul>
                                     
                                         
@@ -252,12 +252,12 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  ">
+                                            <li class="sidebar-dropdown nested  current active">
                                                 <button class="btn">
                                                     
                                                     Golang
                                                 </button>
-                                                <div class="sidebar-submenu ">
+                                                <div class="sidebar-submenu d-block">
                                                     <ul>
                                                         
                                                             
@@ -328,7 +328,7 @@
                                                         
                                                             
                                                             
-                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/2.go%E7%9A%84%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">2.Go的并发编程</a></li>
+                                                                <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/2.go%E7%9A%84%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">2.Go的并发编程</a></li>
                                                             
                                                         
                                                     </ul>
@@ -343,12 +343,12 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  current active">
+                        <li class="sidebar-dropdown  ">
                             <button class="btn">
                                 <i class="material-icons me-2">cloud_done</i>
                                 OPS
                             </button>
-                            <div class="sidebar-submenu d-block">
+                            <div class="sidebar-submenu ">
                                 <ul>
                                     
                                         
@@ -388,12 +388,12 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  current active">
+                                            <li class="sidebar-dropdown nested  ">
                                                 <button class="btn">
                                                     
                                                     Container
                                                 </button>
-                                                <div class="sidebar-submenu d-block">
+                                                <div class="sidebar-submenu ">
                                                     <ul>
                                                         
                                                             
@@ -448,7 +448,7 @@
                                                         
                                                             
                                                             
-                                                                <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/ops/container/1.%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E6%89%80%E6%B6%89%E5%8F%8A%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF/">1.容器技术所涉及的Linux内核关键技术</a></li>
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/ops/container/1.%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E6%89%80%E6%B6%89%E5%8F%8A%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF/">1.容器技术所涉及的Linux内核关键技术</a></li>
                                                             
                                                         
                                                     </ul>
@@ -712,23 +712,23 @@
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/ops/">
-                        <span itemprop="name">OPS</span>
+                    <a itemprop="item" href="/docs/dev/">
+                        <span itemprop="name">DEV</span>
                     </a>
                     <meta itemprop="position" content='2' />
                 </li>
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/ops/container/">
-                        <span itemprop="name">Container</span>
+                    <a itemprop="item" href="/docs/dev/golang/">
+                        <span itemprop="name">Golang</span>
                     </a>
                     <meta itemprop="position" content='3' />
                 </li>
             
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">1.容器技术所涉及的Linux内核关键技术</span>
+                <span itemprop="name">2.Go的并发编程</span>
                 <meta itemprop="position" content='4' />
             </li>
         
@@ -741,49 +741,16 @@
     <div class="fw-bold text-uppercase mb-2">On this page</div>
     <nav id="toc">
   <ul>
-    <li><a href="#1-容器技术前世今生">1. 容器技术前世今生</a>
+    <li>
       <ul>
-        <li><a href="#11-1979年--chroot">1.1 1979年 — chroot</a></li>
-        <li><a href="#12-2000年--freebsd-jails">1.2 2000年 — FreeBSD Jails</a></li>
-        <li><a href="#13-2001年--linux-vserver">1.3 2001年 — Linux VServer</a></li>
-        <li><a href="#14-2004年--solaris容器">1.4 2004年 — Solaris容器</a></li>
-        <li><a href="#15-2005年--openvz">1.5 2005年 — OpenVZ</a></li>
-        <li><a href="#16-2006年--process容器">1.6 2006年 — Process容器</a></li>
-        <li><a href="#17-2007年--control-groups">1.7 2007年 — Control Groups</a></li>
-        <li><a href="#18-2008年--lxc">1.8 2008年 — LXC</a></li>
-        <li><a href="#19-2011年--warden">1.9 2011年 — Warden</a></li>
-        <li><a href="#110-2013年--lmctfy">1.10 2013年 — LMCTFY</a></li>
-        <li><a href="#111-2013年-docker">1.11 2013年-Docker</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-namespace">2. NameSpace</a>
-      <ul>
-        <li><a href="#21-namespace介绍">2.1 NameSpace介绍</a></li>
-        <li><a href="#22-linux系统中namespace分类">2.2 Linux系统中NameSpace分类</a></li>
-        <li><a href="#23-namespace应用案例">2.3 NameSpace应用案例</a>
+        <li>
           <ul>
-            <li><a href="#231-创建net命名空间">2.3.1 创建net命名空间</a></li>
-            <li><a href="#232-删除net命名空间">2.3.2 删除net命名空间</a></li>
-            <li><a href="#233-在net命名空间中执行命令">2.3.3 在net命名空间中执行命令</a></li>
-            <li><a href="#234-在net命令空间中执行查看网络连接网卡命令">2.3.4 在net命令空间中执行查看网络连接(网卡)命令</a></li>
-            <li><a href="#235-退出当前的net命名空间">2.3.5 退出当前的net命名空间</a></li>
-            <li><a href="#236-在net命名空间中执行多条命令">2.3.6 在net命名空间中执行多条命令</a></li>
-            <li><a href="#237-创建虚拟网卡">2.3.7 创建虚拟网卡</a></li>
-            <li><a href="#238-迁移虚拟网卡到命名空间中">2.3.8 迁移虚拟网卡到命名空间中</a></li>
-            <li><a href="#239-命名空间中迁出虚拟网卡">2.3.9 命名空间中迁出虚拟网卡</a></li>
-            <li><a href="#2310-配置虚拟网卡ip地址">2.3.10 配置虚拟网卡IP地址</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#3-cgroups">3. CGroups</a>
-      <ul>
-        <li><a href="#31-cgroups介绍">3.1 CGroups介绍</a></li>
-        <li><a href="#32-cgroups功能">3.2 CGroups功能</a></li>
-        <li><a href="#33-cgroups应用案例">3.3 CGroups应用案例</a>
-          <ul>
-            <li><a href="#331-安装及开启服务">3.3.1 安装及开启服务</a></li>
-            <li><a href="#332-限制进程使用cpu">3.3.2 限制进程使用CPU</a></li>
+            <li><a href="#并发介绍">并发介绍</a></li>
+            <li><a href="#goroutine">goroutine</a></li>
+            <li><a href="#协程基本使用">协程基本使用</a></li>
+            <li><a href="#channel">channel</a></li>
+            <li><a href="#select-多路复用">Select 多路复用</a></li>
+            <li><a href="#互斥锁">互斥锁</a></li>
           </ul>
         </li>
       </ul>
@@ -799,49 +766,16 @@
                                             </button>
 <nav id="toc-mobile">
   <ul class="dropdown-menu">
-    <li><a href="#1-容器技术前世今生">1. 容器技术前世今生</a>
+    <li>
       <ul>
-        <li><a href="#11-1979年--chroot">1.1 1979年 — chroot</a></li>
-        <li><a href="#12-2000年--freebsd-jails">1.2 2000年 — FreeBSD Jails</a></li>
-        <li><a href="#13-2001年--linux-vserver">1.3 2001年 — Linux VServer</a></li>
-        <li><a href="#14-2004年--solaris容器">1.4 2004年 — Solaris容器</a></li>
-        <li><a href="#15-2005年--openvz">1.5 2005年 — OpenVZ</a></li>
-        <li><a href="#16-2006年--process容器">1.6 2006年 — Process容器</a></li>
-        <li><a href="#17-2007年--control-groups">1.7 2007年 — Control Groups</a></li>
-        <li><a href="#18-2008年--lxc">1.8 2008年 — LXC</a></li>
-        <li><a href="#19-2011年--warden">1.9 2011年 — Warden</a></li>
-        <li><a href="#110-2013年--lmctfy">1.10 2013年 — LMCTFY</a></li>
-        <li><a href="#111-2013年-docker">1.11 2013年-Docker</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-namespace">2. NameSpace</a>
-      <ul>
-        <li><a href="#21-namespace介绍">2.1 NameSpace介绍</a></li>
-        <li><a href="#22-linux系统中namespace分类">2.2 Linux系统中NameSpace分类</a></li>
-        <li><a href="#23-namespace应用案例">2.3 NameSpace应用案例</a>
+        <li>
           <ul>
-            <li><a href="#231-创建net命名空间">2.3.1 创建net命名空间</a></li>
-            <li><a href="#232-删除net命名空间">2.3.2 删除net命名空间</a></li>
-            <li><a href="#233-在net命名空间中执行命令">2.3.3 在net命名空间中执行命令</a></li>
-            <li><a href="#234-在net命令空间中执行查看网络连接网卡命令">2.3.4 在net命令空间中执行查看网络连接(网卡)命令</a></li>
-            <li><a href="#235-退出当前的net命名空间">2.3.5 退出当前的net命名空间</a></li>
-            <li><a href="#236-在net命名空间中执行多条命令">2.3.6 在net命名空间中执行多条命令</a></li>
-            <li><a href="#237-创建虚拟网卡">2.3.7 创建虚拟网卡</a></li>
-            <li><a href="#238-迁移虚拟网卡到命名空间中">2.3.8 迁移虚拟网卡到命名空间中</a></li>
-            <li><a href="#239-命名空间中迁出虚拟网卡">2.3.9 命名空间中迁出虚拟网卡</a></li>
-            <li><a href="#2310-配置虚拟网卡ip地址">2.3.10 配置虚拟网卡IP地址</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#3-cgroups">3. CGroups</a>
-      <ul>
-        <li><a href="#31-cgroups介绍">3.1 CGroups介绍</a></li>
-        <li><a href="#32-cgroups功能">3.2 CGroups功能</a></li>
-        <li><a href="#33-cgroups应用案例">3.3 CGroups应用案例</a>
-          <ul>
-            <li><a href="#331-安装及开启服务">3.3.1 安装及开启服务</a></li>
-            <li><a href="#332-限制进程使用cpu">3.3.2 限制进程使用CPU</a></li>
+            <li><a href="#并发介绍">并发介绍</a></li>
+            <li><a href="#goroutine">goroutine</a></li>
+            <li><a href="#协程基本使用">协程基本使用</a></li>
+            <li><a href="#channel">channel</a></li>
+            <li><a href="#select-多路复用">Select 多路复用</a></li>
+            <li><a href="#互斥锁">互斥锁</a></li>
           </ul>
         </li>
       </ul>
@@ -851,136 +785,564 @@
                                         <div class="docs-content col-12 col-xl-9 mt-0">
                                             <div class="mb-0 d-flex">
                                                 
-                                                <i class="material-icons title-icon me-2">rocket_launch</i>
+                                                <i class="material-icons title-icon me-2">article</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    1.容器技术所涉及的Linux内核关键技术
+                                                    2.Go的并发编程
                                                     
                                                 </h1>
                                             </div>
                                             
-                                                <p class="lead mb-3">容器的前世今生</p>
+                                                <p class="lead mb-3">简单介绍一下并发协程、管道、并发锁等</p>
                                             
                                             <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h1 id="1-容器技术前世今生">1. 容器技术前世今生 <a href="#1-%e5%ae%b9%e5%99%a8%e6%8a%80%e6%9c%af%e5%89%8d%e4%b8%96%e4%bb%8a%e7%94%9f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><h2 id="11-1979年--chroot">1.1 1979年 — chroot <a href="#11-1979%e5%b9%b4--chroot" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>容器技术的概念可以追溯到1979年的UNIX chroot。</li>
-<li>它是一套“UNIX操作系统”系统，旨在将其root目录及其它子目录变更至文件系统内的新位置，且只接受特定进程的访问。</li>
-<li>这项功能的设计目的在于为每个进程提供一套隔离化磁盘空间。</li>
-<li>1982年其被添加至BSD当中。</li>
-</ul>
-<h2 id="12-2000年--freebsd-jails">1.2 2000年 — FreeBSD Jails <a href="#12-2000%e5%b9%b4--freebsd-jails" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>FreeBSD Jails是由Derrick T. Woolworth于2000年在FreeBSD研发协会中构建而成的早期容器技术之一。</li>
-<li>这是一套“操作系统”系统，与chroot的定位类似，不过其中包含有其它进程沙箱机制以对文件系统、用户及网络等资源进行隔离。</li>
-<li>通过这种方式，它能够为每个Jail、定制化软件安装包乃至配置方案等提供一个对应的IP地址。</li>
-</ul>
-<h2 id="13-2001年--linux-vserver">1.3 2001年 — Linux VServer <a href="#13-2001%e5%b9%b4--linux-vserver" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>Linux VServer属于另一种jail机制，其能够被用于保护计算机系统之上各分区资源的安全(包括文件系统、CPU时间、网络地址以及内存等)。</li>
-<li>每个分区被称为一套安全背景(security context)，而其中的虚拟化系统则被称为一套虚拟私有服务器。</li>
-</ul>
-<h2 id="14-2004年--solaris容器">1.4 2004年 — Solaris容器 <a href="#14-2004%e5%b9%b4--solaris%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>Solaris容器诞生之时面向x86与SPARC系统架构，其最初亮相于2004年2月的Solaris 10 Build 51 beta当中，随后于2005年正式登陆Solaris 10的完整版本。</li>
-<li>Solaris容器相当于将系统资源控制与由分区提供的边界加以结合。各分区立足于单一操作系统实例之内以完全隔离的虚拟服务器形式运行。</li>
-</ul>
-<h2 id="15-2005年--openvz">1.5 2005年 — OpenVZ <a href="#15-2005%e5%b9%b4--openvz" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>OpenVZ与Solaris容器非常相似，且使用安装有补丁的Linux内核以实现虚拟化、隔离能力、资源管理以及检查点交付。</li>
-<li>每套OpenVZ容器拥有一套隔离化文件系统、用户与用户群组、一套进程树、网络、设备以及IPC对象。</li>
-</ul>
-<h2 id="16-2006年--process容器">1.6 2006年 — Process容器 <a href="#16-2006%e5%b9%b4--process%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>Process容器于2006年由谷歌公司推出，旨在对一整套进程集合中的资源使用量(包括CPU、内存、磁盘I/O以及网络等等)加以限制、分配与隔离。</li>
-<li>此后其被更名为Control Groups(即控制组)，从而避免其中的“容器”字眼与Linux内核2.6.24中的另一术语出现冲突。这表明了谷歌公司率先重视容器技术的敏锐眼光以及为其做出的突出贡献。</li>
-</ul>
-<h2 id="17-2007年--control-groups">1.7 2007年 — Control Groups <a href="#17-2007%e5%b9%b4--control-groups" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>Control Groups也就是谷歌实现的cgroups，其于2007年被添加至Linux内核当中。</p>
-<h2 id="18-2008年--lxc">1.8 2008年 — LXC <a href="#18-2008%e5%b9%b4--lxc" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>LXC指代的是Linux Containers</li>
-<li>是第一套完整的Linux容器管理实现方案。</li>
-<li>其功能通过cgroups以及Linux namespaces实现。</li>
-<li>LXC通过liblxc库进行交付，并提供可与Python3、Python2、Lua、Go、Ruby以及Haskell等语言相对接的API。</li>
-<li>相较于其它容器技术，LXC能够在无需任何额外补丁的前提下运行在原版Linux内核之上。</li>
-</ul>
-<h2 id="19-2011年--warden">1.9 2011年 — Warden <a href="#19-2011%e5%b9%b4--warden" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>Warden由CloudFoundry公司于2011年所建立，其利用LXC作为初始阶段，随后又将其替换为自家实现方案。</li>
-<li>与LXC不同，Warden并不会与Linux紧密耦合。相反，其能够运行在任意能够提供多种隔离环境方式的操作系统之上。Warden以后台进程方式运行并提供API以实现容器管理。</li>
-</ul>
-<h2 id="110-2013年--lmctfy">1.10 2013年 — LMCTFY <a href="#110-2013%e5%b9%b4--lmctfy" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>Lmctfy代表的是“Let Me Contain That For You(帮你实现容器化)”。它其实属于谷歌容器技术堆栈的开源版本，负责提供Linux应用程序容器。谷歌公司在该项目的起步阶段宣称其能够提供值得信赖的性能表现、高资源利用率、共享资源机制、充裕的发展空间以及趋近于零的额外资源消耗。</li>
-<li>2013年10月lmctfy的首个版本正式推出，谷歌公司在2015年决定将lmctfy的核心概念与抽象机制转化为libcontainer。在失去了主干之后，如今lmctfy已经失去一切积极的发展势头。</li>
-</ul>
-<p>　　Libcontainer项目最初由Docker公司建立，如今已经被归入开放容器基金会的管辖范畴。</p>
-<h2 id="111-2013年-docker">1.11 2013年-Docker <a href="#111-2013%e5%b9%b4-docker" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>在2013年Docker刚发布的时候，它是一款基于LXC的开源容器管理引擎。</li>
-<li>把LXC复杂的容器创建与使用方式简化为Docker自己的一套命令体系。</li>
-<li>随着Docker的不断发展，它开始有了更为远大的目标，那就是反向定义容器的实现标准，将底层实现都抽象化到Libcontainer的接口。这就意味着，底层容器的实现方式变成了一种可变的方案，无论是使用namespace、cgroups技术抑或是使用systemd等其他方案，只要实现了Libcontainer定义的一组接口，Docker都可以运行。这也为Docker实现全面的跨平台带来了可能。</li>
-</ul>
-<h1 id="2-namespace">2. NameSpace <a href="#2-namespace" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><h2 id="21-namespace介绍">2.1 NameSpace介绍 <a href="#21-namespace%e4%bb%8b%e7%bb%8d" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>
-<p>很多编程语言都包含了命名空间的概念，我们可以认为命名空间是一种封装，封装本身实际上实现了代码的隔离</p>
-</li>
-<li>
-<p>在操作系统中命名空间命名空间提供的是系统资源的隔离，其中系统资源包括了：进程、网络、文件系统&hellip;&hellip;</p>
-</li>
-<li>
-<p>实际上linux系统实现命名空间主要目的之一就是为了实现轻量级虚拟化服务，也就是我们说的容器，在同一个命名空间下的进程可以感知彼此的变化，而对其他命名空间的进程一无所知，这样就可以让容器中的进程产生一个错觉，仿佛它自己置身于一个独立的系统环境当中，以此达到独立和隔离的目的。</p>
-</li>
-</ul>
-<h2 id="22-linux系统中namespace分类">2.2 Linux系统中NameSpace分类 <a href="#22-linux%e7%b3%bb%e7%bb%9f%e4%b8%adnamespace%e5%88%86%e7%b1%bb" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><table>
-<thead>
-<tr>
-<th style="text-align:center">命名空间</th>
-<th style="text-align:center">描述</th>
-<th style="text-align:center">作用</th>
-<th style="text-align:center">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">进程命名空间</td>
-<td style="text-align:center">隔离进程ID</td>
-<td style="text-align:center">Linux通过命名空间管理进程号，同一个进程，在不同的命名空间进程号不同</td>
-<td style="text-align:center">进程命名空间是一个父子结构，子空间对于父空间可见</td>
-</tr>
-<tr>
-<td style="text-align:center">网络命名空间</td>
-<td style="text-align:center">隔离网络设备、协议栈、端口等</td>
-<td style="text-align:center">通过网络命名空间，实现网络隔离</td>
-<td style="text-align:center">docker采用虚拟网络设备，将不同命名空间的网络设备连接到一起</td>
-</tr>
-<tr>
-<td style="text-align:center">IPC命名空间</td>
-<td style="text-align:center">隔离进程间通信</td>
-<td style="text-align:center">进程间交互方法</td>
-<td style="text-align:center">PID命名空间和IPC命名空间可以组合起来用，同一个IPC名字空间内的进程可以彼此看见，允许进行交互，不同空间进程无法交互</td>
-</tr>
-<tr>
-<td style="text-align:center">挂载命名空间</td>
-<td style="text-align:center">隔离挂载点</td>
-<td style="text-align:center">隔离文件目录</td>
-<td style="text-align:center">进程运行时可以将挂载点与系统分离，使用这个功能时，我们可以达到 chroot 的功能，而在安全性方面比 chroot 更高</td>
-</tr>
-<tr>
-<td style="text-align:center">UTS命名空间</td>
-<td style="text-align:center">隔离Hostname和NIS域名</td>
-<td style="text-align:center">让容器拥有独立的主机名和域名，从而让容器看起来像个独立的主机</td>
-<td style="text-align:center">目的是独立出主机名和网络信息服务（NIS）</td>
-</tr>
-<tr>
-<td style="text-align:center">用户命名空间</td>
-<td style="text-align:center">隔离用户和group ID</td>
-<td style="text-align:center">每个容器内上的用户跟宿主主机上不在一个命名空间</td>
-<td style="text-align:center">同进程 ID 一样，用户 ID 和组 ID 在命名空间内外是不一样的，并且在不同命名空间内可以存在相同的 ID</td>
-</tr>
-</tbody>
-</table>
-<h2 id="23-namespace应用案例">2.3 NameSpace应用案例 <a href="#23-namespace%e5%ba%94%e7%94%a8%e6%a1%88%e4%be%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><blockquote>
-<p>以net namespace为例</p>
-</blockquote>
+        <h3 id="并发介绍">并发介绍 <a href="#%e5%b9%b6%e5%8f%91%e4%bb%8b%e7%bb%8d" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
+<li><strong>并发和并行</strong>
 <ul>
-<li>在 Linux 中，网络命名空间可以被认为是隔离的拥有单独网络栈（网卡、路由转发表、iptables）的环境。网络命名空间经常用来隔离网络设备和服务，只有拥有同样网络命名空间的设备，才能看到彼此。</li>
-<li>从逻辑上说，网络命名空间是网络栈的副本，拥有自己的网络设备、路由选择表、邻接表、Netfilter表、网络套接字、网络procfs条目、网络sysfs条目和其他网络资源。</li>
-<li>从系统的角度来看，当通过clone()系统调用创建新进程时，传递标志CLONE_NEWNET将在新进程中创建一个全新的网络命名空间。</li>
-<li>从用户的角度来看，我们只需使用工具ip（package is iproute2）来创建一个新的持久网络命名空间。</li>
+<li><strong>并发</strong>：本质还是串行
+<ul>
+<li>食堂窗口一个大妈（同一时间类只能给一个人打饭）</li>
+<li>Python 本质没有并行的线程</li>
+</ul>
+</li>
+<li><strong>并行</strong>：任务分布在不同 CPU 上，同一时间点同时执行
+<ul>
+<li>并行就是有多个食堂大妈，同时给不同人打饭</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>
+
+
+
+
+
+  
+
+
+
+  
+</p>
+<ol start="2">
+<li><strong>协程和线程</strong>
+<ul>
+<li><strong>协程</strong>：独立的栈空间，共享堆空间，调度由用户自己控制，本质上有点类似于用户级线程，这些用户级线程的调度也是自己实现的</li>
+<li><strong>线程</strong>：一个线程上可以跑多个协程，协程是轻量级的线程。</li>
+<li><strong>线程和协程最大的区别</strong>：
+<ul>
+<li>开启一个线程需要大概 2M 空间，而且需要 CPU 调度才能执行，线程会强占 CPU</li>
+<li>开启一个协程大概只需要 2K 的空间，而且是由 Go 解释器自己实现的 GPM 调度，主动退出</li>
+<li>可以同时启动成千上万个 goroutine 而不会过度占用内存</li>
+<li>如果开启成千上万个线程，不仅会大量占用内存，甚至导致机器崩溃；操作系统调度线程也需要耗费大量时间</li>
+<li>协程如果需要用 CPU 才会去使用 CPU，如果没有使用 CPU 的需求，它就会主动把 CPU 让给其他协程执行</li>
+<li>线程在时间片内，即使不使用 CPU，比如当前正在从磁盘读数据，它也不会让出 CPU</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="goroutine">goroutine <a href="#goroutine" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
+<li>
+<p><strong>多线程编程缺点</strong></p>
+<ul>
+<li>在 Java/C++ 中我们要实现并发编程时，通常需要自己维护一个线程池，并且需要自己去包装一个又一个的任务，同时需要自己去调度线程执行任务并维护上下文切换</li>
+</ul>
+</li>
+<li>
+<p><strong>goroutine</strong></p>
+<ul>
+<li>Go 语言中的 goroutine 是由 Go 的运行时（runtime）调度和管理的。</li>
+<li>Go 程序会智能地将 goroutine 中的任务合理地分配给每个 CPU。</li>
+<li>Go 语言之所以被称为现代化的编程语言，就是因为它在语言层面已经内置了调度和上下文切换的机制。</li>
+<li>在 Go 语言编程中，你不需要自己写进程、线程、协程，你的技能包里只有一个技能 —— goroutine</li>
+<li>当你需要让某个任务并发执行时，只需将该任务包装成一个函数，并开启一个 goroutine 去执行该函数即可。</li>
+</ul>
+</li>
+</ol>
+<h3 id="协程基本使用">协程基本使用 <a href="#%e5%8d%8f%e7%a8%8b%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
+<li>
+<p><strong>启动一个协程</strong></p>
+<ul>
+<li>主线程中每 100 毫秒打印一次，总共打印 2 次，同时开启一个协程打印 10 次</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="5c918a1" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+import (
+    &#34;fmt&#34;
+    &#34;time&#34;
+)
+
+func test() {
+    for i := 0; i &lt; 10; i&#43;&#43; {
+        fmt.Println(&#34;test() 你好golang&#34;)
+        time.Sleep(time.Millisecond * 100)
+    }
+}
+
+func main() {
+    go test() // 表示开启一个协程
+    for i := 0; i &lt; 2; i&#43;&#43; {
+        fmt.Println(&#34;main() 你好golang&#34;)
+        time.Sleep(time.Millisecond * 100)
+    }
+}
+</code></pre>
+      </div>
+  
+
+<ol start="2">
+<li>
+<p><strong>WaitGroup</strong></p>
+<ul>
+<li>
+<p>主线程退出后所有的协程无论有没有执行完毕都会退出。所以我们在主进程中可以通过 <code>WaitGroup</code> 等待协程执行完毕。</p>
+</li>
+<li>
+<p><code>sync.WaitGroup</code> 内部维护着一个计数器，计数器的值可以增加和减少。</p>
+</li>
+<li>
+<p>例如当我们启动了 N 个并发任务时，就将计数器值增加 N。</p>
+</li>
+<li>
+<p>每个任务完成时通过调用 <code>Done()</code> 方法将计数器减 1。</p>
+</li>
+<li>
+<p>通过调用 <code>Wait()</code> 来等待并发任务执行完，当计数器值为 0 时，表示所有并发任务已经完成。</p>
+</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="5f1e1d1" class="language-go line-numbers"
+        ><code class="language-go"
+        >var wg sync.WaitGroup    // 第一步：定义一个计数器
+wg.Add(1)                // 第二步：开启一个协程计数器&#43;1
+wg.Done()                // 第三步：协程执行完毕，计数器-1
+wg.Wait()                // 第四步：计数器为0时退出
+
+package main
+import (
+    &#34;fmt&#34;
+    &#34;sync&#34;
+    &#34;time&#34;
+)
+
+var wg sync.WaitGroup    // 第一步：定义一个计数器
+func test1() {
+    for i := 0; i &lt; 10; i&#43;&#43; {
+        fmt.Println(&#34;test1() 你好golang-&#34;, i)
+        time.Sleep(time.Millisecond * 100)
+    }
+    wg.Done() //协程计数器-1  // 第三步：协程执行完毕，计数器-1
+}
+func test2() {
+    for i := 0; i &lt; 2; i&#43;&#43; {
+        fmt.Println(&#34;test2() 你好golang-&#34;, i)
+        time.Sleep(time.Millisecond * 100)
+    }
+    wg.Done() //协程计数器-1
+}
+func main() {
+    wg.Add(1) //协程计数器&#43;1    第二步：开启一个协程计数器&#43;1
+    go test1() // 表示开启一个协程
+    wg.Add(1) //协程计数器&#43;1
+    go test2() // 表示开启一个协程
+    wg.Wait() //等待协程执行完毕 // 第四步：计数器为0时退出
+
+    fmt.Println(&#34;主线程退出&#34;)
+}
+</code></pre>
+      </div>
+  
+
+<ol start="3">
+<li>
+<p><strong>开启多个协程</strong></p>
+<ul>
+<li>在 Go 语言中实现并发非常简单，可以轻松启动多个 goroutine，并使用 <code>sync.WaitGroup</code> 等待它们执行完毕。多次执行上面的代码，会发现每次打印的数字顺序都不一致。这是因为 10 个 goroutine 是并发执行的，而 goroutine 的调度是随机的。</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="a039850" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+import (
+    &#34;fmt&#34;
+    &#34;sync&#34;
+)
+
+var wg sync.WaitGroup
+
+func hello(i int) {
+    defer wg.Done() // goroutine结束就登记-1
+    fmt.Println(&#34;Hello Goroutine!&#34;, i)
+}
+
+func main() {
+    for i := 0; i &lt; 10; i&#43;&#43; {
+        wg.Add(1) // 启动一个goroutine就登记&#43;1
+        go hello(i)
+    }
+    wg.Wait() // 等待所有登记的goroutine都结束
+}
+</code></pre>
+      </div>
+  
+
+<h3 id="channel">channel <a href="#channel" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
+<li>
+<p><strong>Channel说明</strong></p>
+<ul>
+<li>
+<p>共享内存交互数据弊端</p>
+<ul>
+<li>单纯地将函数并发执行是没有意义的。函数与函数间需要交换数据才能体现并发执行的意义。</li>
+<li>虽然可以使用共享内存进行数据交换，但是共享内存在不同的 goroutine 中容易发生竞态问题。</li>
+<li>为了保证数据交换的正确性，必须使用互斥量对内存进行加锁，这种做法势必造成性能问题。</li>
+</ul>
+</li>
+<li>
+<p>Channel好处</p>
+<ul>
+<li>Go 语言中的通道（channel）是一种特殊的类型。</li>
+<li>通道像一个传送带或者队列，总是遵循先入先出（FIFO）的规则，保证收发数据的顺序。</li>
+<li>每一个通道都是一个具体类型的导管，也就是声明 channel 的时候需要为其指定元素类型。</li>
+<li>如果说 goroutine 是 Go 程序并发的执行体，channel 就是它们之间的连接。</li>
+<li>Channel 是可以让一个 goroutine 发送特定值到另一个 goroutine 的通信机制。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Channel类型</strong></p>
+<ul>
+<li>Channel 是一种类型，一种引用类型。声明管道类型的格式如下:</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="4e808d3" class="language-go line-numbers"
+        ><code class="language-go"
+        >var 变量 chan 元素类型
+var ch1 chan int   // 声明一个传递整型的管道
+var ch2 chan bool  // 声明一个传递布尔型的管道
+var ch3 chan []int // 声明一个传递 int 切片的管道
+</code></pre>
+      </div>
+  
+
+<ol start="3">
+<li>
+<p><strong>创建channel</strong></p>
+<ul>
+<li>声明的管道后需要使用 <code>make</code> 函数初始化之后才能使用。创建 channel 的格式如下： <code>make(chan 元素类型, 容量)</code></li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="1555179" class="language-go line-numbers"
+        ><code class="language-go"
+        >// 创建一个能存储 10 个 int 类型数据的管道
+ch1 := make(chan int, 10)
+// 创建一个能存储 4 个 bool 类型数据的管道
+ch2 := make(chan bool, 4)
+// 创建一个能存储 3 个[]int 切片类型数据的管道
+ch3 := make(chan []int, 3)
+</code></pre>
+      </div>
+  
+
+<ol start="4">
+<li><strong>Channel操作</strong></li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="ea38937" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+import &#34;fmt&#34;
+
+func main() {
+    // 1、创建channel
+    ch := make(chan int, 5)
+    // 2、向channel放入数据
+    ch &lt;- 10
+    ch &lt;- 12
+    fmt.Println(&#34;发送成功&#34;, ch)
+    // 3、向channel取值
+    v1 := &lt;-ch
+    fmt.Println(v1)
+    v2 := &lt;-ch
+    fmt.Println(v2)
+    // 4、空channel取值报错
+    v3 := &lt;-ch
+    fmt.Println(&#34;v3&#34;, v3)
+}
+</code></pre>
+      </div>
+  
+
+<ol start="5">
+<li>
+<p><strong>优雅的从Channel取值</strong></p>
+<ul>
+<li>当通过通道发送有限的数据时，可以通过 <code>close</code> 函数关闭通道来告知从该通道接收值的 goroutine 停止等待。当通道被关闭时，往该通道发送值会引发 panic，从该通道里接收的值一直都是类型零值。可以通过 <code>for range</code> 的方式判断通道是否关闭。</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="8015418" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+import &#34;fmt&#34;
+
+func main() {
+    ch := make(chan int, 5)
+    ch &lt;- 10
+    ch &lt;- 12
+    ch &lt;- 14
+    ch &lt;- 16
+    ch &lt;- 18
+    close(ch)
+    for i := range ch { // 通道关闭后会退出for range循环
+        fmt.Println(i)
+    }
+}
+</code></pre>
+      </div>
+  
+
+<ol start="6">
+<li>
+<p><strong>Goroutine和Channel小案例</strong></p>
+<ul>
+<li>请完成 goroutine 和 channel 协同工作的案例，具体要求：
+<ul>
+<li>开启一个 <code>writeData</code> 协程，向管道 <code>intChan</code> 中写入 50 个整数。</li>
+<li>开启一个 <code>readData</code> 协程，从管道 <code>intChan</code> 中读取 <code>writeData</code> 写入的数据。</li>
+<li>注意：<code>writeData</code> 和 <code>readDate</code> 操作的是同一个管道。</li>
+<li>主线程需要等待 <code>writeData</code> 和 <code>readData</code> 协程都完成工作才能退出。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>
+
+
+
+
+
+  
+
+
+
+  
+</p>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="9842c60" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+import (
+    &#34;fmt&#34;
+)
+
+//write Data
+func writeData(intChan chan int) {
+    for i := 1; i &lt;= 50; i&#43;&#43; {
+        //放入数据
+        intChan &lt;- i
+        fmt.Println(&#34;writeData &#34;, i)
+    }
+    close(intChan) //关闭
+}
+
+//read data
+func readData(intChan chan int, exitChan chan bool) {
+    for {
+        v, ok := &lt;-intChan
+        if !ok {
+            break
+        }
+        fmt.Printf(&#34;readData 读到数据=%v\n&#34;, v)
+    }
+    //readData 读取完数据后，即任务完成
+    exitChan &lt;- true
+    close(exitChan)
+}
+
+func main() {
+    //创建两个管道
+    intChan := make(chan int, 10)
+    exitChan := make(chan bool, 1)
+
+    go writeData(intChan)
+    go readData(intChan, exitChan)
+
+    for {
+        _, ok := &lt;-exitChan
+        if !ok {
+            break
+        }
+    }
+}
+</code></pre>
+      </div>
+  
+
+<h3 id="select-多路复用">Select 多路复用 <a href="#select-%e5%a4%9a%e8%b7%af%e5%a4%8d%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
+<li>
+<p><strong>Select说明</strong></p>
+<ul>
+<li>传统的方法在遍历管道时，如果不关闭会阻塞而导致 deadlock，在实际开发中，可能我们不好确定什么时候关闭该管道。这种 <code>for range</code> 方式虽然可以实现从多个管道接收值的需求，但是运行性能会差很多。为了应对这种场景，Go 内置了 <code>select</code> 关键字，可以同时响应多个管道的操作。</li>
+<li><code>select</code> 的使用类似于 <code>switch</code> 语句，它有一系列 <code>case</code> 分支和一个默认的分支。每个 <code>case</code> 会对应一个管道的通信（接收或发送）过程。<code>select</code> 会一直等待，直到某个 <code>case</code> 的通信操作完成时，就会执行 <code>case</code> 分支对应的语句。</li>
+<li>具体格式如下：</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="462434c" class="language-go line-numbers"
+        ><code class="language-go"
+        >select {
+case v := &lt;-chan1:
+    // 如果chan1成功读到数据，则进行该case处理语句
+case chan2 &lt;- 1:
+    // 如果成功向chan2写入数据，则进行该case处理语句
+default:
+    // 如果上面都没有成功，则进入default处理流程
+}
+    </code></pre>
+      </div>
+  
+
+<ol start="2">
+<li>
+<p><strong>Select的使用</strong></p>
+<ul>
+<li>使用 <code>select</code> 语句能提高代码的可读性。可处理一个或多个 channel 的发送/接收操作。如果多个 <code>case</code> 同时满足，<code>select</code> 会随机选择一个。对于没有 <code>case</code> 的 <code>select{}</code> 会一直等待，可用于阻塞 <code>main</code> 函数。</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="7139e81" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+    &#34;fmt&#34;
+)
+
+func main() {
+    // 在某些场景下我们需要同时从多个通道接收数据,这个时候就可以用到golang中给我们提供的select多路复用
+
+    //1.定义一个管道 10个数据int
+    intChan := make(chan int, 10)
+    for i := 0; i &lt; 10; i&#43;&#43; {
+        intChan &lt;- i
+    }
+    //2.定义一个管道 5个数据string
+    stringChan := make(chan string, 5)
+    for i := 0; i &lt; 5; i&#43;&#43; {
+        stringChan &lt;- &#34;hello&#34; &#43; fmt.Sprintf(&#34;%d&#34;, i)
+    }
+    // 使用select来获取channel里面的数据的时候不需要关闭channel
+    for {
+        select {
+        case v := &lt;-intChan:
+            fmt.Printf(&#34;从 intChan 读取的数据%d\n&#34;, v)
+        case v := &lt;-stringChan:
+            fmt.Printf(&#34;从 stringChan 读取的数据%v\n&#34;, v)
+        default:
+            fmt.Printf(&#34;数据获取完毕&#34;)
+            return // 注意退出
+        }
+    }
+}
+</code></pre>
+      </div>
+  
+
+<h3 id="互斥锁">互斥锁 <a href="#%e4%ba%92%e6%96%a5%e9%94%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>互斥锁是一种常用的控制共享资源访问的方法，它能够保证同时只有一个 goroutine 可以访问共享资源。</li>
 </ul>
 <p>
 
@@ -993,492 +1355,17 @@
 
 
   
-    
-      <img src="/images/containerlinux/image-20220111132707215.png" alt="image-20220111132707215" width="512" height="384" loading="lazy">
-    
-  
 </p>
-<h3 id="231-创建net命名空间">2.3.1 创建net命名空间 <a href="#231-%e5%88%9b%e5%bb%banet%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="1b78a67" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >创建名称为msb的网络命名空间
-# ip netns add msb
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="9824983" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已创建的网络命名空间
-# ip netns ls
-msb
-</code></pre>
-      </div>
-  
-
-<h3 id="232-删除net命名空间">2.3.2 删除net命名空间 <a href="#232-%e5%88%a0%e9%99%a4net%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="750a606" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >删除已创建的网络命名空间
-# ip netns delete msb
-</code></pre>
-      </div>
-  
-
-<h3 id="233-在net命名空间中执行命令">2.3.3 在net命名空间中执行命令 <a href="#233-%e5%9c%a8net%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4%e4%b8%ad%e6%89%a7%e8%a1%8c%e5%91%bd%e4%bb%a4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="8b7932f" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在网络命名空间中执行bash命令，如果想退出，需要使用exit
-# ip netns exec msb bash
-</code></pre>
-      </div>
-  
-
-<h3 id="234-在net命令空间中执行查看网络连接网卡命令">2.3.4 在net命令空间中执行查看网络连接(网卡)命令 <a href="#234-%e5%9c%a8net%e5%91%bd%e4%bb%a4%e7%a9%ba%e9%97%b4%e4%b8%ad%e6%89%a7%e8%a1%8c%e6%9f%a5%e7%9c%8b%e7%bd%91%e7%bb%9c%e8%bf%9e%e6%8e%a5%e7%bd%91%e5%8d%a1%e5%91%bd%e4%bb%a4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="cdeb0b8" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在网络命名空间中查看网络命名空间中的网卡信息
-# ip link
-1: lo: &lt;LOOPBACK&gt; mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="845a09e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在Linux主机系统中查看
-# ip netns exec msb ip link list
-1: lo: &lt;LOOPBACK&gt; mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-</code></pre>
-      </div>
-  
-
-<h3 id="235-退出当前的net命名空间">2.3.5 退出当前的net命名空间 <a href="#235-%e9%80%80%e5%87%ba%e5%bd%93%e5%89%8d%e7%9a%84net%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="4df609e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >退出已进入的网络命名空间
-# exit
-exit
-</code></pre>
-      </div>
-  
-
-<h3 id="236-在net命名空间中执行多条命令">2.3.6 在net命名空间中执行多条命令 <a href="#236-%e5%9c%a8net%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4%e4%b8%ad%e6%89%a7%e8%a1%8c%e5%a4%9a%e6%9d%a1%e5%91%bd%e4%bb%a4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="f6a0021" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在网络命名空间中查看路由表
-# route -n
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ce4ab30" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在网络命名空间中查看防火墙规则
-# iptables -t nat -nL
-Chain PREROUTING (policy ACCEPT)
-target     prot opt source               destination         
-
-Chain INPUT (policy ACCEPT)
-target     prot opt source               destination         
-
-Chain OUTPUT (policy ACCEPT)
-target     prot opt source               destination         
-
-Chain POSTROUTING (policy ACCEPT)
-target     prot opt source               destination
-</code></pre>
-      </div>
-  
-
-<h3 id="237-创建虚拟网卡">2.3.7 创建虚拟网卡 <a href="#237-%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%bd%91%e5%8d%a1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><blockquote>
-<p>同时创建一对虚拟网卡</p>
-</blockquote>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="3fbb37a" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >创建虚拟网卡对
-# ip link add veth0 type veth peer name veth1
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="3c51d29" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在物理机上查看
-# ip a s
-......
-10: veth1@veth0: &lt;BROADCAST,MULTICAST,M-DOWN&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether de:44:f8:b7:12:65 brd ff:ff:ff:ff:ff:ff
-11: veth0@veth1: &lt;BROADCAST,MULTICAST,M-DOWN&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether 46:5e:89:8c:cb:b3 brd ff:ff:ff:ff:ff:ff
-</code></pre>
-      </div>
-  
-
-<h3 id="238-迁移虚拟网卡到命名空间中">2.3.8 迁移虚拟网卡到命名空间中 <a href="#238-%e8%bf%81%e7%a7%bb%e8%99%9a%e6%8b%9f%e7%bd%91%e5%8d%a1%e5%88%b0%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4%e4%b8%ad" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><blockquote>
-<p>这两个网卡还都属于“default”或“global”命名空间，和物理网卡一样。把其中一个网卡转移到命名空间msb中。</p>
-</blockquote>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a1f4ab5" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >把创建的veth1网卡添加到msb网络命名空间中
-# ip link set veth1 netns msb
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="c4b1a74" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在Linux系统命令行查看网络命名空间中的网络
-# ip netns exec msb ip link
-1: lo: &lt;LOOPBACK&gt; mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-10: veth1@if11: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-    link/ether de:44:f8:b7:12:65 brd ff:ff:ff:ff:ff:ff link-netnsid 0
-</code></pre>
-      </div>
-  
-
-<h3 id="239-命名空间中迁出虚拟网卡">2.3.9 命名空间中迁出虚拟网卡 <a href="#239-%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4%e4%b8%ad%e8%bf%81%e5%87%ba%e8%99%9a%e6%8b%9f%e7%bd%91%e5%8d%a1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="3d1bbeb" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在Linux系统命令行把虚拟网卡veth1从网络命名空间删除
-# ip netns exec msb ip link delete veth1
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="306fe09" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在Linux系统命令行查看结果
-# ip netns exec msb ip link
-1: lo: &lt;LOOPBACK&gt; mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-</code></pre>
-      </div>
-  
-
-<h3 id="2310-配置虚拟网卡ip地址">2.3.10 配置虚拟网卡IP地址 <a href="#2310-%e9%85%8d%e7%bd%ae%e8%99%9a%e6%8b%9f%e7%bd%91%e5%8d%a1ip%e5%9c%b0%e5%9d%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="c6102b1" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >再次创建虚拟网卡，添加到msb网络命名空间，并设置IP地址
-# ip link add veth0 type veth peer name veth1
-# ip link set veth1 netns msb
-# ip netns exec msb ip addr add 192.168.50.2/24 dev veth1
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e50524b" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在Linux系统命令行查看网络状态
-# ip netns exec msb ip addr
-1: lo: &lt;LOOPBACK&gt; mtu 65536 qdisc noop state DOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-12: veth1@if13: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether fe:20:ac:a8:13:4c brd ff:ff:ff:ff:ff:ff link-netnsid 0
-    inet 192.168.50.2/24 scope global veth1
-       valid_lft forever preferred_lft forever
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="3e7dd95" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >启动虚拟网卡,veth1与lo全部要启动
-# ip netns exec msb ip link set veth1 up
-
-# ip netns exec msb ip link set lo up
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="b9554b7" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >为物理机veth0添加IP地址
-
-# ip a s
-......
-15: veth0@if14: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group defau
-lt qlen 1000
-    link/ether 2e:b4:40:c8:73:dc brd ff:ff:ff:ff:ff:ff link-netnsid 0
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e22d5f5" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ip addr add 192.168.50.3/24 dev veth0
-
-# ip a s veth0
-15: veth0@if14: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
-    link/ether 2e:b4:40:c8:73:dc brd ff:ff:ff:ff:ff:ff link-netnsid 0
-    inet 192.168.50.3/24 scope global veth0
-       valid_lft forever preferred_lft forever
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="c726d90" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ip link set veth0 up
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="4133a7e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在宿主机上ping msb中的veth1
-# ping 192.168.50.2
-PING 192.168.50.2 (192.168.50.2) 56(84) bytes of data.
-64 bytes from 192.168.50.2: icmp_seq=1 ttl=64 time=0.102 ms
-64 bytes from 192.168.50.2: icmp_seq=2 ttl=64 time=0.068 ms
-64 bytes from 192.168.50.2: icmp_seq=3 ttl=64 time=0.068 ms
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d1276fa" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在msb中的veth1 ping 宿主机上veth0
-# ip netns exec msb ping 192.168.50.3
-PING 192.168.50.3 (192.168.50.3) 56(84) bytes of data.
-64 bytes from 192.168.50.3: icmp_seq=1 ttl=64 time=0.053 ms
-64 bytes from 192.168.50.3: icmp_seq=2 ttl=64 time=0.031 ms
-64 bytes from 192.168.50.3: icmp_seq=3 ttl=64 time=0.029 ms
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="8c417b5" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >如果需要访问本机的其它网段，可手动添加如下默认路由条目。
-# ip netns exec msb ip route add default via 192.168.50.3
-</code></pre>
-      </div>
-  
-
-<blockquote>
-<p>关于如何ping通外网主机，可设置路由转发完成。</p>
-</blockquote>
-<h1 id="3-cgroups">3. CGroups <a href="#3-cgroups" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><h2 id="31-cgroups介绍">3.1 CGroups介绍 <a href="#31-cgroups%e4%bb%8b%e7%bb%8d" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>
-<p>Control groups(cgroups) 控制组</p>
-</li>
-<li>
-<p>linux内核提供的可以限制、记录、隔离进程组所使用的物理资源的机制。为容器而生，没有cgroups就没有今天的容器技术。</p>
+<ul>
+<li>Go 语言中使用 <code>sync</code> 包的 <code>Mutex</code> 类型来实现互斥锁。
+<ul>
+<li>在多核的系统中，这 1000 个协程被分配到多个线程里面运行，那么就有可能是并行运行的。</li>
+<li>比如当前的 <code>num=987</code>，后面两个线程同时执行，那么结果就是 <code>988</code>，但是这不是我们想要的结果，我们想要的是 <code>999</code>。</li>
+<li>如何解决？其实可以通过互斥锁来保证代码在并发运行时，只有一个线程可以修改 <code>num</code> 的值。</li>
+</ul>
 </li>
 </ul>
-<p>
 
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerlinux/image-20220112182824405.png" alt="image-20220112182824405" width="530" height="248" loading="lazy">
-    
-  
-</p>
-<h2 id="32-cgroups功能">3.2 CGroups功能 <a href="#32-cgroups%e5%8a%9f%e8%83%bd" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>资源限制（Resource Limitation）：cgroups 可以对进程组使用的资源总额进行限制。如设定应用运行时使用内存的上限，一旦超过这个配额就发出 OOM（Out of Memory）。</li>
-<li>优先级分配（Prioritization）：通过分配的 CPU 时间片数量及硬盘 IO 带宽大小，实际上就相当于控制了进程运行的优先级。</li>
-<li>资源统计（Accounting）： cgroups 可以统计系统的资源使用量，如 CPU 使用时长、内存用量等等，这个功能非常适用于计费。</li>
-<li>进程控制（Control）：cgroups 可以对进程组执行挂起、恢复等操作。</li>
-</ul>
-<h2 id="33-cgroups应用案例">3.3 CGroups应用案例 <a href="#33-cgroups%e5%ba%94%e7%94%a8%e6%a1%88%e4%be%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="331-安装及开启服务">3.3.1 安装及开启服务 <a href="#331-%e5%ae%89%e8%a3%85%e5%8f%8a%e5%bc%80%e5%90%af%e6%9c%8d%e5%8a%a1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
 
 
@@ -1486,140 +1373,35 @@ PING 192.168.50.3 (192.168.50.3) 56(84) bytes of data.
 
   
       <div class="prism-shortcode">
-      <pre id="ea89a85" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >[root@localhost ~]# yum -y install libcgroup
-[root@localhost ~]# systemctl start cgconfig.service 	
-[root@localhost ~]# systemctl enable cgconfig.service
-</code></pre>
-      </div>
-  
+      <pre id="b7f3459" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
 
-<h3 id="332-限制进程使用cpu">3.3.2 限制进程使用CPU <a href="#332-%e9%99%90%e5%88%b6%e8%bf%9b%e7%a8%8b%e4%bd%bf%e7%94%a8cpu" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><h4 id="3321-查看cpu-shares">3.3.2.1 查看cpu shares <a href="#3321-%e6%9f%a5%e7%9c%8bcpu-shares" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
+import (
+    &#34;fmt&#34;
+    &#34;sync&#34;
+)
 
+var num int
 
+var mtx sync.Mutex
+var wg sync.WaitGroup
 
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d4ba8b4" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看资源限制子系统
-[root@localhost ~]# lssubsys
-cpuset
-cpu,cpuacct
-memory
-devices
-freezer
-net_cls,net_prio
-blkio
-perf_event
-hugetlb
-pids
-
-查看子系统配置文件所在位置
-[root@localhost ~]# ls /sys/fs/cgroup/
-blkio  cpuacct      cpuset   freezer  memory   net_cls,net_prio  perf_event  systemd
-cpu    cpu,cpuacct  devices  hugetlb  net_cls  net_prio          pids
-[root@localhost ~]# ls /sys/fs/cgroup/cpu
-cgroup.clone_children  cpuacct.stat          cpu.cfs_quota_us   cpu.stat
-cgroup.event_control   cpuacct.usage         cpu.rt_period_us   notify_on_release
-cgroup.procs           cpuacct.usage_percpu  cpu.rt_runtime_us  release_agent
-cgroup.sane_behavior   cpu.cfs_period_us     cpu.shares         tasks
-
-查看CPU时间分片，用于保证分组所得到的CPU分片总量。
-[root@localhost ~]# cat /sys/fs/cgroup/cpu/cpu.shares
-1024
-</code></pre>
-      </div>
-  
-
-<h4 id="3322-使用cpu子系统创建2个group分组">3.3.2.2 使用CPU子系统创建2个group分组 <a href="#3322-%e4%bd%bf%e7%94%a8cpu%e5%ad%90%e7%b3%bb%e7%bb%9f%e5%88%9b%e5%bb%ba2%e4%b8%aagroup%e5%88%86%e7%bb%84" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="cffa0df" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >[root@localhost ~]# vim /etc/cgconfig.conf
-group lesscpu {
-	cpu{
-		cpu.shares=200;
-	}	
-}
-group morecpu {
-	cpu{
-		cpu.shares=800;
-	}	
+func add() {
+    defer wg.Done()
+    mtx.Lock()
+    num &#43;= 1
+    mtx.Unlock()
 }
 
-[root@localhost ~]# systemctl restart cgconfig
-</code></pre>
-      </div>
-  
-
-<p>准备一个脚本</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e002e15" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >#!/bin/bash
-
-a=1
-while true
-do
-
-        a=$[$a&#43;1]
-done
-
-</code></pre>
-      </div>
-  
-
-<p>将将要运行的应用程序分配到指定分组(<strong>请使用单CPU机器,三个终端验证</strong>)</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="3281c69" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >终端1# cgexec -g cpu:lesscpu sh /tmp/1.sh
-
-终端2# cgexec -g cpu:morecpu sh /tmp/1.sh
-
-终端3# top
-</code></pre>
-      </div>
-  
-
-<p><strong>PS: 如果主机有多CPU，为了验证效果，可以进行如下操作</strong></p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="bd7c2e4" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># lscpu
-# echo 0 &gt; /sys/devices/system/cpu/cpu0/online
-# echo 1 &gt; /sys/devices/system/cpu/cpu1/online
+func main() {
+    for i := 0; i &lt; 1000; i&#43;&#43; {
+        wg.Add(1)
+        go add()
+    }
+    wg.Wait()
+    fmt.Println(&#34;num:&#34;, num)
+}
 </code></pre>
       </div>
   
@@ -1636,22 +1418,22 @@ done
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/ops/kubernetes/4.kubernetes%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D/">
+		<a href="/docs/dev/golang/1.go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 4.Kubernetes核心概念介绍</p>
-					<p class="card-text ms-2">本文介绍kubernetes中一些核心概念，如：pod、工作 …</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 1.Go的面向对象</p>
+					<p class="card-text ms-2">简单介绍一下封装、继承、多态、空接口、类型断言</p>
 					
 				</div>
 			</div>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/ops/container/containerd/1.containerd%E8%BD%BB%E9%87%8F%E7%BA%A7or%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">
+		<a class="ms-auto" href="/docs/ops/kubernetes/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.Containerd轻量级or工业级的容器管理工具 <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2">Containerd 是一个工业级标准的容器运行时，它强调简 …</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4&#43;IPv6双栈) <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2">Kubernetes（简称k8s）是Google在2014 …</p>
 					
 				</div>
 			</div>
