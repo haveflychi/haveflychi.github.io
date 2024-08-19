@@ -1163,7 +1163,8 @@ func main() {
 
 <h3 id="值接收者和指针接收者">值接收者和指针接收者 <a href="#%e5%80%bc%e6%8e%a5%e6%94%b6%e8%80%85%e5%92%8c%e6%8c%87%e9%92%88%e6%8e%a5%e6%94%b6%e8%80%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><h4 id="1-值接收者">1. 值接收者 <a href="#1-%e5%80%bc%e6%8e%a5%e6%94%b6%e8%80%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
 <li>当方法作用于值类型接收者时，Go语言会在代码运行时将接收者的值复制一份。</li>
-<li>在值类型接收者的方法中可以获取接收者的成员值，但修改操作只是针对副本，无法修改接收者变量本身。
+<li>在值类型接收者的方法中可以获取接收者的成员值，但修改操作只是针对副本，无法修改接收者变量本身。</li>
+</ul>
 
 
 
@@ -1211,8 +1212,7 @@ func main() {
 </code></pre>
       </div>
   
-</li>
-</ul>
+
 <h4 id="2-指针接收者">2. 指针接收者 <a href="#2-%e6%8c%87%e9%92%88%e6%8e%a5%e6%94%b6%e8%80%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ul>
 <li>指针类型的接收者由一个结构体的指针组成。</li>
 <li>由于指针的特性，调用方法时修改接收者指针的任意成员变量，在方法结束后，修改都是有效的。</li>
