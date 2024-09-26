@@ -329,6 +329,11 @@
                                                                 <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/2.go%E7%9A%84%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">2.Go的并发编程</a></li>
                                                             
                                                         
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/3.go%E5%B8%B8%E7%94%A8%E5%BA%93/">3.Go常用库</a></li>
+                                                            
+                                                        
                                                     </ul>
                                                 </div>
                                             </li>
@@ -806,6 +811,23 @@
             </a>
         </div>
         
+        <div id="list-item" class="col-md-4 col-12 mt-4 pt-2">
+            <a class="text-decoration-none text-reset" href="https://docs.cakepanit.com/docs/dev/golang/3.go%E5%B8%B8%E7%94%A8%E5%BA%93/">
+                <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
+                    <span class="icon-color d-flex my-3">
+                        <i class="material-icons align-middle">article</i>
+                        
+                        
+                    </span>
+                    <div class="card-body p-0 content">
+                        <p class="fs-5 fw-semibold card-title mb-1">3.Go常用库</p>
+                        <p class="para card-text mb-0">Go常用基础库</p>
+                    </div>
+                    
+                </div>
+            </a>
+        </div>
+        
     </div>
 
                                             </div>
@@ -969,6 +991,13 @@
     
 
 
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1854,6 +1883,15 @@
     index.add(
             {
                 id:  45 ,
+                href: "\/docs\/dev\/golang\/3.go%E5%B8%B8%E7%94%A8%E5%BA%93\/",
+                title: "3.Go常用库",
+                description: "Go常用基础库",
+                content: "时间库time link package main import ( \"fmt\" \"time\" ) func main() { now := time.Now() fmt.Printf(\"原始时间对象：%s\\n\", now) //格式化时间 timePrf := now.Format(\"2006-01-02 15:04:05\") fmt.Printf(\"格式化时间戳：%s\\n\", timePrf) /* output: 原始时间对象：2024-09-26 23:49:32.920331 +0800 CST m=+0.000064395 格式化时间戳：2024-09-26 23:49:32 */ //时间戳 fmt.Printf(\"秒时间戳：%v\\n\", now.Unix()) fmt.Printf(\"毫秒时间戳：%v\\n\", now.UnixMilli()) fmt.Printf(\"微秒时间戳：%v\\n\", now.UnixMicro()) fmt.Printf(\"纳秒时间戳：%v\\n\", now.UnixNano()) /* output: 秒时间戳：1727365772 毫秒时间戳：1727365772920 微秒时间戳：1727365772920331 纳秒时间戳：1727365772920331000 */ //格式化后的时间（string）转时间对象 loc, _ := time.LoadLocation(\"Asia/Shanghai\") inLocation, _ := time.ParseInLocation(\"2006-01-02 15:04:05\", timePrf, loc) fmt.Printf(\"格式化后的时间字符串转时间对象：%s\\n\", inLocation) /* output: 格式化后的时间字符串转时间对象：2024-09-26 23:49:32 +0800 CST */ //获取年月日、时分秒 year := now.Year() month := now.Month() day := now.Day() hour := now.Hour() minute := now.Minute() second := now.Second() fmt.Printf(\"获取年月日，时分秒：%d/%02d/%02d %02d:%02d:%02d\\n\", year, month, day, hour, minute, second) /* output: 获取年月日，时分秒：2024/09/26 23:49:32 */ //秒时间戳转时间类型,0代表指定这一秒内的偏移量以纳秒为单位 unixObj := time.Unix(now.Unix(), 0) fmt.Printf(\"Unix时间戳转时间对象：%s\\n\", unixObj) /* output: Unix时间戳转时间对象：2024-09-26 23:49:32 +0800 CST */ //时间计算 //add fmt.Printf(\"当前时间：%s\\n\", now) duration, _ := time.ParseDuration(\"1m\") addTime := now.Add(duration) fmt.Printf(\"加计算后的时间：%s\\n\", addTime) /* output: 当前时间：2024-09-26 23:49:32.920331 +0800 CST m=+0.000064395 加计算后的时间：2024-09-26 23:50:32.920331 +0800 CST m=+60.000064395 */ //sub fmt.Printf(\"计算时间差：%s\\n\", now.Sub(addTime)) /* output: 计算时间差：-1m0s */ } os库 link package main import ( \"fmt\" \"os\" ) func main() { /* output: */ //获取当前目录 fmt.Println(os.Getwd()) /* output: /Volumes/data/go/src/test */ //cd到某个目录 dir, _ := os.Getwd() os.Chdir(\"../\") fmt.Println(os.Getwd()) os.Chdir(dir) /* output: /Volumes/data/go/src */ //创建文件夹 os.Mkdir(\"go_fly\", 0777) //删除文件夹 os.Remove(\"go_fly\") //修改文件名称 os.Mkdir(\"go_fly\", 0777) os.Rename(\"go_fly\", \"go_flyxx\") //创建文件 os.Create(\"./go_flyxx/feichi.txt\") //打开文件 file, _ := os.OpenFile(\"./go_flyxx/feichi.txt\", os.O_RDWR|os.O_APPEND, 0666) /* O_RDONLY 打开只读文件 O_WRONLY 打开只写文件 O_RDWR 打开既可以读取又可以写入文件 O_APPEND 写入文件时将数据追加到文件尾部 O_CREATE 如果文件不存在，则创建一个新的文件 */ file.WriteString(\"你好小飞\") } "
+            }
+        );
+    index.add(
+            {
+                id:  46 ,
                 href: "\/docs\/ops\/kubernetes\/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -1862,7 +1900,7 @@
         );
     index.add(
             {
-                id:  46 ,
+                id:  47 ,
                 href: "\/docs\/ops\/kubernetes\/2.kubernetes-v1.30.2%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "2.Kubernetes-v1.30.2高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -1871,7 +1909,7 @@
         );
     index.add(
             {
-                id:  47 ,
+                id:  48 ,
                 href: "\/docs\/ops\/kubernetes\/3.%E5%8D%87%E7%BA%A7%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2%E7%9A%84kubernetes%E9%9B%86%E7%BE%A4\/",
                 title: "3.升级二进制部署的kubernetes集群",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化应用，Kubernetes的目标是让部署容器化的应用简单并且高效，Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -1880,7 +1918,7 @@
         );
     index.add(
             {
-                id:  48 ,
+                id:  49 ,
                 href: "\/docs\/ops\/kubernetes\/4.kubernetes%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D\/",
                 title: "4.Kubernetes核心概念介绍",
                 description: "本文介绍kubernetes中一些核心概念，如：pod、工作负载、service、kube-proxy代理模式等",
@@ -1889,7 +1927,7 @@
         );
     index.add(
             {
-                id:  49 ,
+                id:  50 ,
                 href: "\/docs\/ops\/container\/1.%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E6%89%80%E6%B6%89%E5%8F%8A%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF\/",
                 title: "1.容器技术所涉及的Linux内核关键技术",
                 description: "容器的前世今生",
@@ -1898,7 +1936,7 @@
         );
     index.add(
             {
-                id:  50 ,
+                id:  51 ,
                 href: "\/docs\/ops\/container\/containerd\/1.containerd%E8%BD%BB%E9%87%8F%E7%BA%A7or%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7\/",
                 title: "1.Containerd轻量级or工业级的容器管理工具",
                 description: "Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。",
@@ -1907,7 +1945,7 @@
         );
     index.add(
             {
-                id:  51 ,
+                id:  52 ,
                 href: "\/docs\/ops\/container\/docker\/1.docker%E9%95%9C%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BB%8B%E7%BB%8D\/",
                 title: "1.Docker镜像基本操作和介绍",
                 description: "Docker镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。",
@@ -1916,7 +1954,7 @@
         );
     index.add(
             {
-                id:  52 ,
+                id:  53 ,
                 href: "\/docs\/ops\/container\/docker\/2.docker%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%E6%90%AD%E5%BB%BA\/",
                 title: "2.Docker容器镜像国内加速及本地容器镜像仓库搭建",
                 description: "众所周知的原因和解决方案",
@@ -1925,7 +1963,7 @@
         );
     index.add(
             {
-                id:  53 ,
+                id:  54 ,
                 href: "\/docs\/ops\/container\/docker\/3.dockerfile%E4%BB%8B%E7%BB%8D\/",
                 title: "3.Dockerfile介绍",
                 description: "学习制作docker镜像",
@@ -1934,7 +1972,7 @@
         );
     index.add(
             {
-                id:  54 ,
+                id:  55 ,
                 href: "\/docs\/ops\/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8\/",
                 title: "1.Nginx配置小全",
                 description: "Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；",
@@ -1943,7 +1981,7 @@
         );
     index.add(
             {
-                id:  55 ,
+                id:  56 ,
                 href: "\/docs\/demo\/features\/",
                 title: "Features",
                 description: "A guide to the core features of the Lotus Docs theme.",
@@ -1952,7 +1990,7 @@
         );
     index.add(
             {
-                id:  56 ,
+                id:  57 ,
                 href: "\/docs\/dev\/golang\/fyne\/project\/",
                 title: "项目案例",
                 description: "使用Fyne实现几个项目",
@@ -1961,7 +1999,7 @@
         );
     index.add(
             {
-                id:  57 ,
+                id:  58 ,
                 href: "\/docs\/demo\/features\/syntax-highlighting\/",
                 title: "Syntax Highlighting",
                 description: "How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma).",
@@ -1970,7 +2008,7 @@
         );
     index.add(
             {
-                id:  58 ,
+                id:  59 ,
                 href: "\/docs\/demo\/features\/katex\/",
                 title: "KaTex",
                 description: "Fast Tex math rendering for your Lotus Docs site",
@@ -1979,7 +2017,7 @@
         );
     index.add(
             {
-                id:  59 ,
+                id:  60 ,
                 href: "\/docs\/demo\/features\/mermaid\/",
                 title: "Mermaid",
                 description: "How to use the Mermaid diagramming and chart tool with Lotus Docs",
@@ -1988,7 +2026,7 @@
         );
     index.add(
             {
-                id:  60 ,
+                id:  61 ,
                 href: "\/docs\/demo\/shortcodes\/",
                 title: "Shortcodes",
                 description: "Lotus Docs Custom Shortcodes.",
@@ -1997,7 +2035,7 @@
         );
     index.add(
             {
-                id:  61 ,
+                id:  62 ,
                 href: "\/docs\/demo\/shortcodes\/alerts\/",
                 title: "Alerts",
                 description: "How to use Alert Shortcodes to render custom page alerts in markdown.",
@@ -2006,7 +2044,7 @@
         );
     index.add(
             {
-                id:  62 ,
+                id:  63 ,
                 href: "\/docs\/demo\/shortcodes\/tables\/",
                 title: "Tables",
                 description: "How to use the Lotus Docs table shortcode to render great looking markdown tables",
@@ -2015,7 +2053,7 @@
         );
     index.add(
             {
-                id:  63 ,
+                id:  64 ,
                 href: "\/docs\/demo\/shortcodes\/tabs\/",
                 title: "Tabs",
                 description: "How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs",
@@ -2024,7 +2062,7 @@
         );
     index.add(
             {
-                id:  64 ,
+                id:  65 ,
                 href: "\/docs\/demo\/shortcodes\/prism\/",
                 title: "Prism",
                 description: "How to use the Prism Shortcode for syntax highlighting code blocks.",
@@ -2033,7 +2071,7 @@
         );
     index.add(
             {
-                id:  65 ,
+                id:  66 ,
                 href: "\/docs\/demo\/shortcodes\/markdownify\/",
                 title: "Markdownify",
                 description: "A simple shortcode to render content as Markdown.",
@@ -2042,7 +2080,7 @@
         );
     index.add(
             {
-                id:  66 ,
+                id:  67 ,
                 href: "\/docs\/demo\/shortcodes\/katex\/",
                 title: "KaTex",
                 description: "A Shortcode to render KaTex syntax in your Lotus Docs site",

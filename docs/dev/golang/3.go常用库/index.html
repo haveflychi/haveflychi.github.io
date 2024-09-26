@@ -16,9 +16,9 @@
 
 <html lang="zh-CN"><head>
     <meta charset="utf-8" />
-    <title>22.解释器模式 | Maxbit Docs</title>
+    <title>3.Go常用库 | Maxbit Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="解释器模式（Interpreter Pattern）是一种行为型设计模式，它定义了一个语言的文法，并且建立一个【解释器】来解释该语言中的句子。">
+    <meta name="description" content="Go常用基础库">
     <meta name="keywords" content="Maxbit,上海大比特,DBA,SRE,Go,Golang,Linux,运维,系统运维,自动化运维,分布式,高可用,负载均衡,老菜鸟,Docker,k8s,虚拟化,云计算,DevOps,CI&#x2F;CD,network,system,存储" />
     <meta name="author" content="饼铛" />
     <meta name="email" content="admin@cakepanit.com" />
@@ -31,15 +31,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.cakepanit.com/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.cakepanit.com/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://docs.cakepanit.com/site.webmanifest">
-<meta property="og:title" content="22.解释器模式" />
-<meta property="og:description" content="解释器模式（Interpreter Pattern）是一种行为型设计模式，它定义了一个语言的文法，并且建立一个【解释器】来解释该语言中的句子。" />
+<meta property="og:title" content="3.Go常用库" />
+<meta property="og:description" content="Go常用基础库" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/23designpattern/22.%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_12968688449105602184.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/golang/3.go%E5%B8%B8%E7%94%A8%E5%BA%93/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3679225588182950883.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
 <meta property="article:modified_time" content="2023-05-03T22:37:22+01:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_12968688449105602184.png"/>
-<meta name="twitter:title" content="22.解释器模式"/>
-<meta name="twitter:description" content="解释器模式（Interpreter Pattern）是一种行为型设计模式，它定义了一个语言的文法，并且建立一个【解释器】来解释该语言中的句子。"/>
+<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_3679225588182950883.png"/>
+<meta name="twitter:title" content="3.Go常用库"/>
+<meta name="twitter:description" content="Go常用基础库"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -122,12 +122,12 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  current active">
+                                            <li class="sidebar-dropdown nested  ">
                                                 <button class="btn">
                                                     
                                                     23种设计模式
                                                 </button>
-                                                <div class="sidebar-submenu d-block">
+                                                <div class="sidebar-submenu ">
                                                     <ul>
                                                         
                                                             
@@ -237,7 +237,7 @@
                                                         
                                                             
                                                             
-                                                                <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/23designpattern/22.%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">22.解释器模式</a></li>
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/23designpattern/22.%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">22.解释器模式</a></li>
                                                             
                                                         
                                                             
@@ -252,12 +252,12 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  ">
+                                            <li class="sidebar-dropdown nested  current active">
                                                 <button class="btn">
                                                     
                                                     Golang
                                                 </button>
-                                                <div class="sidebar-submenu ">
+                                                <div class="sidebar-submenu d-block">
                                                     <ul>
                                                         
                                                             
@@ -333,7 +333,7 @@
                                                         
                                                             
                                                             
-                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/3.go%E5%B8%B8%E7%94%A8%E5%BA%93/">3.Go常用库</a></li>
+                                                                <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/3.go%E5%B8%B8%E7%94%A8%E5%BA%93/">3.Go常用库</a></li>
                                                             
                                                         
                                                     </ul>
@@ -725,15 +725,15 @@
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/dev/23designpattern/">
-                        <span itemprop="name">23种设计模式</span>
+                    <a itemprop="item" href="/docs/dev/golang/">
+                        <span itemprop="name">Golang</span>
                     </a>
                     <meta itemprop="position" content='3' />
                 </li>
             
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">22.解释器模式</span>
+                <span itemprop="name">3.Go常用库</span>
                 <meta itemprop="position" content='4' />
             </li>
         
@@ -750,19 +750,8 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#需求">需求</a></li>
-            <li><a href="#基本概念">基本概念</a></li>
-            <li><a href="#组成结构">组成结构</a></li>
-            <li><a href="#简易实现">简易实现</a></li>
-            <li><a href="#使用场景">使用场景</a></li>
-            <li><a href="#本题代码">本题代码</a></li>
-          </ul>
-        </li>
-        <li><a href="#其他语言版本">其他语言版本</a>
-          <ul>
-            <li><a href="#c">C++</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#go">Go</a></li>
+            <li><a href="#时间库time">时间库time</a></li>
+            <li><a href="#os库">os库</a></li>
           </ul>
         </li>
       </ul>
@@ -782,19 +771,8 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#需求">需求</a></li>
-            <li><a href="#基本概念">基本概念</a></li>
-            <li><a href="#组成结构">组成结构</a></li>
-            <li><a href="#简易实现">简易实现</a></li>
-            <li><a href="#使用场景">使用场景</a></li>
-            <li><a href="#本题代码">本题代码</a></li>
-          </ul>
-        </li>
-        <li><a href="#其他语言版本">其他语言版本</a>
-          <ul>
-            <li><a href="#c">C++</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#go">Go</a></li>
+            <li><a href="#时间库time">时间库time</a></li>
+            <li><a href="#os库">os库</a></li>
           </ul>
         </li>
       </ul>
@@ -807,32 +785,18 @@
                                                 <i class="material-icons title-icon me-2">article</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    22.解释器模式
+                                                    3.Go常用库
                                                     
                                                 </h1>
                                             </div>
                                             
-                                                <p class="lead mb-3">解释器模式（Interpreter Pattern）是一种行为型设计模式，它定义了一个语言的文法，并且建立一个【解释器】来解释该语言中的句子。</p>
+                                                <p class="lead mb-3">Go常用基础库</p>
                                             
                                             <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h3 id="需求">需求 <a href="#%e9%9c%80%e6%b1%82" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>【设计模式专题之解释器模式】22-数学表达式</p>
-<p><strong>题目描述</strong></p>
-<ul>
-<li>小明正在设计一个计算器，用于解释用户输入的简单数学表达式，每个表达式都是由整数、加法操作符+、乘法操作符组成的，表达式中的元素之间用空格分隔，请你使用解释器模式帮他实现这个系统。</li>
-</ul>
-<p><strong>输入描述</strong></p>
-<ul>
-<li>每行包含一个数学表达式，表达式中包含整数、加法操作符（+）和乘法操作符（*）。 表达式中的元素之间用空格分隔。</li>
-</ul>
-<p><strong>输出描述</strong></p>
-<ul>
-<li>对于每个输入的数学表达式，每行输出一个整数，表示对应表达式的计算结果。</li>
-</ul>
-<p><strong>输入示例</strong>
-
+        <h3 id="时间库time">时间库time <a href="#%e6%97%b6%e9%97%b4%e5%ba%93time" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
 
 
@@ -840,716 +804,156 @@
 
   
       <div class="prism-shortcode">
-      <pre id="a169c69" class="language-auto line-numbers"
-        ><code class="language-auto"
-        >2 &#43; 3
-5 * 2
-3 &#43; 4 * 2
-</code></pre>
-      </div>
-  
-</p>
-<p><strong>输出示例</strong>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="93ce605" class="language-auto line-numbers"
-        ><code class="language-auto"
-        >5
-10
-11
-</code></pre>
-      </div>
-  
-</p>
-<h3 id="基本概念">基本概念 <a href="#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>解释器模式（Interpreter Pattern）是一种行为型设计模式，它定义了一个语言的文法，并且建立一个【解释器】来解释该语言中的句子。</p>
-<p>比如说SQL语法、正则表达式，这些内容比较简短，但是表达的内容可不仅仅是字面上的那些符号，计算机想要理解这些语法，就需要解释这个语法规则，因此解释器模式常用于实现编程语言解释器、正则表达式处理等场景。</p>
-<h3 id="组成结构">组成结构 <a href="#%e7%bb%84%e6%88%90%e7%bb%93%e6%9e%84" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>解释器模式主要包含以下几个角色：</p>
-<ol>
-<li><strong>抽象表达式（Abstract Expression）：</strong> 定义了解释器的接口，包含了解释器的方法 <code>interpret</code>。</li>
-<li><strong>终结符表达式（Terminal Expression）：</strong> 在语法中不能再分解为更小单元的符号。</li>
-<li><strong>非终结符表达式（Non-terminal Expression）：</strong> 文法中的复杂表达式，它由终结符和其他非终结符组成。</li>
-<li><strong>上下文（Context）：</strong> 包含解释器之外的一些全局信息，可以存储解释器中间结果，也可以用于向解释器传递信息。</li>
-</ol>
-<blockquote>
-<p>举例来说，表达式 &ldquo;3 + 5 * 2&rdquo;，数字 &ldquo;3&rdquo; 和 &ldquo;5&rdquo;， &ldquo;2&rdquo; 是终结符，而运算符 &ldquo;+&rdquo;, &ldquo;*&ldquo;都需要两个操作数,  属于非终结符。</p>
-</blockquote>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/23DesignPattern/image-20240104143834441.png" alt="image-20240104143834441" width="1954" height="1000" loading="lazy">
-    
-  
-</p>
-<h3 id="简易实现">简易实现 <a href="#%e7%ae%80%e6%98%93%e5%ae%9e%e7%8e%b0" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
-<li>创建抽象表达式接口：  定义解释器的接口，声明一个 <code>interpret</code> 方法，用于解释语言中的表达式。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="901ac76" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 抽象表达式接口
-public interface Expression {
-    int interpret();
-}
-</code></pre>
-      </div>
-  
-
-<ol start="2">
-<li>创建具体的表达式类： 实现抽象表达式接口，用于表示语言中的具体表达式。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ebf5602" class="language-java line-numbers"
-        ><code class="language-java"
-        >public class TerminalExpression implements Expression {
-    private int value;
-
-    public TerminalExpression(int value) {
-        this.value = value;
-    }
-
-    @Override
-    public int interpret() {
-        return value;
-    }
-}
-
-</code></pre>
-      </div>
-  
-
-<ol start="3">
-<li>非终结符表达式：抽象表达式的一种，用于表示语言中的非终结符表达式，通常包含其他表达式。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="23c9c22" class="language-java line-numbers"
-        ><code class="language-java"
-        >public class AddExpression implements Expression {
-    private Expression left;
-    private Expression right;
-
-    public AddExpression(Expression left, Expression right) {
-        this.left = left;
-        this.right = right;
-    }
-
-    @Override
-    public int interpret() {
-        return left.interpret() &#43; right.interpret();
-    }
-}
-</code></pre>
-      </div>
-  
-
-<ol start="4">
-<li>上下文：包含解释器需要的一些全局信息或状态。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="47ae9bd" class="language-java line-numbers"
-        ><code class="language-java"
-        >public class Context {
-    // 可以在上下文中存储一些全局信息或状态
-}
-</code></pre>
-      </div>
-  
-
-<ol start="5">
-<li>客户端：构建并组合表达式，然后解释表达式。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="1768cf8" class="language-java line-numbers"
-        ><code class="language-java"
-        >public class Main {
-    public static void main(String[] args) {
-        Context context = new Context();
-
-        Expression expression = new AddExpression(
-                new TerminalExpression(1),
-                new TerminalExpression(2)
-        );
-
-        int result = expression.interpret();
-        System.out.println(&#34;Result: &#34; &#43; result);
-    }
-}
-
-</code></pre>
-      </div>
-  
-
-<h3 id="使用场景">使用场景 <a href="#%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>当需要解释和执行特定领域或业务规则的语言时，可以使用解释器模式。例如，SQL解释器、正则表达式解释器等。但是需要注意的是解释器模式可能会导致类的层次结构较为复杂，同时也可能不够灵活，使用要慎重。</p>
-<h3 id="本题代码">本题代码 <a href="#%e6%9c%ac%e9%a2%98%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="50efe5f" class="language-java line-numbers"
-        ><code class="language-java"
-        >import java.util.Scanner;
-import java.util.Stack;
-
-// 抽象表达式接口
-interface Expression {
-    int interpret();
-}
-
-// 终结符表达式类 - 数字
-class NumberExpression implements Expression {
-    private int number;
-
-    public NumberExpression(int number) {
-        this.number = number;
-    }
-
-    @Override
-    public int interpret() {
-        return number;
-    }
-}
-
-// 非终结符表达式类 - 加法
-class AddExpression implements Expression {
-    private Expression left;
-    private Expression right;
-
-    public AddExpression(Expression left, Expression right) {
-        this.left = left;
-        this.right = right;
-    }
-
-    @Override
-    public int interpret() {
-        return left.interpret() &#43; right.interpret();
-    }
-}
-
-// 非终结符表达式类 - 乘法
-class MultiplyExpression implements Expression {
-    private Expression left;
-    private Expression right;
-
-    public MultiplyExpression(Expression left, Expression right) {
-        this.left = left;
-        this.right = right;
-    }
-
-    @Override
-    public int interpret() {
-        return left.interpret() * right.interpret();
-    }
-}
-
-// 上下文类
-class Context {
-    private Stack&lt;Expression&gt; expressionStack = new Stack&lt;&gt;();
-
-    public void pushExpression(Expression expression) {
-        expressionStack.push(expression);
-    }
-
-    public Expression popExpression() {
-        return expressionStack.pop();
-    }
-}
-
-public class Main{
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Context context = new Context();
-
-        // 处理用户输入的数学表达式
-        while (scanner.hasNextLine()) {
-            String userInput = scanner.nextLine();
-            Expression expression = parseExpression(userInput);
-            if (expression != null) {
-                context.pushExpression(expression);
-                System.out.println(expression.interpret());
-            } else {
-                System.out.println(&#34;Invalid expression.&#34;);
-            }
-        }
-
-        scanner.close();
-    }
-
-    // 解析用户输入的数学表达式并返回相应的抽象表达式类
-    private static Expression parseExpression(String userInput) {
-        try {
-            Stack&lt;Expression&gt; expressionStack = new Stack&lt;&gt;();
-            char[] tokens = userInput.toCharArray();
-
-            for (int i = 0; i &lt; tokens.length; i&#43;&#43;) {
-                char token = tokens[i];
-
-                if (Character.isDigit(token)) {
-                    expressionStack.push(new NumberExpression(Character.getNumericValue(token)));
-
-                    // 如果下一个字符不是数字，且栈中有两个以上的元素，说明可以进行运算
-                    if (i &#43; 1 &lt; tokens.length &amp;&amp; !Character.isDigit(tokens[i &#43; 1]) &amp;&amp; expressionStack.size() &gt;= 2) {
-                        Expression right = expressionStack.pop();
-                        Expression left = expressionStack.pop();
-                        char operator = tokens[i &#43; 1];
-
-                        if (operator == &#39;&#43;&#39;) {
-                            expressionStack.push(new AddExpression(left, right));
-                        } else if (operator == &#39;*&#39;) {
-                            expressionStack.push(new MultiplyExpression(left, right));
-                        }
-
-                        i&#43;&#43;; // 跳过下一个字符，因为已经处理过了
-                    }
-                } else {
-                    return null; 
-                }
-            }
-
-            return expressionStack.pop();
-        } catch (Exception e) {
-            return null;
-        }
-    }
-}
-
-</code></pre>
-      </div>
-  
-
-<h2 id="其他语言版本">其他语言版本 <a href="#%e5%85%b6%e4%bb%96%e8%af%ad%e8%a8%80%e7%89%88%e6%9c%ac" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="c">C++ <a href="#c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="78f4f26" class="language-cpp line-numbers"
-        ><code class="language-cpp"
-        >#include &lt;iostream&gt;
-#include &lt;sstream&gt;
-#include &lt;stack&gt;
-#include &lt;vector&gt;
-#include &lt;stdexcept&gt;
-#include &lt;iterator&gt;
-#include &lt;regex&gt;
-
-// 抽象表达式类
-class Expression {
-public:
-    virtual int interpret() = 0;
-    virtual ~Expression() {}
-};
-
-// 终结符表达式类 - 数字
-class NumberExpression : public Expression {
-private:
-    int value;
-
-public:
-    NumberExpression(int val) : value(val) {}
-
-    int interpret() override {
-        return value;
-    }
-};
-
-// 非终结符表达式类 - 加法操作
-class AddExpression : public Expression {
-private:
-    Expression* left;
-    Expression* right;
-
-public:
-    AddExpression(Expression* l, Expression* r) : left(l), right(r) {}
-
-    int interpret() override {
-        return left-&gt;interpret() &#43; right-&gt;interpret();
-    }
-};
-
-// 非终结符表达式类 - 乘法操作
-class MultiplyExpression : public Expression {
-private:
-    Expression* left;
-    Expression* right;
-
-public:
-    MultiplyExpression(Expression* l, Expression* r) : left(l), right(r) {}
-
-    int interpret() override {
-        return left-&gt;interpret() * right-&gt;interpret();
-    }
-};
-
-// 非终结符表达式类 - 操作符
-class OperatorExpression : public Expression {
-private:
-    std::string oper;
-
-public:
-    OperatorExpression(const std::string&amp; op) : oper(op) {}
-
-    int interpret() override {
-        throw std::runtime_error(&#34;OperatorExpression does not support interpretation&#34;);
-    }
-
-    std::string getOperator() const {
-        return oper;
-    }
-};
-
-// 解析表达式字符串
-int parseExpression(const std::string&amp; expressionStr) {
-    std::istringstream iss(expressionStr);
-    std::vector&lt;std::string&gt; elements(std::istream_iterator&lt;std::string&gt;{iss}, std::istream_iterator&lt;std::string&gt;());
-
-    std::stack&lt;Expression*&gt; stack;
-
-    for (const auto&amp; element : elements) {
-        if (std::regex_match(element, std::regex(&#34;\\d&#43;&#34;))) {
-            stack.push(new NumberExpression(std::stoi(element)));
-        } else if (element == &#34;&#43;&#34; || element == &#34;*&#34;) {
-            stack.push(new OperatorExpression(element));
-        } else {
-            throw std::invalid_argument(&#34;Invalid element in expression: &#34; &#43; element);
-        }
-    }
-
-    while (stack.size() &gt; 1) {
-        Expression* right = stack.top();
-        stack.pop();
-        Expression* operatorExp = stack.top();
-        stack.pop();
-        Expression* left = stack.top();
-        stack.pop();
-
-        if (auto* opExp = dynamic_cast&lt;OperatorExpression*&gt;(operatorExp)) {
-            std::string op = opExp-&gt;getOperator();
-            if (op == &#34;&#43;&#34;) {
-                stack.push(new AddExpression(left, right));
-            } else if (op == &#34;*&#34;) {
-                stack.push(new MultiplyExpression(left, right));
-            }
-        } else {
-            throw std::invalid_argument(&#34;Invalid operator type in expression&#34;);
-        }
-    }
-
-    int result = stack.top()-&gt;interpret();
-    delete stack.top(); 
-    return result;
-}
-
-int main() {
-    std::vector&lt;std::string&gt; input_lines;
-    std::string line;
-
-    while (std::getline(std::cin, line) &amp;&amp; !line.empty()) {
-        input_lines.push_back(line);
-    }
-
-    for (size_t i = 0; i &lt; input_lines.size(); &#43;&#43;i) {
-        try {
-            int result = parseExpression(input_lines[i]);
-            std::cout &lt;&lt; result &lt;&lt; std::endl;
-        } catch (const std::exception&amp; e) {
-            std::cout &lt;&lt; &#34;Error - &#34; &lt;&lt; e.what() &lt;&lt; std::endl;
-        }
-    }
-
-    return 0;
-}
-</code></pre>
-      </div>
-  
-
-<h3 id="python">Python <a href="#python" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="b03c66a" class="language-python line-numbers"
-        ><code class="language-python"
-        ># 抽象表达式类
-class Expression:
-    def interpret(self):
-        pass
- 
-# 终结符表达式类 - 数字
-class NumberExpression(Expression):
-    def __init__(self, value):
-        self.value = int(value)
- 
-    def interpret(self):
-        return self.value
- 
-# 非终结符表达式类 - 加法操作
-class AddExpression(Expression):
-    def __init__(self, left, right):
-        self.left = left
-        self.right = right
- 
-    def interpret(self):
-        return self.left.interpret() &#43; self.right.interpret()
- 
-# 非终结符表达式类 - 乘法操作
-class MultiplyExpression(Expression):
-    def __init__(self, left, right):
-        self.left = left
-        self.right = right
- 
-    def interpret(self):
-        return self.left.interpret() * self.right.interpret()
- 
-# 客户端代码
-def parse_expression(expression_str):
-    elements = expression_str.split()
-    stack = []
- 
-    for element in elements:
-        if element.isdigit():
-            stack.append(NumberExpression(element))
-        elif element == &#39;&#43;&#39;:
-            if len(stack) &lt; 2:
-                raise ValueError(&#34;Invalid expression format&#34;)
-            right = stack.pop()
-            left = stack.pop()
-            stack.append(AddExpression(left, right))
-        elif element == &#39;*&#39;:
-            if len(stack) &lt; 2:
-                raise ValueError(&#34;Invalid expression format&#34;)
-            right = stack.pop()
-            left = stack.pop()
-            stack.append(MultiplyExpression(left, right))
-        else:
-            raise ValueError(f&#34;Invalid element in expression: {element}&#34;)
- 
-    if len(stack) != 1:
-        raise ValueError(&#34;Invalid expression format&#34;)
- 
-    return str(stack.pop().interpret())
- 
-# 从标准输入读取输入
-input_lines = []
-while True:
-    try:
-        line = input().strip()
-        if not line:
-            break
-        input_lines.append(line)
-    except EOFError:
-        break
- 
-# 输出计算结果到标准输出
-for i, input_line in enumerate(input_lines, start=1):
-    try:
-        result = parse_expression(input_line)
-        print(f&#34;Case {i}: {result}&#34;)
-    except ValueError as e:
-        print(f&#34;Case {i}: Error - {e}&#34;)
-</code></pre>
-      </div>
-  
-
-<h3 id="go">Go <a href="#go" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ce3f8a0" class="language-go line-numbers"
+      <pre id="af7a988" class="language-go line-numbers"
         ><code class="language-go"
         >package main
 
 import (
-	&#34;bufio&#34;
 	&#34;fmt&#34;
-	&#34;os&#34;
-	&#34;regexp&#34;
-	&#34;strconv&#34;
-	&#34;strings&#34;
+	&#34;time&#34;
 )
 
-// 抽象表达式类
-type Expression interface {
-	interpret() int
+func main() {
+	now := time.Now()
+	fmt.Printf(&#34;原始时间对象：%s\n&#34;, now)
+	//格式化时间
+	timePrf := now.Format(&#34;2006-01-02 15:04:05&#34;)
+	fmt.Printf(&#34;格式化时间戳：%s\n&#34;, timePrf)
+	/*
+		output:
+			原始时间对象：2024-09-26 23:49:32.920331 &#43;0800 CST m=&#43;0.000064395
+			格式化时间戳：2024-09-26 23:49:32
+	*/
+
+	//时间戳
+	fmt.Printf(&#34;秒时间戳：%v\n&#34;, now.Unix())
+	fmt.Printf(&#34;毫秒时间戳：%v\n&#34;, now.UnixMilli())
+	fmt.Printf(&#34;微秒时间戳：%v\n&#34;, now.UnixMicro())
+	fmt.Printf(&#34;纳秒时间戳：%v\n&#34;, now.UnixNano())
+	/*
+		output:
+			秒时间戳：1727365772
+			毫秒时间戳：1727365772920
+			微秒时间戳：1727365772920331
+			纳秒时间戳：1727365772920331000
+	*/
+
+	//格式化后的时间（string）转时间对象
+	loc, _ := time.LoadLocation(&#34;Asia/Shanghai&#34;)
+	inLocation, _ := time.ParseInLocation(&#34;2006-01-02 15:04:05&#34;, timePrf, loc)
+	fmt.Printf(&#34;格式化后的时间字符串转时间对象：%s\n&#34;, inLocation)
+	/*
+		output:
+			格式化后的时间字符串转时间对象：2024-09-26 23:49:32 &#43;0800 CST
+	*/
+
+	//获取年月日、时分秒
+	year := now.Year()
+	month := now.Month()
+	day := now.Day()
+	hour := now.Hour()
+	minute := now.Minute()
+	second := now.Second()
+	fmt.Printf(&#34;获取年月日，时分秒：%d/%02d/%02d %02d:%02d:%02d\n&#34;, year, month, day, hour, minute, second)
+	/*
+		output:
+			获取年月日，时分秒：2024/09/26 23:49:32
+	*/
+
+	//秒时间戳转时间类型,0代表指定这一秒内的偏移量以纳秒为单位
+	unixObj := time.Unix(now.Unix(), 0)
+	fmt.Printf(&#34;Unix时间戳转时间对象：%s\n&#34;, unixObj)
+	/*
+		output:
+			Unix时间戳转时间对象：2024-09-26 23:49:32 &#43;0800 CST
+	*/
+
+	//时间计算
+	//add
+	fmt.Printf(&#34;当前时间：%s\n&#34;, now)
+	duration, _ := time.ParseDuration(&#34;1m&#34;)
+	addTime := now.Add(duration)
+	fmt.Printf(&#34;加计算后的时间：%s\n&#34;, addTime)
+	/*
+		output:
+			当前时间：2024-09-26 23:49:32.920331 &#43;0800 CST m=&#43;0.000064395
+			加计算后的时间：2024-09-26 23:50:32.920331 &#43;0800 CST m=&#43;60.000064395
+	*/
+
+	//sub
+	fmt.Printf(&#34;计算时间差：%s\n&#34;, now.Sub(addTime))
+	/*
+		output:
+			计算时间差：-1m0s
+	*/
 }
+</code></pre>
+      </div>
+  
 
-// 终结符表达式类 - 数字
-type NumberExpression struct {
-	value int
-}
+<h3 id="os库">os库 <a href="#os%e5%ba%93" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
-func NewNumberExpression(val int) *NumberExpression {
-	return &amp;NumberExpression{value: val}
-}
 
-func (n *NumberExpression) interpret() int {
-	return n.value
-}
 
-// 非终结符表达式类 - 加法操作
-type AddExpression struct {
-	left  Expression
-	right Expression
-}
 
-func NewAddExpression(left, right Expression) *AddExpression {
-	return &amp;AddExpression{left, right}
-}
 
-func (a *AddExpression) interpret() int {
-	return a.left.interpret() &#43; a.right.interpret()
-}
+  
+      <div class="prism-shortcode">
+      <pre id="81215b7" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
 
-// 非终结符表达式类 - 乘法操作
-type MultiplyExpression struct {
-	left  Expression
-	right Expression
-}
-
-func NewMultiplyExpression(left, right Expression) *MultiplyExpression {
-	return &amp;MultiplyExpression{left, right}
-}
-
-func (m *MultiplyExpression) interpret() int {
-	return m.left.interpret() * m.right.interpret()
-}
-
-// 非终结符表达式类 - 操作符
-type OperatorExpression struct {
-	oper string
-}
-
-func NewOperatorExpression(op string) *OperatorExpression {
-	return &amp;OperatorExpression{oper: op}
-}
-
-func (o *OperatorExpression) interpret() int {
-	panic(&#34;OperatorExpression does not support interpretation&#34;)
-}
-
-func (o *OperatorExpression) getOperator() string {
-	return o.oper
-}
-
-// 解析表达式字符串
-func parseExpression(expressionStr string) (int, error) {
-	elements := strings.Fields(expressionStr)
-	stack := make([]Expression, 0)
-
-	for _, element := range elements {
-		if regexp.MustCompile(`^\d&#43;$`).MatchString(element) {
-			val, _ := strconv.Atoi(element)
-			stack = append(stack, NewNumberExpression(val))
-		} else if element == &#34;&#43;&#34; || element == &#34;*&#34; {
-			stack = append(stack, NewOperatorExpression(element))
-		} else {
-			return 0, fmt.Errorf(&#34;Invalid element in expression: %s&#34;, element)
-		}
-	}
-
-	for len(stack) &gt; 1 {
-		right := stack[len(stack)-1]
-		stack = stack[:len(stack)-1]
-		operatorExp := stack[len(stack)-1]
-		stack = stack[:len(stack)-1]
-		left := stack[len(stack)-1]
-		stack = stack[:len(stack)-1]
-
-		if opExp, ok := operatorExp.(*OperatorExpression); ok {
-			op := opExp.getOperator()
-			if op == &#34;&#43;&#34; {
-				stack = append(stack, NewAddExpression(left, right))
-			} else if op == &#34;*&#34; {
-				stack = append(stack, NewMultiplyExpression(left, right))
-			}
-		} else {
-			return 0, fmt.Errorf(&#34;Invalid operator type in expression&#34;)
-		}
-	}
-
-	result := stack[0].interpret()
-	return result, nil
-}
+import (
+	&#34;fmt&#34;
+	&#34;os&#34;
+)
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
+	/*
+		output:
 
-	for scanner.Scan() {
-		expression := scanner.Text()
-		if expression == &#34;&#34; {
-			continue
-		}
-		result, err := parseExpression(expression)
-		if err != nil {
-			fmt.Printf(&#34;Error - %s\n&#34;, err)
-		} else {
-			fmt.Println(result)
-		}
-	}
+	*/
+	//获取当前目录
+	fmt.Println(os.Getwd())
+	/*
+		output:
+			/Volumes/data/go/src/test &lt;nil&gt;
+	*/
 
-	if err := scanner.Err(); err != nil {
-		fmt.Println(&#34;Error reading standard input:&#34;, err)
-	}
+	//cd到某个目录
+	dir, _ := os.Getwd()
+	os.Chdir(&#34;../&#34;)
+	fmt.Println(os.Getwd())
+	os.Chdir(dir)
+	/*
+		output:
+			/Volumes/data/go/src &lt;nil&gt;
+	*/
+
+	//创建文件夹
+	os.Mkdir(&#34;go_fly&#34;, 0777)
+
+	//删除文件夹
+	os.Remove(&#34;go_fly&#34;)
+
+	//修改文件名称
+	os.Mkdir(&#34;go_fly&#34;, 0777)
+	os.Rename(&#34;go_fly&#34;, &#34;go_flyxx&#34;)
+
+	//创建文件
+	os.Create(&#34;./go_flyxx/feichi.txt&#34;)
+
+	//打开文件
+	file, _ := os.OpenFile(&#34;./go_flyxx/feichi.txt&#34;, os.O_RDWR|os.O_APPEND, 0666)
+	/*
+		O_RDONLY 打开只读文件
+		O_WRONLY 打开只写文件
+		O_RDWR 打开既可以读取又可以写入文件
+		O_APPEND 写入文件时将数据追加到文件尾部
+		O_CREATE 如果文件不存在，则创建一个新的文件
+	*/
+
+	file.WriteString(&#34;你好小飞&#34;)
 }
 </code></pre>
       </div>
@@ -1567,22 +971,22 @@ func main() {
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/dev/23designpattern/21.%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">
+		<a href="/docs/dev/golang/2.go%E7%9A%84%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 21.责任链模式</p>
-					<p class="card-text ms-2">责任链模式是一种行为型设计模式，它允许你构建一个对象链，让请 …</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 2.Go的并发编程</p>
+					<p class="card-text ms-2">简单介绍一下并发协程、管道、并发锁等</p>
 					
 				</div>
 			</div>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/dev/23designpattern/23.%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">
+		<a class="ms-auto" href="/docs/ops/kubernetes/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">23.访问者模式 <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2">访问者模式（Visitor Pattern）是一种行为型设计 …</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4&#43;IPv6双栈) <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2">Kubernetes（简称k8s）是Google在2014 …</p>
 					
 				</div>
 			</div>
