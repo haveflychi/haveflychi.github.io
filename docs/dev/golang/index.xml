@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Wed, 03 May 2023 22:37:22 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 02 Oct 2024 03:56:42 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/docs/dev/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1.Go的面向对象</title>
@@ -30,6 +30,13 @@
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/golang/3.go%E5%B8%B8%E7%94%A8%E5%BA%93/</guid>
       <description>时间库time link package main import ( &amp;#34;fmt&amp;#34; &amp;#34;time&amp;#34; ) func main() { now := time.Now() fmt.Printf(&amp;#34;原始时间对象：%s\n&amp;#34;, now) //格式化时间 timePrf := now.Format(&amp;#34;2006-01-02 15:04:05&amp;#34;) fmt.Printf(&amp;#34;格式化时间戳：%s\n&amp;#34;, timePrf) /* output: 原始时间对象：2024-09-26 23:49:32.920331 &amp;#43;0800 CST m=&amp;#43;0.000064395 格式化时间戳：2024-09-26 23:49:32 */ //时间戳 fmt.Printf(&amp;#34;秒时间戳：%v\n&amp;#34;, now.Unix()) fmt.Printf(&amp;#34;毫秒时间戳：%v\n&amp;#34;, now.UnixMilli()) fmt.Printf(&amp;#34;微秒时间戳：%v\n&amp;#34;, now.UnixMicro()) fmt.Printf(&amp;#34;纳秒时间戳：%v\n&amp;#34;, now.UnixNano()) /* output: 秒时间戳：1727365772 毫秒时间戳：1727365772920 微秒时间戳：1727365772920331 纳秒时间戳：1727365772920331000 */ //格式化后的时间（string）转时间对象 loc, _ := time.LoadLocation(&amp;#34;Asia/Shanghai&amp;#34;) inLocation, _ := time.ParseInLocation(&amp;#34;2006-01-02 15:04:05&amp;#34;, timePrf, loc) fmt.Printf(&amp;#34;格式化后的时间字符串转时间对象：%s\n&amp;#34;, inLocation) /* output: 格式化后的时间字符串转时间对象：2024-09-26 23:49:32 &amp;#43;0800 CST */ //获取年月日、时分秒 year := now.</description>
+    </item>
+    <item>
+      <title>4.Go-net-http</title>
+      <link>https://docs.cakepanit.com/docs/dev/golang/4.go-net-http/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/4.go-net-http/</guid>
+      <description>net-http介绍 link . ├─ ClientGet │ └── main.go // 发送get请求 ├─ ClientPost │ └── main.go // 发送post请求 ├─ Server │ └── main.go // web服务 Go语言内置的net/http包十分的优秀，提供了HTTP客户端和服务端的实现。&#xA;1.Server/main.go link 客户端 请求信息 封装在http.Request对象中 服务端返回的 响应报文 会被保存在http.Response结构体中 发送给客户端响应的并不是http.Response，而是通过http.ResponseWriter接口来实现的 方法签名 描述 Header() 用户设置或获取响应头信息 Write() 用于写入数据到响应体 WriteHeader() 用于设置响应状态码，若不调用则默认状态码为200 OK。 package main import ( &amp;#34;encoding/json&amp;#34; &amp;#34;io&amp;#34; &amp;#34;log&amp;#34; &amp;#34;net/http&amp;#34; ) // 定义入参结构体 type Data struct { Speak string `json:&amp;#34;speak&amp;#34;` } // 处理get请求 func dealGetReqHandler(w http.ResponseWriter, r *http.Request) { query := r.</description>
     </item>
   </channel>
 </rss>

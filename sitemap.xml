@@ -140,6 +140,9 @@
     <loc>https://docs.cakepanit.com/docs/dev/golang/3.go%E5%B8%B8%E7%94%A8%E5%BA%93/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
   </url><url>
+    <loc>https://docs.cakepanit.com/docs/dev/golang/4.go-net-http/</loc>
+    <lastmod>2024-10-02T03:56:42+08:00</lastmod>
+  </url><url>
     <loc>https://docs.cakepanit.com/docs/ops/kubernetes/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2023-05-03T22:37:22+01:00</lastmod>
   </url><url>
@@ -207,13 +210,13 @@
     <lastmod>2024-07-26T13:46:10+08:00</lastmod>
   </url><url>
     <loc>https://docs.cakepanit.com/</loc>
-    <lastmod>2024-07-28T17:14:01+08:00</lastmod>
+    <lastmod>2024-10-02T03:56:42+08:00</lastmod>
   </url><url>
     <loc>https://docs.cakepanit.com/tags/beginners/</loc>
-    <lastmod>2024-07-26T03:53:16+08:00</lastmod>
+    <lastmod>2024-10-02T03:56:42+08:00</lastmod>
   </url><url>
     <loc>https://docs.cakepanit.com/tags/</loc>
-    <lastmod>2024-07-26T03:53:16+08:00</lastmod>
+    <lastmod>2024-10-02T03:56:42+08:00</lastmod>
   </url><url>
     <loc>https://docs.cakepanit.com/categories/</loc>
   </url>

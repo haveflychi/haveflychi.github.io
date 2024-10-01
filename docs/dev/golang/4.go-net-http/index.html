@@ -16,9 +16,9 @@
 
 <html lang="zh-CN"><head>
     <meta charset="utf-8" />
-    <title>23.访问者模式 | Maxbit Docs</title>
+    <title>4.Go-net-http | Maxbit Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="访问者模式（Visitor Pattern）是一种行为型设计模式，可以在不改变对象结构的前提下，对对象中的元素进行新的操作。">
+    <meta name="description" content="Go net-http包介绍">
     <meta name="keywords" content="Maxbit,上海大比特,DBA,SRE,Go,Golang,Linux,运维,系统运维,自动化运维,分布式,高可用,负载均衡,老菜鸟,Docker,k8s,虚拟化,云计算,DevOps,CI&#x2F;CD,network,system,存储" />
     <meta name="author" content="饼铛" />
     <meta name="email" content="admin@cakepanit.com" />
@@ -31,15 +31,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.cakepanit.com/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.cakepanit.com/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://docs.cakepanit.com/site.webmanifest">
-<meta property="og:title" content="23.访问者模式" />
-<meta property="og:description" content="访问者模式（Visitor Pattern）是一种行为型设计模式，可以在不改变对象结构的前提下，对对象中的元素进行新的操作。" />
+<meta property="og:title" content="4.Go-net-http" />
+<meta property="og:description" content="Go net-http包介绍" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/23designpattern/23.%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_6750474415886906933.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/golang/4.go-net-http/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_17608581828091658024.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
-<meta property="article:modified_time" content="2023-05-03T22:37:22+01:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_6750474415886906933.png"/>
-<meta name="twitter:title" content="23.访问者模式"/>
-<meta name="twitter:description" content="访问者模式（Visitor Pattern）是一种行为型设计模式，可以在不改变对象结构的前提下，对对象中的元素进行新的操作。"/>
+<meta property="article:modified_time" content="2024-10-02T03:56:42+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_17608581828091658024.png"/>
+<meta name="twitter:title" content="4.Go-net-http"/>
+<meta name="twitter:description" content="Go net-http包介绍"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -122,12 +122,12 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  current active">
+                                            <li class="sidebar-dropdown nested  ">
                                                 <button class="btn">
                                                     
                                                     23种设计模式
                                                 </button>
-                                                <div class="sidebar-submenu d-block">
+                                                <div class="sidebar-submenu ">
                                                     <ul>
                                                         
                                                             
@@ -242,7 +242,7 @@
                                                         
                                                             
                                                             
-                                                                <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/23designpattern/23.%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">23.访问者模式</a></li>
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/23designpattern/23.%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">23.访问者模式</a></li>
                                                             
                                                         
                                                     </ul>
@@ -252,12 +252,12 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  ">
+                                            <li class="sidebar-dropdown nested  current active">
                                                 <button class="btn">
                                                     
                                                     Golang
                                                 </button>
-                                                <div class="sidebar-submenu ">
+                                                <div class="sidebar-submenu d-block">
                                                     <ul>
                                                         
                                                             
@@ -338,7 +338,7 @@
                                                         
                                                             
                                                             
-                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/4.go-net-http/">4.Go-net-http</a></li>
+                                                                <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/4.go-net-http/">4.Go-net-http</a></li>
                                                             
                                                         
                                                     </ul>
@@ -730,15 +730,15 @@
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/dev/23designpattern/">
-                        <span itemprop="name">23种设计模式</span>
+                    <a itemprop="item" href="/docs/dev/golang/">
+                        <span itemprop="name">Golang</span>
                     </a>
                     <meta itemprop="position" content='3' />
                 </li>
             
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">23.访问者模式</span>
+                <span itemprop="name">4.Go-net-http</span>
                 <meta itemprop="position" content='4' />
             </li>
         
@@ -753,21 +753,20 @@
   <ul>
     <li>
       <ul>
-        <li>
+        <li><a href="#net-http介绍">net-http介绍</a></li>
+        <li><a href="#1servermaingo">1.Server/main.go</a>
           <ul>
-            <li><a href="#需求">需求</a></li>
-            <li><a href="#基本概念">基本概念</a></li>
-            <li><a href="#基本结构">基本结构：</a></li>
-            <li><a href="#简易实现">简易实现：</a></li>
-            <li><a href="#使用场景">使用场景</a></li>
-            <li><a href="#本题代码">本题代码</a></li>
+            <li><a href="#测试">测试</a></li>
           </ul>
         </li>
-        <li><a href="#其他语言版本">其他语言版本</a>
+        <li><a href="#2clientgetmaingo">2.ClientGet/main.go</a>
           <ul>
-            <li><a href="#c">C++</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#go">Go</a></li>
+            <li><a href="#测试-1">测试</a></li>
+          </ul>
+        </li>
+        <li><a href="#3clientpostmaingo">3.ClientPost/main.go</a>
+          <ul>
+            <li><a href="#测试-2">测试</a></li>
           </ul>
         </li>
       </ul>
@@ -785,21 +784,20 @@
   <ul class="dropdown-menu">
     <li>
       <ul>
-        <li>
+        <li><a href="#net-http介绍">net-http介绍</a></li>
+        <li><a href="#1servermaingo">1.Server/main.go</a>
           <ul>
-            <li><a href="#需求">需求</a></li>
-            <li><a href="#基本概念">基本概念</a></li>
-            <li><a href="#基本结构">基本结构：</a></li>
-            <li><a href="#简易实现">简易实现：</a></li>
-            <li><a href="#使用场景">使用场景</a></li>
-            <li><a href="#本题代码">本题代码</a></li>
+            <li><a href="#测试">测试</a></li>
           </ul>
         </li>
-        <li><a href="#其他语言版本">其他语言版本</a>
+        <li><a href="#2clientgetmaingo">2.ClientGet/main.go</a>
           <ul>
-            <li><a href="#c">C++</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#go">Go</a></li>
+            <li><a href="#测试-1">测试</a></li>
+          </ul>
+        </li>
+        <li><a href="#3clientpostmaingo">3.ClientPost/main.go</a>
+          <ul>
+            <li><a href="#测试-2">测试</a></li>
           </ul>
         </li>
       </ul>
@@ -812,38 +810,66 @@
                                                 <i class="material-icons title-icon me-2">article</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    23.访问者模式
+                                                    4.Go-net-http
                                                     
                                                 </h1>
                                             </div>
                                             
-                                                <p class="lead mb-3">访问者模式（Visitor Pattern）是一种行为型设计模式，可以在不改变对象结构的前提下，对对象中的元素进行新的操作。</p>
+                                                <p class="lead mb-3">Go net-http包介绍</p>
                                             
                                             <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h3 id="需求">需求 <a href="#%e9%9c%80%e6%b1%82" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>【设计模式专题之访问者模式】23-图形的面积</p>
-<p><strong>题目描述</strong></p>
-<ul>
-<li>小明家有一些圆形和长方形面积的土地，请你帮他实现一个访问者模式，使得可以通过访问者计算每块土地的面积。</li>
-<li>图形的面积计算规则如下：
-<ul>
-<li>圆形的面积计算公式为：3.14 * 半径 * 半径</li>
-<li>矩形的面积计算公式为：长 * 宽</li>
+        <h2 id="net-http介绍">net-http介绍 <a href="#net-http%e4%bb%8b%e7%bb%8d" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="6ca2c51" class="language-shell line-numbers"
+        ><code class="language-shell"
+        >.
+├─ ClientGet
+│ └── main.go // 发送get请求
+├─ ClientPost
+│ └── main.go // 发送post请求
+├─ Server
+│ └── main.go // web服务
+</code></pre>
+      </div>
+  
+
+<p>Go语言内置的net/http包十分的优秀，提供了HTTP客户端和服务端的实现。</p>
+<h2 id="1servermaingo">1.Server/main.go <a href="#1servermaingo" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
+<li>客户端 请求信息 封装在<code>http.Request</code>对象中</li>
+<li>服务端返回的 响应报文 会被保存在<code>http.Response</code>结构体中</li>
+<li>发送给客户端响应的并不是<code>http.Response</code>，而是通过<code>http.ResponseWriter</code>接口来实现的</li>
 </ul>
-</li>
-</ul>
-<p><strong>输入描述</strong></p>
-<ul>
-<li>第一行是一个整数 n（1 &lt;= n &lt;= 1000），表示图形的数量。</li>
-<li>接下来的 n 行，每行描述一个图形，格式为 &ldquo;Circle r&rdquo; 或 &ldquo;Rectangle width height&rdquo;，其中 r、width、height 是正整数。</li>
-</ul>
-<p><strong>输出描述</strong></p>
-<ul>
-<li>对于每个图形，输出一行，表示该图形的面积。</li>
-</ul>
-<p><strong>输入示例</strong>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Header()</code></td>
+<td>用户设置或获取响应头信息</td>
+</tr>
+<tr>
+<td><code>Write()</code></td>
+<td>用于写入数据到响应体</td>
+</tr>
+<tr>
+<td><code>WriteHeader()</code></td>
+<td>用于设置响应状态码，若不调用则默认状态码为200 OK。</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -852,871 +878,258 @@
 
   
       <div class="prism-shortcode">
-      <pre id="0ecfa1f" class="language-auto line-numbers"
-        ><code class="language-auto"
-        >3
-Circle 5
-Rectangle 3 4
-Circle 2
-</code></pre>
-      </div>
-  
-</p>
-<p><strong>输出示例</strong>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="4b234c2" class="language-auto line-numbers"
-        ><code class="language-auto"
-        >78.5
-12
-12.56
-</code></pre>
-      </div>
-  
-</p>
-<h3 id="基本概念">基本概念 <a href="#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>访问者模式（Visitor Pattern）是一种行为型设计模式，可以在不改变对象结构的前提下，对对象中的元素进行新的操作。</p>
-<p>举个例子，假设有一个动物园，里面有不同种类的动物，比如狮子、大象、猴子等。每个动物都会被医生检查身体，被管理员投喂，被游客观看，医生，游客，管理员都属于访问者。</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ed7fc1f" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 定义动物接口
-interface Animal {
-    void accept(Visitor visitor);
-}
-
-// 具体元素类：狮子
-class Lion implements Element {
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-}
-
-// 具体元素类：大象
-class Elephant implements Element {
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-}
-
-// 具体元素类：猴子
-class Monkey implements Element {
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-}
-</code></pre>
-      </div>
-  
-
-<p>如果你想对动物园中的每个动物执行一些操作，比如医生健康检查、管理员喂食、游客观赏等。就可以使用访问者模式来实现这些操作。</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="71f3079" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 定义访问者接口
-interface Visitor {
-    void visit(Animal animal);
-}
-
-// 具体访问者类：医生
-class Vet implements Visitor {
-    @Override
-    public void visit(Animal animal) {
-  
-    }
-}
-
-// 具体访问者类：管理员
-class Zookeeper implements Visitor {
-    @Override
-    public void visit(Animal animal) {
-    }
-}
-
-// 具体访问者类：游客
-class VisitorPerson implements Visitor {
-    @Override
-    public void visit(Animal animal) {
-    }
-}
-</code></pre>
-      </div>
-  
-
-<p>将这些访问者应用到动物园的每个动物上</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="2cead7a" class="language-java line-numbers"
-        ><code class="language-java"
-        >public class Main {
-    public static void main(String[] args) {
-        Animal lion = new Lion();
-        Animal elephant = new Elephant();
-        Animal monkey = new Monkey();
-
-        Visitor vet = new Vet();
-        Visitor zookeeper = new Zookeeper();
-        Visitor visitorPerson = new VisitorPerson();
-
-        // 动物接受访问者的访问
-        lion.accept(vet);
-        elephant.accept(zookeeper);
-        monkey.accept(visitorPerson);
-    }
-}
-</code></pre>
-      </div>
-  
-
-<h3 id="基本结构">基本结构： <a href="#%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>访问者模式包括以下几个基本角色：</p>
-<ul>
-<li>
-<p><strong>抽象访问者（Visitor）：</strong> 声明了访问者可以访问哪些元素，以及如何访问它们的方法<code>visit</code>。</p>
-</li>
-<li>
-<p><strong>具体访问者（ConcreteVisitor）：</strong> 实现了抽象访问者定义的方法，不同的元素类型可能有不同的访问行为。医生、管理员、游客都属于具体的访问者，它们的访问行为不同。</p>
-</li>
-<li>
-<p><strong>抽象元素（Element）：</strong> 定义了一个accept方法，用于接受访问者的访问。</p>
-</li>
-<li>
-<p><strong>具体元素（ConcreteElement）：</strong> 实现了accept方法，是访问者访问的目标。</p>
-</li>
-<li>
-<p><strong>对象结构（Object Structure）：</strong> 包含元素的集合，可以是一个列表、一个集合或者其他数据结构。负责遍历元素，并调用元素的接受方法。</p>
-</li>
-</ul>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/23DesignPattern/image-20240104143944227.png" alt="image-20240104143944227" width="1878" height="1172" loading="lazy">
-    
-  
-</p>
-<h3 id="简易实现">简易实现： <a href="#%e7%ae%80%e6%98%93%e5%ae%9e%e7%8e%b0" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
-<li>定义抽象访问者:  声明那些元素可以访问</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="dac3d98" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 抽象访问者
-interface Visitor {
-    void visit(ConcreteElementA element);
-    void visit(ConcreteElementB element);
-}
-</code></pre>
-      </div>
-  
-
-<ol start="2">
-<li>实现具体访问者：实现具体的访问逻辑</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="da2ccec" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 具体访问者A
-class ConcreteVisitorA implements Visitor {
-    @Override
-    public void visit(ConcreteElementA element) {
-        System.out.println(&#34;ConcreteVisitorA Visit ConcreteElementA&#34;);
-    }
-
-    @Override
-    public void visit(ConcreteElementB element) {
-        System.out.println(&#34;ConcreteVisitorA Visit ConcreteElementB&#34;);
-    }
-}
-
-// 具体访问者B
-class ConcreteVisitorB implements Visitor {
-    @Override
-    public void visit(ConcreteElementA element) {
-        System.out.println(&#34;ConcreteVisitorB Visit ConcreteElementA&#34;);
-    }
-
-    @Override
-    public void visit(ConcreteElementB element) {
-        System.out.println(&#34;ConcreteVisitorB Visit ConcreteElementB&#34;);
-    }
-}
-</code></pre>
-      </div>
-  
-
-<ol start="3">
-<li>定义元素接口：声明接收访问者的方法。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d7c6217" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 抽象元素
-interface Element {
-    void accept(Visitor visitor);
-}
-</code></pre>
-      </div>
-  
-
-<ol start="4">
-<li>实现具体元素：实现接受访问者的方法</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="6cc8e8f" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 具体元素A
-class ConcreteElementA implements Element {
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-}
-
-// 具体元素B
-class ConcreteElementB implements Element {
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-}
-</code></pre>
-      </div>
-  
-
-<ol start="5">
-<li>创建对象结构：提供一个接口让访问者访问它的元素。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="5d50cc3" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 对象结构
-class ObjectStructure {
-    private List&lt;Element&gt; elements = new ArrayList&lt;&gt;();
-
-    public void attach(Element element) {
-        elements.add(element);
-    }
-
-    public void detach(Element element) {
-        elements.remove(element);
-    }
-
-    public void accept(Visitor visitor) {
-        for (Element element : elements) {
-            element.accept(visitor);
-        }
-    }
-}
-</code></pre>
-      </div>
-  
-
-<ol start="6">
-<li>客户端调用</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="abb5d28" class="language-java line-numbers"
-        ><code class="language-java"
-        >public class Main {
-    public static void main(String[] args) {
-        ObjectStructure objectStructure = new ObjectStructure();
-        objectStructure.attach(new ConcreteElementA());
-        objectStructure.attach(new ConcreteElementB());
-
-        Visitor visitorA = new ConcreteVisitorA();
-        Visitor visitorB = new ConcreteVisitorB();
-
-        objectStructure.accept(visitorA);
-        objectStructure.accept(visitorB);
-    }
-}
-</code></pre>
-      </div>
-  
-
-<h3 id="使用场景">使用场景 <a href="#%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>访问者模式结构较为复杂，但是访问者模式将同一类操作封装在一个访问者中，使得相关的操作彼此集中，提高了代码的可读性和维护性。它常用于<strong>对象结构比较稳定，但经常需要在此对象结构上定义新的操作</strong>，这样就无需修改现有的元素类，只需要定义新的访问者来添加新的操作。</p>
-<h3 id="本题代码">本题代码 <a href="#%e6%9c%ac%e9%a2%98%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="be36853" class="language-java line-numbers"
-        ><code class="language-java"
-        >import java.util.Scanner;
- 
-// 元素接口
-interface Shape {
-    void accept(Visitor visitor);
-}
- 
-// 具体元素类
-class Circle implements Shape {
-    private int radius;
- 
-    public Circle(int radius) {
-        this.radius = radius;
-    }
- 
-    public int getRadius() {
-        return radius;
-    }
- 
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-}
- 
-class Rectangle implements Shape {
-    private int width;
-    private int height;
- 
-    public Rectangle(int width, int height) {
-        this.width = width;
-        this.height = height;
-    }
- 
-    public int getWidth() {
-        return width;
-    }
- 
-    public int getHeight() {
-        return height;
-    }
- 
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-}
- 
-// 访问者接口
-interface Visitor {
-    void visit(Circle circle);
- 
-    void visit(Rectangle rectangle);
-}
- 
-
-// 具体访问者类
-class AreaCalculator implements Visitor {
-    @Override
-    public void visit(Circle circle) {
-        double area = 3.14 * Math.pow(circle.getRadius(), 2);
-        System.out.println(area);
-    }
- 
-    @Override
-    public void visit(Rectangle rectangle) {
-        int area = rectangle.getWidth() * rectangle.getHeight();
-        System.out.println(area);
-    }
-}
- 
-// 对象结构类
-class Drawing {
-    private Shape[] shapes;
- 
-    public Drawing(Shape[] shapes) {
-        this.shapes = shapes;
-    }
- 
-    public void accept(Visitor visitor) {
-        for (Shape shape : shapes) {
-            shape.accept(visitor);
-        }
-    }
-}
- 
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
- 
-        int n = scanner.nextInt();
-        scanner.nextLine();  
- 		// 创建一个数组来存储图形对象
-        Shape[] shapes = new Shape[n];
- 		// 根据用户输入创建不同类型的图形对象
-        for (int i = 0; i &lt; n; i&#43;&#43;) {
-            String[] input = scanner.nextLine().split(&#34; &#34;);
-            if (input[0].equals(&#34;Circle&#34;)) {
-                int radius = Integer.parseInt(input[1]);
-                shapes[i] = new Circle(radius);
-            } else if (input[0].equals(&#34;Rectangle&#34;)) {
-                int width = Integer.parseInt(input[1]);
-                int height = Integer.parseInt(input[2]);
-                shapes[i] = new Rectangle(width, height);
-            } else {
-                System.out.println(&#34;Invalid input&#34;);
-                return;
-            }
-        }
- 		// 创建一个图形集合
-        Drawing drawing = new Drawing(shapes);
-        // 创建一个面积计算访问者
-        Visitor areaCalculator = new AreaCalculator();
-        // 访问图形集合并计算面积
-        drawing.accept(areaCalculator);
-    }
-}
-</code></pre>
-      </div>
-  
-
-<h2 id="其他语言版本">其他语言版本 <a href="#%e5%85%b6%e4%bb%96%e8%af%ad%e8%a8%80%e7%89%88%e6%9c%ac" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="c">C++ <a href="#c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e6ebb08" class="language-cpp line-numbers"
-        ><code class="language-cpp"
-        >#include &lt;iostream&gt;
-#include &lt;cmath&gt;
-#include &lt;vector&gt;
- 
-class Shape;
- 
-// 访问者接口
-class Visitor {
-public:
-    virtual void visit(class Circle&amp; circle) = 0;
-    virtual void visit(class Rectangle&amp; rectangle) = 0;
-};
- 
-// 元素接口
-class Shape {
-public:
-    virtual ~Shape() {} // 添加虚析构函数
-    virtual void accept(Visitor&amp; visitor) = 0;
-};
- 
-// 具体元素类
-class Circle : public Shape {
-private:
-    int radius;
- 
-public:
-    Circle(int radius) : radius(radius) {}
- 
-    int getRadius() const {
-        return radius;
-    }
- 
-    void accept(Visitor&amp; visitor) override;
-};
- 
-// 具体元素类
-class Rectangle : public Shape {
-private:
-    int width;
-    int height;
- 
-public:
-    Rectangle(int width, int height) : width(width), height(height) {}
- 
-    int getWidth() const {
-        return width;
-    }
- 
-    int getHeight() const {
-        return height;
-    }
- 
-    void accept(Visitor&amp; visitor) override;
-};
- 
-// 具体访问者类
-class AreaCalculator : public Visitor {
-public:
-    void visit(Circle&amp; circle) override;
-    void visit(Rectangle&amp; rectangle) override;
-};
- 
-// 对象结构类
-class Drawing {
-private:
-    std::vector&lt;Shape*&gt; shapes;
- 
-public:
-    Drawing(const std::vector&lt;Shape*&gt;&amp; shapes) : shapes(shapes) {}
- 
-    void accept(Visitor&amp; visitor) {
-        for (Shape* shape : shapes) {
-            shape-&gt;accept(visitor);
-        }
-    }
-};
- 
-// 实现 accept 函数
-void Circle::accept(Visitor&amp; visitor) {
-    visitor.visit(*this);
-}
- 
-void Rectangle::accept(Visitor&amp; visitor) {
-    visitor.visit(*this);
-}
- 
-// 实现 visit 函数
-void AreaCalculator::visit(Circle&amp; circle) {
-    double area = 3.14 * std::pow(circle.getRadius(), 2);
-    std::cout &lt;&lt; area &lt;&lt; std::endl;
-}
- 
-void AreaCalculator::visit(Rectangle&amp; rectangle) {
-    int area = rectangle.getWidth() * rectangle.getHeight();
-    std::cout &lt;&lt; area &lt;&lt; std::endl;
-}
- 
-int main() {
-    int n;
-    std::cin &gt;&gt; n;
- 
-    std::vector&lt;Shape*&gt; shapes;
- 
-    for (int i = 0; i &lt; n; i&#43;&#43;) {
-        std::string type;
-        std::cin &gt;&gt; type;
- 
-        if (type == &#34;Circle&#34;) {
-            int radius;
-            std::cin &gt;&gt; radius;
-            shapes.push_back(new Circle(radius));
-        } else if (type == &#34;Rectangle&#34;) {
-            int width, height;
-            std::cin &gt;&gt; width &gt;&gt; height;
-            shapes.push_back(new Rectangle(width, height));
-        } else {
-            // 处理无效输入
-            std::cout &lt;&lt; &#34;Invalid input&#34; &lt;&lt; std::endl;
-            return 1;
-        }
-    }
- 
-    Drawing drawing(shapes);
-    AreaCalculator areaCalculator;
-    drawing.accept(areaCalculator);
- 
-    // 释放动态分配的内存
-    for (Shape* shape : shapes) {
-        delete shape;
-    }
-    return 0;
-}
-</code></pre>
-      </div>
-  
-
-<h3 id="python">Python <a href="#python" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="b818a73" class="language-python line-numbers"
-        ><code class="language-python"
-        >from abc import ABC, abstractmethod
-
-# 访问者接口
-class Visitor(ABC):
-    @abstractmethod
-    def visit_circle(self, circle):
-        pass
-
-    @abstractmethod
-    def visit_rectangle(self, rectangle):
-        pass
-
-# 元素接口
-class Shape(ABC):
-    @abstractmethod
-    def accept(self, visitor):
-        pass
-
-# 具体元素类
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-    def get_radius(self):
-        return self.radius
-
-    def accept(self, visitor):
-        visitor.visit_circle(self)
-
-# 具体元素类
-class Rectangle(Shape):
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-
-    def get_width(self):
-        return self.width
-
-    def get_height(self):
-        return self.height
-
-    def accept(self, visitor):
-        visitor.visit_rectangle(self)
-
-# 具体访问者类
-class AreaCalculator(Visitor):
-    def visit_circle(self, circle):
-        area = 3.14 * circle.get_radius()**2
-        print(area)
-
-    def visit_rectangle(self, rectangle):
-        area = rectangle.get_width() * rectangle.get_height()
-        print(area)
-
-# 对象结构类
-class Drawing:
-    def __init__(self, shapes):
-        self.shapes = shapes
-
-    def accept(self, visitor):
-        for shape in self.shapes:
-            shape.accept(visitor)
-
-# 示例用法
-if __name__ == &#34;__main__&#34;:
-    n = int(input())
-    shapes = []
-
-    for _ in range(n):
-        shape_type, *params = input().split()
-
-        if shape_type == &#34;Circle&#34;:
-            radius = int(params[0])
-            shapes.append(Circle(radius))
-        elif shape_type == &#34;Rectangle&#34;:
-            width, height = map(int, params)
-            shapes.append(Rectangle(width, height))
-        else:
-            print(&#34;invalid input&#34;)
-            exit(1)
-
-    drawing = Drawing(shapes)
-    area_calculator = AreaCalculator()
-    drawing.accept(area_calculator)
-</code></pre>
-      </div>
-  
-
-<h3 id="go">Go <a href="#go" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="86c97fe" class="language-go line-numbers"
+      <pre id="8fa138d" class="language-go line-numbers"
         ><code class="language-go"
         >package main
 
 import (
-	&#34;bufio&#34;
-	&#34;fmt&#34;
-	&#34;os&#34;
-	&#34;math&#34;
-	&#34;strconv&#34;
+	&#34;encoding/json&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;net/http&#34;
+)
+
+// 定义入参结构体
+type Data struct {
+	Speak string `json:&#34;speak&#34;`
+}
+
+// 处理get请求
+func dealGetReqHandler(w http.ResponseWriter, r *http.Request) {
+	query := r.URL.Query()
+	//获取请求参数两种方法
+	if len(query[&#34;name&#34;]) &gt; 0 {
+		name := query[&#34;name&#34;][0]
+		log.Printf(&#34;1.通过map中切片的下标获取：%s\n&#34;, name)
+	}
+	name2 := query.Get(&#34;name&#34;) //没有的话就会返回空值
+	log.Printf(&#34;2.通过Get方法获取：%s\n&#34;, name2)
+
+	data := &amp;Data{
+		name2 &#43; &#34;是笨蛋&#34;,
+	}
+	//响应json数据:序列化了一下data对象，并写入响应体w中
+	json.NewEncoder(w).Encode(data)
+        //也可以w.Write([]byte(··json数据··))
+}
+
+// 处理post请求
+func dealPostReqHandler(w http.ResponseWriter, r *http.Request) {
+	//获取请求体数据
+	bodyByte, err := io.ReadAll(r.Body)
+	if err != nil {
+		w.Write([]byte(err.Error()))
+	}
+	//转成结构体示范，为了可以更好的处理数据，而不是必须转结构体才能json返回
+	bodyStr := string(bodyByte)
+	data := &amp;Data{}
+	json.Unmarshal([]byte(bodyStr), &amp;data)
+	log.Printf(&#34;从post请求体中获取到的数据：%s\n&#34;, data.Speak)
+	//返回响应内容
+	data.Speak = data.Speak &#43; &#34;是笨蛋&#34;
+
+	//返回响应体内容
+	json.NewEncoder(w).Encode(data)
+}
+
+// 启动http服务
+func main() {
+	//注册全局路由
+	http.HandleFunc(&#34;/req/post&#34;, dealPostReqHandler)
+	http.HandleFunc(&#34;/req/get&#34;, dealGetReqHandler)
+	http.ListenAndServe(&#34;:8000&#34;, nil)
+}
+</code></pre>
+      </div>
+  
+
+<ol>
+<li>一个路由对应一个handler:<code>/api/xxx</code>对应的是一个处理方法</li>
+<li><code>http.ResponseWriter</code>用来响应内容</li>
+<li><code>*http.Request</code>用来拿到请求头或者请求参数</li>
+</ol>
+<h3 id="测试">测试 <a href="#%e6%b5%8b%e8%af%95" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="17e524f" class="language-shell line-numbers"
+        ><code class="language-shell"
+        >fei@feideMBP Server % go run main.go
+2024/10/02 02:43:58 1.通过map中切片的下标获取：虞锋
+2024/10/02 02:43:58 2.通过Get方法获取：虞锋
+2024/10/02 02:44:04 从post请求体中获取到的数据：虞锋
+
+fei@feideMBP ~ % curl http://127.0.0.1:8000/req/get?name=虞锋
+{&#34;speak&#34;:&#34;虞锋是笨蛋&#34;}
+fei@feideMBP ~ % curl -X POST http://127.0.0.1:8000/req/post \
+-H &#39;Content-Type: application/json&#39; \
+-d &#39;{&#34;speak&#34;:&#34;虞锋&#34;}&#39;
+{&#34;speak&#34;:&#34;虞锋是笨蛋&#34;}
+</code></pre>
+      </div>
+  
+
+<h2 id="2clientgetmaingo">2.ClientGet/main.go <a href="#2clientgetmaingo" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="86d82c0" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;net/http&#34;
+	&#34;net/url&#34;
+)
+
+func main() {
+	apiUrl := &#34;http://localhost:8000/req/get&#34;
+	//定义url参数
+	data := url.Values{}
+	data.Set(&#34;name&#34;, &#34;httpGet-root&#34;)
+	//组装url
+	u, err := url.ParseRequestURI(apiUrl)
+	if err != nil {
+		panic(err)
+	}
+	u.RawQuery = data.Encode()
+	log.Printf(&#34;请求路由为：%s\n&#34;, u.String())
+
+	//发起请求
+	resp, err := http.Get(u.String())
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+	//读取
+	byteBody, _ := io.ReadAll(resp.Body)
+	log.Printf(&#34;返回数据为：%s\n&#34;, string(byteBody))
+}
+</code></pre>
+      </div>
+  
+
+<h3 id="测试-1">测试 <a href="#%e6%b5%8b%e8%af%95-1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="daab934" class="language-shell line-numbers"
+        ><code class="language-shell"
+        ># 启动server
+fei@feideMBP Server % go run main.go 
+2024/10/02 03:39:08 1.通过map中切片的下标获取：httpGet-root
+2024/10/02 03:39:08 2.通过Get方法获取：httpGet-root
+
+# 启动getclient
+fei@feideMBP ClientGet % go run main.go 
+2024/10/02 03:39:08 请求路由为：http://localhost:8000/req/get?name=httpGet-root
+2024/10/02 03:39:08 返回数据为：{&#34;speak&#34;:&#34;httpGet-root是笨蛋&#34;}
+</code></pre>
+      </div>
+  
+
+<h2 id="3clientpostmaingo">3.ClientPost/main.go <a href="#3clientpostmaingo" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="9033ae5" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;net/http&#34;
 	&#34;strings&#34;
 )
 
-// 元素接口
-type Shape interface {
-	accept(Visitor)
-}
-
-// 具体元素类
-type Circle struct {
-	radius int
-}
-
-func NewCircle(radius int) *Circle {
-	return &amp;Circle{radius}
-}
-
-func (c *Circle) getRadius() int {
-	return c.radius
-}
-
-func (c *Circle) accept(visitor Visitor) {
-	visitor.visit(c)
-}
-
-type Rectangle struct {
-	width, height int
-}
-
-func NewRectangle(width, height int) *Rectangle {
-	return &amp;Rectangle{width, height}
-}
-
-func (r *Rectangle) getWidth() int {
-	return r.width
-}
-
-func (r *Rectangle) getHeight() int {
-	return r.height
-}
-
-func (r *Rectangle) accept(visitor Visitor) {
-	visitor.visit(r)
-}
-
-// 访问者接口
-type Visitor interface {
-	visit(shape Shape)
-}
-
-// 具体访问者类
-type AreaCalculator struct{}
-
-func (ac *AreaCalculator) visit(shape Shape) {
-	switch concreteShape := shape.(type) {
-	case *Circle:
-		area := 3.14 * math.Pow(float64(concreteShape.getRadius()), 2)
-		fmt.Println(area)
-	case *Rectangle:
-		area := concreteShape.getWidth() * concreteShape.getHeight()
-		fmt.Println(area)
-	}
-}
-
-// 对象结构类
-type Drawing struct {
-	shapes []Shape
-}
-
-func NewDrawing(shapes []Shape) *Drawing {
-	return &amp;Drawing{shapes}
-}
-
-func (d *Drawing) accept(visitor Visitor) {
-	for _, shape := range d.shapes {
-		shape.accept(visitor)
-	}
-}
-
 func main() {
-	var n int
-	fmt.Scan(&amp;n)
-
-	shapes := make([]Shape, n)
-	scanner := bufio.NewScanner(os.Stdin)
-	for i := 0; i &lt; n; i&#43;&#43; {
-		scanner.Scan()
-		input := strings.Split(scanner.Text(), &#34; &#34;)
-		if input[0] == &#34;Circle&#34; {
-			radius, _ := strconv.Atoi(input[1])
-			shapes[i] = NewCircle(radius)
-		} else if input[0] == &#34;Rectangle&#34; {
-			width, _ := strconv.Atoi(input[1])
-			height, _ := strconv.Atoi(input[2])
-			shapes[i] = NewRectangle(width, height)
-		} else {
-			fmt.Println(&#34;Invalid input&#34;)
-			return
-		}
+	apiUrl := &#34;http://localhost:8000/req/post&#34;
+	//定义请求体及header
+	contentType := &#34;application/json&#34;
+	data := `{&#34;speak&#34;:&#34;httpPost&#34;}`
+	resp, err := http.Post(apiUrl, contentType, strings.NewReader(data))
+	if err != nil {
+		panic(err)
 	}
-
-	drawing := NewDrawing(shapes)
-	areaCalculator := &amp;AreaCalculator{}
-	drawing.accept(areaCalculator)
+	defer resp.Body.Close()
+	//读取
+	byteBody, _ := io.ReadAll(resp.Body)
+	log.Printf(&#34;返回数据为：%s\n&#34;, string(byteBody))
 }
+</code></pre>
+      </div>
+  
+
+<h3 id="测试-2">测试 <a href="#%e6%b5%8b%e8%af%95-2" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="329d95d" class="language-shell line-numbers"
+        ><code class="language-shell"
+        ># 启动server
+fei@feideMBP Server % go run main.go
+2024/10/02 03:51:39 从post请求体中获取到的数据：httpPost
+
+# 启动postclient
+fei@feideMBP ClientPost % go run main.go
+2024/10/02 03:51:39 返回数据为：{&#34;speak&#34;:&#34;httpPost是笨蛋&#34;}
 </code></pre>
       </div>
   
 
 
     </div>
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+<div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
+    
+    <div id="last-modified" class="mt-1">
+        <p class="mb-0 fw-semibold">Last updated <span
+            id="relativetime"
+            data-authdate="2024-10-02T03:56:42&#43;0800"
+            title="02 Oct 2024, 03:56 &#43;0800">
+            02 Oct 2024, 03:56 &#43;0800
+        </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
+        </p>
+    </div>
+    
+</div>
 
     
 
@@ -1727,22 +1140,22 @@ func main() {
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/dev/23designpattern/22.%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/">
+		<a href="/docs/dev/golang/3.go%E5%B8%B8%E7%94%A8%E5%BA%93/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 22.解释器模式</p>
-					<p class="card-text ms-2">解释器模式（Interpreter Pattern）是一种行 …</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 3.Go常用库</p>
+					<p class="card-text ms-2">Go常用基础库</p>
 					
 				</div>
 			</div>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/dev/golang/fyne/1.%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0fyne/">
+		<a class="ms-auto" href="/docs/ops/kubernetes/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.为什么要学习Fyne？ <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2">Fyne 是一个纯Golang 的跨平台GUI 库..</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4&#43;IPv6双栈) <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2">Kubernetes（简称k8s）是Google在2014 …</p>
 					
 				</div>
 			</div>
