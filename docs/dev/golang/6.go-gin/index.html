@@ -16,8 +16,9 @@
 
 <html lang="zh-CN"><head>
     <meta charset="utf-8" />
-    <title>Fyne-趣味整活项目 | Maxbit Docs</title>
+    <title>6.Go-Gin | Maxbit Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Go-Gin介绍">
     <meta name="keywords" content="Maxbit,上海大比特,DBA,SRE,Go,Golang,Linux,运维,系统运维,自动化运维,分布式,高可用,负载均衡,老菜鸟,Docker,k8s,虚拟化,云计算,DevOps,CI&#x2F;CD,network,system,存储" />
     <meta name="author" content="饼铛" />
     <meta name="email" content="admin@cakepanit.com" />
@@ -30,15 +31,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.cakepanit.com/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.cakepanit.com/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://docs.cakepanit.com/site.webmanifest">
-<meta property="og:title" content="Fyne-趣味整活项目" />
-<meta property="og:description" content="全部代码 link package main import ( &#34;time&#34; &#34;fyne.io/fyne/v2&#34; &#34;fyne.io/fyne/v2/app&#34; &#34;fyne.io/fyne/v2/container&#34; &#34;fyne.io/fyne/v2/dialog&#34; &#34;fyne.io/fyne/v2/widget&#34; ) func main() { // 创建一个 Fyne 应用 a := app.New() // 创建一个窗口 customFont := fyne.NewStaticResource(&#34;NotoSansHans.ttf&#34;, loadFont(&#34;NotoSansHans-Regular.ttf&#34;)) a.Settings().SetTheme(&amp;myTheme{font: customFont}) win := a.NewWindow(&#34;高端检测器&#34;) // 创建一个按钮 btn := widget.NewButton(&#34;检测是否开机&#34;, func() { // 创建一个进度条 progress := widget.NewProgressBarInfinite() progressContainer := container.NewVBox(progress) // 显示加载动画 loadingDialog := dialog.NewCustom(&#34;正在检测...&#34;, &#34;取消&#34;, progressContainer, win) loadingDialog.Show() // 模拟加载时间 go func(){ time.Sleep(10 * time.Second) // 10 秒模拟加载时间 // 关闭加载动画并弹出结果窗口 loadingDialog." />
+<meta property="og:title" content="6.Go-Gin" />
+<meta property="og:description" content="Go-Gin介绍" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_1782268636394039297.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/golang/6.go-gin/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_221150856674805585.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
-<meta property="article:modified_time" content="2023-05-03T22:37:22+01:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_1782268636394039297.png"/>
-<meta name="twitter:title" content="Fyne-趣味整活项目"/>
-<meta name="twitter:description" content="全部代码 link package main import ( &#34;time&#34; &#34;fyne.io/fyne/v2&#34; &#34;fyne.io/fyne/v2/app&#34; &#34;fyne.io/fyne/v2/container&#34; &#34;fyne.io/fyne/v2/dialog&#34; &#34;fyne.io/fyne/v2/widget&#34; ) func main() { // 创建一个 Fyne 应用 a := app.New() // 创建一个窗口 customFont := fyne.NewStaticResource(&#34;NotoSansHans.ttf&#34;, loadFont(&#34;NotoSansHans-Regular.ttf&#34;)) a.Settings().SetTheme(&amp;myTheme{font: customFont}) win := a.NewWindow(&#34;高端检测器&#34;) // 创建一个按钮 btn := widget.NewButton(&#34;检测是否开机&#34;, func() { // 创建一个进度条 progress := widget.NewProgressBarInfinite() progressContainer := container.NewVBox(progress) // 显示加载动画 loadingDialog := dialog.NewCustom(&#34;正在检测...&#34;, &#34;取消&#34;, progressContainer, win) loadingDialog.Show() // 模拟加载时间 go func(){ time.Sleep(10 * time.Second) // 10 秒模拟加载时间 // 关闭加载动画并弹出结果窗口 loadingDialog."/>
+<meta property="article:modified_time" content="2024-10-04T05:00:06+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_221150856674805585.png"/>
+<meta name="twitter:title" content="6.Go-Gin"/>
+<meta name="twitter:description" content="Go-Gin介绍"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -261,12 +262,12 @@
                                                         
                                                             
                                                             
-                                                                <li class="sidebar-dropdown nested  current active">
+                                                                <li class="sidebar-dropdown nested  ">
                                                                     <button class="btn">
                                                                         
                                                                         Fyne
                                                                     </button>
-                                                                    <div class="sidebar-submenu d-block">
+                                                                    <div class="sidebar-submenu ">
                                                                         <ul>
                                                                             
                                                                                 
@@ -296,19 +297,19 @@
                                                                             
                                                                                 
                                                                                 
-                                                                                    <li class="sidebar-dropdown nested  current active">
+                                                                                    <li class="sidebar-dropdown nested  ">
                                                                                         <button class="btn">
                                                                                             
                                                                                             项目案例
                                                                                         </button>
-                                                                                        <div class="sidebar-submenu d-block">
+                                                                                        <div class="sidebar-submenu ">
                                                                                             <ul>
                                                                                                 
                                                                                                     
                                                                                                     <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/">Fyne-Markdown编辑器</a></li>
                                                                                                 
                                                                                                     
-                                                                                                    <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/">Fyne-趣味整活项目</a></li>
+                                                                                                    <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/fyne/project/2.%E8%B6%A3%E5%91%B3%E6%95%B4%E6%B4%BB%E9%A1%B9%E7%9B%AE/">Fyne-趣味整活项目</a></li>
                                                                                                 
                                                                                             </ul>
                                                                                         </div>
@@ -347,7 +348,7 @@
                                                         
                                                             
                                                             
-                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/6.go-gin/">6.Go-Gin</a></li>
+                                                                <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/6.go-gin/">6.Go-Gin</a></li>
                                                             
                                                         
                                                     </ul>
@@ -745,26 +746,10 @@
                     <meta itemprop="position" content='3' />
                 </li>
             
-            
-                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/dev/golang/fyne/">
-                        <span itemprop="name">Fyne</span>
-                    </a>
-                    <meta itemprop="position" content='4' />
-                </li>
-            
-            
-                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/dev/golang/fyne/project/">
-                        <span itemprop="name">项目案例</span>
-                    </a>
-                    <meta itemprop="position" content='5' />
-                </li>
-            
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">Fyne-趣味整活项目</span>
-                <meta itemprop="position" content='6' />
+                <span itemprop="name">6.Go-Gin</span>
+                <meta itemprop="position" content='4' />
             </li>
         
     </ul>
@@ -778,10 +763,27 @@
   <ul>
     <li>
       <ul>
-        <li>
+        <li><a href="#1gin介绍">1.Gin介绍</a></li>
+        <li><a href="#2gin第一个应用">2.Gin第一个应用</a>
           <ul>
-            <li><a href="#全部代码">全部代码</a></li>
-            <li><a href="#go-goroutine-简单概念">Go goroutine 简单概念</a></li>
+            <li><a href="#21测试">2.1测试</a></li>
+          </ul>
+        </li>
+        <li><a href="#3gin工作流程">3.Gin工作流程</a></li>
+        <li><a href="#4gin源码分析">4.Gin源码分析</a>
+          <ul>
+            <li><a href="#41gindefault">4.1<code>gin.Default()</code></a></li>
+            <li><a href="#42enginenew初始化">4.2<code>engine:=New()</code>初始化</a></li>
+            <li><a href="#43engineuse注册中间件">4.3<code>engine.Use()</code>注册中间件</a></li>
+            <li><a href="#44rget注册路由">4.4<code>r.GET()</code>注册路由</a></li>
+            <li><a href="#45rrun启动服务">4.5<code>r.run()</code>启动服务</a></li>
+          </ul>
+        </li>
+        <li><a href="#5gin路由与传参">5.Gin路由与传参</a>
+          <ul>
+            <li><a href="#51无参路由">5.1无参路由</a></li>
+            <li><a href="#52api参数">5.2api参数</a></li>
+            <li><a href="#53shouldbind参数绑定">5.3ShouldBind参数绑定</a></li>
           </ul>
         </li>
       </ul>
@@ -799,10 +801,27 @@
   <ul class="dropdown-menu">
     <li>
       <ul>
-        <li>
+        <li><a href="#1gin介绍">1.Gin介绍</a></li>
+        <li><a href="#2gin第一个应用">2.Gin第一个应用</a>
           <ul>
-            <li><a href="#全部代码">全部代码</a></li>
-            <li><a href="#go-goroutine-简单概念">Go goroutine 简单概念</a></li>
+            <li><a href="#21测试">2.1测试</a></li>
+          </ul>
+        </li>
+        <li><a href="#3gin工作流程">3.Gin工作流程</a></li>
+        <li><a href="#4gin源码分析">4.Gin源码分析</a>
+          <ul>
+            <li><a href="#41gindefault">4.1<code>gin.Default()</code></a></li>
+            <li><a href="#42enginenew初始化">4.2<code>engine:=New()</code>初始化</a></li>
+            <li><a href="#43engineuse注册中间件">4.3<code>engine.Use()</code>注册中间件</a></li>
+            <li><a href="#44rget注册路由">4.4<code>r.GET()</code>注册路由</a></li>
+            <li><a href="#45rrun启动服务">4.5<code>r.run()</code>启动服务</a></li>
+          </ul>
+        </li>
+        <li><a href="#5gin路由与传参">5.Gin路由与传参</a>
+          <ul>
+            <li><a href="#51无参路由">5.1无参路由</a></li>
+            <li><a href="#52api参数">5.2api参数</a></li>
+            <li><a href="#53shouldbind参数绑定">5.3ShouldBind参数绑定</a></li>
           </ul>
         </li>
       </ul>
@@ -815,18 +834,24 @@
                                                 <i class="material-icons title-icon me-2">article</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    Fyne-趣味整活项目
+                                                    6.Go-Gin
                                                     
                                                 </h1>
                                             </div>
                                             
-                                                <p class="lead mb-3"></p>
+                                                <p class="lead mb-3">Go-Gin介绍</p>
                                             
                                             <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h3 id="全部代码">全部代码 <a href="#%e5%85%a8%e9%83%a8%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+        <h2 id="1gin介绍">1.Gin介绍 <a href="#1gin%e4%bb%8b%e7%bb%8d" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
+<li>Gin 是一个高性能的Go语言Web框架，封装比较优雅，API友好，源代码比较明确。具有快速灵活，容错方便等特点。</li>
+<li>其实对于golang而言，web框架的依赖远比Python，Java之类的要小。自身的<code>net/http</code>足够简单，性能也非常不错。</li>
+<li>框架更像是一个常用函数或者工具的集合。借助框架开发，不仅可以省去很多常用的封装带来的时间，也有助于团队的编码风格和形成规范。</li>
+</ul>
+<p><strong>Gin官网:</strong><a href="https://github.com/gin-gonic/gin" rel="external" target="_blank">Gin Github<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
+<h2 id="2gin第一个应用">2.Gin第一个应用 <a href="#2gin%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%ba%94%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
 
 
 
@@ -834,188 +859,764 @@
 
   
       <div class="prism-shortcode">
-      <pre id="abb4f8e" class="language-go line-numbers"
-        ><code class="language-go"
-        >
-package main
-
-import (
- &#34;time&#34;
-
- &#34;fyne.io/fyne/v2&#34;
- &#34;fyne.io/fyne/v2/app&#34;
- &#34;fyne.io/fyne/v2/container&#34;
- &#34;fyne.io/fyne/v2/dialog&#34;
- &#34;fyne.io/fyne/v2/widget&#34;
-)
-
-func main() {
- // 创建一个 Fyne 应用
- a := app.New()
- // 创建一个窗口
- customFont := fyne.NewStaticResource(&#34;NotoSansHans.ttf&#34;, loadFont(&#34;NotoSansHans-Regular.ttf&#34;))
- a.Settings().SetTheme(&amp;myTheme{font: customFont})
-
- win := a.NewWindow(&#34;高端检测器&#34;)
-
- // 创建一个按钮
- btn := widget.NewButton(&#34;检测是否开机&#34;, func() {
-  // 创建一个进度条
-  progress := widget.NewProgressBarInfinite()
-  progressContainer := container.NewVBox(progress)
-
-  // 显示加载动画
-  loadingDialog := dialog.NewCustom(&#34;正在检测...&#34;, &#34;取消&#34;, progressContainer, win)
-  loadingDialog.Show()
-
-  // 模拟加载时间
-go func(){
-
- time.Sleep(10 * time.Second) // 10 秒模拟加载时间
-
- // 关闭加载动画并弹出结果窗口
- loadingDialog.Hide()
- dialog.ShowInformation(&#34;结果&#34;, &#34;电脑是开机的&#34;, win)
-}()
-
- })
-
- // 设置窗口内容
- win.SetContent(container.NewVBox(btn))
- win.Resize(fyne.Size{Width: 400, Height: 200})
- win.CenterOnScreen()
- win.ShowAndRun()
-}
-</code></pre>
-      </div>
-  
-
-<h3 id="go-goroutine-简单概念">Go goroutine 简单概念 <a href="#go-goroutine-%e7%ae%80%e5%8d%95%e6%a6%82%e5%bf%b5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>Goroutine 是 Go 语言中的一种轻量级线程, 由 Go 运行时管理。Goroutine 使得并发编程变得更加简单和高效，可以通过关键字 <code>go</code> 启动。</p>
-<p>当然, 每一个并发执行的活动称为goroutine。当一个程序启动时, 只有一个goroutine来调用main函数, 称之为主goroutine。</p>
-<h4 id="特点">特点 <a href="#%e7%89%b9%e7%82%b9" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><ol>
-<li>
-<p><strong>轻量级</strong>：</p>
-<ul>
-<li>Goroutine 非常轻量级, 可以在同一个程序中启动成千上万个 Goroutine, 而不会造成过多的内存开销。</li>
-</ul>
-</li>
-<li>
-<p><strong>易于使用</strong>：</p>
-<ul>
-<li>只需在<strong>函数调用前加上 <code>go</code> 关键字</strong>, 即可启动一个新的 Goroutine。</li>
-</ul>
-</li>
-<li>
-<p><strong>并发执行</strong>：</p>
-<ul>
-<li>Goroutine 可以并发执行, 不同的 Goroutine 之间可以独立运行, 互不干扰。</li>
-</ul>
-</li>
-<li>
-<p><strong>调度器管理</strong>：</p>
-<ul>
-<li>Go 运行时会自动管理 Goroutine 的调度, 充分利用多核处理器的优势。</li>
-</ul>
-</li>
-</ol>
-<h4 id="goroutine-示例">Goroutine 示例 <a href="#goroutine-%e7%a4%ba%e4%be%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><p>以下是一个简单的 Goroutine 示例：</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="7024351" class="language-go line-numbers"
+      <pre id="d67094d" class="language-go line-numbers"
         ><code class="language-go"
         >package main
 
 import (
- &#34;fmt&#34;
- &#34;time&#34;
+   &#34;github.com/gin-gonic/gin&#34;
+   &#34;net/http&#34;
 )
 
-func sayHello() {
- for i := 0; i &lt; 5; i&#43;&#43; {
-  fmt.Println(&#34;Hello&#34;)
-  time.Sleep(1 * time.Second)
- }
-}
-
 func main() {
- go sayHello() // 启动一个新的 Goroutine 执行 sayHello 函数
-
- // 主 Goroutine 继续执行其他代码
- for i := 0; i &lt; 5; i&#43;&#43; {
-  fmt.Println(&#34;World&#34;)
-  time.Sleep(1 * time.Second)
- }
-
- // 等待 sayHello 函数执行完成
- time.Sleep(6 * time.Second)
+   //实例化gin对象
+   ginSer := gin.Default()
+   //定义路由：当使用 GET 方法访问路径为 /api/gin-test 时，执行回调函数
+   ginSer.GET(&#34;/api/gin-test&#34;, func(c *gin.Context) {
+      //在回调函数中，返回一个字符串 &#34;hello, go&#34; 并设置HTTP状态码为200 OK
+      c.String(http.StatusOK, &#34;Hello Gin&#34;)
+   })
+   ginSer.Run(&#34;:8000&#34;)
 }
 </code></pre>
       </div>
   
 
-<p>输出情况:</p>
-<p>由于 sayHello 函数在一个新的 goroutine 中执行, 而 main 函数继续执行, 两个函数的输出将会交错在一起。具体的输出可能会有所不同, 有可能是如下面这样</p>
+<h3 id="21测试">2.1测试 <a href="#21%e6%b5%8b%e8%af%95" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
 
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="65e7f7f" class="language-md ">
-  <code>World
-Hello
-World
-Hello
-...</code>
-  </pre>
-  </div>
-<p>而Up主的案例是这样。</p>
 
 
 
   
-  
+      <div class="prism-shortcode">
+      <pre id="556fa27" class="language-shell line-numbers"
+        ><code class="language-shell"
+        >//启动服务端
+fei@feideMBP test % go run main.go 
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in &#34;debug&#34; mode. Switch to &#34;release&#34; mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /api/gin-test             --&gt; main.main.func1 (3 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8000
+[GIN] 2024/10/03 - 22:34:40 | 200 |      26.316µs |       127.0.0.1 | GET      &#34;/api/gin-test&#34;
+
+//测试
+fei@feideMBP ~ % curl 127.0.0.1:8000/api/gin-test 
+Hello Gin
+</code></pre>
+      </div>
   
 
-  
-  
-  
-  
+<h2 id="3gin工作流程">3.Gin工作流程 <a href="#3gin%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
+<li><code>Engine</code>容器对象,整个框架的基础</li>
+<li><code>Engine.trees</code>负责存储路由和handle方法的映射,采用类似字典树的结构</li>
+<li><code>Engine.RouterGroup</code>其中的Handlers存储着所有中间件</li>
+<li><code>Context 上下文对象</code>负责处理请求和回应,其中的handlers是存储处理请求时中间件和处理方法的</li>
+</ul>
+<p>
+
+
+
+
 
   
 
-  <div class="prism-codeblock ">
-  <pre id="d1ca4f0" class="language-md ">
-  <code>World
-Hello
-Hello
-World
-World
-Hello
-Hello
-World
-World
-Hello</code>
-  </pre>
-  </div>
-<p>上文这就是 Goroutine 的一个非常好的案例</p>
+
+
+  
+    
+      <img src="/images/go-gin/gin-init.png" alt="" width="1462" height="754" loading="lazy">
+    
+  
+</p>
+<p><strong>请求处理流程</strong></p>
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/go-gin/gin-request.png" alt="" width="1848" height="526" loading="lazy">
+    
+  
+</p>
+<h2 id="4gin源码分析">4.Gin源码分析 <a href="#4gin%e6%ba%90%e7%a0%81%e5%88%86%e6%9e%90" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="41gindefault">4.1<code>gin.Default()</code> <a href="#41gindefault" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="4901321" class="language-go line-numbers"
+        ><code class="language-go"
+        >// Default和New几乎是一模一样的，就是调用了Go泪痣的Logger，Recovery中间件
+func Default() *Engine {
+   debugPrintWARNINGDefault()
+   engine := New()  // 默认实例
+    // 注册中间件，中间件是一个函数，最终只要返回一个type HandlerFunc func (*Context) 就可以
+   engine.Use(Logger(), Recovery())
+   return engine
+}
+</code></pre>
+      </div>
+  
+
+<h3 id="42enginenew初始化">4.2<code>engine:=New()</code>初始化 <a href="#42enginenew%e5%88%9d%e5%a7%8b%e5%8c%96" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>通过调用<code>gin.New()</code>方法来实例化 Engine容器 .</p>
+<ol>
+<li>初始化<code>Engine</code></li>
+<li>将<code>RouterGroup</code>的<code>Handlers(数组)</code>设置成<code>nil</code>, <code>basePath</code>设置成<code>/</code></li>
+<li>为了使用方便, <code>RouteGroup</code>里面也有一个<code>Engine</code>指针, 这里将刚刚初始化的<code>engine</code>赋值给了<code>RouterGroup</code>的<code>engine</code>指针</li>
+<li>为了防止频繁的<code>context GC</code>造成效率的降低, 在Engine里使用了<code>sync.Pool</code>, 专门存储gin的<code>Context</code></li>
+</ol>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="6e823d5" class="language-go line-numbers"
+        ><code class="language-go"
+        >func New() *Engine {
+	debugPrintWARNINGNew()
+	// Engine 容器对象,整个框架的基础
+	engine := &amp;Engine{ // 初始化语句
+		// Handlers 全局中间件组在注册路由时使用
+		RouterGroup: RouterGroup{ // Engine.RouterGroup,其中的Handlers存储着所有中间件
+			Handlers: nil,
+			basePath: &#34;/&#34;,
+			root: true,
+		},
+		// 树结构,保存路由和处理方法的映射
+		trees: make(methodTrees, 0, 9),
+	}
+	engine.RouterGroup.engine = engine
+	return engine
+}
+</code></pre>
+      </div>
+  
+
+<h3 id="43engineuse注册中间件">4.3<code>engine.Use()</code>注册中间件 <a href="#43engineuse%e6%b3%a8%e5%86%8c%e4%b8%ad%e9%97%b4%e4%bb%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>gin框架中的中间件设计很巧妙，可以首先从最常用的 <code>r := gin.Default()</code>的Default 函数开始看</li>
+<li>它内部构造一个新的<code>engine</code>之后就通过<code>Use()</code>函数注册了<code>Logger</code>中间件和<code>Recovery</code>中间件</li>
+<li><code>Use()</code>就是gin的引入中间件的入口了</li>
+<li>仔细分析这个函数, 不难发现<code>Use()</code>其实是在给<code>RouteGroup</code>引入中间件的.</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="afad541" class="language-go line-numbers"
+        ><code class="language-go"
+        >func Default() *Engine {
+    debugPrintWARNINGDefault()
+    engine := New()
+    engine.Use(Logger(), Recovery())  // 默认注册的两个中间件
+    return engine
+}
+</code></pre>
+      </div>
+  
+
+<p><strong><code>gin.use()</code>调用<code>RouterGroup.Use()</code>往<code>RouterGroup.Handlers</code>写入记录</strong>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="60b62f6" class="language-go line-numbers"
+        ><code class="language-go"
+        >func (engine *Engine) Use(middleware ...HandlerFunc) IRoutes {
+	engine.RouterGroup.Use(middleware...)
+	engine.rebuild404Handlers() //注册404处理方法
+	engine.rebuild405Handlers() //注册405处理方法
+	return engine
+}
+// 其中`Handlers`字段就是一个数组,用来存储中间件
+func (group *RouterGroup) Use(middleware ...HandlerFunc) IRoutes {
+	group.Handlers = append(group.Handlers, middleware...)
+	return group.returnObj()
+}
+</code></pre>
+      </div>
+  
+</p>
+<p><strong>组成一条处理函数链条<code>HandlersChain</code></strong></p>
+<ul>
+<li>也就是说，我们会将一个路由的中间件函数和处理函数结合到一起组成一条处理函数链条HandlersChain</li>
+<li>而它本质上就是一个由HandlerFunc组成的切片<code>type HandlersChain []HandlerFunc</code></li>
+</ul>
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/go-gin/gin-handlerschain.png" alt="" width="1314" height="420" loading="lazy">
+    
+  
+</p>
+<p><strong>中间件的执行</strong></p>
+<p>其中<code>c.Next()</code>就是很关键的一步，它的代码很简单</p>
+<p>从下面的代码可以看到，这里通过索引遍历<code>HandlersChain</code>链条，从而实现依次调用该路由的每一个函数（中间件或处理请求的函数），我们可以在中间件函数中通过再次调用<code>c.Next()</code>实现嵌套调用（func1中调用func2；func2中调用func3）
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="9231cb3" class="language-go line-numbers"
+        ><code class="language-go"
+        >func (c *Context) Next() {
+    c.index&#43;&#43;
+    for c.index &lt; int8(len(c.handlers)) {
+        c.handlers[c.index](c)
+        c.index&#43;&#43;
+    }
+}
+</code></pre>
+      </div>
+  
+</p>
+<h3 id="44rget注册路由">4.4<code>r.GET()</code>注册路由 <a href="#44rget%e6%b3%a8%e5%86%8c%e8%b7%af%e7%94%b1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="4b8fbf7" class="language-go line-numbers"
+        ><code class="language-go"
+        >r.GET(&#34;/&#34;, func(c *gin.Context) {
+    c.String(http.StatusOK, &#34;hello World!&#34;)
+})
+</code></pre>
+      </div>
+  
+
+<p><strong>通过Get方法将路由和处理视图函数注册</strong>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="675ba48" class="language-go line-numbers"
+        ><code class="language-go"
+        >func (group *RouterGroup) GET(relativePath string, handlers ...HandlerFunc) IRoutes {
+	return group.handle(http.MethodGet, relativePath, handlers)
+}
+
+func (group *RouterGroup) handle(httpMethod, relativePath string, handlers HandlersChain) IRoutes {
+	absolutePath := group.calculateAbsolutePath(relativePath)
+	handlers = group.combineHandlers(handlers)  // 将处理请求的函数与中间件函数结合
+	group.engine.addRoute(httpMethod, absolutePath, handlers)   // 调用addRoute方法注册路由
+	return group.returnObj()
+}
+</code></pre>
+      </div>
+  
+</p>
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/go-gin/gin-radix_tree.png" alt="" width="1827" height="1012" loading="lazy">
+    
+  
+</p>
+<ul>
+<li>这段代码就是利用method, path, 将handlers注册到engine的trees中.</li>
+<li>注意这里为什么是HandlersChain呢, 可以简单说一下, 就是将中间件和处理函数都注册到method, path的tree中了.</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="f10c030" class="language-go line-numbers"
+        ><code class="language-go"
+        >// tree.go
+
+// addRoute 将具有给定句柄的节点添加到路径中。
+// 不是并发安全的
+func (n *node) addRoute(path string, handlers HandlersChain) {
+	fullPath := path
+	n.priority&#43;&#43;
+	numParams := countParams(path)  // 数一下参数个数
+
+	// 空树就直接插入当前节点
+	if len(n.path) == 0 &amp;&amp; len(n.children) == 0 {
+		n.insertChild(numParams, path, fullPath, handlers)
+		n.nType = root
+		return
+	}
+	parentFullPathIndex := 0
+
+walk:
+	for {
+		// 更新当前节点的最大参数个数
+		if numParams &gt; n.maxParams {
+			n.maxParams = numParams
+		}
+
+		// 找到最长的通用前缀
+		// 这也意味着公共前缀不包含“:”&#34;或“*” /
+		// 因为现有键不能包含这些字符。
+		i := longestCommonPrefix(path, n.path)
+
+		// 分裂边缘（此处分裂的是当前树节点）
+		// 例如一开始path是search，新加入support，s是他们通用的最长前缀部分
+		// 那么会将s拿出来作为parent节点，增加earch和upport作为child节点
+		if i &lt; len(n.path) {
+			child := node{
+				path:      n.path[i:],  // 公共前缀后的部分作为子节点
+				wildChild:  n.wildChild,
+				indices:    n.indices,
+				children:   n.children,
+				handlers:   n.handlers,
+				priority:   n.priority - 1, //子节点优先级-1
+				fullPath:   n.fullPath,
+			}
+
+			// Update maxParams (max of all children)
+			for _, v := range child.children {
+				if v.maxParams &gt; child.maxParams {
+					child.maxParams = v.maxParams
+				}
+			}
+
+			n.children = []*node{&amp;child}
+			// []byte for proper unicode char conversion, see #65
+			n.indices = string([]byte{n.path[i]})
+			n.path = path[:i]
+			n.handlers = nil
+			n.wildChild = false
+			n.fullPath = fullPath[:parentFullPathIndex&#43;i]
+		}
+
+		// 将新来的节点插入新的parent节点作为子节点
+		if i &lt; len(path) {
+			path = path[i:]
+
+			if n.wildChild {  // 如果是参数节点
+				parentFullPathIndex &#43;= len(n.path)
+				n = n.children[0]
+				n.priority&#43;&#43;
+
+				// Update maxParams of the child node
+				if numParams &gt; n.maxParams {
+					n.maxParams = numParams
+				}
+				numParams--
+
+				// 检查通配符是否匹配
+				if len(path) &gt;= len(n.path) &amp;&amp; n.path == path[:len(n.path)] {
+					// 检查更长的通配符, 例如 :name and :names
+					if len(n.path) &gt;= len(path) || path[len(n.path)] == &#39;/&#39; {
+						continue walk
+					}
+				}
+
+				pathSeg := path
+				if n.nType != catchAll {
+					pathSeg = strings.SplitN(path, &#34;/&#34;, 2)[0]
+				}
+				prefix := fullPath[:strings.Index(fullPath, pathSeg)] &#43; n.path
+				panic(&#34;&#39;&#34; &#43; pathSeg &#43;
+					&#34;&#39; in new path &#39;&#34; &#43; fullPath &#43;
+					&#34;&#39; conflicts with existing wildcard &#39;&#34; &#43; n.path &#43;
+					&#34;&#39; in existing prefix &#39;&#34; &#43; prefix &#43;
+					&#34;&#39;&#34;)
+			}
+			// 取path首字母，用来与indices做比较
+			c := path[0]
+
+			// 处理参数后加斜线情况
+			if n.nType == param &amp;&amp; c == &#39;/&#39; &amp;&amp; len(n.children) == 1 {
+				parentFullPathIndex &#43;= len(n.path)
+				n = n.children[0]
+				n.priority&#43;&#43;
+				continue walk
+			}
+
+			// 检查路path下一个字节的子节点是否存在
+			// 比如s的子节点现在是earch和upport，indices为eu
+			// 如果新加一个路由为super，那么就是和upport有匹配的部分u，将继续分列现在的upport节点
+			for i, max := 0, len(n.indices); i &lt; max; i&#43;&#43; {
+				if c == n.indices[i] {
+					parentFullPathIndex &#43;= len(n.path)
+					i = n.incrementChildPrio(i)
+					n = n.children[i]
+					continue walk
+				}
+			}
+
+			// 否则就插入
+			if c != &#39;:&#39; &amp;&amp; c != &#39;*&#39; {
+				// []byte for proper unicode char conversion, see #65
+				// 注意这里是直接拼接第一个字符到n.indices
+				n.indices &#43;= string([]byte{c})
+				child := &amp;node{
+					maxParams: numParams,
+					fullPath:  fullPath,
+				}
+				// 追加子节点
+				n.children = append(n.children, child)
+				n.incrementChildPrio(len(n.indices) - 1)
+				n = child
+			}
+			n.insertChild(numParams, path, fullPath, handlers)
+			return
+		}
+
+		// 已经注册过的节点
+		if n.handlers != nil {
+			panic(&#34;handlers are already registered for path &#39;&#34; &#43; fullPath &#43; &#34;&#39;&#34;)
+		}
+		n.handlers = handlers
+		return
+	}
+}
+</code></pre>
+      </div>
+  
+
+<h3 id="45rrun启动服务">4.5<code>r.run()</code>启动服务 <a href="#45rrun%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>通过调用<code>net/http</code>来启动服务,由于<code>engine</code>实现了<code>ServeHTTP</code>方法</li>
+<li>只需要直接传<code>engine</code>对象就可以完成初始化并启动</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="0a92139" class="language-go line-numbers"
+        ><code class="language-go"
+        >//r.Run()
+func (engine *Engine) Run(addr ...string) (err error) {
+	defer func() { debugPrintError(err) }()
+	address := resolveAddress(addr)
+	debugPrint(&#34;Listening and serving HTTP on %s\n&#34;, address)
+	err = http.ListenAndServe(address, engine)    // gin使用net/http模块
+	return
+}
+func ListenAndServe(addr string, handler Handler) error {
+	server := &amp;Server{Addr: addr, Handler: handler}
+	return server.ListenAndServe()
+}
+//来自 net/http 定义的接口,只要实现了这个接口就可以作为处理请求的函数
+type Handler interface {
+	ServeHTTP(ResponseWriter, *Request)
+}
+//实现了ServeHTTP方法
+func (engine *Engine) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+	c := engine.pool.Get().(*Context)
+	c.writermem.reset(w)
+	c.Request = req
+	c.reset()
+	engine.handleHTTPRequest(c)
+	engine.pool.Put(c)
+}
+</code></pre>
+      </div>
+  
+
+<h2 id="5gin路由与传参">5.Gin路由与传参 <a href="#5gin%e8%b7%af%e7%94%b1%e4%b8%8e%e4%bc%a0%e5%8f%82" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="51无参路由">5.1无参路由 <a href="#51%e6%97%a0%e5%8f%82%e8%b7%af%e7%94%b1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="27559be" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;github.com/gin-gonic/gin&#34;
+	&#34;log&#34;
+	&#34;net/http&#34;
+)
+
+func HelloGinHandler(c *gin.Context) {
+	// gin.Context，封装了request和response
+	c.String(http.StatusOK, &#34;Hello Gin&#34;)
+}
+
+func main() {
+	//实例化gin对象
+	ginSer := gin.Default()
+	// 基本路由 /hello/
+	ginSer.GET(&#34;/hello&#34;, HelloGinHandler)
+	log.Printf(&#34;PATH: %s&#34;, &#34;http://127.0.0.1:8000&#34;)
+	ginSer.Run(&#34;:8000&#34;)
+}
+</code></pre>
+      </div>
+  
+
+<h3 id="52api参数">5.2api参数 <a href="#52api%e5%8f%82%e6%95%b0" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="5819d10" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;fmt&#34;
+	&#34;github.com/gin-gonic/gin&#34;
+	&#34;log&#34;
+	&#34;net/http&#34;
+)
+
+// uri路径传参
+func GetBookDetailHandler(c *gin.Context) {
+	bookId := c.Param(&#34;id&#34;)
+	c.String(http.StatusOK, fmt.Sprintf(&#34;成功获取书籍详情：%s&#34;, bookId))
+}
+
+// ?号传参
+func GetUserDetailHandler(c *gin.Context) {
+	username := c.Query(&#34;name&#34;)
+	// gin.Context，封装了request和response
+	c.String(http.StatusOK, fmt.Sprintf(&#34;成功获取用户详情：%s&#34;, username))
+}
+
+// 组合使用
+func GetFoodDetailHandler(c *gin.Context) {
+	Food := c.Param(&#34;name&#34;)
+	Weight := c.Query(&#34;weight&#34;)
+	c.String(http.StatusOK, fmt.Sprintf(&#34;成功获取食物：%s，重%v斤&#34;, Food, Weight))
+}
+
+func main() {
+	//实例化gin对象
+	ginSer := gin.Default()
+	//注册路由
+	ginSer.GET(&#34;/book/:id&#34;, GetBookDetailHandler)
+	ginSer.GET(&#34;/user&#34;, GetUserDetailHandler)
+	ginSer.GET(&#34;/food/:name&#34;, GetFoodDetailHandler)
+	log.Printf(&#34;PATH: %s&#34;, &#34;http://127.0.0.1:8000&#34;)
+	ginSer.Run(&#34;:8000&#34;)
+}
+
+</code></pre>
+      </div>
+  
+
+<strong>测试</strong>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="f06de39" class="language-shell line-numbers"
+        ><code class="language-shell"
+        >fei@feideMBP ~ % curl 127.0.0.1:8000/book/9623503
+成功获取书籍详情：9623503                       
+fei@feideMBP ~ % curl 127.0.0.1:8000/user?name=虞锋
+成功获取用户详情：虞锋
+fei@feideMBP ~ % curl 127.0.0.1:8000/food/cake?weight=256
+成功获取食物：cake，重256斤
+</code></pre>
+      </div>
+  
+</p>
+<h3 id="53shouldbind参数绑定">5.3ShouldBind参数绑定 <a href="#53shouldbind%e5%8f%82%e6%95%b0%e7%bb%91%e5%ae%9a" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p><strong>Gin提供了一个更加便捷、开发效率更高的方法获取参数，也就是参数绑定。</strong></p>
+<ul>
+<li>我们可以基于请求的Content-Type识别请求数据类型并利用反射机制</li>
+<li>自动提取请求中QueryString、form表单、JSON、XML等参数到结构体中。</li>
+<li>下面的示例代码将演示<code>.ShouldBind()</code>强大的功能，它能够自动提取基于querystring、form、json、path的参数，并把值绑定到指定的结构体对象。</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="6ea0f36" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;github.com/gin-gonic/gin&#34;
+	&#34;log&#34;
+	&#34;net/http&#34;
+)
+
+/*
+binding 用于必填参数校验、
+json 用于将application/json请求绑定到结构体、
+form 用于将multipart/form-data请求绑定到结构体
+*/
+type Login struct {
+	Username string `form:&#34;username&#34; json:&#34;username&#34; binding:&#34;required&#34;`
+	Password string `form:&#34;password&#34; json:&#34;password&#34; binding:&#34;required&#34;`
+}
+
+func LoginHandler(c *gin.Context) {
+	login := &amp;Login{}
+	//GET请求一般使用form标签
+	//application/json一般是POST、PUT、DELETE
+
+	if err := c.ShouldBind(&amp;login); err != nil {
+		//gin.H 为一个map
+		c.JSON(http.StatusOK, gin.H{
+			&#34;msg&#34;:  &#34;绑定参数失败&#34; &#43; err.Error(),
+			&#34;data&#34;: nil,
+			&#34;code&#34;: 90400,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		&#34;msg&#34;:  &#34;绑定参数成功&#34;,
+		&#34;data&#34;: login,
+		&#34;code&#34;: 90200,
+	})
+}
+
+func main() {
+	//实例化gin对象
+	ginSer := gin.Default()
+	//注册路由
+	ginSer.POST(&#34;/login&#34;, LoginHandler)
+	ginSer.GET(&#34;/login&#34;, LoginHandler)
+	log.Printf(&#34;PATH: %s&#34;, &#34;http://127.0.0.1:8000&#34;)
+	ginSer.Run(&#34;:8000&#34;)
+}
+</code></pre>
+      </div>
+  
+
+<p><strong>测试</strong>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="1827851" class="language-shell line-numbers"
+        ><code class="language-shell"
+        >POST json测试
+fei@feideMBP ~ % curl --location &#39;http://127.0.0.1:8000/login&#39; \
+--header &#39;Content-Type: application/json&#39; \
+--data &#39;{
+    &#34;username&#34;: &#34;fei&#34;,
+    &#34;password&#34;: &#34;123456&#34;
+}&#39;
+{&#34;code&#34;:90200,&#34;data&#34;:{&#34;username&#34;:&#34;fei&#34;,&#34;password&#34;:&#34;123456&#34;},&#34;msg&#34;:&#34;绑定参数成功&#34;}
+
+fei@feideMBP ~ % curl --location &#39;http://127.0.0.1:8000/login&#39; \
+--header &#39;Content-Type: application/json&#39; \
+--data &#39;{
+    &#34;username&#34;: &#34;fei&#34;
+}&#39;
+{&#34;code&#34;:90400,&#34;data&#34;:null,&#34;msg&#34;:&#34;绑定参数失败Key: &#39;Login.Password&#39; Error:Field validation for &#39;Password&#39; failed on the &#39;required&#39; tag&#34;}
+
+GET form测试
+fei@feideMBP ~ % curl --location --request GET &#39;http://127.0.0.1:8000/login&#39; \
+--form &#39;username=&#34;fly&#34;&#39; \
+--form &#39;password=&#34;123456&#34;&#39;
+{&#34;code&#34;:90200,&#34;data&#34;:{&#34;username&#34;:&#34;fly&#34;,&#34;password&#34;:&#34;123456&#34;},&#34;msg&#34;:&#34;绑定参数成功&#34;}
+
+fei@feideMBP ~ % curl --location --request GET &#39;http://127.0.0.1:8000/login&#39; \
+--form &#39;username=&#34;fly&#34;&#39;
+{&#34;code&#34;:90400,&#34;data&#34;:null,&#34;msg&#34;:&#34;绑定参数失败Key: &#39;Login.Password&#39; Error:Field validation for &#39;Password&#39; failed on the &#39;required&#39; tag&#34;}
+</code></pre>
+      </div>
+  
+</p>
 
     </div>
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+<div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
+    
+    <div id="last-modified" class="mt-1">
+        <p class="mb-0 fw-semibold">Last updated <span
+            id="relativetime"
+            data-authdate="2024-10-04T05:00:06&#43;0800"
+            title="04 Oct 2024, 05:00 &#43;0800">
+            04 Oct 2024, 05:00 &#43;0800
+        </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
+        </p>
+    </div>
+    
+</div>
 
     
 
@@ -1026,22 +1627,22 @@ Hello</code>
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/dev/golang/fyne/project/1.markdown%E7%BC%96%E8%BE%91%E5%99%A8/">
+		<a href="/docs/dev/golang/5.go-grpc/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> Fyne-Markdown编辑器</p>
-					<p class="card-text ms-2"></p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 5.Go-gRPC</p>
+					<p class="card-text ms-2">Go-gRPC介绍</p>
 					
 				</div>
 			</div>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/dev/golang/1.go%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+		<a class="ms-auto" href="/docs/ops/kubernetes/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.Go的面向对象 <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2">简单介绍一下封装、继承、多态、空接口、类型断言</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4&#43;IPv6双栈) <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2">Kubernetes（简称k8s）是Google在2014 …</p>
 					
 				</div>
 			</div>
