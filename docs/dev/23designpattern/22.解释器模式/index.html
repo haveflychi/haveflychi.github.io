@@ -351,6 +351,11 @@
                                                                 <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/6.go-gin/">6.Go-Gin</a></li>
                                                             
                                                         
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/7.go-gorm/">7.Go-GORM</a></li>
+                                                            
+                                                        
                                                     </ul>
                                                 </div>
                                             </li>
@@ -2261,6 +2266,13 @@ func main() {
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -2711,6 +2723,15 @@ func main() {
     index.add(
             {
                 id:  49 ,
+                href: "\/docs\/dev\/golang\/7.go-gorm\/",
+                title: "7.Go-GORM",
+                description: "Go-GORM介绍",
+                content: "1.什么是ORM？ linkorm是一种术语而不是软件\norm英文全称object relational mapping,就是 ==对象映射关系== 程序； 简单来说类似python这种面向对象的程序来说一切皆对象，但是我们使用的数据库却都是关系型的； 为了保证一致的使用习惯，通过 orm将编程语言的对象模型和数据库的关系模型建立映射关系； 这样我们直接 使用编程语言的对象模型进行操作数据库 就可以了，而不用直接使用sql语言； 2.什么是GORM？ linkGORM 官方文档\n全功能 ORM (无限接近) 关联 (Has One, Has Many, Belongs To, Many To Many, 多态) 钩子 (在创建/保存/更新/删除/查找之前或之后) 预加载 事务 复合主键 SQL 生成器 数据库自动迁移 自定义日志 可扩展性, 可基于 GORM 回调编写插件 所有功能都被测试覆盖 开发者友好 3.GORM(v2)基本使用 link3.1安装 link go get -u gorm.io/gorm 4.准备MySQL环境 link4.1docker拉起一个mysql link docker run --name fly-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:8.0 4.2创建数据库 link create database test_db charset utf8mb4; use test_db; show tables; 4.3连接数据库 link package main import ( \"gorm.io/driver/mysql\" \"gorm.io/gorm\" ) // 数据库初始化 func main() { //定义db连接串 //parseTime=True\u0026loc=Local //parseTime查询结果示范自带解析为时间。查询数据时将mysql_datetime字段字段转成go_time.time //loc是mysql的时区设置 dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } } 4.4自动迁移表 link package main import ( \"gorm.io/driver/mysql\" \"gorm.io/gorm\" ) // 1.表对应的struct type User struct { ID int64 `gorm:\"primary_key\"` Username string Password string } // 2.自定义表名 func (*User) TableName() string { return \"user_t\" } // 数据库初始化 func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表 mdb.AutoMigrate(User{}) } 5.增删改查 link 增 package main import ( \"gorm.io/driver/mysql\" \"gorm.io/gorm\" ) // 1.表对应的struct type User struct { ID int64 `gorm:\"primary_key\"` Username string Password string } // 2.自定义表名 func (*User) TableName() string { return \"user\" } // 数据库初始化 func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表，已存在不会重复创建 mdb.AutoMigrate(User{}) //新增 mdb.Create(\u0026User{ //ID: 0, 自增属性不需要控制，所以注释掉 Username: \"sky\", Password: \"123456\", }) } 测试 fei@feideMBP 03crud % go run main.go fei@feideMBP 03crud % mysql\u003e select * from user; +----+----------+----------+ | id | username | password | +----+----------+----------+ | 1 | sky | 123456 | +----+----------+----------+ 1 row in set (0.00 sec) 改 package main import ( \"gorm.io/driver/mysql\" \"gorm.io/gorm\" ) // 1.表对应的struct type User struct { ID int64 `gorm:\"primary_key\"` Username string Password string } // 2.自定义表名 func (*User) TableName() string { return \"user\" } // 数据库初始化 func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表，已存在不会重复创建 mdb.AutoMigrate(User{}) //新增 (必须接收指针类型) mdb.Create(\u0026User{ //ID: 0, 自增属性不需要控制，所以注释掉 Username: \"sky02\", Password: \"123456\", }) //修改 id := 1 //where 里面是原生的查询条件 mdb.Model(User{}).Where(\"id = ?\", id).Update(\"username\", \"fei\") /* 等价于： UPDATE user SET username='fei' WHERE id=1; Model()传入User结构体，自动去找该结构体小写复数即users，如果指定了func (*User) TableName() string 方法则找方法中对应的表名。 其他写法 mdb.Model(User{ID: 1,}).Update(\"username\", \"fei\") mdb.Table(\"user\").Where(\"id = ?\", id).Update(\"username\", \"fei\") */ } 测试 fei@feideMBP 03crud % go run main.go fei@feideMBP 03crud % mysql\u003e select * from user; +----+----------+----------+ | id | username | password | +----+----------+----------+ | 1 | fei | 123456 | | 2 | sky02 | 123456 | +----+----------+----------+ 2 rows in set (0.00 sec) //将第一次加的sky改名成了fei //第二次运行的create 又插入了一条数据 查 package main import ( \"gorm.io/driver/mysql\" \"gorm.io/gorm\" \"log\" ) // 1.表对应的struct type User struct { ID int64 `gorm:\"primary_key\"` Username string Password string } // 2.自定义表名 func (*User) TableName() string { return \"user\" } // 数据库初始化 func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表，已存在不会重复创建 mdb.AutoMigrate(User{}) //查询 第一种 u := \u0026User{ID: 1} mdb.First(u) log.Printf(\"第一种查询写法：%v\", u) //查询 第二种 u2 := \u0026User{} mdb.Where(\"id = ?\", 2).First(u2) log.Printf(\"第二种查询写法：%v\", u2) //查询所有数据 users := []User{} mdb.Find(\u0026users) log.Printf(\"查询全部：%v\", users) } 测试 fei@feideMBP 03crud % go run main.go 2024/10/05 22:47:25 第一种查询写法：\u0026{1 fei 123456} 2024/10/05 22:47:25 第二种查询写法：\u0026{2 sky02 123456} 2024/10/05 22:47:25 查询全部：[{1 fei 123456} {2 sky02 123456}] 删 package main import ( \"gorm.io/driver/mysql\" \"gorm.io/gorm\" \"log\" ) // 1.表对应的struct type User struct { ID int64 `gorm:\"primary_key\"` Username string Password string } // 2.自定义表名 func (*User) TableName() string { return \"user\" } // 数据库初始化 func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表，已存在不会重复创建 mdb.AutoMigrate(User{}) users := []User{} mdb.Find(\u0026users) log.Printf(\"删除前查询全部：%v\", users) //删除，传入结构体表示在哪张表中删除 mdb.Where(\"id = ?\", 1).Delete(\u0026User{}) log.Printf(\"删除完成\") //查询所有数据 mdb.Find(\u0026users) log.Printf(\"删除后查询全部：%v\", users) } 测试 fei@feideMBP 03crud % go run main.go 2024/10/05 22:53:38 删除前查询全部：[{1 fei 123456} {2 sky02 123456}] 2024/10/05 22:53:38 删除完成 2024/10/05 22:53:38 删除后查询全部：[{2 sky02 123456}] 5.1错误处理 link package main import ( \"gorm.io/driver/mysql\" \"gorm.io/gorm\" \"log\" ) // 1.表对应的struct type User struct { ID int64 `gorm:\"primary_key\"` Username string Password string } // 2.自定义表名 func (*User) TableName() string { return \"user\" } // 数据库初始化 func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表，已存在不会重复创建 mdb.AutoMigrate(User{}) users := []User{} mdb.Find(\u0026users) log.Printf(\"查询全部：%v\", users) //错误处理演示 u2 := \u0026User{} tx := mdb.Where(\"id = ?\", 1).First(u2) //注意，tx.Error。查询出的数据为空也会算成err \"record not found\" if tx.Error != nil { log.Printf(\"查询报错\") } //处理方式 if tx.Error != nil \u0026\u0026 tx.Error != gorm.ErrRecordNotFound { log.Printf(\"查询报错2\") } } 测试 fei@feideMBP 03crud % go run main.go 2024/10/05 23:03:24 查询全部：[{2 sky02 123456}] 2024/10/05 23:03:24 /Volumes/data/go/src/test/03crud/main.go:41 record not found [1.660ms] [rows:0] SELECT * FROM `user` WHERE id = 1 ORDER BY `user`.`id` LIMIT 1 2024/10/05 23:03:24 查询报错 6.模型定义 link文档参考\n6.1模型定义 link 模型一般都是普通的 Golang 的结构体，Go的基本数据类型，或者指针。 package main import ( \"gorm.io/driver/mysql\" \"gorm.io/gorm\" \"time\" ) // 不建议将字段属性放到结构体中定义 type User struct { Id int64 `gorm:\"primary_key\" json:\"id\"` Name string CreatedAt *time.Time `json:\"createdAt\" gorm:\"column:create_at\"` //定义字段名 Email string `gorm:\"type:varchar(100);unique_index\"` // 唯一索引 Role string `gorm:\"size:255\"` //设置字段的大小为255个字节 MemberNumber *string `gorm:\"unique;not null\"` // 设置字段唯一，且不为空 Num int `gorm:\"AUTO_INCREMENT\"` // 设置 Num字段自增 Address string `gorm:\"index:addr\"` // 给Address 创建一个名字是 `addr`的索引 IgnoreMe int `gorm:\"-\"` //忽略这个字段 } func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表，已存在不会重复创建 mdb.AutoMigrate(User{}) } 测试 fei@feideMBP 04mode % go run main.go fei@feideMBP 04mode % mysql\u003e desc users; +---------------+--------------+------+-----+---------+----------------+ | Field | Type | Null | Key | Default | Extra | +---------------+--------------+------+-----+---------+----------------+ | id | bigint | NO | PRI | NULL | auto_increment | | name | longtext | YES | | NULL | | | create_at | datetime(3) | YES | | NULL | | | email | varchar(100) | YES | | NULL | | | role | varchar(255) | YES | | NULL | | | member_number | varchar(191) | NO | UNI | NULL | | | num | bigint | YES | | NULL | | | address | varchar(191) | YES | MUL | NULL | | +---------------+--------------+------+-----+---------+----------------+ 8 rows in set (0.01 sec) 6.2支持结构标签\n标签是声明模型时可选的标记。 标签 说明 Column 指定列的名称 Type 指定列的类型 Size 指定列的大小，默认是 255 PRIMARY_KEY 指定一个列作为主键 UNIQUE 指定一个唯一的列 DEFAULT 指定一个列的默认值 PRECISION 指定列的数据的精度 NOT NULL 指定列的数据不为空 AUTO_INCREMENT 指定一个列的数据是否自增 INDEX 创建带或不带名称的索引，同名创建复合索引 UNIQUE_INDEX 类似 索引 ，创建一个唯一的索引 EMBEDDED 将 struct 设置为 embedded EMBEDDED_PREFIX 设置嵌入式结构的前缀名称 - 忽略这些字段 7.一对多 link7.1has many介绍 linkhttps://gorm.io/zh_CN/docs/has_many.html\nhas many关联就是创建和另一个模型的一对多关系。不同于has one，拥有者可以有零或多个关联模型。 例如，例如每一个用户都拥有多张信用卡，这样就是生活中一个简单的一对多关系。 // 用户有多张信用卡，UserID 是外键 type User struct { gorm.Model CreditCards []*CreditCard } // 必须要写UserID这个外键属性 type CreditCard struct { gorm.Model Number string UserID uint // 默认会在 CreditCard 表中生成 UserID 字段作为 与User表关联的外键ID } // mdb.AutoMigrate(User{}, CreditCard{}) 7.2外键 link 为了定义一对多关系， 外键是必须存在的，默认外键的名字是所有者类型的名字加上它的主键(UserId) 。 就像上面的例子，为了定义一个属于 User 的模型，外键就应该为 UserID。 使用其他的字段名作为外键， 可以通过foreignkey来定制它。 type User struct { gorm.Model // foreignkey:UserRefer 可以自己指定外键关联字段名为：UserRefer // 默认外键字段名是 UserId，你也可以自己修改 CreditCards []CreditCard `gorm:\"foreignkey:UserRefer\"` } type CreditCard struct { gorm.Model Number string UserRefer uint } // mdb.AutoMigrate(User{}, CreditCard{}) 7.3外键关联 link GORM通常使用所有者的主键作为外键的值,例如, User的ID, 当您将信用卡分配给用户时,GORM将保存用户的信用卡 ID 放入信用卡’ UserID 字段中。 您可以使用标签进行更改 references type User struct { ID uint `gorm:\"primarykey\"` MemberNumber string `gorm:\"type:varchar(255);unique\"` //一对多关联需要唯一所以这里设置unique约束，否则mysql创建报错 // 默认CreditCard会使用User表的Id作为外键，references:MemberNumber 指定使用 MemberNumber 作为外键关联 CreditCards []CreditCard `gorm:\"foreignkey:UserMember;references:MemberNumber\"` } type CreditCard struct { ID uint `gorm:\"primarykey\"` Number string UserMember string } // mdb.AutoMigrate(User{}, CreditCard{}) 7.4一对多查询DEMO link package main import ( \"gorm.io/driver/mysql\" \"gorm.io/gorm\" ) /* constraint:OnUpdate:CASCADE 【当User表更新，也会同步给CreditCards】 // 外键约束 OnDelete:SET NULL 【当User中数据被删除时，CreditCard关联设置为 NULL，不删除记录】 */ type User struct { gorm.Model Username string `json:\"username\" gorm:\"column:username\"` CreditCards []CreditCard `gorm:\"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;\"` } type CreditCard struct { gorm.Model Number string UserID uint } func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表，已存在不会重复创建 mdb.AutoMigrate(User{}, CreditCard{}) // 1、创建一对多 user := User{ Username: \"zhangsan\", CreditCards: []CreditCard{ {Number: \"0001\"}, {Number: \"0002\"}, }, } mdb.Create(\u0026user) // 2、为已存在用户添加信用卡 u := User{Username: \"zhangsan\"} mdb.First(\u0026u) //fmt.Println(u.Username) mdb.Model(\u0026u).Association(\"CreditCards\").Append([]CreditCard{ {Number: \"0003\"}, }) } mysql\u003e select * from users; +----+-------------------------+-------------------------+------------+----------+ | id | created_at | updated_at | deleted_at | username | +----+-------------------------+-------------------------+------------+----------+ | 1 | 2024-10-06 04:43:29.747 | 2024-10-06 04:43:29.758 | NULL | zhangsan | +----+-------------------------+-------------------------+------------+----------+ 1 row in set (0.00 sec) mysql\u003e select * from credit_cards; +----+-------------------------+-------------------------+------------+--------+---------+ | id | created_at | updated_at | deleted_at | number | user_id | +----+-------------------------+-------------------------+------------+--------+---------+ | 1 | 2024-10-06 04:43:29.749 | 2024-10-06 04:43:29.749 | NULL | 0001 | 1 | | 2 | 2024-10-06 04:43:29.749 | 2024-10-06 04:43:29.749 | NULL | 0002 | 1 | | 3 | 2024-10-06 04:43:29.760 | 2024-10-06 04:43:29.760 | NULL | 0003 | 1 | +----+-------------------------+-------------------------+------------+--------+---------+ 3 rows in set (0.00 sec) 一对多 Association(不推荐) https://gorm.io/zh_CN/docs/associations.html\n使用 Association 方法, 需要把 User 查询好, 然后根据 User 定义中指定的 AssociationForeignKey 去查找 CreditCard。 package main import ( \"encoding/json\" \"fmt\" \"gorm.io/driver/mysql\" \"gorm.io/gorm\" ) /* constraint:OnUpdate:CASCADE 【当User表更新，也会同步给CreditCards】 // 外键约束 OnDelete:SET NULL 【当User中数据被删除时，CreditCard关联设置为 NULL，不删除记录】 */ type User struct { gorm.Model Username string `json:\"username\" gorm:\"column:username\"` CreditCards []CreditCard `gorm:\"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;\"` } type CreditCard struct { gorm.Model Number string UserID uint } func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表，已存在不会重复创建 mdb.AutoMigrate(User{}, CreditCard{}) // 1、查找 用户名为 zhangsan 的所有信用卡信息 u := User{Username: \"zhangsan\"} // Association必须要先查出User才能关联查询对应的CreditCard mdb.First(\u0026u) err = mdb.Model(\u0026u).Association(\"CreditCards\").Find(\u0026u.CreditCards) if err != nil { fmt.Println(err) } strUser, _ := json.Marshal(\u0026u) fmt.Println(string(strUser)) } fei@feideMBP 04mode % go run main.go { \"ID\": 1, \"CreatedAt\": \"2024-10-06T04:43:29.747+08:00\", \"UpdatedAt\": \"2024-10-06T04:43:29.758+08:00\", \"DeletedAt\": null, \"username\": \"zhangsan\", \"CreditCards\": [{ \"ID\": 1, \"CreatedAt\": \"2024-10-06T04:43:29.749+08:00\", \"UpdatedAt\": \"2024-10-06T04:43:29.749+08:00\", \"DeletedAt\": null, \"Number\": \"0001\", \"UserID\": 1 } ... ] } 一对多 Preload https://gorm.io/zh_CN/docs/preload.html\n使用 Preload 方法, 在查询 User 时先去获取 CreditCard 的记录。 package main import ( \"encoding/json\" \"fmt\" \"gorm.io/driver/mysql\" \"gorm.io/gorm\" ) /* constraint:OnUpdate:CASCADE 【当User表更新，也会同步给CreditCards】 // 外键约束 OnDelete:SET NULL 【当User中数据被删除时，CreditCard关联设置为 NULL，不删除记录】 */ type User struct { gorm.Model Username string `json:\"username\" gorm:\"column:username\"` CreditCards []CreditCard `gorm:\"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;\"` } type CreditCard struct { gorm.Model Number string UserID uint } func main() { dsn := \"root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4\u0026parseTime=True\u0026loc=Local\" //0.建立连接 mdb, err := gorm.Open(mysql.Open(dsn), \u0026gorm.Config{}) if err != nil { panic(err) } //3.自带创建表，AutoMigrate没有建立映射关系 // 用于项目初始化自动创建表，已存在不会重复创建 mdb.AutoMigrate(User{}, CreditCard{}) // 1、预加载: 查找 user 时预加载相关 CreditCards users := []User{} mdb.Preload(\"CreditCards\").Find(\u0026users) strUser, _ := json.Marshal(\u0026users) fmt.Println(string(strUser)) } [{ \"ID\": 1, \"CreatedAt\": \"2024-10-06T04:43:29.747+08:00\", \"UpdatedAt\": \"2024-10-06T04:43:29.758+08:00\", \"DeletedAt\": null, \"username\": \"zhangsan\", \"CreditCards\": [{ \"ID\": 1, \"CreatedAt\": \"2024-10-06T04:43:29.749+08:00\", \"UpdatedAt\": \"2024-10-06T04:43:29.749+08:00\", \"DeletedAt\": null, \"Number\": \"0001\", \"UserID\": 1 }, ... ] }] 目的:\nPreload: 用于预加载关联数据，通常在查询时使用。 Association: 用于管理已经加载模型的关联数据，包括增删改查。 使用场景:\n当你需要一次性加载主模型及其关联数据时，使用 Preload。 当你需要对已经加载的模型的关联进行进一步操作时，使用 Association。 8.多对多 link8.1many to many介绍 linkhttps://gorm.io/zh_CN/docs/many_to_many.html\nMany to Many 会在两个 model 中添加一张连接表。 例如，您的应用包含了 user 和 language，且一个 user 可以说多种 language，多个 user 也可以说一种 language。 当使用 GORM 的 AutoMigrate 为 User 创建表时，GORM 会自动创建连接表 "
+            }
+        );
+    index.add(
+            {
+                id:  50 ,
                 href: "\/docs\/ops\/kubernetes\/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -2719,7 +2740,7 @@ func main() {
         );
     index.add(
             {
-                id:  50 ,
+                id:  51 ,
                 href: "\/docs\/ops\/kubernetes\/2.kubernetes-v1.30.2%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "2.Kubernetes-v1.30.2高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -2728,7 +2749,7 @@ func main() {
         );
     index.add(
             {
-                id:  51 ,
+                id:  52 ,
                 href: "\/docs\/ops\/kubernetes\/3.%E5%8D%87%E7%BA%A7%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2%E7%9A%84kubernetes%E9%9B%86%E7%BE%A4\/",
                 title: "3.升级二进制部署的kubernetes集群",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化应用，Kubernetes的目标是让部署容器化的应用简单并且高效，Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -2737,7 +2758,7 @@ func main() {
         );
     index.add(
             {
-                id:  52 ,
+                id:  53 ,
                 href: "\/docs\/ops\/kubernetes\/4.kubernetes%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D\/",
                 title: "4.Kubernetes核心概念介绍",
                 description: "本文介绍kubernetes中一些核心概念，如：pod、工作负载、service、kube-proxy代理模式等",
@@ -2746,7 +2767,7 @@ func main() {
         );
     index.add(
             {
-                id:  53 ,
+                id:  54 ,
                 href: "\/docs\/ops\/container\/1.%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E6%89%80%E6%B6%89%E5%8F%8A%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF\/",
                 title: "1.容器技术所涉及的Linux内核关键技术",
                 description: "容器的前世今生",
@@ -2755,7 +2776,7 @@ func main() {
         );
     index.add(
             {
-                id:  54 ,
+                id:  55 ,
                 href: "\/docs\/ops\/container\/containerd\/1.containerd%E8%BD%BB%E9%87%8F%E7%BA%A7or%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7\/",
                 title: "1.Containerd轻量级or工业级的容器管理工具",
                 description: "Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。",
@@ -2764,7 +2785,7 @@ func main() {
         );
     index.add(
             {
-                id:  55 ,
+                id:  56 ,
                 href: "\/docs\/ops\/container\/docker\/1.docker%E9%95%9C%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BB%8B%E7%BB%8D\/",
                 title: "1.Docker镜像基本操作和介绍",
                 description: "Docker镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。",
@@ -2773,7 +2794,7 @@ func main() {
         );
     index.add(
             {
-                id:  56 ,
+                id:  57 ,
                 href: "\/docs\/ops\/container\/docker\/2.docker%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%E6%90%AD%E5%BB%BA\/",
                 title: "2.Docker容器镜像国内加速及本地容器镜像仓库搭建",
                 description: "众所周知的原因和解决方案",
@@ -2782,7 +2803,7 @@ func main() {
         );
     index.add(
             {
-                id:  57 ,
+                id:  58 ,
                 href: "\/docs\/ops\/container\/docker\/3.dockerfile%E4%BB%8B%E7%BB%8D\/",
                 title: "3.Dockerfile介绍",
                 description: "学习制作docker镜像",
@@ -2791,7 +2812,7 @@ func main() {
         );
     index.add(
             {
-                id:  58 ,
+                id:  59 ,
                 href: "\/docs\/ops\/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8\/",
                 title: "1.Nginx配置小全",
                 description: "Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；",
@@ -2800,7 +2821,7 @@ func main() {
         );
     index.add(
             {
-                id:  59 ,
+                id:  60 ,
                 href: "\/docs\/demo\/features\/",
                 title: "Features",
                 description: "A guide to the core features of the Lotus Docs theme.",
@@ -2809,7 +2830,7 @@ func main() {
         );
     index.add(
             {
-                id:  60 ,
+                id:  61 ,
                 href: "\/docs\/dev\/golang\/fyne\/project\/",
                 title: "项目案例",
                 description: "使用Fyne实现几个项目",
@@ -2818,7 +2839,7 @@ func main() {
         );
     index.add(
             {
-                id:  61 ,
+                id:  62 ,
                 href: "\/docs\/demo\/features\/syntax-highlighting\/",
                 title: "Syntax Highlighting",
                 description: "How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma).",
@@ -2827,7 +2848,7 @@ func main() {
         );
     index.add(
             {
-                id:  62 ,
+                id:  63 ,
                 href: "\/docs\/demo\/features\/katex\/",
                 title: "KaTex",
                 description: "Fast Tex math rendering for your Lotus Docs site",
@@ -2836,7 +2857,7 @@ func main() {
         );
     index.add(
             {
-                id:  63 ,
+                id:  64 ,
                 href: "\/docs\/demo\/features\/mermaid\/",
                 title: "Mermaid",
                 description: "How to use the Mermaid diagramming and chart tool with Lotus Docs",
@@ -2845,7 +2866,7 @@ func main() {
         );
     index.add(
             {
-                id:  64 ,
+                id:  65 ,
                 href: "\/docs\/demo\/shortcodes\/",
                 title: "Shortcodes",
                 description: "Lotus Docs Custom Shortcodes.",
@@ -2854,7 +2875,7 @@ func main() {
         );
     index.add(
             {
-                id:  65 ,
+                id:  66 ,
                 href: "\/docs\/demo\/shortcodes\/alerts\/",
                 title: "Alerts",
                 description: "How to use Alert Shortcodes to render custom page alerts in markdown.",
@@ -2863,7 +2884,7 @@ func main() {
         );
     index.add(
             {
-                id:  66 ,
+                id:  67 ,
                 href: "\/docs\/demo\/shortcodes\/tables\/",
                 title: "Tables",
                 description: "How to use the Lotus Docs table shortcode to render great looking markdown tables",
@@ -2872,7 +2893,7 @@ func main() {
         );
     index.add(
             {
-                id:  67 ,
+                id:  68 ,
                 href: "\/docs\/demo\/shortcodes\/tabs\/",
                 title: "Tabs",
                 description: "How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs",
@@ -2881,7 +2902,7 @@ func main() {
         );
     index.add(
             {
-                id:  68 ,
+                id:  69 ,
                 href: "\/docs\/demo\/shortcodes\/prism\/",
                 title: "Prism",
                 description: "How to use the Prism Shortcode for syntax highlighting code blocks.",
@@ -2890,7 +2911,7 @@ func main() {
         );
     index.add(
             {
-                id:  69 ,
+                id:  70 ,
                 href: "\/docs\/demo\/shortcodes\/markdownify\/",
                 title: "Markdownify",
                 description: "A simple shortcode to render content as Markdown.",
@@ -2899,7 +2920,7 @@ func main() {
         );
     index.add(
             {
-                id:  70 ,
+                id:  71 ,
                 href: "\/docs\/demo\/shortcodes\/katex\/",
                 title: "KaTex",
                 description: "A Shortcode to render KaTex syntax in your Lotus Docs site",
