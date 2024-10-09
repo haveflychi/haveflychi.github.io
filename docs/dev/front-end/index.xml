@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端 on Maxbit Docs</title>
+    <link>https://docs.cakepanit.com/docs/dev/front-end/</link>
+    <description>Recent content in 前端 on Maxbit Docs</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
+    <webMaster>admin@cakepanit.com (饼铛)</webMaster>
+    <lastBuildDate>Thu, 10 Oct 2024 00:11:59 +0800</lastBuildDate>
+    <atom:link href="https://docs.cakepanit.com/docs/dev/front-end/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.HTML</title>
+      <link>https://docs.cakepanit.com/docs/dev/front-end/1.html/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/front-end/1.html/</guid>
+      <description>1.1 一个基础例子 link一个基础的HTML例子：&#xA;&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;page name&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;title 1&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;sub title&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt;title 2&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 整个文件由html标签包着，其中由分为首部和主体两部分，分别用head标签和body标签包裹。&#xA;首部告诉浏览器关于网页的信息，如页面标题，首部包括&amp;lt;head&amp;gt;和&amp;lt;/head&amp;gt;之间的所有内容。其中的title标签定义了网页的标题，meta标签指定了字符编码。&#xA;主体包含网页的所有内容和结构，也就是在浏览器直接看到的部分，主体包括&amp;lt;body&amp;gt;和&amp;lt;/body&amp;gt;之间的所有内容。其中的h1标签和h2标签分别是一级标题和二级标题，p标签则是段落。&#xA;保存为HTML文件，在浏览器打开后，页面效果如下：&#xA;此外，还可以在HTML的首部里增加一些样式，就是style标签。style标签有一个可选的属性type，一般指定为&amp;quot;text/css&amp;quot;。&#xA;&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;page name&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; body { background-color: #d2b48c; margin-left: 20%; margin-right: 20%; border: 2px dotted black; padding: 10px 10px 10px 10px; font-family: sans-serif; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;title 1&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;sub title&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt;title 2&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; style标签中的body表示这段配置应用于主体中的body标签。</description>
+    </item>
+  </channel>
+</rss>

@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Sun, 06 Oct 2024 19:17:51 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2024 00:11:59 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/tags/beginners/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇WIKI</title>
@@ -275,6 +275,13 @@
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/golang/7.go-gorm/</guid>
       <description>1.什么是ORM？ linkorm是一种术语而不是软件&#xA;orm英文全称object relational mapping,就是 ==对象映射关系== 程序； 简单来说类似python这种面向对象的程序来说一切皆对象，但是我们使用的数据库却都是关系型的； 为了保证一致的使用习惯，通过 orm将编程语言的对象模型和数据库的关系模型建立映射关系； 这样我们直接 使用编程语言的对象模型进行操作数据库 就可以了，而不用直接使用sql语言； 2.什么是GORM？ linkGORM 官方文档&#xA;全功能 ORM (无限接近) 关联 (Has One, Has Many, Belongs To, Many To Many, 多态) 钩子 (在创建/保存/更新/删除/查找之前或之后) 预加载 事务 复合主键 SQL 生成器 数据库自动迁移 自定义日志 可扩展性, 可基于 GORM 回调编写插件 所有功能都被测试覆盖 开发者友好 3.GORM(v2)基本使用 link3.1安装 link go get -u gorm.io/gorm 4.准备MySQL环境 link4.1docker拉起一个mysql link docker run --name fly-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:8.0 4.2创建数据库 link create database test_db charset utf8mb4; use test_db; show tables; 4.</description>
+    </item>
+    <item>
+      <title>1.HTML</title>
+      <link>https://docs.cakepanit.com/docs/dev/front-end/1.html/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/front-end/1.html/</guid>
+      <description>1.1 一个基础例子 link一个基础的HTML例子：&#xA;&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;page name&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;title 1&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;sub title&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt;title 2&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 整个文件由html标签包着，其中由分为首部和主体两部分，分别用head标签和body标签包裹。&#xA;首部告诉浏览器关于网页的信息，如页面标题，首部包括&amp;lt;head&amp;gt;和&amp;lt;/head&amp;gt;之间的所有内容。其中的title标签定义了网页的标题，meta标签指定了字符编码。&#xA;主体包含网页的所有内容和结构，也就是在浏览器直接看到的部分，主体包括&amp;lt;body&amp;gt;和&amp;lt;/body&amp;gt;之间的所有内容。其中的h1标签和h2标签分别是一级标题和二级标题，p标签则是段落。&#xA;保存为HTML文件，在浏览器打开后，页面效果如下：&#xA;此外，还可以在HTML的首部里增加一些样式，就是style标签。style标签有一个可选的属性type，一般指定为&amp;quot;text/css&amp;quot;。&#xA;&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;page name&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; body { background-color: #d2b48c; margin-left: 20%; margin-right: 20%; border: 2px dotted black; padding: 10px 10px 10px 10px; font-family: sans-serif; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;title 1&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;sub title&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt;title 2&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; style标签中的body表示这段配置应用于主体中的body标签。</description>
     </item>
     <item>
       <title>1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4&#43;IPv6双栈)</title>

@@ -16,9 +16,9 @@
 
 <html lang="zh-CN"><head>
     <meta charset="utf-8" />
-    <title>20.状态模式 | Maxbit Docs</title>
+    <title>前端 | Maxbit Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="状态模式（State Pattern）是一种行为型设计模式，它适用于一个对象在在不同的状态下有不同的行为时，比如说电灯的开、关、闪烁是不停的状态，状态不同时，对应的行为也不同，在没有状态模式的情况下，为了添加新的状态或修改现有的状态，往往**需要修改已有的代码**，这违背了开闭原则，而且如果对象的状态切换逻辑和各个状态的行为都在同一个类中实现，就可能导致该类的职责过重，不符合单一职责原则。">
+    <meta name="description" content="前端开发相关文档">
     <meta name="keywords" content="Maxbit,上海大比特,DBA,SRE,Go,Golang,Linux,运维,系统运维,自动化运维,分布式,高可用,负载均衡,老菜鸟,Docker,k8s,虚拟化,云计算,DevOps,CI&#x2F;CD,network,system,存储" />
     <meta name="author" content="饼铛" />
     <meta name="email" content="admin@cakepanit.com" />
@@ -31,15 +31,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.cakepanit.com/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.cakepanit.com/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://docs.cakepanit.com/site.webmanifest">
-<meta property="og:title" content="20.状态模式" />
-<meta property="og:description" content="状态模式（State Pattern）是一种行为型设计模式，它适用于一个对象在在不同的状态下有不同的行为时，比如说电灯的开、关、闪烁是不停的状态，状态不同时，对应的行为也不同，在没有状态模式的情况下，为了添加新的状态或修改现有的状态，往往**需要修改已有的代码**，这违背了开闭原则，而且如果对象的状态切换逻辑和各个状态的行为都在同一个类中实现，就可能导致该类的职责过重，不符合单一职责原则。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/23designpattern/20.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_9397786785135505295.png"/><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
-<meta property="article:modified_time" content="2023-05-03T22:37:22+01:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_9397786785135505295.png"/>
-<meta name="twitter:title" content="20.状态模式"/>
-<meta name="twitter:description" content="状态模式（State Pattern）是一种行为型设计模式，它适用于一个对象在在不同的状态下有不同的行为时，比如说电灯的开、关、闪烁是不停的状态，状态不同时，对应的行为也不同，在没有状态模式的情况下，为了添加新的状态或修改现有的状态，往往**需要修改已有的代码**，这违背了开闭原则，而且如果对象的状态切换逻辑和各个状态的行为都在同一个类中实现，就可能导致该类的职责过重，不符合单一职责原则。"/>
+<meta property="og:title" content="前端" />
+<meta property="og:description" content="前端开发相关文档" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/front-end/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_15623198738092156952.png"/><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_15623198738092156952.png"/>
+<meta name="twitter:title" content="前端"/>
+<meta name="twitter:description" content="前端开发相关文档"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -122,12 +120,12 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  current active">
+                                            <li class="sidebar-dropdown nested  ">
                                                 <button class="btn">
                                                     
                                                     23种设计模式
                                                 </button>
-                                                <div class="sidebar-submenu d-block">
+                                                <div class="sidebar-submenu ">
                                                     <ul>
                                                         
                                                             
@@ -227,7 +225,7 @@
                                                         
                                                             
                                                             
-                                                                <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/23designpattern/20.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">20.状态模式</a></li>
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/23designpattern/20.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">20.状态模式</a></li>
                                                             
                                                         
                                                             
@@ -363,12 +361,12 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  ">
+                                            <li class="sidebar-dropdown nested  current active">
                                                 <button class="btn">
                                                     
                                                     前端
                                                 </button>
-                                                <div class="sidebar-submenu ">
+                                                <div class="sidebar-submenu d-block">
                                                     <ul>
                                                         
                                                             
@@ -763,18 +761,10 @@
                     <meta itemprop="position" content='2' />
                 </li>
             
-            
-                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/dev/23designpattern/">
-                        <span itemprop="name">23种设计模式</span>
-                    </a>
-                    <meta itemprop="position" content='3' />
-                </li>
-            
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">20.状态模式</span>
-                <meta itemprop="position" content='4' />
+                <span itemprop="name">前端</span>
+                <meta itemprop="position" content='3' />
             </li>
         
     </ul>
@@ -782,680 +772,56 @@
                                     
                                     <div class="row flex-xl-nowrap">
                                         
-                                        <div class="docs-toc col-xl-3    d-xl-block"><toc>
+                                        <div class="docs-toc col-xl-3 visually-hidden visually-hidden  d-xl-block"><toc>
     <div class="fw-bold text-uppercase mb-2">On this page</div>
-    <nav id="toc">
-  <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#需求">需求</a></li>
-            <li><a href="#基本结构">基本结构</a></li>
-            <li><a href="#基本结构-1">基本结构：</a></li>
-            <li><a href="#基本使用">基本使用</a></li>
-            <li><a href="#使用场景">使用场景</a></li>
-            <li><a href="#本题代码">本题代码</a></li>
-          </ul>
-        </li>
-        <li><a href="#其他语言版本">其他语言版本</a>
-          <ul>
-            <li><a href="#c">C++</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#go">Go</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+    <nav id="toc"></nav>
     </toc></div>
                                         
                                         
-                                        <div class="docs-toc-mobile    d-print-none d-xl-none">
+                                        <div class="docs-toc-mobile visually-hidden visually-hidden  d-print-none d-xl-none">
                                             <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
                                                 Table of Contents
                                             </button>
-<nav id="toc-mobile">
-  <ul class="dropdown-menu">
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#需求">需求</a></li>
-            <li><a href="#基本结构">基本结构</a></li>
-            <li><a href="#基本结构-1">基本结构：</a></li>
-            <li><a href="#基本使用">基本使用</a></li>
-            <li><a href="#使用场景">使用场景</a></li>
-            <li><a href="#本题代码">本题代码</a></li>
-          </ul>
-        </li>
-        <li><a href="#其他语言版本">其他语言版本</a>
-          <ul>
-            <li><a href="#c">C++</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#go">Go</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-                                        <div class="docs-content col-12 col-xl-9 mt-0">
+<nav id="toc-mobile"></nav></div>
+                                        <div class="docs-content col-12  mt-0">
                                             <div class="mb-0 d-flex">
                                                 
-                                                <i class="material-icons title-icon me-2">article</i>
+                                                <i class="material-icons title-icon me-2">edit</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    20.状态模式
+                                                    前端
                                                     
                                                 </h1>
                                             </div>
                                             
-                                                <p class="lead mb-3">状态模式（State Pattern）是一种行为型设计模式，它适用于一个对象在在不同的状态下有不同的行为时，比如说电灯的开、关、闪烁是不停的状态，状态不同时，对应的行为也不同，在没有状态模式的情况下，为了添加新的状态或修改现有的状态，往往<strong>需要修改已有的代码</strong>，这违背了开闭原则，而且如果对象的状态切换逻辑和各个状态的行为都在同一个类中实现，就可能导致该类的职责过重，不符合单一职责原则。</p>
+                                                <p class="lead mb-3">前端开发相关文档</p>
                                             
                                             <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                                 
-    
-    <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h3 id="需求">需求 <a href="#%e9%9c%80%e6%b1%82" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>【设计模式专题之状态模式】20-开关台灯</p>
-<p><strong>题目描述</strong></p>
-<ul>
-<li>小明家有一个灯泡，刚开始为关闭状态（OffState）。台灯可以接收一系列的指令，包括打开（&ldquo;ON&rdquo;）、关闭（&ldquo;OFF&rdquo;）和闪烁（&ldquo;blink&rdquo;）。每次接收到一个指令后，台灯会执行相应的操作，并输出当前灯泡的状态。请设计一个程序模拟这个灯泡系统。</li>
-</ul>
-<p><strong>输入描述</strong></p>
-<ul>
-<li>第一行是一个整数 n（1 &lt;= n &lt;= 1000），表示接收的命令数量。</li>
-<li>接下来的 n 行，每行包含一个字符串 s，表示一个命令（&ldquo;ON&rdquo;、&ldquo;OFF&quot;或&quot;blink&rdquo;）。</li>
-</ul>
-<p><strong>输出描述</strong></p>
-<ul>
-<li>对于每个命令，输出一行，表示执行该命令后灯泡的状态。</li>
-</ul>
-<p><strong>输入示例</strong>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="27f16fe" class="language-auto line-numbers"
-        ><code class="language-auto"
-        >5
-ON
-OFF
-BLINK
-OFF
-ON
-</code></pre>
-      </div>
-  
-</p>
-<p><strong>输出示例</strong>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d699e7b" class="language-auto line-numbers"
-        ><code class="language-auto"
-        >Light is ON
-Light is OFF
-Light is Blinking
-Light is OFF
-Light is ON
-</code></pre>
-      </div>
-  
-</p>
-<h3 id="基本结构">基本结构 <a href="#%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>状态模式（State Pattern）是一种行为型设计模式，它适用于一个对象在在不同的状态下有不同的行为时，比如说电灯的开、关、闪烁是不停的状态，状态不同时，对应的行为也不同，在没有状态模式的情况下，为了添加新的状态或修改现有的状态，往往<strong>需要修改已有的代码</strong>，这违背了开闭原则，而且如果对象的状态切换逻辑和各个状态的行为都在同一个类中实现，就可能导致该类的职责过重，不符合单一职责原则。</p>
-<p>而状态模式将每个状态的行为封装在一个具体状态类中，使得每个状态类相对独立，并将对象在不同状态下的行为进行委托，从而使得对象的状态可以在运行时动态改变，每个状态的实现也不会影响其他状态。</p>
-<h3 id="基本结构-1">基本结构： <a href="#%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84-1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>状态模式包括以下几个重要角色：</p>
-<ul>
-<li>
-<p><code>State</code>（状态）： 定义一个接口，用于封装与Context的一个特定状态相关的行为。</p>
-</li>
-<li>
-<p><code>ConcreteState</code>（具体状态）： 负责处理Context在状态改变时的行为, 每一个具体状态子类实现一个与<code>Context</code>的一个状态相关的行为。</p>
-</li>
-<li>
-<p><code>Context</code>（上下文）:  维护一个具体状态子类的实例，这个实例定义当前的状态。</p>
-</li>
-</ul>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/23DesignPattern/image-20240104144032552.png" alt="image-20240104144032552" width="1910" height="864" loading="lazy">
-    
-  
-</p>
-<h3 id="基本使用">基本使用 <a href="#%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ol>
-<li>定义状态接口：创建一个状态接口，该接口声明了对象可能的各种状态对应的方法。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="01293ff" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 状态接口
-public interface State {
-    void handle();
-}
-</code></pre>
-      </div>
-  
-
-<ol start="2">
-<li>实现具体状态类： 为对象可能的每种状态创建具体的状态类，实现状态接口中定义的方法。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="4bbde4a" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 具体状态类1
-public class ConcreteState1 implements State {
-    @Override
-    public void handle() {
-        // 执行在状态1下的操作
-    }
-}
-
-// 具体状态类2
-public class ConcreteState2 implements State {
-    @Override
-    public void handle() {
-        // 执行在状态2下的操作
-    }
-}
-</code></pre>
-      </div>
-  
-
-<ol start="3">
-<li>创建上下文类：该类包含对状态的引用，并在需要时调用当前状态的方法。</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="97616fa" class="language-java line-numbers"
-        ><code class="language-java"
-        >// 上下文类
-public class Context {
-    private State currentState;
-
-    public void setState(State state) {
-        this.currentState = state;
-    }
-
-    public void request() {
-        currentState.handle();
-    }
-}
-
-</code></pre>
-      </div>
-  
-
-<ol start="4">
-<li>客户端使用：创建具体的状态对象和上下文对象，并通过上下文对象调用相应的方法。通过改变状态，可以改变上下文对象的行为</li>
-</ol>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="5769902" class="language-java line-numbers"
-        ><code class="language-java"
-        >public class Client {
-    public static void main(String[] args) {
-        Context context = new Context();
-
-        State state1 = new ConcreteState1();
-        State state2 = new ConcreteState2();
-
-        context.setState(state1);
-        context.request(); // 执行在状态1下的操作
-
-        context.setState(state2);
-        context.request(); // 执行在状态2下的操作
-    }
-}
-</code></pre>
-      </div>
-  
-
-<h3 id="使用场景">使用场景 <a href="#%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>状态模式将每个状态的实现都封装在一个类中，每个状态类的实现相对独立，使得添加新状态或修改现有状态变得更加容易，避免了使用大量的条件语句来控制对象的行为。但是如果状态过多，会导致类的数量增加，可能会使得代码结构复杂。</p>
-<p>总的来说，状态模式适用于有限状态机的场景，其中对象的行为在运行时可以根据内部状态的改变而改变，在游戏开发中，Unity3D 的 Animator 控制器就是一个状态机。它允许开发人员定义不同的状态（动画状态），并通过状态转换来实现角色的动画控制和行为切换。</p>
-<h3 id="本题代码">本题代码 <a href="#%e6%9c%ac%e9%a2%98%e4%bb%a3%e7%a0%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="5343502" class="language-java line-numbers"
-        ><code class="language-java"
-        >import java.util.Scanner;
-
-// 状态接口
-interface State {
-    String handle(); // // 处理状态的方法
-}
-
-// 具体状态类
-class OnState implements State {
-    @Override
-    public String handle() {
-        return &#34;Light is ON&#34;;
-    }
-}
-
-class OffState implements State {
-    @Override
-    public String handle() {
-        return &#34;Light is OFF&#34;;
-    }
-}
-
-class BlinkState implements State {
-    @Override
-    public String handle() {
-        return &#34;Light is Blinking&#34;;
-    }
-}
-
-// 上下文类
-class Light {
-    private State state; // 当前状态
-
-    public Light() {
-        this.state = new OffState(); // 初始状态为关闭
-    }
-
-    public void setState(State state) { // 设置新的状态
-        this.state = state;
-    }
-
-    public String performOperation() { // 执行当前状态的操作
-        return state.handle();
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        // 创建一个Scanner对象以读取用户输入
-        Scanner scanner = new Scanner(System.in);
-
-        int n = scanner.nextInt();
-        scanner.nextLine(); 
-
-        Light light = new Light();
-		// 处理用户输入
-        for (int i = 0; i &lt; n; i&#43;&#43;) {
-            String command = scanner.nextLine().trim();
-			// 根据输入修改灯的状态
-            switch (command) {
-                case &#34;ON&#34;:
-                    light.setState(new OnState());
-                    break;
-                case &#34;OFF&#34;:
-                    light.setState(new OffState());
-                    break;
-                case &#34;BLINK&#34;:
-                    light.setState(new BlinkState());
-                    break;
-                default:
-                    System.out.println(&#34;Invalid command: &#34; &#43; command);
-                    break;
-            }
-			// 显示灯的当前状态
-            System.out.println(light.performOperation());
-        }
-    }
-}
-</code></pre>
-      </div>
-  
-
-<h2 id="其他语言版本">其他语言版本 <a href="#%e5%85%b6%e4%bb%96%e8%af%ad%e8%a8%80%e7%89%88%e6%9c%ac" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="c">C++ <a href="#c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="322e235" class="language-cpp line-numbers"
-        ><code class="language-cpp"
-        >#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;string&gt;
- 
-// 状态接口
-class State {
-public:
-    virtual std::string handle() = 0;  // 处理状态的方法
-};
- 
-// 具体状态类
-class OnState : public State {
-public:
-    std::string handle() override {
-        return &#34;Light is ON&#34;;
-    }
-};
- 
-class OffState : public State {
-public:
-    std::string handle() override {
-        return &#34;Light is OFF&#34;;
-    }
-};
- 
-class BlinkState : public State {
-public:
-    std::string handle() override {
-        return &#34;Light is Blinking&#34;;
-    }
-};
- 
-// 上下文类
-class Light {
-private:
-    State* state;  // 当前状态
- 
-public:
-    Light() : state(new OffState()) {}  // 初始状态为关闭
- 
-    void setState(State* newState) {  // 设置新的状态
-        delete state;  // 释放之前的状态对象
-        state = newState;
-    }
- 
-    std::string performOperation() {  // 执行当前状态的操作
-        return state-&gt;handle();
-    }
- 
-    ~Light() {
-        delete state;  // 释放内存
-    }
-};
- 
-int main() {
-    // 读取要输入的命令数量
-    int n;
-    std::cin &gt;&gt; n;
-    std::cin.ignore();  // 消耗掉整数后的换行符
- 
-    // 创建一个Light对象
-    Light light;
- 
-    // 处理用户输入的每个命令
-    for (int i = 0; i &lt; n; i&#43;&#43;) {
-        // 读取命令并去掉首尾空白字符
-        std::string command;
-        std::getline(std::cin, command);
- 
-        // 根据命令执行相应的操作
-        if (command == &#34;ON&#34;) {
-            light.setState(new OnState());
-        } else if (command == &#34;OFF&#34;) {
-            light.setState(new OffState());
-        } else if (command == &#34;BLINK&#34;) {
-            light.setState(new BlinkState());
-        } else {
-            // 处理无效命令
-            std::cout &lt;&lt; &#34;Invalid command: &#34; &lt;&lt; command &lt;&lt; std::endl;
-        }
- 
-        // 在每个命令后显示灯的当前状态
-        std::cout &lt;&lt; light.performOperation() &lt;&lt; std::endl;
-    }
- 
-    return 0;
-}
-</code></pre>
-      </div>
-  
-
-<h3 id="python">Python <a href="#python" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a3e0fac" class="language-python line-numbers"
-        ><code class="language-python"
-        ># 状态接口
-class State:
-    def handle(self):
-        pass
- 
-# 具体状态类
-class OnState(State):
-    def handle(self):
-        return &#34;Light is ON&#34;
- 
-class OffState(State):
-    def handle(self):
-        return &#34;Light is OFF&#34;
- 
-class BlinkState(State):
-    def handle(self):
-        return &#34;Light is Blinking&#34;
- 
-# 上下文类
-class Light:
-    def __init__(self):
-        self.state = OffState()  # 初始状态为关闭
- 
-    def set_state(self, new_state):
-        self.state = new_state  # 设置新的状态
- 
-    def perform_operation(self):
-        return self.state.handle()  # 执行当前状态的操作
- 
-# 处理用户输入
-def main():
-    # 读取要输入的命令数量
-    n = int(input().strip())
- 
-    # 创建一个Light对象
-    light = Light()
- 
-    # 处理用户输入的每个命令
-    for _ in range(n):
-        # 读取命令并去掉首尾空白字符
-        command = input().strip()
- 
-        # 根据命令执行相应的操作
-        if command == &#34;ON&#34;:
-            light.set_state(OnState())
-        elif command == &#34;OFF&#34;:
-            light.set_state(OffState())
-        elif command == &#34;BLINK&#34;:
-            light.set_state(BlinkState())
-        else:
-            # 处理无效命令
-            print(&#34;Invalid command:&#34;, command)
- 
-        # 在每个命令后显示灯的当前状态
-        print(light.perform_operation())
- 
-if __name__ == &#34;__main__&#34;:
-    main()
-
-</code></pre>
-      </div>
-  
-
-<h3 id="go">Go <a href="#go" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="7c5242d" class="language-go line-numbers"
-        ><code class="language-go"
-        >package main
-
-import (
-	&#34;fmt&#34;
-	&#34;bufio&#34;
-	&#34;os&#34;
-	&#34;strings&#34;
-)
-
-// 状态接口
-type State interface {
-	Handle() string // 处理状态的方法
-}
-
-// 具体状态类
-type OnState struct{}
-
-func (s *OnState) Handle() string {
-	return &#34;Light is ON&#34;
-}
-
-type OffState struct{}
-
-func (s *OffState) Handle() string {
-	return &#34;Light is OFF&#34;
-}
-
-type BlinkState struct{}
-
-func (s *BlinkState) Handle() string {
-	return &#34;Light is Blinking&#34;
-}
-
-// 上下文类
-type Light struct {
-	state State // 当前状态
-}
-
-func NewLight() *Light {
-	return &amp;Light{state: &amp;OffState{}} // 初始状态为关闭
-}
-
-func (l *Light) SetState(state State) { // 设置新的状态
-	l.state = state
-}
-
-func (l *Light) PerformOperation() string { // 执行当前状态的操作
-	return l.state.Handle()
-}
-
-// 主函数
-func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-
-	// 读取用户输入
-	scanner.Scan()
-	var n int
-	fmt.Sscanf(scanner.Text(), &#34;%d&#34;, &amp;n)
-
-	light := NewLight()
-
-	// 处理用户输入
-	for i := 0; i &lt; n; i&#43;&#43; {
-		scanner.Scan()
-		command := strings.TrimSpace(scanner.Text())
-
-		// 根据输入修改灯的状态
-		switch command {
-		case &#34;ON&#34;:
-			light.SetState(&amp;OnState{})
-		case &#34;OFF&#34;:
-			light.SetState(&amp;OffState{})
-		case &#34;BLINK&#34;:
-			light.SetState(&amp;BlinkState{})
-		default:
-			fmt.Println(&#34;Invalid command:&#34;, command)
-			continue
-		}
-
-		// 显示灯的当前状态
-		fmt.Println(light.PerformOperation())
-	}
-}
-</code></pre>
-      </div>
-  
-
-
+    <div class="row flex-xl-wrap">
+        
+        <div id="list-item" class="col-md-4 col-12 mt-4 pt-2">
+            <a class="text-decoration-none text-reset" href="https://docs.cakepanit.com/docs/dev/front-end/1.html/">
+                <div class="card h-100 features feature-full-bg rounded p-4 position-relative overflow-hidden border-1">
+                    <span class="icon-color d-flex my-3">
+                        <i class="material-icons align-middle">article</i>
+                        
+                        
+                    </span>
+                    <div class="card-body p-0 content">
+                        <p class="fs-5 fw-semibold card-title mb-1">1.HTML</p>
+                        <p class="para card-text mb-0">HTML是用来描述网页的一种语言，全称超文本标记语言(Hyper Text Markup Language)，它是一种标记语言，使用标记标签来描述网页，它的语法规则可以定义图片、表格、链接等。</p>
+                    </div>
+                    
+                </div>
+            </a>
+        </div>
+        
     </div>
 
-    
-
-    
                                             </div>
                                             <div><hr class="doc-hr">
 <div id="doc-nav" class="d-print-none">
-
-	<div class="row flex-xl-nowrap ">
-	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/dev/23designpattern/19.%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/">
-			<div class="card h-100 my-1">
-				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 19.迭代器模式</p>
-					<p class="card-text ms-2">迭代器模式是一种行为设计模式，是一种使用频率非常高的设计模 …</p>
-					
-				</div>
-			</div>
-		</a>
-        </div>
-	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/dev/23designpattern/21.%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/">
-			<div class="card h-100 my-1 text-end">
-				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">21.责任链模式 <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2">责任链模式是一种行为型设计模式，它允许你构建一个对象链，让请 …</p>
-					
-				</div>
-			</div>
-		</a>
-        </div>
-	</div>
 </div></div>
                                         </div>
                                     </div>
