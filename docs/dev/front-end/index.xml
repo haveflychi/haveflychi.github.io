@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Thu, 10 Oct 2024 00:11:59 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2024 23:30:44 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/docs/dev/front-end/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1.HTML</title>
@@ -16,6 +16,13 @@
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/front-end/1.html/</guid>
       <description>1.1 一个基础例子 link一个基础的HTML例子：&#xA;&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;page name&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;title 1&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;sub title&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt;title 2&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 整个文件由html标签包着，其中由分为首部和主体两部分，分别用head标签和body标签包裹。&#xA;首部告诉浏览器关于网页的信息，如页面标题，首部包括&amp;lt;head&amp;gt;和&amp;lt;/head&amp;gt;之间的所有内容。其中的title标签定义了网页的标题，meta标签指定了字符编码。&#xA;主体包含网页的所有内容和结构，也就是在浏览器直接看到的部分，主体包括&amp;lt;body&amp;gt;和&amp;lt;/body&amp;gt;之间的所有内容。其中的h1标签和h2标签分别是一级标题和二级标题，p标签则是段落。&#xA;保存为HTML文件，在浏览器打开后，页面效果如下：&#xA;此外，还可以在HTML的首部里增加一些样式，就是style标签。style标签有一个可选的属性type，一般指定为&amp;quot;text/css&amp;quot;。&#xA;&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;page name&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; body { background-color: #d2b48c; margin-left: 20%; margin-right: 20%; border: 2px dotted black; padding: 10px 10px 10px 10px; font-family: sans-serif; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;title 1&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;sub title&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;h1&amp;gt;title 2&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;paragraph text&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; style标签中的body表示这段配置应用于主体中的body标签。</description>
+    </item>
+    <item>
+      <title>2.CSS</title>
+      <link>https://docs.cakepanit.com/docs/dev/front-end/2.css/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/front-end/2.css/</guid>
+      <description>1.CSS样式语言 link 为了让网页元素的样式更加丰富，也为了让网页的内容和样式能拆分开，CSS由此思想而诞生。 CSS是 Cascading Style Sheets 的首字母缩写，意思是层叠样式表。 有了CSS，html中大部分表现样式的标签就废弃不用了，html只负责文档的结构和内容，表现形式完全交给CSS，html文档变得更加简洁。 2.CSS使用方式 link 内联方式（行内样式） &amp;lt;p style=&amp;#34;color:red&amp;#34;&amp;gt;直接在html内使用样式&amp;lt;/p&amp;gt; 内部方式（内嵌方式）在head标签中使用 &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; p { color: red; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; 外部导入式（推荐）在head标签中使用 &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;css/index.css&amp;#34;&amp;gt; 3.CSS选择器 link 选择器：需要改变样式的HTML元素 格式：选择器（属性:值;属性:值;属性:值;&amp;hellip;..） 常见选择器：标签(元素)选择器、类型选择器、ID选择器、派生选择器 3.1元素选择器 link 使用html标签作为选择器，为指定标签设置样式 示例1：h1元素设置样式 h1 { color: darkcyan; font-size: 14; } 示例2：为多个元素设置样式 h2,h3 { color: chartreuse; } 示例3：子元素会继承最高级元素所有属性 如果子元素有自己的样式优先用自己，如果没有则用父元素样式 body { color: darkcyan; font-family: Verdana, sarif; /*字体*/ } h1 { color: brown; font-size: 14; } 3.</description>
     </item>
   </channel>
 </rss>
