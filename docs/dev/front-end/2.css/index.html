@@ -36,7 +36,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://docs.cakepanit.com/docs/dev/front-end/2.css/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_15983946199562827029.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
-<meta property="article:modified_time" content="2024-10-15T23:30:44+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2024-10-15T23:36:38+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_15983946199562827029.png"/>
 <meta name="twitter:title" content="2.CSS"/>
 <meta name="twitter:description" content="让网页元素的样式更加丰富，也为了让网页的内容和样式能拆分开"/>
@@ -860,42 +860,32 @@
 
 
 
-  
-  
-  
+
+
 
   
-  
-  
+      <div class="prism-shortcode">
+      <pre id="5f3cd07" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;p style=&#34;color:red&#34;&gt;直接在html内使用样式&lt;/p&gt;
+</code></pre>
+      </div>
   
 
-  
-
-  <div class="prism-codeblock ">
-  <pre id="05c0ff8" class="language-html ">
-  <code>&lt;p style=&#34;color:red&#34;&gt;直接在html内使用样式&lt;/p&gt;</code>
-  </pre>
-  </div>
 <ul>
 <li>内部方式（内嵌方式）在head标签中使用</li>
 </ul>
+<p>
 
 
 
-  
-  
-  
+
 
   
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="8e9696a" class="language-html ">
-  <code>&lt;head&gt;
+      <div class="prism-shortcode">
+      <pre id="98357ec" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;head&gt;
     &lt;meta charset=&#34;UTF-8&#34;&gt;
     &lt;title&gt;Title&lt;/title&gt;
     &lt;style type=&#34;text/css&#34;&gt;
@@ -903,10 +893,12 @@
             color: red;
         }
     &lt;/style&gt;
-&lt;/head&gt;</code>
-  </pre>
-  </div>
-<p>
+&lt;/head&gt;
+</code></pre>
+      </div>
+  
+
+
 
 
 
@@ -928,22 +920,18 @@
 
 
 
-  
-  
-  
+
+
 
   
-  
-  
+      <div class="prism-shortcode">
+      <pre id="0cf7138" class="language-html line-numbers"
+        ><code class="language-html"
+        > &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;css/index.css&#34;&gt;
+</code></pre>
+      </div>
   
 
-  
-
-  <div class="prism-codeblock ">
-  <pre id="fd58a98" class="language-html ">
-  <code> &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;css/index.css&#34;&gt;</code>
-  </pre>
-  </div>
 <h2 id="3css选择器">3.CSS选择器 <a href="#3css%e9%80%89%e6%8b%a9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
 <li>选择器：需要改变样式的HTML元素</li>
 <li>格式：选择器（属性:值;属性:值;属性:值;&hellip;..）</li>
@@ -956,50 +944,42 @@
 
 
 
-  
-  
-  
+
+
 
   
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="5a20764" class="language-css ">
-  <code>h1 {
+      <div class="prism-shortcode">
+      <pre id="b32f5b9" class="language-css line-numbers"
+        ><code class="language-css"
+        >h1 {
     color: darkcyan;
     font-size: 14;
-}</code>
-  </pre>
-  </div>
+}
+</code></pre>
+      </div>
+  
+
 <ul>
 <li>示例2：为多个元素设置样式</li>
 </ul>
-
-
-
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="fcf3da3" class="language-css ">
-  <code>h2,h3 {
-    color: chartreuse;
-}</code>
-  </pre>
-  </div>
 <p>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="bda857b" class="language-css line-numbers"
+        ><code class="language-css"
+        >h2,h3 {
+    color: chartreuse;
+}
+</code></pre>
+      </div>
+  
+
+
 
 
 
@@ -1022,23 +1002,17 @@
 </ul>
 </li>
 </ul>
+<p>
 
 
 
-  
-  
-  
+
 
   
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="3a08c64" class="language-css ">
-  <code>body {
+      <div class="prism-shortcode">
+      <pre id="594a9fa" class="language-css line-numbers"
+        ><code class="language-css"
+        >body {
     color: darkcyan;
     font-family: Verdana, sarif; /*字体*/
 }
@@ -1046,10 +1020,12 @@
 h1 {
     color: brown;
     font-size: 14;
-}</code>
-  </pre>
-  </div>
-<p>
+}
+</code></pre>
+      </div>
+  
+
+
 
 
 
@@ -1071,32 +1047,28 @@ h1 {
 <li>特点：每个ID名称只能在html中出现一次（也就是唯一的），在实际开发中id一般预留在javascript使用</li>
 <li>使用方式：</li>
 </ul>
+<p>
 
 
 
-  
-  
-  
+
 
   
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="74ee8d8" class="language-css ">
-  <code>/* 为id设置样式 */
+      <div class="prism-shortcode">
+      <pre id="a4c361b" class="language-css line-numbers"
+        ><code class="language-css"
+        >/* 为id设置样式 */
 #mff {
     color: blue;
 }
 
 /* 给指定的标签设置id mff */
-&lt;h1 id=&#34;mff&#34;&gt;Hello HTML&lt;/h1&gt;</code>
-  </pre>
-  </div>
-<p>
+&lt;h1 id=&#34;mff&#34;&gt;Hello HTML&lt;/h1&gt;
+</code></pre>
+      </div>
+  
+
+
 
 
 
@@ -1118,33 +1090,29 @@ h1 {
 <li>特点：class一般用于多个不同标签，但是有相同css属性的绑定</li>
 <li>使用方式</li>
 </ul>
+<p>
 
 
 
-  
-  
-  
+
 
   
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="e15fde9" class="language-css ">
-  <code>/* 为类设置样式 */
+      <div class="prism-shortcode">
+      <pre id="f0d38eb" class="language-css line-numbers"
+        ><code class="language-css"
+        >/* 为类设置样式 */
 .mff {
     color: red;
 }
 
 /* 给指定的标签设置类 mff */
 &lt;h1 class=&#34;mff&#34;&gt;Hello css&lt;/h1&gt;
-&lt;a class=&#34;mff&#34;&gt;Hello css&lt;/a&gt;</code>
-  </pre>
-  </div>
-<p>
+&lt;a class=&#34;mff&#34;&gt;Hello css&lt;/a&gt;
+</code></pre>
+      </div>
+  
+
+
 
 
 
@@ -1182,23 +1150,17 @@ h1 {
 <ul>
 <li>使用方式</li>
 </ul>
+<p>
 
 
 
-  
-  
-  
+
 
   
-  
-  
-  
-
-  
-
-  <div class="prism-codeblock ">
-  <pre id="a0583e4" class="language-html ">
-  <code>/* 定义标签内容 */
+      <div class="prism-shortcode">
+      <pre id="ece1d78" class="language-html line-numbers"
+        ><code class="language-html"
+        >/* 定义标签内容 */
 &lt;div class=&#34;mff&#34;&gt;
     &lt;h1&gt;1号标题&lt;/h1&gt;
     &lt;p&gt;这是一个段落&lt;/p&gt;
@@ -1207,10 +1169,12 @@ h1 {
 /* 设置局部样式，只给mff类中的p标签加个样式 */
 .mff p {
     color: dodgerblue;
-}</code>
-  </pre>
-  </div>
-<p>
+}
+</code></pre>
+      </div>
+  
+
+
 
 
 
@@ -1248,9 +1212,9 @@ h1 {
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2024-10-15T23:30:44&#43;0800"
-            title="15 Oct 2024, 23:30 &#43;0800">
-            15 Oct 2024, 23:30 &#43;0800
+            data-authdate="2024-10-15T23:36:38&#43;0800"
+            title="15 Oct 2024, 23:36 &#43;0800">
+            15 Oct 2024, 23:36 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
