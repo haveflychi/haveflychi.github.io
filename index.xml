@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Tue, 22 Oct 2024 23:43:28 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2024 18:17:59 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇WIKI</title>
@@ -289,6 +289,13 @@
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/front-end/2.css/</guid>
       <description>1.CSS样式语言 link 为了让网页元素的样式更加丰富，也为了让网页的内容和样式能拆分开，CSS由此思想而诞生。 CSS是 Cascading Style Sheets 的首字母缩写，意思是层叠样式表。 有了CSS，html中大部分表现样式的标签就废弃不用了，html只负责文档的结构和内容，表现形式完全交给CSS，html文档变得更加简洁。 2.CSS使用方式 link 内联方式（行内样式） &amp;lt;p style=&amp;#34;color:red&amp;#34;&amp;gt;直接在html内使用样式&amp;lt;/p&amp;gt; 内部方式（内嵌方式）在head标签中使用 &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; p { color: red; } &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; 外部导入式（推荐）在head标签中使用 &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;css/index.css&amp;#34;&amp;gt; 3.CSS选择器 link 选择器：需要改变样式的HTML元素 格式：选择器（属性:值;属性:值;属性:值;&amp;hellip;..） 常见选择器：标签(元素)选择器、类型选择器、ID选择器、派生选择器 3.1元素选择器 link 使用html标签作为选择器，为指定标签设置样式 示例1：h1元素设置样式 h1 { color: darkcyan; font-size: 14; } 示例2：为多个元素设置样式 h2,h3 { color: chartreuse; } 示例3：子元素会继承最高级元素所有属性 如果子元素有自己的样式优先用自己，如果没有则用父元素样式 body { color: darkcyan; font-family: Verdana, sarif; /*字体*/ } h1 { color: brown; font-size: 14; } 3.</description>
+    </item>
+    <item>
+      <title>2.JavaScript</title>
+      <link>https://docs.cakepanit.com/docs/dev/front-end/3.js/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/front-end/3.js/</guid>
+      <description>1.JavaScript发展史 link JavaScript(简称JS):是一种轻量级客户端脚本语言，通常被嵌入HTML页面，在浏览器上执行。 JavaScript的主要用途： 使网页具有交互性，例如响应客户点击，给用户提供更好的体验。 处理表单，检测用户输入，并及时反馈提醒。 浏览器与服务端之间数据通信，主要通过Ajax异步传输。 在网页中添加标签，添加样式，改变标签的属性等。对Dom节定进行操作 2.HelloWorld link &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34; xmlns=&amp;#34;http://www.w3.org/1999/html&amp;#34; xmlns=&amp;#34;http://www.w3.org/1999/html&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;首页&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello Js&amp;lt;/p&amp;gt; &amp;lt;script&amp;gt; var name = &amp;#39;Hello JavaScript&amp;#39;; alert(name); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 3.事件 link 事件 描述 onclick 点击 HTML 元素时触发 onmouseover 鼠标移动到元素上时触发 onkeydown 按下键盘按键时触发 onchange HTML 元素发生变化时触发 onmouseout 鼠标移开 HTML 元素时触发 onload 页面加载完成时触发 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34; xmlns=&amp;#34;http://www.w3.org/1999/html&amp;#34; xmlns=&amp;#34;http://www.w3.org/1999/html&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;首页&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;button onclick=&amp;#34;alert(&amp;#39;点击时触发&amp;#39;)&amp;#34;&amp;gt;onclick&amp;lt;/button&amp;gt; &amp;lt;button onmouseenter=&amp;#34;alert(&amp;#39;鼠标移动上来时触发&amp;#39;)&amp;#34;&amp;gt;onmouseenter&amp;lt;/button&amp;gt; &amp;lt;button onmouseout=&amp;#34;alert(&amp;#39;鼠标移开时触发&amp;#39;)&amp;#34;&amp;gt;onmouseout&amp;lt;/button&amp;gt; &amp;lt;br&amp;gt; 输入你的名字：&amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;fName&amp;#34; onchange=&amp;#34;myfunction()&amp;#34; /&amp;gt; &amp;lt;script&amp;gt; function myfunction(){ var inputName = document.</description>
     </item>
     <item>
       <title>1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4&#43;IPv6双栈)</title>
