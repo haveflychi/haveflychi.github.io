@@ -36,7 +36,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://docs.cakepanit.com/docs/dev/front-end/3.js/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_210117426938092411.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
-<meta property="article:modified_time" content="2024-10-27T18:17:59+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2024-11-05T01:04:07+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_210117426938092411.png"/>
 <meta name="twitter:title" content="2.JavaScript"/>
 <meta name="twitter:description" content="使网页具有交互性，例如响应用户点击，给用户提供更好的体验"/>
@@ -817,6 +817,19 @@
           </ul>
         </li>
         <li><a href="#7window对象">7.window对象</a></li>
+        <li><a href="#8jquery库介绍">8.jQuery库介绍</a>
+          <ul>
+            <li><a href="#81基本使用">8.1基本使用</a></li>
+            <li><a href="#82选择器">8.2选择器</a></li>
+            <li><a href="#83操作html">8.3操作html</a></li>
+          </ul>
+        </li>
+        <li><a href="#9ajax前后端数据交互">9.Ajax前后端数据交互</a>
+          <ul>
+            <li><a href="#91基本使用">9.1基本使用</a></li>
+            <li><a href="#92回调函数">9.2回调函数</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -851,6 +864,19 @@
           </ul>
         </li>
         <li><a href="#7window对象">7.window对象</a></li>
+        <li><a href="#8jquery库介绍">8.jQuery库介绍</a>
+          <ul>
+            <li><a href="#81基本使用">8.1基本使用</a></li>
+            <li><a href="#82选择器">8.2选择器</a></li>
+            <li><a href="#83操作html">8.3操作html</a></li>
+          </ul>
+        </li>
+        <li><a href="#9ajax前后端数据交互">9.Ajax前后端数据交互</a>
+          <ul>
+            <li><a href="#91基本使用">9.1基本使用</a></li>
+            <li><a href="#92回调函数">9.2回调函数</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1761,6 +1787,614 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
     
   
 </p>
+<h2 id="8jquery库介绍">8.jQuery库介绍 <a href="#8jquery%e5%ba%93%e4%bb%8b%e7%bb%8d" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><blockquote>
+<p>官网：<a href="https://jquery.com" rel="external" target="_blank">https://jquery.com<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
+</blockquote>
+<ul>
+<li>jQuery：是一个JavaScript的库，极大的简化了JavaScript编程，例如JS原生代码几十行实现的功能，JQuery可能一两行代码就可以实现了，因此得到前端程序员广泛应用。</li>
+<li>发布至今已经有三个大版本
+<ul>
+<li>1.x：常用版</li>
+<li>2.x/3.x：除非特殊要求，一般用的很少</li>
+</ul>
+</li>
+</ul>
+<h3 id="81基本使用">8.1基本使用 <a href="#81%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>cdn导入方式</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="add278c" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        // jQuery代码
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+<ul>
+<li>
+<p>基础语法是：<code>$(selector).action()</code></p>
+<ul>
+<li><code>$</code> 代表jQuery本身</li>
+<li><code>(selector)</code>：选择器、查找<code>HTML</code>元素</li>
+<li><code>action()</code>：对元素进行操作</li>
+</ul>
+</li>
+<li>
+<p>代码示例：按钮实现</p>
+</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="37ec272" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button id=&#34;btn1&#34;&gt;点我1&lt;/button&gt;
+    &lt;button id=&#34;btn2&#34;&gt;点我2&lt;/button&gt;
+    &lt;script&gt;
+        // js实现
+        var x = document.getElementById(&#39;btn1&#39;)
+        x.onclick = function (){
+            alert(&#34;你好我是js&#34;)
+        }
+
+        //jQuery实现
+        $(&#39;#btn2&#39;).click(function (){
+            alert(&#34;你好我是jQuery&#34;)
+        })
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+<h3 id="82选择器">8.2选择器 <a href="#82%e9%80%89%e6%8b%a9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>选择器介绍</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>语法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标签选择器</td>
+<td>element</td>
+<td><code>$(&quot;h1&quot;)</code> 选择所有的h1的元素</td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>.class</td>
+<td><code>$(&quot;.title&quot;)</code> 选择所有class为title的元素</td>
+</tr>
+<tr>
+<td>ID选择器</td>
+<td>#id</td>
+<td><code>$(&quot;#title&quot;)</code> 选取id为title的元素</td>
+</tr>
+<tr>
+<td>并集选择器</td>
+<td>selector1,selector2,…</td>
+<td><code>$(&quot;div,p,.title&quot;)</code> 选取所有div、p和拥有class为title的元素</td>
+</tr>
+<tr>
+<td>属性选择器</td>
+<td>[attr=value]</td>
+<td><code>(&quot;[href='#']&quot;)</code> 选取href值等于#的元素</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>代码示例</li>
+</ul>
+<p>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="4318924" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;在h5中如何使用jQuery&lt;/h1&gt;
+    &lt;button class=&#34;btn&#34;&gt;点我1&lt;/button&gt;
+    &lt;button id=&#34;btn&#34;&gt;点我2&lt;/button&gt;
+    &lt;script&gt;
+        //标签选择器
+        $(&#39;h1&#39;).click(function() {
+            alert(&#34;你好，标签&#34;)
+        })
+
+        //类选择器
+        $(&#39;.btn&#39;).click(function() {
+            alert(&#34;你好，类&#34;)
+        })
+
+        //id选择器
+        $(&#39;#btn&#39;).click(function() {
+            alert(&#34;你好，id&#34;)
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/js/dc4e816a-a28e-46f9-b2cb-394105153810.png" alt="" width="324" height="121" loading="lazy">
+    
+  
+</p>
+<h3 id="83操作html">8.3操作html <a href="#83%e6%93%8d%e4%bd%9chtml" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>隐藏和显示元素
+<ul>
+<li><code>hide()</code>：隐藏某个元素</li>
+<li><code>show()</code>：显示某个元素</li>
+<li><code>toggle()</code>：<code>hide()</code>和<code>show()</code>方法之间切换</li>
+</ul>
+</li>
+</ul>
+<p>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="dab897d" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id=&#34;demo&#34;&gt;这是一句话&lt;/p&gt;
+    &lt;button id=&#34;hide&#34;&gt;隐藏&lt;/button&gt;
+    &lt;button id=&#34;show&#34;&gt;显示&lt;/button&gt;
+    &lt;button id=&#34;toggle&#34;&gt;切换&lt;/button&gt;
+    &lt;script&gt;
+        //隐藏是通过css属性绑定实现的
+        $(&#39;#hide&#39;).click(function (){
+            $(&#39;#demo&#39;).hide()
+        })
+        $(&#39;#show&#39;).click(function (){
+            $(&#39;#demo&#39;).show()
+        })
+        $(&#39;#toggle&#39;).click(function (){
+            $(&#39;#demo&#39;).toggle()
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/js/7845d295-6cff-46b5-949b-ac31a4b14d69.png" alt="" width="398" height="397" loading="lazy">
+    
+  
+</p>
+<ul>
+<li>获取与设置内容
+<ul>
+<li><code>text()</code>：设置或返回所选元素的文本内容</li>
+<li><code>html()</code>：设置或返回所选元素的HTML内容</li>
+<li><code>val()</code>：设置或返回表单字段的值</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="f3b9b34" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id=&#34;demo&#34;&gt;这是一句&lt;b&gt;话&lt;/b&gt;&lt;/p&gt;
+    &lt;button id=&#34;getTxt&#34;&gt;获取文本&lt;/button&gt;
+    &lt;button id=&#34;getHtml&#34;&gt;获取Html&lt;/button&gt;
+    &lt;input type=&#34;text&#34; id=&#34;input&#34;&gt;
+
+    &lt;p id=&#34;sedTxt&#34;&gt;&lt;/p&gt;
+    &lt;p id=&#34;sedHtml&#34;&gt;&lt;/p&gt;
+
+    &lt;script&gt;
+        $(&#39;#getTxt&#39;).click(function (){
+            myText = $(&#39;#demo&#39;).text();
+            console.log(myText)
+            $(&#39;#sedTxt&#39;).text(myText)
+
+            //填充文本框
+            $(&#39;#input&#39;).val(myText)
+        })
+        $(&#39;#getHtml&#39;).click(function (){
+            myHtml = $(&#39;#demo&#39;).html();
+            console.log(myHtml)
+            $(&#39;#sedHtml&#39;).html(myHtml)
+
+            //填充文本框
+            $(&#39;#input&#39;).val(myHtml)
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/js/b60f61b0-3195-487a-ae28-efa084abc65c.png" alt="" width="406" height="426" loading="lazy">
+    
+  
+</p>
+<ul>
+<li>设置CSS样式
+<ul>
+<li><code>css()</code>：设置或返回样式属性</li>
+<li><code>addClass()</code>：向被选中元素添加一个或多个类样式</li>
+<li><code>removeClass()</code>：从被选中元素中删除一个或多个样式</li>
+<li><code>toggleClass()</code>：对被选中元素进行添加/删除类样式的却换动作</li>
+</ul>
+</li>
+</ul>
+<p>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="45cd8b7" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js&#34;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        .css1 {
+            color: brown;
+            font-size: 20px;
+            background-color: cornflowerblue;
+        }
+
+        .css2 {
+            color: cornflowerblue;
+            font-size: 20px;
+            background-color: brown;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id=&#34;demo&#34;&gt;这是一句话&lt;/p&gt;
+    &lt;button id=&#34;sedCss&#34;&gt;设置为样式0&lt;/button&gt;
+    &lt;button id=&#34;sedCss1&#34;&gt;设置为样式1&lt;/button&gt;
+    &lt;button id=&#34;sedCss2&#34;&gt;设置为样式2&lt;/button&gt;
+    &lt;script&gt;
+        $(&#39;#sedCss&#39;).click(function (){
+            $(&#39;#demo&#39;).removeAttr(&#34;class&#34;)
+            $(&#39;#demo&#39;).css(&#34;color&#34;,&#34;darkgreen&#34;)
+        })
+
+        $(&#39;#sedCss1&#39;).click(function (){
+            $(&#39;#demo&#39;).removeAttr(&#34;style class&#34;) //删除全部的样式属性和类
+            $(&#39;#demo&#39;).addClass(&#34;css1&#34;) //添加类
+        })
+
+        $(&#39;#sedCss2&#39;).click(function (){
+            $(&#39;#demo&#39;).removeAttr(&#34;style class&#34;)
+            $(&#39;#demo&#39;).addClass(&#34;css2&#34;)
+        })
+
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/js/8b5292fe-5dfd-475c-99c4-b0833460f432.png" alt="" width="400" height="435" loading="lazy">
+    
+  
+</p>
+<h2 id="9ajax前后端数据交互">9.Ajax前后端数据交互 <a href="#9ajax%e5%89%8d%e5%90%8e%e7%ab%af%e6%95%b0%e6%8d%ae%e4%ba%a4%e4%ba%92" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/js/0b848a4f-6b07-4520-8e57-b394ef010677.png" alt="" width="520" height="163" loading="lazy">
+    
+  
+</p>
+<ul>
+<li>浏览器访问一个网站的页面时，Web服务器处理完后会以消息体的方式返回给浏览器，浏览器会自动解析HTML内容，如果局部有数据需要更新，需要刷新浏览器重新发起页面请求，获取最新数据，如果每次都是通过这个刷新来解决这个问题，势必会给服务器造成负载，页面加载缓慢。</li>
+<li>Ajax（Asynchronous JavaScript And XML，异步JavaScript和XML），Ajax是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术，例如在你不断刷新页面的情况下查询数据，登录验证等。</li>
+<li>无刷新的好处：
+<ul>
+<li>减少带宽，服务器负载</li>
+<li>提高用户体验</li>
+</ul>
+</li>
+</ul>
+<h3 id="91基本使用">9.1基本使用 <a href="#91%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>jQuery Ajax主要使用<code>$.ajax()</code>方法实现，用于向服务器发送HTTP请求。</li>
+<li>语法：<code>$.ajax([settings])</code>;</li>
+<li>settings是<code>$.ajax()</code>方法的参数列表，用于配置Ajax请求的键值对集合，参数主要如以下</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>发送请求地址，默认为当前页面</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>请求方式，默认为get</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object、array、string</td>
+<td>发送到服务器的数据</td>
+</tr>
+<tr>
+<td>dataType</td>
+<td>string</td>
+<td>预期服务器返回的数据类型，包括Json、XML、Text、HTML等</td>
+</tr>
+<tr>
+<td>contentType</td>
+<td>string</td>
+<td>发送信息到服务器时内容编码类型，默认是application/x-www-form-urlencoded</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>number</td>
+<td>设置请求超时时间</td>
+</tr>
+<tr>
+<td>headers</td>
+<td>object</td>
+<td>设置请求头信息</td>
+</tr>
+<tr>
+<td>async</td>
+<td>Boolean</td>
+<td>默认为true，所有请求均为异步，设置false发送同步请求</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="6a93102" class="language-html line-numbers"
+        ><code class="language-html"
+        >//请求bing开放壁纸接口。展示到页面上
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script type=&#34;text/javascript&#34; src=&#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js&#34;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        .d0 {
+            /* 要使用flex布局，那么父级元素属性中 必须有display: flex; */
+            display: flex;
+            flex-direction: row-reverse; /*逆排序*/
+            justify-content: center; /*x轴居中*/
+            flex-wrap: wrap;
+        }
+        .d1{
+            height: 270px;
+            width: 480px;
+            background-color: darkcyan;
+            background-size: 100%;
+            margin-right: 10px; /*右间距*/
+            margin-top: 10px;
+            color:dodgerblue;
+            text-align: center;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#34;d0&#34;&gt;
+
+&lt;/div&gt;
+&lt;script&gt;
+    $.ajax({
+        url:&#39;https://raw.onmicrosoft.cn/Bing-Wallpaper-Action/main/data/zh-CN_update.json&#39;,
+        type:&#39;get&#39;,
+        success: function (result) {
+            data = JSON.parse(result) //如果响应头中Content-Type: application/json 那么不需要写这一行
+            for(k in data.images) {
+                $(&#39;.d0&#39;).append(&#39;&lt;div class=&#34;d1&#34; style=&#34;background-image: url(\&#39;https://cn.bing.com&#39;&#43;data.images[k].url &#43;&#39;\&#39;)&#34;&gt;&#39;&#43;data.images[k].title&#43;&#39;&lt;/div&gt;&#39;)
+            }
+        },
+        error: function () {
+            $(&#39;.d0&#39;).text(&#34;接口请求失败&#34;);
+        }
+        })
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/js/4484cfe4-59a1-41f0-904a-50a016b20fd1.png" alt="" width="1466" height="825" loading="lazy">
+    
+  
+</p>
+<h3 id="92回调函数">9.2回调函数 <a href="#92%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>回调函数:参数引用一个函数，并将数据作为参数传递给该函数。</li>
+<li>jqXHR:一个XMLHttpRequest对象</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>函数格式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>beforeSend</td>
+<td>function(jqXHR,object)</td>
+<td>发送请求前调用的函数，例如自定义http头</td>
+</tr>
+<tr>
+<td>success</td>
+<td>function(data, String textStatus,jqXHR)</td>
+<td>请求成功后调用的函数，参数data: 可选，由服务端返回的数据（JSON）</td>
+</tr>
+<tr>
+<td>error</td>
+<td>function(jqXHR,String textStatus,errorThrown)</td>
+<td>请求失败时调用的函数</td>
+</tr>
+<tr>
+<td>complete</td>
+<td>function(jqXHR,String textStatus)</td>
+<td>请求完成后（无论成功与否）调用的函数</td>
+</tr>
+</tbody>
+</table>
 
     </div>
 
@@ -1783,9 +2417,9 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2024-10-27T18:17:59&#43;0800"
-            title="27 Oct 2024, 18:17 &#43;0800">
-            27 Oct 2024, 18:17 &#43;0800
+            data-authdate="2024-11-05T01:04:07&#43;0800"
+            title="05 Nov 2024, 01:04 &#43;0800">
+            05 Nov 2024, 01:04 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -3004,7 +3638,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
                 href: "\/docs\/dev\/front-end\/3.js\/",
                 title: "2.JavaScript",
                 description: "使网页具有交互性，例如响应用户点击，给用户提供更好的体验",
-                content: "1.JavaScript发展史 link JavaScript(简称JS):是一种轻量级客户端脚本语言，通常被嵌入HTML页面，在浏览器上执行。 JavaScript的主要用途： 使网页具有交互性，例如响应客户点击，给用户提供更好的体验。 处理表单，检测用户输入，并及时反馈提醒。 浏览器与服务端之间数据通信，主要通过Ajax异步传输。 在网页中添加标签，添加样式，改变标签的属性等。对Dom节定进行操作 2.HelloWorld link \u003c!DOCTYPE html\u003e 首页 Hello Js\n3.事件 link 事件 描述 onclick 点击 HTML 元素时触发 onmouseover 鼠标移动到元素上时触发 onkeydown 按下键盘按键时触发 onchange HTML 元素发生变化时触发 onmouseout 鼠标移开 HTML 元素时触发 onload 页面加载完成时触发 \u003c!DOCTYPE html\u003e 首页 onclick onmouseenter onmouseout 输入你的名字： 第一个点击触发，第二个鼠标移动上去触发，第三个鼠标移出时触发。输入框焦点改变时触发\n4.选择器 link JS选择器主要用来获取HTHL页面中的元素,将页面中的元素保存到一个对象中,然后就可以对这些对象的属性值进行相应操作，以实现一些动态效果，以达到页面的生动，易用。 需要注意的一点是操作的一定是对象，直接将元素当做对象使用是不行的。 常见选择器:标签选择器、类选择器、ID选择器 Document 点我 p1\n我是p2下的a标签 p3\n5.JS操作html link 插入内容 document.write(\"这是JS写入的段落\n\");//向文档写入HTML内容 x = document.getElementById('demo'); //获取id为demo的元素 x.innerHTML=\"Hello\"\" //向元素插入HTML内容 改变标签属性 document.getElementById(\"image\").src=\"b.jpg\" //修改img标签src属性值 改变标签样式 x = document.getElementById(\"p\") //获取id为p的元素 x.style.color=\"blue\" //字体颜色 Document Hello\n5.1字符串 link Document 5.2数组 link Document 5.3对象 link 对象是一个具有映射关系的数据结构，对于存储有一定的关系的元素。 格式：d = {'key1':value1,'key2':value2,'key3':value3} 注意：对象通过key来访问value，所以key不允许在同一个字典中重复。 Document 6.操作符、流程控制、函数 link6.1操作符 link 一个特定的符号，与其他数据类型连接起来组成一个表达式，常用于条件判断，根据表达书返回Ture或False采取动作 Document 6.2流程控制 link if条件判断:判定给定的条件是否满足(True或False)， 根据判断的结果决定执行的语句。 语法： if (表达式) { \u003c代码块\u003e } else if (表达式) { \u003c代码块\u003e } else { \u003c代码块\u003e } Document for循环:一般用于遍历数据类型的元素进行处理，例如字符串、数组、对象。 Document 6.3函数 link 函数：是指一段可以直接被另一段程序或代码引用的程序或代码。 在编写代码时，常将一些常用的功能模块编写成函数，放在函数库中供公共使用，可减少重复编写程序段和简化代码结构。 普通函数 Document 你好 点我 匿名函数与箭头函数 Document 7.window对象 link 在JavaScript中，一个浏览器窗口就是一个window对象。 一个窗口就是一个window对象，这个窗口里面的HTML文档就是一个document对象，document对象是window对象的子对象。 location也是windows的子对象，用于操作URL地址 Document 刷新当前页面 重新请求当前页面 请求别的页面 "
+                content: "1.JavaScript发展史 link JavaScript(简称JS):是一种轻量级客户端脚本语言，通常被嵌入HTML页面，在浏览器上执行。 JavaScript的主要用途： 使网页具有交互性，例如响应客户点击，给用户提供更好的体验。 处理表单，检测用户输入，并及时反馈提醒。 浏览器与服务端之间数据通信，主要通过Ajax异步传输。 在网页中添加标签，添加样式，改变标签的属性等。对Dom节定进行操作 2.HelloWorld link \u003c!DOCTYPE html\u003e 首页 Hello Js\n3.事件 link 事件 描述 onclick 点击 HTML 元素时触发 onmouseover 鼠标移动到元素上时触发 onkeydown 按下键盘按键时触发 onchange HTML 元素发生变化时触发 onmouseout 鼠标移开 HTML 元素时触发 onload 页面加载完成时触发 \u003c!DOCTYPE html\u003e 首页 onclick onmouseenter onmouseout 输入你的名字： 第一个点击触发，第二个鼠标移动上去触发，第三个鼠标移出时触发。输入框焦点改变时触发\n4.选择器 link JS选择器主要用来获取HTHL页面中的元素,将页面中的元素保存到一个对象中,然后就可以对这些对象的属性值进行相应操作，以实现一些动态效果，以达到页面的生动，易用。 需要注意的一点是操作的一定是对象，直接将元素当做对象使用是不行的。 常见选择器:标签选择器、类选择器、ID选择器 Document 点我 p1\n我是p2下的a标签 p3\n5.JS操作html link 插入内容 document.write(\"这是JS写入的段落\n\");//向文档写入HTML内容 x = document.getElementById('demo'); //获取id为demo的元素 x.innerHTML=\"Hello\"\" //向元素插入HTML内容 改变标签属性 document.getElementById(\"image\").src=\"b.jpg\" //修改img标签src属性值 改变标签样式 x = document.getElementById(\"p\") //获取id为p的元素 x.style.color=\"blue\" //字体颜色 Document Hello\n5.1字符串 link Document 5.2数组 link Document 5.3对象 link 对象是一个具有映射关系的数据结构，对于存储有一定的关系的元素。 格式：d = {'key1':value1,'key2':value2,'key3':value3} 注意：对象通过key来访问value，所以key不允许在同一个字典中重复。 Document 6.操作符、流程控制、函数 link6.1操作符 link 一个特定的符号，与其他数据类型连接起来组成一个表达式，常用于条件判断，根据表达书返回Ture或False采取动作 Document 6.2流程控制 link if条件判断:判定给定的条件是否满足(True或False)， 根据判断的结果决定执行的语句。 语法： if (表达式) { \u003c代码块\u003e } else if (表达式) { \u003c代码块\u003e } else { \u003c代码块\u003e } Document for循环:一般用于遍历数据类型的元素进行处理，例如字符串、数组、对象。 Document 6.3函数 link 函数：是指一段可以直接被另一段程序或代码引用的程序或代码。 在编写代码时，常将一些常用的功能模块编写成函数，放在函数库中供公共使用，可减少重复编写程序段和简化代码结构。 普通函数 Document 你好 点我 匿名函数与箭头函数 Document 7.window对象 link 在JavaScript中，一个浏览器窗口就是一个window对象。 一个窗口就是一个window对象，这个窗口里面的HTML文档就是一个document对象，document对象是window对象的子对象。 location也是windows的子对象，用于操作URL地址 Document 刷新当前页面 重新请求当前页面 请求别的页面 8.jQuery库介绍 link 官网：https://jquery.com\njQuery：是一个JavaScript的库，极大的简化了JavaScript编程，例如JS原生代码几十行实现的功能，JQuery可能一两行代码就可以实现了，因此得到前端程序员广泛应用。 发布至今已经有三个大版本 1.x：常用版 2.x/3.x：除非特殊要求，一般用的很少 8.1基本使用 link cdn导入方式 Document 基础语法是：$(selector).action()\n$ 代表jQuery本身 (selector)：选择器、查找HTML元素 action()：对元素进行操作 代码示例：按钮实现\nDocument 点我1 点我2 8.2选择器 link 选择器介绍 名称 语法 示例 标签选择器 element $(\"h1\") 选择所有的h1的元素 类选择器 .class $(\".title\") 选择所有class为title的元素 ID选择器 #id $(\"#title\") 选取id为title的元素 并集选择器 selector1,selector2,… $(\"div,p,.title\") 选取所有div、p和拥有class为title的元素 属性选择器 [attr=value] (\"[href='#']\") 选取href值等于#的元素 代码示例 Document 在h5中如何使用jQuery 点我1 点我2 8.3操作html link 隐藏和显示元素 hide()：隐藏某个元素 show()：显示某个元素 toggle()：hide()和show()方法之间切换 Document 这是一句话\n隐藏 显示 切换 获取与设置内容 text()：设置或返回所选元素的文本内容 html()：设置或返回所选元素的HTML内容 val()：设置或返回表单字段的值 Document 这是一句话\n获取文本 获取Html 设置CSS样式 css()：设置或返回样式属性 addClass()：向被选中元素添加一个或多个类样式 removeClass()：从被选中元素中删除一个或多个样式 toggleClass()：对被选中元素进行添加/删除类样式的却换动作 Document 这是一句话\n设置为样式0 设置为样式1 设置为样式2 9.Ajax前后端数据交互 link 浏览器访问一个网站的页面时，Web服务器处理完后会以消息体的方式返回给浏览器，浏览器会自动解析HTML内容，如果局部有数据需要更新，需要刷新浏览器重新发起页面请求，获取最新数据，如果每次都是通过这个刷新来解决这个问题，势必会给服务器造成负载，页面加载缓慢。 Ajax（Asynchronous JavaScript And XML，异步JavaScript和XML），Ajax是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术，例如在你不断刷新页面的情况下查询数据，登录验证等。 无刷新的好处： 减少带宽，服务器负载 提高用户体验 9.1基本使用 link jQuery Ajax主要使用$.ajax()方法实现，用于向服务器发送HTTP请求。 语法：$.ajax([settings]); settings是$.ajax()方法的参数列表，用于配置Ajax请求的键值对集合，参数主要如以下 参数 类型 描述 url string 发送请求地址，默认为当前页面 type string 请求方式，默认为get data object、array、string 发送到服务器的数据 dataType string 预期服务器返回的数据类型，包括Json、XML、Text、HTML等 contentType string 发送信息到服务器时内容编码类型，默认是application/x-www-form-urlencoded timeout number 设置请求超时时间 headers object 设置请求头信息 async Boolean 默认为true，所有请求均为异步，设置false发送同步请求 //请求bing开放壁纸接口。展示到页面上 Document 9.2回调函数 link 回调函数:参数引用一个函数，并将数据作为参数传递给该函数。 jqXHR:一个XMLHttpRequest对象 参数 函数格式 描述 beforeSend function(jqXHR,object) 发送请求前调用的函数，例如自定义http头 success function(data, String textStatus,jqXHR) 请求成功后调用的函数，参数data: 可选，由服务端返回的数据（JSON） error function(jqXHR,String textStatus,errorThrown) 请求失败时调用的函数 complete function(jqXHR,String textStatus) 请求完成后（无论成功与否）调用的函数 "
             }
         );
     index.add(
