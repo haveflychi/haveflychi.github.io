@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Tue, 05 Nov 2024 01:25:56 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2024 00:23:51 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/tags/beginners/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇WIKI</title>
@@ -296,6 +296,13 @@
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/front-end/3.js/</guid>
       <description>1.JavaScript发展史 link JavaScript(简称JS):是一种轻量级客户端脚本语言，通常被嵌入HTML页面，在浏览器上执行。 JavaScript的主要用途： 使网页具有交互性，例如响应客户点击，给用户提供更好的体验。 处理表单，检测用户输入，并及时反馈提醒。 浏览器与服务端之间数据通信，主要通过Ajax异步传输。 在网页中添加标签，添加样式，改变标签的属性等。对Dom节定进行操作 2.HelloWorld link &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34; xmlns=&amp;#34;http://www.w3.org/1999/html&amp;#34; xmlns=&amp;#34;http://www.w3.org/1999/html&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;首页&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;Hello Js&amp;lt;/p&amp;gt; &amp;lt;script&amp;gt; var name = &amp;#39;Hello JavaScript&amp;#39;; alert(name); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 3.事件 link 事件 描述 onclick 点击 HTML 元素时触发 onmouseover 鼠标移动到元素上时触发 onkeydown 按下键盘按键时触发 onchange HTML 元素发生变化时触发 onmouseout 鼠标移开 HTML 元素时触发 onload 页面加载完成时触发 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34; xmlns=&amp;#34;http://www.w3.org/1999/html&amp;#34; xmlns=&amp;#34;http://www.w3.org/1999/html&amp;#34;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;首页&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;button onclick=&amp;#34;alert(&amp;#39;点击时触发&amp;#39;)&amp;#34;&amp;gt;onclick&amp;lt;/button&amp;gt; &amp;lt;button onmouseenter=&amp;#34;alert(&amp;#39;鼠标移动上来时触发&amp;#39;)&amp;#34;&amp;gt;onmouseenter&amp;lt;/button&amp;gt; &amp;lt;button onmouseout=&amp;#34;alert(&amp;#39;鼠标移开时触发&amp;#39;)&amp;#34;&amp;gt;onmouseout&amp;lt;/button&amp;gt; &amp;lt;br&amp;gt; 输入你的名字：&amp;lt;input type=&amp;#34;text&amp;#34; id=&amp;#34;fName&amp;#34; onchange=&amp;#34;myfunction()&amp;#34; /&amp;gt; &amp;lt;script&amp;gt; function myfunction(){ var inputName = document.</description>
+    </item>
+    <item>
+      <title>4.Vue</title>
+      <link>https://docs.cakepanit.com/docs/dev/front-end/4.vue/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/front-end/4.vue/</guid>
+      <description>1.Vue介绍 link 官网：https://cn.vuejs.org&#xA;Vue.js：简称Vue，是一套用于快速构建用户界面的渐进式前端框架。 Vue.js核心实现 响应式数据绑定：当数据发生改变，视图可以自动更新，不用关心DOM操作，专心数据操作。 可组合的视图组件：把视图按照功能切分成若干个基本单元，可维护，可重用，可测试等特点。 响应式，双向数据绑定，即MVVM。是指数据层（Model）-视图层（View）-数据视图（ViewModel）的响应式框架。 1.2引入Vue.js link 参考文档：https://cn.vuejs.org/guide/quick-start.html&#xA;在html中使用CDN包的形式引入 &amp;lt;script src=&amp;quot;https://unpkg.com/vue@3&amp;quot;&amp;gt;&amp;lt;script&amp;gt; 下载js文件保存到本地再导入 使用npm安装 npm install @vue/cli@4.5.12 使用官方vuecli脚手架创建项目（不建议新手使用） vue create vue-demo 番外：&#xA;const var let的区别 var有设计缺陷，不建议使用 用const和let定义变量，const本身是常量的意思 let 定义函数内局部变量 function xxx() { let xxx } 1.3声明式渲染 link Hello World示例:Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta http-equiv=&amp;#34;Content-Type&amp;#34; content=&amp;#34;text/html;charset=UTF-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;demo&amp;lt;/title&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.com/vue@3&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;style&amp;gt; &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;hello-vue&amp;#34;&amp;gt; {{ message }} &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; const { ref } = Vue const HelloVueApp = { setup() { const message = ref(&amp;#39;Hello,Vue&amp;#39;) return { message } } } Vue.</description>
     </item>
     <item>
       <title>1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4&#43;IPv6双栈)</title>

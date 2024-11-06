@@ -386,6 +386,11 @@
                                                                 <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/front-end/3.js/">3.JavaScript</a></li>
                                                             
                                                         
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/front-end/4.vue/">4.Vue</a></li>
+                                                            
+                                                        
                                                     </ul>
                                                 </div>
                                             </li>
@@ -2446,11 +2451,11 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/ops/kubernetes/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2/">
+		<a class="ms-auto" href="/docs/dev/front-end/4.vue/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4&#43;IPv6双栈) <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2">Kubernetes（简称k8s）是Google在2014 …</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">4.Vue <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2">一套用于快速构建用户界面的渐进式前端框架</p>
 					
 				</div>
 			</div>
@@ -2615,6 +2620,13 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
     
 
 
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3644,6 +3656,15 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
     index.add(
             {
                 id:  54 ,
+                href: "\/docs\/dev\/front-end\/4.vue\/",
+                title: "4.Vue",
+                description: "一套用于快速构建用户界面的渐进式前端框架",
+                content: "1.Vue介绍 link 官网：https://cn.vuejs.org\nVue.js：简称Vue，是一套用于快速构建用户界面的渐进式前端框架。 Vue.js核心实现 响应式数据绑定：当数据发生改变，视图可以自动更新，不用关心DOM操作，专心数据操作。 可组合的视图组件：把视图按照功能切分成若干个基本单元，可维护，可重用，可测试等特点。 响应式，双向数据绑定，即MVVM。是指数据层（Model）-视图层（View）-数据视图（ViewModel）的响应式框架。 1.2引入Vue.js link 参考文档：https://cn.vuejs.org/guide/quick-start.html\n在html中使用CDN包的形式引入 {{ message }} 现在数据和DOM已经被建立了关联，所有东西都是响应式的，可通过下面示例确认: demo Conter: {{ counter }} 1.4模版语法 link Vue.js使用了基于HTML的模板语法，允许开发者声明式的将DOM绑定致底层组件实例的数据，所有Vue.js的模板都是合法的HTML，所以能被遵循规范的浏览器和HTML解析器解析， 数据绑定最常见的形式就是使用{{ }}，语法在HTML中插入文本：Message：{{ msg }} {{ msg }}将被替换为对应组件实例中msg属性的值，无论何时，绑定的组件实例上msg属性发生改变，传入HTML的值也会随之改变。 2.Vue3响应式 link 解决了：Vue2中新增属性，删除属性(对象)，界面不会更新的问题。 解决了：Vue2中直接通过下标修改数组，界面不会刷新的问题。 2.1ref函数(基本数据类型的定义) link 作用：定义一个响应式的数据即变量(基本类型)。 语法： let a = ref('Hello Vue!') 创建一个包含响应式数据的引用对象（reference对象）。 JS中操作数据： a.value 模板中读取数据，不需要 .value，直接：{{ a }} 接收的数据可以是基本类型，也可以是对象类型（自动转reactive）。 基本类型的数据：响应式依然是靠Object.defineProperty()的get与set完成的（vue2响应式的实现方式）。 对象类型的数据：内部使用了Vue3中的一个新函数：reactive函数 demo {{ message }} 2.2reactive函数 link 作用：定义一个对象类型的响应式数据（基本类型数据不能用，要用ref函数）。 语法：const 代理对象=reactive(原函数)，接收一个对象或数组，返回一个代理对象（proxy对象）。 reactive定义的响应式数据是深层次的。 内部基于ES6的Proxy实现，通过代理对象操作源内部数据进行操作。 用法与ref创建的代理对象类似，不过操作时不需要再加.value了 demo {{ student }} {{ student.name }} "
+            }
+        );
+    index.add(
+            {
+                id:  55 ,
                 href: "\/docs\/ops\/kubernetes\/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -3652,7 +3673,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  55 ,
+                id:  56 ,
                 href: "\/docs\/ops\/kubernetes\/2.kubernetes-v1.30.2%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "2.Kubernetes-v1.30.2高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -3661,7 +3682,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  56 ,
+                id:  57 ,
                 href: "\/docs\/ops\/kubernetes\/3.%E5%8D%87%E7%BA%A7%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2%E7%9A%84kubernetes%E9%9B%86%E7%BE%A4\/",
                 title: "3.升级二进制部署的kubernetes集群",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化应用，Kubernetes的目标是让部署容器化的应用简单并且高效，Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -3670,7 +3691,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  57 ,
+                id:  58 ,
                 href: "\/docs\/ops\/kubernetes\/4.kubernetes%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D\/",
                 title: "4.Kubernetes核心概念介绍",
                 description: "本文介绍kubernetes中一些核心概念，如：pod、工作负载、service、kube-proxy代理模式等",
@@ -3679,7 +3700,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  58 ,
+                id:  59 ,
                 href: "\/docs\/ops\/container\/1.%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E6%89%80%E6%B6%89%E5%8F%8A%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF\/",
                 title: "1.容器技术所涉及的Linux内核关键技术",
                 description: "容器的前世今生",
@@ -3688,7 +3709,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  59 ,
+                id:  60 ,
                 href: "\/docs\/ops\/container\/containerd\/1.containerd%E8%BD%BB%E9%87%8F%E7%BA%A7or%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7\/",
                 title: "1.Containerd轻量级or工业级的容器管理工具",
                 description: "Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。",
@@ -3697,7 +3718,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  60 ,
+                id:  61 ,
                 href: "\/docs\/ops\/container\/docker\/1.docker%E9%95%9C%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BB%8B%E7%BB%8D\/",
                 title: "1.Docker镜像基本操作和介绍",
                 description: "Docker镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。",
@@ -3706,7 +3727,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  61 ,
+                id:  62 ,
                 href: "\/docs\/ops\/container\/docker\/2.docker%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%E6%90%AD%E5%BB%BA\/",
                 title: "2.Docker容器镜像国内加速及本地容器镜像仓库搭建",
                 description: "众所周知的原因和解决方案",
@@ -3715,7 +3736,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  62 ,
+                id:  63 ,
                 href: "\/docs\/ops\/container\/docker\/3.dockerfile%E4%BB%8B%E7%BB%8D\/",
                 title: "3.Dockerfile介绍",
                 description: "学习制作docker镜像",
@@ -3724,7 +3745,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  63 ,
+                id:  64 ,
                 href: "\/docs\/ops\/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8\/",
                 title: "1.Nginx配置小全",
                 description: "Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；",
@@ -3733,7 +3754,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  64 ,
+                id:  65 ,
                 href: "\/docs\/demo\/features\/",
                 title: "Features",
                 description: "A guide to the core features of the Lotus Docs theme.",
@@ -3742,7 +3763,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  65 ,
+                id:  66 ,
                 href: "\/docs\/dev\/golang\/fyne\/project\/",
                 title: "项目案例",
                 description: "使用Fyne实现几个项目",
@@ -3751,7 +3772,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  66 ,
+                id:  67 ,
                 href: "\/docs\/demo\/features\/syntax-highlighting\/",
                 title: "Syntax Highlighting",
                 description: "How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma).",
@@ -3760,7 +3781,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  67 ,
+                id:  68 ,
                 href: "\/docs\/demo\/features\/katex\/",
                 title: "KaTex",
                 description: "Fast Tex math rendering for your Lotus Docs site",
@@ -3769,7 +3790,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  68 ,
+                id:  69 ,
                 href: "\/docs\/demo\/features\/mermaid\/",
                 title: "Mermaid",
                 description: "How to use the Mermaid diagramming and chart tool with Lotus Docs",
@@ -3778,7 +3799,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  69 ,
+                id:  70 ,
                 href: "\/docs\/demo\/shortcodes\/",
                 title: "Shortcodes",
                 description: "Lotus Docs Custom Shortcodes.",
@@ -3787,7 +3808,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  70 ,
+                id:  71 ,
                 href: "\/docs\/demo\/shortcodes\/alerts\/",
                 title: "Alerts",
                 description: "How to use Alert Shortcodes to render custom page alerts in markdown.",
@@ -3796,7 +3817,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  71 ,
+                id:  72 ,
                 href: "\/docs\/demo\/shortcodes\/tables\/",
                 title: "Tables",
                 description: "How to use the Lotus Docs table shortcode to render great looking markdown tables",
@@ -3805,7 +3826,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  72 ,
+                id:  73 ,
                 href: "\/docs\/demo\/shortcodes\/tabs\/",
                 title: "Tabs",
                 description: "How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs",
@@ -3814,7 +3835,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  73 ,
+                id:  74 ,
                 href: "\/docs\/demo\/shortcodes\/prism\/",
                 title: "Prism",
                 description: "How to use the Prism Shortcode for syntax highlighting code blocks.",
@@ -3823,7 +3844,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  74 ,
+                id:  75 ,
                 href: "\/docs\/demo\/shortcodes\/markdownify\/",
                 title: "Markdownify",
                 description: "A simple shortcode to render content as Markdown.",
@@ -3832,7 +3853,7 @@ setAttribute 是一个 DOM 方法，用于设置指定元素的属性值。这�
         );
     index.add(
             {
-                id:  75 ,
+                id:  76 ,
                 href: "\/docs\/demo\/shortcodes\/katex\/",
                 title: "KaTex",
                 description: "A Shortcode to render KaTex syntax in your Lotus Docs site",
