@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Sun, 10 Nov 2024 04:14:56 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Nov 2024 04:21:04 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇WIKI</title>
@@ -277,7 +277,7 @@
       <description>1.什么是ORM？ linkorm是一种术语而不是软件&#xA;orm英文全称object relational mapping,就是 ==对象映射关系== 程序； 简单来说类似python这种面向对象的程序来说一切皆对象，但是我们使用的数据库却都是关系型的； 为了保证一致的使用习惯，通过 orm将编程语言的对象模型和数据库的关系模型建立映射关系； 这样我们直接 使用编程语言的对象模型进行操作数据库 就可以了，而不用直接使用sql语言； 2.什么是GORM？ linkGORM 官方文档&#xA;全功能 ORM (无限接近) 关联 (Has One, Has Many, Belongs To, Many To Many, 多态) 钩子 (在创建/保存/更新/删除/查找之前或之后) 预加载 事务 复合主键 SQL 生成器 数据库自动迁移 自定义日志 可扩展性, 可基于 GORM 回调编写插件 所有功能都被测试覆盖 开发者友好 3.GORM(v2)基本使用 link3.1安装 link go get -u gorm.io/gorm 4.准备MySQL环境 link4.1docker拉起一个mysql link docker run --name fly-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:8.0 4.2创建数据库 link create database test_db charset utf8mb4; use test_db; show tables; 4.</description>
     </item>
     <item>
-      <title>7.Go-Kafka</title>
+      <title>8.Go-Kafka</title>
       <link>https://docs.cakepanit.com/docs/dev/golang/8.kafka/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/golang/8.kafka/</guid>
