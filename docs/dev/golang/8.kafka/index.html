@@ -16,9 +16,9 @@
 
 <html lang="zh-CN"><head>
     <meta charset="utf-8" />
-    <title>1.Containerd轻量级or工业级的容器管理工具 | Maxbit Docs</title>
+    <title>7.Go-Kafka | Maxbit Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。">
+    <meta name="description" content="Go-Kafka使用">
     <meta name="keywords" content="Maxbit,上海大比特,DBA,SRE,Go,Golang,Linux,运维,系统运维,自动化运维,分布式,高可用,负载均衡,老菜鸟,Docker,k8s,虚拟化,云计算,DevOps,CI&#x2F;CD,network,system,存储" />
     <meta name="author" content="饼铛" />
     <meta name="email" content="admin@cakepanit.com" />
@@ -31,15 +31,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://docs.cakepanit.com/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://docs.cakepanit.com/favicon-16x16.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://docs.cakepanit.com/site.webmanifest">
-<meta property="og:title" content="1.Containerd轻量级or工业级的容器管理工具" />
-<meta property="og:description" content="Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。" />
+<meta property="og:title" content="7.Go-Kafka" />
+<meta property="og:description" content="Go-Kafka使用" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://docs.cakepanit.com/docs/ops/container/containerd/1.containerd%E8%BD%BB%E9%87%8F%E7%BA%A7or%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_17090926132960303595.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://docs.cakepanit.com/docs/dev/golang/8.kafka/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_18022231968825889262.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
-<meta property="article:modified_time" content="2023-05-03T22:37:22+01:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_17090926132960303595.png"/>
-<meta name="twitter:title" content="1.Containerd轻量级or工业级的容器管理工具"/>
-<meta name="twitter:description" content="Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。"/>
+<meta property="article:modified_time" content="2024-11-10T04:10:31+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_18022231968825889262.png"/>
+<meta name="twitter:title" content="7.Go-Kafka"/>
+<meta name="twitter:description" content="Go-Kafka使用"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -112,12 +112,12 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  ">
+                        <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">Code</i>
                                 DEV
                             </button>
-                            <div class="sidebar-submenu ">
+                            <div class="sidebar-submenu d-block">
                                 <ul>
                                     
                                         
@@ -252,12 +252,12 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  ">
+                                            <li class="sidebar-dropdown nested  current active">
                                                 <button class="btn">
                                                     
                                                     Golang
                                                 </button>
-                                                <div class="sidebar-submenu ">
+                                                <div class="sidebar-submenu d-block">
                                                     <ul>
                                                         
                                                             
@@ -358,7 +358,7 @@
                                                         
                                                             
                                                             
-                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/8.kafka/">7.Go-Kafka</a></li>
+                                                                <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/8.kafka/">7.Go-Kafka</a></li>
                                                             
                                                         
                                                     </ul>
@@ -408,12 +408,12 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  current active">
+                        <li class="sidebar-dropdown  ">
                             <button class="btn">
                                 <i class="material-icons me-2">cloud_done</i>
                                 OPS
                             </button>
-                            <div class="sidebar-submenu d-block">
+                            <div class="sidebar-submenu ">
                                 <ul>
                                     
                                         
@@ -453,27 +453,27 @@
                                     
                                         
                                         
-                                            <li class="sidebar-dropdown nested  current active">
+                                            <li class="sidebar-dropdown nested  ">
                                                 <button class="btn">
                                                     
                                                     Container
                                                 </button>
-                                                <div class="sidebar-submenu d-block">
+                                                <div class="sidebar-submenu ">
                                                     <ul>
                                                         
                                                             
                                                             
-                                                                <li class="sidebar-dropdown nested  current active">
+                                                                <li class="sidebar-dropdown nested  ">
                                                                     <button class="btn">
                                                                         
                                                                         Containerd
                                                                     </button>
-                                                                    <div class="sidebar-submenu d-block">
+                                                                    <div class="sidebar-submenu ">
                                                                         <ul>
                                                                             
                                                                                 
                                                                                 
-                                                                                    <li class="current "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/ops/container/containerd/1.containerd%E8%BD%BB%E9%87%8F%E7%BA%A7or%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">1.Containerd轻量级or工业级的容器管理工具</a></li>
+                                                                                    <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/ops/container/containerd/1.containerd%E8%BD%BB%E9%87%8F%E7%BA%A7or%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">1.Containerd轻量级or工业级的容器管理工具</a></li>
                                                                                 
                                                                             
                                                                         </ul>
@@ -777,32 +777,24 @@
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/ops/">
-                        <span itemprop="name">OPS</span>
+                    <a itemprop="item" href="/docs/dev/">
+                        <span itemprop="name">DEV</span>
                     </a>
                     <meta itemprop="position" content='2' />
                 </li>
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/ops/container/">
-                        <span itemprop="name">Container</span>
+                    <a itemprop="item" href="/docs/dev/golang/">
+                        <span itemprop="name">Golang</span>
                     </a>
                     <meta itemprop="position" content='3' />
                 </li>
             
-            
-                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/ops/container/containerd/">
-                        <span itemprop="name">Containerd</span>
-                    </a>
-                    <meta itemprop="position" content='4' />
-                </li>
-            
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">1.Containerd轻量级or工业级的容器管理工具</span>
-                <meta itemprop="position" content='5' />
+                <span itemprop="name">7.Go-Kafka</span>
+                <meta itemprop="position" content='4' />
             </li>
         
     </ul>
@@ -814,108 +806,45 @@
     <div class="fw-bold text-uppercase mb-2">On this page</div>
     <nav id="toc">
   <ul>
-    <li><a href="#1-containerd介绍">1. Containerd介绍</a>
+    <li>
       <ul>
-        <li><a href="#10-前言">1.0 前言</a></li>
-        <li><a href="#11-containerd前世今生">1.1 Containerd前世今生</a></li>
-        <li><a href="#12-containerd架构">1.2 Containerd架构</a>
+        <li><a href="#1介绍">1.介绍</a></li>
+        <li><a href="#2常场景">2.常⽤场景</a></li>
+        <li><a href="#3go三库">3.Go三⽅库</a></li>
+        <li><a href="#4kafka使">4.Kafka使⽤</a>
           <ul>
-            <li><a href="#121-架构图">1.2.1 架构图</a></li>
-            <li><a href="#122-常用插件">1.2.2 常用插件</a></li>
-            <li><a href="#123-架构缩略图">1.2.3 架构缩略图</a></li>
-            <li><a href="#124-与其它容器运行时工具性能对比">1.2.4 与其它容器运行时工具性能对比</a></li>
+            <li><a href="#41-安装依赖包">4.1 安装依赖包</a></li>
+            <li><a href="#42-初始化client">4.2 初始化Client</a></li>
+            <li><a href="#43初始化参数生产者">4.3初始化参数生产者</a></li>
+            <li><a href="#44初始化参数消费者">4.4初始化参数消费者</a></li>
+          </ul>
+        </li>
+        <li><a href="#5常用的topic-的增删查">5.常用的Topic 的增删查</a>
+          <ul>
+            <li><a href="#51创建topic">5.1创建Topic</a></li>
+            <li><a href="#52查看所有topic">5.2查看所有Topic</a></li>
+            <li><a href="#53查看topic详情">5.3查看Topic详情</a></li>
+            <li><a href="#54查找指定主题和分区的偏移量">5.4查找指定主题和分区的偏移量</a></li>
+            <li><a href="#55获取单分区的消息偏移量">5.5获取单分区的消息偏移量</a></li>
+            <li><a href="#56获取消费者组消费情况">5.6获取消费者组消费情况</a></li>
+          </ul>
+        </li>
+        <li><a href="#6生产者">6.生产者</a>
+          <ul>
+            <li><a href="#61同步生产消息">6.1同步生产消息</a></li>
+            <li><a href="#62异步生产消息">6.2异步生产消息</a></li>
+            <li><a href="#63消息设置">6.3消息设置</a></li>
+          </ul>
+        </li>
+        <li><a href="#7消费者">7.消费者</a>
+          <ul>
+            <li><a href="#71单分区消费者">7.1单分区消费者</a></li>
+            <li><a href="#72多分区消费者">7.2多分区消费者</a></li>
+            <li><a href="#73消费者组">7.3消费者组⭐️</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#2-containerd安装">2. Containerd安装</a>
-      <ul>
-        <li><a href="#21-yum方式安装">2.1 YUM方式安装</a>
-          <ul>
-            <li><a href="#211-获取yum源">2.1.1 获取YUM源</a></li>
-            <li><a href="#212-使用yum命令安装">2.1.2 使用yum命令安装</a></li>
-            <li><a href="#213-验证安装及启动服务">2.1.3 验证安装及启动服务</a></li>
-            <li><a href="#214-验证可用性">2.1.4 验证可用性</a></li>
-          </ul>
-        </li>
-        <li><a href="#22-二进制方式安装">2.2 二进制方式安装</a>
-          <ul>
-            <li><a href="#221-获取安装包">2.2.1 获取安装包</a></li>
-            <li><a href="#222--安装并测试可用性">2.2.2  安装并测试可用性</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#3-containerd容器镜像管理">3. Containerd容器镜像管理</a>
-      <ul>
-        <li><a href="#31-containerd容器镜像管理命令">3.1 Containerd容器镜像管理命令</a></li>
-        <li><a href="#32-查看镜像">3.2 查看镜像</a></li>
-        <li><a href="#33-下载镜像">3.3 下载镜像</a></li>
-        <li><a href="#34-镜像挂载">3.4 镜像挂载</a></li>
-        <li><a href="#35-镜像导出">3.5 镜像导出</a></li>
-        <li><a href="#36-镜像删除">3.6 镜像删除</a></li>
-        <li><a href="#37-镜像导入">3.7 镜像导入</a></li>
-        <li><a href="#38-修改镜像tag">3.8 修改镜像tag</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-containerd容器管理">4. Containerd容器管理</a>
-      <ul>
-        <li><a href="#41-获取命令帮助">4.1 获取命令帮助</a>
-          <ul>
-            <li><a href="#411-获取ctr命令帮助">4.1.1 获取ctr命令帮助</a></li>
-            <li><a href="#412-获取创建静态容器命令帮助">4.1.2 获取创建静态容器命令帮助</a></li>
-            <li><a href="#413-获取动态容器命令帮助">4.1.3 获取动态容器命令帮助</a></li>
-          </ul>
-        </li>
-        <li><a href="#42-查看容器">4.2 查看容器</a></li>
-        <li><a href="#43-查看任务">4.3 查看任务</a></li>
-        <li><a href="#44-创建静态容器">4.4 创建静态容器</a></li>
-        <li><a href="#45-静态容器启动为动态容器">4.5 静态容器启动为动态容器</a></li>
-        <li><a href="#46-进入容器操作">4.6 进入容器操作</a></li>
-        <li><a href="#47-直接运行一个动态容器">4.7 直接运行一个动态容器</a></li>
-        <li><a href="#48-暂停容器">4.8 暂停容器</a></li>
-        <li><a href="#49-恢复容器">4.9 恢复容器</a></li>
-        <li><a href="#410-停止容器">4.10 停止容器</a></li>
-        <li><a href="#411-删除容器">4.11 删除容器</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-containerd使用私有容器镜像仓库-harbor">5. Containerd使用私有容器镜像仓库 Harbor</a>
-      <ul>
-        <li><a href="#51-harbor准备">5.1 Harbor准备</a></li>
-        <li><a href="#52-配置containerd使用harbor仓库">5.2 配置Containerd使用Harbor仓库</a>
-          <ul>
-            <li><a href="#521-harbor主机名解析">5.2.1 Harbor主机名解析</a></li>
-            <li><a href="#522-修改containerd配置文件">5.2.2 修改Containerd配置文件</a></li>
-            <li><a href="#523--ctr下载镜像">5.2.3  ctr下载镜像</a></li>
-            <li><a href="#524-ctr上传镜像">5.2.4 ctr上传镜像</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#6-containerd-namespace管理">6. Containerd NameSpace管理</a></li>
-    <li><a href="#7-containerd-network管理">7. Containerd Network管理</a>
-      <ul>
-        <li><a href="#71-创建cni网络">7.1 创建CNI网络</a>
-          <ul>
-            <li><a href="#711-获取cni工具源码">7.1.1 获取CNI工具源码</a></li>
-            <li><a href="#712-获取cni-pluginscni插件">7.1.2 获取CNI Plugins（CNI插件）</a></li>
-            <li><a href="#713-准备cni网络配置文件">7.1.3 准备CNI网络配置文件</a></li>
-            <li><a href="#714--生成cni网络">7.1.4  生成CNI网络</a></li>
-          </ul>
-        </li>
-        <li><a href="#72-为containerd容器配置网络功能">7.2 为Containerd容器配置网络功能</a>
-          <ul>
-            <li><a href="#721-创建一个容器">7.2.1 创建一个容器</a></li>
-            <li><a href="#722-进入容器查看其网络情况">7.2.2 进入容器查看其网络情况</a></li>
-            <li><a href="#723-获取容器进程id及其网络命名空间">7.2.3 获取容器进程ID及其网络命名空间</a></li>
-            <li><a href="#724-为指定容器添加网络配置">7.2.4 为指定容器添加网络配置</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#8-containerd容器数据持久化存储">8. Containerd容器数据持久化存储</a></li>
-    <li><a href="#9-与其它containerd容器共享命名空间">9. 与其它Containerd容器共享命名空间</a></li>
-    <li><a href="#10-docker集成containerd实现容器管理">10. Docker集成Containerd实现容器管理</a></li>
   </ul>
 </nav>
     </toc></div>
@@ -927,148 +856,66 @@
                                             </button>
 <nav id="toc-mobile">
   <ul class="dropdown-menu">
-    <li><a href="#1-containerd介绍">1. Containerd介绍</a>
+    <li>
       <ul>
-        <li><a href="#10-前言">1.0 前言</a></li>
-        <li><a href="#11-containerd前世今生">1.1 Containerd前世今生</a></li>
-        <li><a href="#12-containerd架构">1.2 Containerd架构</a>
+        <li><a href="#1介绍">1.介绍</a></li>
+        <li><a href="#2常场景">2.常⽤场景</a></li>
+        <li><a href="#3go三库">3.Go三⽅库</a></li>
+        <li><a href="#4kafka使">4.Kafka使⽤</a>
           <ul>
-            <li><a href="#121-架构图">1.2.1 架构图</a></li>
-            <li><a href="#122-常用插件">1.2.2 常用插件</a></li>
-            <li><a href="#123-架构缩略图">1.2.3 架构缩略图</a></li>
-            <li><a href="#124-与其它容器运行时工具性能对比">1.2.4 与其它容器运行时工具性能对比</a></li>
+            <li><a href="#41-安装依赖包">4.1 安装依赖包</a></li>
+            <li><a href="#42-初始化client">4.2 初始化Client</a></li>
+            <li><a href="#43初始化参数生产者">4.3初始化参数生产者</a></li>
+            <li><a href="#44初始化参数消费者">4.4初始化参数消费者</a></li>
+          </ul>
+        </li>
+        <li><a href="#5常用的topic-的增删查">5.常用的Topic 的增删查</a>
+          <ul>
+            <li><a href="#51创建topic">5.1创建Topic</a></li>
+            <li><a href="#52查看所有topic">5.2查看所有Topic</a></li>
+            <li><a href="#53查看topic详情">5.3查看Topic详情</a></li>
+            <li><a href="#54查找指定主题和分区的偏移量">5.4查找指定主题和分区的偏移量</a></li>
+            <li><a href="#55获取单分区的消息偏移量">5.5获取单分区的消息偏移量</a></li>
+            <li><a href="#56获取消费者组消费情况">5.6获取消费者组消费情况</a></li>
+          </ul>
+        </li>
+        <li><a href="#6生产者">6.生产者</a>
+          <ul>
+            <li><a href="#61同步生产消息">6.1同步生产消息</a></li>
+            <li><a href="#62异步生产消息">6.2异步生产消息</a></li>
+            <li><a href="#63消息设置">6.3消息设置</a></li>
+          </ul>
+        </li>
+        <li><a href="#7消费者">7.消费者</a>
+          <ul>
+            <li><a href="#71单分区消费者">7.1单分区消费者</a></li>
+            <li><a href="#72多分区消费者">7.2多分区消费者</a></li>
+            <li><a href="#73消费者组">7.3消费者组⭐️</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#2-containerd安装">2. Containerd安装</a>
-      <ul>
-        <li><a href="#21-yum方式安装">2.1 YUM方式安装</a>
-          <ul>
-            <li><a href="#211-获取yum源">2.1.1 获取YUM源</a></li>
-            <li><a href="#212-使用yum命令安装">2.1.2 使用yum命令安装</a></li>
-            <li><a href="#213-验证安装及启动服务">2.1.3 验证安装及启动服务</a></li>
-            <li><a href="#214-验证可用性">2.1.4 验证可用性</a></li>
-          </ul>
-        </li>
-        <li><a href="#22-二进制方式安装">2.2 二进制方式安装</a>
-          <ul>
-            <li><a href="#221-获取安装包">2.2.1 获取安装包</a></li>
-            <li><a href="#222--安装并测试可用性">2.2.2  安装并测试可用性</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#3-containerd容器镜像管理">3. Containerd容器镜像管理</a>
-      <ul>
-        <li><a href="#31-containerd容器镜像管理命令">3.1 Containerd容器镜像管理命令</a></li>
-        <li><a href="#32-查看镜像">3.2 查看镜像</a></li>
-        <li><a href="#33-下载镜像">3.3 下载镜像</a></li>
-        <li><a href="#34-镜像挂载">3.4 镜像挂载</a></li>
-        <li><a href="#35-镜像导出">3.5 镜像导出</a></li>
-        <li><a href="#36-镜像删除">3.6 镜像删除</a></li>
-        <li><a href="#37-镜像导入">3.7 镜像导入</a></li>
-        <li><a href="#38-修改镜像tag">3.8 修改镜像tag</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-containerd容器管理">4. Containerd容器管理</a>
-      <ul>
-        <li><a href="#41-获取命令帮助">4.1 获取命令帮助</a>
-          <ul>
-            <li><a href="#411-获取ctr命令帮助">4.1.1 获取ctr命令帮助</a></li>
-            <li><a href="#412-获取创建静态容器命令帮助">4.1.2 获取创建静态容器命令帮助</a></li>
-            <li><a href="#413-获取动态容器命令帮助">4.1.3 获取动态容器命令帮助</a></li>
-          </ul>
-        </li>
-        <li><a href="#42-查看容器">4.2 查看容器</a></li>
-        <li><a href="#43-查看任务">4.3 查看任务</a></li>
-        <li><a href="#44-创建静态容器">4.4 创建静态容器</a></li>
-        <li><a href="#45-静态容器启动为动态容器">4.5 静态容器启动为动态容器</a></li>
-        <li><a href="#46-进入容器操作">4.6 进入容器操作</a></li>
-        <li><a href="#47-直接运行一个动态容器">4.7 直接运行一个动态容器</a></li>
-        <li><a href="#48-暂停容器">4.8 暂停容器</a></li>
-        <li><a href="#49-恢复容器">4.9 恢复容器</a></li>
-        <li><a href="#410-停止容器">4.10 停止容器</a></li>
-        <li><a href="#411-删除容器">4.11 删除容器</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-containerd使用私有容器镜像仓库-harbor">5. Containerd使用私有容器镜像仓库 Harbor</a>
-      <ul>
-        <li><a href="#51-harbor准备">5.1 Harbor准备</a></li>
-        <li><a href="#52-配置containerd使用harbor仓库">5.2 配置Containerd使用Harbor仓库</a>
-          <ul>
-            <li><a href="#521-harbor主机名解析">5.2.1 Harbor主机名解析</a></li>
-            <li><a href="#522-修改containerd配置文件">5.2.2 修改Containerd配置文件</a></li>
-            <li><a href="#523--ctr下载镜像">5.2.3  ctr下载镜像</a></li>
-            <li><a href="#524-ctr上传镜像">5.2.4 ctr上传镜像</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#6-containerd-namespace管理">6. Containerd NameSpace管理</a></li>
-    <li><a href="#7-containerd-network管理">7. Containerd Network管理</a>
-      <ul>
-        <li><a href="#71-创建cni网络">7.1 创建CNI网络</a>
-          <ul>
-            <li><a href="#711-获取cni工具源码">7.1.1 获取CNI工具源码</a></li>
-            <li><a href="#712-获取cni-pluginscni插件">7.1.2 获取CNI Plugins（CNI插件）</a></li>
-            <li><a href="#713-准备cni网络配置文件">7.1.3 准备CNI网络配置文件</a></li>
-            <li><a href="#714--生成cni网络">7.1.4  生成CNI网络</a></li>
-          </ul>
-        </li>
-        <li><a href="#72-为containerd容器配置网络功能">7.2 为Containerd容器配置网络功能</a>
-          <ul>
-            <li><a href="#721-创建一个容器">7.2.1 创建一个容器</a></li>
-            <li><a href="#722-进入容器查看其网络情况">7.2.2 进入容器查看其网络情况</a></li>
-            <li><a href="#723-获取容器进程id及其网络命名空间">7.2.3 获取容器进程ID及其网络命名空间</a></li>
-            <li><a href="#724-为指定容器添加网络配置">7.2.4 为指定容器添加网络配置</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#8-containerd容器数据持久化存储">8. Containerd容器数据持久化存储</a></li>
-    <li><a href="#9-与其它containerd容器共享命名空间">9. 与其它Containerd容器共享命名空间</a></li>
-    <li><a href="#10-docker集成containerd实现容器管理">10. Docker集成Containerd实现容器管理</a></li>
   </ul>
 </nav></div>
                                         <div class="docs-content col-12 col-xl-9 mt-0">
                                             <div class="mb-0 d-flex">
                                                 
-                                                <i class="material-icons title-icon me-2">rocket_launch</i>
+                                                <i class="material-icons title-icon me-2">article</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    1.Containerd轻量级or工业级的容器管理工具
+                                                    7.Go-Kafka
                                                     
                                                 </h1>
                                             </div>
                                             
-                                                <p class="lead mb-3">Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。</p>
+                                                <p class="lead mb-3">Go-Kafka使用</p>
                                             
                                             <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <h1 id="1-containerd介绍">1. Containerd介绍 <a href="#1-containerd%e4%bb%8b%e7%bb%8d" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><h2 id="10-前言">1.0 前言 <a href="#10-%e5%89%8d%e8%a8%80" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>
-<p>早在2016年3月，Docker 1.11的Docker Engine里就包含了containerd，而现在则是把containerd从Docker Engine里彻底剥离出来，作为一个独立的开源项目独立发展，目标是提供一个更加开放、稳定的容器运行基础设施。和原先包含在Docker Engine里containerd相比，独立的containerd将具有更多的功能，可以涵盖整个容器运行时管理的所有需求。</p>
-</li>
-<li>
-<p>containerd并不是直接面向最终用户的，而是主要用于集成到更上层的系统里，比如Swarm, Kubernetes, Mesos等容器编排系统。</p>
-</li>
-<li>
-<p>containerd以Daemon的形式运行在系统上，通过暴露底层的gRPC API，上层系统可以通过这些API管理机器上的容器。</p>
-</li>
-<li>
-<p>每个containerd只负责一台机器，Pull镜像，对容器的操作（启动、停止等），网络，存储都是由containerd完成。具体运行容器由runC负责，实际上只要是符合OCI规范的容器都可以支持。</p>
-</li>
-<li>
-<p>对于容器编排服务来说，运行时只需要使用containerd+runC，更加轻量，容易管理。</p>
-</li>
-<li>
-<p>独立之后containerd的特性演进可以和Docker Engine分开，专注容器运行时管理，可以更稳定。</p>
-</li>
-</ul>
-<p>
+        <h2 id="1介绍">1.介绍 <a href="#1%e4%bb%8b%e7%bb%8d" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>Kafka 是⼀种分布式流处理平台，最初由 LinkedIn 公司开发，现在由 Apache 软件基⾦会维护。它被设计⽤于⾼吞吐量、低延迟的数据传输，并具有可扩展性和容错性。
+
 
 
 
@@ -1080,1270 +927,88 @@
 
   
     
-      <img src="/images/containerd/image-20220218112209583.png" alt="image-20220218112209583" width="879" height="597" loading="lazy">
+      <img src="/images/go-kafka/dde0a0e1-db03-4b16-b9de-5a75bc16465c.png" alt="" width="3401" height="2275" loading="lazy">
     
   
-</p>
-<p>
 
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218221135407.png" alt="image-20220218221135407" width="1221" height="545" loading="lazy">
-    
-  
-</p>
-<h2 id="11-containerd前世今生">1.1 Containerd前世今生 <a href="#11-containerd%e5%89%8d%e4%b8%96%e4%bb%8a%e7%94%9f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>2013年docker公司在推出docker产品后,由于其对全球技术产生了一定的影响力，Google公司明显感觉到自己公司内部所使用的Brog系统江湖地位受到的威胁，希望Docker公司能够与自己联合打造一款开源的容器运行时作为Docker核心依赖，但Docker公司拒绝了；接着Google公司联合RedHat、IBM等公司说服Docker公司把其容器核心技术libcontainer捐给中立社区(OCI,Open Container Intiative)，并更名为runC。
-为了进一步遏制Docker在未来技术市场影响力，避免在容器市场上Docker一家独大，Google公司带领导RedHat、IBM等成立了CNCF(Cloud Native Computing Fundation)基金会，即云原生计算基金会。CNCF的目标很明确，既然在容器应用领域无法与Docker相抗衡，那就做Google更有经验的技术市场&mdash;&mdash;大规模容器编排应用场景，Google公司把自己内部使用的Brog系统开源&mdash;&mdash;Kubernetes，也就是我们今天所说的云原生技术生态。</p>
-<p>2016年Docker公司推出了Docker Swarm，意在一统Docker生态，让Docker既可以实现容器应用管理，也可以实现大规模容器编排，经过近1年左右时间的市场验证后，发现在容器编排方面无法独立抗衡kubernetes,所以Docker公司于2017年正式宣布原生支持Kubernetes,至此，Docker在大规模容器编排应用市场败下阵来，但是Docker依然不甘心失败，把Docker核心依赖Containerd捐给了CNCF，依此说明Docker依旧是一个PaaS平台。</p>
-<p>2020年CNCF基金会宣布Kubernetes 1.20版本将不再仅支持Docker容器管理工具，此事的起因主要也与Docker捐给CNCF基金会的Containerd有关，早期为了实现Kubernetes能够使用Docker实现容器管理，专门在Kubernetes组件中集成一个shim（垫片）技术，用来将Kubernetes容器运行时接口（CRI，Container Runntime Interface）调用翻译成Docker的API,这样就可以很好地使用Docker了，但是随着Kubernetes在全球技术市场的广泛应用，有更多的容器管理工具的出现，它们都想能够借助于Kubernetes被用户所使用，所以就提出标准化容器运行时接口，只要适配了这个接口就可以集成到Kubernetes生态当中，所以Kubernetes取消了对shim的维护，并且由于Containerd技术的成功，可以实现无缝对接Kubernetes，所以接下来Kubernetes容器运行时的主角是Containerd。</p>
-<h2 id="12-containerd架构">1.2 Containerd架构 <a href="#12-containerd%e6%9e%b6%e6%9e%84" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="121-架构图">1.2.1 架构图 <a href="#121-%e6%9e%b6%e6%9e%84%e5%9b%be" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>Containerd设计的目的是为了嵌入到Kubernetes中使用，它是一个工业级的容器运行时，不提供给开发人员和终端用户直接使用，这样就避免了与Docker产生竞争，但事实上，Containerd已经实现大多数容器管理功能，例如：容器生命周期管理、容器镜像传输和管理、容器存储与网络管理等。</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220220093315501.png" alt="image-20220220093315501" width="1424" height="866" loading="lazy">
-    
-  
-</p>
+Kafka 的核⼼概念是消息传递系统，它通过将数据以消息的形式进⾏发布和订阅来实现数据流的处理。以下是 Kafka 的⼀些关键特点和概念：</p>
 <ul>
-<li>
-<p>Containerd 采用标准的 C/S 架构</p>
+<li>消息发布和订阅：Kafka 使⽤发布-订阅模型，消息发布者将消息发送到⼀个或多个主题（Topics），⽽消息订阅者可以从这些主题中获取消息。</li>
+<li>分布式架构：Kafka 是⼀个分布式系统，可以在多个节点上部署，实现数据的分区和复制，以实现⾼可⽤性和可扩展性。</li>
+<li>消息持久化：Kafka 使⽤⽇志（Log）的⽅式持久化消息，每个主题的消息以追加的⽅式写⼊分区中，并且消息会在⼀段时间后根据配置进⾏保留。</li>
+<li>分区和复制：Kafka 将每个主题分成⼀个或多个分区（Partitions），每个分区可以在多个节点上进⾏复制，以实现负载均衡和容错性。</li>
+<li>⾼吞吐量：Kafka 具有⾮常⾼的吞吐量和低延迟，能够处理⼤量的消息流，并保持较低的延迟。</li>
+<li>实时数据处理：Kafka 可以与流处理框架（如 Apache Spark、Apache Flink）集成，⽀持实时的数据处理和流式分析。</li>
+</ul>
+<h2 id="2常场景">2.常⽤场景 <a href="#2%e5%b8%b8%e5%9c%ba%e6%99%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
+<li>数据流集成和数据管道：Kafka 可以作为数据流的中间件，⽤于连接不同的数据系统和应⽤程序。它可以集成多个数据源和数据⽬的地，实现可靠的数据传输和流⽔线处理。</li>
+<li>⽇志收集和集中式⽇志管理：Kafka 可以⽤作⽇志收集系统，收集和存储分布在多个应⽤程序和服务器上的⽇志数据。它提供⾼吞吐量和持久化存储，⽀持实时的⽇志数据处理和分析。</li>
+<li>事件驱动架构：Kafka 的发布-订阅模型使其成为构建事件驱动架构的理想选择。应⽤程序可以将事件发布到 Kafka 主题，然后其他应⽤程序可以订阅并处理这些事件，实现松耦合、可扩展和实时的事件驱动架构。</li>
+<li>流式处理和实时分析：Kafka 可以与流处理框架（如 Apache Spark、Apache Flink）集成，⽀持实时的流式数据处理和复杂的实时分析。通过将数据流导⼊Kafka 主题，应⽤程序可以实时处理和分析数据，实现实时的洞察和决策。</li>
+<li>异步消息队列：Kafka 可以⽤作⾼吞吐量的异步消息队列，实现应⽤程序之间的解耦和异步通信。应⽤程序可以将消息发送到 Kafka 主题，并异步处理这些消息，提⾼系统的可伸缩性和弹性。</li>
+<li>数据备份和容错性：Kafka ⽀持数据的分区和复制，可以在多个节点上复制和存储数据，以实现数据的冗余备份和容错性。</li>
+</ul>
+<h2 id="3go三库">3.Go三⽅库 <a href="#3go%e4%b8%89%e5%ba%93" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
+<li><code>github.com/IBM/sarama</code>: 是⼀个 Go 语⾔编写的 Apache Kafka 客户端库，⽤于与 Kafka 集群进⾏交互。它提供了丰富的功能和易于使⽤的 API，使开发⼈员能够⽅便地使⽤ Go 语⾔来⽣产和消费 Kafka 消息。</li>
+<li>Github链接：https://github.com/IBM/sarama</li>
+</ul>
+<h2 id="4kafka使">4.Kafka使⽤ <a href="#4kafka%e4%bd%bf" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="41-安装依赖包">4.1 安装依赖包 <a href="#41-%e5%ae%89%e8%a3%85%e4%be%9d%e8%b5%96%e5%8c%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="180fffa" class="language-bash line-numbers"
+        ><code class="language-bash"
+        >go get github.com/IBM/sarama
+</code></pre>
+      </div>
+  
+
+<h3 id="42-初始化client">4.2 初始化Client <a href="#42-%e5%88%9d%e5%a7%8b%e5%8c%96client" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="ce6f8dd" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;fmt&#34;
+	&#34;log&#34;
+	&#34;strconv&#34;
+	&#34;time&#34;
+
+	&#34;github.com/IBM/sarama&#34;
+)
+
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Errors = true
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	client, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化sarama客户端报错%s&#34;, err.Error())
+		return
+	}
+	defer client.Close()
+	
+	//其他操作，如创建生产者或消费者
+	fmt.Println(&#34;Client initialized successfully!&#34;)
+}
+</code></pre>
+      </div>
+  
+
 <ul>
-<li>服务端通过 GRPC 协议提供稳定的 API</li>
-<li>客户端通过调用服务端的 API 进行高级的操作</li>
-</ul>
-</li>
-<li>
-<p>为了实现解耦，Containerd 将不同的职责划分给不同的组件，每个组件就相当于一个子系统（subsystem）。连接不同子系统的组件被称为模块。</p>
-</li>
-<li>
-<p>Containerd 两大子系统为：</p>
-<ul>
-<li>Bundle : 在 Containerd 中，Bundle 包含了配置、元数据和根文件系统数据，你可以理解为容器的文件系统。而 Bundle 子系统允许用户从镜像中提取和打包 Bundles。</li>
-<li>Runtime : Runtime 子系统用来执行 Bundles，比如创建容器。</li>
-</ul>
-<p>其中，每一个子系统的行为都由一个或多个模块协作完成（架构图中的 Core 部分）。每一种类型的模块都以插件的形式集成到 Containerd 中，而且插件之间是相互依赖的。</p>
-<p>例如，上图中的每一个长虚线的方框都表示一种类型的插件，包括 Service Plugin、Metadata Plugin、GC Plugin、Runtime Plugin 等，其中 Service Plugin 又会依赖 Metadata Plugin、GC Plugin 和 Runtime Plugin。每一个小方框都表示一个细分的插件，例如 Metadata Plugin 依赖 Containers Plugin、Content Plugin 等。</p>
-</li>
-</ul>
-<h3 id="122-常用插件">1.2.2 常用插件 <a href="#122-%e5%b8%b8%e7%94%a8%e6%8f%92%e4%bb%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
-<li><strong>Content Plugin</strong> : 提供对镜像中可寻址内容的访问，所有不可变的内容都被存储在这里。</li>
-<li><strong>Snapshot Plugin</strong> : 用来管理容器镜像的文件系统快照。镜像中的每一个 layer 都会被解压成文件系统快照，类似于 Docker 中的 <code>graphdriver</code>。</li>
-<li><strong>Metrics</strong> : 暴露各个组件的监控指标。</li>
-</ul>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220220093649732.png" alt="image-20220220093649732" width="1479" height="818" loading="lazy">
-    
-  
-</p>
-<h3 id="123-架构缩略图">1.2.3 架构缩略图 <a href="#123-%e6%9e%b6%e6%9e%84%e7%bc%a9%e7%95%a5%e5%9b%be" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>Containerd 被分为三个大块：<code>Storage</code>、<code>Metadata</code> 和 <code>Runtime</code></p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220220093958799.png" alt="image-20220220093958799" width="1506" height="862" loading="lazy">
-    
-  
-</p>
-<h3 id="124-与其它容器运行时工具性能对比">1.2.4 与其它容器运行时工具性能对比 <a href="#124-%e4%b8%8e%e5%85%b6%e5%ae%83%e5%ae%b9%e5%99%a8%e8%bf%90%e8%a1%8c%e6%97%b6%e5%b7%a5%e5%85%b7%e6%80%a7%e8%83%bd%e5%af%b9%e6%af%94" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>这是使用 bucketbench 对 Docker、crio 和 Containerd 的性能测试结果，包括启动、停止和删除容器，以比较它们所耗的时间：</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220220095224783.png" alt="image-20220220095224783" width="1088" height="542" loading="lazy">
-    
-  
-</p>
-<p>结论： Containerd 在各个方面都表现良好，总体性能优于 <code>Docker</code> 和 <code>crio</code> 。</p>
-<h1 id="2-containerd安装">2. Containerd安装 <a href="#2-containerd%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><blockquote>
-<p>课程操作系统环境为centos7u6</p>
-</blockquote>
-<h2 id="21-yum方式安装">2.1 YUM方式安装 <a href="#21-yum%e6%96%b9%e5%bc%8f%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="211-获取yum源">2.1.1 获取YUM源 <a href="#211-%e8%8e%b7%e5%8f%96yum%e6%ba%90" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="63cc104" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >获取阿里云YUM源
-# wget -O /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="850da9e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看YUM源中Containerd软件
-# yum list | grep containerd
-containerd.io.x86_64                        1.4.12-3.1.el7             docker-ce-stable
-</code></pre>
-      </div>
-  
-
-<h3 id="212-使用yum命令安装">2.1.2 使用yum命令安装 <a href="#212-%e4%bd%bf%e7%94%a8yum%e5%91%bd%e4%bb%a4%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d69be5c" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >安装Containerd.io软件，即可安装Containerd
-# yum -y install containerd.io
-</code></pre>
-      </div>
-  
-
-<h3 id="213-验证安装及启动服务">2.1.3 验证安装及启动服务 <a href="#213-%e9%aa%8c%e8%af%81%e5%ae%89%e8%a3%85%e5%8f%8a%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="8614973" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用rpm -qa命令查看是否安装
-# rpm -qa | grep containerd
-containerd.io-1.4.12-3.1.el7.x86_64
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="c3e233c" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >设置containerd服务启动及开机自启动
-# systemctl enable containerd
-# systemctl start containerd
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="23d0d1e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看containerd服务启动状态
-# systemctl status containerd
-● containerd.service - containerd container runtime
-   Loaded: loaded (/usr/lib/systemd/system/containerd.service; enabled; vendor preset: disabled)
-   Active: active (running) since 五 2022-02-18 11:38:30 CST; 9s ago 此行第二列及第三列表示其正在运行状态
-     Docs: https://containerd.io
-  Process: 59437 ExecStartPre=/sbin/modprobe overlay (code=exited, status=0/SUCCESS)
- Main PID: 59439 (containerd)
-    Tasks: 7
-   Memory: 19.5M
-   CGroup: /system.slice/containerd.service
-           └─59439 /usr/bin/containerd
-           ......
-</code></pre>
-      </div>
-  
-
-<h3 id="214-验证可用性">2.1.4 验证可用性 <a href="#214-%e9%aa%8c%e8%af%81%e5%8f%af%e7%94%a8%e6%80%a7" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="8f4138b" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >安装Containerd时ctr命令亦可使用，ctr命令主要用于管理容器及容器镜像等。
-使用ctr命令查看Containerd客户端及服务端相关信息。
-# ctr version
-Client:
-  Version:  1.4.12
-  Revision: 7b11cfaabd73bb80907dd23182b9347b4245eb5d
-  Go version: go1.16.10
-
-Server:
-  Version:  1.4.12
-  Revision: 7b11cfaabd73bb80907dd23182b9347b4245eb5d
-  UUID: 3c4b142d-d91d-44a5-aae2-9673785d4b2c
-</code></pre>
-      </div>
-  
-
-<h2 id="22-二进制方式安装">2.2 二进制方式安装 <a href="#22-%e4%ba%8c%e8%bf%9b%e5%88%b6%e6%96%b9%e5%bc%8f%e5%ae%89%e8%a3%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>Containerd有两种安装包：</p>
-<ul>
-<li>第一种是<code>containerd-xxx</code>,这种包用于单机测试没问题，不包含runC，需要提前安装。</li>
-<li>第二种是<code>cri-containerd-cni-xxxx</code>，包含runc和k8s里的所需要的相关文件。k8s集群里需要用到此包。虽然包含runC，但是依赖系统中的seccomp（安全计算模式，是一种限制容器调用系统资源的模式。）</li>
-</ul>
-<h3 id="221-获取安装包">2.2.1 获取安装包 <a href="#221-%e8%8e%b7%e5%8f%96%e5%ae%89%e8%a3%85%e5%8c%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218114231583.png" alt="image-20220218114231583" width="1699" height="1034" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218114320745.png" alt="image-20220218114320745" width="1623" height="553" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218114353357.png" alt="image-20220218114353357" width="1593" height="870" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218123330897.png" alt="image-20220218123330897" width="1551" height="832" loading="lazy">
-    
-  
-</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e74636d" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >下载Containerd安装包
-# wget https://github.com/containerd/containerd/releases/download/v1.6.0/cri-containerd-cni-1.6.0-linux-amd64.tar.gz
-</code></pre>
-      </div>
-  
-
-<h3 id="222--安装并测试可用性">2.2.2  安装并测试可用性 <a href="#222--%e5%ae%89%e8%a3%85%e5%b9%b6%e6%b5%8b%e8%af%95%e5%8f%af%e7%94%a8%e6%80%a7" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><h4 id="2221-安装containerd">2.2.2.1 安装containerd <a href="#2221-%e5%ae%89%e8%a3%85containerd" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="22f5d9e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已获取的安装包
-# ls
-cri-containerd-cni-1.6.0-linux-amd64.tar.gz
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="c258fbc" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >解压已下载的软件包
-# tar xf cri-containerd-cni-1.6.0-linux-amd64.tar.gz
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="524eca0" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看解压后目录
-# ls
-etc opt  usr 
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="7d07fb2" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看etc目录，主要为containerd服务管理配置文件及cni虚拟网卡配置文件
-# ls etc
-cni  crictl.yaml  systemd
-# ls etc/systemd/
-system
-# ls etc/systemd/system/
-containerd.service
-
-
-查看opt目录，主要为gce环境中使用containerd配置文件及cni插件
-# ls opt
-cni  containerd
-# ls opt/containerd/
-cluster
-# ls opt/containerd/cluster/
-gce  version
-# ls opt/containerd/cluster/gce
-cloud-init  cni.template  configure.sh  env
-
-查看usr目录，主要为containerd运行时文件，包含runc
-# ls usr
-local
-# ls usr/local/
-bin  sbin
-# ls usr/local/bin
-containerd  containerd-shim  containerd-shim-runc-v1  containerd-shim-runc-v2  containerd-stress  crictl  critest  ctd-decoder  ctr
-# ls usr/local/sbin
-runc
-</code></pre>
-      </div>
-  
-
-<h4 id="2222-查看containerd安装位置">2.2.2.2 查看containerd安装位置 <a href="#2222-%e6%9f%a5%e7%9c%8bcontainerd%e5%ae%89%e8%a3%85%e4%bd%8d%e7%bd%ae" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="2946614" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看containerd.service文件，了解containerd文件安装位置
-# cat etc/systemd/system/containerd.service
-
-
-
-# Copyright The containerd Authors.
-#
-# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-[Unit]
-Description=containerd container runtime
-Documentation=https://containerd.io
-After=network.target local-fs.target
-
-[Service]
-ExecStartPre=-/sbin/modprobe overlay
-ExecStart=/usr/local/bin/containerd 查看此位置,把containerd二进制文件放置于此处即可完成安装。
-
-Type=notify
-Delegate=yes
-KillMode=process
-Restart=always
-RestartSec=5
-# Having non-zero Limit*s causes performance problems due to accounting overhead
-# in the kernel. We recommend using cgroups to do container-local accounting.
-LimitNPROC=infinity
-LimitCORE=infinity
-LimitNOFILE=infinity
-# Comment TasksMax if your systemd version does not supports it.
-# Only systemd 226 and above support this version.
-TasksMax=infinity
-OOMScoreAdjust=-999
-
-[Install]
-WantedBy=multi-user.target
-</code></pre>
-      </div>
-  
-
-<h4 id="2223-复制containerd运行时文件至系统">2.2.2.3 复制containerd运行时文件至系统 <a href="#2223-%e5%a4%8d%e5%88%b6containerd%e8%bf%90%e8%a1%8c%e6%97%b6%e6%96%87%e4%bb%b6%e8%87%b3%e7%b3%bb%e7%bb%9f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="9c1b99c" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看宿主机/usr/local/bin目录，里面没有任何内容。
-# ls /usr/local/bin/
-
-查看解压后usr/local/bin目录，里面包含containerd运行时文件
-# ls usr/
-local
-# ls usr/local/
-bin  sbin
-# ls usr/local/bin/
-containerd  containerd-shim  containerd-shim-runc-v1  containerd-shim-runc-v2  containerd-stress  crictl  critest  ctd-decoder  ctr
-
-复制containerd文件至/usr/local/bin目录中，本次可仅复制containerd一个文件也可复制全部文件。
-# cp usr/local/bin/containerd /usr/local/bin/
-# ls /usr/local/bin/
-containerd
-</code></pre>
-      </div>
-  
-
-<h4 id="2224-添加containerdservice文件至系统">2.2.2.4 添加containerd.service文件至系统 <a href="#2224-%e6%b7%bb%e5%8a%a0containerdservice%e6%96%87%e4%bb%b6%e8%87%b3%e7%b3%bb%e7%bb%9f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="8a7ddf9" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看解压后的etc/system目录
-# ls etc
-cni  crictl.yaml  systemd
-
-# ls etc/systemd/
-system
-
-# ls etc/systemd/system/
-containerd.service
-
-复制containerd服务管理配置文件至/usr/lib/systemd/system/目录中
-# cp etc/systemd/system/containerd.service /usr/lib/systemd/system/containerd.service
-
-查看复制后结果
-# ls /usr/lib/systemd/system/containerd.service
-/usr/lib/systemd/system/containerd.service
-</code></pre>
-      </div>
-  
-
-<h4 id="2225-查看containerd使用帮助">2.2.2.5 查看containerd使用帮助 <a href="#2225-%e6%9f%a5%e7%9c%8bcontainerd%e4%bd%bf%e7%94%a8%e5%b8%ae%e5%8a%a9" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="aa5d257" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># containerd --help
-NAME:
-   containerd -
-                    __        _                     __
-  _________  ____  / /_____ _(_)___  ___  _________/ /
- / ___/ __ \/ __ \/ __/ __ `/ / __ \/ _ \/ ___/ __  /
-/ /__/ /_/ / / / / /_/ /_/ / / / / /  __/ /  / /_/ /
-\___/\____/_/ /_/\__/\__,_/_/_/ /_/\___/_/   \__,_/
-
-high performance container runtime
-
-
-USAGE:
-   containerd [global options] command [command options] [arguments...]
-
-VERSION:
-   v1.6.0
-
-DESCRIPTION:
-
-containerd is a high performance container runtime whose daemon can be started
-by using this command. If none of the *config*, *publish*, or *help* commands
-are specified, the default action of the **containerd** command is to start the
-containerd daemon in the foreground.
-
-
-A default configuration is used if no TOML configuration is specified or located
-at the default file location. The *containerd config* command can be used to
-generate the default configuration for containerd. The output of that command
-can be used and modified as necessary as a custom configuration.
-
-COMMANDS:
-   config    information on the containerd config
-   publish   binary to publish events to containerd
-   oci-hook  provides a base for OCI runtime hooks to allow arguments to be injected.
-   help, h   Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --config value, -c value     path to the configuration file (default: &#34;/etc/containerd/config.toml&#34;)
-   --log-level value, -l value  set the logging level [trace, debug, info, warn, error, fatal, panic]
-   --address value, -a value    address for containerd&#39;s GRPC server
-   --root value                 containerd root directory
-   --state value                containerd state directory
-   --help, -h                   show help
-   --version, -v                print the version
-</code></pre>
-      </div>
-  
-
-<h4 id="2226-生成containerd模块配置文件">2.2.2.6 生成containerd模块配置文件 <a href="#2226-%e7%94%9f%e6%88%90containerd%e6%a8%a1%e5%9d%97%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><h5 id="22261-生成默认模块配置文件">2.2.2.6.1 生成默认模块配置文件 <a href="#22261-%e7%94%9f%e6%88%90%e9%bb%98%e8%ae%a4%e6%a8%a1%e5%9d%97%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h5><p>Containerd 的默认配置文件为 <code>/etc/containerd/config.toml</code>，可以使用<code>containerd config default &gt; /etc/containerd/config.toml</code>命令创建一份模块配置文件</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="14a328c" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >创建配置文件目录
-# mkdir /etc/containerd
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="92cbe47" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >生成配置文件
-# containerd config default &gt; /etc/containerd/config.toml
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="509d1e8" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看配置文件
-# cat /etc/containerd/config.toml
-disabled_plugins = []
-imports = []
-oom_score = 0
-plugin_dir = &#34;&#34;
-required_plugins = []
-root = &#34;/var/lib/containerd&#34;
-state = &#34;/run/containerd&#34;
-temp = &#34;&#34;
-version = 2
-
-[cgroup]
-  path = &#34;&#34;
-
-[debug]
-  address = &#34;&#34;
-  format = &#34;&#34;
-  gid = 0
-  level = &#34;&#34;
-  uid = 0
-
-[grpc]
-  address = &#34;/run/containerd/containerd.sock&#34;
-  gid = 0
-  max_recv_message_size = 16777216
-  max_send_message_size = 16777216
-  tcp_address = &#34;&#34;
-  tcp_tls_ca = &#34;&#34;
-  tcp_tls_cert = &#34;&#34;
-  tcp_tls_key = &#34;&#34;
-  uid = 0
-
-[metrics]
-  address = &#34;&#34;
-  grpc_histogram = false
-
-[plugins]
-
-  [plugins.&#34;io.containerd.gc.v1.scheduler&#34;]
-    deletion_threshold = 0
-    mutation_threshold = 100
-    pause_threshold = 0.02
-    schedule_delay = &#34;0s&#34;
-    startup_delay = &#34;100ms&#34;
-
-  [plugins.&#34;io.containerd.grpc.v1.cri&#34;]
-    device_ownership_from_security_context = false
-    disable_apparmor = false
-    disable_cgroup = false
-    disable_hugetlb_controller = true
-    disable_proc_mount = false
-    disable_tcp_service = true
-    enable_selinux = false
-    enable_tls_streaming = false
-    enable_unprivileged_icmp = false
-    enable_unprivileged_ports = false
-    ignore_image_defined_volumes = false
-    max_concurrent_downloads = 3
-    max_container_log_line_size = 16384
-    netns_mounts_under_state_dir = false
-    restrict_oom_score_adj = false
-    sandbox_image = &#34;k8s.gcr.io/pause:3.6&#34;  由于网络原因，此处被替换
-    selinux_category_range = 1024
-    stats_collect_period = 10
-    stream_idle_timeout = &#34;4h0m0s&#34;
-    stream_server_address = &#34;127.0.0.1&#34;
-    stream_server_port = &#34;0&#34;
-    systemd_cgroup = false
-    tolerate_missing_hugetlb_controller = true
-    unset_seccomp_profile = &#34;&#34;
-
-    [plugins.&#34;io.containerd.grpc.v1.cri&#34;.cni]
-      bin_dir = &#34;/opt/cni/bin&#34;
-      conf_dir = &#34;/etc/cni/net.d&#34;
-      conf_template = &#34;&#34;
-      ip_pref = &#34;&#34;
-      max_conf_num = 1
-
-    [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd]
-      default_runtime_name = &#34;runc&#34;
-      disable_snapshot_annotations = true
-      discard_unpacked_layers = false
-      ignore_rdt_not_enabled_errors = false
-      no_pivot = false
-      snapshotter = &#34;overlayfs&#34;
-
-      [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.default_runtime]
-        base_runtime_spec = &#34;&#34;
-        cni_conf_dir = &#34;&#34;
-        cni_max_conf_num = 0
-        container_annotations = []
-        pod_annotations = []
-        privileged_without_host_devices = false
-        runtime_engine = &#34;&#34;
-        runtime_path = &#34;&#34;
-        runtime_root = &#34;&#34;
-        runtime_type = &#34;&#34;
-
-        [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.default_runtime.options]
-
-      [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.runtimes]
-
-        [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.runtimes.runc]
-          base_runtime_spec = &#34;&#34;
-          cni_conf_dir = &#34;&#34;
-          cni_max_conf_num = 0
-          container_annotations = []
-          pod_annotations = []
-          privileged_without_host_devices = false
-          runtime_engine = &#34;&#34;
-          runtime_path = &#34;&#34;
-          runtime_root = &#34;&#34;
-          runtime_type = &#34;io.containerd.runc.v2&#34;
-
-          [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.runtimes.runc.options]
-            BinaryName = &#34;&#34;
-            CriuImagePath = &#34;&#34;
-            CriuPath = &#34;&#34;
-            CriuWorkPath = &#34;&#34;
-            IoGid = 0
-            IoUid = 0
-            NoNewKeyring = false
-            NoPivotRoot = false
-            Root = &#34;&#34;
-            ShimCgroup = &#34;&#34;
-            SystemdCgroup = false
-
-      [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.untrusted_workload_runtime]
-        base_runtime_spec = &#34;&#34;
-        cni_conf_dir = &#34;&#34;
-        cni_max_conf_num = 0
-        container_annotations = []
-        pod_annotations = []
-        privileged_without_host_devices = false
-        runtime_engine = &#34;&#34;
-        runtime_path = &#34;&#34;
-        runtime_root = &#34;&#34;
-        runtime_type = &#34;&#34;
-
-        [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.untrusted_workload_runtime.options]
-
-    [plugins.&#34;io.containerd.grpc.v1.cri&#34;.image_decryption]
-      key_model = &#34;node&#34;
-
-    [plugins.&#34;io.containerd.grpc.v1.cri&#34;.registry]
-      config_path = &#34;&#34;
-
-      [plugins.&#34;io.containerd.grpc.v1.cri&#34;.registry.auths]
-
-      [plugins.&#34;io.containerd.grpc.v1.cri&#34;.registry.configs]
-
-      [plugins.&#34;io.containerd.grpc.v1.cri&#34;.registry.headers]
-
-      [plugins.&#34;io.containerd.grpc.v1.cri&#34;.registry.mirrors]
-
-    [plugins.&#34;io.containerd.grpc.v1.cri&#34;.x509_key_pair_streaming]
-      tls_cert_file = &#34;&#34;
-      tls_key_file = &#34;&#34;
-
-  [plugins.&#34;io.containerd.internal.v1.opt&#34;]
-    path = &#34;/opt/containerd&#34;
-
-  [plugins.&#34;io.containerd.internal.v1.restart&#34;]
-    interval = &#34;10s&#34;
-
-  [plugins.&#34;io.containerd.internal.v1.tracing&#34;]
-    sampling_ratio = 1.0
-    service_name = &#34;containerd&#34;
-
-  [plugins.&#34;io.containerd.metadata.v1.bolt&#34;]
-    content_sharing_policy = &#34;shared&#34;
-
-  [plugins.&#34;io.containerd.monitor.v1.cgroups&#34;]
-    no_prometheus = false
-
-  [plugins.&#34;io.containerd.runtime.v1.linux&#34;]
-    no_shim = false
-    runtime = &#34;runc&#34;
-    runtime_root = &#34;&#34;
-    shim = &#34;containerd-shim&#34;
-    shim_debug = false
-
-  [plugins.&#34;io.containerd.runtime.v2.task&#34;]
-    platforms = [&#34;linux/amd64&#34;]
-    sched_core = false
-
-  [plugins.&#34;io.containerd.service.v1.diff-service&#34;]
-    default = [&#34;walking&#34;]
-
-  [plugins.&#34;io.containerd.service.v1.tasks-service&#34;]
-    rdt_config_file = &#34;&#34;
-
-  [plugins.&#34;io.containerd.snapshotter.v1.aufs&#34;]
-    root_path = &#34;&#34;
-
-  [plugins.&#34;io.containerd.snapshotter.v1.btrfs&#34;]
-    root_path = &#34;&#34;
-
-  [plugins.&#34;io.containerd.snapshotter.v1.devmapper&#34;]
-    async_remove = false
-    base_image_size = &#34;&#34;
-    discard_blocks = false
-    fs_options = &#34;&#34;
-    fs_type = &#34;&#34;
-    pool_name = &#34;&#34;
-    root_path = &#34;&#34;
-
-  [plugins.&#34;io.containerd.snapshotter.v1.native&#34;]
-    root_path = &#34;&#34;
-
-  [plugins.&#34;io.containerd.snapshotter.v1.overlayfs&#34;]
-    root_path = &#34;&#34;
-    upperdir_label = false
-
-  [plugins.&#34;io.containerd.snapshotter.v1.zfs&#34;]
-    root_path = &#34;&#34;
-
-  [plugins.&#34;io.containerd.tracing.processor.v1.otlp&#34;]
-    endpoint = &#34;&#34;
-    insecure = false
-    protocol = &#34;&#34;
-
-[proxy_plugins]
-
-[stream_processors]
-
-  [stream_processors.&#34;io.containerd.ocicrypt.decoder.v1.tar&#34;]
-    accepts = [&#34;application/vnd.oci.image.layer.v1.tar&#43;encrypted&#34;]
-    args = [&#34;--decryption-keys-path&#34;, &#34;/etc/containerd/ocicrypt/keys&#34;]
-    env = [&#34;OCICRYPT_KEYPROVIDER_CONFIG=/etc/containerd/ocicrypt/ocicrypt_keyprovider.conf&#34;]
-    path = &#34;ctd-decoder&#34;
-    returns = &#34;application/vnd.oci.image.layer.v1.tar&#34;
-
-  [stream_processors.&#34;io.containerd.ocicrypt.decoder.v1.tar.gzip&#34;]
-    accepts = [&#34;application/vnd.oci.image.layer.v1.tar&#43;gzip&#43;encrypted&#34;]
-    args = [&#34;--decryption-keys-path&#34;, &#34;/etc/containerd/ocicrypt/keys&#34;]
-    env = [&#34;OCICRYPT_KEYPROVIDER_CONFIG=/etc/containerd/ocicrypt/ocicrypt_keyprovider.conf&#34;]
-    path = &#34;ctd-decoder&#34;
-    returns = &#34;application/vnd.oci.image.layer.v1.tar&#43;gzip&#34;
-
-[timeouts]
-  &#34;io.containerd.timeout.bolt.open&#34; = &#34;0s&#34;
-  &#34;io.containerd.timeout.shim.cleanup&#34; = &#34;5s&#34;
-  &#34;io.containerd.timeout.shim.load&#34; = &#34;5s&#34;
-  &#34;io.containerd.timeout.shim.shutdown&#34; = &#34;3s&#34;
-  &#34;io.containerd.timeout.task.state&#34; = &#34;2s&#34;
-
-[ttrpc]
-  address = &#34;&#34;
-  gid = 0
-  uid = 0
-</code></pre>
-      </div>
-  
-
-<h5 id="22262-替换默认配置文件">2.2.2.6.2 替换默认配置文件 <a href="#22262-%e6%9b%bf%e6%8d%a2%e9%bb%98%e8%ae%a4%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h5><p>但上述配置文件后期改动的地方较多，这里直接换成可单机使用也可k8s环境使用的配置文件并配置好镜像加速器。</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="59d497e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># vim /etc/containerd/config.toml
-
-# cat /etc/containerd/config.toml
-root = &#34;/var/lib/containerd&#34;
-state = &#34;/run/containerd&#34;
-oom_score = -999
-
-[grpc]
-  address = &#34;/run/containerd/containerd.sock&#34;
-  uid = 0
-  gid = 0
-  max_recv_message_size = 16777216
-  max_send_message_size = 16777216
-
-[debug]
-  address = &#34;&#34;
-  uid = 0
-  gid = 0
-  level = &#34;&#34;
-
-[metrics]
-  address = &#34;&#34;
-  grpc_histogram = false
-
-[cgroup]
-  path = &#34;&#34;
-
-[plugins]
-  [plugins.cgroups]
-    no_prometheus = false
-  [plugins.cri]
-    stream_server_address = &#34;127.0.0.1&#34;
-    stream_server_port = &#34;0&#34;
-    enable_selinux = false
-    sandbox_image = &#34;easzlab/pause-amd64:3.2&#34;
-    stats_collect_period = 10
-    systemd_cgroup = false
-    enable_tls_streaming = false
-    max_container_log_line_size = 16384
-    [plugins.cri.containerd]
-      snapshotter = &#34;overlayfs&#34;
-      no_pivot = false
-      [plugins.cri.containerd.default_runtime]
-        runtime_type = &#34;io.containerd.runtime.v1.linux&#34;
-        runtime_engine = &#34;&#34;
-        runtime_root = &#34;&#34;
-      [plugins.cri.containerd.untrusted_workload_runtime]
-        runtime_type = &#34;&#34;
-        runtime_engine = &#34;&#34;
-        runtime_root = &#34;&#34;
-    [plugins.cri.cni]
-      bin_dir = &#34;/opt/kube/bin&#34;
-      conf_dir = &#34;/etc/cni/net.d&#34;
-      conf_template = &#34;/etc/cni/net.d/10-default.conf&#34;
-    [plugins.cri.registry]
-      [plugins.cri.registry.mirrors]
-        [plugins.cri.registry.mirrors.&#34;docker.io&#34;]
-          endpoint = [
-            &#34;https://docker.mirrors.ustc.edu.cn&#34;,
-            &#34;http://hub-mirror.c.163.com&#34;
-          ]
-        [plugins.cri.registry.mirrors.&#34;gcr.io&#34;]
-          endpoint = [
-            &#34;https://gcr.mirrors.ustc.edu.cn&#34;
-          ]
-        [plugins.cri.registry.mirrors.&#34;k8s.gcr.io&#34;]
-          endpoint = [
-            &#34;https://gcr.mirrors.ustc.edu.cn/google-containers/&#34;
-          ]
-        [plugins.cri.registry.mirrors.&#34;quay.io&#34;]
-          endpoint = [
-            &#34;https://quay.mirrors.ustc.edu.cn&#34;
-          ]
-        [plugins.cri.registry.mirrors.&#34;harbor.kubemsb.com&#34;] 此处添加了本地容器镜像仓库 Harbor,做为本地容器镜像仓库。
-          endpoint = [
-            &#34;http://harbor.kubemsb.com&#34;
-          ]
-    [plugins.cri.x509_key_pair_streaming]
-      tls_cert_file = &#34;&#34;
-      tls_key_file = &#34;&#34;
-  [plugins.diff-service]
-    default = [&#34;walking&#34;]
-  [plugins.linux]
-    shim = &#34;containerd-shim&#34;
-    runtime = &#34;runc&#34;
-    runtime_root = &#34;&#34;
-    no_shim = false
-    shim_debug = false
-  [plugins.opt]
-    path = &#34;/opt/containerd&#34;
-  [plugins.restart]
-    interval = &#34;10s&#34;
-  [plugins.scheduler]
-    pause_threshold = 0.02
-    deletion_threshold = 0
-    mutation_threshold = 100
-    schedule_delay = &#34;0s&#34;
-    startup_delay = &#34;100ms&#34;
-</code></pre>
-      </div>
-  
-
-<h4 id="2227-启动containerd服务并设置开机自启动">2.2.2.7 启动containerd服务并设置开机自启动 <a href="#2227-%e5%90%af%e5%8a%a8containerd%e6%9c%8d%e5%8a%a1%e5%b9%b6%e8%ae%be%e7%bd%ae%e5%bc%80%e6%9c%ba%e8%87%aa%e5%90%af%e5%8a%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a55a59f" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># systemctl enable containerd
-Created symlink from /etc/systemd/system/multi-user.target.wants/containerd.service to /usr/lib/systemd/system/containerd.service.
-# systemctl start containerd
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="bcbf07a" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># systemctl status containerd
-● containerd.service - containerd container runtime
-   Loaded: loaded (/usr/lib/systemd/system/containerd.service; enabled; vendor preset: disabled)
-   Active: active (running) since 五 2022-02-18 13:02:37 CST; 7s ago
-     Docs: https://containerd.io
-  Process: 60383 ExecStartPre=/sbin/modprobe overlay (code=exited, status=0/SUCCESS)
- Main PID: 60384 (containerd)
-    Tasks: 8
-   Memory: 20.0M
-   CGroup: /system.slice/containerd.service
-           └─60384 /usr/local/bin/containerd
-           ......
-</code></pre>
-      </div>
-  
-
-<h4 id="2228-复制ctr命令至系统">2.2.2.8 复制ctr命令至系统 <a href="#2228-%e5%a4%8d%e5%88%b6ctr%e5%91%bd%e4%bb%a4%e8%87%b3%e7%b3%bb%e7%bb%9f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a3f8864" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ls usr/local/bin/
-containerd  containerd-shim  containerd-shim-runc-v1  containerd-shim-runc-v2  containerd-stress  crictl  critest  ctd-decoder  ctr
-# cp usr/local/bin/ctr /usr/bin/
-</code></pre>
-      </div>
-  
-
-<h4 id="2229-查看已安装containerd服务版本">2.2.2.9 查看已安装containerd服务版本 <a href="#2229-%e6%9f%a5%e7%9c%8b%e5%b7%b2%e5%ae%89%e8%a3%85containerd%e6%9c%8d%e5%8a%a1%e7%89%88%e6%9c%ac" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="088d6ac" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr version
-Client:
-  Version:  v1.6.0
-  Revision: 39259a8f35919a0d02c9ecc2871ddd6ccf6a7c6e
-  Go version: go1.17.2
-
-Server:
-  Version:  v1.6.0
-  Revision: 39259a8f35919a0d02c9ecc2871ddd6ccf6a7c6e
-  UUID: c1972cbe-884a-41b0-867f-f8a58c168e6d
-</code></pre>
-      </div>
-  
-
-<h4 id="22210-安装runc">2.2.2.10 安装runC <a href="#22210-%e5%ae%89%e8%a3%85runc" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h4><blockquote>
-<p>由于二进制包中提供的runC默认需要系统中安装seccomp支持，需要单独安装，且不同版本runC对seccomp版本要求一致，所以建议单独下载runC 二进制包进行安装，里面包含了seccomp模块支持。</p>
-</blockquote>
-<h5 id="222101-获取runc">2.2.2.10.1 获取runC <a href="#222101-%e8%8e%b7%e5%8f%96runc" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h5><p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218215925093.png" alt="image-20220218215925093" width="1693" height="1009" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218215958943.png" alt="image-20220218215958943" width="1592" height="396" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218220023181.png" alt="image-20220218220023181" width="1653" height="993" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218220124773.png" alt="image-20220218220124773" width="1523" height="906" loading="lazy">
-    
-  
-</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="23a97cd" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用wget下载
-# wget https://github.com/opencontainers/runc/releases/download/v1.1.0/runc.amd64
-</code></pre>
-      </div>
-  
-
-<h5 id="222102-安装runc并验证安装结果">2.2.2.10.2 安装runC并验证安装结果 <a href="#222102-%e5%ae%89%e8%a3%85runc%e5%b9%b6%e9%aa%8c%e8%af%81%e5%ae%89%e8%a3%85%e7%bb%93%e6%9e%9c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h5>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="9eb7f63" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已下载文件 
-# ls
-runc.amd64
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a4131ad" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >安装runC
-# mv runc.amd64 /usr/sbin/runc
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a695056" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >为runC添加可执行权限
-# chmod &#43;x /usr/sbin/runc
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ddf6863" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用runc命令验证是否安装成功
-# runc -v
-runc version 1.1.0
-commit: v1.1.0-0-g067aaf85
-spec: 1.0.2-dev
-go: go1.17.6
-libseccomp: 2.5.3
-</code></pre>
-      </div>
-  
-
-<h1 id="3-containerd容器镜像管理">3. Containerd容器镜像管理 <a href="#3-containerd%e5%ae%b9%e5%99%a8%e9%95%9c%e5%83%8f%e7%ae%a1%e7%90%86" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><h2 id="31-containerd容器镜像管理命令">3.1 Containerd容器镜像管理命令 <a href="#31-containerd%e5%ae%b9%e5%99%a8%e9%95%9c%e5%83%8f%e7%ae%a1%e7%90%86%e5%91%bd%e4%bb%a4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li>docker使用docker images命令管理镜像</li>
-<li>单机containerd使用ctr images命令管理镜像,containerd本身的CLI</li>
-<li>k8s中containerd使用crictl images命令管理镜像,Kubernetes社区的专用CLI工具</li>
+<li>生产者</li>
 </ul>
 
 
@@ -2353,1846 +1018,18 @@ libseccomp: 2.5.3
 
   
       <div class="prism-shortcode">
-      <pre id="41647b7" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >获取命令帮助
-# ctr --help
-NAME:
-   ctr -
-        __
-  _____/ /______
- / ___/ __/ ___/
-/ /__/ /_/ /
-\___/\__/_/
-
-containerd CLI
-
-
-USAGE:
-   ctr [global options] command [command options] [arguments...]
-
-VERSION:
-   v1.6.0
-
-DESCRIPTION:
-
-ctr is an unsupported debug and administrative client for interacting
-with the containerd daemon. Because it is unsupported, the commands,
-options, and operations are not guaranteed to be backward compatible or
-stable from release to release of the containerd project.
-
-COMMANDS:
-   plugins, plugin            provides information about containerd plugins
-   version                    print the client and server versions
-   containers, c, container   manage containers
-   content                    manage content
-   events, event              display containerd events
-   images, image, i           manage images
-   leases                     manage leases
-   namespaces, namespace, ns  manage namespaces
-   pprof                      provide golang pprof outputs for containerd
-   run                        run a container
-   snapshots, snapshot        manage snapshots
-   tasks, t, task             manage tasks
-   install                    install a new package
-   oci                        OCI tools
-   shim                       interact with a shim directly
-   help, h                    Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --debug                      enable debug output in logs
-   --address value, -a value    address for containerd&#39;s GRPC server (default: &#34;/run/containerd/containerd.sock&#34;) [$CONTAINERD_ADDRESS]
-   --timeout value              total timeout for ctr commands (default: 0s)
-   --connect-timeout value      timeout for connecting to containerd (default: 0s)
-   --namespace value, -n value  namespace to use with commands (default: &#34;default&#34;) [$CONTAINERD_NAMESPACE]
-   --help, -h                   show help
-   --version, -v                print the version
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a487e18" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >获取命令帮助
-# ctr images
-NAME:
-   ctr images - manage images
-
-USAGE:
-   ctr images command [command options] [arguments...]
-
-COMMANDS:
-   check                    check existing images to ensure all content is available locally
-   export                   export images
-   import                   import images
-   list, ls                 list images known to containerd
-   mount                    mount an image to a target path
-   unmount                  unmount the image from the target
-   pull                     pull an image from a remote
-   push                     push an image to a remote
-   delete, del, remove, rm  remove one or more images by reference
-   tag                      tag an image
-   label                    set and clear labels for an image
-   convert                  convert an image
-
-OPTIONS:
-   --help, -h  show help
-</code></pre>
-      </div>
-  
-
-<h2 id="32-查看镜像">3.2 查看镜像 <a href="#32-%e6%9f%a5%e7%9c%8b%e9%95%9c%e5%83%8f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="6589020" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr images ls
-REF TYPE DIGEST SIZE PLATFORMS LABELS
-</code></pre>
-      </div>
-  
-
-<h2 id="33-下载镜像">3.3 下载镜像 <a href="#33-%e4%b8%8b%e8%bd%bd%e9%95%9c%e5%83%8f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>containerd支持oci标准的镜像，所以可以直接使用docker官方或dockerfile构建的镜像</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="efec1f2" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr images pull --all-platforms docker.io/library/nginx:alpine
-
-docker.io/library/nginx:alpine:                                                   resolved       |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-docker.io/library/nginx:alpine:                                                   resolved       |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-index-sha256:da9c94bec1da829ebd52431a84502ec471c8e548ffb2cedbf36260fd9bd1d4d3:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-manifest-sha256:050385609d832fae11b007fbbfba77d0bba12bf72bc0dca0ac03e09b1998580f: done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:f2303c6c88653b9a6739d50f611c170b9d97d161c6432409c680f6b46a5f112f:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-config-sha256:bef258acf10dc257d641c47c3a600c92f87be4b4ce4a5e4752b3eade7533dcd9:   done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:59bf1c3509f33515622619af21ed55bbe26d24913cedbca106468a5fb37a50c3:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:8d6ba530f6489d12676d7f61628427d067243ba4a3a512c3e28813b977cb3b0e:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:5288d7ad7a7f84bdd19c1e8f0abb8684b5338f3da86fe9ae1d7f0e9bc2de6595:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:39e51c61c033442d00c40a30b2a9ed01f40205875fbd8664c50b4dc3e99ad5cf:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:ee6f71c6f4a82b2afd01f92bdf6be0079364d03020e8a2c569062e1c06d3822b:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-elapsed: 11.0s                                                                    total:  8.7 Mi (809.5 KiB/s)                                    
-unpacking linux/amd64 sha256:da9c94bec1da829ebd52431a84502ec471c8e548ffb2cedbf36260fd9bd1d4d3...
-done: 1.860946163s
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="51f5528" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明：
-这里ctr命令pull镜像时，不能直接把镜像名字写成`nginx:alpine`
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="63d05af" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已下载容器镜像
-# ctr images ls
-REF                            TYPE                                                      DIGEST                                                                  SIZE    PLATFORMS                                                                                LABELS
-docker.io/library/nginx:alpine application/vnd.docker.distribution.manifest.list.v2&#43;json sha256:da9c94bec1da829ebd52431a84502ec471c8e548ffb2cedbf36260fd9bd1d4d3 9.7 MiB linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x -
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="7027260" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >指定平台下载容器镜像
-# ctr images pull --platform linux/amd64 docker.io/library/nginx:alpine
-</code></pre>
-      </div>
-  
-
-<h2 id="34-镜像挂载">3.4 镜像挂载 <a href="#34-%e9%95%9c%e5%83%8f%e6%8c%82%e8%bd%bd" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><blockquote>
-<p>方便查看镜像中包含的内容。</p>
-</blockquote>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="426c732" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >把已下载的容器镜像挂载至当前文件系统
-# ctr images mount docker.io/library/nginx:alpine /mnt
-sha256:af2fcce448e2e4451a5f4796a9bf9cb5c9b5f88e0d6d10029cada42fb9d268ac
-/mnt
-[root@localhost ~]# ls /mnt
-bin  dev  docker-entrypoint.d  docker-entrypoint.sh  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="957f523" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >卸载
-# umount /mnt
-</code></pre>
-      </div>
-  
-
-<h2 id="35-镜像导出">3.5 镜像导出 <a href="#35-%e9%95%9c%e5%83%8f%e5%af%bc%e5%87%ba" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="6af9824" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >把容器镜像导出
-# ctr i export --all-platforms nginx.img docker.io/library/nginx:alpine
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ae665f3" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明
---all-platforms,导出所有平台镜像，本版本为1.6版本，1.4版本不需要添加此选项。
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="c57b6d9" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已导出容器镜像
-# ls
-nginx.img
-
-# ls -lh
-总用量 196M
-
--rw-r--r--  1 root root  73M 2月  18 14:48 nginx.img
-
-</code></pre>
-      </div>
-  
-
-<h2 id="36-镜像删除">3.6 镜像删除 <a href="#36-%e9%95%9c%e5%83%8f%e5%88%a0%e9%99%a4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="88d69b0" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >删除指定容器镜像
-# ctr image rm docker.io/library/nginx:alpine
-docker.io/library/nginx:alpine
-
-再次查看容器镜像
-[root@192 ~]# ctr images ls
-REF TYPE DIGEST SIZE PLATFORMS LABELS
-</code></pre>
-      </div>
-  
-
-<h2 id="37-镜像导入">3.7 镜像导入 <a href="#37-%e9%95%9c%e5%83%8f%e5%af%bc%e5%85%a5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="676986a" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >导入容器镜像
-# ctr images import nginx.img
-unpacking docker.io/library/nginx:alpine (sha256:da9c94bec1da829ebd52431a84502ec471c8e548ffb2cedbf36260fd9bd1d4d3)...done
-</code></pre>
-      </div>
-  
-
-<h2 id="38-修改镜像tag">3.8 修改镜像tag <a href="#38-%e4%bf%ae%e6%94%b9%e9%95%9c%e5%83%8ftag" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="5bdadf1" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr images tag docker.io/library/nginx:alpine nginx:alpine
-nginx:alpine
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="eaea6dd" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明：
-把docker.io/library/nginx:alpine 修改为 nginx:alpine
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="5e083a9" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看修改后的容器镜像
-# ctr images ls
-REF                            TYPE                                                      DIGEST                                                                  SIZE    PLATFORMS                                                                                LABELS
-docker.io/library/nginx:alpine application/vnd.docker.distribution.manifest.list.v2&#43;json sha256:da9c94bec1da829ebd52431a84502ec471c8e548ffb2cedbf36260fd9bd1d4d3 9.7 MiB linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x -
-nginx:alpine                   application/vnd.docker.distribution.manifest.list.v2&#43;json sha256:da9c94bec1da829ebd52431a84502ec471c8e548ffb2cedbf36260fd9bd1d4d3 9.7 MiB linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x -
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="3864348" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >修改后对容器镜像做检查比对
-# ctr images check
-REF                            TYPE                                                      DIGEST                                                                  STATUS         SIZE            UNPACKED
-docker.io/library/nginx:alpine application/vnd.docker.distribution.manifest.list.v2&#43;json sha256:da9c94bec1da829ebd52431a84502ec471c8e548ffb2cedbf36260fd9bd1d4d3 complete (7/7) 9.7 MiB/9.7 MiB true
-
-nginx:alpine                   application/vnd.docker.distribution.manifest.list.v2&#43;json sha256:da9c94bec1da829ebd52431a84502ec471c8e548ffb2cedbf36260fd9bd1d4d3 complete (7/7) 9.7 MiB/9.7 MiB true
-</code></pre>
-      </div>
-  
-
-<h1 id="4-containerd容器管理">4. Containerd容器管理 <a href="#4-containerd%e5%ae%b9%e5%99%a8%e7%ae%a1%e7%90%86" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><h2 id="41-获取命令帮助">4.1 获取命令帮助 <a href="#41-%e8%8e%b7%e5%8f%96%e5%91%bd%e4%bb%a4%e5%b8%ae%e5%8a%a9" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="411-获取ctr命令帮助">4.1.1 获取ctr命令帮助 <a href="#411-%e8%8e%b7%e5%8f%96ctr%e5%91%bd%e4%bb%a4%e5%b8%ae%e5%8a%a9" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="2ef5f46" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >[root@localhost ~]# ctr --help
-NAME:
-   ctr -
-        __
-  _____/ /______
- / ___/ __/ ___/
-/ /__/ /_/ /
-\___/\__/_/
-
-containerd CLI
-
-
-USAGE:
-   ctr [global options] command [command options] [arguments...]
-
-VERSION:
-   v1.6.0
-
-DESCRIPTION:
-
-ctr is an unsupported debug and administrative client for interacting
-with the containerd daemon. Because it is unsupported, the commands,
-options, and operations are not guaranteed to be backward compatible or
-stable from release to release of the containerd project.
-
-COMMANDS:
-   plugins, plugin            provides information about containerd plugins
-   version                    print the client and server versions
-   containers, c, container   manage containers
-   content                    manage content
-   events, event              display containerd events
-   images, image, i           manage images
-   leases                     manage leases
-   namespaces, namespace, ns  manage namespaces
-   pprof                      provide golang pprof outputs for containerd
-   run                        run a container
-   snapshots, snapshot        manage snapshots
-   tasks, t, task             manage tasks
-   install                    install a new package
-   oci                        OCI tools
-   shim                       interact with a shim directly
-   help, h                    Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --debug                      enable debug output in logs
-   --address value, -a value    address for containerd&#39;s GRPC server (default: &#34;/run/containerd/containerd.sock&#34;) [$CONTAINERD_ADDRESS]
-   --timeout value              total timeout for ctr commands (default: 0s)
-   --connect-timeout value      timeout for connecting to containerd (default: 0s)
-   --namespace value, -n value  namespace to use with commands (default: &#34;default&#34;) [$CONTAINERD_NAMESPACE]
-   --help, -h                   show help
-   --version, -v                print the version
-</code></pre>
-      </div>
-  
-
-<h3 id="412-获取创建静态容器命令帮助">4.1.2 获取创建静态容器命令帮助 <a href="#412-%e8%8e%b7%e5%8f%96%e5%88%9b%e5%bb%ba%e9%9d%99%e6%80%81%e5%ae%b9%e5%99%a8%e5%91%bd%e4%bb%a4%e5%b8%ae%e5%8a%a9" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="865a7b6" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr container --help
-NAME:
-   ctr containers - manage containers
-
-USAGE:
-   ctr containers command [command options] [arguments...]
-
-COMMANDS:
-   create                   create container
-   delete, del, remove, rm  delete one or more existing containers
-   info                     get info about a container
-   list, ls                 list containers
-   label                    set and clear labels for a container
-   checkpoint               checkpoint a container
-   restore                  restore a container from checkpoint
-
-OPTIONS:
-   --help, -h  show help
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e34698f" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明：
-
-使用`ctr container create `命令创建容器后，容器并没有处于运行状态，其只是一个静态的容器。这个 container 对象只是包含了运行一个容器所需的资源及配置的数据结构，例如： namespaces、rootfs 和容器的配置都已经初始化成功了，只是用户进程(本案例为nginx)还没有启动。需要使用`ctr tasks`命令才能获取一个动态容器。
-</code></pre>
-      </div>
-  
-
-<h3 id="413-获取动态容器命令帮助">4.1.3 获取动态容器命令帮助 <a href="#413-%e8%8e%b7%e5%8f%96%e5%8a%a8%e6%80%81%e5%ae%b9%e5%99%a8%e5%91%bd%e4%bb%a4%e5%b8%ae%e5%8a%a9" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="5d0f2e9" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr run --help
-NAME:
-   ctr run - run a container
-
-USAGE:
-   ctr run [command options] [flags] Image|RootFS ID [COMMAND] [ARG...]
-   
-OPTIONS:
-   --rm                                    remove the container after running
-   --null-io                               send all IO to /dev/null
-   --log-uri value                         log uri
-   --detach, -d                            detach from the task after it has started execution
-   --fifo-dir value                        directory used for storing IO FIFOs
-   --cgroup value                          cgroup path (To disable use of cgroup, set to &#34;&#34; explicitly)
-   --platform value                        run image for specific platform
-   --cni                                   enable cni networking for the container
-   --runc-binary value                     specify runc-compatible binary
-   --runc-root value                       specify runc-compatible root
-   --runc-systemd-cgroup                   start runc with systemd cgroup manager
-   --uidmap container-uid:host-uid:length  run inside a user namespace with the specified UID mapping range; specified with the format container-uid:host-uid:length
-   --gidmap container-gid:host-gid:length  run inside a user namespace with the specified GID mapping range; specified with the format container-gid:host-gid:length
-   --remap-labels                          provide the user namespace ID remapping to the snapshotter via label options; requires snapshotter support
-   --cpus value                            set the CFS cpu quota (default: 0)
-   --cpu-shares value                      set the cpu shares (default: 1024)
-   --snapshotter value                     snapshotter name. Empty value stands for the default value. [$CONTAINERD_SNAPSHOTTER]
-   --snapshotter-label value               labels added to the new snapshot for this container.
-   --config value, -c value                path to the runtime-specific spec config file
-   --cwd value                             specify the working directory of the process
-   --env value                             specify additional container environment variables (e.g. FOO=bar)
-   --env-file value                        specify additional container environment variables in a file(e.g. FOO=bar, one per line)
-   --label value                           specify additional labels (e.g. foo=bar)
-   --mount value                           specify additional container mount (e.g. type=bind,src=/tmp,dst=/host,options=rbind:ro)
-   --net-host                              enable host networking for the container
-   --privileged                            run privileged container
-   --read-only                             set the containers filesystem as readonly
-   --runtime value                         runtime name (default: &#34;io.containerd.runc.v2&#34;)
-   --runtime-config-path value             optional runtime config path
-   --tty, -t                               allocate a TTY for the container
-   --with-ns value                         specify existing Linux namespaces to join at container runtime (format &#39;&lt;nstype&gt;:&lt;path&gt;&#39;)
-   --pid-file value                        file path to write the task&#39;s pid
-   --gpus value                            add gpus to the container
-   --allow-new-privs                       turn off OCI spec&#39;s NoNewPrivileges feature flag
-   --memory-limit value                    memory limit (in bytes) for the container (default: 0)
-   --device value                          file path to a device to add to the container; or a path to a directory tree of devices to add to the container
-   --cap-add value                         add Linux capabilities (Set capabilities with &#39;CAP_&#39; prefix)
-   --cap-drop value                        drop Linux capabilities (Set capabilities with &#39;CAP_&#39; prefix)
-   --seccomp                               enable the default seccomp profile
-   --seccomp-profile value                 file path to custom seccomp profile. seccomp must be set to true, before using seccomp-profile
-   --apparmor-default-profile value        enable AppArmor with the default profile with the specified name, e.g. &#34;cri-containerd.apparmor.d&#34;
-   --apparmor-profile value                enable AppArmor with an existing custom profile
-   --rdt-class value                       name of the RDT class to associate the container with. Specifies a Class of Service (CLOS) for cache and memory bandwidth management.
-   --rootfs                                use custom rootfs that is not managed by containerd snapshotter
-   --no-pivot                              disable use of pivot-root (linux only)
-   --cpu-quota value                       Limit CPU CFS quota (default: -1)
-   --cpu-period value                      Limit CPU CFS period (default: 0)
-   --rootfs-propagation value              set the propagation of the container rootfs
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a1b90d2" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明：
-使用`ctr run`命令可以创建一个静态容器并使其运行。一步到位运行容器。
-</code></pre>
-      </div>
-  
-
-<h2 id="42-查看容器">4.2 查看容器 <a href="#42-%e6%9f%a5%e7%9c%8b%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>container表示静态容器，可用c缩写代表container</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="8b16d39" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr container ls
-CONTAINER    IMAGE    RUNTIME
-</code></pre>
-      </div>
-  
-
-<p>或</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="738b1d3" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr c ls
-CONTAINER    IMAGE    RUNTIME
-</code></pre>
-      </div>
-  
-
-<h2 id="43-查看任务">4.3 查看任务 <a href="#43-%e6%9f%a5%e7%9c%8b%e4%bb%bb%e5%8a%a1" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>task表示容器里跑的进程, 可用t缩写代表task</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="131b364" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr task ls
-TASK    PID    STATUS
-</code></pre>
-      </div>
-  
-
-<p>或</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="f549105" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr t ls
-TASK    PID    STATUS
-</code></pre>
-      </div>
-  
-
-<h2 id="44-创建静态容器">4.4 创建静态容器 <a href="#44-%e5%88%9b%e5%bb%ba%e9%9d%99%e6%80%81%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a624732" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr c create docker.io/library/nginx:alpine nginx1
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d3431ae" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr container ls
-CONTAINER    IMAGE                             RUNTIME
-nginx1       docker.io/library/nginx:alpine    io.containerd.runc.v2
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="586aaa8" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看容器详细信息
-# ctr container info nginx1
-</code></pre>
-      </div>
-  
-
-<h2 id="45-静态容器启动为动态容器">4.5 静态容器启动为动态容器 <a href="#45-%e9%9d%99%e6%80%81%e5%ae%b9%e5%99%a8%e5%90%af%e5%8a%a8%e4%b8%ba%e5%8a%a8%e6%80%81%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="849f44c" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >复制containerd连接runC垫片工具至系统
-# ls usr/local/bin/
-containerd  containerd-shim  containerd-shim-runc-v1  containerd-shim-runc-v2  containerd-stress  crictl  critest  ctd-decoder  ctr
-[root@localhost ~]# cp usr/local/bin/containerd-shim-runc-v2 /usr/bin/
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ffffd36" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >启动task，即表时在容器中运行了进程，即为动态容器。
-# ctr task start -d nginx1
-/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
-/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="4757754" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明：
--d表示daemon或者后台的意思，否则会卡住终端
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ca73143" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看容器所在宿主机进程，是以宿主机进程的方式存在的。
-# ctr task ls
-TASK      PID     STATUS
-nginx1    3395    RUNNING
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a4b09aa" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看容器的进程(都是物理机的进程)
-# ctr task ps nginx1
-PID     INFO
-3395    -
-3434    -
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="9f0081a" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >物理机查看到相应的进程
-# ps -ef | grep 3395
-root       3395   3375  0 19:16 ?        00:00:00 nginx: master process nginx -g daemon off;
-101        3434   3395  0 19:16 ?        00:00:00 nginx: worker process
-</code></pre>
-      </div>
-  
-
-<h2 id="46-进入容器操作">4.6 进入容器操作 <a href="#46-%e8%bf%9b%e5%85%a5%e5%ae%b9%e5%99%a8%e6%93%8d%e4%bd%9c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e35b74f" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr task exec --exec-id 1 nginx1 /bin/sh
-
-ifconfig 查看网卡信息
-lo        Link encap:Local Loopback
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:65536  Metric:1
-          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000
-          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-
-curl 127.0.0.1 访问本地提供的web服务
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;Welcome to nginx!&lt;/title&gt;
-&lt;style&gt;
-html { color-scheme: light dark; }
-body { width: 35em; margin: 0 auto;
-font-family: Tahoma, Verdana, Arial, sans-serif; }
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
-&lt;p&gt;If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.&lt;/p&gt;
-
-&lt;p&gt;For online documentation and support please refer to
-&lt;a href=&#34;http://nginx.org/&#34;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
-Commercial support is available at
-&lt;a href=&#34;http://nginx.com/&#34;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-100   615  100   615    0     0   429k      0 --:--:-- --:--:-- --:--:--  600k
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a0fd67f" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明：
-为exec进程设定一个id，可以随意输入，只要保证唯一即可，也可使用$RANDOM变量。
-</code></pre>
-      </div>
-  
-
-<h2 id="47-直接运行一个动态容器">4.7 直接运行一个动态容器 <a href="#47-%e7%9b%b4%e6%8e%a5%e8%bf%90%e8%a1%8c%e4%b8%80%e4%b8%aa%e5%8a%a8%e6%80%81%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d7bf01a" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr run -d --net-host docker.io/library/nginx:alpine nginx2
-/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
-/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a3b258e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明：
-* -d 代表dameon，后台运行
-* --net-host 代表容器的IP就是宿主机的IP(相当于docker里的host类型网络)
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="9bff5be" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已运行容器
-# ctr container ls
-CONTAINER    IMAGE                             RUNTIME
-nginx2       docker.io/library/nginx:alpine    io.containerd.runc.v2
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="439ecc2" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已运行容器中运行的进程,既tasks
-# ctr tasks ls
-TASK      PID     STATUS
-nginx2    4061    RUNNING
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="fe2205b" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >进入容器
-# ctr task exec --exec-id 1 -t nginx2 /bin/sh
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="22713cb" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >/ # ifconfig 
-ens33     Link encap:Ethernet  HWaddr 00:0C:29:B1:B6:1D
-          inet addr:192.168.10.164  Bcast:192.168.10.255  Mask:255.255.255.0
-          inet6 addr: fe80::2b33:40ed:9311:8812/64 Scope:Link
-          inet6 addr: fe80::adf4:a8bc:a1c:a9f7/64 Scope:Link
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:55360 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:30526 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000
-          RX bytes:53511295 (51.0 MiB)  TX bytes:2735050 (2.6 MiB)
-
-lo        Link encap:Local Loopback
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:65536  Metric:1
-          RX packets:68 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:68 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000
-          RX bytes:5916 (5.7 KiB)  TX bytes:5916 (5.7 KiB)
-
-virbr0    Link encap:Ethernet  HWaddr 52:54:00:E9:51:82
-          inet addr:192.168.122.1  Bcast:192.168.122.255  Mask:255.255.255.0
-          UP BROADCAST MULTICAST  MTU:1500  Metric:1
-          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000
-          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="7d79b27" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >为容器中运行的网站添加网站文件
-/ # echo &#34;nginx2&#34; &gt; /usr/share/nginx/html/index.html
-/ # exit
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="fa79875" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在宿主机上访问网站
-[root@localhost ~]# curl 192.168.10.164
-nginx2
-</code></pre>
-      </div>
-  
-
-<h2 id="48-暂停容器">4.8 暂停容器 <a href="#48-%e6%9a%82%e5%81%9c%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d5b7ce9" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看容器状态
-# ctr tasks ls
-TASK      PID     STATUS
-nginx2    4061    RUNNING
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="a77c57f" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >暂停容器
-# ctr tasks pause nginx2
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="4e4b0fa" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >再次查看容器状态，看到其状态为PAUSED，表示停止。
-# ctr tasks ls
-TASK      PID     STATUS
-nginx2    4061    PAUSED
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="5af0108" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >[root@localhost ~]# curl http://192.168.10.164
-在宿主机访问，发现不可以访问到网站
-</code></pre>
-      </div>
-  
-
-<h2 id="49-恢复容器">4.9 恢复容器 <a href="#49-%e6%81%a2%e5%a4%8d%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="339c896" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用resume命令恢复容器
-# ctr tasks resume nginx2
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e801657" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看恢复后状态
-# ctr tasks ls
-TASK      PID     STATUS
-nginx2    4061    RUNNING
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="f90bd4e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在宿主机上访问容器中提供的服务
-# curl http://192.168.10.164
-nginx2
-</code></pre>
-      </div>
-  
-
-<h2 id="410-停止容器">4.10 停止容器 <a href="#410-%e5%81%9c%e6%ad%a2%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ef53a44" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr tasks --help
-NAME:
-   ctr tasks - manage tasks
-
-USAGE:
-   ctr tasks command [command options] [arguments...]
-
-COMMANDS:
-   attach                   attach to the IO of a running container
-   checkpoint               checkpoint a container
-   delete, del, remove, rm  delete one or more tasks
-   exec                     execute additional processes in an existing container
-   list, ls                 list tasks
-   kill                     signal a container (default: SIGTERM)
-   pause                    pause an existing container
-   ps                       list processes for container
-   resume                   resume a paused container
-   start                    start a container that has been created
-   metrics, metric          get a single data point of metrics for a task with the built-in Linux runtime
-
-OPTIONS:
-   --help, -h  show help
-
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="ee3fde4" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用kill命令停止容器中运行的进程，既为停止容器
-# ctr tasks kill nginx2
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="0236910" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看容器停止后状态，STATUS为STOPPED
-# ctr tasks ls
-TASK      PID     STATUS
-nginx1    3395    RUNNING
-nginx2    4061    STOPPED
-</code></pre>
-      </div>
-  
-
-<h2 id="411-删除容器">4.11 删除容器 <a href="#411-%e5%88%a0%e9%99%a4%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="1a6b6d8" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr tasks delete nginx2
-必须先停止tasks或先删除task，再删除容器
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="cd4f872" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看静态容器，确认其还存在于系统中
-# ctr container ls
-CONTAINER    IMAGE                             RUNTIME
-nginx2       docker.io/library/nginx:alpine    io.containerd.runc.v2
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="5ca3c2d" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >删除容器
-# ctr container delete nginx2
-</code></pre>
-      </div>
-  
-
-<h1 id="5-containerd使用私有容器镜像仓库-harbor">5. Containerd使用私有容器镜像仓库 Harbor <a href="#5-containerd%e4%bd%bf%e7%94%a8%e7%a7%81%e6%9c%89%e5%ae%b9%e5%99%a8%e9%95%9c%e5%83%8f%e4%bb%93%e5%ba%93-harbor" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><h2 id="51-harbor准备">5.1 Harbor准备 <a href="#51-harbor%e5%87%86%e5%a4%87" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218211611942.png" alt="image-20220218211611942" width="1904" height="773" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220218211755113.png" alt="image-20220218211755113" width="1905" height="815" loading="lazy">
-    
-  
-</p>
-<h2 id="52-配置containerd使用harbor仓库">5.2 配置Containerd使用Harbor仓库 <a href="#52-%e9%85%8d%e7%bd%aecontainerd%e4%bd%bf%e7%94%a8harbor%e4%bb%93%e5%ba%93" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="521-harbor主机名解析">5.2.1 Harbor主机名解析 <a href="#521-harbor%e4%b8%bb%e6%9c%ba%e5%90%8d%e8%a7%a3%e6%9e%90" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><blockquote>
-<p>在所有安装containerd宿主机上添加此配置信息。</p>
-</blockquote>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="b354237" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># vim /etc/hosts
-# cat /etc/hosts
-127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
-::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-192.168.10.165 harbor.kubemsb.com
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e2c349b" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明
-* 192.168.10.165是harbor的IP
-
-* harbor.kubemsb.com建议用FQDN形式，如果用类似harbor这种短名，后面下载镜像会出问题
-</code></pre>
-      </div>
-  
-
-<h3 id="522-修改containerd配置文件">5.2.2 修改Containerd配置文件 <a href="#522-%e4%bf%ae%e6%94%b9containerd%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d80797d" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >此配置文件已提前替换过，仅修改本地容器镜像仓库地址即可。
-# vim /etc/containerd/config.toml
-# cat /etc/containerd/config.toml
-root = &#34;/var/lib/containerd&#34;
-state = &#34;/run/containerd&#34;
-oom_score = -999
-
-[grpc]
-  address = &#34;/run/containerd/containerd.sock&#34;
-  uid = 0
-  gid = 0
-  max_recv_message_size = 16777216
-  max_send_message_size = 16777216
-
-[debug]
-  address = &#34;&#34;
-  uid = 0
-  gid = 0
-  level = &#34;&#34;
-
-[metrics]
-  address = &#34;&#34;
-  grpc_histogram = false
-
-[cgroup]
-  path = &#34;&#34;
-
-[plugins]
-  [plugins.cgroups]
-    no_prometheus = false
-  [plugins.cri]
-    stream_server_address = &#34;127.0.0.1&#34;
-    stream_server_port = &#34;0&#34;
-    enable_selinux = false
-    sandbox_image = &#34;easzlab/pause-amd64:3.2&#34;
-    stats_collect_period = 10
-    systemd_cgroup = false
-    enable_tls_streaming = false
-    max_container_log_line_size = 16384
-    [plugins.cri.containerd]
-      snapshotter = &#34;overlayfs&#34;
-      no_pivot = false
-      [plugins.cri.containerd.default_runtime]
-        runtime_type = &#34;io.containerd.runtime.v1.linux&#34;
-        runtime_engine = &#34;&#34;
-        runtime_root = &#34;&#34;
-      [plugins.cri.containerd.untrusted_workload_runtime]
-        runtime_type = &#34;&#34;
-        runtime_engine = &#34;&#34;
-        runtime_root = &#34;&#34;
-    [plugins.cri.cni]
-      bin_dir = &#34;/opt/kube/bin&#34;
-      conf_dir = &#34;/etc/cni/net.d&#34;
-      conf_template = &#34;/etc/cni/net.d/10-default.conf&#34;
-    [plugins.cri.registry]
-      [plugins.cri.registry.mirrors]
-        [plugins.cri.registry.mirrors.&#34;docker.io&#34;]
-          endpoint = [
-            &#34;https://docker.mirrors.ustc.edu.cn&#34;,
-            &#34;http://hub-mirror.c.163.com&#34;
-          ]
-        [plugins.cri.registry.mirrors.&#34;gcr.io&#34;]
-          endpoint = [
-            &#34;https://gcr.mirrors.ustc.edu.cn&#34;
-          ]
-        [plugins.cri.registry.mirrors.&#34;k8s.gcr.io&#34;]
-          endpoint = [
-            &#34;https://gcr.mirrors.ustc.edu.cn/google-containers/&#34;
-          ]
-        [plugins.cri.registry.mirrors.&#34;quay.io&#34;]
-          endpoint = [
-            &#34;https://quay.mirrors.ustc.edu.cn&#34;
-          ]
-        [plugins.cri.registry.mirrors.&#34;harbor.kubemsb.com&#34;]   在此处添加,在镜像加速器下面添加这一段
-          endpoint = [
-            &#34;http://harbor.kubemsb.com&#34;
-          ]
-    [plugins.cri.x509_key_pair_streaming]
-      tls_cert_file = &#34;&#34;
-      tls_key_file = &#34;&#34;
-  [plugins.diff-service]
-    default = [&#34;walking&#34;]
-  [plugins.linux]
-    shim = &#34;containerd-shim&#34;
-    runtime = &#34;runc&#34;
-    runtime_root = &#34;&#34;
-    no_shim = false
-    shim_debug = false
-  [plugins.opt]
-    path = &#34;/opt/containerd&#34;
-  [plugins.restart]
-    interval = &#34;10s&#34;
-  [plugins.scheduler]
-    pause_threshold = 0.02
-    deletion_threshold = 0
-    mutation_threshold = 100
-    schedule_delay = &#34;0s&#34;
-    startup_delay = &#34;100ms&#34;
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="f61f349" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >重启containerd，以便于重新加载配置文件。
-# systemctl restart containerd
-</code></pre>
-      </div>
-  
-
-<h3 id="523--ctr下载镜像">5.2.3  ctr下载镜像 <a href="#523--ctr%e4%b8%8b%e8%bd%bd%e9%95%9c%e5%83%8f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="077a7cb" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >下载容器镜像
-# ctr images pull --platform linux/amd64 docker.io/library/nginx:latest
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="e69b584" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明:
-* --platform linux/amd64 指定系统平台，也可以使用--all-platforms指定所有平台镜像。
-
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="2b7f14a" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >输出：
-docker.io/library/nginx:latest:                                                   resolved       |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-index-sha256:2834dc507516af02784808c5f48b7cbe38b8ed5d0f4837f16e78d00deb7e7767:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-manifest-sha256:bb129a712c2431ecce4af8dde831e980373b26368233ef0f3b2bae9e9ec515ee: done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:b559bad762bec166fd028483dd2a03f086d363ee827d8c98b7268112c508665a:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-config-sha256:c316d5a335a5cf324b0dc83b3da82d7608724769f6454f6d9a621f3ec2534a5a:   done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:5eb5b503b37671af16371272f9c5313a3e82f1d0756e14506704489ad9900803:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:1ae07ab881bd848493ad54c2ba32017f94d1d8dbfd0ba41b618f17e80f834a0f:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:78091884b7bea0fa918527207924e9993bcc21bf7f1c9687da40042ceca31ac9:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:091c283c6a66ad0edd2ab84cb10edacc00a1a7bc5277f5365c0d5c5457a75aff:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-layer-sha256:55de5851019b8f65ed6e28120c6300e35e556689d021e4b3411c7f4e90a9704b:    done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-elapsed: 20.0s                                                                    total:  53.2 M (2.7 MiB/s)
-unpacking linux/amd64 sha256:2834dc507516af02784808c5f48b7cbe38b8ed5d0f4837f16e78d00deb7e7767...
-done: 3.028652226s
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="44982df" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已下载容器镜像
-# ctr images ls
-REF                              TYPE                                                      DIGEST                                                                  SIZE      PLATFORMS                                                                                                                          LABELS
-
-docker.io/library/nginx:latest   application/vnd.docker.distribution.manifest.list.v2&#43;json sha256:2834dc507516af02784808c5f48b7cbe38b8ed5d0f4837f16e78d00deb7e7767 54.1 MiB  linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64/v8,linux/mips64le,linux/ppc64le,linux/s390x                            -
-</code></pre>
-      </div>
-  
-
-<h3 id="524-ctr上传镜像">5.2.4 ctr上传镜像 <a href="#524-ctr%e4%b8%8a%e4%bc%a0%e9%95%9c%e5%83%8f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><blockquote>
-<p>上传到Harbor library公有项目</p>
-</blockquote>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="916bc9f" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >重新生成新的tag
-# ctr images tag docker.io/library/nginx:latest harbor.kubemsb.com/library/nginx:latest
-harbor.kubemsb.com/library/nginx:latest
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="c18886e" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已生成容器镜像
-# ctr images ls
-REF                                     TYPE                                                      DIGEST                                                                  SIZE      PLATFORMS                                                                                                                          LABELS
-docker.io/library/nginx:latest          application/vnd.docker.distribution.manifest.list.v2&#43;json sha256:2834dc507516af02784808c5f48b7cbe38b8ed5d0f4837f16e78d00deb7e7767 54.1 MiB  linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64/v8,linux/mips64le,linux/ppc64le,linux/s390x                            -
-harbor.kubemsb.com/library/nginx:latest application/vnd.docker.distribution.manifest.list.v2&#43;json sha256:2834dc507516af02784808c5f48b7cbe38b8ed5d0f4837f16e78d00deb7e7767 54.1 MiB  linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64/v8,linux/mips64le,linux/ppc64le,linux/s390x                            -
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="f5561dc" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >推送容器镜像至Harbor
-# ctr images push --platform linux/amd64 --plain-http -u admin:Harbor12345 harbor.kubemsb.com/library/nginx:latest
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="3603a7c" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明:
-
-* 先tag再push
-* 因为我们harbor是http协议，不是https协议，所以需要加上`--plain-http`
-* `--user admin:Harbor12345`指定harbor的用户名与密码
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="837255d" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >输出：
-manifest-sha256:0fd68ec4b64b8dbb2bef1f1a5de9d47b658afd3635dc9c45bf0cbeac46e72101: done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-config-sha256:dd025cdfe837e1c6395365870a491cf16bae668218edb07d85c626928a60e478:   done           |&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;|
-elapsed: 0.5 s                                                                    total:  9.3 Ki (18.1 KiB/s)
-</code></pre>
-      </div>
-  
-
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220220111100489.png" alt="image-20220220111100489" width="1901" height="678" loading="lazy">
-    
-  
-</p>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="7f010d3" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >下载已上传容器镜像
-# ctr images pull --plain-http harbor.kubemsb.com/library/nginx:latest
-</code></pre>
-      </div>
-  
-
-<h1 id="6-containerd-namespace管理">6. Containerd NameSpace管理 <a href="#6-containerd-namespace%e7%ae%a1%e7%90%86" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><blockquote>
-<p>containerd中namespace的作用为:隔离运行的容器，可以实现运行多个容器。</p>
-</blockquote>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="8ba7884" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看命令帮助
-# ctr namespace --help
-NAME:
-   ctr namespaces - manage namespaces
-
-USAGE:
-   ctr namespaces command [command options] [arguments...]
-
-COMMANDS:
-   create, c   create a new namespace
-   list, ls    list namespaces
-   remove, rm  remove one or more namespaces
-   label       set and clear labels for a namespace
-
-OPTIONS:
-   --help, -h  show help
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="c4997b0" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >列出已有namespace
-# ctr namespace ls
-NAME    LABELS
-default
-k8s.io
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d0e7f95" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >创建namespace
-# ctr namespace create kubemsb
-
-[root@localhost ~]# ctr namespace ls
-NAME    LABELS
-default
-k8s.io
-kubemsb 此命名空间为新添加的
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="f9cd216" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >删除namespace
-# ctr namespace rm kubemsb
-kubemsb
-
-再次查看是否删除
-[root@localhost ~]# ctr namespace ls
-NAME    LABELS
-default
-k8s.io
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="0ae7d45" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看指定namespace中是否有用户进程在运行
-# ctr -n kubemsb tasks ls
-TASK    PID    STATUS
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="19ec296" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在指定namespace中下载容器镜像
-# ctr -n kubemsb images pull docker.io/library/nginx:latest
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="1381a3b" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在指定namespace中创建静态容器
-# ctr -n kubemsb container create docker.io/library/nginx:latest nginxapp
+      <pre id="1927ee2" class="language-go line-numbers"
+        ><code class="language-go"
+        >	producer, err := sarama.NewSyncProducerFromClient(client)
+	if err != nil {
+		//处理生产者创建错误
+		return
+	}
 </code></pre>
       </div>
   
 
+<p>-消费者</p>
 
 
 
@@ -4201,98 +1038,215 @@ TASK    PID    STATUS
 
   
       <div class="prism-shortcode">
-      <pre id="9875ac2" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看在指定namespace中创建的容器
-# ctr -n kubemsb container ls
-CONTAINER    IMAGE                             RUNTIME
-nginxapp     docker.io/library/nginx:latest    io.containerd.runc.v2
+      <pre id="e5fdb39" class="language-go line-numbers"
+        ><code class="language-go"
+        >	consumer, err := sarama.NewConsumerFromClient(client)
+	if err != nil {
+		//处理消费者创建错误
+		return
+	}
 </code></pre>
       </div>
   
 
-<h1 id="7-containerd-network管理">7. Containerd Network管理 <a href="#7-containerd-network%e7%ae%a1%e7%90%86" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><blockquote>
-<p>默认Containerd管理的容器仅有lo网络，无法访问容器之外的网络，可以为其添加网络插件，使用容器可以连接外网。CNI（Container Network Interface）</p>
-</blockquote>
-<h2 id="71-创建cni网络">7.1 创建CNI网络 <a href="#71-%e5%88%9b%e5%bb%bacni%e7%bd%91%e7%bb%9c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><table>
+<h3 id="43初始化参数生产者">4.3初始化参数生产者 <a href="#43%e5%88%9d%e5%a7%8b%e5%8c%96%e5%8f%82%e6%95%b0%e7%94%9f%e4%ba%a7%e8%80%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><table>
 <thead>
 <tr>
-<th><a href="https://github.com/containernetworking/cni" rel="external" target="_blank"><em>containernetworking</em>/<em>cni</em><svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></th>
-<th><a href="https://github.com/containernetworking/cni/releases/tag/v1.0.1" rel="external" target="_blank"> CNI v1.0.1<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></th>
+<th>参数</th>
+<th>示例</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/containernetworking/plugins" rel="external" target="_blank"><em>containernetworking</em>/<em>plugins</em><svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></td>
-<td><a href="https://github.com/containernetworking/plugins/releases/tag/v1.0.1" rel="external" target="_blank"> CNI Plugins v1.0.1<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></td>
+<td>sarama.MaxRequestSize</td>
+<td>100 * 1024 * 1024</td>
+<td>请求最大大小，默认100MB，可以调整，写入大于100MB的消息会直接报错</td>
+</tr>
+<tr>
+<td>sarama.MaxResponseSize</td>
+<td>100 * 1024 * 1024</td>
+<td>响应最大大小，默认100MB，可以调整，获取大于100MB的消息会直接报错</td>
+</tr>
+<tr>
+<td>config.Producer.RequiredAcks</td>
+<td>sarama.WaitForLocal(1)</td>
+<td>默认值为sarama.WaitForLocal(1)</td>
+</tr>
+<tr>
+<td>config.Producer.Retry.Max</td>
+<td>3</td>
+<td>生产者重试的最大次数，默认为3</td>
+</tr>
+<tr>
+<td>config.Producer.Retry.Backoff</td>
+<td>100 * time.Millisecond</td>
+<td>生产者重试之间的等待时间，默认为100毫秒</td>
+</tr>
+<tr>
+<td>config.Producer.Return.Successes</td>
+<td>false</td>
+<td>是否返回成功的消息，默认为false</td>
+</tr>
+<tr>
+<td>config.Producer.Return.Errors</td>
+<td>true</td>
+<td>返回失败的消息，默认值为true</td>
+</tr>
+<tr>
+<td>config.Producer.Compression</td>
+<td>CompressionNone</td>
+<td>对消息是否压缩后发送，默认CompressionNone不压缩</td>
+</tr>
+<tr>
+<td>config.Producer.CompressionLevel</td>
+<td>CompressionLevelDefault</td>
+<td>指定压缩等级，在配置了压缩算法后生效</td>
+</tr>
+<tr>
+<td>config.Producer.Flush.Frequency</td>
+<td>0</td>
+<td>producer缓存消息的时间, 默认缓存0毫秒</td>
+</tr>
+<tr>
+<td>config.Producer.Flush.Bytes</td>
+<td>0</td>
+<td>达到多少字节时，触发一次broker请求，默认为0，直接发送，存在天然上限值MaxRequestSize</td>
+</tr>
+<tr>
+<td>config.Producer.Flush.Messages</td>
+<td>0</td>
+<td>达到多少条消息时，强制，触发一次broker请求，这个是上限值，MaxMessages &lt; Messages</td>
+</tr>
+<tr>
+<td>config.Producer.Flush.MaxMessages</td>
+<td>0</td>
+<td>最大缓存多少消息，默认为0，有消息立刻发送，MaxMessages设置大于0时，必须设置 Messages,且需要保证：MaxMessages &gt; Messages</td>
+</tr>
+<tr>
+<td>config.Producer.Timeout</td>
+<td>5 * time.Second</td>
+<td>超时时间</td>
+</tr>
+<tr>
+<td>config.Producer.Idempotent</td>
+<td>false</td>
+<td>是否需要幂等，默认false</td>
+</tr>
+<tr>
+<td>config.Producer.Transaction.Timeout</td>
+<td>1 * time.Minute</td>
+<td>事务超时时间默认1分钟</td>
+</tr>
+<tr>
+<td>config.Producer.Transaction.Retry.Max</td>
+<td>50</td>
+<td>事务重试时间</td>
+</tr>
+<tr>
+<td>config.Producer.Transaction.Retry.Backoff</td>
+<td>100 * time.Millisecond</td>
+<td>事务重试间隔时间</td>
+</tr>
+<tr>
+<td>config.Net.MaxOpenRequests</td>
+<td>5</td>
+<td>默认值5，一次发送请求的数量</td>
+</tr>
+<tr>
+<td>config.Producer.Transaction.ID</td>
+<td>&ldquo;test&rdquo;</td>
+<td>事务ID</td>
+</tr>
+<tr>
+<td>config.ClientID</td>
+<td>&ldquo;your-client-id&rdquo;</td>
+<td>客户端ID</td>
 </tr>
 </tbody>
 </table>
-<h3 id="711-获取cni工具源码">7.1.1 获取CNI工具源码 <a href="#711-%e8%8e%b7%e5%8f%96cni%e5%b7%a5%e5%85%b7%e6%ba%90%e7%a0%81" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220219095355845.png" alt="image-20220219095355845" width="1709" height="1027" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220219095427153.png" alt="image-20220219095427153" width="1513" height="749" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220219095515772.png" alt="image-20220219095515772" width="1580" height="926" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220219095615236.png" alt="image-20220219095615236" width="1529" height="916" loading="lazy">
-    
-  
-</p>
-
+<h3 id="44初始化参数消费者">4.4初始化参数消费者 <a href="#44%e5%88%9d%e5%a7%8b%e5%8c%96%e5%8f%82%e6%95%b0%e6%b6%88%e8%b4%b9%e8%80%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>示例</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config.Consumer.Group.Rebalance.Strategy</td>
+<td>sarama.NewBalanceStrategyRange</td>
+<td>消费者分配分区的默认方式</td>
+</tr>
+<tr>
+<td>config.Consumer.Offsets.Initial</td>
+<td>sarama.OffsetNewest</td>
+<td>在没有提交位点情况下，使用最新的位点还是最老的位点，默认是最新的消息位点</td>
+</tr>
+<tr>
+<td>config.Consumer.Offsets.AutoCommit.Enable</td>
+<td>true</td>
+<td>是否支持自动提交位点，默认支持</td>
+</tr>
+<tr>
+<td>config.Consumer.Offsets.AutoCommit.Interval</td>
+<td>1 * time.Second</td>
+<td>自动提交位点时间间隔，默认1s</td>
+</tr>
+<tr>
+<td>config.Consumer.MaxWaitTime</td>
+<td>250 * time.Millisecond</td>
+<td>在没有最新消费消息时候，客户端等待的时间，默认250ms</td>
+</tr>
+<tr>
+<td>config.Consumer.MaxProcessingTime</td>
+<td>100 * time.Millisecond</td>
+<td></td>
+</tr>
+<tr>
+<td>config.Consumer.Fetch.Min</td>
+<td>1</td>
+<td>消费请求中获取的最小消息字节数,Broker将等待至少这么多字节的消息然后返回。默认值为1，不能设置0，因为0会导致在没有消息可用时消费者空转</td>
+</tr>
+<tr>
+<td>config.Consumer.Fetch.Max</td>
+<td>0</td>
+<td>消费请求最大的字节数。默认为0，表示不限制</td>
+</tr>
+<tr>
+<td>config.Consumer.Fetch.Default</td>
+<td>1024 * 1024</td>
+<td>消费请求的默认消息字节数（默认为1MB），需要大于实例的大部分消息，否则Broker会花费大量时间计算消费数据是否达到这个值的条件</td>
+</tr>
+<tr>
+<td>config.Consumer.Return.Errors</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>config.Consumer.Group.Rebalance.Timeout</td>
+<td>60 * time.Second</td>
+<td>设置rebalance操作的超时时间，默认60s</td>
+</tr>
+<tr>
+<td>config.Consumer.Group.Session.Timeout</td>
+<td>10 * time.Second</td>
+<td>设置消费者组会话的超时时间为,默认为10s</td>
+</tr>
+<tr>
+<td>config.Consumer.Group.Heartbeat.Interval</td>
+<td>3 * time.Second</td>
+<td>心跳超时时间，默认为3s</td>
+</tr>
+<tr>
+<td>config.Consumer.MaxProcessingTime</td>
+<td>100 * time.Millisecond</td>
+<td>消息处理的超时时间，默认100ms</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5常用的topic-的增删查">5.常用的Topic 的增删查 <a href="#5%e5%b8%b8%e7%94%a8%e7%9a%84topic-%e7%9a%84%e5%a2%9e%e5%88%a0%e6%9f%a5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="51创建topic">5.1创建Topic <a href="#51%e5%88%9b%e5%bb%batopic" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
 
 
@@ -4300,66 +1254,52 @@ nginxapp     docker.io/library/nginx:latest    io.containerd.runc.v2
 
   
       <div class="prism-shortcode">
-      <pre id="eb80e39" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用wget下载cni工具源码包
-# wget https://github.com/containernetworking/cni/archive/refs/tags/v1.0.1.tar.gz
+      <pre id="cba6ea9" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;fmt&#34;
+	&#34;github.com/IBM/sarama&#34;
+)
+
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Errors = true
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	client, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化sarama客户端报错%s&#34;, err.Error())
+		return
+	}
+	defer client.Close()
+
+	//创建Topic，⾸先⽣成admin client
+	admin, err := sarama.NewClusterAdminFromClient(client)
+	if err != nil {
+		fmt.Printf(&#34;初始化saramaAdmin客户端报错%s&#34;, err.Error())
+		return
+	}
+	defer admin.Close()
+
+	//设置分区以及副本
+	topicDetail := &amp;sarama.TopicDetail{
+		NumPartitions:     2,
+		ReplicationFactor: 1,
+	}
+
+	//创建Topic
+	err = admin.CreateTopic(&#34;fei-topic&#34;, topicDetail, false)
+	if err != nil {
+		fmt.Printf(&#34;创建Topic报错%s&#34;, err.Error())
+		return
+	}
+}
 </code></pre>
       </div>
   
 
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="40f85e2" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已下载cni工具源码包
-# ls
-v1.0.1.tar.gz
-
-解压已下载cni工具源码包
-# tar xf v1.0.1.tar.gz
-
-查看解压后已下载cni工具源码包
-# ls
-cni-1.0.1
-
-重命名已下载cni工具源码包目录
-# mv cni-1.0.1 cni
-
-查看重新命名后目录
-# ls
-cni
-
-查看cni工具目录中包含的文件
-# ls cni
-cnitool             CONTRIBUTING.md  DCO            go.mod  GOVERNANCE.md  LICENSE   MAINTAINERS  plugins    RELEASING.md  scripts  test.sh
-CODE-OF-CONDUCT.md  CONVENTIONS.md   Documentation  go.sum  libcni         logo.png  pkg          README.md  ROADMAP.md    SPEC.md
-</code></pre>
-      </div>
-  
-
-<h3 id="712-获取cni-pluginscni插件">7.1.2 获取CNI Plugins（CNI插件） <a href="#712-%e8%8e%b7%e5%8f%96cni-pluginscni%e6%8f%92%e4%bb%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220219095946940.png" alt="image-20220219095946940" width="1700" height="1035" loading="lazy">
-    
-  
-</p>
 <p>
 
 
@@ -4372,43 +1312,11 @@ CODE-OF-CONDUCT.md  CONVENTIONS.md   Documentation  go.sum  libcni         logo.
 
   
     
-      <img src="/images/containerd/image-20220219100008810.png" alt="image-20220219100008810" width="1587" height="677" loading="lazy">
+      <img src="/images/go-kafka/e1200bdd-5647-41d5-9097-19b3dc5a00ee.png" alt="" width="1404" height="359" loading="lazy">
     
   
 </p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220219100056059.png" alt="image-20220219100056059" width="1614" height="842" loading="lazy">
-    
-  
-</p>
-<p>
-
-
-
-
-
-  
-
-
-
-  
-    
-      <img src="/images/containerd/image-20220219100303944.png" alt="image-20220219100303944" width="1622" height="543" loading="lazy">
-    
-  
-</p>
-
+<h3 id="52查看所有topic">5.2查看所有Topic <a href="#52%e6%9f%a5%e7%9c%8b%e6%89%80%e6%9c%89topic" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
 
 
 
@@ -4416,72 +1324,41 @@ CODE-OF-CONDUCT.md  CONVENTIONS.md   Documentation  go.sum  libcni         logo.
 
   
       <div class="prism-shortcode">
-      <pre id="6a44604" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用wget下载cni插件工具源码包
-# wget https://github.com/containernetworking/plugins/releases/download/v1.0.1/cni-plugins-linux-amd64-v1.0.1.tgz
-</code></pre>
-      </div>
-  
+      <pre id="b387ead" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
 
+import (
+	&#34;fmt&#34;
+	&#34;github.com/IBM/sarama&#34;
+)
 
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Errors = true
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	client, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化sarama客户端报错%s&#34;, err.Error())
+		return
+	}
+	defer client.Close()
 
+	//创建Topic，⾸先⽣成admin client
+	admin, err := sarama.NewClusterAdminFromClient(client)
+	if err != nil {
+		fmt.Printf(&#34;初始化saramaAdmin客户端报错%s&#34;, err.Error())
+		return
+	}
+	defer admin.Close()
 
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="0acf1d2" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看已下载cni插件工具源码包
-# ls
-cni-plugins-linux-amd64-v1.0.1.tgz
-cni
-
-创建cni插件工具解压目录
-# mkdir /home/cni-plugins
-
-解压cni插件工具至上述创建的目录中
-# tar xf cni-plugins-linux-amd64-v1.0.1.tgz -C /home/cni-plugins
-
-查看解压后目录
-# ls cni-plugins
-bandwidth  bridge  dhcp  firewall  host-device  host-local  ipvlan  loopback  macvlan  portmap  ptp  sbr  static  tuning  vlan  vrf
-</code></pre>
-      </div>
-  
-
-<h3 id="713-准备cni网络配置文件">7.1.3 准备CNI网络配置文件 <a href="#713-%e5%87%86%e5%a4%87cni%e7%bd%91%e7%bb%9c%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><blockquote>
-<p>准备容器网络配置文件，用于为容器提供网关、IP地址等。</p>
-</blockquote>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d0630b7" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >创建名为mynet的网络，其中包含名为cni0的网桥
-# vim /etc/cni/net.d/10-mynet.conf
-# cat /etc/cni/net.d/10-mynet.conf
-{
-  &#34;cniVersion&#34;: &#34;1.0.0&#34;,
-  &#34;name&#34;: &#34;mynet&#34;,
-  &#34;type&#34;: &#34;bridge&#34;,
-  &#34;bridge&#34;: &#34;cni0&#34;,
-  &#34;isGateway&#34;: true,
-  &#34;ipMasq&#34;: true,
-  &#34;ipam&#34;: {
-    &#34;type&#34;: &#34;host-local&#34;,
-    &#34;subnet&#34;: &#34;10.66.0.0/16&#34;,
-    &#34;routes&#34;: [
-      { &#34;dst&#34;: &#34;0.0.0.0/0&#34; }
-   ]
-  }
+	topics, err := admin.ListTopics()
+	if err != nil {
+		fmt.Printf(&#34;查看Topic报错%s&#34;, err.Error())
+		return
+	}
+	fmt.Println(topics)
 }
 </code></pre>
       </div>
@@ -4495,20 +1372,65 @@ bandwidth  bridge  dhcp  firewall  host-device  host-local  ipvlan  loopback  ma
 
   
       <div class="prism-shortcode">
-      <pre id="2c3bdbe" class="language-bash line-numbers"
+      <pre id="dabfcb3" class="language-bash line-numbers"
         ><code class="language-bash"
-        ># vim /etc/cni/net.d/99-loopback.conf
-# cat /etc/cni/net.d/99-loopback.conf
-{
-  &#34;cniVerion&#34;: &#34;1.0.0&#34;,
-  &#34;name&#34;: &#34;lo&#34;,
-  &#34;type&#34;: &#34;loopback&#34;
+        >fei@feideMacBook-Pro admin % go run admin.go
+map[fei-topic:{2 1 map[0:[1001] 1:[1001]] map[segment.bytes:0xc00021c250]}]
+</code></pre>
+      </div>
+  
+</p>
+<h3 id="53查看topic详情">5.3查看Topic详情 <a href="#53%e6%9f%a5%e7%9c%8btopic%e8%af%a6%e6%83%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="022fadf" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;fmt&#34;
+	&#34;github.com/IBM/sarama&#34;
+)
+
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Errors = true
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	client, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化sarama客户端报错%s&#34;, err.Error())
+		return
+	}
+	defer client.Close()
+
+	//创建Topic，⾸先⽣成admin client
+	admin, err := sarama.NewClusterAdminFromClient(client)
+	if err != nil {
+		fmt.Printf(&#34;初始化saramaAdmin客户端报错%s&#34;, err.Error())
+		return
+	}
+	defer admin.Close()
+
+	metadata, err := admin.DescribeTopics([]string{&#34;fei-topic&#34;})
+	if err != nil {
+		fmt.Printf(&#34;查看Topic详细报错%s&#34;, err.Error())
+	}
+
+	for _, partition := range metadata {
+		fmt.Println(partition)
+	}
 }
 </code></pre>
       </div>
   
 
-<h3 id="714--生成cni网络">7.1.4  生成CNI网络 <a href="#714--%e7%94%9f%e6%88%90cni%e7%bd%91%e7%bb%9c" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+
 
 
 
@@ -4516,13 +1438,53 @@ bandwidth  bridge  dhcp  firewall  host-device  host-local  ipvlan  loopback  ma
 
   
       <div class="prism-shortcode">
-      <pre id="aa3514d" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >获取epel源
-# wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+      <pre id="ee2b67c" class="language-go line-numbers"
+        ><code class="language-go"
+        >fei@feideMacBook-Pro admin % go run admin.go
+&amp;{7 kafka server: Not an error, why are you printing me? fei-topic AAAAAAAAAAAAAAAAAAAAAA false [0xc000180660 0xc0001806c0] 0}
+</code></pre>
+      </div>
+  
+</p>
+<h3 id="54查找指定主题和分区的偏移量">5.4查找指定主题和分区的偏移量 <a href="#54%e6%9f%a5%e6%89%be%e6%8c%87%e5%ae%9a%e4%b8%bb%e9%a2%98%e5%92%8c%e5%88%86%e5%8c%ba%e7%9a%84%e5%81%8f%e7%a7%bb%e9%87%8f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
 
-安装jq
-# yum -y install jq
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="8a5d215" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;fmt&#34;
+
+	&#34;github.com/IBM/sarama&#34;
+)
+
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	kaClient, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化客户端报错%s&#34;, err.Error())
+	}
+	//查看最老和最新offset
+	offsetOld0, _ := kaClient.GetOffset(&#34;fei-topic&#34;, 0, sarama.OffsetOldest)
+	OffsetNew0, err := kaClient.GetOffset(&#34;fei-topic&#34;, 0, sarama.OffsetNewest)
+
+	offsetOld1, _ := kaClient.GetOffset(&#34;fei-topic&#34;, 1, sarama.OffsetOldest)
+	OffsetNew1, _ := kaClient.GetOffset(&#34;fei-topic&#34;, 1, sarama.OffsetNewest)
+
+	fmt.Printf(&#34;分区%v,OffsetOldest%d\n&#34;, 0, offsetOld0)
+	fmt.Printf(&#34;分区%v,OffsetNewest%d\n&#34;, 0, OffsetNew0)
+
+	fmt.Printf(&#34;分区%v,OffsetOldest%d\n&#34;, 1, offsetOld1)
+	fmt.Printf(&#34;分区%v,OffsetNewest%d\n&#34;, 1, OffsetNew1)
+}
 </code></pre>
       </div>
   
@@ -4535,25 +1497,56 @@ bandwidth  bridge  dhcp  firewall  host-device  host-local  ipvlan  loopback  ma
 
   
       <div class="prism-shortcode">
-      <pre id="8a9e744" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >进入cni工具目录
-# cd cni
-[root@localhost cni]# ls
-cnitool             CONTRIBUTING.md  DCO            go.mod  GOVERNANCE.md  LICENSE   MAINTAINERS  plugins    RELEASING.md  scripts  test.sh
-CODE-OF-CONDUCT.md  CONVENTIONS.md   Documentation  go.sum  libcni         logo.png  pkg          README.md  ROADMAP.md    SPEC.md
+      <pre id="0747d9b" class="language-go line-numbers"
+        ><code class="language-go"
+        >fei@feideMacBook-Pro admin % go run admin.go
+分区0,OffsetOldest0
+分区0,OffsetNewest0
+分区1,OffsetOldest0
+分区1,OffsetNewest0
+</code></pre>
+      </div>
+  
+</p>
+<h3 id="55获取单分区的消息偏移量">5.5获取单分区的消息偏移量 <a href="#55%e8%8e%b7%e5%8f%96%e5%8d%95%e5%88%86%e5%8c%ba%e7%9a%84%e6%b6%88%e6%81%af%e5%81%8f%e7%a7%bb%e9%87%8f" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
 
 
-必须在scripts目录中执行，需要依赖exec-plugins.sh文件，再次进入scripts目录
-[root@localhost cni]# cd scripts/ 
 
-查看执行脚本文件
-[root@localhost scripts]# ls
-docker-run.sh  exec-plugins.sh  priv-net-run.sh  release.sh
 
-执行脚本文件，基于/etc/cni/net.d/目录中的*.conf配置文件生成容器网络
-[root@localhost scripts]# CNI_PATH=/home/cni-plugins ./priv-net-run.sh echo &#34;Hello World&#34;
-Hello World
+
+  
+      <div class="prism-shortcode">
+      <pre id="e6b3d61" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;fmt&#34;
+
+	&#34;github.com/IBM/sarama&#34;
+)
+
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	client, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化客户端报错%s&#34;, err.Error())
+	}
+
+	//查找指定分区的消费位移
+	consumer, _ := sarama.NewConsumerFromClient(client)
+	defer consumer.Close()
+
+	//获取分区消费者
+	partitionConsumer, _ := consumer.ConsumePartition(&#34;fei-topic&#34;, 0, 0)
+	defer partitionConsumer.Close()
+
+	//获取消费者最新消费位移
+	offset := partitionConsumer.HighWaterMarkOffset()
+	fmt.Printf(&#34;Partition 0 Offset: %d\n&#34;, offset)
+}
 </code></pre>
       </div>
   
@@ -4566,17 +1559,61 @@ Hello World
 
   
       <div class="prism-shortcode">
-      <pre id="c7407a0" class="language-bash line-numbers"
+      <pre id="9a48d30" class="language-bash line-numbers"
         ><code class="language-bash"
-        >在宿主机上查看是否生成容器网络名为cni0的网桥
-# ip a s
-......
-5: cni0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default qlen 1000
-    link/ether 36:af:7a:4a:d6:12 brd ff:ff:ff:ff:ff:ff
-    inet 10.66.0.1/16 brd 10.66.255.255 scope global cni0
-       valid_lft forever preferred_lft forever
-    inet6 fe80::34af:7aff:fe4a:d612/64 scope link
-       valid_lft forever preferred_lft forever
+        >fei@feideMacBook-Pro admin % go run admin.go
+Partition 0 Offset: 16
+//这里由于向分区中生产了16条消息 所以这里显示offset为16。和5.4效果差不多，只是调用的方式和对象略有不同。
+</code></pre>
+      </div>
+  
+</p>
+<h3 id="56获取消费者组消费情况">5.6获取消费者组消费情况 <a href="#56%e8%8e%b7%e5%8f%96%e6%b6%88%e8%b4%b9%e8%80%85%e7%bb%84%e6%b6%88%e8%b4%b9%e6%83%85%e5%86%b5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="7a06f4b" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;fmt&#34;
+
+	&#34;github.com/IBM/sarama&#34;
+)
+
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	kaClient, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化客户端报错%s&#34;, err.Error())
+	}
+
+	consumer_groups := []string{&#34;fei-group&#34;}
+	partitions := []int32{0, 1}
+	for _, consumer_group := range consumer_groups {
+		// 获取指定消费组在指定 topic 和 partition 的 offset
+		offsetManager, err := sarama.NewOffsetManagerFromClient(consumer_group, kaClient)
+		if err != nil {
+			fmt.Println(&#34;Error creating offset manager:&#34;, err)
+			return
+		}
+		defer offsetManager.Close()
+
+		// 获取指定 topic 和 partition 的 offset
+		for _, partition := range partitions {
+			partitionOffset, _ := offsetManager.ManagePartition(&#34;fei-topic&#34;, partition)
+			offset, _ := partitionOffset.NextOffset()
+			fmt.Printf(&#34;Consumer Group offset for topic &#39;%s&#39;, partition %v:%v\n&#34;, consumer_group, partition, offset)
+		}
+	}
+}
 </code></pre>
       </div>
   
@@ -4589,19 +1626,16 @@ Hello World
 
   
       <div class="prism-shortcode">
-      <pre id="b6e6a32" class="language-bash line-numbers"
+      <pre id="f18052a" class="language-bash line-numbers"
         ><code class="language-bash"
-        >在宿主机上查看其路由表情况
-# ip route
-default via 192.168.10.2 dev ens33 proto dhcp metric 100
-10.66.0.0/16 dev cni0 proto kernel scope link src 10.66.0.1
-192.168.10.0/24 dev ens33 proto kernel scope link src 192.168.10.164 metric 100
-192.168.122.0/24 dev virbr0 proto kernel scope link src 192.168.122.1
+        >fei@feideMacBook-Pro meta % go run query.go
+Consumer Group offset for topic &#39;fei-group&#39;, partition 0:23
+Consumer Group offset for topic &#39;fei-group&#39;, partition 1:27
 </code></pre>
       </div>
   
-
-<h2 id="72-为containerd容器配置网络功能">7.2 为Containerd容器配置网络功能 <a href="#72-%e4%b8%bacontainerd%e5%ae%b9%e5%99%a8%e9%85%8d%e7%bd%ae%e7%bd%91%e7%bb%9c%e5%8a%9f%e8%83%bd" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="721-创建一个容器">7.2.1 创建一个容器 <a href="#721-%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e5%ae%b9%e5%99%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+</p>
+<h2 id="6生产者">6.生产者 <a href="#6%e7%94%9f%e4%ba%a7%e8%80%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="61同步生产消息">6.1同步生产消息 <a href="#61%e5%90%8c%e6%ad%a5%e7%94%9f%e4%ba%a7%e6%b6%88%e6%81%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
 
 
 
@@ -4609,64 +1643,52 @@ default via 192.168.10.2 dev ens33 proto dhcp metric 100
 
   
       <div class="prism-shortcode">
-      <pre id="88a69b6" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr images ls
-REF TYPE DIGEST SIZE PLATFORMS LABELS
+      <pre id="dc04eec" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
 
-# ctr images pull docker.io/library/busybox:latest
+import (
+	&#34;fmt&#34;
+	&#34;github.com/IBM/sarama&#34;
+	&#34;log&#34;
+)
 
-# ctr run -d docker.io/library/busybox:latest busybox
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Errors = true
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	client, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化sarama客户端报错%s&#34;, err.Error())
+		return
+	}
+	defer client.Close()
 
-# ctr container ls
-CONTAINER    IMAGE                               RUNTIME
-busybox      docker.io/library/busybox:latest    io.containerd.runc.v2
+	SyncProducer, err := sarama.NewSyncProducerFromClient(client)
+	if err != nil {
+		log.Fatal(&#34;Failed to cretae sync producer:&#34;, err)
+	}
+	defer SyncProducer.Close()
 
-# ctr tasks ls
-TASK       PID     STATUS
-busybox    8377    RUNNING
-</code></pre>
-      </div>
-  
+	// 指定要发送的主题和消息内容
+	topic := &#34;fei-topic&#34;
+	massage := &#34;Hello fei&#34;
 
-<h3 id="722-进入容器查看其网络情况">7.2.2 进入容器查看其网络情况 <a href="#722-%e8%bf%9b%e5%85%a5%e5%ae%b9%e5%99%a8%e6%9f%a5%e7%9c%8b%e5%85%b6%e7%bd%91%e7%bb%9c%e6%83%85%e5%86%b5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+	msg := &amp;sarama.ProducerMessage{
+		Topic: topic,
+		Value: sarama.StringEncoder(massage),
+	}
 
+	//发送消息
+	partition, offset, err := SyncProducer.SendMessage(msg)
+	if err != nil {
+		log.Println(&#34;Failed to send message: &#34;, err)
+	} else {
+		log.Printf(&#34;Message sent successfully! Partition=%d,Offset=%d\n&#34;, partition, offset)
+	}
 
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="3afeba5" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr tasks exec --exec-id $RANDOM -t busybox sh
-
-/ # ip a s
-1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host
-       valid_lft forever preferred_lft forever
-</code></pre>
-      </div>
-  
-
-<h3 id="723-获取容器进程id及其网络命名空间">7.2.3 获取容器进程ID及其网络命名空间 <a href="#723-%e8%8e%b7%e5%8f%96%e5%ae%b9%e5%99%a8%e8%bf%9b%e7%a8%8bid%e5%8f%8a%e5%85%b6%e7%bd%91%e7%bb%9c%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="09bd392" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在宿主机中完成指定容器进程ID获取
-# pid=$(ctr tasks ls | grep busybox | awk &#39;{print $2}&#39;)
-# echo $pid
-8377
-
+}
 </code></pre>
       </div>
   
@@ -4679,17 +1701,17 @@ busybox    8377    RUNNING
 
   
       <div class="prism-shortcode">
-      <pre id="2ae5b3a" class="language-bash line-numbers"
+      <pre id="f1888f7" class="language-bash line-numbers"
         ><code class="language-bash"
-        >在宿主机中完成指定容器网络命名空间路径获取
-# netnspath=/proc/$pid/ns/net
-# echo $netnspath
-/proc/8377/ns/net
+        >fei@feideMacBook-Pro producer % go run main.go 
+2024/11/10 03:17:34 Message sent successfully! Partition=0,Offset=20
+fei@feideMacBook-Pro producer % go run main.go
+2024/11/10 03:17:50 Message sent successfully! Partition=1,Offset=24
 </code></pre>
       </div>
   
-
-<h3 id="724-为指定容器添加网络配置">7.2.4 为指定容器添加网络配置 <a href="#724-%e4%b8%ba%e6%8c%87%e5%ae%9a%e5%ae%b9%e5%99%a8%e6%b7%bb%e5%8a%a0%e7%bd%91%e7%bb%9c%e9%85%8d%e7%bd%ae" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
+</p>
+<h3 id="62异步生产消息">6.2异步生产消息 <a href="#62%e5%bc%82%e6%ad%a5%e7%94%9f%e4%ba%a7%e6%b6%88%e6%81%af" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
 
 
 
@@ -4697,87 +1719,53 @@ busybox    8377    RUNNING
 
   
       <div class="prism-shortcode">
-      <pre id="b89d6bf" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >确认执行脚本文件时所在的目录
-[root@localhost scripts]# pwd
-/home/cni/scripts
-</code></pre>
-      </div>
-  
+      <pre id="75e97b0" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
 
+import (
+	&#34;fmt&#34;
+	&#34;log&#34;
+	&#34;strconv&#34;
+	&#34;time&#34;
 
+	&#34;github.com/IBM/sarama&#34;
+)
 
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Errors = true
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
 
+	prClient, err := sarama.NewAsyncProducer([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化异步生产者客户端报错%s&#34;, err.Error())
+	}
+	defer prClient.Close()
 
+	for i := 0; i &lt;= 10; i&#43;&#43; {
+		//指定要发送的主题和消息
+		topic := &#34;fei-topic&#34;
+		message := &#34;Hello,Kafka&#34; &#43; strconv.Itoa(i)
 
+		//创建消息对象
+		msg := &amp;sarama.ProducerMessage{
+			Topic: topic,
+			Value: sarama.StringEncoder(message),
+		}
+		prClient.Input() &lt;- msg
+		select {
+		case success := &lt;-prClient.Successes():
+			log.Printf(&#34;Msg sent successfully!,Partition:%d,Offset:%d&#34;, success.Partition, success.Offset)
+		case err := &lt;-prClient.Errors():
+			log.Printf(&#34;Failed to send Msg:%s&#34;, err.Error())
+		case &lt;-time.After(5 * time.Second):
+			log.Printf(&#34;Timeout reached. Failed to send Msg&#34;)
+		}
+	}
 
-  
-      <div class="prism-shortcode">
-      <pre id="02ea290" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >执行脚本文件为容器添加网络配置
-[root@localhost scripts]# CNI_PATH=/home/cni-plugins ./exec-plugins.sh add $pid $netnspath
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="bf41ac5" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >进入容器确认是否添加网卡信息
-# ctr tasks exec --exec-id $RANDOM -t busybox sh
-/ # ip a s
-1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host
-       valid_lft forever preferred_lft forever
-2: eth0@if7: &lt;BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN&gt; mtu 1500 qdisc noqueue
-    link/ether a2:35:b7:e0:60:0a brd ff:ff:ff:ff:ff:ff
-    inet 10.66.0.3/16 brd 10.66.255.255 scope global eth0
-       valid_lft forever preferred_lft forever
-    inet6 fe80::a035:b7ff:fee0:600a/64 scope link
-       valid_lft forever preferred_lft forever
-       
-在容器中ping容器宿主机IP地址
-/ # ping -c 2 192.168.10.164
-PING 192.168.10.164 (192.168.10.164): 56 data bytes
-64 bytes from 192.168.10.164: seq=0 ttl=64 time=0.132 ms
-64 bytes from 192.168.10.164: seq=1 ttl=64 time=0.044 ms
-
---- 192.168.10.164 ping statistics ---
-2 packets transmitted, 2 packets received, 0% packet loss
-round-trip min/avg/max = 0.044/0.088/0.132 ms
-
-在容器中ping宿主机所在网络的网关IP地址
-/ # ping -c 2 192.168.10.2
-PING 192.168.10.2 (192.168.10.2): 56 data bytes
-64 bytes from 192.168.10.2: seq=0 ttl=127 time=0.338 ms
-64 bytes from 192.168.10.2: seq=1 ttl=127 time=0.280 ms
-
---- 192.168.10.2 ping statistics ---
-2 packets transmitted, 2 packets received, 0% packet loss
-round-trip min/avg/max = 0.280/0.309/0.338 ms
-
-在容器中ping宿主机所在网络中的其它主机IP地址
-/ # ping -c 2 192.168.10.165
-PING 192.168.10.165 (192.168.10.165): 56 data bytes
-64 bytes from 192.168.10.165: seq=0 ttl=63 time=0.422 ms
-64 bytes from 192.168.10.165: seq=1 ttl=63 time=0.908 ms
-
---- 192.168.10.165 ping statistics ---
-2 packets transmitted, 2 packets received, 0% packet loss
-round-trip min/avg/max = 0.422/0.665/0.908 ms
-
+}
 </code></pre>
       </div>
   
@@ -4790,16 +1778,111 @@ round-trip min/avg/max = 0.422/0.665/0.908 ms
 
   
       <div class="prism-shortcode">
-      <pre id="fd1d615" class="language-bash line-numbers"
+      <pre id="e62ee76" class="language-bash line-numbers"
         ><code class="language-bash"
-        >在容器中开启httpd服务
-/ # echo &#34;containerd net web test&#34; &gt; /tmp/index.html
-/ # httpd -h /tmp
+        >fei@feideMacBook-Pro producer % go run producer.go
+2024/11/10 03:16:49 Msg sent successfully!,Partition:0,Offset:16
+2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:17
+2024/11/10 03:16:49 Msg sent successfully!,Partition:0,Offset:17
+2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:18
+2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:19
+2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:20
+2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:21
+2024/11/10 03:16:49 Msg sent successfully!,Partition:0,Offset:18
+2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:22
+2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:23
+2024/11/10 03:16:49 Msg sent successfully!,Partition:0,Offset:19
+</code></pre>
+      </div>
+  
+</p>
+<h3 id="63消息设置">6.3消息设置 <a href="#63%e6%b6%88%e6%81%af%e8%ae%be%e7%bd%ae" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3>
 
-/ # wget -O - -q 127.0.0.1
-containerd net web test
-/ # exit
 
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="3a4e9ee" class="language-go line-numbers"
+        ><code class="language-go"
+        > // 设置消息的键（Key）
+ msg.Key = sarama.StringEncoder(&#34;my-key&#34;)
+
+ // 设置消息的分区（Partition）
+ msg.Partition = 0
+
+ // 设置消息的时间戳（Timestamp）
+ msg.Timestamp = time.Now()
+
+ // 设置消息的头部（Headers）
+ msg.Headers = []sarama.RecordHeader{
+ 	{Key: []byte(&#34;header-key&#34;), Value: []byte(&#34;header-value&#34;)},
+ }
+</code></pre>
+      </div>
+  
+
+<h2 id="7消费者">7.消费者 <a href="#7%e6%b6%88%e8%b4%b9%e8%80%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><h3 id="71单分区消费者">7.1单分区消费者 <a href="#71%e5%8d%95%e5%88%86%e5%8c%ba%e6%b6%88%e8%b4%b9%e8%80%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="74b28cb" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
+
+import (
+	&#34;fmt&#34;
+	&#34;github.com/IBM/sarama&#34;
+	&#34;sync&#34;
+)
+
+var wg = sync.WaitGroup{}
+
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	client, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化客户端报错%s&#34;, err.Error())
+	}
+	defer client.Close()
+
+	consumer, err := sarama.NewConsumerFromClient(client)
+	if err != nil {
+		fmt.Printf(&#34;初始化消费者客户端报错%s&#34;, err.Error())
+	}
+	defer consumer.Close()
+
+	topic := &#34;fei-topic&#34;
+	partition := int32(0) //指定消费的分区
+	offset := int64(0)    //消费的起始偏移量
+
+	//根据指定分区和偏移量创建分区消费者
+	consumePartition, err := consumer.ConsumePartition(topic, partition, offset)
+	if err != nil {
+		fmt.Printf(&#34;创建分区消费者报错%s&#34;, err.Error())
+	}
+
+	defer consumePartition.Close()
+
+	//处理收到的消息
+	wg.Add(1)
+	go func() {
+		for msg := range consumePartition.Messages() {
+			fmt.Printf(&#34;Received msg: Topic=%s,Partition%d,Offsed=%d,Value%s\n&#34;,
+				msg.Topic, msg.Partition, msg.Offset, msg.Value)
+		}
+		wg.Done()
+	}()
+
+	wg.Wait()
+}
 </code></pre>
       </div>
   
@@ -4812,19 +1895,35 @@ containerd net web test
 
   
       <div class="prism-shortcode">
-      <pre id="3968be1" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >在宿主机访问容器提供的httpd服务
-[root@localhost scripts]# curl http://10.66.0.3
-containerd net web test
+      <pre id="797f70d" class="language-go line-numbers"
+        ><code class="language-go"
+        >fei@feideMacBook-Pro consumer % go run main.go 
+Received msg: Topic=fei-topic,Partition0,Offsed=0,ValueHello,Kafka4
+Received msg: Topic=fei-topic,Partition0,Offsed=1,ValueHello,Kafka5
+Received msg: Topic=fei-topic,Partition0,Offsed=2,ValueHello,Kafka8
+Received msg: Topic=fei-topic,Partition0,Offsed=3,ValueHello,Kafka9
+Received msg: Topic=fei-topic,Partition0,Offsed=4,ValueHello,Kafka1
+Received msg: Topic=fei-topic,Partition0,Offsed=5,ValueHello,Kafka2
+Received msg: Topic=fei-topic,Partition0,Offsed=6,ValueHello,Kafka4
+Received msg: Topic=fei-topic,Partition0,Offsed=7,ValueHello,Kafka7
+Received msg: Topic=fei-topic,Partition0,Offsed=8,ValueHello,Kafka8
+Received msg: Topic=fei-topic,Partition0,Offsed=9,ValueHello,Kafka0
+Received msg: Topic=fei-topic,Partition0,Offsed=10,ValueHello,Kafka2
+Received msg: Topic=fei-topic,Partition0,Offsed=11,ValueHello,Kafka3
+Received msg: Topic=fei-topic,Partition0,Offsed=12,ValueHello,Kafka4
+Received msg: Topic=fei-topic,Partition0,Offsed=13,ValueHello,Kafka6
+Received msg: Topic=fei-topic,Partition0,Offsed=14,ValueHello,Kafka8
+Received msg: Topic=fei-topic,Partition0,Offsed=15,ValueHello,Kafka9
+Received msg: Topic=fei-topic,Partition0,Offsed=16,ValueHello,Kafka0
+Received msg: Topic=fei-topic,Partition0,Offsed=17,ValueHello,Kafka2
+Received msg: Topic=fei-topic,Partition0,Offsed=18,ValueHello,Kafka7
+Received msg: Topic=fei-topic,Partition0,Offsed=19,ValueHello,Kafka10
+Received msg: Topic=fei-topic,Partition0,Offsed=20,ValueHello fei
 </code></pre>
       </div>
   
-
-<h1 id="8-containerd容器数据持久化存储">8. Containerd容器数据持久化存储 <a href="#8-containerd%e5%ae%b9%e5%99%a8%e6%95%b0%e6%8d%ae%e6%8c%81%e4%b9%85%e5%8c%96%e5%ad%98%e5%82%a8" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><blockquote>
-<p>实现把宿主机目录挂载至Containerd容器中，实现容器数据持久化存储</p>
-</blockquote>
-
+</p>
+<h3 id="72多分区消费者">7.2多分区消费者 <a href="#72%e5%a4%9a%e5%88%86%e5%8c%ba%e6%b6%88%e8%b4%b9%e8%80%85" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>
 
 
 
@@ -4832,104 +1931,59 @@ containerd net web test
 
   
       <div class="prism-shortcode">
-      <pre id="8fe2224" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr container create docker.io/library/busybox:latest busybox3 --mount type=bind,src=/tmp,dst=/hostdir,options=rbind:rw
-</code></pre>
-      </div>
-  
+      <pre id="fbeb7dc" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
 
+import (
+	&#34;fmt&#34;
+	&#34;github.com/IBM/sarama&#34;
+	&#34;sync&#34;
+)
 
+var wg = sync.WaitGroup{}
 
+func main() {
+	//初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。
+	client, err := sarama.NewClient([]string{&#34;127.0.0.1:9092&#34;}, config)
+	if err != nil {
+		fmt.Printf(&#34;初始化客户端报错%s&#34;, err.Error())
+	}
+	defer client.Close()
 
+	consumer, err := sarama.NewConsumerFromClient(client)
+	if err != nil {
+		fmt.Printf(&#34;初始化消费者客户端报错%s&#34;, err.Error())
+	}
+	defer consumer.Close()
 
+	topic := &#34;fei-topic&#34;
+	partitions := []int32{0, 1} //指定消费的分区
+	offset := int64(0)          //消费的起始偏移量
 
+	//处理收到的消息
+	wg.Add(len(partitions))
+	for _, partition := range partitions {
+		go func(p int32) {
+			defer wg.Done()
+			//根据指定分区和偏移量创建分区消费者
+			consumePartition, err := consumer.ConsumePartition(topic, p, offset)
+			if err != nil {
+				fmt.Printf(&#34;创建分区消费者报错%s&#34;, err.Error())
+			}
+			defer consumePartition.Close()
 
-  
-      <div class="prism-shortcode">
-      <pre id="8547275" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >说明：
-创建一个静态容器，实现宿主机目录与容器挂载
-src=/tmp 为宿主机目录
-dst=/hostdir 为容器中目录
-</code></pre>
-      </div>
-  
+			for msg := range consumePartition.Messages() {
+				fmt.Printf(&#34;Received msg: Topic=%s,Partition%d,Offsed=%d,Value%s\n&#34;,
+					msg.Topic, msg.Partition, msg.Offset, msg.Value)
+			}
+		}(partition)
+	}
 
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="4901154" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >运行用户进程
-# ctr tasks start -d busybox3 bash
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="d942b23" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >进入容器，查看是否挂载成功
-# ctr tasks exec --exec-id $RANDOM -t busybox3 sh
-
-/ # ls /hostdir
-VMwareDnD
-systemd-private-cf1fe70805214c80867e7eb62dff5be7-bolt.service-MWV1Ju
-systemd-private-cf1fe70805214c80867e7eb62dff5be7-chronyd.service-6B6j8p
-systemd-private-cf1fe70805214c80867e7eb62dff5be7-colord.service-6fI31A
-systemd-private-cf1fe70805214c80867e7eb62dff5be7-cups.service-tuK4zI
-systemd-private-cf1fe70805214c80867e7eb62dff5be7-rtkit-daemon.service-vhP67o
-tracker-extract-files.0
-vmware-root_703-3988031936
-vmware-root_704-2990744159
-vmware-root_713-4290166671
-
-
-向容器中挂载目录中添加文件
-/ # echo &#34;hello world&#34; &gt; /hostdir/test.txt
-
-退出容器
-/ # exit
-
-在宿主机上查看被容器挂载的目录中是否添加了新的文件，已添加表明被容器挂载成功，并可以读写此目录中内容。
-[root@localhost ~]# cat /tmp/test.txt
-hello world
-</code></pre>
-      </div>
-  
-
-<h1 id="9-与其它containerd容器共享命名空间">9. 与其它Containerd容器共享命名空间 <a href="#9-%e4%b8%8e%e5%85%b6%e5%ae%83containerd%e5%ae%b9%e5%99%a8%e5%85%b1%e4%ba%ab%e5%91%bd%e5%90%8d%e7%a9%ba%e9%97%b4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><blockquote>
-<p>当需要与其它Containerd管理的容器共享命名空间时，可使用如下方法。</p>
-</blockquote>
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="9bb8b8d" class="language-bash line-numbers"
-        ><code class="language-bash"
-        ># ctr tasks ls
-TASK        PID      STATUS
-busybox3    13778    RUNNING
-busybox     8377     RUNNING
-busybox1    12469    RUNNING
+	wg.Wait()
+}
 </code></pre>
       </div>
   
@@ -4942,24 +1996,65 @@ busybox1    12469    RUNNING
 
   
       <div class="prism-shortcode">
-      <pre id="a5e2922" class="language-bash line-numbers"
+      <pre id="987bd7b" class="language-bash line-numbers"
         ><code class="language-bash"
-        ># ctr container create --with-ns &#34;pid:/proc/13778/ns/pid&#34; docker.io/library/busybox:latest busybox4
-[root@localhost ~]# ctr tasks start -d busybox4 bash
-[root@localhost ~]# ctr tasks exec --exec-id $RANDOM -t busybox3 sh
-/ # ps aux
-PID   USER     TIME  COMMAND
-    1 root      0:00 sh
-   20 root      0:00 sh
-   26 root      0:00 sh
-   32 root      0:00 ps aux
-
+        >fei@feideMacBook-Pro consumer % go run main.go 
+Received msg: Topic=fei-topic,Partition0,Offsed=0,ValueHello,Kafka4
+Received msg: Topic=fei-topic,Partition0,Offsed=1,ValueHello,Kafka5
+Received msg: Topic=fei-topic,Partition0,Offsed=2,ValueHello,Kafka8
+Received msg: Topic=fei-topic,Partition0,Offsed=3,ValueHello,Kafka9
+Received msg: Topic=fei-topic,Partition0,Offsed=4,ValueHello,Kafka1
+Received msg: Topic=fei-topic,Partition0,Offsed=5,ValueHello,Kafka2
+Received msg: Topic=fei-topic,Partition0,Offsed=6,ValueHello,Kafka4
+Received msg: Topic=fei-topic,Partition0,Offsed=7,ValueHello,Kafka7
+Received msg: Topic=fei-topic,Partition0,Offsed=8,ValueHello,Kafka8
+Received msg: Topic=fei-topic,Partition0,Offsed=9,ValueHello,Kafka0
+Received msg: Topic=fei-topic,Partition0,Offsed=10,ValueHello,Kafka2
+Received msg: Topic=fei-topic,Partition0,Offsed=11,ValueHello,Kafka3
+Received msg: Topic=fei-topic,Partition0,Offsed=12,ValueHello,Kafka4
+Received msg: Topic=fei-topic,Partition0,Offsed=13,ValueHello,Kafka6
+Received msg: Topic=fei-topic,Partition0,Offsed=14,ValueHello,Kafka8
+Received msg: Topic=fei-topic,Partition0,Offsed=15,ValueHello,Kafka9
+Received msg: Topic=fei-topic,Partition0,Offsed=16,ValueHello,Kafka0
+Received msg: Topic=fei-topic,Partition1,Offsed=0,ValueHello,Kafka0
+Received msg: Topic=fei-topic,Partition1,Offsed=1,ValueHello,Kafka1
+Received msg: Topic=fei-topic,Partition1,Offsed=2,ValueHello,Kafka2
+Received msg: Topic=fei-topic,Partition1,Offsed=3,ValueHello,Kafka3
+Received msg: Topic=fei-topic,Partition1,Offsed=4,ValueHello,Kafka6
+Received msg: Topic=fei-topic,Partition1,Offsed=5,ValueHello,Kafka7
+Received msg: Topic=fei-topic,Partition0,Offsed=17,ValueHello,Kafka2
+Received msg: Topic=fei-topic,Partition1,Offsed=6,ValueHello,Kafka10
+Received msg: Topic=fei-topic,Partition0,Offsed=18,ValueHello,Kafka7
+Received msg: Topic=fei-topic,Partition0,Offsed=19,ValueHello,Kafka10
+Received msg: Topic=fei-topic,Partition0,Offsed=20,ValueHello fei
+Received msg: Topic=fei-topic,Partition1,Offsed=7,ValueHello,Kafka0
+Received msg: Topic=fei-topic,Partition1,Offsed=8,ValueHello,Kafka3
+Received msg: Topic=fei-topic,Partition1,Offsed=9,ValueHello,Kafka5
+Received msg: Topic=fei-topic,Partition1,Offsed=10,ValueHello,Kafka6
+Received msg: Topic=fei-topic,Partition1,Offsed=11,ValueHello,Kafka9
+Received msg: Topic=fei-topic,Partition1,Offsed=12,ValueHello,Kafka10
+Received msg: Topic=fei-topic,Partition1,Offsed=13,ValueHello,Kafka1
+Received msg: Topic=fei-topic,Partition1,Offsed=14,ValueHello,Kafka5
+Received msg: Topic=fei-topic,Partition1,Offsed=15,ValueHello,Kafka7
+Received msg: Topic=fei-topic,Partition1,Offsed=16,ValueHello,Kafka10
+Received msg: Topic=fei-topic,Partition1,Offsed=17,ValueHello,Kafka1
+Received msg: Topic=fei-topic,Partition1,Offsed=18,ValueHello,Kafka3
+Received msg: Topic=fei-topic,Partition1,Offsed=19,ValueHello,Kafka4
+Received msg: Topic=fei-topic,Partition1,Offsed=20,ValueHello,Kafka5
+Received msg: Topic=fei-topic,Partition1,Offsed=21,ValueHello,Kafka6
+Received msg: Topic=fei-topic,Partition1,Offsed=22,ValueHello,Kafka8
+Received msg: Topic=fei-topic,Partition1,Offsed=23,ValueHello,Kafka9
+Received msg: Topic=fei-topic,Partition1,Offsed=24,ValueHello fei
+Received msg: Topic=fei-topic,Partition1,Offsed=25,ValueHello fei
+Received msg: Topic=fei-topic,Partition0,Offsed=21,ValueHello fei
 </code></pre>
       </div>
   
-
-<h1 id="10-docker集成containerd实现容器管理">10. Docker集成Containerd实现容器管理 <a href="#10-docker%e9%9b%86%e6%88%90containerd%e5%ae%9e%e7%8e%b0%e5%ae%b9%e5%99%a8%e7%ae%a1%e7%90%86" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><p>目前Containerd主要任务还在于解决容器运行时的问题，对于其周边生态还不完善，所以可以借助Docker结合Containerd来实现Docker完整的功能应用。</p>
-
+</p>
+<h3 id="73消费者组">7.3消费者组⭐️ <a href="#73%e6%b6%88%e8%b4%b9%e8%80%85%e7%bb%84" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>kafka会记录不同消费者组已经消费的offset信息。只需在代码中将消息标记为已消费</li>
+</ul>
+<p>
 
 
 
@@ -4967,137 +2062,77 @@ PID   USER     TIME  COMMAND
 
   
       <div class="prism-shortcode">
-      <pre id="9c934d7" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >准备Docker安装YUM源
-# wget -O /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-</code></pre>
-      </div>
-  
+      <pre id="f394574" class="language-go line-numbers"
+        ><code class="language-go"
+        >package main
 
+import (
+	&#34;context&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+	&#34;sync&#34;
+	&#34;time&#34;
 
+	&#34;github.com/IBM/sarama&#34;
+)
 
+var wg = sync.WaitGroup{}
 
+func main() {
+	//消费者组初始化客户端
+	config := sarama.NewConfig()
+	config.Producer.Return.Errors = true
+	config.Producer.Return.Successes = true
+	config.Consumer.Offsets.AutoCommit.Enable = true               //是否支持自动提交位点，默认支持
+	config.Consumer.Offsets.AutoCommit.Interval = 10 * time.Second //自动提交位点时间间隔，默认1s
 
+	ConsumerGroup, err := sarama.NewConsumerGroup([]string{&#34;127.0.0.1:9092&#34;}, &#34;fei-group&#34;, config)
+	if err != nil {
+		log.Fatal(&#34;Failed to create consumer group:&#34;, err)
+	}
+	defer ConsumerGroup.Close()
 
+	//指定订阅的主题
+	topics := []string{&#34;fei-topic&#34;}
+	//创建一个消费者组处理器
+	handler := ConsumerGroupHandler{}
+	ctx := context.Background()
+	wg.Add(1)
+	go func() {
+		for {
+			err := ConsumerGroup.Consume(ctx, topics, handler)
+			if err != nil {
+				log.Fatal(&#34;Error form consumer group:&#34;, err)
+			}
+		}
+		wg.Done()
+	}()
+	wg.Wait()
+}
 
-  
-      <div class="prism-shortcode">
-      <pre id="dda1166" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >安装Docker-ce
-# yum -y install docker-ce
-</code></pre>
-      </div>
-  
+// 自定义消费者组处理器
+type ConsumerGroupHandler struct{}
 
+// 实现sarama.ConsumerGroupHandler 接口方法
+// Setup方法在消费者组启动时调用，用于进行一些初始化操作
+func (h ConsumerGroupHandler) Setup(sarama.ConsumerGroupSession) error {
+	fmt.Println(&#34;Consumer group setup&#34;)
+	return nil
+}
 
+// Cleanup方法在消费者组结束时调用，用于进行清理操作
+func (h ConsumerGroupHandler) Cleanup(sarama.ConsumerGroupSession) error {
+	fmt.Println(&#34;Consumer group cleanup&#34;)
+	return nil
+}
 
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="aa0a859" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >修改Docker服务文件，以便使用已安装的containerd。
-# vim /etc/systemd/system/multi-user.target.wants/docker.service
-
-修改前：
-[Service]
-Type=notify
-# the default is not to use systemd for cgroups because the delegate issues still
-# exists and systemd currently does not support the cgroup feature set required
-# for containers run by docker
-ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock 此处
-ExecReload=/bin/kill -s HUP $MAINPID
-
-修改后：
-
-[Service]
-Type=notify
-# the default is not to use systemd for cgroups because the delegate issues still
-# exists and systemd currently does not support the cgroup feature set required
-# for containers run by docker
-ExecStart=/usr/bin/dockerd --containerd  /run/containerd/containerd.sock --debug 此处
-ExecReload=/bin/kill -s HUP $MAINPID
-TimeoutSec=0
-RestartSec=2
-Restart=always
-
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="1d1bcf0" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >设置docker daemon启动并设置其开机自启动
-# systemctl daemon-reload
-# systemctl enable docker
-Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
-# systemctl start docker
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="0f5eb5b" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看其启动后进程
-# ps aux | grep docker
-root      16270  0.0  3.1 1155116 63320 ?       Ssl  12:09   0:00 /usr/bin/dockerd --containerd /run/containerd/containerd.sock --debug
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="c1a6abf" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用docker运行容器
-# docker run -d nginx:latest
-......
-219a9c6727bcd162d0a4868746c513a277276a110f47e15368b4229988003c13
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="5e6a999" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用docker ps命令查看正在运行的容器
-# docker ps
-CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS     NAMES
-219a9c6727bc   nginx:latest   &#34;/docker-entrypoint.…&#34;   14 seconds ago   Up 13 seconds   80/tcp    happy_tu
+func (h ConsumerGroupHandler) ConsumeClaim(session sarama.ConsumerGroupSession, claim sarama.ConsumerGroupClaim) error {
+	for msg := range claim.Messages() {
+		fmt.Printf(&#34;消息内容%s，对应Offset%d\n&#34;, string(msg.Value), msg.Offset)
+		session.MarkMessage(msg, &#34;&#34;) //将消息标记为已消费,不加此行会导致重启消费者组之后重复消费
+	}
+	return nil
+}
 </code></pre>
       </div>
   
@@ -5110,81 +2145,46 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS  
 
   
       <div class="prism-shortcode">
-      <pre id="59323f3" class="language-bash line-numbers"
+      <pre id="723d8f7" class="language-bash line-numbers"
         ><code class="language-bash"
-        >使用ctr查看是否添加一个新的namespace，本案例中发现添加一个moby命名空间，即为docker使用的命名空间。
-# ctr namespace ls
-NAME    LABELS
-default
-k8s.io
-kubemsb
-moby
+        >fei@feideMacBook-Pro consumer % go run consumer.go 
+Consumer group setup
+消息内容Hello fei，对应Offset26
+消息内容Hello fei，对应Offset22
 </code></pre>
       </div>
   
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="288a7ad" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >查看moby命名空间，发现使用docker run运行的容器包含在其中。
-# ctr -n moby container ls
-CONTAINER                                                           IMAGE    RUNTIME
-219a9c6727bcd162d0a4868746c513a277276a110f47e15368b4229988003c13    -        io.containerd.runc.v2
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="bcf521d" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用ctr能够查看到一个正在运行的容器，既表示docker run运行的容器是被containerd管理的。
-# ctr -n moby tasks ls
-TASK                                                                PID      STATUS
-219a9c6727bcd162d0a4868746c513a277276a110f47e15368b4229988003c13    16719    RUNNING
-</code></pre>
-      </div>
-  
-
-
-
-
-
-
-
-  
-      <div class="prism-shortcode">
-      <pre id="556eea4" class="language-bash line-numbers"
-        ><code class="language-bash"
-        >使用docker stop停止且使用docker rm删除容器后再观察，发现容器被删除。
-# docker stop 219;docker rm 219
-219
-219
-
-# ctr -n moby container ls
-CONTAINER    IMAGE    RUNTIME
-
-# ctr -n moby tasks ls
-TASK    PID    STATUS
-</code></pre>
-      </div>
-  
-
+</p>
 
     </div>
+
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+<div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
+    
+    <div id="last-modified" class="mt-1">
+        <p class="mb-0 fw-semibold">Last updated <span
+            id="relativetime"
+            data-authdate="2024-11-10T04:10:31&#43;0800"
+            title="10 Nov 2024, 04:10 &#43;0800">
+            10 Nov 2024, 04:10 &#43;0800
+        </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
+        </p>
+    </div>
+    
+</div>
 
     
 
@@ -5195,22 +2195,22 @@ TASK    PID    STATUS
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/ops/container/1.%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E6%89%80%E6%B6%89%E5%8F%8A%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF/">
+		<a href="/docs/dev/golang/7.go-gorm/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 1.容器技术所涉及的Linux内核关键技术</p>
-					<p class="card-text ms-2">容器的前世今生</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 7.Go-GORM</p>
+					<p class="card-text ms-2">Go-GORM介绍</p>
 					
 				</div>
 			</div>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/ops/container/docker/1.docker%E9%95%9C%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BB%8B%E7%BB%8D/">
+		<a class="ms-auto" href="/docs/dev/front-end/1.html/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.Docker镜像基本操作和介绍 <i class="material-icons align-middle">navigate_next</i></p>
-					<p class="card-text me-2">Docker镜像是一个特殊的文件系统，除了提供容器运行时所需 …</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">1.HTML <i class="material-icons align-middle">navigate_next</i></p>
+					<p class="card-text me-2">HTML是用来描述网页的一种语言，全称超文本标记语 …</p>
 					
 				</div>
 			</div>

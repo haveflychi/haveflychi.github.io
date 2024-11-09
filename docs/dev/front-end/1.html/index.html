@@ -356,6 +356,11 @@
                                                                 <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/7.go-gorm/">7.Go-GORM</a></li>
                                                             
                                                         
+                                                            
+                                                            
+                                                                <li class=" "><a class="sidebar-nested-link" href="https://docs.cakepanit.com/docs/dev/golang/8.kafka/">7.Go-Kafka</a></li>
+                                                            
+                                                        
                                                     </ul>
                                                 </div>
                                             </li>
@@ -2036,11 +2041,11 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/dev/golang/7.go-gorm/">
+		<a href="/docs/dev/golang/8.kafka/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 7.Go-GORM</p>
-					<p class="card-text ms-2">Go-GORM介绍</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> 7.Go-Kafka</p>
+					<p class="card-text ms-2">Go-Kafka使用</p>
 					
 				</div>
 			</div>
@@ -2216,6 +2221,13 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
     
 
 
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3225,6 +3237,15 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
     index.add(
             {
                 id:  51 ,
+                href: "\/docs\/dev\/golang\/8.kafka\/",
+                title: "7.Go-Kafka",
+                description: "Go-Kafka使用",
+                content: "1.介绍 linkKafka 是⼀种分布式流处理平台，最初由 LinkedIn 公司开发，现在由 Apache 软件基⾦会维护。它被设计⽤于⾼吞吐量、低延迟的数据传输，并具有可扩展性和容错性。 Kafka 的核⼼概念是消息传递系统，它通过将数据以消息的形式进⾏发布和订阅来实现数据流的处理。以下是 Kafka 的⼀些关键特点和概念：\n消息发布和订阅：Kafka 使⽤发布-订阅模型，消息发布者将消息发送到⼀个或多个主题（Topics），⽽消息订阅者可以从这些主题中获取消息。 分布式架构：Kafka 是⼀个分布式系统，可以在多个节点上部署，实现数据的分区和复制，以实现⾼可⽤性和可扩展性。 消息持久化：Kafka 使⽤⽇志（Log）的⽅式持久化消息，每个主题的消息以追加的⽅式写⼊分区中，并且消息会在⼀段时间后根据配置进⾏保留。 分区和复制：Kafka 将每个主题分成⼀个或多个分区（Partitions），每个分区可以在多个节点上进⾏复制，以实现负载均衡和容错性。 ⾼吞吐量：Kafka 具有⾮常⾼的吞吐量和低延迟，能够处理⼤量的消息流，并保持较低的延迟。 实时数据处理：Kafka 可以与流处理框架（如 Apache Spark、Apache Flink）集成，⽀持实时的数据处理和流式分析。 2.常⽤场景 link 数据流集成和数据管道：Kafka 可以作为数据流的中间件，⽤于连接不同的数据系统和应⽤程序。它可以集成多个数据源和数据⽬的地，实现可靠的数据传输和流⽔线处理。 ⽇志收集和集中式⽇志管理：Kafka 可以⽤作⽇志收集系统，收集和存储分布在多个应⽤程序和服务器上的⽇志数据。它提供⾼吞吐量和持久化存储，⽀持实时的⽇志数据处理和分析。 事件驱动架构：Kafka 的发布-订阅模型使其成为构建事件驱动架构的理想选择。应⽤程序可以将事件发布到 Kafka 主题，然后其他应⽤程序可以订阅并处理这些事件，实现松耦合、可扩展和实时的事件驱动架构。 流式处理和实时分析：Kafka 可以与流处理框架（如 Apache Spark、Apache Flink）集成，⽀持实时的流式数据处理和复杂的实时分析。通过将数据流导⼊Kafka 主题，应⽤程序可以实时处理和分析数据，实现实时的洞察和决策。 异步消息队列：Kafka 可以⽤作⾼吞吐量的异步消息队列，实现应⽤程序之间的解耦和异步通信。应⽤程序可以将消息发送到 Kafka 主题，并异步处理这些消息，提⾼系统的可伸缩性和弹性。 数据备份和容错性：Kafka ⽀持数据的分区和复制，可以在多个节点上复制和存储数据，以实现数据的冗余备份和容错性。 3.Go三⽅库 link github.com/IBM/sarama: 是⼀个 Go 语⾔编写的 Apache Kafka 客户端库，⽤于与 Kafka 集群进⾏交互。它提供了丰富的功能和易于使⽤的 API，使开发⼈员能够⽅便地使⽤ Go 语⾔来⽣产和消费 Kafka 消息。 Github链接：https://github.com/IBM/sarama 4.Kafka使⽤ link4.1 安装依赖包 link go get github.com/IBM/sarama 4.2 初始化Client link package main import ( \"fmt\" \"log\" \"strconv\" \"time\" \"github.com/IBM/sarama\" ) func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Errors = true config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 client, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化sarama客户端报错%s\", err.Error()) return } defer client.Close() //其他操作，如创建生产者或消费者 fmt.Println(\"Client initialized successfully!\") } 生产者 producer, err := sarama.NewSyncProducerFromClient(client) if err != nil { //处理生产者创建错误 return } -消费者\nconsumer, err := sarama.NewConsumerFromClient(client) if err != nil { //处理消费者创建错误 return } 4.3初始化参数生产者 link 参数 示例 描述 sarama.MaxRequestSize 100 * 1024 * 1024 请求最大大小，默认100MB，可以调整，写入大于100MB的消息会直接报错 sarama.MaxResponseSize 100 * 1024 * 1024 响应最大大小，默认100MB，可以调整，获取大于100MB的消息会直接报错 config.Producer.RequiredAcks sarama.WaitForLocal(1) 默认值为sarama.WaitForLocal(1) config.Producer.Retry.Max 3 生产者重试的最大次数，默认为3 config.Producer.Retry.Backoff 100 * time.Millisecond 生产者重试之间的等待时间，默认为100毫秒 config.Producer.Return.Successes false 是否返回成功的消息，默认为false config.Producer.Return.Errors true 返回失败的消息，默认值为true config.Producer.Compression CompressionNone 对消息是否压缩后发送，默认CompressionNone不压缩 config.Producer.CompressionLevel CompressionLevelDefault 指定压缩等级，在配置了压缩算法后生效 config.Producer.Flush.Frequency 0 producer缓存消息的时间, 默认缓存0毫秒 config.Producer.Flush.Bytes 0 达到多少字节时，触发一次broker请求，默认为0，直接发送，存在天然上限值MaxRequestSize config.Producer.Flush.Messages 0 达到多少条消息时，强制，触发一次broker请求，这个是上限值，MaxMessages \u003c Messages config.Producer.Flush.MaxMessages 0 最大缓存多少消息，默认为0，有消息立刻发送，MaxMessages设置大于0时，必须设置 Messages,且需要保证：MaxMessages \u003e Messages config.Producer.Timeout 5 * time.Second 超时时间 config.Producer.Idempotent false 是否需要幂等，默认false config.Producer.Transaction.Timeout 1 * time.Minute 事务超时时间默认1分钟 config.Producer.Transaction.Retry.Max 50 事务重试时间 config.Producer.Transaction.Retry.Backoff 100 * time.Millisecond 事务重试间隔时间 config.Net.MaxOpenRequests 5 默认值5，一次发送请求的数量 config.Producer.Transaction.ID “test” 事务ID config.ClientID “your-client-id” 客户端ID 4.4初始化参数消费者 link 配置项 示例 描述 config.Consumer.Group.Rebalance.Strategy sarama.NewBalanceStrategyRange 消费者分配分区的默认方式 config.Consumer.Offsets.Initial sarama.OffsetNewest 在没有提交位点情况下，使用最新的位点还是最老的位点，默认是最新的消息位点 config.Consumer.Offsets.AutoCommit.Enable true 是否支持自动提交位点，默认支持 config.Consumer.Offsets.AutoCommit.Interval 1 * time.Second 自动提交位点时间间隔，默认1s config.Consumer.MaxWaitTime 250 * time.Millisecond 在没有最新消费消息时候，客户端等待的时间，默认250ms config.Consumer.MaxProcessingTime 100 * time.Millisecond config.Consumer.Fetch.Min 1 消费请求中获取的最小消息字节数,Broker将等待至少这么多字节的消息然后返回。默认值为1，不能设置0，因为0会导致在没有消息可用时消费者空转 config.Consumer.Fetch.Max 0 消费请求最大的字节数。默认为0，表示不限制 config.Consumer.Fetch.Default 1024 * 1024 消费请求的默认消息字节数（默认为1MB），需要大于实例的大部分消息，否则Broker会花费大量时间计算消费数据是否达到这个值的条件 config.Consumer.Return.Errors true config.Consumer.Group.Rebalance.Timeout 60 * time.Second 设置rebalance操作的超时时间，默认60s config.Consumer.Group.Session.Timeout 10 * time.Second 设置消费者组会话的超时时间为,默认为10s config.Consumer.Group.Heartbeat.Interval 3 * time.Second 心跳超时时间，默认为3s config.Consumer.MaxProcessingTime 100 * time.Millisecond 消息处理的超时时间，默认100ms 5.常用的Topic 的增删查 link5.1创建Topic link package main import ( \"fmt\" \"github.com/IBM/sarama\" ) func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Errors = true config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 client, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化sarama客户端报错%s\", err.Error()) return } defer client.Close() //创建Topic，⾸先⽣成admin client admin, err := sarama.NewClusterAdminFromClient(client) if err != nil { fmt.Printf(\"初始化saramaAdmin客户端报错%s\", err.Error()) return } defer admin.Close() //设置分区以及副本 topicDetail := \u0026sarama.TopicDetail{ NumPartitions: 2, ReplicationFactor: 1, } //创建Topic err = admin.CreateTopic(\"fei-topic\", topicDetail, false) if err != nil { fmt.Printf(\"创建Topic报错%s\", err.Error()) return } } 5.2查看所有Topic link package main import ( \"fmt\" \"github.com/IBM/sarama\" ) func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Errors = true config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 client, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化sarama客户端报错%s\", err.Error()) return } defer client.Close() //创建Topic，⾸先⽣成admin client admin, err := sarama.NewClusterAdminFromClient(client) if err != nil { fmt.Printf(\"初始化saramaAdmin客户端报错%s\", err.Error()) return } defer admin.Close() topics, err := admin.ListTopics() if err != nil { fmt.Printf(\"查看Topic报错%s\", err.Error()) return } fmt.Println(topics) } fei@feideMacBook-Pro admin % go run admin.go map[fei-topic:{2 1 map[0:[1001] 1:[1001]] map[segment.bytes:0xc00021c250]}] 5.3查看Topic详情 link package main import ( \"fmt\" \"github.com/IBM/sarama\" ) func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Errors = true config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 client, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化sarama客户端报错%s\", err.Error()) return } defer client.Close() //创建Topic，⾸先⽣成admin client admin, err := sarama.NewClusterAdminFromClient(client) if err != nil { fmt.Printf(\"初始化saramaAdmin客户端报错%s\", err.Error()) return } defer admin.Close() metadata, err := admin.DescribeTopics([]string{\"fei-topic\"}) if err != nil { fmt.Printf(\"查看Topic详细报错%s\", err.Error()) } for _, partition := range metadata { fmt.Println(partition) } } fei@feideMacBook-Pro admin % go run admin.go \u0026{7 kafka server: Not an error, why are you printing me? fei-topic AAAAAAAAAAAAAAAAAAAAAA false [0xc000180660 0xc0001806c0] 0} 5.4查找指定主题和分区的偏移量 link package main import ( \"fmt\" \"github.com/IBM/sarama\" ) func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 kaClient, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化客户端报错%s\", err.Error()) } //查看最老和最新offset offsetOld0, _ := kaClient.GetOffset(\"fei-topic\", 0, sarama.OffsetOldest) OffsetNew0, err := kaClient.GetOffset(\"fei-topic\", 0, sarama.OffsetNewest) offsetOld1, _ := kaClient.GetOffset(\"fei-topic\", 1, sarama.OffsetOldest) OffsetNew1, _ := kaClient.GetOffset(\"fei-topic\", 1, sarama.OffsetNewest) fmt.Printf(\"分区%v,OffsetOldest%d\\n\", 0, offsetOld0) fmt.Printf(\"分区%v,OffsetNewest%d\\n\", 0, OffsetNew0) fmt.Printf(\"分区%v,OffsetOldest%d\\n\", 1, offsetOld1) fmt.Printf(\"分区%v,OffsetNewest%d\\n\", 1, OffsetNew1) } fei@feideMacBook-Pro admin % go run admin.go 分区0,OffsetOldest0 分区0,OffsetNewest0 分区1,OffsetOldest0 分区1,OffsetNewest0 5.5获取单分区的消息偏移量 link package main import ( \"fmt\" \"github.com/IBM/sarama\" ) func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 client, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化客户端报错%s\", err.Error()) } //查找指定分区的消费位移 consumer, _ := sarama.NewConsumerFromClient(client) defer consumer.Close() //获取分区消费者 partitionConsumer, _ := consumer.ConsumePartition(\"fei-topic\", 0, 0) defer partitionConsumer.Close() //获取消费者最新消费位移 offset := partitionConsumer.HighWaterMarkOffset() fmt.Printf(\"Partition 0 Offset: %d\\n\", offset) } fei@feideMacBook-Pro admin % go run admin.go Partition 0 Offset: 16 //这里由于向分区中生产了16条消息 所以这里显示offset为16。和5.4效果差不多，只是调用的方式和对象略有不同。 5.6获取消费者组消费情况 link package main import ( \"fmt\" \"github.com/IBM/sarama\" ) func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 kaClient, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化客户端报错%s\", err.Error()) } consumer_groups := []string{\"fei-group\"} partitions := []int32{0, 1} for _, consumer_group := range consumer_groups { // 获取指定消费组在指定 topic 和 partition 的 offset offsetManager, err := sarama.NewOffsetManagerFromClient(consumer_group, kaClient) if err != nil { fmt.Println(\"Error creating offset manager:\", err) return } defer offsetManager.Close() // 获取指定 topic 和 partition 的 offset for _, partition := range partitions { partitionOffset, _ := offsetManager.ManagePartition(\"fei-topic\", partition) offset, _ := partitionOffset.NextOffset() fmt.Printf(\"Consumer Group offset for topic '%s', partition %v:%v\\n\", consumer_group, partition, offset) } } } fei@feideMacBook-Pro meta % go run query.go Consumer Group offset for topic 'fei-group', partition 0:23 Consumer Group offset for topic 'fei-group', partition 1:27 6.生产者 link6.1同步生产消息 link package main import ( \"fmt\" \"github.com/IBM/sarama\" \"log\" ) func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Errors = true config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 client, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化sarama客户端报错%s\", err.Error()) return } defer client.Close() SyncProducer, err := sarama.NewSyncProducerFromClient(client) if err != nil { log.Fatal(\"Failed to cretae sync producer:\", err) } defer SyncProducer.Close() // 指定要发送的主题和消息内容 topic := \"fei-topic\" massage := \"Hello fei\" msg := \u0026sarama.ProducerMessage{ Topic: topic, Value: sarama.StringEncoder(massage), } //发送消息 partition, offset, err := SyncProducer.SendMessage(msg) if err != nil { log.Println(\"Failed to send message: \", err) } else { log.Printf(\"Message sent successfully! Partition=%d,Offset=%d\\n\", partition, offset) } } fei@feideMacBook-Pro producer % go run main.go 2024/11/10 03:17:34 Message sent successfully! Partition=0,Offset=20 fei@feideMacBook-Pro producer % go run main.go 2024/11/10 03:17:50 Message sent successfully! Partition=1,Offset=24 6.2异步生产消息 link package main import ( \"fmt\" \"log\" \"strconv\" \"time\" \"github.com/IBM/sarama\" ) func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Errors = true config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 prClient, err := sarama.NewAsyncProducer([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化异步生产者客户端报错%s\", err.Error()) } defer prClient.Close() for i := 0; i \u003c= 10; i++ { //指定要发送的主题和消息 topic := \"fei-topic\" message := \"Hello,Kafka\" + strconv.Itoa(i) //创建消息对象 msg := \u0026sarama.ProducerMessage{ Topic: topic, Value: sarama.StringEncoder(message), } prClient.Input() \u003c- msg select { case success := \u003c-prClient.Successes(): log.Printf(\"Msg sent successfully!,Partition:%d,Offset:%d\", success.Partition, success.Offset) case err := \u003c-prClient.Errors(): log.Printf(\"Failed to send Msg:%s\", err.Error()) case \u003c-time.After(5 * time.Second): log.Printf(\"Timeout reached. Failed to send Msg\") } } } fei@feideMacBook-Pro producer % go run producer.go 2024/11/10 03:16:49 Msg sent successfully!,Partition:0,Offset:16 2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:17 2024/11/10 03:16:49 Msg sent successfully!,Partition:0,Offset:17 2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:18 2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:19 2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:20 2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:21 2024/11/10 03:16:49 Msg sent successfully!,Partition:0,Offset:18 2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:22 2024/11/10 03:16:49 Msg sent successfully!,Partition:1,Offset:23 2024/11/10 03:16:49 Msg sent successfully!,Partition:0,Offset:19 6.3消息设置 link // 设置消息的键（Key） msg.Key = sarama.StringEncoder(\"my-key\") // 设置消息的分区（Partition） msg.Partition = 0 // 设置消息的时间戳（Timestamp） msg.Timestamp = time.Now() // 设置消息的头部（Headers） msg.Headers = []sarama.RecordHeader{ {Key: []byte(\"header-key\"), Value: []byte(\"header-value\")}, } 7.消费者 link7.1单分区消费者 link package main import ( \"fmt\" \"github.com/IBM/sarama\" \"sync\" ) var wg = sync.WaitGroup{} func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 client, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化客户端报错%s\", err.Error()) } defer client.Close() consumer, err := sarama.NewConsumerFromClient(client) if err != nil { fmt.Printf(\"初始化消费者客户端报错%s\", err.Error()) } defer consumer.Close() topic := \"fei-topic\" partition := int32(0) //指定消费的分区 offset := int64(0) //消费的起始偏移量 //根据指定分区和偏移量创建分区消费者 consumePartition, err := consumer.ConsumePartition(topic, partition, offset) if err != nil { fmt.Printf(\"创建分区消费者报错%s\", err.Error()) } defer consumePartition.Close() //处理收到的消息 wg.Add(1) go func() { for msg := range consumePartition.Messages() { fmt.Printf(\"Received msg: Topic=%s,Partition%d,Offsed=%d,Value%s\\n\", msg.Topic, msg.Partition, msg.Offset, msg.Value) } wg.Done() }() wg.Wait() } fei@feideMacBook-Pro consumer % go run main.go Received msg: Topic=fei-topic,Partition0,Offsed=0,ValueHello,Kafka4 Received msg: Topic=fei-topic,Partition0,Offsed=1,ValueHello,Kafka5 Received msg: Topic=fei-topic,Partition0,Offsed=2,ValueHello,Kafka8 Received msg: Topic=fei-topic,Partition0,Offsed=3,ValueHello,Kafka9 Received msg: Topic=fei-topic,Partition0,Offsed=4,ValueHello,Kafka1 Received msg: Topic=fei-topic,Partition0,Offsed=5,ValueHello,Kafka2 Received msg: Topic=fei-topic,Partition0,Offsed=6,ValueHello,Kafka4 Received msg: Topic=fei-topic,Partition0,Offsed=7,ValueHello,Kafka7 Received msg: Topic=fei-topic,Partition0,Offsed=8,ValueHello,Kafka8 Received msg: Topic=fei-topic,Partition0,Offsed=9,ValueHello,Kafka0 Received msg: Topic=fei-topic,Partition0,Offsed=10,ValueHello,Kafka2 Received msg: Topic=fei-topic,Partition0,Offsed=11,ValueHello,Kafka3 Received msg: Topic=fei-topic,Partition0,Offsed=12,ValueHello,Kafka4 Received msg: Topic=fei-topic,Partition0,Offsed=13,ValueHello,Kafka6 Received msg: Topic=fei-topic,Partition0,Offsed=14,ValueHello,Kafka8 Received msg: Topic=fei-topic,Partition0,Offsed=15,ValueHello,Kafka9 Received msg: Topic=fei-topic,Partition0,Offsed=16,ValueHello,Kafka0 Received msg: Topic=fei-topic,Partition0,Offsed=17,ValueHello,Kafka2 Received msg: Topic=fei-topic,Partition0,Offsed=18,ValueHello,Kafka7 Received msg: Topic=fei-topic,Partition0,Offsed=19,ValueHello,Kafka10 Received msg: Topic=fei-topic,Partition0,Offsed=20,ValueHello fei 7.2多分区消费者 link package main import ( \"fmt\" \"github.com/IBM/sarama\" \"sync\" ) var wg = sync.WaitGroup{} func main() { //初始化客户端 config := sarama.NewConfig() config.Producer.Return.Successes = true //在成功发送消息后返回成功的消息元数据。 client, err := sarama.NewClient([]string{\"127.0.0.1:9092\"}, config) if err != nil { fmt.Printf(\"初始化客户端报错%s\", err.Error()) } defer client.Close() consumer, err := sarama.NewConsumerFromClient(client) if err != nil { fmt.Printf(\"初始化消费者客户端报错%s\", err.Error()) } defer consumer.Close() topic := \"fei-topic\" partitions := []int32{0, 1} //指定消费的分区 offset := int64(0) //消费的起始偏移量 //处理收到的消息 wg.Add(len(partitions)) for _, partition := range partitions { go func(p int32) { defer wg.Done() //根据指定分区和偏移量创建分区消费者 consumePartition, err := consumer.ConsumePartition(topic, p, offset) if err != nil { fmt.Printf(\"创建分区消费者报错%s\", err.Error()) } defer consumePartition.Close() for msg := range consumePartition.Messages() { fmt.Printf(\"Received msg: Topic=%s,Partition%d,Offsed=%d,Value%s\\n\", msg.Topic, msg.Partition, msg.Offset, msg.Value) } }(partition) } wg.Wait() } fei@feideMacBook-Pro consumer % go run main.go Received msg: Topic=fei-topic,Partition0,Offsed=0,ValueHello,Kafka4 Received msg: Topic=fei-topic,Partition0,Offsed=1,ValueHello,Kafka5 Received msg: Topic=fei-topic,Partition0,Offsed=2,ValueHello,Kafka8 Received msg: Topic=fei-topic,Partition0,Offsed=3,ValueHello,Kafka9 Received msg: Topic=fei-topic,Partition0,Offsed=4,ValueHello,Kafka1 Received msg: Topic=fei-topic,Partition0,Offsed=5,ValueHello,Kafka2 Received msg: Topic=fei-topic,Partition0,Offsed=6,ValueHello,Kafka4 Received msg: Topic=fei-topic,Partition0,Offsed=7,ValueHello,Kafka7 Received msg: Topic=fei-topic,Partition0,Offsed=8,ValueHello,Kafka8 Received msg: Topic=fei-topic,Partition0,Offsed=9,ValueHello,Kafka0 Received msg: Topic=fei-topic,Partition0,Offsed=10,ValueHello,Kafka2 Received msg: Topic=fei-topic,Partition0,Offsed=11,ValueHello,Kafka3 Received msg: Topic=fei-topic,Partition0,Offsed=12,ValueHello,Kafka4 Received msg: Topic=fei-topic,Partition0,Offsed=13,ValueHello,Kafka6 Received msg: Topic=fei-topic,Partition0,Offsed=14,ValueHello,Kafka8 Received msg: Topic=fei-topic,Partition0,Offsed=15,ValueHello,Kafka9 Received msg: Topic=fei-topic,Partition0,Offsed=16,ValueHello,Kafka0 Received msg: Topic=fei-topic,Partition1,Offsed=0,ValueHello,Kafka0 Received msg: Topic=fei-topic,Partition1,Offsed=1,ValueHello,Kafka1 Received msg: Topic=fei-topic,Partition1,Offsed=2,ValueHello,Kafka2 Received msg: Topic=fei-topic,Partition1,Offsed=3,ValueHello,Kafka3 Received msg: Topic=fei-topic,Partition1,Offsed=4,ValueHello,Kafka6 Received msg: Topic=fei-topic,Partition1,Offsed=5,ValueHello,Kafka7 Received msg: Topic=fei-topic,Partition0,Offsed=17,ValueHello,Kafka2 Received msg: Topic=fei-topic,Partition1,Offsed=6,ValueHello,Kafka10 Received msg: Topic=fei-topic,Partition0,Offsed=18,ValueHello,Kafka7 Received msg: Topic=fei-topic,Partition0,Offsed=19,ValueHello,Kafka10 Received msg: Topic=fei-topic,Partition0,Offsed=20,ValueHello fei Received msg: Topic=fei-topic,Partition1,Offsed=7,ValueHello,Kafka0 Received msg: Topic=fei-topic,Partition1,Offsed=8,ValueHello,Kafka3 Received msg: Topic=fei-topic,Partition1,Offsed=9,ValueHello,Kafka5 Received msg: Topic=fei-topic,Partition1,Offsed=10,ValueHello,Kafka6 Received msg: Topic=fei-topic,Partition1,Offsed=11,ValueHello,Kafka9 Received msg: Topic=fei-topic,Partition1,Offsed=12,ValueHello,Kafka10 Received msg: Topic=fei-topic,Partition1,Offsed=13,ValueHello,Kafka1 Received msg: Topic=fei-topic,Partition1,Offsed=14,ValueHello,Kafka5 Received msg: Topic=fei-topic,Partition1,Offsed=15,ValueHello,Kafka7 Received msg: Topic=fei-topic,Partition1,Offsed=16,ValueHello,Kafka10 Received msg: Topic=fei-topic,Partition1,Offsed=17,ValueHello,Kafka1 Received msg: Topic=fei-topic,Partition1,Offsed=18,ValueHello,Kafka3 Received msg: Topic=fei-topic,Partition1,Offsed=19,ValueHello,Kafka4 Received msg: Topic=fei-topic,Partition1,Offsed=20,ValueHello,Kafka5 Received msg: Topic=fei-topic,Partition1,Offsed=21,ValueHello,Kafka6 Received msg: Topic=fei-topic,Partition1,Offsed=22,ValueHello,Kafka8 Received msg: Topic=fei-topic,Partition1,Offsed=23,ValueHello,Kafka9 Received msg: Topic=fei-topic,Partition1,Offsed=24,ValueHello fei Received msg: Topic=fei-topic,Partition1,Offsed=25,ValueHello fei Received msg: Topic=fei-topic,Partition0,Offsed=21,ValueHello fei 7.3消费者组⭐️ link kafka会记录不同消费者组已经消费的offset信息。只需在代码中将消息标记为已消费 package main import ( \"context\" \"fmt\" \"log\" \"sync\" \"time\" \"github.com/IBM/sarama\" ) var wg = sync.WaitGroup{} func main() { //消费者组初始化客户端 config := sarama.NewConfig() config.Producer.Return.Errors = true config.Producer.Return.Successes = true config.Consumer.Offsets.AutoCommit.Enable = true //是否支持自动提交位点，默认支持 config.Consumer.Offsets.AutoCommit.Interval = 10 * time.Second //自动提交位点时间间隔，默认1s ConsumerGroup, err := sarama.NewConsumerGroup([]string{\"127.0.0.1:9092\"}, \"fei-group\", config) if err != nil { log.Fatal(\"Failed to create consumer group:\", err) } defer ConsumerGroup.Close() //指定订阅的主题 topics := []string{\"fei-topic\"} //创建一个消费者组处理器 handler := ConsumerGroupHandler{} ctx := context.Background() wg.Add(1) go func() { for { err := ConsumerGroup.Consume(ctx, topics, handler) if err != nil { log.Fatal(\"Error form consumer group:\", err) } } wg.Done() }() wg.Wait() } // 自定义消费者组处理器 type ConsumerGroupHandler struct{} // 实现sarama.ConsumerGroupHandler 接口方法 // Setup方法在消费者组启动时调用，用于进行一些初始化操作 func (h ConsumerGroupHandler) Setup(sarama.ConsumerGroupSession) error { fmt.Println(\"Consumer group setup\") return nil } // Cleanup方法在消费者组结束时调用，用于进行清理操作 func (h ConsumerGroupHandler) Cleanup(sarama.ConsumerGroupSession) error { fmt.Println(\"Consumer group cleanup\") return nil } func (h ConsumerGroupHandler) ConsumeClaim(session sarama.ConsumerGroupSession, claim sarama.ConsumerGroupClaim) error { for msg := range claim.Messages() { fmt.Printf(\"消息内容%s，对应Offset%d\\n\", string(msg.Value), msg.Offset) session.MarkMessage(msg, \"\") //将消息标记为已消费,不加此行会导致重启消费者组之后重复消费 } return nil } fei@feideMacBook-Pro consumer % go run consumer.go Consumer group setup 消息内容Hello fei，对应Offset26 消息内容Hello fei，对应Offset22 "
+            }
+        );
+    index.add(
+            {
+                id:  52 ,
                 href: "\/docs\/dev\/front-end\/1.html\/",
                 title: "1.HTML",
                 description: "HTML是用来描述网页的一种语言，全称超文本标记语言(Hyper Text Markup Language)，它是一种标记语言，使用标记标签来描述网页，它的语法规则可以定义图片、表格、链接等。",
@@ -3233,7 +3254,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  52 ,
+                id:  53 ,
                 href: "\/docs\/dev\/front-end\/2.css\/",
                 title: "2.CSS",
                 description: "让网页元素的样式更加丰富，也为了让网页的内容和样式能拆分开",
@@ -3242,7 +3263,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  53 ,
+                id:  54 ,
                 href: "\/docs\/dev\/front-end\/3.js\/",
                 title: "3.JavaScript",
                 description: "使网页具有交互性，例如响应用户点击，给用户提供更好的体验",
@@ -3251,7 +3272,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  54 ,
+                id:  55 ,
                 href: "\/docs\/dev\/front-end\/4.vue\/",
                 title: "4.Vue",
                 description: "一套用于快速构建用户界面的渐进式前端框架",
@@ -3260,7 +3281,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  55 ,
+                id:  56 ,
                 href: "\/docs\/ops\/kubernetes\/1.kubernetes-v1.28.3%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "1.Kubernetes-v1.28.3高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -3269,7 +3290,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  56 ,
+                id:  57 ,
                 href: "\/docs\/ops\/kubernetes\/2.kubernetes-v1.30.2%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2\/",
                 title: "2.Kubernetes-v1.30.2高可用集群二进制部署(IPv4+IPv6双栈)",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化的应用，Kubernetes的目标是让部署容器化的应用简单并且高效,Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -3278,7 +3299,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  57 ,
+                id:  58 ,
                 href: "\/docs\/ops\/kubernetes\/3.%E5%8D%87%E7%BA%A7%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2%E7%9A%84kubernetes%E9%9B%86%E7%BE%A4\/",
                 title: "3.升级二进制部署的kubernetes集群",
                 description: "Kubernetes（简称k8s）是Google在2014年6月开源的一个容器集群管理系统，使用Go语言开发，用于管理云平台中多个主机上的容器化应用，Kubernetes的目标是让部署容器化的应用简单并且高效，Kubernetes提供了资源调度、部署管理、服务发现、扩容缩容、监控，维护等一整套功能。努力成为跨主机集群的自动部署、扩展以及运行应用程序容器的平台。 它支持一系列容器工具, 包括且不限于Docker等。",
@@ -3287,7 +3308,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  58 ,
+                id:  59 ,
                 href: "\/docs\/ops\/kubernetes\/4.kubernetes%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D\/",
                 title: "4.Kubernetes核心概念介绍",
                 description: "本文介绍kubernetes中一些核心概念，如：pod、工作负载、service、kube-proxy代理模式等",
@@ -3296,7 +3317,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  59 ,
+                id:  60 ,
                 href: "\/docs\/ops\/container\/1.%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%E6%89%80%E6%B6%89%E5%8F%8A%E7%9A%84linux%E5%86%85%E6%A0%B8%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF\/",
                 title: "1.容器技术所涉及的Linux内核关键技术",
                 description: "容器的前世今生",
@@ -3305,7 +3326,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  60 ,
+                id:  61 ,
                 href: "\/docs\/ops\/container\/containerd\/1.containerd%E8%BD%BB%E9%87%8F%E7%BA%A7or%E5%B7%A5%E4%B8%9A%E7%BA%A7%E7%9A%84%E5%AE%B9%E5%99%A8%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7\/",
                 title: "1.Containerd轻量级or工业级的容器管理工具",
                 description: "Containerd 是一个工业级标准的容器运行时，它强调简单性、健壮性和可移植性。",
@@ -3314,7 +3335,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  61 ,
+                id:  62 ,
                 href: "\/docs\/ops\/container\/docker\/1.docker%E9%95%9C%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BB%8B%E7%BB%8D\/",
                 title: "1.Docker镜像基本操作和介绍",
                 description: "Docker镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。",
@@ -3323,7 +3344,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  62 ,
+                id:  63 ,
                 href: "\/docs\/ops\/container\/docker\/2.docker%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93%E6%90%AD%E5%BB%BA\/",
                 title: "2.Docker容器镜像国内加速及本地容器镜像仓库搭建",
                 description: "众所周知的原因和解决方案",
@@ -3332,7 +3353,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  63 ,
+                id:  64 ,
                 href: "\/docs\/ops\/container\/docker\/3.dockerfile%E4%BB%8B%E7%BB%8D\/",
                 title: "3.Dockerfile介绍",
                 description: "学习制作docker镜像",
@@ -3341,7 +3362,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  64 ,
+                id:  65 ,
                 href: "\/docs\/ops\/1.nginx%E9%85%8D%E7%BD%AE%E5%B0%8F%E5%85%A8\/",
                 title: "1.Nginx配置小全",
                 description: "Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；",
@@ -3350,7 +3371,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  65 ,
+                id:  66 ,
                 href: "\/docs\/demo\/features\/",
                 title: "Features",
                 description: "A guide to the core features of the Lotus Docs theme.",
@@ -3359,7 +3380,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  66 ,
+                id:  67 ,
                 href: "\/docs\/dev\/golang\/fyne\/project\/",
                 title: "项目案例",
                 description: "使用Fyne实现几个项目",
@@ -3368,7 +3389,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  67 ,
+                id:  68 ,
                 href: "\/docs\/demo\/features\/syntax-highlighting\/",
                 title: "Syntax Highlighting",
                 description: "How to highlight code in Lotus Docs using the built-in The PrismJS library (or Chroma).",
@@ -3377,7 +3398,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  68 ,
+                id:  69 ,
                 href: "\/docs\/demo\/features\/katex\/",
                 title: "KaTex",
                 description: "Fast Tex math rendering for your Lotus Docs site",
@@ -3386,7 +3407,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  69 ,
+                id:  70 ,
                 href: "\/docs\/demo\/features\/mermaid\/",
                 title: "Mermaid",
                 description: "How to use the Mermaid diagramming and chart tool with Lotus Docs",
@@ -3395,7 +3416,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  70 ,
+                id:  71 ,
                 href: "\/docs\/demo\/shortcodes\/",
                 title: "Shortcodes",
                 description: "Lotus Docs Custom Shortcodes.",
@@ -3404,7 +3425,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  71 ,
+                id:  72 ,
                 href: "\/docs\/demo\/shortcodes\/alerts\/",
                 title: "Alerts",
                 description: "How to use Alert Shortcodes to render custom page alerts in markdown.",
@@ -3413,7 +3434,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  72 ,
+                id:  73 ,
                 href: "\/docs\/demo\/shortcodes\/tables\/",
                 title: "Tables",
                 description: "How to use the Lotus Docs table shortcode to render great looking markdown tables",
@@ -3422,7 +3443,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  73 ,
+                id:  74 ,
                 href: "\/docs\/demo\/shortcodes\/tabs\/",
                 title: "Tabs",
                 description: "How to use the Lotus Docs tabs shortcode to render Bootstrap Tabs",
@@ -3431,7 +3452,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  74 ,
+                id:  75 ,
                 href: "\/docs\/demo\/shortcodes\/prism\/",
                 title: "Prism",
                 description: "How to use the Prism Shortcode for syntax highlighting code blocks.",
@@ -3440,7 +3461,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  75 ,
+                id:  76 ,
                 href: "\/docs\/demo\/shortcodes\/markdownify\/",
                 title: "Markdownify",
                 description: "A simple shortcode to render content as Markdown.",
@@ -3449,7 +3470,7 @@ WWF 工作于 100 个国家，并得到美国一百二十万会员及全球近�
         );
     index.add(
             {
-                id:  76 ,
+                id:  77 ,
                 href: "\/docs\/demo\/shortcodes\/katex\/",
                 title: "KaTex",
                 description: "A Shortcode to render KaTex syntax in your Lotus Docs site",
