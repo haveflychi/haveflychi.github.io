@@ -36,7 +36,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://docs.cakepanit.com/docs/dev/front-end/4.vue/" /><meta property="og:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_13875370198145503976.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-03T22:37:22+01:00" />
-<meta property="article:modified_time" content="2024-11-07T00:23:51+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2024-11-11T23:39:43+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://docs.cakepanit.com/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_13875370198145503976.png"/>
 <meta name="twitter:title" content="4.Vue"/>
 <meta name="twitter:description" content="一套用于快速构建用户界面的渐进式前端框架"/>
@@ -819,6 +819,21 @@
         <li><a href="#22reactive函数">2.2<code>reactive</code>函数</a></li>
       </ul>
     </li>
+    <li><a href="#3vue常用指令">3.Vue常用指令</a>
+      <ul>
+        <li><a href="#31v-text">3.1v-text</a></li>
+        <li><a href="#32v-html">3.2v-html</a></li>
+        <li><a href="#33v-on">3.3v-on</a></li>
+        <li><a href="#34v-bind">3.4v-bind</a>
+          <ul>
+            <li><a href="#341绑定超链接">3.4.1绑定超链接</a></li>
+            <li><a href="#342绑定class">3.4.2绑定Class</a></li>
+            <li><a href="#343绑定style">3.4.3绑定Style</a></li>
+            <li><a href="#344指令缩写">3.4.4指令缩写</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </toc></div>
@@ -841,6 +856,21 @@
       <ul>
         <li><a href="#21ref函数基本数据类型的定义">2.1<code>ref</code>函数(基本数据类型的定义)</a></li>
         <li><a href="#22reactive函数">2.2<code>reactive</code>函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#3vue常用指令">3.Vue常用指令</a>
+      <ul>
+        <li><a href="#31v-text">3.1v-text</a></li>
+        <li><a href="#32v-html">3.2v-html</a></li>
+        <li><a href="#33v-on">3.3v-on</a></li>
+        <li><a href="#34v-bind">3.4v-bind</a>
+          <ul>
+            <li><a href="#341绑定超链接">3.4.1绑定超链接</a></li>
+            <li><a href="#342绑定class">3.4.2绑定Class</a></li>
+            <li><a href="#343绑定style">3.4.3绑定Style</a></li>
+            <li><a href="#344指令缩写">3.4.4指令缩写</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1207,6 +1237,469 @@
     
   
 </p>
+<h1 id="3vue常用指令">3.Vue常用指令 <a href="#3vue%e5%b8%b8%e7%94%a8%e6%8c%87%e4%bb%a4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h1><ul>
+<li>指令:带有 <code>v-</code> 前缀的特殊属性。</li>
+<li>指令的作用:当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。</li>
+</ul>
+<h2 id="31v-text">3.1v-text <a href="#31v-text" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
+<li>v-text 作用与双大花括号作用一样，将数据填充到标签中。但没有闪烁问题!</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="2343a93" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;demo&lt;/title&gt;
+    &lt;script src=&#34;https://unpkg.com/vue@3&#34;&gt;&lt;/script&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&#34;hello-vue&#34;&gt;
+        &lt;p v-text=&#34;msg&#34;&gt;&lt;/p&gt;
+        &lt;!--v-text插入这个p标签的值--&gt;
+        &lt;p&gt;{{ msg }}&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const { ref } = Vue
+        const HelloVueApp = {
+            setup() {
+                const msg = ref(&#34;Hello Vue!&#34;)
+                return {
+                    msg
+                }
+            }
+        }
+        Vue.createApp(HelloVueApp).mount(&#39;#hello-vue&#39;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/vue/3ea00b36-4db1-4b16-bc5b-f1ec6cfe9bee.png" alt="" width="376" height="380" loading="lazy">
+    
+  
+</p>
+<h2 id="32v-html">3.2v-html <a href="#32v-html" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
+<li>某些情况下，从服务端请求的数据本身就是一个HTML代码，如果用双大括号会将数据解 释为普通文本，而非HTML代码，为了输出真正的HTML，需要使用<code>v-html</code>指令:</li>
+</ul>
+<p>
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="e295171" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;demo&lt;/title&gt;
+    &lt;script src=&#34;https://unpkg.com/vue@3&#34;&gt;&lt;/script&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&#34;hello-vue&#34;&gt;
+        {{ msg }}
+        &lt;br&gt;
+        &lt;span v-html=&#34;msg&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const { ref } = Vue
+        const HelloVueApp = {
+            setup() {
+                const msg = ref(&#34;&lt;span style=&#39;color: brown&#39;&gt;Hello Vue!&lt;span&gt;&#34;)
+                return {
+                    msg
+                }
+            }
+        }
+        Vue.createApp(HelloVueApp).mount(&#39;#hello-vue&#39;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/vue/85df145b-8651-47e9-8d01-98a8e453bf46.png" alt="" width="457" height="456" loading="lazy">
+    
+  
+</p>
+<h2 id="33v-on">3.3v-on <a href="#33v-on" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
+<li>在前端开发中，我们经常监听用户发生的事件，例如点击、拖拽、键盘事件等。 在Vue中如何监听事件呢?使用 <code>v-on</code>指令</li>
+<li><code>v-on</code> : 冒号后面是event参数，例如click、change</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="219db65" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;demo&lt;/title&gt;
+    &lt;script src=&#34;https://unpkg.com/vue@3&#34;&gt;&lt;/script&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&#34;hello-vue&#34;&gt;
+        &lt;p&gt;点击次数： {{ counter }}&lt;/p&gt;
+        &lt;button v-on:click=&#34;counter&#43;&#43;&#34;&gt;按钮&lt;/button&gt;
+        &lt;br&gt;
+        &lt;a type=&#34;text&#34; id=&#34;fname&#34; v-on:mouseout=&#34;counter&#43;&#43;&#34;&gt;鼠标离开计数&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const { ref } = Vue
+        const HelloVueApp = {
+            setup() {
+                const counter = ref(0)
+                return {
+                    counter
+                }
+            }
+        }
+        Vue.createApp(HelloVueApp).mount(&#39;#hello-vue&#39;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/vue/e613f892-d7bf-46b9-a402-18572ca474a3.png" alt="" width="182" height="112" loading="lazy">
+    
+  
+</p>
+<h2 id="34v-bind">3.4v-bind <a href="#34v-bind" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
+<li>用于动态绑定一个或多个属性值，或者向另一个组件传递props值(这个后面再介绍)</li>
+<li>应用场景:图片地址src、超链接href、动态绑定一些类、样式等等</li>
+</ul>
+<h3 id="341绑定超链接">3.4.1绑定超链接 <a href="#341%e7%bb%91%e5%ae%9a%e8%b6%85%e9%93%be%e6%8e%a5" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li><code>v-bind</code> 指令后接收一个参数，以冒号分割。</li>
+<li><code>v-bind</code> 指令将该元素的 href 属性与表达式 url 的值绑定。</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="d037e18" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;demo&lt;/title&gt;
+    &lt;script src=&#34;https://unpkg.com/vue@3&#34;&gt;&lt;/script&gt;
+    &lt;style&gt;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&#34;hello-vue&#34;&gt;
+        &lt;a href=&#34;https://cakepanit.com&#34;&gt;MaxBit&lt;/a&gt;
+        &lt;br&gt;
+        &lt;a v-bind:href=&#34;url&#34;&gt;MaxBitDocs&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const { ref } = Vue
+        const HelloVueApp = {
+            setup() {
+                const url = &#34;https://docs.cakepanit.com&#34;
+                return {
+                    url
+                }
+            }
+        }
+        Vue.createApp(HelloVueApp).mount(&#39;#hello-vue&#39;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/vue/6cdab321-6003-4542-881c-efa5c5334424.png" alt="" width="423" height="443" loading="lazy">
+    
+  
+</p>
+<h3 id="342绑定class">3.4.2绑定Class <a href="#342%e7%bb%91%e5%ae%9aclass" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>操作元素(标签)的 class 和 style 属性是数据绑 定的一个常见需求。</li>
+<li>例如希望动态切换class，为div显示不同背景颜色</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="186219a" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;demo&lt;/title&gt;
+    &lt;script src=&#34;https://unpkg.com/vue@3&#34;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        #default {
+            height: 200px;
+            width: 200px;
+            border: 1px solid brown;
+            margin: 2px;
+        }
+        .active {
+            height: 200px;
+            width: 200px;
+            background-color: darkgreen;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&#34;hello-vue&#34;&gt;
+        &lt;!--如果isActive为true，那么class=&#34;active&#34;属性出现--&gt;
+        &lt;div v-bind:class=&#34;{active:isActive}&#34; id=&#34;default&#34;&gt;&lt;/div&gt;
+        &lt;button v-on:click=&#34;Onclick()&#34;&gt;切换&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const { ref } = Vue
+        const HelloVueApp = {
+            setup() {
+                const isActive = ref(false)
+                function Onclick(){
+                    if (isActive.value) {
+                        isActive.value = false
+                    } else {
+                        isActive.value = true
+                    }
+                }
+                return {
+                    isActive,
+                    Onclick
+                }
+            }
+        }
+        Vue.createApp(HelloVueApp).mount(&#39;#hello-vue&#39;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/vue/6fedb854-1264-45ab-b3ec-ff65aab30d77.png" alt="" width="421" height="443" loading="lazy">
+    
+  
+</p>
+<h3 id="343绑定style">3.4.3绑定Style <a href="#343%e7%bb%91%e5%ae%9astyle" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li><code>v-bind:style</code> 的对象语法看着非常像 CSS，但其实是一个 JavaScript 对象。</li>
+<li>可以使用v-bind在style样式中传递样式变量。</li>
+<li>使用时需要将css样式名中带”-“的转成驼峰命名法，如font-size，转为fontSize</li>
+<li>例如后台管理系统中改变侧边栏宽度</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="9798146" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html;charset=UTF-8&#34;&gt;
+    &lt;title&gt;demo&lt;/title&gt;
+    &lt;script src=&#34;https://unpkg.com/vue@3&#34;&gt;&lt;/script&gt;
+    &lt;style&gt;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&#34;hello-vue&#34;&gt;
+        &lt;div style=&#34;background: dodgerblue;font-size: 24px&#34;&gt;
+            Hello Vue! 原生写法
+        &lt;/div&gt;
+        &lt;div v-bind:style=&#34;{background: color,fontSize: num &#43; &#39;px&#39;}&#34;&gt;
+            Hello Vue! 动态绑定写法
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const { ref } = Vue
+        const HelloVueApp = {
+            setup() {
+                const color = ref(&#39;red&#39;)
+                const num = 24
+                return {
+                    color,
+                    num
+                }
+            }
+        }
+        Vue.createApp(HelloVueApp).mount(&#39;#hello-vue&#39;)
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+  
+
+<p>
+
+
+
+
+
+  
+
+
+
+  
+    
+      <img src="/images/vue/c1925628-aba6-4302-9f94-fc6e4ce5d4cd.png" alt="" width="665" height="354" loading="lazy">
+    
+  
+</p>
+<h3 id="344指令缩写">3.4.4指令缩写 <a href="#344%e6%8c%87%e4%bb%a4%e7%bc%a9%e5%86%99" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><ul>
+<li>
+<p><code>v-</code> 前缀作为一种视觉提示，用来识别模板中 Vue 特定的 属性。 但对于一些频繁用到的指令来说，就会感到使用繁琐。</p>
+</li>
+<li>
+<p>因此，Vue 为 v-bind 和 v-o n 这两个最常用的指令，提供了特定简写: v-bind 缩写</p>
+</li>
+<li>
+<p><code>v-bind</code>缩写</p>
+</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="a4f38f7" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;!--完整语法--&gt;
+&lt;a v-bind:href=&#34;url&#34;&gt; ... &lt;/a&gt;
+&lt;!--缩写--&gt;
+&lt;a :href=&#34;url&#34;&gt; ... &lt;/a&gt;
+&lt;!--动态参数的缩写--&gt;
+&lt;a :[key]=&#34;url&#34;&gt; ... &lt;/a&gt;
+</code></pre>
+      </div>
+  
+
+<ul>
+<li><code>v-on</code>缩写</li>
+</ul>
+
+
+
+
+
+
+  
+      <div class="prism-shortcode">
+      <pre id="50909b9" class="language-html line-numbers"
+        ><code class="language-html"
+        >&lt;!--完整语法--&gt;
+&lt;a v-on:click=&#34;doSomething&#34;&gt; ... &lt;/a&gt;
+&#34;&lt;!--缩写--&gt;
+&lt;a @click=&#34;doSomething&#34;&gt; ... &lt;/a&gt;
+&lt;!--动态参数的缩写--&gt;
+&lt;a @[event]=&#34;doSomething&#34;&gt; ... &lt;/a&gt;
+</code></pre>
+      </div>
+  
+
 
     </div>
 
@@ -1229,9 +1722,9 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2024-11-07T00:23:51&#43;0800"
-            title="07 Nov 2024, 00:23 &#43;0800">
-            07 Nov 2024, 00:23 &#43;0800
+            data-authdate="2024-11-11T23:39:43&#43;0800"
+            title="11 Nov 2024, 23:39 &#43;0800">
+            11 Nov 2024, 23:39 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -2482,7 +2975,7 @@
                 href: "\/docs\/dev\/front-end\/4.vue\/",
                 title: "4.Vue",
                 description: "一套用于快速构建用户界面的渐进式前端框架",
-                content: "1.Vue介绍 link 官网：https://cn.vuejs.org\nVue.js：简称Vue，是一套用于快速构建用户界面的渐进式前端框架。 Vue.js核心实现 响应式数据绑定：当数据发生改变，视图可以自动更新，不用关心DOM操作，专心数据操作。 可组合的视图组件：把视图按照功能切分成若干个基本单元，可维护，可重用，可测试等特点。 响应式，双向数据绑定，即MVVM。是指数据层（Model）-视图层（View）-数据视图（ViewModel）的响应式框架。 1.2引入Vue.js link 参考文档：https://cn.vuejs.org/guide/quick-start.html\n在html中使用CDN包的形式引入 {{ message }} 现在数据和DOM已经被建立了关联，所有东西都是响应式的，可通过下面示例确认: demo Conter: {{ counter }} 1.4模版语法 link Vue.js使用了基于HTML的模板语法，允许开发者声明式的将DOM绑定致底层组件实例的数据，所有Vue.js的模板都是合法的HTML，所以能被遵循规范的浏览器和HTML解析器解析， 数据绑定最常见的形式就是使用{{ }}，语法在HTML中插入文本：Message：{{ msg }} {{ msg }}将被替换为对应组件实例中msg属性的值，无论何时，绑定的组件实例上msg属性发生改变，传入HTML的值也会随之改变。 2.Vue3响应式 link 解决了：Vue2中新增属性，删除属性(对象)，界面不会更新的问题。 解决了：Vue2中直接通过下标修改数组，界面不会刷新的问题。 2.1ref函数(基本数据类型的定义) link 作用：定义一个响应式的数据即变量(基本类型)。 语法： let a = ref('Hello Vue!') 创建一个包含响应式数据的引用对象（reference对象）。 JS中操作数据： a.value 模板中读取数据，不需要 .value，直接：{{ a }} 接收的数据可以是基本类型，也可以是对象类型（自动转reactive）。 基本类型的数据：响应式依然是靠Object.defineProperty()的get与set完成的（vue2响应式的实现方式）。 对象类型的数据：内部使用了Vue3中的一个新函数：reactive函数 demo {{ message }} 2.2reactive函数 link 作用：定义一个对象类型的响应式数据（基本类型数据不能用，要用ref函数）。 语法：const 代理对象=reactive(原函数)，接收一个对象或数组，返回一个代理对象（proxy对象）。 reactive定义的响应式数据是深层次的。 内部基于ES6的Proxy实现，通过代理对象操作源内部数据进行操作。 用法与ref创建的代理对象类似，不过操作时不需要再加.value了 demo {{ student }} {{ student.name }} "
+                content: "1.Vue介绍 link 官网：https://cn.vuejs.org\nVue.js：简称Vue，是一套用于快速构建用户界面的渐进式前端框架。 Vue.js核心实现 响应式数据绑定：当数据发生改变，视图可以自动更新，不用关心DOM操作，专心数据操作。 可组合的视图组件：把视图按照功能切分成若干个基本单元，可维护，可重用，可测试等特点。 响应式，双向数据绑定，即MVVM。是指数据层（Model）-视图层（View）-数据视图（ViewModel）的响应式框架。 1.2引入Vue.js link 参考文档：https://cn.vuejs.org/guide/quick-start.html\n在html中使用CDN包的形式引入 {{ message }} 现在数据和DOM已经被建立了关联，所有东西都是响应式的，可通过下面示例确认: demo Conter: {{ counter }} 1.4模版语法 link Vue.js使用了基于HTML的模板语法，允许开发者声明式的将DOM绑定致底层组件实例的数据，所有Vue.js的模板都是合法的HTML，所以能被遵循规范的浏览器和HTML解析器解析， 数据绑定最常见的形式就是使用{{ }}，语法在HTML中插入文本：Message：{{ msg }} {{ msg }}将被替换为对应组件实例中msg属性的值，无论何时，绑定的组件实例上msg属性发生改变，传入HTML的值也会随之改变。 2.Vue3响应式 link 解决了：Vue2中新增属性，删除属性(对象)，界面不会更新的问题。 解决了：Vue2中直接通过下标修改数组，界面不会刷新的问题。 2.1ref函数(基本数据类型的定义) link 作用：定义一个响应式的数据即变量(基本类型)。 语法： let a = ref('Hello Vue!') 创建一个包含响应式数据的引用对象（reference对象）。 JS中操作数据： a.value 模板中读取数据，不需要 .value，直接：{{ a }} 接收的数据可以是基本类型，也可以是对象类型（自动转reactive）。 基本类型的数据：响应式依然是靠Object.defineProperty()的get与set完成的（vue2响应式的实现方式）。 对象类型的数据：内部使用了Vue3中的一个新函数：reactive函数 demo {{ message }} 2.2reactive函数 link 作用：定义一个对象类型的响应式数据（基本类型数据不能用，要用ref函数）。 语法：const 代理对象=reactive(原函数)，接收一个对象或数组，返回一个代理对象（proxy对象）。 reactive定义的响应式数据是深层次的。 内部基于ES6的Proxy实现，通过代理对象操作源内部数据进行操作。 用法与ref创建的代理对象类似，不过操作时不需要再加.value了 demo {{ student }} {{ student.name }} 3.Vue常用指令 link 指令:带有 v- 前缀的特殊属性。 指令的作用:当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。 3.1v-text link v-text 作用与双大花括号作用一样，将数据填充到标签中。但没有闪烁问题! demo {{ msg }}\n3.2v-html link 某些情况下，从服务端请求的数据本身就是一个HTML代码，如果用双大括号会将数据解 释为普通文本，而非HTML代码，为了输出真正的HTML，需要使用v-html指令: demo {{ msg }} 3.3v-on link 在前端开发中，我们经常监听用户发生的事件，例如点击、拖拽、键盘事件等。 在Vue中如何监听事件呢?使用 v-on指令 v-on : 冒号后面是event参数，例如click、change demo 点击次数： {{ counter }}\n按钮 鼠标离开计数 3.4v-bind link 用于动态绑定一个或多个属性值，或者向另一个组件传递props值(这个后面再介绍) 应用场景:图片地址src、超链接href、动态绑定一些类、样式等等 3.4.1绑定超链接 link v-bind 指令后接收一个参数，以冒号分割。 v-bind 指令将该元素的 href 属性与表达式 url 的值绑定。 demo MaxBit MaxBitDocs 3.4.2绑定Class link 操作元素(标签)的 class 和 style 属性是数据绑 定的一个常见需求。 例如希望动态切换class，为div显示不同背景颜色 demo 切换 3.4.3绑定Style link v-bind:style 的对象语法看着非常像 CSS，但其实是一个 JavaScript 对象。 可以使用v-bind在style样式中传递样式变量。 使用时需要将css样式名中带”-“的转成驼峰命名法，如font-size，转为fontSize 例如后台管理系统中改变侧边栏宽度 demo Hello Vue! 原生写法 Hello Vue! 动态绑定写法 3.4.4指令缩写 link v- 前缀作为一种视觉提示，用来识别模板中 Vue 特定的 属性。 但对于一些频繁用到的指令来说，就会感到使用繁琐。\n因此，Vue 为 v-bind 和 v-o n 这两个最常用的指令，提供了特定简写: v-bind 缩写\nv-bind缩写\n... ... ... v-on缩写 ... \" ... ... "
             }
         );
     index.add(
