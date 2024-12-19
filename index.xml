@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Mon, 25 Nov 2024 23:56:24 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Dec 2024 00:17:05 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇WIKI</title>
@@ -282,6 +282,13 @@
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/golang/8.kafka/</guid>
       <description>1.介绍 linkKafka 是⼀种分布式流处理平台，最初由 LinkedIn 公司开发，现在由 Apache 软件基⾦会维护。它被设计⽤于⾼吞吐量、低延迟的数据传输，并具有可扩展性和容错性。 Kafka 的核⼼概念是消息传递系统，它通过将数据以消息的形式进⾏发布和订阅来实现数据流的处理。以下是 Kafka 的⼀些关键特点和概念：&#xA;消息发布和订阅：Kafka 使⽤发布-订阅模型，消息发布者将消息发送到⼀个或多个主题（Topics），⽽消息订阅者可以从这些主题中获取消息。 分布式架构：Kafka 是⼀个分布式系统，可以在多个节点上部署，实现数据的分区和复制，以实现⾼可⽤性和可扩展性。 消息持久化：Kafka 使⽤⽇志（Log）的⽅式持久化消息，每个主题的消息以追加的⽅式写⼊分区中，并且消息会在⼀段时间后根据配置进⾏保留。 分区和复制：Kafka 将每个主题分成⼀个或多个分区（Partitions），每个分区可以在多个节点上进⾏复制，以实现负载均衡和容错性。 ⾼吞吐量：Kafka 具有⾮常⾼的吞吐量和低延迟，能够处理⼤量的消息流，并保持较低的延迟。 实时数据处理：Kafka 可以与流处理框架（如 Apache Spark、Apache Flink）集成，⽀持实时的数据处理和流式分析。 2.常⽤场景 link 数据流集成和数据管道：Kafka 可以作为数据流的中间件，⽤于连接不同的数据系统和应⽤程序。它可以集成多个数据源和数据⽬的地，实现可靠的数据传输和流⽔线处理。 ⽇志收集和集中式⽇志管理：Kafka 可以⽤作⽇志收集系统，收集和存储分布在多个应⽤程序和服务器上的⽇志数据。它提供⾼吞吐量和持久化存储，⽀持实时的⽇志数据处理和分析。 事件驱动架构：Kafka 的发布-订阅模型使其成为构建事件驱动架构的理想选择。应⽤程序可以将事件发布到 Kafka 主题，然后其他应⽤程序可以订阅并处理这些事件，实现松耦合、可扩展和实时的事件驱动架构。 流式处理和实时分析：Kafka 可以与流处理框架（如 Apache Spark、Apache Flink）集成，⽀持实时的流式数据处理和复杂的实时分析。通过将数据流导⼊Kafka 主题，应⽤程序可以实时处理和分析数据，实现实时的洞察和决策。 异步消息队列：Kafka 可以⽤作⾼吞吐量的异步消息队列，实现应⽤程序之间的解耦和异步通信。应⽤程序可以将消息发送到 Kafka 主题，并异步处理这些消息，提⾼系统的可伸缩性和弹性。 数据备份和容错性：Kafka ⽀持数据的分区和复制，可以在多个节点上复制和存储数据，以实现数据的冗余备份和容错性。 3.Go三⽅库 link github.com/IBM/sarama: 是⼀个 Go 语⾔编写的 Apache Kafka 客户端库，⽤于与 Kafka 集群进⾏交互。它提供了丰富的功能和易于使⽤的 API，使开发⼈员能够⽅便地使⽤ Go 语⾔来⽣产和消费 Kafka 消息。 Github链接：https://github.com/IBM/sarama 4.Kafka使⽤ link4.1 安装依赖包 link go get github.</description>
+    </item>
+    <item>
+      <title>9.Go-Wire</title>
+      <link>https://docs.cakepanit.com/docs/dev/golang/9.go-wire/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/golang/9.go-wire/</guid>
+      <description>控制反转与依赖注入 linkWire 是一个的Golang依赖注入工具，通过自动生成代码的方式在编译期完成依赖注入，Java体系中最出名的Spring框架采用运行时注入，个人认为这是wire和其他依赖注入最大的不同之处。&#xA;控制反转(Inversion of Control简称IoC)，定义如下：&#xA;一个对象通常会直接创建其依赖的对象，从而导致紧耦合。控制反转则是将对象的创建和管理职责转移出去，使得组件不再负责自己需要的依赖。&#xA;依赖注入(Dependency Injection简称DI)，定义如下：&#xA;依赖注入是控制反转的一种实现方式，而控制反转是一个更广泛的概念。在实际应用中，依赖注入是最常用的实现控制反转的方法之一。&#xA;控制反转示例 link控制反转的示例，比如通过配置去创建一个数据库连接： // 连接配置 type DatabaseConfig struct { Dsn string } func NewDB(config *DatabaseConfig)(*sql.DB, error) { db,err := sql.Open(&amp;#34;mysql&amp;#34;, config.Dsn) if err != nil { return nil, err } // ... } fun NewConfig()(*DatabaseConfig,error) { // 读取配置文件 fp, err := os.Open(&amp;#34;config.json&amp;#34;) if err != nil { return nil,err } defer fp.Close() // 解析为Json var config DatabaseConfig if err:=json.NewDecoder(fp).Decode(&amp;amp;config);err!=nil { return nil,err } return &amp;amp;config, nil } func InitDatabase() { cfg, err:=NewConfig() if err!</description>
     </item>
     <item>
       <title>1.HTML</title>
