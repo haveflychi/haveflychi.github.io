@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Fri, 20 Dec 2024 10:27:54 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Dec 2024 10:40:07 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一篇WIKI</title>
@@ -288,7 +288,7 @@
       <link>https://docs.cakepanit.com/docs/dev/golang/9.go-wire/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/golang/9.go-wire/</guid>
-      <description>控制反转与依赖注入 linkWire 是一个的Golang依赖注入工具，通过自动生成代码的方式在编译期完成依赖注入，Java体系中最出名的Spring框架采用运行时注入，个人认为这是wire和其他依赖注入最大的不同之处。&#xA;控制反转(Inversion of Control简称IoC)，定义如下：&#xA;一个对象通常会直接创建其依赖的对象，从而导致紧耦合。控制反转则是将对象的创建和管理职责转移出去，使得组件不再负责自己需要的依赖。&#xA;依赖注入(Dependency Injection简称DI)，定义如下：&#xA;依赖注入是控制反转的一种实现方式，而控制反转是一个更广泛的概念。在实际应用中，依赖注入是最常用的实现控制反转的方法之一。&#xA;控制反转示例 link控制反转的示例，比如通过配置去创建一个数据库连接： // 连接配置 type DatabaseConfig struct { Dsn string } func NewDB(config *DatabaseConfig)(*sql.DB, error) { db,err := sql.Open(&amp;#34;mysql&amp;#34;, config.Dsn) if err != nil { return nil, err } // ... } fun NewConfig()(*DatabaseConfig,error) { // 读取配置文件 fp, err := os.Open(&amp;#34;config.json&amp;#34;) if err != nil { return nil,err } defer fp.Close() // 解析为Json var config DatabaseConfig if err:=json.NewDecoder(fp).Decode(&amp;amp;config);err!=nil { return nil,err } return &amp;amp;config, nil } func InitDatabase() { cfg, err:=NewConfig() if err!</description>
+      <description>1.控制反转与依赖注入 linkWire 是一个的Golang依赖注入工具，通过自动生成代码的方式在编译期完成依赖注入，Java体系中最出名的Spring框架采用运行时注入，个人认为这是wire和其他依赖注入最大的不同之处。&#xA;控制反转(Inversion of Control简称IoC)，定义如下：&#xA;一个对象通常会直接创建其依赖的对象，从而导致紧耦合。控制反转则是将对象的创建和管理职责转移出去，使得组件不再负责自己需要的依赖。&#xA;依赖注入(Dependency Injection简称DI)，定义如下：&#xA;依赖注入是控制反转的一种实现方式，而控制反转是一个更广泛的概念。在实际应用中，依赖注入是最常用的实现控制反转的方法之一。&#xA;1.1控制反转示例 link控制反转的示例，比如通过配置去创建一个数据库连接： // 连接配置 type DatabaseConfig struct { Dsn string } func NewDB(config *DatabaseConfig)(*sql.DB, error) { db,err := sql.Open(&amp;#34;mysql&amp;#34;, config.Dsn) if err != nil { return nil, err } // ... } fun NewConfig()(*DatabaseConfig,error) { // 读取配置文件 fp, err := os.Open(&amp;#34;config.json&amp;#34;) if err != nil { return nil,err } defer fp.Close() // 解析为Json var config DatabaseConfig if err:=json.NewDecoder(fp).Decode(&amp;amp;config);err!=nil { return nil,err } return &amp;amp;config, nil } func InitDatabase() { cfg, err:=NewConfig() if err!</description>
     </item>
     <item>
       <title>1.HTML</title>
