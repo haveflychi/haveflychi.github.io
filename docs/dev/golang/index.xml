@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Mon, 23 Dec 2024 01:08:08 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Dec 2024 01:10:36 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/docs/dev/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1.Go的面向对象</title>
@@ -78,7 +78,7 @@
       <link>https://docs.cakepanit.com/docs/dev/golang/10.go-kratos/</link>
       <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/golang/10.go-kratos/</guid>
-      <description>Kratos是一个由Bilibili开源的Go语言微服务框架，旨在为分布式应用提供高效、灵活、可扩展的解决方案。 下面将详细介绍Kratos的基本概念、特点和优势。 Kratos是一个轻量级的Go语言微服务框架，它提供了一套简单易用的API和工具，使得开发者能够轻松地构建和管理微服务应用。&#xA;1.环境准备 link1.1安装依赖 link protoc protoc-gen-go 安装 protoc：&#xA;到 protobuf release 页面，选择适合自己操作系统的文件包。 或者文档也可以看 grpc.io 官方安装文档： https://grpc.io/docs/protoc-installation/ 安装 protoc-gen-go： 简单点可以直接用 go install 安装 ：go install google.golang.org/protobuf/cmd/protoc-gen-go@latest 或者看文档:https://developers.google.com/protocol-buffers/docs/reference/go-generated 建议开启 GO111MODULEgo env -w GO111MODULE=on&#xA;wire # 安装依赖 go get github.com/google/wire/cmd/wire@latest # 生成所有proto源码、wire等等 go generate ./... 1.2安装kratos cli linkgo install github.com/go-kratos/kratos/cmd/kratos/v2@latest CLI 工具使用说明：CLI工具使用&#xA;2.DEMO启动 link2.1拉取项目模版 link使用 kratos new 命令创建 quickstart 项目：kratos new quickstart&#xA;如果拉取 github 上的项目模板失败，可以使用 -r 参数指定拉取项目模板地址. 比如拉取 gitee 上的模板： kratos new quickstart -r https://gitee.</description>
+      <description>Kratos是一个由Bilibili开源的Go语言微服务框架，旨在为分布式应用提供高效、灵活、可扩展的解决方案。 下面将详细介绍Kratos的基本概念、特点和优势。 Kratos是一个轻量级的Go语言微服务框架，它提供了一套简单易用的API和工具，使得开发者能够轻松地构建和管理微服务应用。&#xA;1.环境准备 link1.1安装依赖 link protoc protoc-gen-go 安装 protoc：&#xA;到 protobuf release 页面，选择适合自己操作系统的文件包。 或者文档也可以看 grpc.io 官方安装文档： https://grpc.io/docs/protoc-installation/ 安装 protoc-gen-go：&#xA;简单点可以直接用 go install 安装 ：go install google.golang.org/protobuf/cmd/protoc-gen-go@latest 或者看文档:https://developers.google.com/protocol-buffers/docs/reference/go-generated 建议开启 GO111MODULEgo env -w GO111MODULE=on wire # 安装依赖 go get github.com/google/wire/cmd/wire@latest # 生成所有proto源码、wire等等 go generate ./... 1.2安装kratos cli linkgo install github.com/go-kratos/kratos/cmd/kratos/v2@latest&#xA;CLI 工具使用说明：CLI工具使用 2.DEMO启动 link2.1拉取项目模版 link使用 kratos new 命令创建 quickstart 项目：kratos new quickstart&#xA;如果拉取 github 上的项目模板失败，可以使用 -r 参数指定拉取项目模板地址. 比如拉取 gitee 上的模板： kratos new quickstart -r https://gitee.</description>
     </item>
   </channel>
 </rss>
