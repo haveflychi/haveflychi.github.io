@@ -8,7 +8,7 @@
     <language>zh-CN</language>
     <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
     <webMaster>admin@cakepanit.com (饼铛)</webMaster>
-    <lastBuildDate>Sun, 26 Apr 2026 02:28:06 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2026 03:21:01 +0800</lastBuildDate>
     <atom:link href="https://docs.cakepanit.com/docs/dev/browser-and-frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript 深度指南</title>
@@ -32,6 +32,20 @@
       <description>前言 你已经学会了 HTML、CSS 和 JavaScript 基础，能做出简单的网页了。但随着网页功能越来越复杂，你可能会发现：用原生 JavaScript 写代码变得很难维护，改一处要动很多地方，多人协作时经常冲突。&#xA;这就是我们需要前端框架的原因——它让代码更有条理、更易维护、更高效开发。在 vibecoding 里，AI 会帮你写大部分代码。但你至少得能看懂不同框架的代码风格，知道它们的优缺点，这样 AI 才能帮你选择最合适的技术栈。&#xA;读完这篇，你就能：&#xA;理解前端技术为什么要不断演进 知道 Vue、React、Svelte、Angular 各有什么特点 懂得&amp;quot;数据驱动&amp;quot;、&amp;ldquo;组件化&amp;quot;这些核心概念 能根据项目选择合适的框架 这篇文章会带你学什么？&#xA;章节 内容 学完能干嘛 第 1 章 为什么要关注前端演进 明白技术演进是为了解决什么问题 第 2 章 静态网页时代 了解最早期的网页开发方式 第 3 章 jQuery 时代 理解&amp;quot;命令式&amp;quot;编程的痛点 第 4 章 Vue/React 时代 掌握&amp;quot;声明式&amp;quot;和&amp;quot;数据驱动&amp;quot;思想 第 5 章 渲染策略 知道 CSR、SSR、SSG 的区别和适用场景 第 6 章 工程化工具 理解 Webpack、Vite 等构建工具的作用 每一章都从&amp;quot;为什么需要这个技术&amp;quot;开始，让你理解技术演进背后的逻辑。&#xA;1. 为什么要关注前端演进史? link 🤔 核心问题 为什么网页越来越复杂？前端技术为什么要不断演进？ 这个问题会带你理解从简单网页到现代 Web 应用的技术演变之路。</description>
     </item>
     <item>
+      <title>前端框架的本质</title>
+      <link>https://docs.cakepanit.com/docs/dev/browser-and-frontend/frontend-framework-nature/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/browser-and-frontend/frontend-framework-nature/</guid>
+      <description>💡 学习指南：这篇文章会回答一个根本问题——前端框架（Vue、React、Svelte 等）到底在做什么？ 如果你只学过 HTML、CSS 和一点 JavaScript，完全没问题，我们从头讲起。&#xA;在开始之前，先确认你知道这两个基础概念。如果不确定，可以先看对应章节：&#xA;HTML：网页的骨架，定义页面上有哪些元素（标题、段落、按钮、图片……）。参见 HTML 与 CSS 布局。 JavaScript：让网页&amp;quot;动起来&amp;quot;的编程语言，可以修改页面内容、响应用户操作。参见 JavaScript 深度指南。 还有一个概念会在后面频繁出现，这里先做一个完整的说明。&#xA;什么是 DOM？ link DOM 的全称是 Document Object Model，中文叫&amp;quot;文档对象模型&amp;quot;。&#xA;当你在浏览器中打开一个网页时，浏览器做的第一件事就是读取 HTML 代码。读完之后，浏览器不会直接拿 HTML 文本去显示页面，而是先把 HTML 代码转换成一棵树形结构，存放在内存里。这棵树就叫 DOM 树。&#xA;树上的每一个节点（Node）对应 HTML 里的一个标签。标签之间的嵌套关系，在 DOM 树里就变成了父节点和子节点的关系。&#xA;👇 动手试试看： 把鼠标移到左边的 HTML 代码上，右边 DOM 树中对应的节点会高亮。反过来也一样。每一行 HTML 标签都对应 DOM 树上的一个节点。&#xA;为什么要了解 DOM？ 因为 JavaScript 修改页面的方式，就是操作这棵 DOM 树——增加节点、删除节点、修改节点的内容。而前端框架做的核心工作，就是帮你自动化这些 DOM 操作。后面我们会反复提到 DOM，理解它是理解框架原理的基础。&#xA;0. 引言：什么是&amp;quot;前端框架&amp;quot;？ link 先解释&amp;quot;框架&amp;quot;这个词。在编程中，框架（Framework） 是一套已经写好的代码和规则，它规定了你的代码应该怎么组织、怎么运行。你按照它的方式写代码，它帮你处理大量重复、繁琐的底层工作。&#xA;前端框架，就是专门帮你构建网页界面的框架。目前最常见的有 Vue、React、Svelte、Angular 这几个。&#xA;那它们到底帮你解决了什么问题？下面这三张卡片概括了核心逻辑：</description>
+    </item>
+    <item>
+      <title>浏览器渲染管道</title>
+      <link>https://docs.cakepanit.com/docs/dev/browser-and-frontend/browser-as-os-rendering/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/browser-and-frontend/browser-as-os-rendering/</guid>
+      <description>🎯 核心问题 为什么有些网页流畅如丝，有些却卡成PPT？ 浏览器是怎么把一堆HTML、CSS、JavaScript代码变成你眼前看到的网页的？本章将带你深入浏览器的&amp;quot;车间&amp;quot;，理解它的工作流程，从而写出性能更好的网页。&#xA;这篇文章会带你学什么？&#xA;章节 内容 学完能干嘛 第 1 章 为什么要理解渲染管线 理解性能优化的必要性 第 2 章 渲染管线的五个阶段 掌握浏览器渲染的基本流程 第 3 章 构建DOM树和CSSOM树 理解HTML和CSS如何被解析 第 4 章 构建渲染树 知道哪些元素会被渲染 第 5 章 布局与重排 避免触发昂贵的布局计算 第 6 章 绘制与重绘 减少不必要的绘制操作 第 7 章 合成与GPU加速 利用GPU提升动画性能 第 8 章 事件循环 理解JavaScript的执行机制 第 9 章 性能优化实战 掌握常用的性能优化技巧 每一章都从&amp;quot;理解原理&amp;quot;开始，不需要你会手写优化代码。遇到性能问题时，随时回来查就行。&#xA;1. 为什么要理解&amp;quot;渲染管线&amp;quot;？ link 1.1 从&amp;quot;能跑&amp;quot;到&amp;quot;跑得快&amp;quot;：前端开发的进阶之路 link 刚开始学前端时，我们只关心代码&amp;quot;能不能跑&amp;quot;——页面能显示出来，按钮能点击，就算成功了。但随着项目变大，用户变多，你很快会发现一个残酷的现实：同样的功能，有人写的页面丝般顺滑，有人写的却卡顿到用户想摔鼠标。&#xA;这就像学开车。新手只关心&amp;quot;车能不能开动&amp;quot;，但老司机会关心&amp;quot;什么时候该换挡、什么时候该刹车、怎么开最省油&amp;quot;。浏览器就是你开的那辆&amp;quot;车&amp;quot;，理解它的&amp;quot;工作习性&amp;quot;，你才能开得又快又稳。&#xA;🐢 新手思维（只关注功能）&#xA;只要页面能显示就行 卡顿是浏览器的问题 性能优化是后期才考虑的事 🚀 进阶思维（关注体验）</description>
+    </item>
+    <item>
       <title>HTML / CSS 布局体系</title>
       <link>https://docs.cakepanit.com/docs/dev/browser-and-frontend/html-css-layout/</link>
       <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
@@ -46,25 +60,11 @@
       <description>前言 你已经学会了 JavaScript 的基本语法，但你是否想过：&#xA;代码到底在哪里运行？ 为什么同样的代码在浏览器和 Node.js 中行为不一样？ 为什么有时代码会&amp;quot;卡住&amp;quot;，有时却能&amp;quot;并行&amp;quot;执行？ 这篇文章会带你深入了解 JavaScript 的运行时环境，包括事件循环、调用栈、内存管理等。读完这篇，你就能理解代码为什么按某个顺序执行，快速定位异步相关的 bug，优化代码性能并避免内存泄漏。&#xA;这篇文章会带你学什么?&#xA;章节 内容 学完能干嘛 第 1 章 运行时概述 理解 JavaScript 代码在哪里运行 第 2 章 浏览器运行时 知道浏览器提供了哪些 Web API 第 3 章 Node.js 运行时 了解服务器端的 JavaScript 环境 第 4 章 事件循环深入 掌握宏任务和微任务的执行顺序 第 5 章 调用栈与内存 理解代码执行过程和内存管理 第 6 章 实战技巧 优化性能、调试内存泄漏 1. 运行时概述 link 🤔 核心问题 什么是&amp;quot;运行时&amp;quot;? JavaScript 只是一门语言,为什么同样的代码在不同环境中会有不同的行为?&#xA;1.1 运行时是什么 link 运行时 = JavaScript 引擎 + 环境提供的 API</description>
     </item>
     <item>
-      <title>前端框架的本质</title>
-      <link>https://docs.cakepanit.com/docs/dev/browser-and-frontend/frontend-framework-nature/</link>
-      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>https://docs.cakepanit.com/docs/dev/browser-and-frontend/frontend-framework-nature/</guid>
-      <description>💡 学习指南：这篇文章会回答一个根本问题——前端框架（Vue、React、Svelte 等）到底在做什么？ 如果你只学过 HTML、CSS 和一点 JavaScript，完全没问题，我们从头讲起。&#xA;在开始之前，先确认你知道这两个基础概念。如果不确定，可以先看对应章节：&#xA;HTML：网页的骨架，定义页面上有哪些元素（标题、段落、按钮、图片……）。参见 HTML 与 CSS 布局。 JavaScript：让网页&amp;quot;动起来&amp;quot;的编程语言，可以修改页面内容、响应用户操作。参见 JavaScript 深度指南。 还有一个概念会在后面频繁出现，这里先做一个完整的说明。&#xA;什么是 DOM？ link DOM 的全称是 Document Object Model，中文叫&amp;quot;文档对象模型&amp;quot;。&#xA;当你在浏览器中打开一个网页时，浏览器做的第一件事就是读取 HTML 代码。读完之后，浏览器不会直接拿 HTML 文本去显示页面，而是先把 HTML 代码转换成一棵树形结构，存放在内存里。这棵树就叫 DOM 树。&#xA;树上的每一个节点（Node）对应 HTML 里的一个标签。标签之间的嵌套关系，在 DOM 树里就变成了父节点和子节点的关系。&#xA;👇 动手试试看： 把鼠标移到左边的 HTML 代码上，右边 DOM 树中对应的节点会高亮。反过来也一样。每一行 HTML 标签都对应 DOM 树上的一个节点。&#xA;为什么要了解 DOM？ 因为 JavaScript 修改页面的方式，就是操作这棵 DOM 树——增加节点、删除节点、修改节点的内容。而前端框架做的核心工作，就是帮你自动化这些 DOM 操作。后面我们会反复提到 DOM，理解它是理解框架原理的基础。&#xA;0. 引言：什么是&amp;quot;前端框架&amp;quot;？ link 先解释&amp;quot;框架&amp;quot;这个词。在编程中，框架（Framework） 是一套已经写好的代码和规则，它规定了你的代码应该怎么组织、怎么运行。你按照它的方式写代码，它帮你处理大量重复、繁琐的底层工作。&#xA;前端框架，就是专门帮你构建网页界面的框架。目前最常见的有 Vue、React、Svelte、Angular 这几个。&#xA;那它们到底帮你解决了什么问题？下面这三张卡片概括了核心逻辑：</description>
-    </item>
-    <item>
       <title>状态管理哲学</title>
       <link>https://docs.cakepanit.com/docs/dev/browser-and-frontend/state-management/</link>
       <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
       <guid>https://docs.cakepanit.com/docs/dev/browser-and-frontend/state-management/</guid>
       <description>🎯 核心问题 当应用越来越大，组件之间该如何优雅地共享和同步数据？ 你可能会遇到这样的困境：用户在商品页添加了购物车，但头部的购物车数量没更新；两个不相关的组件需要同一份数据，却不知道该怎么传递。本章将带你从&amp;quot;混乱的数据传递&amp;quot;进化到&amp;quot;清晰的状态管理&amp;quot;。&#xA;1. 为什么要&amp;quot;组件化与状态管理&amp;quot;？ link 1.1 从小作坊到工厂：前端开发的演变 link 在正式开始之前，先问你一个问题：你有没有试过在厨房里做一顿大餐？&#xA;如果你只是给自己煮一碗面，那很简单——一个锅、一把面、一点调料，十秒钟搞定。但如果你要开一家餐厅，每天服务几百个顾客，就不能再&amp;quot;想做什么做什么&amp;quot;了。你需要标准化的菜谱、明确的分工、统一的采购流程，这样才能保证每道菜的质量稳定、出餐效率高。&#xA;前端开发也一样。一个人写小项目，代码随便放哪里都行。但当团队变大、项目变复杂后，就需要一套系统的方法来组织代码和管理数据。这就是组件化与状态管理要解决的问题。&#xA;🤔 什么是&#34;组件&#34;和&#34;状态&#34;？ 在继续之前，先解释两个核心术语：&#xA;组件（Component）：就像乐高积木，每个积木是一个独立的部分，有自己的形状、颜色、功能。你可以把多个积木拼在一起，搭建出复杂的城堡。在前端开发中，一个按钮、一个表单、一个导航栏，都可以是一个组件。&#xA;状态（State）：就是组件的&amp;quot;记忆&amp;quot;。比如一个按钮，它&amp;quot;记住&amp;quot;了自己是&amp;quot;禁用&amp;quot;还是&amp;quot;启用&amp;quot;状态；一个购物车组件，它&amp;quot;记住&amp;quot;了里面有哪些商品。状态会变化，而状态变化会触发界面更新。&#xA;组件化 + 状态管理 = 有组织的代码 + 清晰的数据流&#xA;🏠 小作坊模式&#xA;代码写在一个文件里，像在一口锅里煮所有菜 数据到处传递，像服务员端着盘子在餐厅乱跑 改一处可能影响其他地方，像盐放多了整道菜都毁了 🏭 工厂模式&#xA;代码拆分成组件，像餐厅分成前厅、后厨、采购部 数据集中管理，像有统一的仓库和配送系统 改动影响范围清晰，像换个菜不会影响整个餐厅 1.2 一个真实的踩坑故事：为什么你需要了解状态管理 link 你可能会说：&amp;ldquo;我用的不是 Vue/React 吗？它们不是已经有状态管理了吗？&amp;rdquo; 让我讲一个真实的故事，你就会明白为什么系统性地理解组件化和状态管理如此重要。&#xA;小美的踩坑记 小美是某电商公司的产品经理转前端开发，刚接手公司的购物车功能重构。她之前用的是 jQuery 时代的老项目，现在要用 Vue 3 改造。&#xA;小美想：&amp;ldquo;购物车逻辑很简单，存个数组就行了。&amp;rdquo; 于是她开始写代码：&#xA;在商品详情页组件里，用一个数组 cart 存储购物车数据 在购物车页面组件里，又定义了一个 cartItems 数组 在头部导航栏组件里，还有一个 cartCount 变量 问题很快出现了：&#xA;数据不同步：用户在商品详情页添加了商品，但购物车页面的数据没更新 重复代码：小美不得不写了好几个&amp;quot;添加到购物车&amp;quot;的函数，分别放在不同的组件里 维护困难：运营说要加一个&amp;quot;清空购物车&amp;quot;功能，小美发现要改三个地方 后来她请教前端架构师阿强，阿强看了一眼代码就说：&amp;ldquo;你犯了状态管理的大忌——同一份数据在多个地方存储。&amp;rdquo;&#xA;解决方案很简单：用 Pinia 创建一个全局的购物车状态管理，所有组件都从同一个地方读写数据。这样改动之后，所有问题迎刃而解。&#xA;小美从此明白了一个道理：不理解组件化和状态管理，你会写出难以维护的&amp;quot;意大利面条代码&amp;quot;。</description>
-    </item>
-    <item>
-      <title>浏览器渲染管道</title>
-      <link>https://docs.cakepanit.com/docs/dev/browser-and-frontend/browser-as-os-rendering/</link>
-      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
-      <guid>https://docs.cakepanit.com/docs/dev/browser-and-frontend/browser-as-os-rendering/</guid>
-      <description>🎯 核心问题 为什么有些网页流畅如丝，有些却卡成PPT？ 浏览器是怎么把一堆HTML、CSS、JavaScript代码变成你眼前看到的网页的？本章将带你深入浏览器的&amp;quot;车间&amp;quot;，理解它的工作流程，从而写出性能更好的网页。&#xA;这篇文章会带你学什么？&#xA;章节 内容 学完能干嘛 第 1 章 为什么要理解渲染管线 理解性能优化的必要性 第 2 章 渲染管线的五个阶段 掌握浏览器渲染的基本流程 第 3 章 构建DOM树和CSSOM树 理解HTML和CSS如何被解析 第 4 章 构建渲染树 知道哪些元素会被渲染 第 5 章 布局与重排 避免触发昂贵的布局计算 第 6 章 绘制与重绘 减少不必要的绘制操作 第 7 章 合成与GPU加速 利用GPU提升动画性能 第 8 章 事件循环 理解JavaScript的执行机制 第 9 章 性能优化实战 掌握常用的性能优化技巧 每一章都从&amp;quot;理解原理&amp;quot;开始，不需要你会手写优化代码。遇到性能问题时，随时回来查就行。&#xA;1. 为什么要理解&amp;quot;渲染管线&amp;quot;？ link 1.1 从&amp;quot;能跑&amp;quot;到&amp;quot;跑得快&amp;quot;：前端开发的进阶之路 link 刚开始学前端时，我们只关心代码&amp;quot;能不能跑&amp;quot;——页面能显示出来，按钮能点击，就算成功了。但随着项目变大，用户变多，你很快会发现一个残酷的现实：同样的功能，有人写的页面丝般顺滑，有人写的却卡顿到用户想摔鼠标。&#xA;这就像学开车。新手只关心&amp;quot;车能不能开动&amp;quot;，但老司机会关心&amp;quot;什么时候该换挡、什么时候该刹车、怎么开最省油&amp;quot;。浏览器就是你开的那辆&amp;quot;车&amp;quot;，理解它的&amp;quot;工作习性&amp;quot;，你才能开得又快又稳。&#xA;🐢 新手思维（只关注功能）&#xA;只要页面能显示就行 卡顿是浏览器的问题 性能优化是后期才考虑的事 🚀 进阶思维（关注体验）</description>
     </item>
     <item>
       <title>路由与导航</title>
