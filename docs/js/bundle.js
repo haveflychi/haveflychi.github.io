@@ -267,18 +267,12 @@ var sanitizeHTML = function (str) {
 (() => {
   // <stdin>
   window.onload = function() {
-    scrollSpy("toc", {
-      sectionClass: "h1,h2,h3,h4",
-      //   menuActiveTarget: 'href',
-      offset: 100
-      // scrollContainer: null,
-      // smooth scroll
-      // smoothScroll: true,
-      //   smoothScrollBehavior: function(element) {
-      //     console.log('run "smoothScrollBehavior"...', element)
-      //     element.scrollIntoView({ behavior: 'smooth' })
-      //   }
-    });
+    if (document.getElementById("toc") || document.querySelector("toc")) {
+      scrollSpy("toc", {
+        sectionClass: "h1,h2,h3,h4",
+        offset: 100
+      });
+    }
   };
 })();
 
@@ -286,21 +280,23 @@ var sanitizeHTML = function (str) {
 // ToC Mobile Menu (Bootstrap 5 Dropdown with ScrollSpy)
 const scrollArea = document.getElementById('content');
 const tocBtn = document.getElementById('toc-dropdown-btn');
-scrollArea.addEventListener("activate.bs.scrollspy", function(){
-    var currentItem = document.querySelector('.dropdown-menu li > a.active').innerHTML;
-    tocBtn.innerHTML = currentItem;
-})
+if (scrollArea && tocBtn) {
+    scrollArea.addEventListener("activate.bs.scrollspy", function(){
+        var currentItem = document.querySelector('.dropdown-menu li > a.active');
+        if (currentItem) {
+            tocBtn.innerHTML = currentItem.innerHTML;
+        }
+    })
 
-tocBtn.addEventListener('shown.bs.dropdown', event => {
-    tocBtn.style.borderBottom = 'none'
-    tocBtn.style.borderRadius = '4px 4px 0 0'
-    // console.log("dropdown opened");
-})
-tocBtn.addEventListener('hidden.bs.dropdown', event => {
-    tocBtn.style.borderBottom = '1px solid var(--alert-border-color)'
-    tocBtn.style.borderRadius = '4px'
-    // console.log("dropdown closed");
-});
+    tocBtn.addEventListener('shown.bs.dropdown', event => {
+        tocBtn.style.borderBottom = 'none'
+        tocBtn.style.borderRadius = '4px 4px 0 0'
+    })
+    tocBtn.addEventListener('hidden.bs.dropdown', event => {
+        tocBtn.style.borderBottom = '1px solid var(--alert-border-color)'
+        tocBtn.style.borderRadius = '4px'
+    });
+}
 ;
 (() => {
   var __getOwnPropNames = Object.getOwnPropertyNames;
