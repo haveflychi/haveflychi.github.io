@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发工具 on Maxbit Docs</title>
+    <link>https://docs.cakepanit.com/docs/dev/development-tools/</link>
+    <description>Recent content in 开发工具 on Maxbit Docs</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
+    <webMaster>admin@cakepanit.com (饼铛)</webMaster>
+    <lastBuildDate>Sun, 26 Apr 2026 02:28:06 +0800</lastBuildDate>
+    <atom:link href="https://docs.cakepanit.com/docs/dev/development-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>集成开发环境 (IDE) 基础</title>
+      <link>https://docs.cakepanit.com/docs/dev/development-tools/ide-basics/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/development-tools/ide-basics/</guid>
+      <description>💡 学习指南 本章节将带你深入了解程序员的核心生产力工具——集成开发环境 (IDE)。我们将从 IDE 的设计理念出发，逐一解析其核心组件，并通过虚拟 IDE 演示其工作原理。&#xA;遇到不懂的怎么办？(How to solve problems) link 在学习和使用 IDE 的过程中，你可能会遇到各种看不懂的按钮、菜单或者代码报错。这时候，不要慌张，利用 AI 助手是最高效的解决办法。&#xA;推荐做法：截图问 AI&#xA;现在的 AI（如 ChatGPT、Claude、DeepSeek 等）都具备强大的识图能力。当你遇到不认识的界面元素或复杂的代码片段时：&#xA;截图：截取你不懂的那一部分（比如某个奇怪的图标，或者一段复杂的配置代码）。 提问：把图片发给 AI，并问它：“这个是什么？有什么用？”或者“这段代码里的 xxx 是干嘛的？”。 追问：如果 AI 的回答太专业看不懂，继续问：“请用大白话解释一下，最好举个生活中的例子。” 0. 引言：为什么需要 IDE？ link 在软件开发过程中，程序员需要频繁地进行编写代码、管理文件、编译运行、调试错误等操作。如果这些操作都需要在不同的独立软件中完成（例如用记事本写代码，用命令行编译，用文件夹管理文件），效率将极低且容易出错。&#xA;IDE (Integrated Development Environment) 的核心价值在于集成。它将软件开发所需的各种工具（编辑器、编译器、调试器、文件管理器等）整合到一个统一的图形界面中，提供一站式的工作体验。&#xA;VS Code 就是一种最流行的 IDE。 虽然它本质上是一个轻量级的代码编辑器，但通过强大的插件系统，它具备了 IDE 的所有核心功能（代码编辑、调试、版本控制等），因此被广泛视为现代前端和全栈开发的首选 IDE。&#xA;简而言之，IDE 旨在最大化开发者的生产力，减少在不同工具间切换的时间成本。&#xA;🔗 资源下载：&#xA;VS Code 官网下载 VS Code 网页版体验 VS Code (Visual Studio Code) 是由微软开发的一款免费、开源、跨平台的代码编辑器。它凭借轻量级、插件丰富、启动速度快等特点，成为了全球最受欢迎的开发工具之一。无论你是写 Python、JavaScript 还是 C++，VS Code 都能通过安装插件变成最适合你的“神器”。</description>
+    </item>
+    <item>
+      <title>命令行与 Shell 脚本</title>
+      <link>https://docs.cakepanit.com/docs/dev/development-tools/command-line-shell/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/development-tools/command-line-shell/</guid>
+      <description>💡 学习指南：本章节旨在为零基础读者提供一个关于终端（Terminal）工作原理的系统性认知。无需具备计算机专业背景，我们将通过交互式演示，由浅入深地解析终端的运行机制。&#xA;0. 快速上手：如何打开终端？ link 在你开始学习之前，首先得找到它。终端是每个操作系统的“出厂标配”，你不需要安装任何软件就能使用它。&#xA;🖥️ 不同系统的打开方式  macOS (苹果电脑)&#xA;按下 Command (⌘) + Space 打开聚焦搜索（Spotlight）。 输入 Terminal 或 终端。 按回车键，你就会看到一个白底黑字（或黑底白字）的窗口。 🪟 Windows&#xA;方法一 (CMD)：按下 Win + R，输入 cmd，按回车。这是最古老的命令行。 方法二 (PowerShell)：按下 Win + R，输入 powershell，按回车。这是更现代、功能更强大的终端。 建议：日常简单操作两者皆可，开发环境推荐使用 PowerShell 或安装 WSL (Windows Subsystem for Linux)。 🐧 Linux&#xA;通常快捷键是 Ctrl + Alt + T。 或者在应用菜单中搜索 Terminal。 0.1 实操演练：先玩玩看 (Hands-on Lab) link 光说不练假把式。在你了解枯燥的原理之前，我们先亲手体验一下“敲命令”的感觉。&#xA;💡 提示：为了安全和方便，推荐你在下方的网页模拟器中操作。如果你有信心，也可以按照第 0 章的方法打开你电脑上真实的终端，跟随步骤一起练习（效果是一样的）。&#xA;在这个练习中，你将学会：&#xA;查看文件：学会用 ls 或 dir 看看当前目录下有什么。 创建与进入：学会用 mkdir 创建新文件夹，用 cd 像传送门一样进入它。 新建文件：学会用命令快速创建一个新文件。 安装软件：体验一行代码安装 Python 库或系统软件的快感。 删除清理：学会如何删除不需要的文件（慎用！）。 求助 AI：这是最重要的！当你忘记命令时，学会问 AI：“在 Mac 上怎么删除文件？”，它会直接告诉你答案。 请在下方选择你常用的操作系统，然后跟随引导开始操作：</description>
+    </item>
+    <item>
+      <title>Git：代码的时光机</title>
+      <link>https://docs.cakepanit.com/docs/dev/development-tools/git-version-control/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/development-tools/git-version-control/</guid>
+      <description>💡 学习指南：这一章专门写给完全没用过 Git 的人。我们不会上来就让你背命令，而是先搞清楚&amp;quot;Git 到底在帮你解决什么问题&amp;quot;，再一步步把命令和概念串起来。读完后，你应该能独立完成：本地提交、创建分支、推送到 GitHub。&#xA;0. 先问一个问题：你有没有经历过这些噩梦？ link 场景一：版本地狱&#xA;你写论文或者写代码，改到一半发现改错了，想回到三天前的版本——但你找不到了。&#xA;项目_v1.zip 项目_v2_修改版.zip 项目_v3_最终版.zip 项目_v3_最终版_真的最终版.zip 项目_v3_最终版_打死不改了.zip 每次存一个新副本，硬盘越来越乱，而且你根本记不住哪个版本改了什么。&#xA;场景二：协作噩梦&#xA;你和队友同时改同一个文件：&#xA;你改了第 10 行，添加了登录功能 队友改了第 10 行，修复了一个 Bug 你们用邮件互发代码，结果合并时一个人的改动被另一个人覆盖了 没人知道最后哪段代码是对的 场景三：没有&amp;quot;后悔药&amp;quot;&#xA;你在生产环境部署了新代码，结果出 Bug 了，想紧急回退到上一个稳定版本——但你不知道怎么回退，只能手忙脚乱地找备份。&#xA;Git 就是为了解决这三个问题而生的。&#xA;Git 是一个版本控制系统（Version Control System）。它的本质是：把你每一次&amp;quot;存档&amp;quot;操作都记录下来，形成一条完整的历史时间线，让你可以随时回到任意一个历史节点。&#xA;不夸张地说，Git 是现代软件开发最重要的工具之一。几乎所有的公司、所有的开源项目都在用它。&#xA;1. Git 和 GitHub 是一回事吗？ link 很多初学者会混淆这两个概念，先澄清一下：&#xA;Git GitHub 是什么 一个运行在你电脑上的版本控制工具 一个存放 Git 仓库的网站（云端） 在哪里 你的本地电脑 互联网上 能独立使用吗 ✅ 可以，只管理本地历史 ❌ 需要配合 Git 使用 类比 你本地的日记本 存日记的云盘 简单说：Git 是工具，GitHub 是托管服务。 就像 Word 是工具，OneDrive 是云盘一样，两者配合使用，但并不是同一个东西。</description>
+    </item>
+    <item>
+      <title>环境变量与 PATH</title>
+      <link>https://docs.cakepanit.com/docs/dev/development-tools/environment-path/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/development-tools/environment-path/</guid>
+      <description>💡 学习指南：每次你在终端输入 git 或 python，系统都要去找这个程序在哪里。每次你的代码调用大模型 API，程序要知道用哪个密钥。这两件事背后都是同一套机制——环境变量。&#xA;0. 每个程序身边都带着一组配置 link 运行中的每个程序，都持有一组「键=值」配置，叫做环境变量。程序可以随时读取这些配置，用来了解当前的运行环境。&#xA;点击下方列表里的任意变量，在终端里&amp;quot;查看&amp;quot;它的值：&#xA;1. PATH：Shell 怎么找到你输入的命令 link PATH 是一个特殊的环境变量，存着一串目录路径（用冒号分隔）。你输入 git 时，Shell 就按这串目录的顺序，一个一个地进去找名叫 git 的可执行文件——找到第一个就立刻停止。&#xA;$ echo $PATH /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin 选择一个命令，观察 Shell 逐目录搜索的过程：&#xA;三个关键规律：&#xA;目录在 PATH 里越靠前，优先级越高 找到第一个就停止，不会继续搜索 所有目录都没有 → command not found 2. 为什么安装工具后要重启终端？ link 安装 nvm、Homebrew、conda 这类工具时，安装脚本会自动在 ~/.zshrc 里追加一行，把自己的目录加入 PATH：&#xA;# 安装脚本自动写入的内容（示例） export PATH=&amp;#34;/usr/local/opt/python@3.12/bin:$PATH&amp;#34; 这行代码只在新 Shell 启动时才执行。已经打开的终端窗口不受影响，所以：&#xA;# 不重启也能立刻生效 source ~/.zshrc AI 开发工具常见情况：&#xA;# Ollama / pipx 装完报 command not found which ollama # 查实际安装位置 # pip 安装的 CLI 工具路径（加入 PATH） # macOS：~/Library/Python/3.</description>
+    </item>
+    <item>
+      <title>端口与 localhost</title>
+      <link>https://docs.cakepanit.com/docs/dev/development-tools/ports-localhost/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/development-tools/ports-localhost/</guid>
+      <description>💡 学习指南：当你执行 npm run dev，终端里出现 http://localhost:5173 时，你有没有想过：localhost 是什么？5173 又代表什么？为什么有时候会报 EADDRINUSE 错误？本章就来把这些日常开发中天天见、却很少深究的概念一次讲透。&#xA;在开始之前，建议你先补两块&amp;quot;基础砖&amp;quot;：&#xA;网络基础：如果你不太清楚 IP 地址和 HTTP 的概念，可以先看 计算机基础 - 网络通信 部分。 终端基础：如果你还不熟悉终端命令行，可以先看 命令行与 Shell 脚本。 0. 引言：那个天天见的 localhost:5173 到底是什么？ link 每个开发者的日常都离不开这一行输出：&#xA;➜ Local: http://localhost:5173/ 但你有没有想过，这短短一行字里，藏着好几个关键概念：&#xA;http:// → 通信协议（用什么语言对话） localhost → 目标地址（找谁） :5173 → 端口号（找到之后，敲哪扇门） 搞懂这三件事，你就能理解 90% 的开发环境网络问题。接下来我们逐个拆解。&#xA;1. 什么是端口？（IP 是大楼，端口是房间号） link 1.1 一个直觉比喻 link 想象一台服务器是一栋大楼：&#xA;IP 地址（如 192.168.1.100）就是大楼的门牌地址——告诉你&amp;quot;去哪栋楼&amp;quot;。 端口号（如 :80）就是楼里的房间号——告诉你&amp;quot;进哪间房&amp;quot;。 一栋楼里可以同时有餐厅（80 号房）、咖啡厅（443 号房）、办公室（22 号房）。同理，一台电脑上可以同时运行 Web 服务器、数据库、SSH 服务，各自占用不同的端口。&#xA;👇 动手点点看： 点击下面的&amp;quot;房间门牌&amp;quot;，模拟向不同端口发起连接。注意观察：当端口&amp;quot;开着&amp;quot;（有程序在监听）和&amp;quot;关着&amp;quot;时，分别会发生什么？</description>
+    </item>
+    <item>
+      <title>SSH 与密钥认证</title>
+      <link>https://docs.cakepanit.com/docs/dev/development-tools/ssh-authentication/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/development-tools/ssh-authentication/</guid>
+      <description>💡 学习指南：每次 git push 输密码？连服务器总被提示&amp;quot;Permission denied&amp;quot;？本章用 5 分钟带你搞懂 SSH 密钥认证的原理，以及如何一键免密登录 GitHub 和服务器。&#xA;0. 你一定遇到过这些场景 link git push 时反复弹出密码输入框，烦不胜烦 SSH 连接服务器失败，不知道 id_rsa 和 id_ed25519 是什么 听说&amp;quot;公钥&amp;quot;和&amp;quot;私钥&amp;quot;，但搞不清哪个给别人、哪个自己留 核心矛盾：密码不安全、又麻烦。SSH 密钥就是用来同时解决安全性和便利性的方案。&#xA;1. 密码 vs 密钥：为什么密钥更好？ link 👇 动手点点看：对比密码登录和密钥登录的区别&#xA;💡 一句话总结 密码登录 = 每次把密码发过去让对方核对（密码可能被截获）；&#xA;密钥登录 = 证明&amp;quot;我有钥匙&amp;quot;但不用把钥匙给你看（私钥永不传输）。&#xA;2. 非对称加密：公钥和私钥 link SSH 密钥基于非对称加密，一次生成两把钥匙：&#xA;私钥 (Private Key) 公钥 (Public Key) 保存位置 你的电脑 ~/.ssh/id_ed25519 服务器/GitHub 可以给别人吗 ❌ 绝不 ✅ 随便给 功能 签名（证明身份） 验签（验证身份） 类比 钥匙 锁 常见密钥类型 link 类型 命令 推荐度 说明 Ed25519 ssh-keygen -t ed25519 ⭐⭐⭐ 最新最快最安全 RSA ssh-keygen -t rsa -b 4096 ⭐⭐ 兼容性好，但较慢 ECDSA ssh-keygen -t ecdsa ⭐ 一般不推荐 3.</description>
+    </item>
+    <item>
+      <title>包管理器</title>
+      <link>https://docs.cakepanit.com/docs/dev/development-tools/package-managers/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/development-tools/package-managers/</guid>
+      <description>💡 学习指南：写代码不必从零造轮子——99% 的功能已经有人写好并发布到互联网上了。包管理器就是那个帮你找到、下载并管理这些&amp;quot;现成零件&amp;quot;的工具。本章围绕一个核心问题展开：如何让代码依赖变得可重现、可协作、可维护？&#xA;0. 为什么你一定会用到包管理器？ link 想象你要写一个能发 HTTP 请求的 Node.js 程序。有两条路：&#xA;方法 A（手动）：自己实现 TCP 连接、HTTP 协议解析、重定向处理、超时机制……估计要写几千行代码，调试几个月。 方法 B（包管理器）：npm install axios，十秒钟，一行代码搞定。 包管理器本质上是代码的「应用商店」。它帮你：&#xA;在中央仓库（Registry）里找到别人发布的库 自动下载并安装到你的项目里 处理这个库自己依赖的其他库（依赖的依赖） 记录你用的是哪个精确版本，让团队协作不出问题 1. 各语言 / 系统生态的包管理器一览 link 不同编程语言和操作系统有各自的生态工具链，但底层逻辑完全一致。&#xA;👇 动手点点看：选择你熟悉的生态，探索它的主流包管理工具。&#xA;1.1 包去哪里下载？—— Registry（注册表） link 每个生态背后都有一个中央仓库，存放所有可下载的包：&#xA;生态 注册表 包数量 JavaScript npmjs.com 200 万+ Python pypi.org 50 万+ Rust crates.io 15 万+ Go pkg.go.dev 50 万+ macOS/Linux 工具 formulae.brew.sh 7000+ Windows 软件 winget.run / chocolatey.org 数万款 1.2 JavaScript 三强对比：npm vs yarn vs pnpm link 功能相近，区别主要体现在速度和磁盘占用：</description>
+    </item>
+    <item>
+      <title>调试的艺术</title>
+      <link>https://docs.cakepanit.com/docs/dev/development-tools/debugging-art/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/development-tools/debugging-art/</guid>
+      <description>前言 代码写完了，运行报错——然后呢？ 很多新手在这一步就卡住了，盯着屏幕不知所措。调试（Debug）是编程中最核心的技能之一，甚至比写代码本身更重要。因为写代码只占开发时间的 30%，剩下的 70% 都在理解问题、定位 Bug、验证修复。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;调试思维：建立系统化的问题定位方法，不再&amp;quot;瞎猜&amp;quot; 错误阅读能力：看懂报错信息，从错误堆栈中快速定位问题 常用调试方法：掌握二分法、橡皮鸭、最小复现等经典调试技巧 工具使用能力：了解断点调试、日志调试、网络调试等工具的使用场景 AI 辅助调试：学会用 AI 加速调试过程，但不依赖 AI 章节 内容 核心概念 第 1 章 读懂错误信息 错误类型、堆栈追踪 第 2 章 经典调试方法 二分法、橡皮鸭、最小复现 第 3 章 调试工具箱 断点、日志、网络抓包 第 4 章 AI 时代的调试 AI 辅助 + 人工判断 第 5 章 调试心态与习惯 防御性编程、调试日志 0. 全景图：调试是一种科学方法 link 调试不是&amp;quot;碰运气&amp;quot;，而是一个严谨的科学过程。物理学家做实验的方法论，完全适用于调试：&#xA;观察现象：程序出了什么问题？报了什么错？ 提出假设：可能是什么原因导致的？ 设计实验：怎么验证这个假设？ 验证结论：假设对了就修复，错了就换一个假设 调试的黄金法则 先复现，再修复：不能稳定复现的 Bug，修了也不知道是不是真的修好了 一次只改一个变量：同时改多处，就不知道是哪个改动解决了问题 相信证据，不相信直觉：你觉得&amp;quot;不可能是这里的问题&amp;quot;，往往就是这里的问题 最近改了什么？：80% 的 Bug 都是最近的改动引入的 1. 读懂错误信息：报错不是敌人，是线索 link 新手最常犯的错误：看到报错就慌，直接关掉或者忽略。其实，错误信息是程序在告诉你哪里出了问题——它是你最好的朋友。</description>
+    </item>
+    <item>
+      <title>正则表达式</title>
+      <link>https://docs.cakepanit.com/docs/dev/development-tools/regex/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/development-tools/regex/</guid>
+      <description>💡 学习指南：正则表达式看起来像天书？其实它只是一种&amp;quot;描述文本模式&amp;quot;的迷你语言。本章带你从零开始理解正则的核心思想，学会用几个关键符号解决 80% 的文本搜索和验证问题。&#xA;0. 你为什么需要正则表达式？ link 想象以下场景：&#xA;从一大段日志里找出所有 IP 地址 验证用户输入的邮箱格式是否合法 把文本中所有的日期格式从 2024/01/15 替换为 2024-01-15 从网页源码中提取所有链接 用普通字符串搜索？ 你需要写一大堆 if-else 判断逻辑。&#xA;用正则表达式？ 一行模式搞定。&#xA;1. 正则入门：三分钟上手 link 👇 动手点点看：输入正则表达式，实时查看匹配结果&#xA;💡 一句话理解 正则表达式 = 用特殊符号描述&amp;quot;你想找什么样的文本&amp;quot;。\d 代表数字，+ 代表一个或多个，所以 \d+ 就是&amp;quot;一个或多个数字&amp;quot;。&#xA;2. 核心概念：像搭积木一样组合 link 正则的本质是用三类积木搭出你想要的模式：&#xA;2.1 积木一：字符类（匹配什么字符） link 语法 含义 示例 . 任意字符 a.c → abc, a1c, a c \d 数字 [0-9] \d\d → 42, 99 \w 字母/数字/下划线 \w+ → hello, user_1 \s 空白字符 匹配空格、Tab [abc] 集合中的任意一个 [aeiou] → 元音字母 [^abc] 不在集合中的 [^0-9] → 非数字字符 2.</description>
+    </item>
+  </channel>
+</rss>

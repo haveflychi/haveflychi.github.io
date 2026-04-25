@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>架构设计 on Maxbit Docs</title>
+    <link>https://docs.cakepanit.com/docs/dev/architecture/</link>
+    <description>Recent content in 架构设计 on Maxbit Docs</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
+    <webMaster>admin@cakepanit.com (饼铛)</webMaster>
+    <lastBuildDate>Sun, 26 Apr 2026 02:28:06 +0800</lastBuildDate>
+    <atom:link href="https://docs.cakepanit.com/docs/dev/architecture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从单体到微服务的演进</title>
+      <link>https://docs.cakepanit.com/docs/dev/architecture/monolith-to-microservices/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/architecture/monolith-to-microservices/</guid>
+      <description>前言 没有哪个架构是&amp;quot;最好的&amp;quot;，只有&amp;quot;最适合当前阶段的&amp;quot;。 从单体到微服务不是一步到位的跳跃，而是随着业务规模和团队规模增长，逐步演进的过程。过早拆分微服务和过晚拆分一样危险。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;演进路径：理解从单体到微服务的四个阶段 拆分时机：知道什么时候该拆、什么时候不该拆 拆分策略：掌握按业务域拆分的方法论 通信模式：了解服务间同步和异步通信的选择 数据拆分：理解数据库拆分的挑战和方案 章节 内容 核心概念 第 1 章 架构演进路径 单体→模块化→SOA→微服务 第 2 章 拆分时机与原则 Conway 定律、团队自治 第 3 章 拆分策略 DDD 限界上下文、绞杀者模式 第 4 章 服务通信 REST、gRPC、消息队列 第 5 章 数据拆分 数据库拆分、数据同步 1. 架构演进路径 link 架构演进不是技术驱动的，而是组织规模驱动的。当团队从 5 人增长到 500 人时，单体架构的协作效率会急剧下降。&#xA;阶段 架构 团队规模 特点 起步期 单体应用 1~10 人 所有代码在一个项目中，部署简单 成长期 模块化单体 10~50 人 代码按模块划分，但仍然一起部署 扩张期 SOA（面向服务） 50~200 人 按业务线拆分为粗粒度服务 规模期 微服务 200+ 人 细粒度服务，每个团队独立开发部署 Conway 定律 &amp;ldquo;设计系统的组织，其产生的架构等同于组织的沟通结构。&amp;quot;——Melvin Conway</description>
+    </item>
+    <item>
+      <title>分布式系统的挑战</title>
+      <link>https://docs.cakepanit.com/docs/dev/architecture/distributed-systems/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/architecture/distributed-systems/</guid>
+      <description>前言 当一台机器不够用时，问题才真正开始。 分布式系统是现代互联网的基石——从微信消息到淘宝下单，背后都是成百上千台机器协同工作。但&amp;quot;分布式&amp;quot;不是免费的午餐，它带来了一系列单机系统从未遇到的挑战。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;核心定理：理解 CAP 定理及其对系统设计的影响 一致性模型：区分强一致性、最终一致性、因果一致性 八大挑战：掌握分布式系统面临的核心难题 共识算法：了解 Paxos、Raft 等分布式共识的基本思想 实战模式：熟悉 2PC、Saga、CRDT 等常用解决方案 章节 内容 核心概念 第 1 章 为什么需要分布式 扩展性、可用性、地理分布 第 2 章 CAP 定理 一致性、可用性、分区容错 第 3 章 一致性模型 强一致、最终一致、因果一致 第 4 章 八大挑战 网络、时钟、分区、脑裂等 第 5 章 共识算法 Paxos、Raft、ZAB 第 6 章 分布式事务 2PC、Saga、TCC 0. 全景图：为什么需要分布式系统？ link 单机系统简单可靠，但有三个无法逾越的瓶颈：&#xA;瓶颈 说明 分布式的解法 性能上限 单机 CPU、内存、磁盘有物理极限 水平扩展：加更多机器分担负载 单点故障 一台机器挂了，整个服务就挂了 冗余副本：多台机器互为备份 地理延迟 用户在全球各地，单机只能在一个地方 多地部署：就近服务用户 分布式的代价 分布式系统解决了上面的问题，但引入了新的复杂性：网络不可靠、时钟不同步、部分失败、数据一致性……这些就是本文要讨论的&amp;quot;挑战&amp;quot;。</description>
+    </item>
+    <item>
+      <title>高可用与容灾</title>
+      <link>https://docs.cakepanit.com/docs/dev/architecture/high-availability/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/architecture/high-availability/</guid>
+      <description>前言 系统挂了 1 分钟，可能意味着几十万的损失。 高可用（High Availability）是指系统在面对硬件故障、软件 Bug、网络问题等异常情况时，仍能持续提供服务的能力。容灾（Disaster Recovery）则是在更大范围的灾难发生时，系统能够恢复服务的能力。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;可用性度量：理解&amp;quot;几个 9&amp;quot;的含义和对应的停机时间 故障转移：掌握主备、主主、多活等高可用架构 容灾策略：了解 RPO 和 RTO 的概念及设计方法 故障检测：理解心跳、探针、熔断等故障发现机制 混沌工程：了解如何主动注入故障来验证系统韧性 章节 内容 核心概念 第 1 章 可用性度量 SLA、几个 9、停机时间 第 2 章 故障转移架构 主备、主主、多可用区、异地多活 第 3 章 容灾设计 RPO、RTO、备份策略 第 4 章 故障检测与恢复 心跳、熔断、自动扩缩容 第 5 章 混沌工程 故障注入、韧性验证 1. 可用性度量：几个 9 意味着什么？ link 可用性通常用&amp;quot;几个 9&amp;quot;来衡量，计算公式为：&#xA;可用性 = 正常运行时间 / 总时间 × 100%&#xA;例如一个月（30 天 = 43200 分钟）内停机了 43 分钟，可用性就是 (43200 - 43) / 43200 ≈ 99.</description>
+    </item>
+    <item>
+      <title>系统设计方法论</title>
+      <link>https://docs.cakepanit.com/docs/dev/architecture/system-design-methodology/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/architecture/system-design-methodology/</guid>
+      <description>前言 系统设计不是拍脑袋画架构图，而是一套有章可循的方法论。 无论是面试中的系统设计题，还是实际工作中的架构设计，都遵循相似的思考框架：先搞清楚问题，再估算规模，然后设计方案，最后深入优化。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;设计流程：掌握系统设计的四步法框架 容量估算：学会&amp;quot;信封背面估算&amp;quot;的技巧 常见模式：熟悉缓存、分库分表、消息队列等核心模式 权衡思维：理解架构设计中的 trade-off 思维 实战案例：通过短链服务、Feed 流等案例理解设计过程 章节 内容 核心概念 第 1 章 设计四步法 需求澄清、容量估算、架构设计、深入优化 第 2 章 容量估算 QPS、存储、带宽、信封背面估算 第 3 章 核心设计模式 缓存、分库分表、消息队列、CDN 第 4 章 权衡思维 一致性 vs 可用性、性能 vs 成本 第 5 章 经典案例 短链服务、Feed 流、秒杀系统 1. 系统设计四步法 link 系统设计不是一上来就画架构图。无论是面试还是实战，都应该遵循一个结构化的流程。&#xA;为什么要先澄清需求？ 很多人拿到题目就开始画图，结果设计了一个&amp;quot;正确但不是面试官想要的&amp;quot;系统。花 5 分钟问清楚需求，能避免后面 30 分钟的返工。&#xA;常见的澄清问题：&#xA;系统的核心功能是什么？（不要设计所有功能） 用户规模多大？（决定是否需要分布式） 读写比例？（决定缓存策略） 数据需要保留多久？（决定存储方案） 2. 容量估算：信封背面的艺术 link &amp;ldquo;信封背面估算&amp;rdquo;（Back-of-envelope estimation）是系统设计中的核心技能。不需要精确计算，只需要知道量级。&#xA;常用换算速查 link 量级 换算 记忆技巧 1 天 86,400 秒 ≈ 10 万秒 1 亿请求/天 ≈ 1,200 QPS 除以 10 万 1 KB × 1 亿 ≈ 100 GB 1 亿条小记录 1 MB × 100 万 ≈ 1 TB 100 万张图片 2-8 法则在估算中的应用 link 大多数系统遵循 80/20 法则：20% 的数据承载 80% 的请求。这意味着：</description>
+    </item>
+  </channel>
+</rss>

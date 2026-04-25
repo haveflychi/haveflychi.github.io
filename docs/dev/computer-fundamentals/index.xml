@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机基础 on Maxbit Docs</title>
+    <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/</link>
+    <description>Recent content in 计算机基础 on Maxbit Docs</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
+    <webMaster>admin@cakepanit.com (饼铛)</webMaster>
+    <lastBuildDate>Sun, 26 Apr 2026 02:28:06 +0800</lastBuildDate>
+    <atom:link href="https://docs.cakepanit.com/docs/dev/computer-fundamentals/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vibe Coding 时代下的全栈开发</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/vibe-coding-fullstack/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/vibe-coding-fullstack/</guid>
+      <description>前言 什么是 Vibe Coding？ 简单说，就是&amp;quot;用自然语言写代码&amp;quot;——你用中文或英文描述想要什么，AI 帮你生成代码。这彻底改变了软件开发的游戏规则。&#xA;但这里有个关键问题：AI 能帮你写代码，但 AI 不能替你思考。 你仍然需要知道&amp;quot;要写什么&amp;quot;、&amp;ldquo;为什么这么写&amp;rdquo;、&amp;ldquo;怎么判断对错&amp;rdquo;。这正是本章要帮你建立的基础认知框架。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;领域全景认知：知道前端、后端、AI 算法等方向分别做什么 技术选型能力：面对&amp;quot;学什么语言/框架&amp;quot;时，能做出理性判断 成长路径清晰：了解从零基础到 3-5 年经验工程师的技能演进 Vibe Coding 思维：理解在 AI 辅助时代，哪些能力变得更重要 章节 内容 核心概念 第 1 章 计算机领域全景 前端、后端、移动端、AI、运维 第 2 章 什么是前端 用户能感知的界面层 第 3 章 什么是后端 幕后的服务器逻辑 第 4 章 编程语言图谱 与计算机沟通的工具 第 5 章 全栈工程师 前后端通吃的多面手 第 6 章 AI 算法工程师 让机器学会思考 第 7 章 成长路径 从入门到精通的路线图 0. Vibe Coding：软件开发的新范式 link 0.1 什么是 Vibe Coding？ link 想象一下以前的软件开发：</description>
+    </item>
+    <item>
+      <title>从按下电源到访问网站发生了什么</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/power-on-to-web/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/power-on-to-web/</guid>
+      <description>前言 你有没有想过，当你按下电脑电源键，到最终在浏览器中看到网页，这中间到底发生了什么？&#xA;这个过程就像一场接力赛——硬件通电后唤醒固件，固件检查完毕后交棒给操作系统，操作系统准备好环境后才能运行浏览器，浏览器再通过网络去远方的服务器取回网页。每一个环节都依赖上一个环节的成功完成，任何一棒掉链子，后面的步骤都无法进行。&#xA;理解这条完整的链路，能帮助你建立对计算机系统的整体认知，也是成为全栈工程师的必经之路。&#xA;你会学到什么？&#xA;这篇文章按照事件发生的真实顺序，带你走完从按下电源到看到网页的五个阶段：&#xA;硬件启动（第 1 节）→ 电流如何唤醒 CPU 固件自检（第 2 节）→ BIOS/UEFI 如何确认硬件正常并找到启动设备 操作系统启动（第 3 节）→ 内核如何加载、桌面如何出现 浏览器启动（第 4 节）→ 应用程序如何被操作系统运行起来 网络请求（第 5 节）→ 从输入 URL 到页面渲染的完整网络之旅 每一步都建立在前一步的基础上，缺一不可。&#xA;1. 按下电源：硬件的觉醒 link 1.1 电源启动 link 当你按下电源键，电源单元（PSU） 开始工作，把交流电（220V）转换成直流电（12V、5V、3.3V 等），为各个硬件部件供电。&#xA;电源按钮 → 电源单元(PSU) → 直流电输出 → 供给主板各部件 1.2 主板芯片组唤醒 link 电源稳定后，主板芯片组开始工作，它就像电脑的&amp;quot;总调度员&amp;quot;，负责协调各个硬件部件。&#xA;1.3 CPU 复位 link CPU 接收到复位信号后，把内部所有寄存器和缓存清零，从一个预设的地址开始执行指令。这个地址通常指向 BIOS/UEFI 芯片。&#xA;接力第一棒完成 ⛳ 到这里，硬件层面的工作已经完成：电源把交流电转成了稳定的直流电，主板芯片组被唤醒并开始协调各部件，CPU 也完成了复位、清空了寄存器，准备好执行第一条指令。&#xA;但请注意——此刻的 CPU 就像一个&amp;quot;刚睁开眼的婴儿&amp;quot;。它虽然能执行指令，却对自己所在的环境一无所知：电脑里装了多少内存？显卡能不能用？硬盘在哪里？该从哪个设备启动操作系统？这些问题 CPU 自己回答不了。&#xA;所以，CPU 复位后执行的第一条指令，就是跳转到一个固定的内存地址——这个地址指向主板上焊死的 BIOS/UEFI 固件芯片。从这一刻起，控制权从纯硬件交到了固件手中。BIOS/UEFI 的任务很明确：检查所有硬件是否正常，然后找到操作系统并把它启动起来。这就是接力赛的第二棒。</description>
+    </item>
+    <item>
+      <title>从晶体管到 CPU</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/transistor-to-cpu/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/transistor-to-cpu/</guid>
+      <description>前言 计算机是怎么&amp;quot;思考&amp;quot;的？ 你可能知道 CPU 是电脑的&amp;quot;大脑&amp;quot;，但这个大脑到底是怎么工作的？它怎么从一堆金属和塑料变成能执行程序、处理数据的智能设备？本章带你从最底层的晶体管开始，一步步理解 CPU 的构造原理。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;术语理解能力：听到&amp;quot;CPU 主频&amp;quot;、&amp;ldquo;多核&amp;rdquo;、&amp;ldquo;指令集&amp;quot;不再一头雾水，能理解背后的物理原理 代码执行视角：看到一行代码如何经过取指、解码、执行、写回，最终变成屏幕上的像素点 抽象层次思维：理解每一层如何向上层提供服务，又如何隐藏下层的复杂性 后续学习基础：为计算机体系结构、嵌入式开发、性能优化打下基础 章节 内容 核心概念 第 1 章 晶体管 数字世界的开关 第 2 章 逻辑门 布尔运算的物理实现 第 3 章 功能单元 加法器、寄存器、多路选择器 第 4 章 CPU 核心 取指、解码、执行、写回 0. 全景图：从沙子到智能 link 在探索计算机底层的过程中，常常会遇到一个最根本的问题：现代计算机的“思考”能力，究竟从何而来？&#xA;如果剥开电脑闪亮的外壳，我们看到的通常只是一堆金属、塑料和硅晶片。它们本身没有生命，不懂数学，更不懂何为智能。但当电流穿过它们时，一切开始运转起来。归根结底，这一切都来自于一个再简单不过的物理抽象：开关。&#xA;想象你面前有一个控制灯泡的开关。按下灯亮，表示为“1”；断开灯灭，表示为“0”。如果我们拥有几十亿个这样的开关，并且能够让一个开关的输出去控制另一个开关，从而组合出无比复杂的逻辑网络，会发生什么？&#xA;答案是一台能执行任意逻辑的通用计算平台。理解计算机系统的关键在于“抽象（Abstraction）”。就像搭积木一样，我们通过层叠的封装来控制底层的复杂度。以下是从沙子到智能的四个核心层级：&#xA;逐层解构：从沙子到智能 第一层：晶体管（数百亿级） 这是最底层的“开关”。现代 CPU 内部主要使用 MOSFET（金属氧化物半导体场效应晶体管）。给栅极施加电压，源极和漏极之间就导通。这就是“用电控制电”的物理起点，解决的核心问题是：如何用电信号控制另一个电信号？&#xA;第二层：逻辑门（数十亿级） 当我们把特定的晶体管串联或并联，奇妙的转换就发生了——电路变成了数学。例如 AND（与）门必须两个输入都是 1，输出才是 1；这构成了布尔代数在物理电路上的映射，解决的核心问题是：如何把物理通断转化为基于 0 和 1 的逻辑运算？&#xA;第三层：功能单元（数百级） 把基础的逻辑门拼装在一起，就能构建出有特定用途的计算模块。加法器处理算术运算，多路选择器控制数据流向，而寄存器赋予了电路记忆能力。解决的核心问题是：如何构造出能够执行加法计算和记忆状态的机器？&#xA;第四层：CPU 核心（1-128核） 这是整个微架构的指挥中心。当你写下一行代码时，CPU 内部的各个部件正以每秒几十亿次的频率协同工作，执行着取指、解码、执行、写回的整个流程。解决的核心问题是：如何让各模块协同一致，自动执行指定的程序序列？&#xA;1. 晶体管：数字世界的开关 link 让我们从微观世界开始。下面这个组件展示了晶体管的基本原理，你可以试着操作一下，观察电流是如何流动的：</description>
+    </item>
+    <item>
+      <title>计算机组成原理</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/computer-organization/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/computer-organization/</guid>
+      <description>前言 从晶体管到 CPU 后，计算机如何组成完整系统？ 上一章我们从晶体管出发，构建了加法器、寄存器、运算单元，最终拼出了 CPU 核心。但仅有 CPU 是不够的——它需要和内存、I/O 设备协同工作，需要总线连接各个部件，需要指令系统来驱动。这一章我们将从 CPU 的内部视角转向整个计算机系统的视角，深入理解冯诺依曼架构、指令系统、存储层次、总线与 I/O 的专业原理。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;系统视角：理解 CPU、内存、I/O 是如何协同工作的不再是孤立的硬件爱好者 硬件专业术语：掌握指令周期、流水线、CPI、缓存命中率等硬核概念 性能思维：理解计算机组成中的瓶颈与优化手段 后续学习基础：为操作系统、体系结构、嵌入式开发打下专业基础 章节 内容 核心概念 第 1 章 冯诺依曼架构 存储程序、五大组成部件、数据通路 第 2 章 指令系统 指令格式、寻址方式、CISC vs RISC 第 3 章 CPU 控制器 控制单元、微操作、指令周期 第 4 章 存储体系 缓存、主存、虚拟内存、分页机制 第 5 章 总线与 I/O 总线仲裁、DMA、中断机制 0. 全景图：计算机硬件系统 link 在上一章&amp;quot;从晶体管到 CPU&amp;quot;中，我们已经理解了 CPU 内部是如何工作的——从取指、译码、执行到写回。但 CPU 本身只是一个执行单元，要让计算机真正&amp;quot;能用&amp;quot;，还需要一系列外围部件的配合。&#xA;逐层解构：计算机硬件系统 第一层：CPU 核心 负责指令执行，包括控制单元（发出控制信号）和运算单元（执行算术逻辑运算）&#xA;第二层：寄存器组 CPU 内部的高速存储单元，包括通用寄存器和专用寄存器（PC、IR、MAR、MDR 等）</description>
+    </item>
+    <item>
+      <title>操作系统：给电脑请个&#34;大管家&#34;</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/operating-systems/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/operating-systems/</guid>
+      <description>前言 有了完美的 CPU 和无限的内存，电脑就能直接用了吗？ 在上一章，我们见证了晶体管如何组合成强大的 CPU。但即使你拥有最顶级的硬件，如果直接让它们工作，连在屏幕上显示一个字母都需要写几百行晦涩的机器指令。不仅麻烦，还极其危险——稍有差池，你的代码就可能把别人的数据覆盖掉。&#xA;为了解决这些噩梦，**操作系统（Operating System, 简称 OS）**诞生了。它是挡在你和冰冷硬件之间的一层最伟大的&amp;quot;软件&amp;quot;。本章我们将抛开深奥的代码，用通俗的比喻，看看这个&amp;quot;超级管家&amp;quot;是如何把杂乱无章的硬件调教得服服帖帖的。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;问题排查能力：遇到&amp;quot;程序卡死&amp;quot;、&amp;ldquo;内存不足&amp;quot;时，能从操作系统层面分析原因 术语理解深度：理解&amp;quot;多进程&amp;rdquo;、&amp;ldquo;虚拟内存&amp;rdquo;、&amp;ldquo;文件权限&amp;quot;解决的是什么问题 系统观思维：理解程序不是孤立运行的，而是与操作系统、其他进程、硬件资源密切交互 后续学习基础：为并发编程、系统调优、容器技术打下基础 章节 内容 核心概念 第 1 章 进程管理 CPU 时分复用、时间片轮转 第 2 章 内存管理 虚拟内存、分页机制 第 3 章 文件系统 文件组织、目录结构 0. 全景图：没有操作系统会怎样？ link 想象一下，你开了一家极具潜力的&amp;quot;计算工厂&amp;rdquo;（你的电脑），厂里有一个全能、不知疲倦的顶级干将（CPU），还有一片巨大的仓库（内存）和无数的集装箱（硬盘）。&#xA;如果你不雇佣一个厂长（操作系统）来管理：&#xA;CPU 独占危机：CPU 一次只能干一件事。如果有人在用它听歌，其他任何人想看网页？抱歉，大家必须排队等听歌的人主动把 CPU 让出来。 内存踩踏事故：微信和游戏都在使用仓库（内存）。如果没有保安规划区域，游戏一不小心把装备数据放到了微信的盒子里，微信直接当场崩溃。 硬盘迷宫：硬盘硬件只是一张张刻满 0 和 1 的巨大光盘。要想找到昨天存的照片，你必须准确记住它存放在&amp;quot;第 1 盘面、第 56 磁道、第 8 扇区&amp;quot;，没人能记住这种反人类的坐标。 为了解决上述的三大噩梦，操作系统祭出了它的三板斧：进程管理、内存管理和文件系统。&#xA;1. 进程管理：CPU 的时分复用 link 你平时用电脑，常常是一边挂着微信，一边听着音乐，还能一边打字。但如果你买的电脑其实只有一个 CPU 核心，它是怎么同时做这三件事的？&#xA;答案是：它并没有同时做。而是操作系统在进行疯狂的&amp;quot;时间管理&amp;quot;。&#xA;1.1 什么是&amp;quot;进程&amp;quot;？ link 每一个正在运行的程序，就被称为一个进程。你可以把它理解为一个&amp;quot;项目组&amp;quot;，有自己的代码（做事清单）、自己的内存数据（项目资金），排着队等待 CPU 接见。</description>
+    </item>
+    <item>
+      <title>什么是数据的编码与传输？</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/data-encoding-storage/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/data-encoding-storage/</guid>
+      <description>前言 当你给朋友发一张照片、发一条微信，或者下载一个几 GB 的游戏时，这些信息是怎么穿过大半个地球、完好无损地出现在你的屏幕上的？本章节会围绕一个经常困扰新手的问题展开：为什么我收到的文件变成了乱码？ 顺着这个问题，我们将彻底揭开计算机底层最核心的三大基石：编码、存储与传输。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;乱码排查能力：遇到&amp;quot;文件打开是乱码&amp;quot;时，能从编码角度分析原因，而不是简单认为&amp;quot;文件坏了&amp;quot; 跨平台意识：处理数据交换时，知道为什么要关注编码格式和字节序 编码世界观：理解计算机如何用 0 和 1 表示世间万物——从文字到图像到复杂对象 后续学习基础：为网络协议、文件格式、序列化技术打下基础 章节 内容 核心概念 第 1 章 字符编码 ASCII、UTF-8、GBK 第 2 章 数据存储 二进制、字节序 第 3 章 数据传输 序列化、压缩 在开始之前，我们需要先明确一个经常被新手忽略的物理事实：&#xA;计算机其实极其“死板”。它不认识汉字，不认得色彩，也听不懂周杰伦的歌。&#xA;它的底层全是由无数个微小的半导体开关组成的，它只能一次又一次地判断“通电（1）”或“断电（0）”。&#xA;既然计算机只认识 0 和 1，那我们怎么让它显示五颜六色的图片和复杂的文字呢？&#xA;答案就是：规定一本“密码本”。&#xA;我们和计算机约定好：如果底层发来 01000001 这串微小的电信号，它在屏幕上就专门画出英文字母 A；如果发来另外一串信号，就专门显示红色。&#xA;这个制定并使用密码本进行来回翻译的过程，就叫做“编码（Encoding）”。&#xA;明白了“计算机里的一切本质上都是密码”这个逻辑起点，你就能瞬间明白日常最容易碰到的一个见鬼现象——乱码，到底是怎么产生的了。&#xA;0. 引言：为什么文件会变成“天书”？ link 想象一下，你收到一份重要的同事发来的文件，双击打开一看，里面全是类似“浣犲ソ”或“ä½ å¥½”这种奇怪的文字。&#xA;直觉上，你肯定觉得：是不是文件在发送的过程中损坏了？是不是丢包了？&#xA;但实际上，绝大多数所谓的“文件损坏”，真相只有一个——你的电脑“没找对阅读规则”。&#xA;👇 动手点点看：&#xA;试着在下方的模拟器里，切换不同的“解码密码本”，来读取同一串底层的电信号字节。&#xA;🎯 核心领悟：没对齐的密码本&#xA;字节（0和1序列）本身是没有绝对意义的，是人类制定的**「编码规则」**赋予了它们意义。&#xA;这就像是一串摩斯密码“滴滴答”，如果你用中文电报密码本去查，它是一个字；如果用美军密码本去查，它是另一个字。&#xA;发件人用 UTF-8 密码本把汉字翻译成了数字发给你，你如果硬要用 GBK 密码本去解读这些数字，拼出来的当然全是乱码。&#xA;要彻底搞懂为什么没损坏的数据会变乱码，我们需要了解数据处理的完整链条。即数据的“一生”：编码、存储、传输。&#xA;1. 什么是数据编码？（把万物变成数字） link 简单来说：</description>
+    </item>
+    <item>
+      <title>浏览器是一个操作系统</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/computer-networks/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/computer-networks/</guid>
+      <description>前言 你每天都在用浏览器——看视频、刷新闻、在线办公。但你有没有想过：当你在地址栏输入一个网址并按下回车，背后发生了什么？&#xA;这篇文章会用**&amp;ldquo;网购&amp;rdquo;的生活化比喻，配合真实的技术过程**，带你一步步理解浏览器如何将一行网址变成丰富多彩的页面。&#xA;读完这篇，你就能：&#xA;理解从输入网址到显示页面的完整流程 掌握 URL、DNS、TCP、HTTP 等核心概念 了解浏览器如何渲染页面 知道静态网站和动态网站的区别 无需编程基础，只需要你平时网购的经验即可。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将掌握从输入网址到页面显示的完整技术流程，理解浏览器与服务器如何协同工作。这些知识是后续学习 API、接口、网络安全等技术的基石，也是排查&amp;quot;网页打不开&amp;quot;、&amp;ldquo;加载慢&amp;quot;等日常问题的关键。&#xA;章节 内容 核心概念 第 1 章 URL 解析 网址的结构和作用 第 2 章 DNS 查询 域名如何转换成 IP 地址 第 3 章 TCP 握手 如何建立可靠的连接 第 4 章 HTTP 通信 浏览器和服务器如何对话 第 5 章 浏览器渲染 代码如何变成画面 第 6 章 静态 vs 动态 网页内容的生成方式 0. 引言：当你按下回车键的那一刻 link 🤔 核心问题 当你在浏览器输入网址并按下回车，后台发生了什么？ 为什么有的网页打开很快，有的很慢？为什么有时候会出现&amp;quot;找不到服务器&amp;quot;的错误？&#xA;生活比喻：一次网购之旅 link 想象你正在进行一次网购。整个过程可以分为 5 个步骤：&#xA;🛒 第 1 步：填写订单 选好商品，确认收货地址</description>
+    </item>
+    <item>
+      <title>数据结构</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/data-structures/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/data-structures/</guid>
+      <description>前言 程序 = 数据结构 + 算法。 前面我们学了 CPU 如何执行指令、操作系统如何管理资源。但程序要处理的核心对象是数据——用户信息、商品列表、社交关系……这些数据怎么在内存里组织，直接决定了程序的快慢。你可能遇到过这样的困惑：为什么有些程序处理几万条数据很快，有些处理几百条就卡住了？答案往往就在于数据结构的选择。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;直觉判断力：看到一个需求，脑子里自动浮现该用什么数据结构 性能分析视角：能判断性能瓶颈是数据结构选错了，还是算法效率低 权衡思维：理解&amp;quot;空间换时间&amp;quot;与&amp;quot;时间换空间&amp;quot;，知道没有完美的数据结构 代码阅读能力：看到 HashMap、Stack、Queue 这些词不再陌生 后续学习基础：为数据库索引、缓存系统、搜索引擎等技术打下基础 章节 内容 核心概念 第 1 章 全景图 四大类数据结构、分类标准 第 2 章 线性结构 数组、链表、栈、队列 第 3 章 哈希表 哈希函数、冲突处理、O(1) 查找 第 4 章 树形结构 二叉树、文件系统树、DOM 树 第 5 章 图结构 有向图、无向图、遍历算法 第 6 章 性能对比 时间复杂度、空间复杂度 第 7 章 选型指南 场景分析、决策流程 1. 全景图：数据结构是什么？ link 想象你要整理一堆书：&#xA;堆在地上：找书要一本本翻——这就是最原始的存储 按编号放书架：直接去对应位置拿——这就是数组 按类别分柜子：先确定柜子再找书——这就是哈希表 按书名排序放多层架：每次排除一半——这就是树 不同的整理方式，找书的效率天差地别。数据结构就是数据的&amp;quot;整理方式&amp;quot;——它决定了数据怎么存、怎么找、怎么改。&#xA;所有数据结构可以归为四大类：&#xA;类型 数据关系 典型代表 生活类比 线性结构 一对一，排成一排 数组、链表、栈、队列 火车车厢、排队队伍 哈希结构 键→值映射 哈希表、字典、集合 图书馆索引卡片 树形结构 一对多，层级关系 二叉树、B树、堆 家族族谱、文件夹 图结构 多对多，网状关系 有向图、无向图 地铁线路图、社交网络 为什么要学这么多种？ 因为没有万能的数据结构。每种结构都是在&amp;quot;查找速度&amp;quot;、&amp;ldquo;插入速度&amp;rdquo;、&amp;ldquo;内存占用&amp;quot;之间做权衡。就像你不会用书包装家具，也不会用卡车送一封信——选对工具，事半功倍。</description>
+    </item>
+    <item>
+      <title>算法思维入门</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/algorithm-thinking/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/algorithm-thinking/</guid>
+      <description>前言 如何高效地解决问题？ 你可能遇到过这样的困惑：同一个问题，有人写的代码跑几秒就出结果，有人写的跑几分钟还在转。差别往往在于算法。本章带你理解算法的核心思维方式。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;问题拆解能力：面对复杂问题，能想到用分治、递归等策略拆解，而不是一上来就写代码 效率判断能力：用大 O 表示法判断两种解法哪个更高效，而不是凭感觉猜测 复杂度思维：写代码前先估算数据规模和时间要求，选择合适的算法级别 后续学习基础：为高级数据结构、分布式系统、机器学习打下基础 章节 内容 核心概念 第 1 章 二分查找 分治思想、O(log n) 第 2 章 排序算法 冒泡、快排、归并 第 3 章 复杂度分析 时间复杂度、空间复杂度 0. 全景图：算法是什么？ link 想象你要在一本字典里找一个单词：&#xA;方法一：从第一页开始，一页一页翻（线性查找） 方法二：根据首字母定位，再二分查找（二分查找） 两种方法都能找到，但效率天差地别。算法就是解决问题的方法。&#xA;算法的核心指标：&#xA;指标 含义 为什么重要 时间复杂度 运行时间随数据量增长的趋势 预测大规模数据的性能 空间复杂度 内存占用随数据量增长的趋势 评估内存消耗 正确性 是否总能得到正确结果 算法的基本要求 📊 逐行解读这张表 时间复杂度：用大 O 表示法描述。O(n) 表示数据量翻倍，时间翻倍；O(n²) 表示数据量翻倍，时间变成 4 倍。&#xA;空间复杂度：同样用大 O 表示法。有些算法用空间换时间（如哈希表），有些用时间换空间（如压缩算法）。&#xA;正确性：算法必须对所有可能的输入都能给出正确结果。边界条件（空输入、极大输入）最容易出错。&#xA;1. 二分查找：每次排除一半 link 1.1 二分查找的原理 link 💡 二分查找如何工作？ 前提：数据必须有序</description>
+    </item>
+    <item>
+      <title>编程语言图谱</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/programming-languages/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/programming-languages/</guid>
+      <description>前言 为什么有这么多编程语言？该学哪个？本章带你从&amp;quot;语言演化&amp;quot;到&amp;quot;编程范式&amp;quot;到&amp;quot;如何选择&amp;quot;，建立对编程语言全景的理解。结论先行：没有最好的语言，只有最适合场景的语言。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;理性选型能力：面对&amp;quot;学什么语言&amp;quot;时，能根据项目需求做出判断，而不是盲目跟风 范式理解深度：理解&amp;quot;面向对象&amp;quot;、&amp;ldquo;函数式编程&amp;quot;是不同的思维方式，而不仅仅是语法差异 历史演进视角：看到 70 多年语言演化——从手写 0 和 1 到自然语言生成代码 后续学习基础：为理解新语言设计理念、技术选型决策打下基础 章节 内容 核心概念 第 1 章 语言演化 从机器语言到高级语言 第 2 章 编程范式 命令式、面向对象、函数式 第 3 章 语言选择 场景驱动的选型方法 0. 人类如何和计算机&amp;quot;说话&amp;rdquo;？ link 想象你要和一个只懂二进制的机器人沟通：&#xA;直接打 0 和 1 — 最原始，效率极低，一个 0 写成 1 就全错了（机器语言） 用助记符代替 — MOV AX, 1 比 10110000 00000001 好认多了（汇编语言） 用接近自然语言 — int sum = 1 + 2; 人类可以直接读懂（高级语言） 编程语言就是人类与计算机沟通的桥梁，70 多年来一直在朝着&amp;quot;更接近人类思维&amp;quot;的方向进化。&#xA;1. 编程语言的演化 link 👇 动手点点看：探索编程语言从 1940 年代到今天的演化历程</description>
+    </item>
+    <item>
+      <title>编译原理入门</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/compilers/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/compilers/</guid>
+      <description>前言 当你按下&amp;quot;运行&amp;quot;按钮，代码是怎么变成屏幕上的结果的？ 你写的每一行代码，计算机其实都&amp;quot;看不懂&amp;quot;——它只认识 0 和 1。编译器就是那个把人类语言翻译成机器语言的&amp;quot;翻译官&amp;quot;。理解编译原理，你就能理解报错信息从哪来、为什么有些语言快有些慢、以及代码优化的底层逻辑。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;全局视野：掌握从源代码到可执行程序的完整编译流水线 词法分析：理解编译器如何把代码拆成一个个 Token 语法分析：理解 AST（抽象语法树）的构建过程 AST 可视化：直观看到代码的树形结构 语义分析与优化：理解类型检查和代码优化的原理 优化技术实战：掌握常量折叠、死代码消除等核心优化手段 执行模型：区分编译型、解释型和 JIT 三种执行方式 章节 内容 核心概念 第 1 章 编译器是什么 翻译官类比、编译流水线 第 2 章 词法分析 Token、词法规则 第 3 章 语法分析 AST、语法树、优先级 第 4 章 AST 可视化 交互式语法树、节点类型 第 5 章 语义分析与优化 类型检查、常量折叠、死代码消除 第 6 章 优化技术实战 函数内联、循环外提、常量传播 第 7 章 编译型 vs 解释型 vs JIT 三种执行模型对比 0. 全景图：代码的&amp;quot;翻译之旅&amp;quot; link 想象你是一个翻译官，要把一本中文小说翻译成英文。你不会一个字一个字地直译，而是：&#xA;识别词语 — 把句子拆成一个个词（词法分析） 理解句法 — 判断句子结构是否正确（语法分析） 理解语义 — 确保意思通顺、没有矛盾（语义分析） 润色优化 — 让译文更地道流畅（代码优化） 输出译文 — 写出最终的英文版本（代码生成） 编译器做的事情完全一样，只不过它翻译的是编程语言。</description>
+    </item>
+    <item>
+      <title>类型系统入门</title>
+      <link>https://docs.cakepanit.com/docs/dev/computer-fundamentals/type-systems/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/computer-fundamentals/type-systems/</guid>
+      <description>前言 为什么 &amp;quot;1&amp;quot; + 1 在 JavaScript 里得到 &amp;quot;11&amp;quot;，在 Python 里却直接报错？ 这背后就是类型系统在起作用。类型系统是编程语言的&amp;quot;交通规则&amp;quot;——它决定了数据能怎么用、能和谁运算、什么时候检查合不合法。理解类型系统，你就能理解不同语言的&amp;quot;性格差异&amp;quot;。&#xA;这篇文章会带你学什么？&#xA;学完这章后，你将获得：&#xA;分类能力：掌握静态/动态、强/弱类型的四象限分类法 问题诊断：看到 TypeError 时能快速定位是类型不匹配还是隐式转换 语言选择：理解为什么 TypeScript 适合大型项目、Python 适合快速原型 类型推断：理解现代语言如何兼顾简洁和安全 实践意识：掌握类型安全的编码习惯 章节 内容 核心概念 第 1 章 什么是类型系统 类型的本质、为什么需要类型 第 2 章 静态类型 vs 动态类型 检查时机、IDE 支持、安全性 第 3 章 强类型 vs 弱类型 隐式转换、类型安全 第 4 章 类型推断 自动推断、两全其美 第 5 章 泛型：写一次，适用所有类型 类型参数、类型约束、复用 第 6 章 类型安全实战 常见陷阱、防御策略 第 7 章 语言类型象限图 四象限分类、语言选择 0. 全景图：类型是数据的&amp;quot;身份证&amp;quot; link 在现实世界中，你不会把一本书塞进咖啡杯里——因为它们是不同&amp;quot;类型&amp;quot;的东西。编程世界也一样：数字、字符串、布尔值、数组……每种数据都有自己的&amp;quot;身份&amp;quot;，决定了它能参与什么运算。</description>
+    </item>
+  </channel>
+</rss>

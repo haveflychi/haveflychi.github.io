@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工程素养 on Maxbit Docs</title>
+    <link>https://docs.cakepanit.com/docs/dev/engineering-excellence/</link>
+    <description>Recent content in 工程素养 on Maxbit Docs</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <managingEditor>admin@cakepanit.com (饼铛)</managingEditor>
+    <webMaster>admin@cakepanit.com (饼铛)</webMaster>
+    <lastBuildDate>Sun, 26 Apr 2026 02:28:06 +0800</lastBuildDate>
+    <atom:link href="https://docs.cakepanit.com/docs/dev/engineering-excellence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>代码质量与重构</title>
+      <link>https://docs.cakepanit.com/docs/dev/engineering-excellence/code-quality-refactoring/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/engineering-excellence/code-quality-refactoring/</guid>
+      <description>前言 代码写出来能跑就行了吗？ 你可能写过这样的代码：功能是实现了，但过了两周自己都看不懂了。或者团队里有人离职，留下一堆&amp;quot;只有上帝和他才能看懂&amp;quot;的代码。&#xA;本章带你理解什么是好代码，如何识别坏代码，以及如何安全地改进它。&#xA;这篇文章会带你学什么？&#xA;章节 内容 核心概念 第 1 章 代码坏味道 识别常见问题 第 2 章 重构手法 安全地改进代码 第 3 章 代码审查 团队协作中的质量保障 第 4 章 质量度量 用数据衡量代码健康度 学完本章，你将掌握识别代码问题、安全重构、以及通过团队协作持续提升代码质量的方法。&#xA;0. 全景图：代码的生命周期 link 在软件开发中，有一个常被忽视的事实：代码被阅读的次数远远多于被编写的次数。&#xA;一段代码从诞生到退役，大致会经历这样的旅程：&#xA;代码的一生 编写阶段：开发者写下第一版实现，功能跑通了，测试通过了。 审查阶段：团队成员阅读代码，提出改进建议。 维护阶段：修 Bug、加功能、适配新需求——这个阶段占据了代码生命周期的 80% 以上。 重构阶段：当代码变得难以维护时，需要在不改变外部行为的前提下改善内部结构。 退役阶段：技术迭代，旧代码被新方案替代。 Martin Fowler 在《重构》一书中说过：&amp;ldquo;任何一个傻瓜都能写出计算机能理解的代码，唯有好的程序员才能写出人类能理解的代码。&amp;rdquo;&#xA;1. 代码坏味道：识别常见问题 link 1.1 什么是代码坏味道？ link &amp;ldquo;代码坏味道&amp;rdquo;（Code Smell）这个概念由 Kent Beck 提出，指的是代码中那些虽然不是 Bug，但暗示着更深层设计问题的特征。就像房间里有股怪味——不会立刻让你生病，但说明某个地方需要清理了。&#xA;通过下面的交互组件，识别几种最常见的代码坏味道：&#xA;1.2 常见坏味道清单 link 坏味道 症状 危害 过长函数 函数超过 50 行 难以理解、测试和复用 魔法数字 代码中直接写 86400000 含义不明，修改时容易遗漏 重复代码 相似逻辑出现在多处 修改时必须同步多处，容易遗漏 过深嵌套 超过 3 层的 if/for 逻辑像迷宫，难以追踪 过长参数列表 函数参数超过 4 个 调用困难，容易传错顺序 上帝类 一个类/模块做了太多事 职责不清，牵一发动全身 核心洞察 坏味道不是&amp;quot;错误&amp;quot;，而是&amp;quot;信号&amp;quot;。它告诉你：这里的设计可能需要改进。不是所有坏味道都需要立刻修复，但你需要有能力识别它们。</description>
+    </item>
+    <item>
+      <title>测试策略</title>
+      <link>https://docs.cakepanit.com/docs/dev/engineering-excellence/testing-strategies/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/engineering-excellence/testing-strategies/</guid>
+      <description>前言 你的代码真的&amp;quot;没问题&amp;quot;吗？ 每次改完代码手动点一遍看看有没有坏——这种方式在项目小的时候还能凑合，但当代码量增长到几万行、团队扩展到十几人时，&amp;ldquo;手动点点看&amp;quot;就是一场灾难。&#xA;本章带你理解软件测试的核心策略，从测试金字塔到 TDD，建立系统化的质量保障思维。&#xA;这篇文章会带你学什么？&#xA;章节 内容 核心概念 第 1 章 测试金字塔 测试的层次与比例 第 2 章 单元测试实战 如何写好一个测试 第 3 章 TDD 驱动开发 红绿重构循环 第 4 章 测试策略选择 不同场景的方案 学完本章，你将理解如何为项目选择合适的测试策略，写出有价值的测试，并通过 TDD 提升代码设计质量。&#xA;0. 全景图：为什么需要自动化测试？ link 想象你是一个建筑工程师。每次修改图纸后，你不会亲自爬上每一层楼去检查结构是否安全——你会依赖一套自动化的检测系统。软件测试就是代码世界的&amp;quot;结构检测系统&amp;rdquo;。&#xA;自动化测试的价值 回归保护：修改 A 功能时，自动检测 B、C、D 功能是否被影响 重构信心：有测试覆盖的代码，重构时心里有底 活文档：好的测试就是最好的使用说明书 快速反馈：几秒钟内知道代码是否正确，而不是等到部署后才发现问题 1. 测试金字塔：测试的层次与比例 link 1.1 三层金字塔 link Mike Cohn 提出的测试金字塔是测试策略的经典模型。它告诉我们：不同类型的测试应该有不同的数量比例。&#xA;通过下面的交互组件，点击金字塔的每一层，了解各层测试的特点：&#xA;1.2 为什么是金字塔形？ link 金字塔形状反映了一个核心权衡：速度与真实度的取舍。&#xA;底层（单元测试）：速度极快、数量最多、成本最低，但只能验证单个零件 中层（集成测试）：速度适中、数量适中，验证零件之间的配合 顶层（E2E 测试）：最接近真实用户，但速度慢、维护成本高、容易因环境问题失败 反模式：冰淇淋甜筒 —— 如果你的项目 E2E 测试最多、单元测试最少，那就是倒过来的&amp;quot;冰淇淋甜筒&amp;quot;。这意味着测试套件运行缓慢、经常失败、维护成本极高。</description>
+    </item>
+    <item>
+      <title>设计模式</title>
+      <link>https://docs.cakepanit.com/docs/dev/engineering-excellence/design-patterns/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/engineering-excellence/design-patterns/</guid>
+      <description>前言 为什么你的代码总是&amp;quot;能跑但很乱&amp;quot;？ 你可能遇到过这样的情况：需求一变，代码就要大改；想复用一段逻辑，却发现它和其他代码纠缠在一起。设计模式就是前人总结的&amp;quot;代码组织套路&amp;quot;，帮你写出灵活、可维护的代码。&#xA;本章带你理解最实用的设计模式，不是死记硬背，而是理解&amp;quot;什么场景用什么套路&amp;quot;。&#xA;这篇文章会带你学什么？&#xA;章节 内容 核心概念 第 1 章 设计模式是什么 模式的本质与分类 第 2 章 创建型模式 如何优雅地创建对象 第 3 章 结构型模式 如何组织代码结构 第 4 章 行为型模式 如何管理对象间的交互 学完本章，你将掌握最常用的设计模式，能在实际项目中识别适用场景并灵活运用。&#xA;0. 全景图：设计模式的本质 link 想象你在学做菜。你可以每次都从零开始摸索，也可以学习经典菜谱——菜谱不会限制你的创造力，反而让你站在前人的肩膀上。设计模式就是编程世界的&amp;quot;经典菜谱&amp;quot;。&#xA;设计模式的价值 共同语言：说&amp;quot;这里用观察者模式&amp;quot;，团队立刻理解你的设计意图 经验复用：不用重新踩前人踩过的坑 灵活扩展：好的模式让代码面对变化时只需小改，而不是大改 通过下面的交互组件，浏览常见设计模式的分类和用途：&#xA;1. 创建型模式：如何优雅地创建对象 link 1.1 单例模式（Singleton） link 场景：全局只需要一个实例，比如配置管理器、日志记录器、数据库连接池。&#xA;class ConfigManager { static instance = null static getInstance() { if (!ConfigManager.instance) { ConfigManager.instance = new ConfigManager() } return ConfigManager.instance } constructor() { this.config = {} } } // 无论调用多少次，都是同一个实例 const a = ConfigManager.</description>
+    </item>
+    <item>
+      <title>安全思维与攻防基础</title>
+      <link>https://docs.cakepanit.com/docs/dev/engineering-excellence/security-thinking/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/engineering-excellence/security-thinking/</guid>
+      <description>前言 你的网站安全吗？ 很多开发者觉得&amp;quot;安全是安全团队的事&amp;quot;，直到自己的项目被攻击、用户数据泄露。安全不是可选项，而是每个开发者的基本功。&#xA;本章带你建立安全思维，理解最常见的 Web 安全威胁和防御方法。&#xA;这篇文章会带你学什么？&#xA;章节 内容 核心概念 第 1 章 安全思维模型 像攻击者一样思考 第 2 章 常见 Web 攻击 XSS、SQL 注入、CSRF 第 3 章 防御策略 输入验证、输出编码、权限控制 第 4 章 安全检查清单 项目上线前的安全自查 学完本章，你将具备基本的安全意识，能识别和防御最常见的 Web 安全威胁。&#xA;0. 全景图：为什么开发者需要懂安全？ link 想象你建了一栋房子，功能齐全、装修漂亮，但忘了装锁。安全漏洞就是代码世界里&amp;quot;忘了装的锁&amp;quot;。&#xA;安全的核心原则 最小权限：只给必要的权限，不多给一分 纵深防御：不依赖单一防线，层层设防 永不信任输入：所有来自外部的数据都可能是恶意的 安全默认：默认配置应该是安全的，而不是方便的 1. 常见 Web 攻击 link 通过下面的交互组件，了解三种最常见的 Web 攻击原理（仅用于教育目的）：&#xA;1.1 XSS（跨站脚本攻击） link 攻击者将恶意脚本注入到网页中，当其他用户访问时，脚本在他们的浏览器中执行。&#xA;// 危险：直接将用户输入插入 HTML element.innerHTML = userInput // 如果 userInput 是 &amp;lt;script&amp;gt;恶意代码&amp;lt;/script&amp;gt;，就会执行 // 安全：使用 textContent 或转义 element.</description>
+    </item>
+    <item>
+      <title>技术文档写作</title>
+      <link>https://docs.cakepanit.com/docs/dev/engineering-excellence/technical-writing/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/engineering-excellence/technical-writing/</guid>
+      <description>前言 你写的文档有人看吗？ 很多开发者觉得&amp;quot;代码能跑就行，文档以后再说&amp;quot;。结果就是：新人入职看不懂项目、API 对接全靠口头沟通、半年后自己都忘了当初为什么这么设计。&#xA;本章带你掌握技术文档写作的核心方法，让你的文档真正有人看、看得懂、用得上。&#xA;这篇文章会带你学什么？&#xA;章节 内容 核心概念 第 1 章 文档的类型与结构 不同文档的写法 第 2 章 写作原则 清晰、准确、简洁 第 3 章 实战对比 好文档 vs 差文档 第 4 章 文档维护 让文档保持更新 学完本章，你将能写出结构清晰、内容准确、易于维护的技术文档。&#xA;0. 全景图：为什么技术文档重要？ link 代码告诉计算机&amp;quot;怎么做&amp;quot;，文档告诉人类&amp;quot;为什么这么做&amp;quot;。没有文档的项目就像没有说明书的电器——能用，但用起来全靠猜。&#xA;好文档的价值 降低沟通成本：新人自助上手，减少重复解答 保存决策上下文：记录&amp;quot;为什么&amp;quot;，而不只是&amp;quot;是什么&amp;quot; 提升项目可信度：好文档是开源项目的门面 加速协作：API 文档让前后端并行开发 1. 文档的类型与结构 link 通过下面的交互组件，了解不同类型文档的标准结构：&#xA;1.1 常见文档类型 link 文档类型 目标读者 核心内容 README 所有人 项目是什么、怎么用、怎么贡献 API 文档 接口调用方 端点、参数、响应、错误码 架构文档 开发团队 系统设计、技术选型、数据流 变更日志 用户/开发者 版本变化、新增/修复/破坏性变更 贡献指南 贡献者 开发环境、代码规范、PR 流程 1.</description>
+    </item>
+    <item>
+      <title>开源协作</title>
+      <link>https://docs.cakepanit.com/docs/dev/engineering-excellence/open-source-collaboration/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/engineering-excellence/open-source-collaboration/</guid>
+      <description>前言 想参与开源项目但不知道从哪开始？ 开源不只是&amp;quot;免费用别人的代码&amp;quot;，更是一种协作方式和职业加速器。一次高质量的开源贡献，可能比简历上写十个个人项目更有说服力。&#xA;本章带你理解开源协作的完整流程，从找项目到提交 PR，迈出开源贡献的第一步。&#xA;这篇文章会带你学什么？&#xA;章节 内容 核心概念 第 1 章 开源贡献流程 Fork → PR 的完整链路 第 2 章 开源许可证 不同许可证的区别 第 3 章 协作礼仪 如何做一个受欢迎的贡献者 第 4 章 从零开始贡献 找到适合新手的项目 学完本章，你将掌握开源协作的完整流程和礼仪，有信心向任何开源项目提交贡献。&#xA;0. 全景图：开源的价值 link 开源不只是代码共享，更是一种全球化的协作模式。Linux、React、Vue、Node.js——这些改变世界的项目都是开源的。&#xA;参与开源的好处 技术成长：阅读优秀代码，接受高手 Review 职业发展：开源贡献是最好的技术名片 社区归属：成为全球开发者社区的一员 回馈生态：你每天用的工具，也需要有人维护 1. 开源贡献流程 link 通过下面的交互组件，逐步了解从 Fork 到 Merge 的完整流程：&#xA;1.1 流程概览 link Fork → Clone → Branch → Commit → Push → PR → Review → Merge 1.</description>
+    </item>
+    <item>
+      <title>技术选型方法论</title>
+      <link>https://docs.cakepanit.com/docs/dev/engineering-excellence/technology-selection/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate><author>admin@cakepanit.com (饼铛)</author>
+      <guid>https://docs.cakepanit.com/docs/dev/engineering-excellence/technology-selection/</guid>
+      <description>前言 React 还是 Vue？MySQL 还是 PostgreSQL？ 技术选型是每个项目开始时最重要的决策之一。选错了，可能要花几个月重写；选对了，团队效率翻倍。&#xA;本章带你建立系统化的技术选型思维，不再凭感觉选技术。&#xA;这篇文章会带你学什么？&#xA;章节 内容 核心概念 第 1 章 技术雷达 了解技术的成熟度 第 2 章 选型维度 从哪些角度评估技术 第 3 章 决策矩阵 量化对比做决策 第 4 章 常见陷阱 避免选型中的坑 学完本章，你将掌握一套系统化的技术选型方法，能为项目做出理性的技术决策。&#xA;0. 全景图：技术选型的本质 link 技术选型不是&amp;quot;哪个技术最好&amp;quot;的问题，而是&amp;quot;哪个技术最适合当前场景&amp;quot;的问题。就像选交通工具——飞机最快，但去隔壁小区不需要坐飞机。&#xA;选型的核心原则 没有银弹：没有一种技术适合所有场景 场景驱动：先明确需求，再选技术 团队优先：团队熟悉的技术往往是最好的选择 可逆性：优先选择容易替换的方案 通过下面的交互组件，了解当前技术生态的全景：&#xA;1. 选型维度 link 1.1 核心评估维度 link 维度 关注点 权重建议 团队能力 团队是否熟悉？学习成本多高？ 高 社区生态 文档质量、第三方库、Stack Overflow 答案数 高 性能需求 是否满足性能要求？ 中-高 维护状态 是否活跃维护？最近一次发布是什么时候？ 中 许可证 是否与项目的商业模式兼容？ 中 招聘市场 能否招到熟悉这个技术的人？ 中 1.</description>
+    </item>
+  </channel>
+</rss>
